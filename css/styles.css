@@ -444,4 +444,117 @@ main {
   pointer-events: none;           /* lets clicks pass through */
   z-index: 50;                    /* sit above content */
 }
+/* International Hero */
+.international-hero {
+  background: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 3rem 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.international-hero h1 {
+  font-size: 2.75rem;
+  color: #004a99;
+  margin-bottom: 0.5rem;
+}
+.international-hero p {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+/* Glass Card Container */
+.glass-card {
+  background: rgba(255,255,255,0.75);
+  margin: 2rem 1rem;
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Centered callout */
+.glass-center {
+  text-align: center;
+}
+
+/* Steps */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+}
+.step {
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+}
+.step:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.9);
+}
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #0077cc;
+  animation: popIn 0.6s ease-out;
+}
+
+/* Plans */
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.plan-card {
+  flex: 1 1 250px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, border-color 0.3s;
+  border: 2px solid transparent;
+}
+.plan-card:hover {
+  transform: scale(1.02);
+  border-color: #0077cc;
+}
+.plan-card h3 {
+  color: #004a99;
+  margin-bottom: 0.5rem;
+}
+.plan-card .price {
+  font-size: 1.5rem;
+  color: #0077cc;
+  margin-top: 1rem;
+}
+.plan-basic { border-top-color: #25D366; }
+.plan-standard { border-top-color: #0077CC; }
+.plan-premium { border-top-color: #FF9800; }
+
+/* Why Us */
+.why-list {
+  list-style: inside disc;
+  columns: 2;
+  gap: 2rem;
+}
+.why-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Appointment Callout */
+.appointment-callout p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.appointment-callout .btn-whatsapp,
+.appointment-callout .btn-call {
+  margin: 0 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .why-list { columns: 1; }
+  .plans-container { flex-direction: column; }
+}
 
