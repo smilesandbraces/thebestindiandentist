@@ -1,31 +1,17 @@
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
-
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 body {
-  font-family: sans-serif;
-  background-image: url("../assets/images/image.jpg");
-  background-repeat: repeat;
-  background-size: 200px 200px; /* adjust scale as needed */
-  background-color: #a0e7ff; /* fallback background color */
-  display: flex;
-  flex-direction: column;
+  background-image: url("paper.gif");
 }
+</style>
+</head>
+<body>
 
-header, footer {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+<h1>Hello World!</h1>
 
-main {
-  flex: 1;
-  padding: 2rem;
-}
+<p>This page has an image as the background!</p>
+
+</body>
+</html>
