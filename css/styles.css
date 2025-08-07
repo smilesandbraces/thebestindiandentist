@@ -696,11 +696,10 @@ main { flex: 1; padding: 2rem; }
 /* Main Cards */
 .contact-main {
   padding: 2rem 1rem;
-  background: transparent;
 }
 .contact-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -709,7 +708,7 @@ main { flex: 1; padding: 2rem; }
   background: rgba(255,255,255,0.85);
   padding: 2rem;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .card h2 {
@@ -717,6 +716,8 @@ main { flex: 1; padding: 2rem; }
   margin-bottom: 1rem;
   font-size: 1.75rem;
 }
+
+/* Form */
 .form-card label {
   display: block;
   margin-bottom: 1.25rem;
@@ -761,20 +762,22 @@ main { flex: 1; padding: 2rem; }
   margin-bottom: 1rem;
 }
 .map-container {
-  max-width: 1200px;
+  max-width: 400px; /* match iframe width */
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  height: 50vh;
 }
 .map-container iframe {
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 300px;
+  display: block;
+  border: 0;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .map-container {
-    height: 40vh;
+    max-width: 100%;
   }
 }
