@@ -8,11 +8,24 @@
 </head>
 <body>
   <!-- Nav -->
-  <nav class="navbar">…</nav>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Smiles & Braces</a>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="international.html">International Patients</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <header class="page-header">
     <h1>Get in Touch</h1>
-    <p>Questions? Appointments? We're here for you.</p>
+    <p>Questions? Appointments? We’re here for you.</p>
   </header>
 
   <main class="contact-section">
@@ -20,23 +33,34 @@
       <div class="contact-info">
         <h2>Contact Details</h2>
         <p><strong>Address:</strong><br>
-           Shop No.6, Javed Market,<br>
-           near Aurobindo Park, Munshi Pulia,<br>
-           Sector 12, Indira Nagar,<br>
-           Lucknow, UP 226016</p>
+          Shop No.6, Javed Market,<br>
+          near Aurobindo Park, Munshi Pulia,<br>
+          Sector 12, Indira Nagar,<br>
+          Lucknow, UP 226016</p>
         <p><strong>Instagram:</strong><br>
-           <a href="https://instagram.com/drvikramjeetdental">@drvikramjeetdental</a></p>
+          <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a></p>
         <p><strong>WhatsApp / Call:</strong><br>
-           <a href="https://wa.me/917570000801">+91 75700 00801</a><br>
-           <a href="tel:+919565321625">+91 95653 21625</a></p>
+          <a href="https://wa.me/917570000801" target="_blank">+91 75700 00801</a><br>
+          <a href="tel:+919565321625">+91 95653 21625</a></p>
       </div>
       <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m12!..." style="border:0; width:100%; height:100%; min-height:300px;" allowfullscreen loading="lazy"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d2181406.4363039704!2d80.1964591!3d26.8236932!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754563198653!5m2!1sen!2sin"
+          style="border:0; width:100%; height:100%; min-height:300px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </main>
 
-  <footer>…</footer>
-  <script>…</script>
+  <footer>
+    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+  </script>
 </body>
 </html>
