@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Appointment | Smiles & Braces</title>
+  <title>Contact & Appointments | Smiles & Braces Dental Clinic</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -11,7 +11,9 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <button class="nav-toggle" aria-label="toggle menu">
+        <span class="hamburger"></span>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -23,28 +25,70 @@
     </div>
   </nav>
 
-  <!-- Upper: Book Appointment -->
-  <section class="appointment-section">
-    <div class="appointment-container">
-      <h1>Book Your Appointment</h1>
-      <p>Fast, easy booking via WhatsApp or phone call.</p>
-      <div class="buttons">
-        <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp +91 95653 21625</a>
-        <a href="tel:+919565321625"     class="btn-call">Call +91 95653 21625</a>
+  <!-- Appointment + Details -->
+  <section class="contact-main">
+    <div class="contact-inner">
+      <!-- Appointment Form -->
+      <div class="contact-form">
+        <h1>Book Your Appointment</h1>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message / Concerns</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
       </div>
-      <p class="note">Or email us at <a href="mailto:info@drvikramjeet.com">info@drvikramjeet.com</a></p>
+
+      <!-- Clinic Details -->
+      <div class="contact-details">
+        <h2>Clinic Information</h2>
+        <p><strong>Address:</strong><br>
+          Shop No. 6, Javed Market,<br>
+          near Aurobindo Park, Munshi Pulia,<br>
+          Sector 12, Indira Nagar,<br>
+          Lucknow, Uttar Pradesh 226016
+        </p>
+        <p><strong>Phone / WhatsApp:</strong><br>
+          +91 75700 00801<br>
+          +91 95653 21625
+        </p>
+        <p><strong>Email:</strong><br>
+          <a href="mailto:info@drvikramjeet.com">info@drvikramjeet.com</a>
+        </p>
+        <p><strong>Instagram:</strong><br>
+          <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Lower: Google Map -->
+  <!-- Full-Width Map -->
   <section class="map-section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4363712.201622807!2d78.8705363729231!3d26.80032662276933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754566808145!5m2!1sen!2sin"
-      frameborder="0"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4363712.201622807!2d78.8705363729231!3d26.80032662276933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754566808145!5m2!1sen!2sin"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </section>
 
   <footer>
