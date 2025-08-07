@@ -773,11 +773,6 @@ main { flex: 1; padding: 2rem; }
   height: 100%;
 }
 
-/* Disable scroll inside iframe */
-.map-container iframe {
-  pointer-events: none;
-}
-
 @media (max-width: 768px) {
   .map-container {
     height: 40vh;
