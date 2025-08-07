@@ -433,3 +433,14 @@ main {
   .map-container iframe,
   .appointment-container .buttons { width: 100%; }
 }
+/* 13. Bottom Transparent Strip */
+.bottom-strip {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;                   /* adjust thickness */
+  background: rgba(255,255,255,0.8);
+  pointer-events: none;           /* lets clicks pass through */
+  z-index: 50;                    /* sit above content */
+}
