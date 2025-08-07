@@ -12,7 +12,7 @@ html, body {
 /* 2. Background */
 body {
   /* Point to your large landscape JPG */
-  background: url("../assets/images/image(19)(1).jpg") no-repeat center center fixed;
+  background: url("../assets/images/bgweb.jpg") no-repeat center center fixed;
   /* Cover the entire viewport */
   background-size: cover;
   /* Fallback color while image loads */
