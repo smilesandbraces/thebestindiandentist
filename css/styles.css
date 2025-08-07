@@ -208,3 +208,23 @@ main {
   font-weight: bold;
 }
 }
+/* Services Page Images */
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+/* Adjust card padding to accommodate image */
+.service-card {
+  padding: 0;
+  overflow: hidden;
+}
+.service-card h2 {
+  margin: 1rem 0 0.5rem;
+}
+.service-card p {
+  margin-bottom: 1rem;
+}
