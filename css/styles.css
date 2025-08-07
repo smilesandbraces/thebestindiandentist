@@ -4,7 +4,7 @@ html, body { height: 100%; font-family: sans-serif; }
 
 /* Background */
 body {
-  background: url("../assets/images/bg-large.jpg") no-repeat center center fixed;
+  background: url("../assets/images/bgweb.jpg") no-repeat center center fixed;
   background-size: cover;
   background-color: #a0e7ff;
   display: flex;
