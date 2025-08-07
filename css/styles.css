@@ -1,1 +1,36 @@
+/* /css/styles.css */
+/* 1. Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
 
+/* 2. Background */
+body {
+  /* Point to your large landscape JPG */
+  background: url("../assets/images/bg-large.jpg") no-repeat center center fixed;
+  /* Cover the entire viewport */
+  background-size: cover;
+  /* Fallback color while image loads */
+  background-color: #a0e7ff;
+
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. Page sections */
+header, footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: rgba(255,255,255,0.8);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
