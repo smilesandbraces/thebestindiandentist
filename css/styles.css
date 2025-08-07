@@ -343,3 +343,77 @@ main { flex: 1; padding: 2rem; }
   color: #0077cc;
   font-weight: bold;
 }
+/* Appointment Section */
+.appointment-section {
+  background: rgba(255,255,255,0.95);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.appointment-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.appointment-container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0077cc;
+}
+.appointment-container p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.appointment-container .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.btn-whatsapp, .btn-call {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+.btn-whatsapp { background: #25D366; }
+.btn-call     { background: #0077cc; }
+.btn-whatsapp:hover,
+.btn-call:hover {
+  opacity: 0.8;
+}
+.appointment-container .note {
+  font-size: 0.9rem;
+  color: #555;
+}
+.appointment-container .note a {
+  color: #0077cc;
+  text-decoration: none;
+}
+.appointment-container .note a:hover {
+  text-decoration: underline;
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 2rem;
+  height: 400px;
+  overflow: hidden;
+  border-top: 4px solid #0077cc;
+}
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .appointment-container h1 {
+    font-size: 1.5rem;
+  }
+  .map-section {
+    height: 300px;
+  }
+}
