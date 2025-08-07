@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smiles & Braces Dental Clinic</title>
+  <!-- Correct CSS link -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -11,6 +12,11 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
+      <!-- Menu Toggle for Mobile -->
+      <button class="nav-toggle" aria-label="toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <!-- Navigation Links -->
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -18,30 +24,27 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
     </div>
   </nav>
 
-  <header>
+  <header class="page-header">
     <h1>Welcome to Smiles & Braces Dental Clinic</h1>
   </header>
 
   <main>
-    <!-- Your homepage content goes here -->
+    <!-- Your homepage content -->
   </main>
 
   <footer>
     <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
   </footer>
 
-  <!-- Optional JS for mobile menu toggle -->
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('nav-open');
+    // Mobile menu toggle script
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
     });
   </script>
 </body>
