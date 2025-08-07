@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Patients | Smiles & Braces</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Smiles & Braces</a>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="international.html" class="active">International Patients</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header international-header">
+    <h1>International Dental Tourism</h1>
+    <p>Your seamless journey to a perfect smile in Lucknow, India.</p>
+  </header>
+
+  <main class="international-section">
+
+    <!-- How It Works -->
+    <section class="steps">
+      <h2>How It Works</h2>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-icon">📧</div>
+          <h3>1. Online Inquiry</h3>
+          <p>Fill our <a href="contact.html">online form</a> or WhatsApp us with your dental history.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🎥</div>
+          <h3>2. Virtual Consultation</h3>
+          <p>Video call with Dr. Singh to discuss your needs and treatment plan.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🗓️</div>
+          <h3>3. Schedule & Travel</h3>
+          <p>We assist with flight, visa, and accommodation arrangements.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🦷</div>
+          <h3>4. Treatment & Care</h3>
+          <p>Receive world-class dental care at our clinic, equipped with advanced technology.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">✈️</div>
+          <h3>5. Post-Treatment Follow-Up</h3>
+          <p>Telehealth check-ins and customized retainers sent after return.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatment Plans -->
+    <section class="plans">
+      <h2>Treatment Plans</h2>
+      <div class="plans-container">
+        <div class="plan-card plan-basic">
+          <h3>Basic Plan</h3>
+          <p>Ideal for minor alignments</p>
+          <ul>
+            <li>Initial exam & X-ray</li>
+            <li>Basic braces or aligners</li>
+            <li>2 follow-up visits</li>
+          </ul>
+          <p class="price">Starting at ₹30,000</p>
+        </div>
+        <div class="plan-card plan-standard">
+          <h3>Standard Plan</h3>
+          <p>Comprehensive smile makeover</p>
+          <ul>
+            <li>Full orthodontic treatment</li>
+            <li>Digital smile simulation</li>
+            <li>5 follow-up visits</li>
+          </ul>
+          <p class="price">Starting at ₹80,000</p>
+        </div>
+        <div class="plan-card plan-premium">
+          <h3>Premium Plan</h3>
+          <p>All-inclusive luxury care</p>
+          <ul>
+            <li>VIP airport transfer</li>
+            <li>Premium braces & retainers</li>
+            <li>Unlimited follow-ups</li>
+            <li>Leisure city tour</li>
+          </ul>
+          <p class="price">Starting at ₹150,000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+      <h2>Why Choose Us?</h2>
+      <ul class="why-list">
+        <li><strong>Expertise:</strong> 15+ years in orthodontics.</li>
+        <li><strong>Affordability:</strong> Up to 60% lower than Western clinics.</li>
+        <li><strong>Comprehensive Support:</strong> Visa, travel, stay, and care.</li>
+        <li><strong>Cutting-Edge Tech:</strong> Latest digital scanners and 3D planning.</li>
+        <li><strong>Global Reputation:</strong> Internationally accredited clinic.</li>
+      </ul>
+    </section>
+
+    <!-- Book Now -->
+    <div class="appointment-callout">
+      <p>Ready to transform your smile? Let's get started!</p>
+      <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+      <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+  </script>
+</body>
+</html>
