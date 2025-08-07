@@ -198,6 +198,13 @@ main { flex: 1; padding: 2rem; }
 @media (max-width: 768px) {
   .contact-container { grid-template-columns: 1fr; }
 }
+/* White transparent background for About section */
+.about-section {
+  background: rgba(255,255,255,0.85) !important;
+  padding: 2rem !important;
+  border-radius: 8px;
+}
+
 /* International Patients Animations & Layout */
 .international-header {
   background: rgba(245,245,245,0.9);
