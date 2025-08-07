@@ -772,3 +772,115 @@ main {
   .about-wrapper { grid-template-columns: 1fr; }
   .about-col img { max-width: 520px; margin: 0 auto; }
 }
+/* ---------- FAQ + CTA Polished Styles ---------- */
+
+/* General section title */
+.section-title {
+  text-align: center;
+  color: #004a99;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Wrapper fixes so nothing clashes with the fixed footer */
+.about-page { padding-bottom: 5.5rem; } /* room above fixed footer */
+
+/* FAQ block */
+.faq-block {
+  padding: 2rem 1.25rem;
+}
+
+.faq-list {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  margin: 0.6rem 0;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+.faq-item[open] {
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+.faq-item > summary {
+  cursor: pointer;
+  padding: 1.1rem 1.25rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 650;
+  color: #1f2a44;
+  position: relative;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+
+/* Caret */
+.faq-item > summary::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+/* Body */
+.faq-body {
+  padding: 0 1.25rem 1.1rem 1.25rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+.faq-body a {
+  color: #0077cc;
+  text-decoration: none;
+}
+.faq-body a:hover {
+  text-decoration: underline;
+}
+
+/* CTA block */
+.glass-cta {
+  max-width: 1100px;
+  margin: 1.5rem auto 2.5rem;
+  background: rgba(255,255,255,0.87);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.glass-cta h2 {
+  color: #0f2c5c;
+  margin-bottom: 0.35rem;
+}
+.glass-cta p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Reuse your existing button styles; just ensure spacing */
+.btn-whatsapp, .btn-call { min-width: 210px; }
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .faq-item > summary { padding-right: 2.25rem; }
+  .about-page { padding-bottom: 6.5rem; }
+}
