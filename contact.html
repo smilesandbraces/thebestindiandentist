@@ -88,9 +88,12 @@
   </footer>
 
   <script>
+    // Mobile menu toggle script
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+    });
   </script>
 </body>
 </html>
