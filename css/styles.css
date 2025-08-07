@@ -488,4 +488,15 @@ main {
   .why-list { columns: 1; }
   .plans-container { flex-direction: column; }
 }
-
+/* Expanded Services Styles */
+.services-container {
+  grid-auto-rows: auto;
+}
+.service-card {
+  min-height: 350px;
+}
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
