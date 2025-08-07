@@ -147,4 +147,64 @@ main {
 .nav-links li a.active {
   color: #0077cc;
   font-weight: bold;
+  /* Services Page */
+.services-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card h2 {
+  margin-bottom: 0.75rem;
+  color: #0077cc;
+}
+.service-card p {
+  color: #555;
+}
+
+.appointment-callout {
+  text-align: center;
+  margin: 3rem 0;
+}
+.btn-whatsapp,
+.btn-call {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+.btn-whatsapp {
+  background: #25D366;
+}
+.btn-call {
+  background: #0077cc;
+}
+.btn-whatsapp:hover,
+.btn-call:hover {
+  opacity: 0.8;
+}
+
+/* Ensure active link */
+.nav-links li a.active {
+  color: #0077cc;
+  font-weight: bold;
+}
 }
