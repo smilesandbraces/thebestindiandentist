@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: sans-serif;
   /* Background */
-  background: url("../assets/images/bg-large.jpg") no-repeat center center fixed;
+  background: url("../assets/images/bgweb.jpg") no-repeat center center fixed;
   background-size: cover;
   background-color: #a0e7ff;
   display: flex;
@@ -110,4 +110,41 @@ footer {
 main {
   flex: 1;
   padding: 2rem;
+}
+/* About Page */
+.about-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.profile-pic img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.profile-details {
+  flex: 1;
+}
+.profile-details h2 {
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+.profile-details ul {
+  list-style: disc inside;
+  margin: 1rem 0;
+}
+.profile-details ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Highlight active nav link */
+.nav-links li a.active {
+  color: #0077cc;
+  font-weight: bold;
 }
