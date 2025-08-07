@@ -11,9 +11,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu">
-        <span class="hamburger"></span>
-      </button>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -25,64 +23,60 @@
     </div>
   </nav>
 
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <div class="contact-wrapper">
+  <!-- Hero Heading -->
+  <header class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>Book your appointment or find us on the map below.</p>
+  </header>
 
-      <!-- Appointment Form Card -->
+  <!-- Main Contact Content -->
+  <section class="contact-main">
+    <div class="contact-card">
+      <!-- Appointment Form -->
       <div class="card form-card">
         <h2>Book Your Appointment</h2>
         <form class="appointment-form" action="#" method="POST">
-          <label>
-            <span>Full Name</span>
-            <input type="text" name="name" placeholder="John Doe" required />
-          </label>
-          <label>
-            <span>Email Address</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            <span>Phone Number</span>
-            <input type="tel" name="phone" placeholder="+91 9xxxxxxxxx" required />
-          </label>
-          <label>
-            <span>Preferred Date</span>
-            <input type="date" name="date" />
-          </label>
-          <label>
-            <span>Message / Concerns</span>
-            <textarea name="message" rows="4" placeholder="Your message..."></textarea>
-          </label>
+          <label><span>Full Name</span><input type="text" name="name" placeholder="John Doe" required/></label>
+          <label><span>Email Address</span><input type="email" name="email" placeholder="you@example.com" required/></label>
+          <label><span>Phone Number</span><input type="tel" name="phone" placeholder="+91 9xxxxxxxxx" required/></label>
+          <label><span>Preferred Date</span><input type="date" name="date"/></label>
+          <label><span>Message / Concerns</span><textarea name="message" rows="4" placeholder="Your message..."></textarea></label>
           <button type="submit" class="btn-primary">Submit</button>
         </form>
       </div>
 
-      <!-- Clinic Info Card -->
+      <!-- Clinic Details -->
       <div class="card info-card">
         <h2>Clinic Information</h2>
         <p><strong>Address:</strong><br>
-           Shop No.6, Javed Market,<br>
-           near Aurobindo Park, Munshi Pulia,<br>
-           Sector 12, Indira Nagar,<br>
-           Lucknow, Uttar Pradesh 226016</p>
+          Shop No.6, Javed Market,<br>
+          near Aurobindo Park, Munshi Pulia,<br>
+          Sector 12, Indira Nagar,<br>
+          Lucknow, Uttar Pradesh 226016
+        </p>
         <p><strong>Phone / WhatsApp:</strong><br>
-           <a href="tel:+917570000801">+91 75700 00801</a><br>
-           <a href="tel:+919565321625">+91 95653 21625</a></p>
+          <a href="tel:+917570000801">+91 75700 00801</a><br>
+          <a href="tel:+919565321625">+91 95653 21625</a>
+        </p>
         <p><strong>Email:</strong><br>
-           <a href="mailto:info@drvikramjeet.com">info@drvikramjeet.com</a></p>
+          <a href="mailto:info@drvikramjeet.com">info@drvikramjeet.com</a>
+        </p>
         <p><strong>Instagram:</strong><br>
-           <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a></p>
+          <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a>
+        </p>
       </div>
-
     </div>
+  </section>
 
-    <!-- Map Card -->
-    <div class="card map-card">
+  <!-- Map Section -->
+  <section class="map-section">
+    <h2 class="map-heading">Find Us Here</h2>
+    <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4363712.201622807!2d78.8705363729231!3d26.80032662276933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754566808145!5m2!1sen!2sin"
-        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        style="border:0; pointer-events:none;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-
   </section>
 
   <footer>
@@ -90,9 +84,9 @@
   </footer>
 
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links  = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => links.classList.toggle('nav-open'));
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
   </script>
 </body>
 </html>
