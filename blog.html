@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dental Blog • Smiles & Braces Dental Clinic</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Smiles & Braces</a>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="international.html">International Patients</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Dental Blog</h1>
+    <p>Latest tips, articles & news in dentistry</p>
+  </header>
+
+  <!-- Blog Listing -->
+  <main class="blog-section">
+    <ul class="blog-list">
+
+      <!-- Post 1 -->
+      <li class="blog-post">
+        <a href="blog/tips-for-oral-hygiene.html">
+          <h2>5 Expert Tips for Maintaining Oral Hygiene</h2>
+          <p class="date">August 1, 2025</p>
+          <p class="excerpt">Discover simple yet powerful daily habits—from proper brushing techniques to flossing secrets—that keep your smile healthy and bright…</p>
+        </a>
+      </li>
+
+      <!-- Post 2 -->
+      <li class="blog-post">
+        <a href="blog/importance-of-regular-checkups.html">
+          <h2>The Importance of Regular Dental Check-ups</h2>
+          <p class="date">July 25, 2025</p>
+          <p class="excerpt">Learn why bi-annual visits to your orthodontist can prevent small issues from becoming big problems, and how they save you time and money…</p>
+        </a>
+      </li>
+
+      <!-- Post 3 -->
+      <li class="blog-post">
+        <a href="blog/choosing-the-right-toothbrush.html">
+          <h2>How to Choose the Right Toothbrush & Toothpaste</h2>
+          <p class="date">July 15, 2025</p>
+          <p class="excerpt">Soft vs. medium bristles? Electric or manual? We break down what to look for in your next toothbrush and toothpaste to maximize oral health…</p>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="#" class="prev">← Newer Posts</a>
+      <a href="#" class="next">Older Posts →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+  </script>
+</body>
+</html>
