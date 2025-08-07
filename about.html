@@ -7,13 +7,11 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Include the same navigation bar as index.html -->
+  <!-- Nav -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu">
-        <span class="hamburger"></span>
-      </button>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -25,42 +23,141 @@
     </div>
   </nav>
 
-  <header class="page-header">
+  <!-- Hero -->
+  <header class="page-header about-hero">
     <h1>Meet Dr. Vikram Jeet Singh</h1>
+    <p>Orthodontist • BDS, MDS • Advanced Orthodontic Training • 15+ years of patient-first care</p>
   </header>
 
-  <main class="about-section">
-    <div class="about-container">
-      <div class="profile-pic">
-        <!-- Optional: add a portrait image -->
+  <main class="about-page">
+    <!-- White transparent strip (glass card) -->
+    <section class="glass-card about-wrapper">
+      <div class="about-col about-photo">
         <img src="assets/images/dr-vikramjeet.jpg" alt="Dr. Vikram Jeet Singh" />
       </div>
-      <div class="profile-details">
-        <h2>Dr. Vikram Jeet Singh</h2>
-        <p>Dr. Vikram Jeet Singh is a highly qualified orthodontist with over <strong>15 years</strong> of experience delivering exceptional dental care. Holding a <strong>BDS</strong> and <strong>MDS</strong> along with advanced orthodontic training, he is committed to patient comfort, clinical excellence, and aesthetic precision.</p>
-        <p>Since establishing Smiles & Braces Dental Clinic in Lucknow, Dr. Singh has become a trusted name for both local and international patients seeking:</p>
-        <ul>
-          <li>State-of-the-art orthodontic treatments</li>
-          <li>Comprehensive dental alignments and braces</li>
-          <li>Customized treatment plans with a focus on comfort</li>
-          <li>Continuing care and follow-up support</li>
+
+      <div class="about-col about-content">
+        <h2 class="about-title">Compassion, Precision & Modern Orthodontics</h2>
+        <p>
+          Dr. Vikram Jeet Singh is a qualified orthodontist dedicated to
+          comprehensive, comfortable care. With a foundation in <strong>BDS</strong> and
+          <strong>MDS (Orthodontics)</strong>, complemented by advanced training in contemporary
+          techniques, he blends evidence-based protocols with a gentle, listener-first approach.
+        </p>
+        <p>
+          At <strong>Smiles & Braces Dental Clinic</strong> in Lucknow, Dr. Singh leads a team focused on
+          predictable outcomes—ranging from conventional braces to discreet aligner therapy—
+          guided by digital planning and meticulous follow-ups. International patients choose
+          Dr. Singh for clear communication, organized itineraries, and thoughtful after-care.
+        </p>
+
+        <ul class="badges">
+          <li class="badge">BDS</li>
+          <li class="badge">MDS (Orthodontics)</li>
+          <li class="badge">Advanced Orthodontic Training</li>
+          <li class="badge">International Patient Experience</li>
         </ul>
-        <p>His passion for continuing education ensures the clinic always offers the latest techniques and technologies. International patients benefit from his seamless coordination of travel, accommodation recommendations, and post-treatment care &mdash; making every visit stress-free and comfortable.</p>
+
+        <div class="about-split">
+          <div>
+            <h3>Care Philosophy</h3>
+            <ul class="highlight-list">
+              <li>Comfort-first treatments with conservative planning</li>
+              <li>Transparent communication & step-by-step guidance</li>
+              <li>Digital diagnostics for accuracy and predictability</li>
+              <li>Long-term retention and stability strategies</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Expertise</h3>
+            <ul class="highlight-list">
+              <li>Metal/Ceramic & Self-ligating Braces</li>
+              <li>Clear aligner therapy (discreet, removable)</li>
+              <li>Interceptive orthodontics for growing patients</li>
+              <li>Bite correction, spacing & crowding management</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+          <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Why Choose Dr. Singh -->
+    <section class="glass-card why-us">
+      <h2>Why Patients Choose Dr. Vikram Jeet Singh</h2>
+      <ul class="why-grid">
+        <li><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
+        <li><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
+        <li><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
+        <li><strong>Continuity of care:</strong> Diligent reviews, retention, and long-term stability.</li>
+        <li><strong>International friendly:</strong> Responsive scheduling, documentation support, and remote follow-ups.</li>
+        <li><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
+      </ul>
+    </section>
+
+    <!-- FAQs -->
+    <section class="glass-card faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq" open>
+        <summary>How do I book a consultation?</summary>
+        <div class="faq-body">
+          Use our <a href="contact.html">Contact</a> page to send details, or WhatsApp <a href="https://wa.me/919565321625">+91 95653 21625</a>. We’ll respond with available slots and what to bring.
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Braces vs. clear aligners—what’s right for me?</summary>
+        <div class="faq-body">
+          Both effectively move teeth. Braces are fixed and versatile; aligners are removable and discreet. Dr. Singh recommends options after examining your bite, spacing, and lifestyle.
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>How long does treatment take?</summary>
+        <div class="faq-body">
+          Most orthodontic cases range from 6–24 months depending on complexity and compliance. You’ll receive a personalized timeline after assessment.
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Is orthodontic treatment painful?</summary>
+        <div class="faq-body">
+          You may feel mild pressure or tenderness for a few days after adjustments or new aligners. This is normal and settles quickly; comfort tips are shared at each visit.
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Do you treat international patients?</summary>
+        <div class="faq-body">
+          Yes. We help coordinate schedules, documentation, and follow-ups. See our <a href="international.html">International Patients</a> page for the step-by-step journey.
+        </div>
+      </details>
+    </section>
+
+    <!-- Soft CTA -->
+    <section class="glass-card about-final-cta glass-center">
+      <h2>Ready to plan your smile?</h2>
+      <p>Message us now and we’ll help you choose the right path—braces or aligners.</p>
+      <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+      <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
+    © 2025 Smiles & Braces Dental Clinic. All rights reserved.
   </footer>
 
   <script>
-    // Reuse mobile menu toggle
+    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-open');
-    });
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
   </script>
 </body>
 </html>
+
