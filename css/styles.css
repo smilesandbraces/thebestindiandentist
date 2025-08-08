@@ -884,3 +884,152 @@ main {
   .faq-item > summary { padding-right: 2.25rem; }
   .about-page { padding-bottom: 6.5rem; }
 }
+/* =========================
+   HOME PAGE — Aesthetic UI
+   ========================= */
+
+/* HERO */
+.home-hero {
+  position: relative;
+  padding: 5.5rem 1rem 3rem;
+  text-align: center;
+}
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  filter: blur(0.5px);
+}
+.home-hero__inner {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2.25rem 1.25rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+.home-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #0f2c5c;
+  margin-bottom: .5rem;
+}
+.home-hero h1 span { color: #0077cc; }
+.home-hero p {
+  color: #475569;
+  max-width: 760px;
+  margin: 0.25rem auto 1rem;
+}
+.trust-badges {
+  list-style: none;
+  display: flex; flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem 1rem;
+  margin-top: 1rem;
+  color: #334155;
+}
+
+/* SHARED */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.section-head h2 { color: #004a99; }
+.link-more {
+  color: #0077cc; text-decoration: none;
+}
+.link-more:hover { text-decoration: underline; }
+
+.home-main { padding: 2rem 1rem 6rem; } /* space for fixed footer */
+
+/* SERVICES TEASER */
+.home-services .teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+.teaser {
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform .25s, box-shadow .25s;
+}
+.teaser img { width: 100%; height: 150px; object-fit: cover; display:block; }
+.teaser h3 { margin: .75rem 1rem .25rem; color:#0f2c5c; }
+.teaser p  { margin: 0 1rem 1rem; color:#556; }
+.teaser:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+/* ABOUT STRIP */
+.home-about {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+.home-about__text h2 { color:#004a99; margin-bottom:.5rem; }
+.home-about__text p { color:#475569; }
+.about-buttons { margin-top: 1rem; display:flex; gap:.75rem; flex-wrap:wrap; }
+.btn-ghost {
+  background: transparent; color:#004a99; border:1px solid #004a99;
+  padding: .6rem 1.2rem; border-radius: 6px; text-decoration:none; font-weight:600;
+}
+.btn-ghost:hover { background:#004a99; color:#fff; }
+.home-about__photo img {
+  width:100%; border-radius:14px; box-shadow:0 12px 32px rgba(0,0,0,.12);
+}
+
+/* TESTIMONIALS */
+.home-testimonials h2 { text-align:center; color:#004a99; margin-bottom:.5rem; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1rem;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 1.25rem 1rem;
+  color: #374151;
+  line-height: 1.7;
+}
+.testimonial-card cite { display:block; margin-top:.5rem; color:#0f2c5c; font-style:normal; }
+
+/* BLOG PREVIEW */
+.home-blog .blog-preview {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1rem;
+}
+.preview-card {
+  display:flex; gap:.75rem; align-items:center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px; padding:.75rem;
+  text-decoration:none; color:inherit;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  transition: transform .25s, box-shadow .25s;
+}
+.preview-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,.12); }
+.preview-card img { width:82px; height:82px; object-fit:cover; border-radius:8px; }
+.preview-card h3 { color:#0f2c5c; margin:0 0 .25rem; font-size:1.05rem; }
+.preview-card .meta { color:#64748b; font-size:.9rem; }
+
+/* CTA STRIP */
+.home-cta { text-align:center; }
+.home-cta h2 { color:#0f2c5c; margin-bottom:.25rem; }
+.home-cta p  { color:#475569; margin-bottom:.75rem; }
+
+/* Buttons (reuse existing) */
+.cta-buttons { display:flex; justify-content:center; gap:.75rem; flex-wrap:wrap; }
+.btn-whatsapp, .btn-call { min-width:210px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-about { grid-template-columns: 1fr; }
+}
