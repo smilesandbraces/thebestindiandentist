@@ -2,85 +2,196 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dental Blog • Smiles & Braces Dental Clinic</title>
+  <meta name="description" content="Dental tips, orthodontic insights, clinic updates and smile-care guides from Smiles & Braces Dental Clinic, Lucknow."/>
+  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/blog.html"/>
+
+  <!-- Social -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Dental Blog • Smiles & Braces"/>
+  <meta property="og:description" content="Latest orthodontic tips, aligners vs braces, hygiene guides and clinic news."/>
+  <meta property="og:image" content="assets/images/og/clinic-preview.jpg"/>
+
+  <link rel="icon" href="assets/icons/favicon.ico"/>
+  <meta name="theme-color" content="#a0e7ff"/>
+
   <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/blog.css"/>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/Blog">
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu">
-        <span class="hamburger"></span>
-      </button>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a class="active" href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="international.html">International Patients</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="page-header blog-hero">
-    <h1>Our Dental Blog</h1>
-    <p>Insights, tips & the latest in orthodontic care</p>
+  <!-- Hero -->
+  <header class="blog-hero">
+    <div class="hero-inner">
+      <h1 itemprop="name">Our Dental Blog</h1>
+      <p>Insights, tips &amp; the latest in orthodontic care</p>
+
+      <div class="blog-controls">
+        <input id="blogSearch" class="search" type="search" placeholder="Search topics… (e.g., aligners, hygiene, braces) " aria-label="Search blog posts"/>
+        <div class="chips" role="tablist" aria-label="Filter by category">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="Orthodontics" role="tab">Orthodontics</button>
+          <button class="chip" data-filter="Hygiene" role="tab">Hygiene</button>
+          <button class="chip" data-filter="Clinic News" role="tab">Clinic News</button>
+        </div>
+      </div>
+    </div>
   </header>
 
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1"/>
+      </li>
+      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Blog</span>
+        <meta itemprop="position" content="2"/>
+      </li>
+    </ol>
+  </nav>
+
   <!-- Blog Grid -->
-  <main class="blog-section">
-    <div class="blog-grid">
-      <!-- Repeat this block for each post -->
-      <article class="blog-card">
-        <a href="blog/tips-for-oral-hygiene.html">
-          <div class="card-header">
-            <!-- Optional: featured image -->
-            <img src="assets/images/blog/oral-hygiene.jpg" alt="Oral Hygiene Tips">
-            <span class="date-badge">Aug 1, 2025</span>
-          </div>
-          <div class="card-body">
-            <h2>5 Expert Tips for Maintaining Oral Hygiene</h2>
-            <p>Discover simple yet powerful daily habits—from brushing techniques to flossing secrets…</p>
-          </div>
-        </a>
-      </article>
+  <main class="blog-page">
+    <section class="glass-card">
+      <div id="blogGrid" class="blog-grid" itemprop="blogPosts">
+        <!-- Post 1 -->
+        <article class="blog-card"
+                 itemscope itemtype="https://schema.org/BlogPosting"
+                 data-category="Hygiene" data-tags="hygiene, brushing, flossing">
+          <a class="card-link" href="blog/tips-for-oral-hygiene.html">
+            <div class="card-header">
+              <img src="assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips" loading="lazy" width="1200" height="675"/>
+              <time class="date-badge" itemprop="datePublished" datetime="2025-08-01">Aug 1, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">5 Expert Tips for Maintaining Oral Hygiene</h2>
+              <p class="card-excerpt" itemprop="description">
+                Simple, proven habits—from brushing angles to floss timing—that keep your smile healthy and bright.
+              </p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/tips-for-oral-hygiene.html"/>
+        </article>
 
-      <!-- Example Post 2 -->
-      <article class="blog-card">
-        <a href="blog/importance-of-regular-checkups.html">
-          <div class="card-header">
-            <img src="assets/images/blog/regular-checkups.jpg" alt="Dental Checkups">
-            <span class="date-badge">Jul 25, 2025</span>
-          </div>
-          <div class="card-body">
-            <h2>The Importance of Regular Dental Check-ups</h2>
-            <p>Learn why bi-annual visits prevent small issues from becoming big problems…</p>
-          </div>
-        </a>
-      </article>
+        <!-- Post 2 -->
+        <article class="blog-card"
+                 itemscope itemtype="https://schema.org/BlogPosting"
+                 data-category="Orthodontics" data-tags="checkup, braces, prevention">
+          <a class="card-link" href="blog/importance-of-regular-checkups.html">
+            <div class="card-header">
+              <img src="assets/images/blog/regular-checkups.jpg" alt="Routine dental checkups" loading="lazy" width="1200" height="675"/>
+              <time class="date-badge" itemprop="datePublished" datetime="2025-07-25">Jul 25, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">The Importance of Regular Dental Check-ups</h2>
+              <p class="card-excerpt" itemprop="description">
+                Why bi-annual visits prevent small issues becoming big problems, saving time and money.
+              </p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/importance-of-regular-checkups.html"/>
+        </article>
 
-      <!-- Add more blog-card blocks here -->
-    </div>
+        <!-- Post 3 -->
+        <article class="blog-card"
+                 itemscope itemtype="https://schema.org/BlogPosting"
+                 data-category="Orthodontics" data-tags="toothbrush, toothpaste, aligners">
+          <a class="card-link" href="blog/choosing-the-right-toothbrush.html">
+            <div class="card-header">
+              <img src="assets/images/blog/toothbrush-choice.jpg" alt="Choosing the right toothbrush and toothpaste" loading="lazy" width="1200" height="675"/>
+              <time class="date-badge" itemprop="datePublished" datetime="2025-07-15">Jul 15, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">How to Choose the Right Toothbrush &amp; Toothpaste</h2>
+              <p class="card-excerpt" itemprop="description">
+                Soft vs medium bristles? Electric or manual? What to consider for your best oral care routine.
+              </p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/choosing-the-right-toothbrush.html"/>
+        </article>
 
-    <!-- Pagination -->
-    <div class="pagination">
-      <a href="#" class="prev">← Newer Posts</a>
-      <a href="#" class="next">Older Posts →</a>
-    </div>
+        <!-- Add more <article class="blog-card"> … </article> as you publish -->
+      </div>
+
+      <!-- Pagination (static placeholders; wire to real pages later) -->
+      <nav class="pagination" aria-label="Pagination">
+        <a class="prev" href="#" aria-disabled="true">← Newer Posts</a>
+        <a class="next" href="#">Older Posts →</a>
+      </nav>
+    </section>
   </main>
 
-  <footer>
-    &copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.
-  </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved.</footer>
 
   <script>
-    const navToggle = document.querySelector('.nav-toggle'),
-          navLinks  = document.querySelector('.nav-links');
+    // Mobile menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+
+    // Simple client-side filtering
+    const chips   = [...document.querySelectorAll('.chip')];
+    const search  = document.getElementById('blogSearch');
+    const cards   = [...document.querySelectorAll('.blog-card')];
+    let activeCat = 'all';
+
+    function applyFilter(){
+      const q = (search.value || '').toLowerCase().trim();
+      cards.forEach(card => {
+        const cat  = (card.dataset.category || '').toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const text = card.innerText.toLowerCase();
+        const matchCat = (activeCat === 'all') || cat === activeCat.toLowerCase();
+        const matchQ   = !q || text.includes(q) || tags.includes(q);
+        card.style.display = (matchCat && matchQ) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        chips.forEach(c=>c.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeCat = btn.dataset.filter;
+        applyFilter();
+      });
+    });
+    search.addEventListener('input', applyFilter);
+  </script>
+
+  <!-- Structured data for the list itself -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Smiles & Braces Dental Blog",
+    "url":"https://smilesandbraces.github.io/thebestindiandentist/blog.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Smiles & Braces Dental Clinic"
+    }
+  }
   </script>
 </body>
 </html>
