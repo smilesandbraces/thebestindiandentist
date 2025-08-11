@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>About Dr. Vikram Jeet Singh | Smiles & Braces Dental Clinic</title>
+  <meta name="description" content="Meet Dr. Vikram Jeet Singh (BDS, MDS), orthodontist with 15+ years of experience in comfort-first, digitally planned orthodontics for local and international patients in Lucknow." />
+  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/about.html" />
+
+  <!-- Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Dr. Vikram Jeet Singh | Smiles & Braces" />
+  <meta property="og:description" content="Comfort-first orthodontics led by Dr. Vikram Jeet Singh, BDS, MDS." />
+  <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/about.html" />
+  <meta property="og:image" content="assets/images/og/clinic-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <meta name="theme-color" content="#a0e7ff" />
+
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/about.css" />
 </head>
 <body>
   <!-- Nav -->
@@ -14,7 +31,7 @@
       <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a class="active" href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -24,34 +41,50 @@
   </nav>
 
   <!-- Hero -->
-  <header class="page-header about-hero">
-    <h1>Meet Dr. Vikram Jeet Singh</h1>
-    <p>Orthodontist • BDS, MDS • Advanced Orthodontic Training • 15+ years of patient-first care</p>
+  <header class="about-hero">
+    <div class="hero-inner">
+      <h1>Meet Dr. Vikram Jeet Singh</h1>
+      <p>Orthodontist • BDS, MDS • Advanced Orthodontic Training • 15+ years of patient-first care</p>
+    </div>
   </header>
 
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">About</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
+
   <main class="about-page">
-    <!-- White transparent strip (glass card) -->
+    <!-- White transparent strip (glass) -->
     <section class="glass-card about-wrapper">
       <div class="about-col about-photo">
-        <img src="assets/images/dr-vikramjeet.jpg" alt="Dr. Vikram Jeet Singh" />
+        <img src="assets/images/dr-vikramjeet.jpg" alt="Dr. Vikram Jeet Singh" width="900" height="1200" loading="lazy" decoding="async" />
       </div>
 
       <div class="about-col about-content">
         <h2 class="about-title">Compassion, Precision & Modern Orthodontics</h2>
         <p>
-          Dr. Vikram Jeet Singh is a qualified orthodontist dedicated to
-          comprehensive, comfortable care. With a foundation in <strong>BDS</strong> and
-          <strong>MDS (Orthodontics)</strong>, complemented by advanced training in contemporary
-          techniques, he blends evidence-based protocols with a gentle, listener-first approach.
+          Dr. Vikram Jeet Singh is a qualified orthodontist dedicated to comprehensive,
+          comfortable care. With a foundation in <strong>BDS</strong> and <strong>MDS (Orthodontics)</strong>,
+          complemented by advanced training in contemporary techniques, he blends
+          evidence-based protocols with a gentle, listener-first approach.
         </p>
         <p>
           At <strong>Smiles & Braces Dental Clinic</strong> in Lucknow, Dr. Singh leads a team focused on
-          predictable outcomes—ranging from conventional braces to discreet aligner therapy—
-          guided by digital planning and meticulous follow-ups. International patients choose
-          Dr. Singh for clear communication, organized itineraries, and thoughtful after-care.
+          predictable outcomes—from conventional braces to discreet aligner therapy—guided by digital
+          planning and meticulous follow-ups. International patients choose Dr. Singh for clear
+          communication, organized itineraries, and thoughtful after-care.
         </p>
 
-        <ul class="badges">
+        <ul class="badges" aria-label="Qualifications">
           <li class="badge">BDS</li>
           <li class="badge">MDS (Orthodontics)</li>
           <li class="badge">Advanced Orthodontic Training</li>
@@ -79,105 +112,124 @@
           </div>
         </div>
 
+        <!-- Soft KPIs -->
+        <ul class="about-stats" aria-label="Experience highlights">
+          <li><span class="stat">15+ yrs</span> Orthodontic practice</li>
+          <li><span class="stat">1000+</span> Happy smiles guided</li>
+          <li><span class="stat">4.9★</span> Patient satisfaction</li>
+        </ul>
+
         <div class="about-cta">
           <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
-          <a href="tel:+919565321625" class="btn-call">Call +91 9565321625</a>
+          <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Dr. Singh -->
+    <!-- Why Choose (with JPG icons) -->
     <section class="glass-card why-us">
       <h2>Why Patients Choose Dr. Vikram Jeet Singh</h2>
       <ul class="why-grid">
-        <li><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
-        <li><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
-        <li><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
-        <li><strong>Continuity of care:</strong> Diligent reviews, retention, and long-term stability.</li>
-        <li><strong>International friendly:</strong> Responsive scheduling, documentation support, and remote follow-ups.</li>
-        <li><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/digital.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/comfort.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>International friendly:</strong> Responsive scheduling & remote follow-ups.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/shield.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Quality assurance:</strong> Transparent options and post-treatment support.</li>
       </ul>
     </section>
 
     <!-- FAQs -->
-<section class="glass-card faq-block">
-  <h2 class="section-title">Frequently Asked Questions</h2>
+    <section class="glass-card faq-block">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary><span>How do I book a consultation?</span></summary>
+          <div class="faq-body">
+            Use our <a href="contact.html">Contact</a> page or WhatsApp
+            <a href="https://wa.me/919565321625">+91 95653 21625</a>. We’ll share available slots and what to bring.
+          </div>
+        </details>
 
-  <div class="faq-list">
-    <details class="faq-item" open>
-      <summary>
-        <span>How do I book a consultation?</span>
-      </summary>
-      <div class="faq-body">
-        Use our <a href="contact.html">Contact</a> page or WhatsApp
-        <a href="https://wa.me/919565321625">+91 9565321625</a>. We’ll share available slots
-        and what to bring for your first visit.
+        <details class="faq-item">
+          <summary><span>Braces vs. clear aligners—what’s right for me?</span></summary>
+          <div class="faq-body">
+            Braces are fixed and versatile for all severities. Aligners are removable and discreet—great for mild–moderate cases. The best option is recommended after exam and bite analysis.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>How long does treatment take?</span></summary>
+          <div class="faq-body">
+            Most treatments take 6–24 months depending on complexity and compliance. You’ll receive a personalized timeline at consultation.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Is orthodontic treatment painful?</span></summary>
+          <div class="faq-body">
+            Mild soreness for 1–3 days after activations or new aligners is common and settles quickly. Our comfort protocol helps a lot.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Do you treat international patients?</span></summary>
+          <div class="faq-body">
+            Absolutely. We coordinate documentation, scheduling, and remote follow-ups. See <a href="international.html">International Patients</a> for the full journey.
+          </div>
+        </details>
       </div>
-    </details>
+    </section>
 
-    <details class="faq-item">
-      <summary>
-        <span>Braces vs. clear aligners—what’s right for me?</span>
-      </summary>
-      <div class="faq-body">
-        Braces are fixed and versatile for all severities. Aligners are removable and discreet,
-        great for mild–moderate cases. Dr. Singh recommends the best option after your exam and bite analysis.
+    <!-- Soft CTA -->
+    <section class="glass-cta about-final-cta">
+      <h2>Ready to plan your smile?</h2>
+      <p>Message us now and we’ll help you choose the right path—braces or aligners.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+        <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
       </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>How long does treatment take?</span>
-      </summary>
-      <div class="faq-body">
-        Most treatments take 6–24 months depending on complexity and compliance.
-        You’ll receive a personalized timeline at your consultation.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Is orthodontic treatment painful?</span>
-      </summary>
-      <div class="faq-body">
-        You may feel pressure/soreness for a few days after activations or new aligners.
-        It settles quickly—our comfort protocol and tips help a lot.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Do you treat international patients?</span>
-      </summary>
-      <div class="faq-body">
-        Absolutely. We coordinate documentation, scheduling, and remote follow-ups.
-        See the <a href="international.html">International Patients</a> page for the full journey.
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- Soft CTA -->
-<section class="glass-cta about-final-cta">
-  <h2>Ready to plan your smile?</h2>
-  <p>Message us now and we’ll help you choose the right path—braces or aligners.</p>
-  <div class="cta-buttons">
-    <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
-    <a href="tel:+919565321625" class="btn-call">Call +91 9565321625</a>
-  </div>
-</section>
+    </section>
   </main>
 
-  <footer>
-    © 2025 Smiles & Braces Dental Clinic. All rights reserved.
-  </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved.</footer>
 
   <script>
-    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    if (navToggle && navLinks) {
+      navToggle.setAttribute('aria-controls','site-menu');
+      navLinks.id = 'site-menu';
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Dr. Vikram Jeet Singh",
+    "jobTitle":"Orthodontist",
+    "alumniOf":"MDS (Orthodontics)",
+    "worksFor":{
+      "@type":"Dentist",
+      "name":"Smiles & Braces Dental Clinic",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+        "addressLocality":"Lucknow",
+        "addressRegion":"UP",
+        "postalCode":"226016",
+        "addressCountry":"IN"
+      },
+      "telephone":"+91-95653-21625"
+    },
+    "sameAs":["https://instagram.com/drvikramjeetdental"]
+  }
   </script>
 </body>
 </html>
-
