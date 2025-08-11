@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact & Appointments | Smiles & Braces</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact & Appointments | Smiles & Braces Dental Clinic</title>
+  <meta name="description" content="Book appointments, contact Smiles & Braces Dental Clinic in Lucknow, and find our location on the map. WhatsApp, phone, email, address and clinic timings." />
+  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/contact.html" />
+
+  <!-- Social -->
+  <meta property="og:title" content="Contact & Appointments | Smiles & Braces" />
+  <meta property="og:description" content="Book or message us. Find directions to Smiles & Braces Dental Clinic, Lucknow." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og/clinic-preview.jpg" />
+
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <meta name="theme-color" content="#a0e7ff" />
+
+  <!-- Site CSS + page CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
@@ -17,83 +31,144 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
         <li><a href="international.html">International Patients</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Heading -->
+  <!-- Hero -->
   <header class="contact-hero">
-    <h1>Get in Touch</h1>
-    <p>Book your appointment or find us on the map below.</p>
+    <div class="hero-inner">
+      <h1>Get in Touch</h1>
+      <p>Fast booking via WhatsApp or phone — or send us a note below.</p>
+      <div class="hero-buttons">
+        <a class="btn-whatsapp" href="https://wa.me/919565321625" rel="noopener">WhatsApp +91&nbsp;95653&nbsp;21625</a>
+        <a class="btn-call" href="tel:+919565321625">Call +91&nbsp;95653&nbsp;21625</a>
+      </div>
+    </div>
   </header>
-<main class="contact-section">
-  <!-- Appointment + Clinic Info -->
-  <section class="contact-main">
-    <div class="contact-card">
-      <!-- Appointment Form -->
-      <div class="card form-card">
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Contact</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
+
+  <main class="contact-page">
+    <!-- Glass strip with Form + Clinic Info -->
+    <section class="glass-card contact-grid">
+      <!-- Form -->
+      <div class="panel">
         <h2>Book Your Appointment</h2>
-        <form class="appointment-form">
-          <label><span>Full Name</span><input type="text" placeholder="John Doe" required></label>
-          <label><span>Email Address</span><input type="email" placeholder="you@example.com" required></label>
-          <label><span>Phone Number</span><input type="tel" placeholder="+91 9xxxxxxxxx" required></label>
-          <label><span>Preferred Date</span><input type="date"></label>
-          <label><span>Message / Concerns</span><textarea rows="4" placeholder="Your message…"></textarea></label>
-          <button type="submit" class="btn-primary">Submit</button>
+        <form class="ui-form" action="#" method="post" novalidate>
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" placeholder="John Doe" autocomplete="name" required />
+          </label>
+
+          <label>
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </label>
+
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" inputmode="tel" placeholder="+91 9xxxxxxxxx" autocomplete="tel" required />
+          </label>
+
+          <label class="two-col">
+            <span>Preferred Date</span>
+            <input type="date" name="date" />
+          </label>
+
+          <label>
+            <span>Message / Concerns</span>
+            <textarea name="message" rows="4" placeholder="Your message…"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Submit</button>
+            <a class="btn-outline" href="https://wa.me/919565321625" rel="noopener">Message on WhatsApp</a>
+          </div>
         </form>
       </div>
 
-      <!-- Clinic Info -->
-      <div class="card info-card">
+      <!-- Clinic info -->
+      <aside class="panel">
         <h2>Clinic Information</h2>
-        <p><strong>Address:</strong><br>
-           Shop No.6, Javed Market,<br>
-           near Aurobindo Park, Munshi Pulia,<br>
-           Sector 12, Indira Nagar,<br>
-           Lucknow, Uttar Pradesh 226016
-        </p>
-        <p><strong>Phone / WhatsApp:</strong><br>
-           <a href="tel:+917570000801">+91 7570000801</a><br>
-           <a href="tel:+919565321625">+91 9565321625</a>
-        </p>
-        <p><strong>Email:</strong><br>
-           <a href="mailto:smilesandbracesmunshipuliya@gmail.com">smilesandbracesmunshipuliya@gmail.com</a>
-        </p>
-        <p><strong>Instagram:</strong><br>
-           <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a>
-        </p>
+
+        <div class="info-row">
+          <img src="assets/illustrations/global.jpg" alt="" aria-hidden="true" class="icon">
+          <div>
+            <strong>Address</strong><br/>
+            Shop No.6, Javed Market,<br/>
+            near Aurobindo Park, Munshi Pulia,<br/>
+            Sector 12, Indira Nagar,<br/>
+            Lucknow, Uttar Pradesh 226016
+          </div>
+        </div>
+
+        <div class="info-row">
+          <img src="assets/illustrations/concierge.jpg" onerror="this.style.display='none'" alt="" aria-hidden="true" class="icon">
+          <div>
+            <strong>Phone / WhatsApp</strong><br/>
+            <a href="tel:+917570000801">+91 75700 00801</a><br/>
+            <a href="tel:+919565321625">+91 95653 21625</a>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <img src="assets/illustrations/email.jpg" alt="" aria-hidden="true" class="icon">
+          <div>
+            <strong>Email</strong><br/>
+            <a href="mailto:smilesandbracesmunshipuliya@gmail.com">smilesandbracesmunshipuliya@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <img src="assets/illustrations/global.jpg" alt="" aria-hidden="true" class="icon">
+          <div>
+            <strong>Instagram</strong><br/>
+            <a href="https://instagram.com/drvikramjeetdental" target="_blank" rel="noopener">@drvikramjeetdental</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Map (separate glass strip, full width on mobile) -->
+    <section class="glass-card map-card">
+      <h2 class="map-heading">Find Us Here</h2>
+      <div class="map-wrap">
+        <iframe
+          title="Map to Smiles & Braces Dental Clinic"
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4363712.201622807!2d78.8705363729231!3d26.80032662276933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754588487160!5m2!1sen!2sin"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+        </iframe>
       </div>
-    </div>
-  </section>
+      <p class="map-note">If you see multiple pins, choose <strong>Dr. Vikram Jeet Singh (Smiles &amp; Braces Dental Clinic)</strong>.</p>
+    </section>
+  </main>
 
-      <!-- Map Section -->
-  <section class="map-section">
-    <h2 class="map-heading">Find Us Here</h2>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4363712.201622807!2d78.8705363729231!3d26.80032662276933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdr%20vikramjeet!5e1!3m2!1sen!2sin!4v1754588487160!5m2!1sen!2sin"
-        frameborder="0"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-
-</main>
   <footer>
-    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
+    <p>© 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
   </footer>
 
   <script>
-    // Mobile menu toggle script
+    // Mobile nav
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-open');
-    });
+    if (navToggle && navLinks){
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    }
   </script>
 </body>
 </html>
