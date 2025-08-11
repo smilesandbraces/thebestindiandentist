@@ -27,6 +27,35 @@
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/home.css" />
+
+<!-- FORCE brand font & color for the clinic line -->
+<style>
+  /* Clinic name in Qwitcher Grypen, black */
+  .navbar .brand-line.clinic{
+    font-family: 'Qwitcher Grypen', cursive !important;
+    font-weight: 700 !important;
+    color: #000 !important;              /* black */
+    letter-spacing: .02em;
+    text-transform: none;
+    font-size: clamp(1.9rem, 2.2rem + 1.4vw, 3rem);
+    line-height: 1.05;
+  }
+  .navbar .brand-line.clinic .amp{ color:#000 !important; }
+  /* remove old gradient underline */
+  .navbar .brand::after{ display: none !important; }
+
+  /* Keep doctor line modern/sans */
+  .navbar .brand-line.doctor{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: 800;
+    color: #0ea5e9;
+    font-size: clamp(.9rem, .8rem + .35vw, 1.05rem);
+    letter-spacing: .2px;
+  }
+</style>
+
 </head>
 <body>
   <!-- Nav -->
