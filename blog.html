@@ -6,11 +6,11 @@
   <title>Dental Blog • Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Dental tips, orthodontic insights, clinic updates and smile-care guides from Smiles & Braces Dental Clinic, Lucknow."/>
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/blog.html"/>
-  <!-- Brand font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
@@ -23,12 +23,57 @@
 
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/blog.css"/>
+
+  <!-- Brand header overrides (same as index/about) -->
+  <style>
+    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
+    .brand-line{display:block}
+
+    /* Clinic name — Carattere, black */
+    .navbar .brand-line.clinic{
+      font-family:'Carattere', cursive !important;
+      font-weight:400 !important;
+      color:#000 !important;
+      letter-spacing:.01em;
+      text-transform:none;
+      font-size:clamp(2.1rem, 1.2rem + 3vw, 3.4rem);
+      line-height:1.05;
+    }
+    .navbar .brand::after{display:none !important;} /* disable any old underline */
+
+    /* Doctor line — Fanwood Text */
+    .navbar .brand-line.doctor{
+      font-family:'Fanwood Text', serif !important;
+      font-weight:400 !important;
+      color:#000 !important;
+      font-size:clamp(1.05rem, .9rem + .9vw, 1.6rem);
+      letter-spacing:.005em;
+      line-height:1.05;
+      margin-top:-.1rem;
+    }
+    .navbar .brand-line.doctor .cred{
+      color:#000 !important;
+      margin-left:.35rem;
+      font-weight:400;
+    }
+
+    .navbar .nav-container{gap:1rem;align-items:center}
+    @media (max-width:560px){
+      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
+      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    }
+  </style>
 </head>
 <body itemscope itemtype="https://schema.org/Blog">
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      <a href="index.html" class="logo">Smiles & Braces</a>
+      <!-- Two-line brand lockup -->
+      <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
+        <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
+        <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
+      </a>
+
       <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -137,10 +182,10 @@
           <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/choosing-the-right-toothbrush.html"/>
         </article>
 
-        <!-- Add more <article class="blog-card"> … </article> as you publish -->
+        <!-- Add more posts as needed -->
       </div>
 
-      <!-- Pagination (static placeholders; wire to real pages later) -->
+      <!-- Pagination -->
       <nav class="pagination" aria-label="Pagination">
         <a class="prev" href="#" aria-disabled="true">← Newer Posts</a>
         <a class="next" href="#">Older Posts →</a>
