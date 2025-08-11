@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Smiles & Braces Dental Clinic – Dr. Vikram Jeet Singh (BDS, MDS)</title>
   <meta name="description" content="Orthodontics that puts you first. Led by Dr. Vikram Jeet Singh (BDS, MDS) — precision, comfort and beautiful smiles with braces, clear aligners, and digital planning. Global care from Lucknow, India." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/" />
-  <!-- Brand font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Brand font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
@@ -21,46 +22,69 @@
   <link rel="icon" href="assets/icons/favicon.ico" />
   <meta name="theme-color" content="#a0e7ff"/>
 
+  <!-- Site CSS -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/home.css" />
 
-<!-- FORCE brand font & color for the clinic line -->
-<style>
-  /* Clinic name in Qwitcher Grypen, black */
-  .navbar .brand-line.clinic{
-    font-family: 'Qwitcher Grypen', cursive !important;
-    font-weight: 700 !important;
-    color: #000 !important;              /* black */
-    letter-spacing: .02em;
-    text-transform: none;
-    font-size: clamp(1.9rem, 2.2rem + 1.4vw, 3rem);
-    line-height: 1.05;
-  }
-  .navbar .brand-line.clinic .amp{ color:#000 !important; }
-  /* remove old gradient underline */
-  .navbar .brand::after{ display: none !important; }
+  <!-- Brand overrides (inline so they always win) -->
+  <style>
+    .brand{display:flex;flex-direction:column;gap:.15rem;text-decoration:none}
+    .brand-line{display:block}
 
-  /* Keep doctor line modern/sans */
-  .navbar .brand-line.doctor{
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    font-weight: 800;
-    color: #0ea5e9;
-    font-size: clamp(.9rem, .8rem + .35vw, 1.05rem);
-    letter-spacing: .2px;
-  }
-</style>
+    /* Clinic name — Qwitcher Grypen, black */
+    .navbar .brand-line.clinic{
+      font-family:'Qwitcher Grypen',cursive !important;
+      font-weight:700 !important;
+      color:#000 !important;
+      letter-spacing:.02em;
+      text-transform:none;
+      font-size:clamp(1.9rem,2.2rem + 1.4vw,3rem);
+      line-height:1.05;
+    }
+    .navbar .brand-line.clinic .amp{color:#000 !important;}
+    .navbar .brand::after{display:none !important;} /* disable any old underline */
 
+    /* Doctor line — same script, a bit smaller, black */
+    .navbar .brand-line.doctor{
+      font-family:'Qwitcher Grypen',cursive !important;
+      font-weight:700 !important;
+      color:#000 !important;
+      font-size:clamp(1.2rem,1rem + .9vw,1.8rem);
+      letter-spacing:.01em;
+      line-height:1;
+      margin-top:-.1rem;
+    }
+    .navbar .brand-line.doctor .cred{
+      color:#000 !important;
+      margin-left:.35rem;
+      font-weight:700;
+    }
+
+    /* Layout niceties */
+    .navbar .nav-container{gap:1rem;align-items:center}
+    @media (max-width:560px){
+      .navbar .brand-line.clinic{font-size:clamp(1.6rem,6.2vw,2.1rem)}
+      .navbar .brand-line.doctor{font-size:clamp(1.05rem,4.4vw,1.35rem)}
+    }
+  </style>
 </head>
 <body>
   <!-- Accessibility: skip to content -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      
+      <!-- Brand lockup -->
+      <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
+        <span class="brand-line clinic">
+          Smiles <span class="amp">&amp;</span> Braces <span class="light">Dental Clinic</span>
+        </span>
+        <span class="brand-line doctor">
+          Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span>
+        </span>
+      </a>
+
       <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a class="active" href="index.html">Home</a></li>
@@ -73,7 +97,7 @@
     </div>
   </nav>
 
- <!-- HERO -->
+  <!-- HERO -->
   <header class="home-hero">
     <div class="hero-bg-bubbles" aria-hidden="true"></div>
     <div class="home-hero__inner measure">
@@ -102,9 +126,7 @@
     </div>
   </header>
 
-
-
-  <!-- Mention the India practice domain -->
+  <!-- India practice mention -->
   <aside class="brand-note">
     For domestic appointments within India, you can also visit our India practice site:
     <a href="https://www.drvikramjeet.com" target="_blank" rel="noopener">www.drvikramjeet.com</a>
@@ -287,9 +309,7 @@
     },
     "telephone":"+91-9565321625",
     "url":"https://smilesandbraces.github.io/thebestindiandentist/",
-    "sameAs":[
-      "https://www.drvikramjeet.com"
-    ]
+    "sameAs":[ "https://www.drvikramjeet.com" ]
   }
   </script>
 </body>
