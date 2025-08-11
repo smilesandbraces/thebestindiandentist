@@ -8,10 +8,10 @@
   <meta name="description" content="Orthodontics that puts you first. Led by Dr. Vikram Jeet Singh (BDS, MDS) — precision, comfort and beautiful smiles with braces, clear aligners, and digital planning. Global care from Lucknow, India." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/" />
 
-  <!-- Brand font -->
+  <!-- Brand font: Fanwood Text -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
@@ -28,43 +28,42 @@
 
   <!-- Brand overrides (inline so they always win) -->
   <style>
-    .brand{display:flex;flex-direction:column;gap:.15rem;text-decoration:none}
+    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
     .brand-line{display:block}
 
-    /* Clinic name — Qwitcher Grypen, black */
+    /* Clinic name — Fanwood Text, black */
     .navbar .brand-line.clinic{
-      font-family:'Qwitcher Grypen',cursive !important;
-      font-weight:700 !important;
+      font-family:'Fanwood Text', serif !important;
+      font-weight:400 !important;
       color:#000 !important;
-      letter-spacing:.02em;
+      letter-spacing:.01em;
       text-transform:none;
-      font-size:clamp(1.9rem,2.2rem + 1.4vw,3rem);
-      line-height:1.05;
+      font-size:clamp(2rem, 1.6rem + 2.2vw, 3.2rem);
+      line-height:1.1;
     }
     .navbar .brand-line.clinic .amp{color:#000 !important;}
     .navbar .brand::after{display:none !important;} /* disable any old underline */
 
-    /* Doctor line — same script, a bit smaller, black */
+    /* Doctor line — Fanwood Text, slightly smaller */
     .navbar .brand-line.doctor{
-      font-family:'Qwitcher Grypen',cursive !important;
-      font-weight:700 !important;
+      font-family:'Fanwood Text', serif !important;
+      font-weight:400 !important;
       color:#000 !important;
-      font-size:clamp(1.2rem,1rem + .9vw,1.8rem);
-      letter-spacing:.01em;
-      line-height:1;
+      font-size:clamp(1.05rem, .9rem + .9vw, 1.6rem);
+      letter-spacing:.005em;
+      line-height:1.05;
       margin-top:-.1rem;
     }
     .navbar .brand-line.doctor .cred{
       color:#000 !important;
       margin-left:.35rem;
-      font-weight:700;
+      font-weight:400;
     }
 
-    /* Layout niceties */
     .navbar .nav-container{gap:1rem;align-items:center}
     @media (max-width:560px){
-      .navbar .brand-line.clinic{font-size:clamp(1.6rem,6.2vw,2.1rem)}
-      .navbar .brand-line.doctor{font-size:clamp(1.05rem,4.4vw,1.35rem)}
+      .navbar .brand-line.clinic{font-size:clamp(1.7rem,6vw,2.2rem)}
+      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
     }
   </style>
 </head>
