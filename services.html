@@ -20,23 +20,66 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
   <meta name="theme-color" content="#a0e7ff" />
 
+  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+
   <!-- Global styles + page-specific styles -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/services.css" />
 
+  <!-- Brand header overrides (match index/about/blog) -->
+  <style>
+    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
+    .brand-line{display:block}
+
+    /* Clinic name — Carattere, black */
+    .navbar .brand-line.clinic{
+      font-family:'Carattere',cursive!important;
+      font-weight:400!important;
+      color:#000!important;
+      letter-spacing:.01em;
+      text-transform:none;
+      font-size:clamp(2.1rem,1.2rem + 3vw,3.4rem);
+      line-height:1.05;
+    }
+    .navbar .brand::after{display:none!important;} /* disable any old underline */
+
+    /* Doctor line — Fanwood Text */
+    .navbar .brand-line.doctor{
+      font-family:'Fanwood Text',serif!important;
+      font-weight:400!important;
+      color:#000!important;
+      font-size:clamp(1.05rem,.9rem + .9vw,1.6rem);
+      letter-spacing:.005em;
+      line-height:1.05;
+      margin-top:-.1rem;
+    }
+    .navbar .brand-line.doctor .cred{color:#000!important;margin-left:.35rem;font-weight:400}
+
+    .navbar .nav-container{gap:1rem;align-items:center}
+    @media (max-width:560px){
+      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
+      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="hamburger"></span>
-      </button>
+      <!-- Two-line brand lockup -->
+      <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
+        <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
+        <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
+        <li><a class="active" href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="international.html">International Patients</a></li>
@@ -86,12 +129,7 @@
         <!-- Traditional Braces -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/traditionalbraces.jpg"
-              alt="Traditional Braces"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/traditionalbraces.jpg" alt="Traditional Braces" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Traditional Braces</h3>
@@ -107,12 +145,7 @@
         <!-- Clear Aligners -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/clearaligners.jpg"
-              alt="Clear Aligners"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/clearaligners.jpg" alt="Clear Aligners" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Clear Aligners</h3>
@@ -128,12 +161,7 @@
         <!-- Self-ligating -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/selfligatingbraces.jpg"
-              alt="Self-Ligating Braces"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/selfligatingbraces.jpg" alt="Self-Ligating Braces" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Self-Ligating Braces</h3>
@@ -149,12 +177,7 @@
         <!-- Lingual -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/lingualbraces.jpg"
-              alt="Lingual Braces"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/lingualbraces.jpg" alt="Lingual Braces" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Lingual Braces</h3>
@@ -170,12 +193,7 @@
         <!-- Retainers -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/retainers.jpg"
-              alt="Retainers & Maintenance"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/retainers.jpg" alt="Retainers & Maintenance" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Retainers & Maintenance</h3>
@@ -191,12 +209,7 @@
         <!-- Consultation -->
         <article class="service-card">
           <div class="service-media">
-            <img
-              src="assets/images/services/consultation.jpg"
-              alt="Orthodontic Consultation"
-              loading="lazy" decoding="async"
-              width="1200" height="800"
-            />
+            <img src="assets/images/services/consultation.jpg" alt="Orthodontic Consultation" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Orthodontic Consultation</h3>
