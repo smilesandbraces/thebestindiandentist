@@ -2,16 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Our Orthodontic Services | Smiles & Braces Dental Clinic</title>
+  <meta name="description" content="Orthodontic specialists in Lucknow offering braces, clear aligners, lingual braces, pediatric orthodontics, implants, and emergency care. Book with Dr. Vikram Jeet Singh (BDS, MDS)." />
+  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Our Orthodontic Services | Smiles & Braces" />
+  <meta property="og:description" content="Comfort-first orthodontics: braces, aligners, lingual braces, retainers & more." />
+  <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
+  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <meta name="theme-color" content="#a0e7ff" />
+
+  <!-- Global styles + page-specific styles -->
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/services.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -28,8 +48,8 @@
     <h1>Our Orthodontic Services</h1>
     <p>Under the leadership of Dr. Vikram Jeet Singh, we deliver world-class, comfort-first orthodontic care.</p>
 
-    <!-- Quick Section Nav -->
-    <nav class="services-subnav">
+    <!-- Quick anchor pills -->
+    <nav class="services-subnav" aria-label="Service sections">
       <a href="#orthodontics">Orthodontics</a>
       <a href="#cosmetic">Cosmetic</a>
       <a href="#preventive">Preventive</a>
@@ -39,8 +59,21 @@
     </nav>
   </header>
 
-  <main class="services-page">
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Services</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
 
+  <main class="services-page">
     <!-- ORTHODONTICS -->
     <section id="orthodontics" class="glass-section">
       <div class="section-head">
@@ -49,24 +82,36 @@
       </div>
 
       <div class="service-grid">
+        <!-- Traditional Braces -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/traditionalbraces.jpg" alt="Traditional Braces">
+            <img
+              src="assets/images/services/traditionalbraces.jpg"
+              alt="Traditional Braces"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Traditional Braces</h3>
             <p>Metal or ceramic brackets with precision archwires for reliable tooth movement.</p>
             <ul class="points">
-              <li>Highly versatile for complex cases</li>
-              <li>Ceramic option for low-visibility</li>
+              <li>Works for simple to complex cases</li>
+              <li>Ceramic option for low visibility</li>
               <li>12–24 months typical</li>
             </ul>
           </div>
         </article>
 
+        <!-- Clear Aligners -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/clearaligners.jpg" alt="Clear Aligners">
+            <img
+              src="assets/images/services/clearaligners.jpg"
+              alt="Clear Aligners"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Clear Aligners</h3>
@@ -79,9 +124,15 @@
           </div>
         </article>
 
+        <!-- Self-ligating -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/selfligatingbraces.jpg" alt="Self-Ligating Braces">
+            <img
+              src="assets/images/services/selfligatingbraces.jpg"
+              alt="Self-Ligating Braces"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Self-Ligating Braces</h3>
@@ -94,9 +145,15 @@
           </div>
         </article>
 
+        <!-- Lingual -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/lingualbraces.jpg" alt="Lingual Braces">
+            <img
+              src="assets/images/services/lingualbraces.jpg"
+              alt="Lingual Braces"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Lingual Braces</h3>
@@ -109,9 +166,15 @@
           </div>
         </article>
 
+        <!-- Retainers -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/retainers.jpg" alt="Retainers & Maintenance">
+            <img
+              src="assets/images/services/retainers.jpg"
+              alt="Retainers & Maintenance"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Retainers & Maintenance</h3>
@@ -124,9 +187,15 @@
           </div>
         </article>
 
+        <!-- Consultation -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/consultation.jpg" alt="Orthodontic Consultation">
+            <img
+              src="assets/images/services/consultation.jpg"
+              alt="Orthodontic Consultation"
+              loading="lazy" decoding="async"
+              width="1200" height="800"
+            />
           </div>
           <div class="service-body">
             <h3>Orthodontic Consultation</h3>
@@ -151,7 +220,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/teeth-whitening.jpg" alt="Teeth Whitening">
+            <img src="assets/images/services/teeth-whitening.jpg" alt="Teeth Whitening" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Teeth Whitening</h3>
@@ -161,7 +230,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/veneers.jpg" alt="Veneers">
+            <img src="assets/images/services/veneers.jpg" alt="Porcelain Veneers" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Porcelain Veneers</h3>
@@ -171,7 +240,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/bonding.jpg" alt="Cosmetic Bonding">
+            <img src="assets/images/services/bonding.jpg" alt="Cosmetic Bonding" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Cosmetic Bonding</h3>
@@ -191,7 +260,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/cleaning.jpg" alt="Cleaning & Polishing">
+            <img src="assets/images/services/cleaning.jpg" alt="Cleaning & Polishing" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Cleaning & Polishing</h3>
@@ -201,7 +270,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/sealants.jpg" alt="Fluoride & Sealants">
+            <img src="assets/images/services/sealants.jpg" alt="Fluoride & Sealants" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Fluoride & Sealants</h3>
@@ -211,7 +280,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/night-guard.jpg" alt="Night Guards">
+            <img src="assets/images/services/night-guard.jpg" alt="Night Guards" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Night Guards</h3>
@@ -231,7 +300,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/dental-implants.jpg" alt="Dental Implants">
+            <img src="assets/images/services/dental-implants.jpg" alt="Dental Implants" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Dental Implants</h3>
@@ -241,7 +310,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/crowns-bridges.jpg" alt="Crowns & Bridges">
+            <img src="assets/images/services/crowns-bridges.jpg" alt="Crowns & Bridges" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Crowns & Bridges</h3>
@@ -251,7 +320,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/dentures.jpg" alt="Dentures">
+            <img src="assets/images/services/dentures.jpg" alt="Dentures" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Dentures</h3>
@@ -271,7 +340,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/kids-braces.jpg" alt="Early Braces">
+            <img src="assets/images/services/kids-braces.jpg" alt="Early Braces" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Early Braces</h3>
@@ -281,7 +350,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/space-maintainers.jpg" alt="Space Maintainers">
+            <img src="assets/images/services/space-maintainers.jpg" alt="Space Maintainers" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Space Maintainers</h3>
@@ -291,7 +360,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/habit-appliance.jpg" alt="Habit Appliances">
+            <img src="assets/images/services/habit-appliance.jpg" alt="Habit Appliances" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Habit Appliances</h3>
@@ -311,7 +380,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/root-canal.jpg" alt="Root Canal">
+            <img src="assets/images/services/root-canal.jpg" alt="Root Canal" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Root Canal Therapy</h3>
@@ -321,7 +390,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/wisdom-tooth.jpg" alt="Wisdom Tooth Removal">
+            <img src="assets/images/services/wisdom-tooth.jpg" alt="Wisdom Tooth Removal" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Wisdom Tooth Removal</h3>
@@ -331,7 +400,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/emergency-care.jpg" alt="Emergency Dental Care">
+            <img src="assets/images/services/emergency-care.jpg" alt="Emergency Dental Care" loading="lazy" decoding="async" width="1200" height="800" />
           </div>
           <div class="service-body">
             <h3>Emergency Dental Care</h3>
@@ -341,7 +410,7 @@
       </div>
     </section>
 
-    <!-- WHY US STRIP -->
+    <!-- WHY US -->
     <section class="glass-section why-strip">
       <h2>Why choose Smiles & Braces?</h2>
       <ul class="why-icons">
@@ -367,10 +436,38 @@
 
   <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved.</footer>
 
+  <!-- Accessible mobile nav -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    if (navToggle && navLinks) {
+      navToggle.setAttribute('aria-controls', 'site-menu');
+      navLinks.id = 'site-menu';
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+
+  <!-- LocalBusiness schema (optional here, good on home/contact) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Smiles & Braces Dental Clinic",
+    "url":"https://smilesandbraces.github.io/thebestindiandentist/",
+    "telephone":"+91-95653-21625",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+      "addressLocality":"Lucknow",
+      "addressRegion":"UP",
+      "postalCode":"226016",
+      "addressCountry":"IN"
+    },
+    "sameAs":["https://instagram.com/drvikramjeetdental"]
+  }
   </script>
 </body>
 </html>
