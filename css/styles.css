@@ -2212,3 +2212,39 @@ html { scroll-behavior: smooth; }
   .brand-line.clinic{ font-size:1.1rem; }
   .brand-line.doctor{ font-size:.9rem; }
 }
+/* ==== Brand: script clinic name in black (Qwitcher Grypen) ==== */
+.brand-line.clinic{
+  font-family: 'Qwitcher Grypen', cursive !important;
+  font-weight: 700;                 /* bold style of the script */
+  color: #000 !important;           /* black, as requested */
+  letter-spacing: .01em;
+  line-height: 1.05;
+  font-size: clamp(1.8rem, 2.2rem + 1.6vw, 3rem); /* larger, elegant */
+}
+
+/* keep the ampersand neutral inside the script */
+.brand-line.clinic .amp{ color: #000 !important; }
+
+/* optional: make “Dental Clinic” slightly lighter but still black */
+.brand-line.clinic .light{
+  font-weight: 700;
+  opacity: .98;
+  color: #000 !important;
+}
+
+/* Doctor line stays clean, modern (sans-serif) */
+.brand-line.doctor{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  color: #0ea5e9;                   /* you can change this if needed */
+}
+
+/* remove the previous gradient underline so the script stands alone */
+.brand::after{ display: none !important; }
+
+/* spacing tweaks so the two lines feel tight and premium */
+.brand{ gap: .15rem; }
+@media (max-width: 520px){
+  .brand-line.clinic{ font-size: clamp(1.6rem, 6.2vw, 2.1rem); }
+  .brand-line.doctor{ font-size: clamp(.9rem, 3.7vw, 1rem); }
+}
