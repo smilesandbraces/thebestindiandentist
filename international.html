@@ -2,136 +2,297 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>International Patients | Smiles & Braces Dental Clinic</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <meta name="description" content="Travel to Lucknow for world-class orthodontics. Clear aligners, braces, and luxury care for international patients—visa support, airport pickup, hotel tie-ups, and virtual follow-ups." />
+  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/international.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="International Patients | Smiles & Braces" />
+  <meta property="og:description" content="Seamless dental tourism: expert orthodontics, travel support, and virtual follow-ups." />
+  <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/international.html" />
+  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <meta name="theme-color" content="#a0e7ff" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/international.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Smiles & Braces</a>
-      <button class="nav-toggle" aria-label="toggle menu">
-        <span class="hamburger"></span>
-      </button>
+      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="international.html" class="active">International Patients</a></li>
+        <li><a class="active" href="international.html">International Patients</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="page-header international-hero">
-    <h1>International Dental Tourism</h1>
-    <p>Your seamless journey to a perfect smile in Lucknow, India</p>
+  <header class="international-hero">
+    <div class="hero-inner">
+      <h1>International Dental Tourism</h1>
+      <p>Your seamless journey to a perfect smile in Lucknow, India.</p>
+      <div class="intl-subnav" aria-label="Section shortcuts">
+        <a href="#how">How it works</a>
+        <a href="#plans">Plans</a>
+        <a href="#why">Why us</a>
+        <a href="#travel">Travel support</a>
+        <a href="#documents">Documents</a>
+        <a href="#faq">FAQs</a>
+        <a href="#book">Book</a>
+      </div>
+    </div>
   </header>
 
-  <main class="international-section">
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">International Patients</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
 
+  <main class="international-page">
     <!-- How It Works -->
-    <section class="glass-card steps">
-      <h2>How It Works</h2>
-      <div class="steps-container">
-        <div class="step">
-          <div class="step-icon">📧</div>
+    <section id="how" class="glass-section">
+      <div class="section-head">
+        <h2>How It Works</h2>
+        <span class="section-tag">Step-by-step</span>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="icon">
+            <img class="icon-img" src="assets/illustrations/email.jpg" alt="Online inquiry icon" width="96" height="96" loading="lazy" decoding="async">
+          </div>
           <h3>Online Inquiry</h3>
-          <p>Send your dental history via our <a href="contact.html">contact form</a> or WhatsApp.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">🎥</div>
+          <p>Share history, photos, or X-rays via <a href="contact.html">form</a> or WhatsApp.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="icon">
+            <img class="icon-img" src="assets/illustrations/video-call.jpg" alt="Virtual consultation icon" width="96" height="96" loading="lazy" decoding="async">
+          </div>
           <h3>Virtual Consultation</h3>
-          <p>Live video call with Dr. Singh to tailor your plan.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">🗓️</div>
-          <h3>Schedule & Travel</h3>
-          <p>We handle flights, visa letters, and accommodation.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">🦷</div>
-          <h3>Treatment & Care</h3>
-          <p>World-class orthodontics in a state-of-the-art clinic.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">✈️</div>
-          <h3>Follow-Up</h3>
-          <p>Telehealth check-ins and custom retainers sent home.</p>
-        </div>
+          <p>Meet Dr. Singh, review options, timeline, and budget transparently.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="icon">
+            <img class="icon-img" src="assets/illustrations/calendar.jpg" alt="Schedule & travel icon" width="96" height="96" loading="lazy" decoding="async">
+          </div>
+          <h3>Plan & Travel</h3>
+          <p>We assist with visa letters, dates, and hotel recommendations.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="icon">
+            <img class="icon-img" src="assets/illustrations/treatment.jpg" alt="Treatment icon" width="96" height="96" loading="lazy" decoding="async">
+          </div>
+          <h3>Treatment</h3>
+          <p>Comfort-first orthodontics with digital planning and gentle protocols.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="icon">
+            <img class="icon-img" src="assets/illustrations/follow-up.jpg" alt="Follow-up icon" width="96" height="96" loading="lazy" decoding="async">
+          </div>
+          <h3>Follow-up</h3>
+          <p>Telehealth reviews and retainers shipped if required.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Treatment Plans -->
-    <section class="glass-card plans">
-      <h2>Treatment Plans</h2>
-      <div class="plans-container">
-        <div class="plan-card plan-basic">
-          <h3>Basic</h3>
-          <p>Ideal for minor alignments</p>
-          <ul>
-            <li>Exam & X-ray</li>
+    <!-- Plans -->
+    <section id="plans" class="glass-section">
+      <div class="section-head">
+        <h2>Treatment Plans</h2>
+        <span class="section-tag">Tailored care</span>
+      </div>
+
+      <div class="plans-wrap">
+        <article class="plan-card plan-basic">
+          <div class="plan-top">
+            <h3>Basic</h3><span class="chip">Starter</span>
+          </div>
+          <p>Ideal for minor alignments.</p>
+          <ul class="plan-points">
+            <li>Exam & digital X-ray</li>
             <li>Basic braces or aligners</li>
             <li>2 follow-ups</li>
           </ul>
-          <p class="price">₹30,000 +</p>
-        </div>
-        <div class="plan-card plan-standard">
-          <h3>Standard</h3>
-          <p>Complete smile makeover</p>
-          <ul>
+          <div class="price">₹30,000+</div>
+        </article>
+
+        <article class="plan-card plan-standard">
+          <div class="plan-top">
+            <h3>Standard</h3><span class="chip chip-primary">Most Popular</span>
+          </div>
+          <p>Comprehensive smile makeover.</p>
+          <ul class="plan-points">
             <li>Full orthodontic treatment</li>
             <li>Digital smile preview</li>
             <li>5 follow-ups</li>
           </ul>
-          <p class="price">₹80,000 +</p>
-        </div>
-        <div class="plan-card plan-premium">
-          <h3>Premium</h3>
-          <p>Luxury all-inclusive</p>
-          <ul>
+          <div class="price">₹80,000+</div>
+        </article>
+
+        <article class="plan-card plan-premium">
+          <div class="plan-top">
+            <h3>Premium</h3><span class="chip">VIP</span>
+          </div>
+          <p>All-inclusive luxury care.</p>
+          <ul class="plan-points">
             <li>VIP transfers & stay</li>
             <li>Premium braces & retainers</li>
             <li>Unlimited follow-ups</li>
             <li>City tour extras</li>
           </ul>
-          <p class="price">₹150,000 +</p>
-        </div>
+          <div class="price">₹150,000+</div>
+        </article>
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="glass-card why-us">
-      <h2>Why Choose Us?</h2>
-      <ul class="why-list">
-        <li><strong>15+ years</strong> of orthodontic excellence</li>
-        <li><strong>60% cost savings</strong> vs. Western clinics</li>
-        <li><strong>End-to-end support</strong> — flights, visa, stay</li>
-        <li><strong>Cutting-edge</strong> digital scanners & 3D planning</li>
-        <li><strong>Internationally accredited</strong> clinic</li>
+    <!-- Why Us (JPG icons) -->
+    <section id="why" class="glass-section">
+      <div class="section-head">
+        <h2>Why Choose Us?</h2>
+        <span class="section-tag">Confidence</span>
+      </div>
+      <ul class="why-grid">
+        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>15+ years</strong> of orthodontic excellence</li>
+        <li><img class="bullet-icon" src="assets/illustrations/savings.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>60% savings</strong> vs. Western clinics</li>
+        <li><img class="bullet-icon" src="assets/illustrations/concierge.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>End-to-end support</strong>—flights, visa, hotel</li>
+        <li><img class="bullet-icon" src="assets/illustrations/scanner.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>Digital planning</strong> with scanners & 3D</li>
+        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>International-friendly</strong> scheduling & follow-up</li>
+        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true" width="24" height="24"> <strong>Sterilization & safety</strong> first protocols</li>
       </ul>
     </section>
 
-    <!-- Book Now -->
-    <section class="glass-card appointment-callout glass-center">
-      <p>Ready to transform your smile?</p>
-      <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
-      <a href="tel:+919565321625" class="btn-call">Call +91 9565321625</a>
+    <!-- Travel Support -->
+    <section id="travel" class="glass-section">
+      <div class="section-head">
+        <h2>Travel & Care Support</h2>
+        <span class="section-tag">We’ve got you</span>
+      </div>
+
+      <div class="assist-grid">
+        <article class="assist-card"><h3>Visa Letter</h3><p>Formal invitation for medical travel on request.</p></article>
+        <article class="assist-card"><h3>Airport Pickup</h3><p>Coordinated arrival & clinic transfer (premium plans).</p></article>
+        <article class="assist-card"><h3>Hotel Tie-ups</h3><p>Budget to boutique stays near the clinic.</p></article>
+        <article class="assist-card"><h3>Language Support</h3><p>Clear English communication; translation help on request.</p></article>
+        <article class="assist-card"><h3>Payment Options</h3><p>UPI / cards / bank transfer; itemized invoices.</p></article>
+      </div>
     </section>
 
+    <!-- Documents -->
+    <section id="documents" class="glass-section">
+      <div class="section-head">
+        <h2>What to Prepare</h2>
+        <span class="section-tag">Checklist</span>
+      </div>
+      <ul class="checklist">
+        <li>Passport & visa (if applicable)</li>
+        <li>Recent dental records / X-rays (JPEG/PDF)</li>
+        <li>Medical conditions & allergy list</li>
+        <li>Medications you’re taking</li>
+        <li>Travel insurance (recommended)</li>
+        <li>Local contact number / hotel details</li>
+      </ul>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq" class="glass-section">
+      <div class="section-head">
+        <h2>FAQs</h2>
+        <span class="section-tag">Good to know</span>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary><span>How long do I need to stay in Lucknow?</span></summary>
+          <div class="faq-body">Most orthodontic starts need 3–5 days initially (records, fitting). Follow-ups can be planned in 4–8 week blocks, with video check-ins in between.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Can I start treatment and continue abroad?</span></summary>
+          <div class="faq-body">Yes. We coordinate schedules, provide clear instructions, ship retainers if needed, and arrange teleconsults for ongoing guidance.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>What about pain and downtime?</span></summary>
+          <div class="faq-body">Expect mild soreness for 1–3 days after braces activation or new aligners. You can resume sightseeing/work the next day.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span>Do you help with visas and hotels?</span></summary>
+          <div class="faq-body">We issue a formal appointment letter for visa and share hotel options in nearby areas.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Book Now -->
+    <section id="book" class="glass-section intl-cta">
+      <h2>Ready to transform your smile?</h2>
+      <p>Quick responses • Clear timelines • Concierge support</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+        <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
+        <a href="contact.html" class="btn-ghost">Book Appointment</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    &copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.
-  </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved.</footer>
 
   <script>
-    const navToggle = document.querySelector('.nav-toggle'),
-          navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.setAttribute('aria-controls','site-menu');
+      navLinks.id = 'site-menu';
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Smiles & Braces Dental Clinic",
+    "url":"https://smilesandbraces.github.io/thebestindiandentist/",
+    "telephone":"+91-95653-21625",
+    "areaServed":{"@type":"AdministrativeArea","name":"International Patients"},
+    "medicalSpecialty":"Orthodontics",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+      "addressLocality":"Lucknow",
+      "addressRegion":"UP",
+      "postalCode":"226016",
+      "addressCountry":"IN"
+    },
+    "sameAs":["https://instagram.com/drvikramjeetdental"]
+  }
   </script>
 </body>
 </html>
