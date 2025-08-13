@@ -123,13 +123,27 @@
     .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
     .btn-whatsapp:hover,.btn-call:hover{transform:translateY(-2px)}
 
-    /* Why us */
+    /* ===== Why us (NEW polished cards) ===== */
     .why-us{margin-top:clamp(18px,2.2vw,28px)}
-    .why-us h2{font-size:clamp(1.2rem,.9rem + 1.1vw,1.55rem);margin-bottom:8px}
-    .why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);list-style:none;padding:0;margin:0}
-    .why-grid li{grid-column:span 6;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-md);padding:12px 14px;display:flex;align-items:flex-start;gap:10px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
-    .bullet-icon{width:24px;height:24px;border-radius:6px;object-fit:cover}
-    @media (max-width:640px){.why-grid li{grid-column:span 12}}
+    .why-us h2{font-size:clamp(1.2rem,.9rem + 1.1vw,1.55rem);margin-bottom:10px}
+    .why-cards{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .why-card{
+      grid-column:span 6;
+      background:#fff;border:1px solid #e8eef5;border-radius:16px;padding:14px;
+      display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:flex-start;
+      box-shadow:0 1px 0 #fff inset,0 10px 18px rgba(12,33,48,.06);min-height:88px;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .why-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-xl)}
+    .why-icon{
+      width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(135deg,#e8f7ff,#eefaff);border:1px solid #e2eef7;
+      box-shadow:0 1px 0 #fff inset;
+    }
+    .why-icon img{width:22px;height:22px;object-fit:cover;border-radius:6px}
+    .why-copy h3{font-size:1rem;line-height:1.2;margin:2px 0 4px 0}
+    .why-copy p{color:#3a5666}
+    @media (max-width:640px){.why-card{grid-column:span 12}}
 
     /* FAQs */
     .faq-block{margin-top:clamp(18px,2.2vw,28px)}
@@ -269,17 +283,59 @@
       </div>
     </section>
 
-    <!-- Why Choose -->
+    <!-- Why Choose (NEW markup) -->
     <section class="glass-card why-us">
       <h2>Why Patients Choose Dr. Vikram Jeet Singh</h2>
-      <ul class="why-grid">
-        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true"><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/digital.jpg" alt="" aria-hidden="true"><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/comfort.jpg" alt="" aria-hidden="true"><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true"><strong>International friendly:</strong> Responsive scheduling & remote follow-ups.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true"><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/shield.jpg" alt="" aria-hidden="true"><strong>Quality assurance:</strong> Transparent options and post-treatment support.</li>
-      </ul>
+
+      <div class="why-cards">
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/experience.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>Experience that listens</h3>
+            <p>15+ years of patient-centred orthodontics.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/digital.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>Precision planning</h3>
+            <p>Digital records, careful staging, and clear timelines.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/comfort.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>Comfort & aesthetics</h3>
+            <p>Options from subtle ceramic to clear aligners.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/global.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>International friendly</h3>
+            <p>Responsive scheduling &amp; remote follow-ups.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>Hygiene & safety</h3>
+            <p>Strict sterilization and evidence-based protocols.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon"><img src="assets/illustrations/shield.jpg" alt="" aria-hidden="true"></div>
+          <div class="why-copy">
+            <h3>Quality assurance</h3>
+            <p>Transparent options and post-treatment support.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- FAQs -->
