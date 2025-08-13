@@ -1,71 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Blog">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Dental Blog • Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Dental tips, orthodontic insights, clinic updates and smile-care guides from Smiles & Braces Dental Clinic, Lucknow."/>
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/blog.html"/>
-
-  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Dental Blog • Smiles & Braces"/>
   <meta property="og:description" content="Latest orthodontic tips, aligners vs braces, hygiene guides and clinic news."/>
-  <meta property="og:image" content="assets/images/og/clinic-preview.jpg"/>
+  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
   <link rel="icon" href="assets/icons/favicon.ico"/>
-  <meta name="theme-color" content="#a0e7ff"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0e7fa8"/>
 
-  <link rel="stylesheet" href="css/styles.css"/>
-  <link rel="stylesheet" href="css/blog.css"/>
+  <!-- Fonts: Inter UI + Brand (Carattere / Fanwood Text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Brand header overrides (same as index/about) -->
   <style>
-    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
-    .brand-line{display:block}
+    /* ===== Tokens & reset (keeps site-wide look) ===== */
+    :root{
+      --bg:#f6fbff; --ink:#0f1720; --muted:#5f7483;
+      --brand:#0e7fa8; --brand-2:#20b2aa;
+      --glass:rgba(255,255,255,.72); --stroke:#e6eef6;
+      --radius-xl:22px; --radius-lg:18px; --radius-md:14px;
+      --shadow-xl:0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
+      --shadow-md:0 10px 24px rgba(15,23,32,.12);
+      --ring:0 0 0 8px rgba(14,127,168,.08);
+      --container:min(1160px,92vw); --gap:clamp(14px,1.6vw,22px);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
+        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+    .balance{text-wrap:balance}
+    .measure{max-width:68ch}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important;animation:none !important}}
 
-    /* Clinic name — Carattere, black */
-    .navbar .brand-line.clinic{
-      font-family:'Carattere', cursive !important;
-      font-weight:400 !important;
-      color:#000 !important;
-      letter-spacing:.01em;
-      text-transform:none;
-      font-size:clamp(2.1rem, 1.2rem + 3vw, 3.4rem);
-      line-height:1.05;
-    }
-    .navbar .brand::after{display:none !important;} /* disable any old underline */
-
-    /* Doctor line — Fanwood Text */
-    .navbar .brand-line.doctor{
-      font-family:'Fanwood Text', serif !important;
-      font-weight:400 !important;
-      color:#000 !important;
-      font-size:clamp(1.05rem, .9rem + .9vw, 1.6rem);
-      letter-spacing:.005em;
-      line-height:1.05;
-      margin-top:-.1rem;
-    }
-    .navbar .brand-line.doctor .cred{
-      color:#000 !important;
-      margin-left:.35rem;
-      font-weight:400;
+    /* ===== Navbar (match index) ===== */
+    .navbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#ffffffd9,#ffffffb8);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--stroke)}
+    .nav-container{width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px clamp(8px,1.2vw,14px);gap:12px}
+    .brand{display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .brand-line.clinic{font-family:"Carattere",cursive;font-size:clamp(2rem,1.1rem + 3.2vw,3.2rem);line-height:1.02;color:#111;letter-spacing:.01em}
+    .brand-line.doctor{font-family:"Fanwood Text",serif;font-size:clamp(1rem,.9rem + .9vw,1.4rem);line-height:1;margin-top:-2px}
+    .brand-line .cred{margin-left:.35rem;opacity:.85}
+    .nav-links{list-style:none;display:flex;gap:10px;align-items:center}
+    .nav-links a{padding:8px clamp(8px,.6vw,10px);border-radius:999px;font-weight:600;color:#0d2230}
+    .nav-links a:hover{background:#f0f7fb}
+    .nav-links a.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
+    .nav-toggle{display:none}
+    @media (max-width:900px){
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--stroke);border-radius:12px;background:#fff;cursor:pointer}
+      .hamburger,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:#0f2432;border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
+      .hamburger::before{position:absolute;top:-6px}
+      .hamburger::after{position:absolute;top:6px}
+      .nav-links{position:absolute;inset:calc(100% + 8px) 0 auto 0;width:100%;background:#ffffffea;backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);transform-origin:top center;transform:scaleY(0);opacity:0;pointer-events:none;display:flex;flex-direction:column;gap:6px;padding:10px}
+      .nav-links.nav-open{transform:scaleY(1);opacity:1;pointer-events:auto}
     }
 
-    .navbar .nav-container{gap:1rem;align-items:center}
-    @media (max-width:560px){
-      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
-      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    /* ===== Hero ===== */
+    .blog-hero{
+      width:var(--container);margin:26px auto 0;border-radius:calc(var(--radius-xl) + 6px);
+      background:
+        radial-gradient(120% 80% at 0% 0%, #dff8ff 0, transparent 60%),
+        linear-gradient(180deg,#f7fcff,#f2fbff);
+      border:1px solid #e8f2fb;box-shadow:var(--shadow-md);overflow:hidden;
     }
+    .blog-hero .hero-inner{padding:clamp(22px,3.2vw,40px)}
+    .blog-hero h1{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.9rem,1.2rem + 2.6vw,2.6rem);line-height:1.15}
+    .blog-hero p{color:var(--muted);margin-top:6px}
+
+    .blog-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+    .search{
+      flex:1 1 320px; min-width:260px;
+      padding:12px 14px;border-radius:12px;border:1.5px solid #e3eef6;background:#fff;
+      font-weight:600;outline:none;
+    }
+    .search:focus{box-shadow:var(--ring)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      border:1px solid #e3eef6;background:#fff;border-radius:999px;padding:8px 12px;font-weight:800;cursor:pointer
+    }
+    .chip.is-active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
+
+    /* ===== Breadcrumb (light glass) ===== */
+    .breadcrumb-wrap{width:var(--container);margin:10px auto 0}
+    .glass-section{background:var(--glass);border:1px solid #e8f1f7;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);padding:10px 16px}
+    .breadcrumb{list-style:none;display:flex;gap:6px;flex-wrap:wrap;color:#496678}
+    .breadcrumb li+li:before{content:"›";padding:0 6px;color:#9bb3c2}
+
+    /* ===== Blog grid ===== */
+    .blog-page{width:var(--container);margin:18px auto 80px}
+    .glass-card{background:var(--glass);border:1px solid #e8f1f7;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);padding:clamp(18px,2.4vw,30px)}
+    .blog-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .blog-card{
+      grid-column:span 4;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);
+      overflow:hidden;display:flex;flex-direction:column;transition:.25s;position:relative;
+      box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)
+    }
+    .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-xl)}
+    .card-link{display:flex;flex-direction:column;height:100%}
+
+    .card-header{position:relative}
+    .card-header img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid #e8eef5}
+    .date-badge{
+      position:absolute;left:12px;top:12px;background:rgba(255,255,255,.9);
+      border:1px solid #e6eef6;border-radius:10px;padding:6px 10px;font-weight:800
+    }
+    .badge-latest{
+      position:absolute;right:12px;top:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#fff;border-radius:10px;padding:6px 10px;font-weight:900;box-shadow:var(--ring)
+    }
+    .card-body{padding:12px 14px}
+    .card-title{font-size:1.08rem;line-height:1.25;margin-bottom:6px}
+    .card-excerpt{color:#3e5a6b}
+
+    @media (max-width:1100px){.blog-card{grid-column:span 6}}
+    @media (max-width:700px){.blog-card{grid-column:span 12}}
+
+    /* ===== Pagination ===== */
+    .pagination{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .pagination a{
+      border:1px solid #e3eef6;background:#fff;border-radius:12px;padding:10px 14px;font-weight:800
+    }
+    .pagination a[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+    /* ===== Footer ===== */
+    footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
   </style>
 </head>
-<body itemscope itemtype="https://schema.org/Blog">
-  <!-- Navigation Bar -->
+<body>
+  <!-- Nav -->
   <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
       <!-- Two-line brand lockup -->
@@ -74,7 +156,7 @@
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
 
-      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
+      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -89,11 +171,11 @@
   <!-- Hero -->
   <header class="blog-hero">
     <div class="hero-inner">
-      <h1 itemprop="name">Our Dental Blog</h1>
-      <p>Insights, tips &amp; the latest in orthodontic care</p>
+      <h1 class="balance" itemprop="name">Our Dental Blog</h1>
+      <p class="measure">Insights, tips &amp; the latest in orthodontic care</p>
 
-      <div class="blog-controls">
-        <input id="blogSearch" class="search" type="search" placeholder="Search topics… (e.g., aligners, hygiene, braces) " aria-label="Search blog posts"/>
+      <div class="blog-controls" aria-label="Blog filters">
+        <input id="blogSearch" class="search" type="search" placeholder="Search topics… (e.g., aligners, hygiene, braces)" aria-label="Search blog posts"/>
         <div class="chips" role="tablist" aria-label="Filter by category">
           <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
           <button class="chip" data-filter="Orthodontics" role="tab">Orthodontics</button>
@@ -123,69 +205,57 @@
     <section class="glass-card">
       <div id="blogGrid" class="blog-grid" itemprop="blogPosts">
         <!-- Post 1 -->
-        <article class="blog-card"
-                 itemscope itemtype="https://schema.org/BlogPosting"
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting"
                  data-category="Hygiene" data-tags="hygiene, brushing, flossing">
-          <a class="card-link" href="blog/tips-for-oral-hygiene.html">
+          <a class="card-link" href="blog/tips-for-oral-hygiene.html" itemprop="mainEntityOfPage">
             <div class="card-header">
-              <img src="assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips" loading="lazy" width="1200" height="675"/>
+              <img src="assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips" loading="lazy" width="1200" height="675" itemprop="image"/>
               <time class="date-badge" itemprop="datePublished" datetime="2025-08-01">Aug 1, 2025</time>
             </div>
             <div class="card-body">
               <h2 class="card-title" itemprop="headline">5 Expert Tips for Maintaining Oral Hygiene</h2>
-              <p class="card-excerpt" itemprop="description">
-                Simple, proven habits—from brushing angles to floss timing—that keep your smile healthy and bright.
-              </p>
+              <p class="card-excerpt" itemprop="description">Simple, proven habits—from brushing angles to floss timing—that keep your smile healthy and bright.</p>
             </div>
           </a>
           <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
-          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/tips-for-oral-hygiene.html"/>
         </article>
 
         <!-- Post 2 -->
-        <article class="blog-card"
-                 itemscope itemtype="https://schema.org/BlogPosting"
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting"
                  data-category="Orthodontics" data-tags="checkup, braces, prevention">
-          <a class="card-link" href="blog/importance-of-regular-checkups.html">
+          <a class="card-link" href="blog/importance-of-regular-checkups.html" itemprop="mainEntityOfPage">
             <div class="card-header">
-              <img src="assets/images/blog/regular-checkups.jpg" alt="Routine dental checkups" loading="lazy" width="1200" height="675"/>
+              <img src="assets/images/blog/regular-checkups.jpg" alt="Routine dental checkups" loading="lazy" width="1200" height="675" itemprop="image"/>
               <time class="date-badge" itemprop="datePublished" datetime="2025-07-25">Jul 25, 2025</time>
             </div>
             <div class="card-body">
               <h2 class="card-title" itemprop="headline">The Importance of Regular Dental Check-ups</h2>
-              <p class="card-excerpt" itemprop="description">
-                Why bi-annual visits prevent small issues becoming big problems, saving time and money.
-              </p>
+              <p class="card-excerpt" itemprop="description">Why bi-annual visits prevent small issues becoming big problems, saving time and money.</p>
             </div>
           </a>
           <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
-          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/importance-of-regular-checkups.html"/>
         </article>
 
         <!-- Post 3 -->
-        <article class="blog-card"
-                 itemscope itemtype="https://schema.org/BlogPosting"
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting"
                  data-category="Orthodontics" data-tags="toothbrush, toothpaste, aligners">
-          <a class="card-link" href="blog/choosing-the-right-toothbrush.html">
+          <a class="card-link" href="blog/choosing-the-right-toothbrush.html" itemprop="mainEntityOfPage">
             <div class="card-header">
-              <img src="assets/images/blog/toothbrushchoice.jpg" alt="Choosing the right toothbrush and toothpaste" loading="lazy" width="1200" height="675"/>
+              <img src="assets/images/blog/toothbrushchoice.jpg" alt="Choosing the right toothbrush and toothpaste" loading="lazy" width="1200" height="675" itemprop="image"/>
               <time class="date-badge" itemprop="datePublished" datetime="2025-07-15">Jul 15, 2025</time>
             </div>
             <div class="card-body">
               <h2 class="card-title" itemprop="headline">How to Choose the Right Toothbrush &amp; Toothpaste</h2>
-              <p class="card-excerpt" itemprop="description">
-                Soft vs medium bristles? Electric or manual? What to consider for your best oral care routine.
-              </p>
+              <p class="card-excerpt" itemprop="description">Soft vs medium bristles? Electric or manual? What to consider for your best oral care routine.</p>
             </div>
           </a>
           <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
-          <meta itemprop="mainEntityOfPage" content="https://smilesandbraces.github.io/thebestindiandentist/blog/choosing-the-right-toothbrush.html"/>
         </article>
 
-        <!-- Add more posts as needed -->
+        <!-- Duplicate pattern for more posts... -->
       </div>
 
-      <!-- Pagination -->
+      <!-- Pagination (placeholder links) -->
       <nav class="pagination" aria-label="Pagination">
         <a class="prev" href="#" aria-disabled="true">← Newer Posts</a>
         <a class="next" href="#">Older Posts →</a>
@@ -193,54 +263,75 @@
     </section>
   </main>
 
-  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
 
   <script>
-    // Mobile menu
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+    /* Mobile menu */
+    (function(){
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.querySelector('.nav-links');
+      if(navToggle && navLinks){
+        navToggle.addEventListener('click', ()=> navLinks.classList.toggle('nav-open'));
+      }
+    })();
 
-    // Simple client-side filtering
-    const chips   = [...document.querySelectorAll('.chip')];
-    const search  = document.getElementById('blogSearch');
-    const cards   = [...document.querySelectorAll('.blog-card')];
-    let activeCat = 'all';
+    /* Client-side filtering + search */
+    (function(){
+      const chips   = Array.from(document.querySelectorAll('.chip'));
+      const search  = document.getElementById('blogSearch');
+      const cards   = Array.from(document.querySelectorAll('.blog-card'));
+      let activeCat = 'all';
 
-    function applyFilter(){
-      const q = (search.value || '').toLowerCase().trim();
-      cards.forEach(card => {
-        const cat  = (card.dataset.category || '').toLowerCase();
-        const tags = (card.dataset.tags || '').toLowerCase();
-        const text = card.innerText.toLowerCase();
-        const matchCat = (activeCat === 'all') || cat === activeCat.toLowerCase();
-        const matchQ   = !q || text.includes(q) || tags.includes(q);
-        card.style.display = (matchCat && matchQ) ? '' : 'none';
+      function applyFilter(){
+        const q = (search.value || '').toLowerCase().trim();
+        cards.forEach(card=>{
+          const cat  = (card.dataset.category || '').toLowerCase();
+          const tags = (card.dataset.tags || '').toLowerCase();
+          const text = card.innerText.toLowerCase();
+          const matchCat = (activeCat === 'all') || cat === activeCat.toLowerCase();
+          const matchQ   = !q || text.includes(q) || tags.includes(q);
+          card.style.display = (matchCat && matchQ) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          chips.forEach(c=>{ c.classList.remove('is-active'); c.setAttribute('aria-selected','false'); });
+          btn.classList.add('is-active'); btn.setAttribute('aria-selected','true');
+          activeCat = btn.dataset.filter || 'all';
+          applyFilter();
+        });
       });
-    }
+      if(search) search.addEventListener('input', applyFilter);
+    })();
 
-    chips.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        chips.forEach(c=>c.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        activeCat = btn.dataset.filter;
-        applyFilter();
-      });
-    });
-    search.addEventListener('input', applyFilter);
+    /* Auto "Latest" badge (based on <time datetime="...">) */
+    (function(){
+      const posts = Array.from(document.querySelectorAll('.blog-card'));
+      if(!posts.length) return;
+      let latest = posts[0], latestTime = 0;
+      for(const p of posts){
+        const t = p.querySelector('time[datetime]')?.getAttribute('datetime');
+        const val = t ? +new Date(t) : 0;
+        if(val > latestTime){ latest = p; latestTime = val; }
+      }
+      if(latest){
+        const b = document.createElement('span');
+        b.className = 'badge-latest';
+        b.textContent = 'Latest';
+        latest.querySelector('.card-header')?.appendChild(b);
+      }
+    })();
   </script>
 
-  <!-- Structured data for the list itself -->
+  <!-- Structured data for the list -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Blog",
     "name":"Smiles & Braces Dental Blog",
     "url":"https://smilesandbraces.github.io/thebestindiandentist/blog.html",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Smiles & Braces Dental Clinic"
-    }
+    "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"}
   }
   </script>
 </body>
