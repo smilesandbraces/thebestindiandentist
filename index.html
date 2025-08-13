@@ -28,6 +28,7 @@
     :root{
       --bg:#f6fbff; --ink:#0f1720; --muted:#5f7483;
       --brand:#0e7fa8; --brand-2:#20b2aa; --accent:#7c3aed;
+      --success-1:#22c55e; --success-2:#16a34a;
       --glass:rgba(255,255,255,.72); --stroke:#e6eef6;
       --radius-xl:22px; --radius-lg:18px; --radius-md:14px;
       --shadow-xl:0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
@@ -89,11 +90,16 @@
     .hero-copy{grid-column:span 5;padding:clamp(22px,3.2vw,40px)}
     .hero-copy h1{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.9rem,1.2rem + 2.6vw,2.8rem);line-height:1.15}
     .hero-copy .lead{color:var(--muted);margin-top:6px}
-    .cta-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn-pill{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;font-weight:800;letter-spacing:.02em;transition:.18s}
-    .btn-whatsapp{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:var(--ring)}
+    .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;justify-content:flex-start}
+    .btn-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:12px 18px;border-radius:999px;
+      font-weight:800;letter-spacing:.02em;transition:.18s;
+      min-height:48px; white-space:nowrap; line-height:1; /* <<< stable pill height & no wrap */
+    }
+    .btn-whatsapp{background:linear-gradient(135deg,var(--success-1),var(--success-2));color:#fff;box-shadow:var(--ring)}
     .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
-    .btn-outline{background:#fff;border:1px solid #e3eef6;color:#073043}
+    .btn-outline{background:#fff;border:1.5px solid #e3eef6;color:#073043}
     .btn-pill:hover{transform:translateY(-2px)}
     .kicker{opacity:.75;font-weight:700}
     .cta-note{color:#3a5666;margin-top:6px}
@@ -109,14 +115,12 @@
       position:absolute;right:16px;bottom:16px;background:rgba(255,255,255,.85);
       border:1px solid #e6eef6;border-radius:12px;padding:8px 12px;font-weight:800;box-shadow:var(--shadow-md)
     }
-
     .hero-controls{position:absolute;inset:auto 10px 10px auto;display:flex;gap:6px;z-index:5}
     .hero-btn{appearance:none;border:1px solid #e6eef6;background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800}
     .hero-btn:hover{transform:translateY(-1px)}
     .hero-dots{position:absolute;left:16px;bottom:14px;display:flex;gap:8px;z-index:5}
     .dot{width:10px;height:10px;border-radius:999px;background:#fff;border:1px solid #dfe7f0;opacity:.7;cursor:pointer}
     .dot.is-active{opacity:1;box-shadow:var(--ring);background:linear-gradient(135deg,var(--brand),var(--brand-2))}
-
     @media (max-width:1024px){
       .hero-copy{grid-column:span 12}
       .hero-carousel{grid-column:span 12;height:46vh;min-height:280px}
@@ -149,9 +153,9 @@
     .home-about__photo{grid-column:span 5}
     @media (max-width:1024px){.home-about__text,.home-about__photo{grid-column:span 12}}
     .home-about__photo img{border-radius:var(--radius-lg);border:1px solid #e8eef5;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06);object-fit:cover;width:100%}
-    .btn-ghost{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid #e3eef6;background:#fff;font-weight:800;letter-spacing:.02em;margin-right:8px}
+    .btn-ghost{display:inline-block;padding:12px 16px;border-radius:12px;border:1.5px solid #e3eef6;background:#fff;font-weight:800;letter-spacing:.02em;margin-right:8px;min-height:46px;white-space:nowrap}
     .btn-ghost:hover{transform:translateY(-2px)}
-    .about-buttons{margin-top:10px}
+    .about-buttons{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px}
 
     /* ===== Testimonials ===== */
     .home-testimonials{margin-top:clamp(18px,2.2vw,28px)}
@@ -172,17 +176,40 @@
     .preview-card h3{font-size:1.02rem;margin-bottom:4px}
     .meta{font-size:.9rem;color:#5f7483}
     .badge-latest{position:absolute;top:8px;right:8px;font-size:.76rem;font-weight:900;padding:6px 8px;border-radius:999px;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--ring)}
-
     @media (max-width:900px){.preview-card{grid-column:span 12}}
 
-    /* ===== Home CTA ===== */
+    /* ===== Footer CTA (FIXED) ===== */
     .home-cta{
-      margin-top:clamp(18px,2.2vw,28px); text-align:center;
-      background:linear-gradient(180deg,#fdfefe,#fbfeff 32%,#f2fbff), radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);
-      border:1px solid #e5f2f9;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);
+      margin-top:clamp(18px,2.2vw,28px);
+      text-align:center;
+      background:
+        linear-gradient(180deg,#fdfefe,#fbfeff 32%,#f2fbff),
+        radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);
+      border:1px solid #e5f2f9;border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-md);
+      padding:clamp(18px,2.4vw,30px);
     }
-    .home-cta h2{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em}
-    .home-cta .lead{color:#3a5666;margin-top:6px}
+    .home-cta h2{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em;margin-bottom:4px}
+    .home-cta .lead{color:#3a5666;margin-bottom:12px}
+
+    /* unified CTA button row: consistent height, spacing, and wrap */
+    .home-cta .cta-buttons{
+      display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;
+      margin:0 auto;
+      max-width:min(720px, 92vw);
+    }
+    .home-cta .btn-pill{
+      min-height:50px; padding:12px 20px; white-space:nowrap; line-height:1; /* no multi-line wrap */
+      border-radius:999px; font-weight:900;
+      box-shadow:0 1px 0 #fff inset, 0 8px 16px rgba(12,33,48,.05);
+    }
+    .home-cta .btn-outline{
+      background:#fff;border:1.5px solid #dfeaf3;color:#073043;
+    }
+    .home-cta .btn-pill:focus-visible{outline:3px solid rgba(14,127,168,.35); outline-offset:2px}
+    @media (max-width:520px){
+      .home-cta .btn-pill{width:100%;justify-content:center}
+    }
 
     /* ===== Footer ===== */
     footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
@@ -243,7 +270,6 @@
       <!-- Carousel -->
       <div class="hero-carousel" aria-roledescription="carousel" aria-label="Clinic highlights">
         <div class="slides">
-          <!-- Use images you already have in /assets/images/services for reliability -->
           <figure class="slide is-active" aria-label="Slide 1 of 3">
             <img src="assets/images/services/clearaligners.jpg" alt="Clear aligners treatment planning" loading="eager" decoding="async" />
             <figcaption class="caption">Clear Aligners • Digital Planning</figcaption>
@@ -410,13 +436,17 @@
       </div>
     </section>
 
-    <!-- APPOINTMENT STRIP -->
+    <!-- APPOINTMENT STRIP (footer CTA fixed) -->
     <section class="glass-card home-cta measure" aria-labelledby="ctaHead">
       <h2 id="ctaHead" class="balance">Let’s plan your smile</h2>
       <p class="lead">Quick responses. Clear timelines. Comfortable care.</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/919565321625" class="btn-pill btn-whatsapp" target="_blank" rel="noopener"><span class="kicker">Chat on</span> WhatsApp</a>
-        <a href="tel:+919565321625" class="btn-pill btn-call"><span class="kicker">Call us</span> +91&nbsp;95653&nbsp;21625</a>
+        <a href="https://wa.me/919565321625" class="btn-pill btn-whatsapp" target="_blank" rel="noopener">
+          <span class="kicker">Chat on</span> WhatsApp
+        </a>
+        <a href="tel:+919565321625" class="btn-pill btn-call">
+          <span class="kicker">Call us</span> +91&nbsp;95653&nbsp;21625
+        </a>
         <a href="contact.html" class="btn-pill btn-outline">Book Appointment</a>
       </div>
     </section>
@@ -445,7 +475,7 @@
       const prev   = document.getElementById('prevSlide');
       const next   = document.getElementById('nextSlide');
 
-      let idx = 0, timer = null, hoverPause = false;
+      let idx = 0, timer = null, hoverPause = false, inView = true;
       const interval = 6000;
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -462,54 +492,43 @@
       function prevSlide(){ show(idx - 1); }
 
       function start(){
-        if(prefersReduced) return; // respect user preference
+        if(prefersReduced) return;
         stop();
         timer = setInterval(()=>{ if(!hoverPause && inView) nextSlide(); }, interval);
       }
       function stop(){ if(timer){ clearInterval(timer); timer = null; } }
 
-      // Controls
       if(prev) prev.addEventListener('click', ()=>{ prevSlide(); start(); });
       if(next) next.addEventListener('click', ()=>{ nextSlide(); start(); });
       dots.forEach((d, i)=> d.addEventListener('click', ()=>{ show(i); start(); }));
 
-      // Hover pause
       const carousel = document.querySelector('.hero-carousel');
       if(carousel){
         carousel.addEventListener('mouseenter', ()=>{ hoverPause = true; });
         carousel.addEventListener('mouseleave', ()=>{ hoverPause = false; });
-      }
-
-      // Swipe support
-      let touchX = null;
-      function onTouchStart(e){ touchX = e.touches[0].clientX; }
-      function onTouchMove(e){
-        if(touchX === null) return;
-        const dx = e.touches[0].clientX - touchX;
-        if(Math.abs(dx) > 40){
-          dx > 0 ? prevSlide() : nextSlide();
-          touchX = null; start();
+        let touchX = null;
+        function onTouchStart(e){ touchX = e.touches[0].clientX; }
+        function onTouchMove(e){
+          if(touchX === null) return;
+          const dx = e.touches[0].clientX - touchX;
+          if(Math.abs(dx) > 40){ dx > 0 ? prevSlide() : nextSlide(); touchX = null; start(); }
         }
+        carousel.addEventListener('touchstart', onTouchStart, {passive:true});
+        carousel.addEventListener('touchmove', onTouchMove, {passive:true});
       }
-      carousel.addEventListener('touchstart', onTouchStart, {passive:true});
-      carousel.addEventListener('touchmove', onTouchMove, {passive:true});
 
-      // Keyboard
       window.addEventListener('keydown', (e)=>{
         if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
         if(e.key === 'ArrowRight'){ nextSlide(); start(); }
         if(e.key === 'ArrowLeft'){  prevSlide(); start(); }
       });
 
-      // Pause when not visible
-      let inView = true;
       const io = new IntersectionObserver((entries)=>{
         inView = entries.some(en=> en.isIntersecting);
         if(inView) start(); else stop();
       }, {threshold: 0.1});
-      io.observe(carousel);
+      if(carousel) io.observe(carousel);
 
-      // Init
       show(0); start();
 
       /* ===== Latest blog badge ===== */
