@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
   <meta name="theme-color" content="#0e7fa8" />
 
-  <!-- Fonts (brand lockup + UI) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -38,39 +38,76 @@
       --container:min(1160px,92vw);
       --gap:clamp(14px,1.6vw,22px);
     }
+    /* Dark theme tokens */
+    @media (prefers-color-scheme: dark){
+      :root{ color-scheme: dark; }
+    }
+    html[data-theme="dark"]{
+      --bg: #0b1218;
+      --ink:#eaf4ff; --muted:#9fb3c1;
+      --brand:#42b4d4; --brand-2:#3fd1c7; --accent:#a78bfa;
+      --glass: rgba(12,22,30,.6);
+      --stroke:#183241;
+      --shadow-xl: 0 20px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
+      --shadow-md: 0 10px 24px rgba(0,0,0,.4);
+      --ring:0 0 0 8px rgba(66,180,212,.15);
+    }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
-        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
+        radial-gradient(1200px 600px at 10% -10%, #c7f0ff22 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #e6fffb22 0, transparent 55%),
         linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    html[data-theme="dark"] body{
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #0f253422 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #0a2b2a22 0, transparent 55%),
+        linear-gradient(#0b141b,#0a141b 38%, #0a141b);
     }
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
 
     /* ===== Navbar ===== */
     .navbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#ffffffd9,#ffffffb8);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--stroke)}
+    html[data-theme="dark"] .navbar{background:linear-gradient(180deg,#0e1b2388,#0e1b2366);border-bottom:1px solid var(--stroke)}
     .nav-container{width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px clamp(8px,1.2vw,14px);gap:12px}
     .brand{display:flex;flex-direction:column;gap:2px}
     .brand-line.clinic{font-family:"Carattere",cursive;font-size:clamp(2rem,1.1rem + 3.2vw,3.2rem);line-height:1.02;color:#111;letter-spacing:.01em}
     .brand-line.doctor{font-family:"Fanwood Text",serif;font-size:clamp(1rem,.9rem + .9vw,1.4rem);line-height:1;margin-top:-2px}
+    html[data-theme="dark"] .brand-line.clinic, html[data-theme="dark"] .brand-line.doctor{color:var(--ink)}
     .brand-line .cred{margin-left:.35rem;opacity:.85}
+
+    .nav-right{display:flex;align-items:center;gap:8px}
     .nav-links{list-style:none;display:flex;gap:10px;align-items:center}
     .nav-links a{padding:8px clamp(8px,.6vw,10px);border-radius:999px;font-weight:600;color:#0d2230}
     .nav-links a:hover{background:#f0f7fb}
     .nav-links a.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
+    html[data-theme="dark"] .nav-links a{color:#cfe6f3}
+    html[data-theme="dark"] .nav-links a:hover{background:#0f2533}
+
     .nav-toggle{display:none}
+    .btn-toggle-theme{
+      appearance:none;border:1px solid var(--stroke);background:#fff;color:#073043;
+      padding:8px 10px;border-radius:12px;cursor:pointer;font-weight:700
+    }
+    html[data-theme="dark"] .btn-toggle-theme{background:#0e1b23;color:#d8f4ff}
 
     /* ===== Hero ===== */
     .intl-hero{
       width:var(--container);margin:26px auto 0;border-radius:calc(var(--radius-xl) + 6px);
       background:linear-gradient(180deg,#f7fcff,#f2fbff), radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
       border:1px solid #e8f2fb; padding:clamp(22px,3.2vw,40px); box-shadow:var(--shadow-md); position:relative;overflow:hidden
+    }
+    html[data-theme="dark"] .intl-hero{
+      background:linear-gradient(180deg,#0d1a22,#0d1a22), radial-gradient(1200px 600px at 0% 0%, #0e2a33 0, transparent 60%);
+      border:1px solid var(--stroke);
     }
     .intl-hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:220px;background:
       radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
@@ -82,27 +119,36 @@
     .intl-subnav a{font-weight:700;color:#0c2b3a;background:#fff;border:1px solid #e7f0f6;padding:10px 14px;border-radius:999px;box-shadow:0 2px 0 #e5f3f8 inset,0 1px 0 #fff;transition:all .2s ease}
     .intl-subnav a:hover{transform:translateY(-1px);background:#f8fdff}
     .intl-subnav a.is-current{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent;box-shadow:var(--ring)}
+    html[data-theme="dark"] .intl-subnav a{background:#0f1c25;border-color:#173040;box-shadow:none;color:#cfe6f3}
+    html[data-theme="dark"] .intl-subnav a:hover{background:#0c2732}
 
     /* ===== Breadcrumb ===== */
-    .breadcrumb-wrap{background:#ffffffc7;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);width:100%}
+    .breadcrumb-wrap{background:#ffffffc7;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)}
+    html[data-theme="dark"] .breadcrumb-wrap{background:#0d1a22cc}
     .breadcrumb{width:var(--container);margin:auto;padding:.6rem 0;display:flex;gap:10px;list-style:none;color:#406074}
+    html[data-theme="dark"] .breadcrumb{color:#9db8c6}
     .breadcrumb li{display:flex;align-items:center;gap:10px}
     .breadcrumb li+li::before{content:"/";color:#a2b7c4}
+    html[data-theme="dark"] .breadcrumb li+li::before{color:#2f5265}
     .breadcrumb a{color:#0e3b52}
+    html[data-theme="dark"] .breadcrumb a{color:#89c8e6}
     .breadcrumb a:hover{text-decoration:underline}
 
     /* ===== Page container ===== */
     .international-page{width:var(--container);margin:24px auto 80px}
 
     .glass-section{margin-top:clamp(18px,2.2vw,28px);border-radius:var(--radius-xl);padding:clamp(18px,2.4vw,30px);background:var(--glass);box-shadow:var(--shadow-md);border:1px solid #e8f1f7;position:relative;overflow:hidden}
+    html[data-theme="dark"] .glass-section{background:rgba(13,26,34,.55);border:1px solid var(--stroke)}
     .section-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
     .section-head h2{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em}
     .section-tag{font-size:.88rem;font-weight:800;color:#0b3b4d;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,#dff8ff,#e9fffb);border:1px solid #d0eef6}
+    html[data-theme="dark"] .section-tag{background:#0f2733;border-color:#173645;color:#bfe9ff}
 
     /* ===== Grids & Cards ===== */
     .steps-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
     .step-card{grid-column:span 4;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:16px;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06);transition:.25s}
     .step-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
+    html[data-theme="dark"] .step-card{background:#0e1b23;border-color:#173040;box-shadow:0 1px 0 #10202a inset,0 8px 20px rgba(0,0,0,.35)}
     .icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--ring);display:flex;align-items:center;justify-content:center;margin-bottom:10px;overflow:hidden}
     .icon-img{width:100%;height:100%;object-fit:cover}
     .step-card h3{font-size:1.08rem;margin-bottom:4px}
@@ -111,63 +157,84 @@
     @media (max-width:640px){.step-card{grid-column:span 12}}
 
     .plans-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .plan-card{grid-column:span 4;background:#fff;border:1px solid #dfe9f5;border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(12,33,48,.06);position:relative;overflow:hidden}
+    .plans-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:10px;margin-left:auto}
+    .currency-select{appearance:none;border:1px solid var(--stroke);background:#fff;color:#073043;padding:8px 12px;border-radius:12px;font-weight:700;cursor:pointer}
+    html[data-theme="dark"] .currency-select{background:#0e1b23;color:#d8f4ff}
+    .plan-card{grid-column:span 4;background:#fff;border:1px solid #dfe9f5;border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(12,33,48,.06);position:relative;overflow:hidden;transition:.25s}
     .plan-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
+    html[data-theme="dark"] .plan-card{background:#0e1b23;border-color:#173040;box-shadow:0 10px 24px rgba(0,0,0,.45)}
     .plan-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
     .plan-card h3{font-size:1.2rem}
     .chip{font-size:.8rem;font-weight:800;padding:6px 10px;border-radius:999px;background:#eef7ff;border:1px solid #d5e9ff}
     .chip-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:var(--ring)}
+    html[data-theme="dark"] .chip{background:#0f2533;border:1px solid #1a4252;color:#bfe9ff}
     .plan-points{list-style:none;display:grid;gap:6px;margin:10px 0}
     .plan-points li{position:relative;padding-left:22px;color:#3e5a6b}
+    html[data-theme="dark"] .plan-points li{color:#a7c2d3}
     .plan-points li::before{content:"";width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:absolute;left:0;top:7px;box-shadow:0 0 0 3px rgba(14,127,168,.14)}
     .price{font-weight:900;letter-spacing:.02em;font-size:1.15rem;margin-top:8px;color:#0c2b3a}
+    html[data-theme="dark"] .price{color:#d8f4ff}
     .plan-standard{transform:translateY(-4px);border-color:#cfe7f3}
     @media (max-width:1024px){.plan-card{grid-column:span 6}}
     @media (max-width:640px){.plan-card{grid-column:span 12;transform:none}}
 
     .why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);list-style:none;padding:0;margin:0}
     .why-grid li{grid-column:span 6;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-md);padding:12px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
+    html[data-theme="dark"] .why-grid li{background:#0e1b23;border-color:#173040;box-shadow:0 1px 0 #10202a inset,0 8px 14px rgba(0,0,0,.35)}
     .bullet-icon{width:24px;height:24px;object-fit:cover;border-radius:6px}
     @media (max-width:640px){.why-grid li{grid-column:span 12}}
 
     .assist-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
     .assist-card{grid-column:span 4;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:16px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
+    html[data-theme="dark"] .assist-card{background:#0e1b23;border-color:#173040;box-shadow:0 1px 0 #10202a inset,0 8px 14px rgba(0,0,0,.35)}
     .assist-card h3{font-size:1.05rem;margin-bottom:4px}
     @media (max-width:1024px){.assist-card{grid-column:span 6}}
     @media (max-width:640px){.assist-card{grid-column:span 12}}
 
     .checklist{list-style:none;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);padding:0;margin:0}
     .checklist li{grid-column:span 6;background:#fff;border:1px dashed #d9e7f2;border-radius:var(--radius-md);padding:12px 14px}
+    html[data-theme="dark"] .checklist li{background:#0e1b23;border:1px dashed #1a3f51}
     @media (max-width:640px){.checklist li{grid-column:span 12}}
 
     .faq-list{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
     .faq-item{grid-column:span 12;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:12px 14px}
+    html[data-theme="dark"] .faq-item{background:#0e1b23;border-color:#173040}
     .faq-item + .faq-item{margin-top:6px}
     .faq-item summary{cursor:pointer;font-weight:700;color:#0d2a3a}
+    html[data-theme="dark"] .faq-item summary{color:#d8f4ff}
     .faq-body{color:#3a5666;margin-top:8px}
+    html[data-theme="dark"] .faq-body{color:#9ec2d7}
     .faq-item[open]{box-shadow:0 10px 24px rgba(12,33,48,.06)}
+    html[data-theme="dark"] .faq-item[open]{box-shadow:0 10px 24px rgba(0,0,0,.45)}
 
     /* ===== CTA ===== */
     .intl-cta{text-align:center;background:linear-gradient(180deg,#fdfefe,#fbfeff 32%,#f2fbff), radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);border:1px solid #e5f2f9}
+    html[data-theme="dark"] .intl-cta{background:linear-gradient(180deg,#0d1a22,#0d1a22), radial-gradient(90% 80% at 50% 0%, #0f2a35 0, transparent 60%);border:1px solid var(--stroke)}
     .intl-cta h2{font-size:clamp(1.4rem,1rem + 1.4vw,1.9rem);margin-bottom:6px;letter-spacing:-.01em}
     .intl-cta p{color:#3a5666;margin-bottom:16px}
+    html[data-theme="dark"] .intl-cta p{color:#a7c2d3}
     .cta-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
     .btn-whatsapp,.btn-call,.btn-ghost{appearance:none;border:none;cursor:pointer;text-decoration:none;font-weight:800;letter-spacing:.02em;padding:12px 16px;border-radius:14px;transition:.18s}
     .btn-whatsapp{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:var(--ring)}
     .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
     .btn-ghost{background:#fff;color:#073043;border:1px solid #e3eef6}
+    html[data-theme="dark"] .btn-ghost{background:#0e1b23;color:#d8f4ff;border-color:#173040}
     .btn-whatsapp:hover,.btn-call:hover,.btn-ghost:hover{transform:translateY(-2px)}
 
     /* ===== Footer ===== */
     footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
+    html[data-theme="dark"] footer{color:#9bb6c8}
 
     /* ===== Mobile nav ===== */
     @media (max-width:900px){
       .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--stroke);border-radius:12px;background:#fff;cursor:pointer}
+      html[data-theme="dark"] .nav-toggle{background:#0e1b23}
       .hamburger,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:#0f2432;border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
+      html[data-theme="dark"] .hamburger,.hamburger::before,.hamburger::after{background:#d8f4ff}
       .hamburger::before{position:absolute;top:-6px}
       .hamburger::after{position:absolute;top:6px}
       .nav-links{position:absolute;inset:calc(100% + 8px) 0 auto 0;width:100%;background:#ffffffea;backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);transform-origin:top center;transform:scaleY(0);opacity:0;pointer-events:none;display:flex;flex-direction:column;gap:6px;padding:10px}
+      html[data-theme="dark"] .nav-links{background:#0d1a22ea}
       .nav-links.nav-open{transform:scaleY(1);opacity:1;pointer-events:auto}
     }
 
@@ -183,7 +250,12 @@
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+
+      <div class="nav-right">
+        <button class="btn-toggle-theme" id="themeBtn" type="button" aria-pressed="false" title="Toggle dark mode">🌙 Dark</button>
+        <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+      </div>
+
       <ul class="nav-links" id="site-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -263,10 +335,21 @@
 
     <!-- Plans -->
     <section id="plans" class="glass-section">
-      <div class="section-head">
-        <h2>Treatment Plans</h2>
-        <span class="section-tag">Tailored care</span>
+      <div class="section-head" style="align-items: start;">
+        <div>
+          <h2>Treatment Plans</h2>
+          <span class="section-tag">Tailored care</span>
+        </div>
+        <div class="plans-toolbar" aria-label="Currency selector">
+          <label for="currency" class="sr-only">Currency</label>
+          <select id="currency" class="currency-select">
+            <option value="INR" selected>₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+        </div>
       </div>
+
       <div class="plans-wrap">
         <article class="plan-card plan-basic">
           <div class="plan-top"><h3>Basic</h3><span class="chip">Starter</span></div>
@@ -276,7 +359,7 @@
             <li>Basic braces or aligners</li>
             <li>2 follow-ups</li>
           </ul>
-          <div class="price">₹30,000+</div>
+          <div class="price" data-price-inr="30000">₹30,000+</div>
         </article>
 
         <article class="plan-card plan-standard">
@@ -287,7 +370,7 @@
             <li>Digital smile preview</li>
             <li>5 follow-ups</li>
           </ul>
-          <div class="price">₹80,000+</div>
+          <div class="price" data-price-inr="80000">₹80,000+</div>
         </article>
 
         <article class="plan-card plan-premium">
@@ -299,9 +382,10 @@
             <li>Unlimited follow-ups</li>
             <li>City tour extras</li>
           </ul>
-          <div class="price">₹150,000+</div>
+          <div class="price" data-price-inr="150000">₹1,50,000+</div>
         </article>
       </div>
+      <p style="margin-top:8px;color:var(--muted);font-size:.92rem">* Prices are indicative and vary by case complexity.</p>
     </section>
 
     <!-- Why Us -->
@@ -391,18 +475,20 @@
 
   <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
 
-  <!-- Mobile nav + subnav scrollspy -->
+  <!-- Mobile nav + subnav scrollspy + theme & currency logic -->
   <script>
     (function(){
+      /* ===== Mobile nav ===== */
       const navToggle = document.querySelector('.nav-toggle');
-      const navLinks  = document.querySelector('.nav-links');
+      const navLinks  = document.getElementById('site-menu');
       if(navToggle && navLinks){
         navToggle.addEventListener('click', ()=>{
           const open = navLinks.classList.toggle('nav-open');
           navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
-      // Scrollspy for intl-subnav
+
+      /* ===== Scrollspy for subnav ===== */
       const sections = [...document.querySelectorAll('main section[id]')];
       const pills = [...document.querySelectorAll('.intl-subnav a')];
       const pillFor = id => pills.find(a => a.getAttribute('href') === `#${id}`);
@@ -415,6 +501,74 @@
         });
       }, {rootMargin:"-30% 0px -60% 0px", threshold:0.01});
       sections.forEach(s=>spy.observe(s));
+
+      /* ===== Theme toggle ===== */
+      const html = document.documentElement;
+      const themeBtn = document.getElementById('themeBtn');
+      const savedTheme = localStorage.getItem('theme'); // 'light' | 'dark' | null
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      function applyTheme(mode){ // 'light' | 'dark'
+        html.setAttribute('data-theme', mode === 'dark' ? 'dark' : 'light');
+        themeBtn.textContent = mode === 'dark' ? '☀️ Light' : '🌙 Dark';
+        themeBtn.setAttribute('aria-pressed', mode === 'dark');
+        localStorage.setItem('theme', mode);
+      }
+      // initial
+      if(savedTheme){ applyTheme(savedTheme); }
+      else { applyTheme(prefersDark ? 'dark' : 'light'); }
+
+      themeBtn.addEventListener('click', ()=>{
+        const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+
+      /* ===== Currency switcher ===== */
+      const currencySelect = document.getElementById('currency');
+      const priceEls = [...document.querySelectorAll('.price')];
+
+      // Base prices are INR in data attribute. Static rates (editable):
+      const RATES = {
+        INR: 1,
+        USD: 0.012,  // ≈ example rate
+        EUR: 0.011   // ≈ example rate
+      };
+      const SYMBOLS = { INR: '₹', USD: '$', EUR: '€' };
+      const LOCALES = { INR: 'en-IN', USD: 'en-US', EUR: 'de-DE' };
+
+      // Load saved currency or default INR
+      const savedCur = localStorage.getItem('currency') || 'INR';
+      if(savedCur !== 'INR' && ['USD','EUR'].includes(savedCur)){
+        currencySelect.value = savedCur;
+      }
+
+      function formatAmount(cur, amount){
+        try{
+          return new Intl.NumberFormat(LOCALES[cur], {
+            style: 'currency', currency: cur, maximumFractionDigits: (cur === 'INR' ? 0 : 0)
+          }).format(amount);
+        }catch(e){
+          // Fallback simple formatting
+          const sym = SYMBOLS[cur] || '';
+          return sym + Math.round(amount).toLocaleString(LOCALES[cur] || 'en-US');
+        }
+      }
+
+      function updatePrices(){
+        const cur = currencySelect.value;
+        const rate = RATES[cur] || 1;
+        priceEls.forEach(el=>{
+          const base = Number(el.getAttribute('data-price-inr') || 0);
+          const converted = base * rate;
+          const pretty = formatAmount(cur, converted);
+          // Keep the "+" suffix style
+          el.textContent = pretty.replace(/\u00A0/g,' ') + '+';
+        });
+        localStorage.setItem('currency', cur);
+      }
+      // initial draw
+      updatePrices();
+      currencySelect.addEventListener('change', updatePrices);
     })();
   </script>
 
