@@ -2,134 +2,335 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Our Orthodontic Services | Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Orthodontic specialists in Lucknow offering braces, clear aligners, lingual braces, pediatric orthodontics, implants, and emergency care. Book with Dr. Vikram Jeet Singh (BDS, MDS)." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
-  
-  <!-- Social / Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Our Orthodontic Services | Smiles & Braces" />
   <meta property="og:description" content="Comfort-first orthodontics: braces, aligners, lingual braces, retainers & more." />
   <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
   <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="assets/icons/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-  <meta name="theme-color" content="#a0e7ff" />
+  <meta name="theme-color" content="#0e7fa8" />
 
-  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- ===== Single‑file critical CSS (no external CSS required) ===== -->
   <style>
-    /* 1) Reset + tokens */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:#0f172a;background:#f8fafc}
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
+    /* ========= Root & Reset ========= */
     :root{
-      --brand:#1f6fa5; --brand-2:#20B2AA; --glass:rgba(255,255,255,.7);
-      --shadow:0 10px 30px rgba(2,8,23,.08);
-      --max:1200px; --round:18px;
+      --bg: #f6fbff;
+      --ink: #0f1720;
+      --muted:#5f7483;
+      --brand:#0e7fa8;           /* primary cyan-blue */
+      --brand-2:#20b2aa;         /* teal accent */
+      --accent:#7c3aed;          /* purple accent for tiny highlights */
+      --card:#ffffffcc;
+      --glass: rgba(255,255,255,.72);
+      --glass-stroke: linear-gradient(180deg,#ffffff 0,#dfe9f5 100%);
+      --ring: 0 0 0 8px rgba(14,127,168,.08);
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --shadow-xl: 0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
+      --shadow-md: 0 10px 24px rgba(15,23,32,.12);
+      --container: min(1160px, 92vw);
+      --grid-gap: clamp(14px, 1.6vw, 22px);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
+        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    img{max-width:100%;display:block}
+
+    /* ========= Navbar ========= */
+    .navbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(160%) blur(14px);
+      background:linear-gradient(180deg, #ffffffd9, #ffffffb8);
+      border-bottom:1px solid #e6eef6;
+    }
+    .nav-container{
+      width:var(--container);
+      margin-inline:auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px clamp(8px,1.2vw,14px);
+      gap:12px;
+    }
+    .brand{display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .brand-line.clinic{
+      font-family:"Carattere",cursive; color:#0f0f0f;
+      font-size:clamp(2rem, 1.1rem + 3.2vw, 3.2rem);
+      line-height:1.02; letter-spacing:.01em;
+    }
+    .brand-line.doctor{
+      font-family:"Fanwood Text",serif; color:#111; letter-spacing:.005em;
+      font-size:clamp(1rem,.9rem + .9vw,1.4rem);
+      margin-top:-2px;
+    }
+    .brand-line .cred{margin-left:.35rem; opacity:.85}
+
+    .nav-links{
+      list-style:none; display:flex; gap:10px;
+      align-items:center;
+    }
+    .nav-links a{
+      --pad: clamp(8px,.6vw,10px);
+      text-decoration:none;
+      color:#0d2230; font-weight:500;
+      padding:8px var(--pad);
+      border-radius:999px;
+      transition:transform .2s ease, background-color .2s ease, color .2s ease;
+    }
+    .nav-links a:hover{background:#f0f7fb}
+    .nav-links a.active{
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#fff; box-shadow: var(--ring);
+    }
+    .nav-toggle{display:none}
+
+    /* ========= Hero ========= */
+    .service-hero{
+      width:var(--container); margin:26px auto 0;
+      border-radius: calc(var(--radius-xl) + 6px);
+      background:
+        linear-gradient(180deg,#f7fcff,#f2fbff),
+        radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
+      border:1px solid #e8f2fb;
+      padding: clamp(22px, 3.2vw, 40px);
+      box-shadow: var(--shadow-md);
+      position:relative; overflow:hidden;
+    }
+    .service-hero::after{
+      content:"";
+      position:absolute; inset:auto -10% -40% -10%;
+      height:220px;
+      background:radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
+                 radial-gradient(60% 120% at 25% 0%, rgba(14,127,168,.15), transparent 60%);
+      filter: blur(30px);
+    }
+    .service-hero h1{
+      font-weight:800; letter-spacing:-.02em;
+      font-size: clamp(1.8rem, 1.1rem + 2.5vw, 2.6rem);
+      line-height:1.15;
+      margin-bottom:6px;
+    }
+    .service-hero p{
+      color:var(--muted);
+      font-size: clamp(.98rem, .9rem + .35vw, 1.06rem);
+      max-width: 68ch;
     }
 
-    /* 2) Layout wrappers */
-    .navbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #e2e8f0}
-    .nav-container{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem}
-    .brand{display:flex;flex-direction:column;gap:.15rem}
-    .brand-line.clinic{font-family:'Carattere',cursive;font-weight:400;color:#111827;letter-spacing:.01em;font-size:clamp(1.8rem,1.2rem + 2vw,3rem);line-height:1.05}
-    .brand-line.doctor{font-family:'Fanwood Text',serif;font-weight:400;color:#111827;font-size:clamp(1rem,.9rem + .6vw,1.25rem);line-height:1}
-    .brand-line.doctor .cred{margin-left:.35rem}
+    /* subnav pills */
+    .services-subnav{
+      position:sticky; top:72px; z-index:40;
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:18px; padding-top:8px;
+    }
+    .services-subnav a{
+      text-decoration:none; font-weight:600; color:#0c2b3a;
+      background: #ffffff; border:1px solid #e7f0f6;
+      padding:10px 14px; border-radius:999px;
+      box-shadow: 0 2px 0 #e5f3f8 inset, 0 1px 0 #fff;
+      transition: all .2s ease;
+    }
+    .services-subnav a:hover{ transform:translateY(-1px); background:#f8fdff }
+    .services-subnav a.is-current{
+      color:#fff; border-color:transparent;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--ring);
+    }
 
-    .nav-links{display:flex;gap:.5rem;align-items:center;list-style:none;margin:0}
-    .nav-links a{padding:.5rem .75rem;border-radius:10px}
-    .nav-links a:hover{background:#eef6ff}
-    .nav-links a.active{background:#dbeafe}
+    /* ========= Sections & Cards ========= */
+    .services-page{ width:var(--container); margin: 24px auto 80px; }
+    .glass-section{
+      margin-top: clamp(18px, 2.2vw, 28px);
+      border-radius: var(--radius-xl);
+      padding: clamp(18px, 2.4vw, 30px);
+      background: var(--glass);
+      box-shadow: var(--shadow-md);
+      border:1px solid #e8f1f7;
+      position:relative; overflow:hidden;
+    }
+    .section-head{
+      display:flex; align-items:center; gap:12px; margin-bottom:14px;
+    }
+    .section-head h2{
+      font-size: clamp(1.3rem, 1rem + 1.2vw, 1.7rem);
+      letter-spacing:-.01em;
+    }
+    .section-tag{
+      font-size:.88rem; font-weight:700; color:#0b3b4d;
+      padding:6px 10px; border-radius:999px;
+      background:linear-gradient(135deg,#dff8ff,#e9fffb);
+      border:1px solid #d0eef6;
+    }
 
-    .nav-toggle{display:none;position:relative;width:40px;height:40px;border:0;background:transparent}
-    .hamburger, .hamburger::before, .hamburger::after{content:"";position:absolute;left:8px;right:8px;height:2px;background:#0f172a;border-radius:2px;transition:.25s}
-    .hamburger{top:19px}
-    .hamburger::before{top:-8px}
-    .hamburger::after{top:8px}
+    .service-grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gap);
+    }
+    /* 3 → 2 → 1 layout */
+    .service-card{
+      grid-column: span 4; /* desktop 3-up */
+      display:flex; flex-direction:column;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid #e8eef5;
+      overflow:hidden;
+      box-shadow: 0 1px 0 #fff inset, 0 8px 20px rgba(12,33,48,.06);
+      transform: translateZ(0);
+      transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+    }
+    .service-card:hover{
+      border-color:#d9e9f5;
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+    .service-media{
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg,#eaf7ff,#f7fffe);
+      overflow:hidden;
+    }
+    .service-media img{
+      width:100%; height:100%; object-fit:cover;
+      transform:scale(1.02); transition: transform .6s ease;
+    }
+    .service-card:hover .service-media img{ transform:scale(1.06); }
+    .service-body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px }
+    .service-body h3{
+      font-size: clamp(1.02rem, .9rem + .6vw, 1.22rem);
+      letter-spacing:-.01em;
+    }
+    .service-body p{ color:#355061; }
+    .points{ list-style:none; display:grid; gap:6px; margin-top:2px }
+    .points li{
+      position:relative; padding-left:22px; color:#3e5a6b; font-size:.96rem;
+    }
+    .points li::before{
+      content:""; width:10px; height:10px; border-radius:3px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      position:absolute; left:0; top:7px;
+      box-shadow:0 0 0 3px rgba(14,127,168,.14);
+    }
 
-    /* Mobile nav */
+    /* Responsive grid steps */
+    @media (max-width: 1024px){ .service-card{ grid-column: span 6 } } /* 2-up */
+    @media (max-width: 640px){ .service-card{ grid-column: span 12 } } /* 1-up */
+
+    /* ========= Why Us ========= */
+    .why-strip h2{ margin-bottom:10px }
+    .why-icons{
+      display:flex; flex-wrap:wrap; gap:12px;
+      list-style:none;
+    }
+    .why-icons li{
+      background:#fff; border:1px solid #e6eef6;
+      padding:10px 12px; border-radius:12px; font-weight:600;
+      box-shadow: 0 1px 0 #fff inset, 0 8px 14px rgba(12,33,48,.05);
+    }
+
+    /* ========= CTA ========= */
+    .service-cta{
+      text-align:center;
+      background:
+        linear-gradient(180deg,#fdfefe, #fbfeff 32%, #f2fbff),
+        radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);
+      border:1px solid #e5f2f9;
+    }
+    .service-cta h2{
+      font-size: clamp(1.4rem, 1rem + 1.4vw, 1.9rem);
+      margin-bottom:6px;
+      letter-spacing:-.01em;
+    }
+    .service-cta p{ color:#3a5666; margin-bottom:16px }
+    .cta-buttons{
+      display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+    }
+    .btn-whatsapp,.btn-call,.btn-ghost{
+      appearance:none; border:none; cursor:pointer;
+      text-decoration:none; font-weight:800; letter-spacing:.02em;
+      padding:12px 16px; border-radius:14px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    }
+    .btn-whatsapp{ background:linear-gradient(135deg,#22c55e,#16a34a); color:#fff; box-shadow: var(--ring) }
+    .btn-call{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff }
+    .btn-ghost{ background:#ffffff; color:#073043; border:1px solid #e3eef6 }
+    .btn-whatsapp:hover,.btn-call:hover,.btn-ghost:hover{ transform:translateY(-2px) }
+
+    /* ========= Breadcrumb ========= */
+    .breadcrumb-wrap{ background:#ffffffc7 }
+    .breadcrumb{ display:flex; gap:10px; list-style:none; align-items:center; color:#406074 }
+    .breadcrumb li{ display:flex; align-items:center; gap:10px }
+    .breadcrumb li+li::before{ content:"/"; color:#a2b7c4 }
+    .breadcrumb a{ color:#0e3b52; text-decoration:none }
+    .breadcrumb a:hover{ text-decoration:underline }
+
+    /* ========= Footer ========= */
+    footer{
+      width:var(--container); margin: 24px auto 40px;
+      color:#496678; font-size:.95rem; text-align:center;
+    }
+
+    /* ========= Mobile nav ========= */
     @media (max-width:900px){
-      .nav-toggle{display:inline-block}
-      .nav-links{position:fixed;inset:56px 0 auto 0;display:grid;grid-auto-rows:min-content;gap:.25rem;padding:.5rem 1rem;background:#fff;box-shadow:var(--shadow);transform:translateY(-20px);opacity:0;pointer-events:none;transition:.25s}
-      .nav-links.nav-open{transform:translateY(0);opacity:1;pointer-events:auto}
+      .nav-toggle{display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #e4eef6; border-radius:12px; background:#fff; cursor:pointer}
+      .hamburger, .hamburger::before, .hamburger::after{
+        content:""; display:block; width:20px; height:2px; background:#0f2432; border-radius:2px; position:relative; transition:transform .2s ease,opacity .2s ease
+      }
+      .hamburger::before{ position:absolute; top:-6px }
+      .hamburger::after{ position:absolute; top:6px }
+      .nav-links{
+        position:absolute; inset: calc(100% + 8px) 0 auto 0;
+        width:100%;
+        background:#ffffffea; backdrop-filter: blur(10px);
+        border-bottom:1px solid #e6eef6;
+        transform-origin: top center; transform: scaleY(0);
+        opacity:0; pointer-events:none;
+        display:flex; flex-direction:column; gap:6px; padding:10px;
+      }
+      .nav-links.nav-open{ transform: scaleY(1); opacity:1; pointer-events:auto }
     }
 
-    /* 3) Hero */
-    .service-hero{max-width:var(--max);margin:1.25rem auto 0;padding:1rem;}
-    .service-hero h1{font-size:clamp(1.6rem,1.2rem + 2vw,2.5rem);margin:0 0 .35rem;color:#0b3b5a}
-    .service-hero p{margin:0 0 .75rem;color:#334155}
-    .services-subnav{position:sticky;top:56px;z-index:40;display:flex;flex-wrap:wrap;gap:.5rem;background:transparent;padding:.5rem 0}
-    .services-subnav a{display:inline-block;padding:.45rem .7rem;border-radius:999px;border:1px solid #cbd5e1;background:#fff;font-size:.92rem}
-    .services-subnav a:hover{border-color:#94a3b8}
+    /* ========= Scroll behaviors & motion preferences ========= */
+    html{ scroll-behavior:smooth }
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto }
+      *{ transition:none !important; animation:none !important }
+    }
 
-    /* 4) Breadcrumb */
-    .breadcrumb-wrap{background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.5));backdrop-filter:blur(4px);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
-    .breadcrumb{max-width:var(--max);margin:auto;padding:.5rem 1rem;list-style:none;display:flex;gap:.5rem;flex-wrap:wrap}
-    .breadcrumb li{color:#475569}
-    .breadcrumb a{color:#0b3b5a}
-
-    /* 5) Sections */
-    .services-page{max-width:var(--max);margin:0 auto;padding:1rem}
-    .glass-section{background:var(--glass);backdrop-filter:saturate(140%) blur(6px);border:1px solid #e2e8f0;border-radius:var(--round);box-shadow:var(--shadow);padding:1rem;margin:1rem 0}
-    .section-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}
-    .section-head h2{margin:0;color:#0b3b5a;font-size:clamp(1.2rem,1rem + 1vw,1.6rem)}
-    .section-tag{font-size:.85rem;background:#e6f4ff;border:1px solid #bfdbfe;color:#0b3b5a;padding:.2rem .5rem;border-radius:8px;white-space:nowrap}
-
-    /* 6) Service grid — FIX: robust responsive grid 3 → 2 → 1 */
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    @media (max-width:1024px){.service-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.service-grid{grid-template-columns:1fr}}
-
-    .service-card{display:flex;flex-direction:column;border:1px solid #e2e8f0;background:#fff;border-radius:14px;overflow:hidden;min-height:100%}
-    .service-media{aspect-ratio:16/10;background:#f1f5f9}
-    .service-media img{width:100%;height:100%;object-fit:cover}
-    .service-body{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.5rem}
-    .service-body h3{margin:0;color:#0f172a;font-size:1.05rem}
-    .service-body p{margin:0;color:#475569}
-    .points{margin:.25rem 0 0 0;padding-left:1.1rem;color:#334155}
-    .points li{margin:.25rem 0}
-
-    /* 7) Why us */
-    .why-strip h2{margin:.25rem 0 .5rem}
-    .why-icons{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
-    .why-icons li{background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:.45rem .75rem}
-
-    /* 8) CTA */
-    .service-cta{text-align:center}
-    .cta-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:.5rem}
-    .btn-whatsapp,.btn-call,.btn-ghost{display:inline-block;padding:.6rem .9rem;border-radius:12px;border:1px solid transparent}
-    .btn-whatsapp{background:#e7f6ee;border-color:#b7ead2}
-    .btn-call{background:#e6f4ff;border-color:#bfdbfe}
-    .btn-ghost{background:#fff;border-color:#e2e8f0}
-
-    footer{max-width:var(--max);margin:1.25rem auto;padding:1rem;color:#475569}
+    /* ========= Tiny utilities ========= */
+    .sr-only{ position:absolute !important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
   </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      <!-- Two-line brand lockup -->
       <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
 
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="site-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="active" href="services.html">Services</a></li>
+        <li><a class="active" href="services.html" aria-current="page">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="international.html">International Patients</a></li>
@@ -140,10 +341,9 @@
   <!-- Hero -->
   <header class="page-header service-hero">
     <h1>Our Orthodontic Services</h1>
-    <p>Under the leadership of Dr. Vikram Jeet Singh, we deliver world-class, comfort-first orthodontic care.</p>
+    <p>Under the leadership of Dr. Vikram Jeet Singh, we deliver world‑class, comfort‑first orthodontic care designed around you.</p>
 
-    <!-- Quick anchor pills -->
-    <nav class="services-subnav" aria-label="Service sections">
+    <nav class="services-subnav" aria-label="Jump to service categories">
       <a href="#orthodontics">Orthodontics</a>
       <a href="#cosmetic">Cosmetic</a>
       <a href="#preventive">Preventive</a>
@@ -154,7 +354,7 @@
   </header>
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="breadcrumb-wrap">
+  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap" style="width:var(--container);margin:16px auto 0;">
     <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
@@ -168,6 +368,7 @@
   </nav>
 
   <main class="services-page">
+
     <!-- ORTHODONTICS -->
     <section id="orthodontics" class="glass-section">
       <div class="section-head">
@@ -179,7 +380,7 @@
         <!-- Traditional Braces -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/traditionalbraces.jpg" alt="Traditional Braces" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/traditionalbraces.jpg" alt="Traditional braces with precise archwires" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Traditional Braces</h3>
@@ -195,7 +396,7 @@
         <!-- Clear Aligners -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/clearaligners.jpg" alt="Clear Aligners" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/clearaligners.jpg" alt="Near-invisible clear aligners" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Clear Aligners</h3>
@@ -211,11 +412,11 @@
         <!-- Self-ligating -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/selfligatingbraces.jpg" alt="Self-Ligating Braces" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/selfligatingbraces.jpg" alt="Self-ligating braces with low-friction clips" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
-            <h3>Self-Ligating Braces</h3>
-            <p>Low-friction clips instead of ties; fewer adjustments and improved comfort.</p>
+            <h3>Self‑Ligating Braces</h3>
+            <p>Low‑friction clips instead of ties; fewer adjustments and improved comfort.</p>
             <ul class="points">
               <li>Reduced chair time</li>
               <li>Efficient archwire mechanics</li>
@@ -227,7 +428,7 @@
         <!-- Lingual -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/lingualbraces.jpg" alt="Lingual Braces" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/lingualbraces.jpg" alt="Lingual braces fitted behind the teeth" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Lingual Braces</h3>
@@ -243,7 +444,7 @@
         <!-- Retainers -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/retainers.jpg" alt="Retainers & Maintenance" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/retainers.jpg" alt="Clear and fixed retainers" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Retainers & Maintenance</h3>
@@ -259,15 +460,15 @@
         <!-- Consultation -->
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/consultation.jpg" alt="Orthodontic Consultation" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/consultation.jpg" alt="Orthodontic consultation with digital plan" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Orthodontic Consultation</h3>
-            <p>Exam, photos/X-rays & digital planning with a clear timeline and cost estimate.</p>
+            <p>Exam, photos/X‑rays & digital planning with a clear timeline and cost estimate.</p>
             <ul class="points">
               <li>15+ years experience</li>
               <li>Transparent options</li>
-              <li>Patient-first guidance</li>
+              <li>Patient‑first guidance</li>
             </ul>
           </div>
         </article>
@@ -284,31 +485,31 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/teethwhitening.jpg" alt="Teeth Whitening" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/teethwhitening.jpg" alt="Professional teeth whitening" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Teeth Whitening</h3>
-            <p>In-office & take-home systems to safely brighten up to 8 shades.</p>
+            <p>In‑office & take‑home systems to safely brighten up to 8 shades.</p>
           </div>
         </article>
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/veneers.jpg" alt="Porcelain Veneers" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/veneers.jpg" alt="Porcelain veneers close-up" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Porcelain Veneers</h3>
-            <p>Ultra-thin shells to correct discoloration, chips, and small gaps.</p>
+            <p>Ultra‑thin shells to correct discoloration, chips, and small gaps.</p>
           </div>
         </article>
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/bonding.jpg" alt="Cosmetic Bonding" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/bonding.jpg" alt="Cosmetic bonding before-after concept" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Cosmetic Bonding</h3>
-            <p>Tooth-colored resin to reshape edges and close minor spaces.</p>
+            <p>Tooth‑colored resin to reshape edges and close minor spaces.</p>
           </div>
         </article>
       </div>
@@ -324,7 +525,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/cleaning.jpg" alt="Cleaning & Polishing" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/cleaning.jpg" alt="Professional cleaning and polishing" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Cleaning & Polishing</h3>
@@ -334,17 +535,17 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/sealants.jpg" alt="Fluoride & Sealants" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/sealants.jpg" alt="Fluoride and sealants application" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Fluoride & Sealants</h3>
-            <p>Extra protection for children & high-risk adults.</p>
+            <p>Extra protection for children & high‑risk adults.</p>
           </div>
         </article>
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/night-guard.jpg" alt="Night Guards" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/night-guard.jpg" alt="Night guard appliance" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Night Guards</h3>
@@ -364,17 +565,17 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/dental-implants.jpg" alt="Dental Implants" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/dental-implants.jpg" alt="Dental implant with crown" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Dental Implants</h3>
-            <p>Titanium roots with custom crowns—strong, natural and long-lasting.</p>
+            <p>Titanium roots with custom crowns—strong, natural and long‑lasting.</p>
           </div>
         </article>
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/crowns-bridges.jpg" alt="Crowns & Bridges" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/crowns-bridges.jpg" alt="Ceramic crown and bridge" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Crowns & Bridges</h3>
@@ -384,11 +585,11 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/dentures.jpg" alt="Dentures" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/dentures.jpg" alt="Modern dentures" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Dentures</h3>
-            <p>Modern, comfortable dentures—full, partial, or implant-retained.</p>
+            <p>Modern, comfortable dentures—full, partial, or implant‑retained.</p>
           </div>
         </article>
       </div>
@@ -404,7 +605,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/kids-braces.jpg" alt="Early Braces" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/kids-braces.jpg" alt="Early braces for kids" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Early Braces</h3>
@@ -414,7 +615,7 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/space-maintainers.jpg" alt="Space Maintainers" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/space-maintainers.jpg" alt="Space maintainer appliance" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Space Maintainers</h3>
@@ -424,11 +625,11 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/habit-appliance.jpg" alt="Habit Appliances" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/habit-appliance.jpg" alt="Habit breaking appliance" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Habit Appliances</h3>
-            <p>Gentle appliances to help break thumb-sucking & tongue thrust.</p>
+            <p>Gentle appliances to help break thumb‑sucking & tongue thrust.</p>
           </div>
         </article>
       </div>
@@ -444,7 +645,7 @@
       <div class="service-grid">
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/root-canal.jpg" alt="Root Canal" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/root-canal.jpg" alt="Root canal therapy" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Root Canal Therapy</h3>
@@ -454,21 +655,21 @@
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/wisdom-tooth.jpg" alt="Wisdom Tooth Removal" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/wisdom-tooth.jpg" alt="Wisdom tooth removal" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Wisdom Tooth Removal</h3>
-            <p>Comfort-focused extraction with clear post-op guidance.</p>
+            <p>Comfort‑focused extraction with clear post‑op guidance.</p>
           </div>
         </article>
 
         <article class="service-card">
           <div class="service-media">
-            <img src="assets/images/services/emergency-care.jpg" alt="Emergency Dental Care" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="assets/images/services/emergency-care.jpg" alt="Emergency dental care" loading="lazy" decoding="async" />
           </div>
           <div class="service-body">
             <h3>Emergency Dental Care</h3>
-            <p>Same-day attention for pain, broken teeth, or trauma.</p>
+            <p>Same‑day attention for pain, broken teeth, or trauma.</p>
           </div>
         </article>
       </div>
@@ -481,7 +682,7 @@
         <li>🕒 15+ Years Expertise</li>
         <li>🦷 Digital Planning</li>
         <li>🌍 International Friendly</li>
-        <li>✨ Comfort-First Care</li>
+        <li>✨ Comfort‑First Care</li>
         <li>🔒 Strict Sterilization</li>
       </ul>
     </section>
@@ -491,27 +692,41 @@
       <h2>Ready for your best smile yet?</h2>
       <p>Quick responses • Clear timelines • Flexible options</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/919565321625" class="btn-whatsapp">WhatsApp Us</a>
+        <a href="https://wa.me/919565321625" class="btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
         <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
         <a href="contact.html" class="btn-ghost">Book Appointment</a>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
 
-  <!-- Accessible mobile nav -->
+  <!-- Accessible mobile nav + subnav highlight -->
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks  = document.querySelector('.nav-links');
-    if (navToggle && navLinks) {
-      navToggle.setAttribute('aria-controls', 'site-menu');
-      navLinks.id = 'site-menu';
-      navToggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('nav-open');
-        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
+    (function(){
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.querySelector('.nav-links');
+      if(navToggle && navLinks){
+        navToggle.addEventListener('click', ()=>{
+          const open = navLinks.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      // Scrollspy for the subnav: highlights current section
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const pills = [...document.querySelectorAll('.services-subnav a')];
+      const byId = id => pills.find(a => a.getAttribute('href') === `#${id}`);
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            pills.forEach(p=>p.classList.remove('is-current'));
+            const pill = byId(e.target.id);
+            pill && pill.classList.add('is-current');
+          }
+        });
+      }, {rootMargin: "-30% 0px -60% 0px", threshold: 0.01});
+      sections.forEach(s=>observer.observe(s));
+    })();
   </script>
 
   <!-- LocalBusiness schema -->
