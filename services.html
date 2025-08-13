@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Our Orthodontic Services | Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Orthodontic specialists in Lucknow offering braces, clear aligners, lingual braces, pediatric orthodontics, implants, and emergency care. Book with Dr. Vikram Jeet Singh (BDS, MDS)." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
-
+  
   <!-- Social / Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Our Orthodontic Services | Smiles & Braces" />
@@ -25,44 +24,95 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Global styles + page-specific styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/services.css" />
-
-  <!-- Brand header overrides (match index/about/blog) -->
+  <!-- ===== Single‑file critical CSS (no external CSS required) ===== -->
   <style>
-    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
-    .brand-line{display:block}
-
-    /* Clinic name — Carattere, black */
-    .navbar .brand-line.clinic{
-      font-family:'Carattere',cursive!important;
-      font-weight:400!important;
-      color:#000!important;
-      letter-spacing:.01em;
-      text-transform:none;
-      font-size:clamp(2.1rem,1.2rem + 3vw,3.4rem);
-      line-height:1.05;
+    /* 1) Reset + tokens */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:#0f172a;background:#f8fafc}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    :root{
+      --brand:#1f6fa5; --brand-2:#20B2AA; --glass:rgba(255,255,255,.7);
+      --shadow:0 10px 30px rgba(2,8,23,.08);
+      --max:1200px; --round:18px;
     }
-    .navbar .brand::after{display:none!important;} /* disable any old underline */
 
-    /* Doctor line — Fanwood Text */
-    .navbar .brand-line.doctor{
-      font-family:'Fanwood Text',serif!important;
-      font-weight:400!important;
-      color:#000!important;
-      font-size:clamp(1.05rem,.9rem + .9vw,1.6rem);
-      letter-spacing:.005em;
-      line-height:1.05;
-      margin-top:-.1rem;
-    }
-    .navbar .brand-line.doctor .cred{color:#000!important;margin-left:.35rem;font-weight:400}
+    /* 2) Layout wrappers */
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #e2e8f0}
+    .nav-container{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem}
+    .brand{display:flex;flex-direction:column;gap:.15rem}
+    .brand-line.clinic{font-family:'Carattere',cursive;font-weight:400;color:#111827;letter-spacing:.01em;font-size:clamp(1.8rem,1.2rem + 2vw,3rem);line-height:1.05}
+    .brand-line.doctor{font-family:'Fanwood Text',serif;font-weight:400;color:#111827;font-size:clamp(1rem,.9rem + .6vw,1.25rem);line-height:1}
+    .brand-line.doctor .cred{margin-left:.35rem}
 
-    .navbar .nav-container{gap:1rem;align-items:center}
-    @media (max-width:560px){
-      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
-      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    .nav-links{display:flex;gap:.5rem;align-items:center;list-style:none;margin:0}
+    .nav-links a{padding:.5rem .75rem;border-radius:10px}
+    .nav-links a:hover{background:#eef6ff}
+    .nav-links a.active{background:#dbeafe}
+
+    .nav-toggle{display:none;position:relative;width:40px;height:40px;border:0;background:transparent}
+    .hamburger, .hamburger::before, .hamburger::after{content:"";position:absolute;left:8px;right:8px;height:2px;background:#0f172a;border-radius:2px;transition:.25s}
+    .hamburger{top:19px}
+    .hamburger::before{top:-8px}
+    .hamburger::after{top:8px}
+
+    /* Mobile nav */
+    @media (max-width:900px){
+      .nav-toggle{display:inline-block}
+      .nav-links{position:fixed;inset:56px 0 auto 0;display:grid;grid-auto-rows:min-content;gap:.25rem;padding:.5rem 1rem;background:#fff;box-shadow:var(--shadow);transform:translateY(-20px);opacity:0;pointer-events:none;transition:.25s}
+      .nav-links.nav-open{transform:translateY(0);opacity:1;pointer-events:auto}
     }
+
+    /* 3) Hero */
+    .service-hero{max-width:var(--max);margin:1.25rem auto 0;padding:1rem;}
+    .service-hero h1{font-size:clamp(1.6rem,1.2rem + 2vw,2.5rem);margin:0 0 .35rem;color:#0b3b5a}
+    .service-hero p{margin:0 0 .75rem;color:#334155}
+    .services-subnav{position:sticky;top:56px;z-index:40;display:flex;flex-wrap:wrap;gap:.5rem;background:transparent;padding:.5rem 0}
+    .services-subnav a{display:inline-block;padding:.45rem .7rem;border-radius:999px;border:1px solid #cbd5e1;background:#fff;font-size:.92rem}
+    .services-subnav a:hover{border-color:#94a3b8}
+
+    /* 4) Breadcrumb */
+    .breadcrumb-wrap{background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.5));backdrop-filter:blur(4px);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+    .breadcrumb{max-width:var(--max);margin:auto;padding:.5rem 1rem;list-style:none;display:flex;gap:.5rem;flex-wrap:wrap}
+    .breadcrumb li{color:#475569}
+    .breadcrumb a{color:#0b3b5a}
+
+    /* 5) Sections */
+    .services-page{max-width:var(--max);margin:0 auto;padding:1rem}
+    .glass-section{background:var(--glass);backdrop-filter:saturate(140%) blur(6px);border:1px solid #e2e8f0;border-radius:var(--round);box-shadow:var(--shadow);padding:1rem;margin:1rem 0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}
+    .section-head h2{margin:0;color:#0b3b5a;font-size:clamp(1.2rem,1rem + 1vw,1.6rem)}
+    .section-tag{font-size:.85rem;background:#e6f4ff;border:1px solid #bfdbfe;color:#0b3b5a;padding:.2rem .5rem;border-radius:8px;white-space:nowrap}
+
+    /* 6) Service grid — FIX: robust responsive grid 3 → 2 → 1 */
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media (max-width:1024px){.service-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.service-grid{grid-template-columns:1fr}}
+
+    .service-card{display:flex;flex-direction:column;border:1px solid #e2e8f0;background:#fff;border-radius:14px;overflow:hidden;min-height:100%}
+    .service-media{aspect-ratio:16/10;background:#f1f5f9}
+    .service-media img{width:100%;height:100%;object-fit:cover}
+    .service-body{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.5rem}
+    .service-body h3{margin:0;color:#0f172a;font-size:1.05rem}
+    .service-body p{margin:0;color:#475569}
+    .points{margin:.25rem 0 0 0;padding-left:1.1rem;color:#334155}
+    .points li{margin:.25rem 0}
+
+    /* 7) Why us */
+    .why-strip h2{margin:.25rem 0 .5rem}
+    .why-icons{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+    .why-icons li{background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:.45rem .75rem}
+
+    /* 8) CTA */
+    .service-cta{text-align:center}
+    .cta-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:.5rem}
+    .btn-whatsapp,.btn-call,.btn-ghost{display:inline-block;padding:.6rem .9rem;border-radius:12px;border:1px solid transparent}
+    .btn-whatsapp{background:#e7f6ee;border-color:#b7ead2}
+    .btn-call{background:#e6f4ff;border-color:#bfdbfe}
+    .btn-ghost{background:#fff;border-color:#e2e8f0}
+
+    footer{max-width:var(--max);margin:1.25rem auto;padding:1rem;color:#475569}
   </style>
 </head>
 <body>
@@ -104,7 +154,7 @@
   </header>
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+  <nav aria-label="Breadcrumb" class="breadcrumb-wrap">
     <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
@@ -464,7 +514,7 @@
     }
   </script>
 
-  <!-- LocalBusiness schema (optional here, good on home/contact) -->
+  <!-- LocalBusiness schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
