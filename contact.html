@@ -2,81 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact & Appointments | Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Book appointments, contact Smiles & Braces Dental Clinic in Lucknow, and find our location on the map. WhatsApp, phone, email, address and clinic timings." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/contact.html" />
-
-  <!-- Social -->
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact & Appointments | Smiles & Braces" />
   <meta property="og:description" content="Book or message us. Find directions to Smiles & Braces Dental Clinic, Lucknow." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/og/clinic-preview.jpg" />
-
+  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
   <link rel="icon" href="assets/icons/favicon.ico" />
-  <meta name="theme-color" content="#a0e7ff" />
+  <meta name="theme-color" content="#0e7fa8" />
 
-  <!-- Global + page CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/contact.css" />
-
-  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
+  <!-- Fonts (brand + UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Brand header overrides (matches index/about/blog/services) -->
   <style>
-    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
-    .brand-line{display:block}
-    /* Clinic name — Carattere, black */
-    .navbar .brand-line.clinic{
-      font-family:'Carattere',cursive!important;
-      font-weight:400!important;
-      color:#000!important;
-      letter-spacing:.01em;
-      text-transform:none;
-      font-size:clamp(2.1rem,1.2rem + 3vw,3.4rem);
-      line-height:1.05;
+    /* ===== Tokens + reset ===== */
+    :root{
+      --bg: #f6fbff;
+      --ink:#0f1720; --muted:#5f7483;
+      --brand:#0e7fa8; --brand-2:#20b2aa;
+      --glass: rgba(255,255,255,.72);
+      --stroke:#e6eef6;
+      --radius-xl:22px; --radius-lg:18px; --radius-md:14px;
+      --shadow-xl:0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
+      --shadow-md:0 10px 24px rgba(15,23,32,.12);
+      --ring:0 0 0 8px rgba(14,127,168,.08);
+      --container:min(1160px,92vw);
+      --gap:clamp(14px,1.6vw,22px);
     }
-    .navbar .brand::after{display:none!important;} /* disable any old underline */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
+        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
 
-    /* Doctor line — Fanwood Text */
-    .navbar .brand-line.doctor{
-      font-family:'Fanwood Text',serif!important;
-      font-weight:400!important;
-      color:#000!important;
-      font-size:clamp(1.05rem,.9rem + .9vw,1.6rem);
-      letter-spacing:.005em;
-      line-height:1.05;
-      margin-top:-.1rem;
-    }
-    .navbar .brand-line.doctor .cred{color:#000!important;margin-left:.35rem;font-weight:400}
+    /* ===== Navbar ===== */
+    .navbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#ffffffd9,#ffffffb8);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--stroke)}
+    .nav-container{width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px clamp(8px,1.2vw,14px);gap:12px}
+    .brand{display:flex;flex-direction:column;gap:2px}
+    .brand-line.clinic{font-family:"Carattere",cursive;font-size:clamp(2rem,1.1rem + 3.2vw,3.2rem);line-height:1.02;color:#111;letter-spacing:.01em}
+    .brand-line.doctor{font-family:"Fanwood Text",serif;font-size:clamp(1rem,.9rem + .9vw,1.4rem);line-height:1;margin-top:-2px}
+    .brand-line .cred{margin-left:.35rem;opacity:.85}
+    .nav-links{list-style:none;display:flex;gap:10px;align-items:center}
+    .nav-links a{padding:8px clamp(8px,.6vw,10px);border-radius:999px;font-weight:600;color:#0d2230}
+    .nav-links a:hover{background:#f0f7fb}
+    .nav-links a.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
+    .nav-toggle{display:none}
 
-    .navbar .nav-container{gap:1rem;align-items:center}
-    @media (max-width:560px){
-      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
-      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    /* ===== Hero ===== */
+    .contact-hero{
+      width:var(--container);margin:26px auto 0;border-radius:calc(var(--radius-xl) + 6px);
+      background:linear-gradient(180deg,#f7fcff,#f2fbff), radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
+      border:1px solid #e8f2fb; padding:clamp(22px,3.2vw,40px); box-shadow:var(--shadow-md); position:relative;overflow:hidden
     }
+    .contact-hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:220px;background:
+      radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
+      radial-gradient(60% 120% at 25% 0%, rgba(14,127,168,.15), transparent 60%);filter:blur(30px)}
+    .contact-hero h1{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.8rem,1.1rem + 2.5vw,2.6rem);line-height:1.15;margin-bottom:6px}
+    .contact-hero p{color:var(--muted);font-size:clamp(.98rem,.9rem + .35vw,1.06rem);max-width:68ch}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn-whatsapp,.btn-call{appearance:none;border:none;cursor:pointer;font-weight:800;letter-spacing:.02em;padding:12px 16px;border-radius:14px;transition:.18s;text-decoration:none;display:inline-block}
+    .btn-whatsapp{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:var(--ring)}
+    .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+    .btn-whatsapp:hover,.btn-call:hover{transform:translateY(-2px)}
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb-wrap{background:#ffffffc7;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)}
+    .breadcrumb{width:var(--container);margin:auto;padding:.6rem 0;display:flex;gap:10px;list-style:none;color:#406074}
+    .breadcrumb li{display:flex;align-items:center;gap:10px}
+    .breadcrumb li+li::before{content:"/";color:#a2b7c4}
+    .breadcrumb a{color:#0e3b52}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    /* ===== Page ===== */
+    .contact-page{width:var(--container);margin:24px auto 80px}
+
+    .glass-card{
+      background:var(--glass);border:1px solid #e8f1f7;border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-md);padding:clamp(18px,2.4vw,30px);position:relative;overflow:hidden
+    }
+
+    /* Grid: form + clinic info */
+    .contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .panel{grid-column:span 7;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:18px;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06)}
+    .panel + .panel{grid-column:span 5}
+    .panel h2{font-size:1.3rem;margin-bottom:8px;letter-spacing:-.01em}
+    @media (max-width:1024px){.panel{grid-column:span 12} .panel + .panel{grid-column:span 12}}
+
+    /* Form */
+    .ui-form{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .ui-form label{grid-column:span 12;display:grid;gap:6px}
+    .ui-form label.two-col{grid-column:span 6}
+    @media (max-width:640px){.ui-form label.two-col{grid-column:span 12}}
+    .ui-form span{font-weight:700;color:#083041}
+    .ui-form input,.ui-form textarea{
+      appearance:none;width:100%;padding:12px 12px;border-radius:12px;border:1px solid #dfe7f0;background:#fcfeff;
+      font:inherit;color:#0e2b3b;outline:none;transition:border-color .18s, box-shadow .18s, background .18s;
+    }
+    .ui-form textarea{resize:vertical;min-height:120px}
+    .ui-form input:focus,.ui-form textarea:focus{border-color:#a8d8ee;box-shadow:0 0 0 4px rgba(14,127,168,.15);background:#fff}
+    .ui-form input::placeholder,.ui-form textarea::placeholder{color:#9fb3c1}
+    .form-actions{grid-column:span 12;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+    .btn-primary,.btn-outline{
+      appearance:none;border:none;cursor:pointer;font-weight:800;letter-spacing:.02em;padding:12px 16px;border-radius:14px;transition:.18s;text-decoration:none;display:inline-block
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+    .btn-outline{background:#fff;border:1px solid #e3eef6;color:#073043}
+    .btn-primary:hover,.btn-outline:hover{transform:translateY(-2px)}
+
+    /* Info rows */
+    .info-row{display:flex;gap:12px;align-items:flex-start;border:1px solid #e8eef5;background:#fff;border-radius:14px;padding:12px;margin-top:10px}
+    .icon{width:32px;height:32px;border-radius:8px;object-fit:cover}
+
+    /* Map card */
+    .map-card{margin-top:clamp(18px,2.2vw,28px)}
+    .map-heading{font-size:1.3rem;margin-bottom:8px}
+    .map-wrap{border:1px solid #e8eef5;background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06)}
+    .map-wrap iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+    .map-note{color:#3a5666;margin-top:8px}
+
+    /* Footer */
+    footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
+
+    /* Mobile nav */
+    @media (max-width:900px){
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--stroke);border-radius:12px;background:#fff;cursor:pointer}
+      .hamburger,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:#0f2432;border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
+      .hamburger::before{position:absolute;top:-6px}
+      .hamburger::after{position:absolute;top:6px}
+      .nav-links{position:absolute;inset:calc(100% + 8px) 0 auto 0;width:100%;background:#ffffffea;backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);transform-origin:top center;transform:scaleY(0);opacity:0;pointer-events:none;display:flex;flex-direction:column;gap:6px;padding:10px}
+      .nav-links.nav-open{transform:scaleY(1);opacity:1;pointer-events:auto}
+    }
+
+    /* Utilities */
+    .sr-only{ position:absolute !important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important;animation:none !important}}
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      <!-- Two-line brand lockup -->
       <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
 
-      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
-      <ul class="nav-links">
+      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+      <ul class="nav-links" id="site-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a class="active" href="contact.html">Contact</a></li>
+        <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
         <li><a href="international.html">International Patients</a></li>
       </ul>
     </div>
@@ -84,18 +175,16 @@
 
   <!-- Hero -->
   <header class="contact-hero">
-    <div class="hero-inner">
-      <h1>Get in Touch</h1>
-      <p>Fast booking via WhatsApp or phone — or send us a note below.</p>
-      <div class="hero-buttons">
-        <a class="btn-whatsapp" href="https://wa.me/919565321625" rel="noopener">WhatsApp +91&nbsp;9565321625</a>
-        <a class="btn-call" href="tel:+919565321625">Call +919565321625</a>
-      </div>
+    <h1>Get in Touch</h1>
+    <p>Fast booking via WhatsApp or phone — or send us a note below.</p>
+    <div class="hero-buttons">
+      <a class="btn-whatsapp" href="https://wa.me/919565321625?text=Hi%20Dr.%20Vikram%2C%20I%27d%20like%20to%20book%20an%20appointment." rel="noopener">WhatsApp +91&nbsp;95653&nbsp;21625</a>
+      <a class="btn-call" href="tel:+919565321625">Call +91&nbsp;95653&nbsp;21625</a>
     </div>
   </header>
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+  <nav aria-label="Breadcrumb" class="glass-card breadcrumb-wrap">
     <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
@@ -109,12 +198,18 @@
   </nav>
 
   <main class="contact-page">
-    <!-- Glass strip with Form + Clinic Info -->
+    <!-- Form + Info -->
     <section class="glass-card contact-grid">
       <!-- Form -->
       <div class="panel">
         <h2>Book Your Appointment</h2>
-        <form class="ui-form" action="#" method="post" novalidate>
+
+        <!-- status banner -->
+        <div id="formStatus" class="sr-only" role="status" aria-live="polite"></div>
+
+        <form class="ui-form" action="#" method="post" novalidate id="contactForm">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" style="position:absolute;left:-9999px" />
+
           <label>
             <span>Full Name</span>
             <input type="text" name="name" placeholder="John Doe" autocomplete="name" required />
@@ -127,7 +222,7 @@
 
           <label>
             <span>Phone Number</span>
-            <input type="tel" name="phone" inputmode="tel" placeholder="+91 9xxxxxxxxx" autocomplete="tel" required />
+            <input type="tel" name="phone" inputmode="tel" placeholder="+91 9xxxxxxxxx" autocomplete="tel" pattern="^\\+?\\d[\\d\\s-]{7,}$" required />
           </label>
 
           <label class="two-col">
@@ -142,14 +237,14 @@
 
           <div class="form-actions">
             <button type="submit" class="btn-primary">Submit</button>
-            <a class="btn-outline" href="https://wa.me/919565321625" rel="noopener">Message on WhatsApp</a>
+            <a class="btn-outline" href="https://wa.me/919565321625?text=Hi%20Dr.%20Vikram%2C%20I%27d%20like%20to%20book%20an%20appointment." rel="noopener">Message on WhatsApp</a>
           </div>
         </form>
       </div>
 
       <!-- Clinic info -->
-      <aside class="panel">
-        <h2>Clinic Information</h2>
+      <aside class="panel" aria-labelledby="clinicInfoHeading">
+        <h2 id="clinicInfoHeading">Clinic Information</h2>
 
         <div class="info-row">
           <img src="assets/illustrations/global.jpg" alt="" aria-hidden="true" class="icon">
@@ -166,8 +261,8 @@
           <img src="assets/illustrations/concierge.jpg" onerror="this.style.display='none'" alt="" aria-hidden="true" class="icon">
           <div>
             <strong>Phone / WhatsApp</strong><br/>
-            <a href="tel:+917570000801">+91 7570000801</a><br/>
-            <a href="tel:+919565321625">+91 9565321625</a>
+            <a href="tel:+917570000801">+91 75700 00801</a><br/>
+            <a href="tel:+919565321625">+91 95653 21625</a>
           </div>
         </div>
 
@@ -189,7 +284,7 @@
       </aside>
     </section>
 
-    <!-- Map (separate glass strip, full width on mobile) -->
+    <!-- Map -->
     <section class="glass-card map-card">
       <h2 class="map-heading">Find Us Here</h2>
       <div class="map-wrap">
@@ -204,16 +299,72 @@
   </main>
 
   <footer>
-    <p>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti </p>
+    <p>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</p>
   </footer>
 
+  <!-- Mobile nav + simple form handling -->
   <script>
-    // Mobile nav
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks  = document.querySelector('.nav-links');
-    if (navToggle && navLinks){
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
-    }
+    (function(){
+      // Mobile nav
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.getElementById('site-menu');
+      if (navToggle && navLinks){
+        navToggle.addEventListener('click', ()=>{
+          const open = navLinks.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Lightweight client-side validation (no backend)
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      if(form){
+        form.addEventListener('submit', (e)=>{
+          e.preventDefault();
+          const data = new FormData(form);
+          // Honeypot
+          if ((data.get('website')||'').trim() !== '') return; // silently drop bots
+
+          const name = (data.get('name')||'').trim();
+          const email = (data.get('email')||'').trim();
+          const phone = (data.get('phone')||'').trim();
+
+          if(!name || !email || !phone){
+            status.classList.remove('sr-only');
+            status.textContent = 'Please fill in all required fields.';
+            status.style.color = '#b91c1c';
+            return;
+          }
+          // Success UI only (replace with your backend/EmailJS/Netlify Forms later)
+          status.classList.remove('sr-only');
+          status.textContent = 'Thank you! We have received your request. We will contact you shortly.';
+          status.style.color = '#065f46';
+          form.reset();
+          // Optional: open WhatsApp with a prefilled summary
+          // window.open('https://wa.me/919565321625?text=' + encodeURIComponent(`Hello, I'm ${name}. I'd like to book an appointment.`),'_blank');
+        });
+      }
+    })();
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Smiles & Braces Dental Clinic",
+    "url":"https://smilesandbraces.github.io/thebestindiandentist/",
+    "telephone":"+91-95653-21625",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+      "addressLocality":"Lucknow",
+      "addressRegion":"UP",
+      "postalCode":"226016",
+      "addressCountry":"IN"
+    },
+    "sameAs":["https://instagram.com/drvikramjeetdental"]
+  }
   </script>
 </body>
 </html>
