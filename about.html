@@ -2,70 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About Dr. Vikram Jeet Singh | Smiles & Braces Dental Clinic</title>
   <meta name="description" content="Meet Dr. Vikram Jeet Singh (BDS, MDS), orthodontist with 15+ years of experience in comfort-first, digitally planned orthodontics for local and international patients in Lucknow." />
   <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/about.html" />
-
-  <!-- Brand fonts: Carattere (clinic), Fanwood Text (doctor) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Social -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="About Dr. Vikram Jeet Singh | Smiles & Braces" />
   <meta property="og:description" content="Comfort-first orthodontics led by Dr. Vikram Jeet Singh, BDS, MDS." />
   <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/about.html" />
-  <meta property="og:image" content="assets/images/og/clinic-preview.jpg" />
+  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="assets/icons/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-  <meta name="theme-color" content="#a0e7ff" />
+  <meta name="theme-color" content="#0e7fa8" />
 
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/about.css" />
+  <!-- Fonts (brand + UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Brand overrides to match index header -->
   <style>
-    .brand{display:flex;flex-direction:column;gap:.2rem;text-decoration:none}
-    .brand-line{display:block}
-
-    /* Clinic name — Carattere, black */
-    .navbar .brand-line.clinic{
-      font-family:'Carattere', cursive !important;
-      font-weight:400 !important;
-      color:#000 !important;
-      letter-spacing:.01em;
-      text-transform:none;
-      font-size:clamp(2.1rem, 1.2rem + 3vw, 3.4rem);
-      line-height:1.05;
+    /* ===== Tokens + reset ===== */
+    :root{
+      --bg:#f6fbff; --ink:#0f1720; --muted:#5f7483;
+      --brand:#0e7fa8; --brand-2:#20b2aa; --accent:#7c3aed;
+      --glass:rgba(255,255,255,.72); --stroke:#e6eef6;
+      --radius-xl:22px; --radius-lg:18px; --radius-md:14px;
+      --shadow-xl:0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
+      --shadow-md:0 10px 24px rgba(15,23,32,.12);
+      --ring:0 0 0 8px rgba(14,127,168,.08);
+      --container:min(1160px,92vw); --gap:clamp(14px,1.6vw,22px);
     }
-    .navbar .brand::after{display:none !important;} /* disable any old underline */
-
-    /* Doctor line — Fanwood Text */
-    .navbar .brand-line.doctor{
-      font-family:'Fanwood Text', serif !important;
-      font-weight:400 !important;
-      color:#000 !important;
-      font-size:clamp(1.05rem, .9rem + .9vw, 1.6rem);
-      letter-spacing:.005em;
-      line-height:1.05;
-      margin-top:-.1rem;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
+        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
-    .navbar .brand-line.doctor .cred{
-      color:#000 !important;
-      margin-left:.35rem;
-      font-weight:400;
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important;animation:none !important}}
+
+    /* ===== Navbar ===== */
+    .navbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#ffffffd9,#ffffffb8);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--stroke)}
+    .nav-container{width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px clamp(8px,1.2vw,14px);gap:12px}
+    .brand{display:flex;flex-direction:column;gap:2px}
+    .brand-line.clinic{font-family:"Carattere",cursive;font-size:clamp(2rem,1.1rem + 3.2vw,3.2rem);line-height:1.02;color:#111;letter-spacing:.01em}
+    .brand-line.doctor{font-family:"Fanwood Text",serif;font-size:clamp(1rem,.9rem + .9vw,1.4rem);line-height:1;margin-top:-2px}
+    .brand-line .cred{margin-left:.35rem;opacity:.85}
+    .nav-links{list-style:none;display:flex;gap:10px;align-items:center}
+    .nav-links a{padding:8px clamp(8px,.6vw,10px);border-radius:999px;font-weight:600;color:#0d2230}
+    .nav-links a:hover{background:#f0f7fb}
+    .nav-links a.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
+    .nav-toggle{display:none}
+
+    /* ===== Hero ===== */
+    .about-hero{
+      width:var(--container);margin:26px auto 0;border-radius:calc(var(--radius-xl) + 6px);
+      background:linear-gradient(180deg,#f7fcff,#f2fbff), radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
+      border:1px solid #e8f2fb; padding:clamp(22px,3.2vw,40px); box-shadow:var(--shadow-md); position:relative;overflow:hidden
+    }
+    .about-hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:220px;background:
+      radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
+      radial-gradient(60% 120% at 25% 0%, rgba(14,127,168,.15), transparent 60%);filter:blur(30px)}
+    .about-hero h1{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.8rem,1.1rem + 2.5vw,2.6rem);line-height:1.15;margin-bottom:6px}
+    .about-hero p{color:var(--muted);font-size:clamp(.98rem,.9rem + .35vw,1.06rem);max-width:68ch}
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb-wrap{background:#ffffffc7;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)}
+    .breadcrumb{width:var(--container);margin:auto;padding:.6rem 0;display:flex;gap:10px;list-style:none;color:#406074}
+    .breadcrumb li{display:flex;align-items:center;gap:10px}
+    .breadcrumb li+li::before{content:"/";color:#a2b7c4}
+    .breadcrumb a{color:#0e3b52}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    /* ===== Page ===== */
+    .about-page{width:var(--container);margin:24px auto 80px}
+
+    .glass-card{
+      background:var(--glass);border:1px solid #e8f1f7;border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-md);padding:clamp(18px,2.4vw,30px);position:relative;overflow:hidden
     }
 
-    .navbar .nav-container{gap:1rem;align-items:center}
-    @media (max-width:560px){
-      .navbar .brand-line.clinic{font-size:clamp(1.8rem,6vw,2.3rem)}
-      .navbar .brand-line.doctor{font-size:clamp(1rem,4.4vw,1.35rem)}
+    /* About split */
+    .about-wrapper{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .about-col{grid-column:span 6}
+    @media (max-width:1024px){.about-col{grid-column:span 12}}
+    .about-photo{display:flex}
+    .about-photo img{border-radius:var(--radius-lg);border:1px solid #e8eef5;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06);object-fit:cover;width:100%}
+    .about-content{display:flex;flex-direction:column;gap:12px}
+    .about-title{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em}
+
+    .badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+    .badge{font-weight:800;font-size:.86rem;padding:6px 10px;border-radius:999px;background:#eef7ff;border:1px solid #d5e9ff}
+    
+    .about-split{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:4px}
+    .about-split > div{grid-column:span 6;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:14px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
+    @media (max-width:640px){.about-split > div{grid-column:span 12}}
+    .about-split h3{font-size:1.05rem;margin-bottom:6px}
+    .highlight-list{list-style:none;display:grid;gap:6px}
+    .highlight-list li{position:relative;padding-left:22px;color:#3e5a6b}
+    .highlight-list li::before{content:"";width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:absolute;left:0;top:7px;box-shadow:0 0 0 3px rgba(14,127,168,.14)}
+
+    .about-stats{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+    .about-stats li{background:#fff;border:1px solid #e8eef5;border-radius:12px;padding:10px 12px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
+    .stat{font-weight:900;letter-spacing:.02em;margin-right:6px}
+
+    .about-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .btn-whatsapp,.btn-call{appearance:none;border:none;cursor:pointer;font-weight:800;letter-spacing:.02em;padding:12px 16px;border-radius:14px;transition:.18s;text-decoration:none;display:inline-block}
+    .btn-whatsapp{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:var(--ring)}
+    .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+    .btn-whatsapp:hover,.btn-call:hover{transform:translateY(-2px)}
+
+    /* Why us */
+    .why-us{margin-top:clamp(18px,2.2vw,28px)}
+    .why-us h2{font-size:clamp(1.2rem,.9rem + 1.1vw,1.55rem);margin-bottom:8px}
+    .why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);list-style:none;padding:0;margin:0}
+    .why-grid li{grid-column:span 6;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-md);padding:12px 14px;display:flex;align-items:flex-start;gap:10px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
+    .bullet-icon{width:24px;height:24px;border-radius:6px;object-fit:cover}
+    @media (max-width:640px){.why-grid li{grid-column:span 12}}
+
+    /* FAQs */
+    .faq-block{margin-top:clamp(18px,2.2vw,28px)}
+    .section-title{font-size:clamp(1.2rem,.9rem + 1.1vw,1.55rem);margin-bottom:8px}
+    .faq-list{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+    .faq-item{grid-column:span 12;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:12px 14px}
+    .faq-item + .faq-item{margin-top:6px}
+    .faq-item summary{cursor:pointer;font-weight:700;color:#0d2a3a}
+    .faq-body{color:#3a5666;margin-top:8px}
+    .faq-item[open]{box-shadow:0 10px 24px rgba(12,33,48,.06)}
+
+    /* CTA */
+    .glass-cta{
+      margin-top:clamp(18px,2.2vw,28px);
+      text-align:center;
+      background:linear-gradient(180deg,#fdfefe,#fbfeff 32%,#f2fbff), radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);
+      border:1px solid #e5f2f9;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);
+      padding:clamp(18px,2.4vw,30px)
+    }
+    .glass-cta h2{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em;margin-bottom:6px}
+    .glass-cta p{color:#3a5666;margin-bottom:14px}
+    .cta-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
+
+    /* Mobile nav */
+    @media (max-width:900px){
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--stroke);border-radius:12px;background:#fff;cursor:pointer}
+      .hamburger,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:#0f2432;border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
+      .hamburger::before{position:absolute;top:-6px}
+      .hamburger::after{position:absolute;top:6px}
+      .nav-links{position:absolute;inset:calc(100% + 8px) 0 auto 0;width:100%;background:#ffffffea;backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);transform-origin:top center;transform:scaleY(0);opacity:0;pointer-events:none;display:flex;flex-direction:column;gap:6px;padding:10px}
+      .nav-links.nav-open{transform:scaleY(1);opacity:1;pointer-events:auto}
     }
   </style>
 </head>
@@ -73,16 +171,15 @@
   <!-- Nav -->
   <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="nav-container">
-      <!-- Two-line brand lockup (same as index) -->
       <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
 
-      <button class="nav-toggle" aria-label="toggle menu"><span class="hamburger"></span></button>
-      <ul class="nav-links">
+      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+      <ul class="nav-links" id="site-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="about.html">About</a></li>
+        <li><a class="active" href="about.html" aria-current="page">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -93,14 +190,12 @@
 
   <!-- Hero -->
   <header class="about-hero">
-    <div class="hero-inner">
-      <h1>Meet Dr. Vikram Jeet Singh</h1>
-      <p>Orthodontist • BDS, MDS • Advanced Orthodontic Training • 15+ years of patient-first care</p>
-    </div>
+    <h1>Meet Dr. Vikram Jeet Singh</h1>
+    <p>Orthodontist • BDS, MDS • Advanced Orthodontic Training • 15+ years of patient-first care</p>
   </header>
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
+  <nav aria-label="Breadcrumb" class="glass-card breadcrumb-wrap">
     <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
@@ -114,7 +209,7 @@
   </nav>
 
   <main class="about-page">
-    <!-- White transparent strip (glass) -->
+    <!-- About split -->
     <section class="glass-card about-wrapper">
       <div class="about-col about-photo">
         <img src="assets/images/dr-vikramjeet.jpg" alt="Dr. Vikram Jeet Singh" width="900" height="1200" loading="lazy" decoding="async" />
@@ -123,16 +218,14 @@
       <div class="about-col about-content">
         <h2 class="about-title">Compassion, Precision & Modern Orthodontics</h2>
         <p>
-          Dr. Vikram Jeet Singh is a qualified orthodontist dedicated to comprehensive,
-          comfortable care. With a foundation in <strong>BDS</strong> and <strong>MDS (Orthodontics)</strong>,
-          complemented by advanced training in contemporary techniques, he blends
-          evidence-based protocols with a gentle, listener-first approach.
+          Dr. Vikram Jeet Singh is a qualified orthodontist dedicated to comprehensive, comfortable care.
+          With a foundation in <strong>BDS</strong> and <strong>MDS (Orthodontics)</strong>, complemented by advanced training in
+          contemporary techniques, he blends evidence-based protocols with a gentle, listener-first approach.
         </p>
         <p>
-          At <strong>Smiles & Braces Dental Clinic</strong> in Lucknow, Dr. Singh leads a team focused on
-          predictable outcomes—from conventional braces to discreet aligner therapy—guided by digital
-          planning and meticulous follow-ups. International patients choose Dr. Singh for clear
-          communication, organized itineraries, and thoughtful after-care.
+          At <strong>Smiles & Braces Dental Clinic</strong> in Lucknow, Dr. Singh leads a team focused on predictable outcomes— 
+          from conventional braces to discreet aligner therapy—guided by digital planning and meticulous follow-ups.
+          International patients choose Dr. Singh for clear communication, organized itineraries, and thoughtful after-care.
         </p>
 
         <ul class="badges" aria-label="Qualifications">
@@ -163,7 +256,6 @@
           </div>
         </div>
 
-        <!-- Soft KPIs -->
         <ul class="about-stats" aria-label="Experience highlights">
           <li><span class="stat">15+ yrs</span> Orthodontic practice</li>
           <li><span class="stat">1000+</span> Happy smiles guided</li>
@@ -177,16 +269,16 @@
       </div>
     </section>
 
-    <!-- Why Choose (with JPG icons) -->
+    <!-- Why Choose -->
     <section class="glass-card why-us">
       <h2>Why Patients Choose Dr. Vikram Jeet Singh</h2>
       <ul class="why-grid">
-        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/digital.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/comfort.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>International friendly:</strong> Responsive scheduling & remote follow-ups.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
-        <li><img class="bullet-icon" src="assets/illustrations/shield.jpg" alt="" aria-hidden="true" width="24" height="24"><strong>Quality assurance:</strong> Transparent options and post-treatment support.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true"><strong>Experience that listens:</strong> 15+ years of patient-centred orthodontics.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/digital.jpg" alt="" aria-hidden="true"><strong>Precision planning:</strong> Digital records, careful staging, and clear timelines.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/comfort.jpg" alt="" aria-hidden="true"><strong>Comfort & aesthetics:</strong> Options from subtle ceramic to clear aligners.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true"><strong>International friendly:</strong> Responsive scheduling & remote follow-ups.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true"><strong>Hygiene & safety:</strong> Strict sterilization and evidence-based protocols.</li>
+        <li><img class="bullet-icon" src="assets/illustrations/shield.jpg" alt="" aria-hidden="true"><strong>Quality assurance:</strong> Transparent options and post-treatment support.</li>
       </ul>
     </section>
 
@@ -202,10 +294,11 @@
           </div>
         </details>
 
-        <details class="faq-item>
+        <details class="faq-item">
           <summary><span>Braces vs. clear aligners—what’s right for me?</span></summary>
           <div class="faq-body">
-            Braces are fixed and versatile for all severities. Aligners are removable and discreet—great for mild–moderate cases. The best option is recommended after exam and bite analysis.
+            Braces are fixed and versatile for all severities. Aligners are removable and discreet—great for mild–moderate cases.
+            The best option is recommended after an exam and bite analysis.
           </div>
         </details>
 
@@ -243,19 +336,20 @@
     </section>
   </main>
 
-  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved.| Designed by Shashank Upreti </footer>
+  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
 
+  <!-- Mobile nav -->
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks  = document.querySelector('.nav-links');
-    if (navToggle && navLinks) {
-      navToggle.setAttribute('aria-controls','site-menu');
-      navLinks.id = 'site-menu';
-      navToggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('nav-open');
-        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
+    (function(){
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.getElementById('site-menu');
+      if (navToggle && navLinks){
+        navToggle.addEventListener('click', ()=>{
+          const open = navLinks.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
   </script>
 
   <!-- Structured data -->
