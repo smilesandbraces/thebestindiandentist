@@ -6,14 +6,13 @@
   <meta name="robots" content="index,follow"/>
 
   <title>International Patients | Dental Tourism to Lucknow | Smiles & Braces</title>
-  <meta name="description" content="Fly to Lucknow for predictable orthodontics and comprehensive dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Concierge planning, clear timelines, and transparent multi-currency pricing (USD, EUR, GBP, CNY, AED, AUD)."/>
-
+  <meta name="description" content="Fly to Lucknow for predictable orthodontics and comprehensive dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Concierge planning, fast timelines, and transparent multi-currency pricing (USD, EUR, GBP, CNY, AED, AUD)."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/international.html"/>
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="International Patients | Smiles & Braces Dental Clinic"/>
-  <meta property="og:description" content="Concierge care, fast timelines and live currency prices for global patients traveling to Lucknow."/>
+  <meta property="og:description" content="Concierge care, live currency prices and clear itineraries for global patients traveling to Lucknow."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/international.html"/>
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -21,17 +20,15 @@
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts (match site) -->
+  <!-- Fonts + Site CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
-
-  <!-- Global CSS -->
   <link rel="stylesheet" href="/css/site.css"/>
 
-  <!-- Page styles & tasteful motion -->
+  <!-- Page styles -->
   <style>
-    /* HERO */
+    /* ===== HERO (photo + parallax + orbs) ===== */
     .intl-hero{
       --grad1:#e6f7ff; --grad2:#f7fbff;
       background:
@@ -40,20 +37,20 @@
       position:relative; overflow:clip;
     }
     .hero-media{
-      position:absolute; inset:-8% -8% 0 -8%;
+      position:absolute; inset:-10% -8% 0 -8%;
       background:url("/assets/illustrations/global.jpg") center/cover no-repeat;
-      transform: translateY(var(--parY,0px)) scale(1.03);
-      filter:saturate(1.02) contrast(1.02) brightness(1.02);
-      opacity:.25;
+      transform: translateY(var(--parY,0px)) scale(1.04);
+      opacity:.25; filter:contrast(1.02) saturate(1.03) brightness(1.02);
       will-change: transform;
     }
-    .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(30px); opacity:.65}
+    .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(34px); opacity:.6}
     .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%); mix-blend-mode:multiply}
-    .orb.o1{left:14%; top:12%; width:220px; height:220px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #5ac1ff 60%, transparent 70%); animation:float 18s ease-in-out infinite}
-    .orb.o2{left:86%; top:14%; width:280px; height:280px; background:radial-gradient(circle at 70% 70%, #00a3e0, #7fd3ff 55%, transparent 72%); animation:float 22s ease-in-out infinite}
-    .orb.o3{left:10%; top:76%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #5bd6a0, #c6ffe6 55%, transparent 72%); animation:float 20s ease-in-out infinite}
+    .orb.o1{left:14%; top:14%; width:240px; height:240px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #63caff 60%, transparent 72%); animation:float 20s ease-in-out infinite}
+    .orb.o2{left:86%; top:12%; width:300px; height:300px; background:radial-gradient(circle at 60% 70%, #31b2ff, #a7e2ff 60%, transparent 70%); animation:float 23s ease-in-out infinite}
+    .orb.o3{left:10%; top:78%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #61d7a2, #d2ffe9 58%, transparent 70%); animation:float 22s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
 
+    /* Subnav chips */
     .intl-subnav{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:14px}
     .intl-subnav a{border:1px solid var(--stroke,#e2e8f0); background:#fff; padding:8px 12px; border-radius:999px; text-decoration:none}
     .intl-subnav a:hover{border-color:var(--brand,#0e7fa8)}
@@ -85,7 +82,7 @@
     .muted{opacity:.72}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 
-    /* Packages (Bento) */
+    /* Packages (bento with photo tiles) */
     .bento{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
     .bento > *{grid-column: span 6}
     .bento .wide{grid-column: span 12}
@@ -102,16 +99,16 @@
     .tl-step{position:relative; margin:16px 0; padding-left:6px}
     .tl-step::before{content:""; position:absolute; left:-18px; top:2px; width:12px; height:12px; border-radius:50%; background:#0e7fa8; box-shadow:0 0 0 4px #e6f7ff}
 
-    /* Gallery */
+    /* Gallery (real photos) */
     .masonry{columns:3 280px; column-gap:12px}
     .masonry figure{break-inside:avoid; margin:0 0 12px; overflow:hidden; border-radius:14px; border:1px solid var(--stroke,#e2e8f0)}
     .masonry img{width:100%; display:block; transition:transform .6s ease}
     .masonry figure:hover img{transform:scale(1.05)}
 
-    /* Carousel (testimonials) */
+    /* Carousel */
     .carousel{position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--stroke,#e2e8f0)}
     .slides{display:flex; transition:transform .6s ease}
-    .slide{min-width:100%; padding:16px}
+    .slide{min-width:100%; padding:16px; background:#fff}
     .dots{display:flex; gap:6px; justify-content:center; margin-top:8px}
     .dot{width:8px; height:8px; border-radius:50%; background:#c9d8e6}
     .dot.is-active{background:#0e7fa8}
@@ -120,6 +117,7 @@
     .cta-bar{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
     .cta-bar .btn{min-width:180px}
 
+    /* Flags */
     .flaglist{display:flex; flex-wrap:wrap; gap:8px}
     .badge{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stroke,#e2e8f0); border-radius:999px; padding:4px 10px; font-size:.85rem; background:#fff}
   </style>
@@ -127,7 +125,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
+  <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
@@ -146,15 +144,15 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
   <section class="home-hero intl-hero">
     <div class="hero-media" aria-hidden="true"></div>
-    <div class="orbs" aria-hidden="true">
-      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-    </div>
+    <div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
     <div class="home-hero__inner">
       <h1>International Patients & Dental Tourism</h1>
       <p class="measure">Fly in for <strong>predictable orthodontics</strong> and <strong>comprehensive dentistry</strong> by Dr. Vikram Jeet Singh (BDS, MDS) in Lucknow—backed by concierge planning, tight timelines, and <strong>live multi-currency pricing</strong>.</p>
+
       <div class="intl-subnav" aria-label="Jump to">
         <a href="#pricing">Prices & Currency</a>
         <a href="#packages">Packages</a>
@@ -164,35 +162,28 @@
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
       </div>
+
       <div class="cta-buttons">
         <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp Us</a>
         <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
         <a href="/contact.html" class="btn btn-ghost">Book Virtual Consult</a>
       </div>
+
       <div class="trust" aria-label="Clinic at a glance">
-        <div class="t">
-          <div class="num" data-count="26">0</div>
-          <small>Countries visited us</small>
-        </div>
-        <div class="t">
-          <div class="num" data-count="4.9">0</div>
-          <small>Avg. patient rating</small>
-        </div>
-        <div class="t">
-          <div class="num" data-count="15">0</div>
-          <small>Years of experience</small>
-        </div>
+        <div class="t"><div class="num" data-count="26">0</div><small>Countries visited us</small></div>
+        <div class="t"><div class="num" data-count="4.9">0</div><small>Avg. patient rating</small></div>
+        <div class="t"><div class="num" data-count="15">0</div><small>Years of experience</small></div>
       </div>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
+  <!-- ===== BREADCRUMB ===== -->
   <aside class="container small" aria-label="Breadcrumb">
     <span><a class="link-more" href="/">Home</a> / International Patients</span>
   </aside>
 
   <main id="main" class="container">
-    <!-- Why us -->
+    <!-- ===== WHY US ===== -->
     <section class="section grid-2 reveal">
       <div class="glass-2" style="padding:16px 18px">
         <h2>Why patients fly to us</h2>
@@ -214,7 +205,7 @@
       </figure>
     </section>
 
-    <!-- Pricing & Currency -->
+    <!-- ===== PRICING & CURRENCY ===== -->
     <section id="pricing" class="section reveal">
       <div class="section-head">
         <h2>Pricing & live currency checker</h2>
@@ -222,9 +213,10 @@
       </div>
 
       <div class="glass-2" style="padding:16px 18px">
-        <p class="muted">Base prices are in <strong>INR</strong>. Select a treatment and currency to see a live converted estimate. We fetch mid-market rates from a public source; your bank/card may apply minor differences.</p>
+        <p class="muted">Base prices are in <strong>INR</strong>. Select a treatment and currency to see a live converted estimate. We use mid-market rates from multiple public sources; your bank/card may vary slightly.</p>
 
-        <div class="price-widget" id="priceWidget" data-api="https://api.exchangerate.host/latest">
+        <!-- Widget -->
+        <div class="price-widget" id="priceWidget">
           <div class="price-row">
             <label>
               <span class="small muted">Treatment</span>
@@ -319,7 +311,7 @@
       </div>
     </section>
 
-    <!-- Packages -->
+    <!-- ===== PACKAGES (photo-first) ===== -->
     <section id="packages" class="section reveal">
       <div class="section-head">
         <h2>Travel-friendly packages</h2>
@@ -329,7 +321,7 @@
       <div class="bento">
         <article class="glass-2 reveal" style="padding:16px">
           <div class="tile" style="height:220px; margin-bottom:10px">
-            <img src="/assets/illustrations/hygiene.jpg" alt="Hygiene and whitening" loading="lazy" decoding="async">
+            <img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene and whitening" loading="lazy" decoding="async">
             <div class="overlay"><h3>Smile Refresh (3–4 days)</h3></div>
           </div>
           <ul class="bullets">
@@ -355,7 +347,7 @@
 
         <article class="glass-2 reveal" style="padding:16px">
           <div class="tile" style="height:220px; margin-bottom:10px">
-            <img src="/assets/illustrations/treatment.jpg" alt="Dental implant treatment" loading="lazy" decoding="async">
+            <img src="/assets/illustrations/treatment.jpg" alt="Dental implant procedure" loading="lazy" decoding="async">
             <div class="overlay"><h3>Implant + Crown Plan</h3></div>
           </div>
           <ul class="bullets">
@@ -378,7 +370,7 @@
       </div>
     </section>
 
-    <!-- Journey -->
+    <!-- ===== JOURNEY ===== -->
     <section id="journey" class="section reveal">
       <div class="section-head">
         <h2>Your international patient journey</h2>
@@ -388,26 +380,11 @@
       <div class="grid-2 glass-2" style="padding:16px 18px">
         <div>
           <ol class="timeline">
-            <li class="tl-step">
-              <h3>1) Virtual consult</h3>
-              <p>Share photos/scans, medical history and goals. We discuss options, indicative costs and time windows.</p>
-            </li>
-            <li class="tl-step">
-              <h3>2) Plan & itinerary</h3>
-              <p>Written plan with daily chair-time, recovery guidance, and visa letter (if needed).</p>
-            </li>
-            <li class="tl-step">
-              <h3>3) Fly-in & day-1 review</h3>
-              <p>Clinical assessment, updated scans, and consent. Airport pickup & hotel coordination available.</p>
-            </li>
-            <li class="tl-step">
-              <h3>4) Treatment</h3>
-              <p>Bundled appointments to reduce days in town. Conservative protocols, clear after-care.</p>
-            </li>
-            <li class="tl-step">
-              <h3>5) Remote follow-ups</h3>
-              <p>Tele-checks with photo guides; local referrals if anything urgent arises back home.</p>
-            </li>
+            <li class="tl-step"><h3>1) Virtual consult</h3><p>Share photos/scans, medical history and goals. We discuss options, indicative costs and time windows.</p></li>
+            <li class="tl-step"><h3>2) Plan & itinerary</h3><p>Written plan with daily chair-time, recovery guidance, and visa letter (if needed).</p></li>
+            <li class="tl-step"><h3>3) Fly-in & day-1 review</h3><p>Clinical assessment, updated scans, and consent. Airport pickup & hotel coordination available.</p></li>
+            <li class="tl-step"><h3>4) Treatment</h3><p>Bundled appointments to reduce days in town. Conservative protocols, clear after-care.</p></li>
+            <li class="tl-step"><h3>5) Remote follow-ups</h3><p>Tele-checks with photo guides; local referrals if anything urgent arises back home.</p></li>
           </ol>
         </div>
         <div>
@@ -433,7 +410,7 @@
       </div>
     </section>
 
-    <!-- Concierge -->
+    <!-- ===== CONCIERGE ===== -->
     <section id="concierge" class="section reveal">
       <div class="section-head">
         <h2>Concierge & travel support</h2>
@@ -442,7 +419,7 @@
       <div class="bento">
         <article class="glass-2" style="padding:16px">
           <div class="tile" style="height:180px; margin-bottom:10px">
-            <img src="/assets/illustrations/concierge.jpg" alt="Concierge coordination" loading="lazy" decoding="async">
+            <img src="/assets/illustrations/concierge.jpg" alt="Airport pickup concierge" loading="lazy" decoding="async">
             <div class="overlay"><h3>Airport pickup</h3></div>
           </div>
           <p>Door-to-door transfers between Lucknow Airport (LKO) and your hotel/clinic with vetted drivers.</p>
@@ -459,7 +436,7 @@
 
         <article class="glass-2" style="padding:16px">
           <div class="tile" style="height:180px; margin-bottom:10px">
-            <img src="/assets/illustrations/video-call.jpg" alt="Tele follow up" loading="lazy" decoding="async">
+            <img src="/assets/illustrations/video-call.jpg" alt="Tele follow up video call" loading="lazy" decoding="async">
             <div class="overlay"><h3>Tele follow-ups</h3></div>
           </div>
           <p>Scheduled video check-ins for aligners/braces; easy photo guides and retention instructions.</p>
@@ -467,7 +444,7 @@
 
         <article class="glass-2" style="padding:16px">
           <div class="tile" style="height:180px; margin-bottom:10px">
-            <img src="/assets/illustrations/calendar.jpg" alt="Priority scheduling" loading="lazy" decoding="async">
+            <img src="/assets/illustrations/calendar.jpg" alt="Priority scheduling calendar" loading="lazy" decoding="async">
             <div class="overlay"><h3>Priority scheduling</h3></div>
           </div>
           <p>Bundled chair-time to compress your travel days without compromising safety or outcomes.</p>
@@ -475,7 +452,7 @@
       </div>
     </section>
 
-    <!-- City -->
+    <!-- ===== CITY ===== -->
     <section id="city" class="section reveal">
       <div class="section-head">
         <h2>Welcome to Lucknow</h2>
@@ -492,28 +469,24 @@
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- ===== GALLERY (realistic photos) ===== -->
     <section id="gallery" class="section reveal">
-      <div class="section-head">
-        <h2>Clinic & care gallery</h2>
-      </div>
+      <div class="section-head"><h2>Clinic & care gallery</h2></div>
       <div class="masonry" aria-label="Clinic gallery">
         <figure><img src="/assets/illustrations/shield.jpg" alt="Sterilization & safety"/></figure>
         <figure><img src="/assets/illustrations/treatment.jpg" alt="Precise clinical care"/></figure>
         <figure><img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene"/></figure>
         <figure><img src="/assets/illustrations/digital.jpg" alt="Digital planning"/></figure>
-        <figure><img src="/assets/illustrations/follow-up.jpg" alt="Follow ups"/></figure>
+        <figure><img src="/assets/illustrations/follow-up.jpg" alt="Follow-ups"/></figure>
         <figure><img src="/assets/illustrations/scanner.jpg" alt="Digital scan"/></figure>
         <figure><img src="/assets/illustrations/comfort.jpg" alt="Comfort-first rooms"/></figure>
         <figure><img src="/assets/illustrations/experience.jpg" alt="Patient experience"/></figure>
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="section reveal">
-      <div class="section-head">
-        <h2>What our patients say</h2>
-      </div>
+      <div class="section-head"><h2>What our patients say</h2></div>
       <div class="carousel" id="carousel">
         <div class="slides">
           <div class="slide">
@@ -530,12 +503,10 @@
           </div>
         </div>
       </div>
-      <div class="dots" id="dots" aria-hidden="true">
-        <span class="dot is-active"></span><span class="dot"></span><span class="dot"></span>
-      </div>
+      <div class="dots" id="dots" aria-hidden="true"><span class="dot is-active"></span><span class="dot"></span><span class="dot"></span></div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ===== FAQ ===== -->
     <section id="faq" class="section reveal">
       <div class="section-head"><h2>Frequently asked questions</h2></div>
       <div class="blog-preview thin">
@@ -558,7 +529,7 @@
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ===== CTA ===== -->
     <section class="section home-cta center reveal">
       <h2>Ready to plan your trip?</h2>
       <p class="measure">Share your photos, timeline and goals. We’ll propose the safest, fastest path for your smile.</p>
@@ -570,7 +541,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -586,57 +557,43 @@
     </div>
   </footer>
 
-  <!-- JS: nav, parallax, reveal, counters, currency, savings, carousel -->
+  <!-- ===== JS: nav, parallax, reveal, counters, currency (multi-source), savings, carousel ===== -->
   <script>
-    // Mobile menu + year
+    // Menu + year
     document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Parallax hero (tiny & smooth)
+    // Parallax hero
     (function(){
       const media = document.querySelector('.hero-media');
-      function onScroll(){
-        const y = Math.min(40, window.scrollY/12);
-        media && (media.style.setProperty('--parY', y+'px'));
-      }
+      function onScroll(){ const y = Math.min(40, window.scrollY/12); media && media.style.setProperty('--parY', y+'px'); }
       onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
     })();
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
-    },{threshold:.1});
+    // Reveal
+    const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} }),{threshold:.1});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Animated trust counters
+    // Counters
     (function(){
       const els = document.querySelectorAll('.trust .num');
       const obs = new IntersectionObserver((entries)=>{
         entries.forEach(({isIntersecting, target})=>{
-          if(!isIntersecting) return;
-          obs.unobserve(target);
-          const end = parseFloat(target.dataset.count||'0'), dur=1200, start=0, t0=performance.now();
-          function tick(ts){
-            const p = Math.min(1,(ts-t0)/dur);
-            const val = start + (end-start)*p;
-            target.textContent = end<10 ? val.toFixed(1) : Math.round(val);
-            if(p<1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
+          if(!isIntersecting) return; obs.unobserve(target);
+          const end = parseFloat(target.dataset.count||'0'), dur=1200, t0=performance.now();
+          (function tick(ts){ const p=Math.min(1,(ts-t0)/dur); const v=end<10? (end*p).toFixed(1):Math.round(end*p); target.textContent=v; if(p<1) requestAnimationFrame(tick); })(t0);
         });
       },{threshold:.5});
       els.forEach(el=>obs.observe(el));
     })();
 
-    // ---------- Currency & Prices ----------
+    // ===== Currency & Prices (multi-source, robust) =====
     (function(){
-      const API = document.getElementById('priceWidget').dataset.api || 'https://api.exchangerate.host/latest';
       const treatmentSelect = document.getElementById('treatmentSelect');
       const currencySelect  = document.getElementById('currencySelect');
       const convertedPrice  = document.getElementById('convertedPrice');
       const rateMeta        = document.getElementById('rateMeta');
       const basePriceTable  = document.getElementById('basePriceTable');
-      const pkgSpans        = document.querySelectorAll('[data-pkg]');
 
       const PRICES = {
         CONSULT:700, CLEANING:2200, ALIGNERS:85000, BRACES:65000, IMPLANT:28000, RCT:5500, VENEER:12000, WHITEN:9500,
@@ -646,26 +603,38 @@
         CONSULT:'First Consultation', CLEANING:'Professional Cleaning', ALIGNERS:'Clear Aligners (per arch)', BRACES:'Metal/Ceramic Braces',
         IMPLANT:'Dental Implant (base)', RCT:'Root Canal (single tooth)', VENEER:'Porcelain Veneer (per tooth)', WHITEN:'Teeth Whitening'
       };
-      const SYMBOL = {INR:'₹',USD:'$',EUR:'€',GBP:'£',CNY:'¥',AED:'د.إ',AUD:'$'};
+      const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
 
-      // Base table
       basePriceTable.innerHTML = Object.keys(LABELS).map(k =>
         `<tr><td>${LABELS[k]}</td><td class="mono">₹ ${PRICES[k].toLocaleString('en-IN')}</td><td class="muted">From price</td></tr>`
       ).join('');
 
-      // Rates
-      let rates = {base:'INR', date:'offline', rates:{INR:1,USD:0.012,EUR:0.011,GBP:0.0095,CNY:0.088,AED:0.044,AUD:0.018}};
+      const WANTED = Object.keys(SYMBOL).join(',');
+      const SOURCES = [
+        { name: 'exchangerate.host', make:(base,syms)=>`https://api.exchangerate.host/latest?base=${base}&symbols=${syms}`, pick:d=>({date:d.date, rates:d.rates}) },
+        { name: 'frankfurter.app',   make:(base,syms)=>`https://api.frankfurter.app/latest?from=${base}&to=${syms}`,     pick:d=>({date:d.date, rates:d.rates}) },
+        { name: 'open.er-api.com',   make:(base)=>`https://open.er-api.com/v6/latest/${base}`,                           pick:d=>({date:d.time_last_update_utc, rates:d.rates}) }
+      ];
+
+      let rates = { base:'INR', date:'offline', source:'fallback',
+        rates:{INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018 }
+      };
+
       async function fetchRates(){
-        try{
-          const syms = Object.keys(SYMBOL).join(',');
-          const url = `${API}?base=INR&symbols=${syms}`;
-          const res = await fetch(url, {mode:'cors'});
-          const data = await res.json();
-          if(data && data.rates){
-            rates = {base:'INR', date: data.date || new Date().toISOString().slice(0,10), rates:data.rates};
-            rateMeta.textContent = `INR base • ${rates.date} • ${Object.keys(rates.rates).length} currencies`;
-          } else { rateMeta.textContent = 'Live feed unavailable, using fallback.'; }
-        } catch(e){ rateMeta.textContent = 'Live feed unavailable, using fallback.'; }
+        for(const s of SOURCES){
+          try{
+            const url = s.make('INR', WANTED);
+            const res = await fetch(url, {mode:'cors'});
+            const data = await res.json();
+            const picked = s.pick(data);
+            if(picked && picked.rates && Object.keys(picked.rates).length){
+              rates = { base:'INR', date:picked.date || new Date().toISOString().slice(0,10), source:s.name, rates:picked.rates };
+              rateMeta.textContent = `Source: ${s.name} • ${rates.date}`;
+              return;
+            }
+          }catch(e){ /* try next */ }
+        }
+        rateMeta.textContent = 'Live feed unavailable, using fallback.';
       }
 
       function fmt(cur, amount){
@@ -673,22 +642,22 @@
         const locale = (cur==='INR') ? 'en-IN' : 'en-US';
         return `${sym} ${amount.toLocaleString(locale,{maximumFractionDigits:0})}`;
       }
-      function convINR(inr, to){ return to==='INR' ? inr : inr * (rates.rates[to]||0); }
+      function convINR(inr,to){ return to==='INR' ? inr : inr*(rates.rates[to]||0); }
 
       function updatePrice(){
         const t = treatmentSelect.value, cur = currencySelect.value;
-        const inr = PRICES[t]; if(!inr){ convertedPrice.textContent = '—'; return; }
+        const inr = PRICES[t]; if(!inr){ convertedPrice.textContent='—'; return; }
         const val = (cur==='INR') ? inr : Math.round(convINR(inr,cur));
         convertedPrice.textContent = fmt(cur,val);
         localStorage.setItem('preferredCurrency', cur);
       }
-
       function updatePackages(){
         const cur = currencySelect.value;
         const map = {REFRESH:'PKG_REFRESH', ALIGNER:'PKG_ALIGNER', IMPLANT:'PKG_IMPLANT'};
-        pkgSpans.forEach(el=>{
-          const k = map[el.dataset.pkg]; const val = (cur==='INR') ? PRICES[k] : Math.round(convINR(PRICES[k],cur));
-          el.textContent = fmt(cur,val);
+        document.querySelectorAll('[data-pkg]').forEach(el=>{
+          const key = map[el.dataset.pkg];
+          const v = (cur==='INR') ? PRICES[key] : Math.round(convINR(PRICES[key],cur));
+          el.textContent = fmt(cur,v);
         });
       }
 
@@ -699,66 +668,58 @@
       (async function init(){ await fetchRates(); updatePrice(); updatePackages(); })();
     })();
 
-    // Savings calculator (rough public averages in local currency)
+    // ===== Savings calculator =====
     (function(){
-      // Typical home prices (indicative)
       const HOME = {
-        USA:    {ALIGNERS:2500, BRACES:5500, IMPLANT:3200, VENEER:1000, RCT:1200, WHITEN:500, CUR:'USD'},
-        UK:     {ALIGNERS:2000, BRACES:4000, IMPLANT:2500, VENEER:800,  RCT:400,  WHITEN:350, CUR:'GBP'},
-        EU:     {ALIGNERS:2200, BRACES:4500, IMPLANT:2700, VENEER:900,  RCT:450,  WHITEN:350, CUR:'EUR'},
-        AUS:    {ALIGNERS:3000, BRACES:6000, IMPLANT:3500, VENEER:1100, RCT:900,  WHITEN:450, CUR:'AUD'},
-        GCC:    {ALIGNERS:2800, BRACES:5200, IMPLANT:3000, VENEER:900,  RCT:600,  WHITEN:400, CUR:'AED'}
+        USA:{ALIGNERS:2500,BRACES:5500,IMPLANT:3200,VENEER:1000,RCT:1200,WHITEN:500,CUR:'USD'},
+        UK: {ALIGNERS:2000,BRACES:4000,IMPLANT:2500,VENEER:800, RCT:400, WHITEN:350,CUR:'GBP'},
+        EU: {ALIGNERS:2200,BRACES:4500,IMPLANT:2700,VENEER:900, RCT:450, WHITEN:350,CUR:'EUR'},
+        AUS:{ALIGNERS:3000,BRACES:6000,IMPLANT:3500,VENEER:1100,RCT:900, WHITEN:450,CUR:'AUD'},
+        GCC:{ALIGNERS:2800,BRACES:5200,IMPLANT:3000,VENEER:900, RCT:600, WHITEN:400,CUR:'AED'}
       };
       const INR = {ALIGNERS:85000, BRACES:65000, IMPLANT:28000, VENEER:12000, RCT:5500, WHITEN:9500};
 
-      const saveProc = document.getElementById('saveProc');
-      const saveMarket = document.getElementById('saveMarket');
-      const homePrice = document.getElementById('homePrice');
-      const ourPrice  = document.getElementById('ourPrice');
-      const savingPct = document.getElementById('savingPct');
+      const saveProc=document.getElementById('saveProc');
+      const saveMarket=document.getElementById('saveMarket');
+      const homePrice=document.getElementById('homePrice');
+      const ourPrice=document.getElementById('ourPrice');
+      const savingPct=document.getElementById('savingPct');
 
-      // currency from widget
-      function curSymbol(cur){ return ({USD:'$',EUR:'€',GBP:'£',CNY:'¥',AED:'د.إ',AUD:'$',INR:'₹'})[cur] || ''; }
+      const SYM = {USD:'$',EUR:'€',GBP:'£',CNY:'¥',AED:'د.إ',AUD:'$',INR:'₹'};
 
       async function convertINRTo(cur, amount){
         try{
-          const res = await fetch(`https://api.exchangerate.host/convert?from=INR&to=${cur}&amount=${amount}`);
-          const data = await res.json(); return Math.round(data.result||0);
+          const r = await fetch(`https://api.exchangerate.host/convert?from=INR&to=${cur}&amount=${amount}`);
+          const d = await r.json(); return Math.round(d.result||0);
         }catch(e){ return 0; }
       }
 
       async function update(){
-        const proc = saveProc.value, market = saveMarket.value;
-        const h = HOME[market]; const home = h[proc]; const sym = curSymbol(h.CUR);
-        homePrice.textContent = `${sym} ${home.toLocaleString('en-US')}`;
+        const proc = saveProc.value, m = saveMarket.value;
+        const h = HOME[m]; const sym=SYM[h.CUR]||'';
+        const home=h[proc]; homePrice.textContent = `${sym} ${home.toLocaleString('en-US')}`;
 
-        const ourConverted = await convertINRTo(h.CUR, INR[proc]);
-        ourPrice.textContent = `${sym} ${ourConverted.toLocaleString('en-US')}`;
+        const ours = await convertINRTo(h.CUR, INR[proc]);
+        ourPrice.textContent = `${sym} ${ours.toLocaleString('en-US')}`;
 
-        const pct = Math.max(0, Math.round((1 - (ourConverted / home)) * 100));
+        const pct = Math.max(0, Math.round((1 - (ours/home)) * 100));
         savingPct.textContent = `${pct}% potential saving`;
       }
-
       saveProc.addEventListener('change', update);
       saveMarket.addEventListener('change', update);
       update();
     })();
 
-    // Testimonials carousel (auto)
+    // Testimonials carousel
     (function(){
       const slides = document.querySelector('#carousel .slides');
       const dots   = Array.from(document.querySelectorAll('#dots .dot'));
-      let idx = 0;
-      function go(i){
-        idx = (i + dots.length) % dots.length;
-        slides.style.transform = `translateX(-${idx*100}%)`;
-        dots.forEach((d,k)=>d.classList.toggle('is-active', k===idx));
-      }
+      let idx=0; function go(i){ idx=(i + dots.length)%dots.length; slides.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,k)=>d.classList.toggle('is-active',k===idx)); }
       setInterval(()=>go(idx+1), 4500);
     })();
   </script>
 
-  <!-- Schema.org -->
+  <!-- ===== Schema ===== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
