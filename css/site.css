@@ -162,3 +162,49 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* Map */
 .map-wrap{ aspect-ratio: 16 / 9; border:1px solid var(--stroke); border-radius:16px; overflow:hidden; }
 .map-wrap iframe{ width:100%; height:100%; border:0; }
+/* === A) Skip link should only show on keyboard focus === */
+.skip-link{
+  position: absolute;
+  clip: rect(1px,1px,1px,1px);
+  clip-path: inset(50%);
+  height: 1px; width: 1px;
+  overflow: hidden; white-space: nowrap;
+}
+.skip-link:focus{
+  clip: auto; clip-path: none;
+  height: auto; width: auto;
+  left: 12px; top: 12px;
+  padding: .5rem .75rem;
+  background: #0e7fa8; color: #fff;
+  border-radius: .5rem;
+  z-index: 10000;
+}
+
+/* === B) Make topbar sticky and header sit just below it === */
+:root{
+  --topbar-h: 44px;      /* adjust if your topbar is taller/shorter */
+  --header-h: 70px;      /* approximate nav height */
+  --masthead-offset: calc(var(--topbar-h) + var(--header-h));
+}
+
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* If you want the header to stay pinned below the topbar: */
+.header{
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 999;
+  background: #fff;           /* prevent see-through over hero */
+  box-shadow: 0 1px 0 var(--stroke, #e5eef6);
+}
+
+/* === C) When jumping to anchors (e.g., #main), don't hide under masthead === */
+#main{ scroll-margin-top: var(--masthead-offset); }
+:target{ scroll-margin-top: var(--masthead-offset); }
+
+/* Optional: if you don’t like the little live-status dot in the topbar */
+.topbar .dot{ display: none; }
