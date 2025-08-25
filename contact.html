@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="index,follow"/>
 
-  <title>Contact & Book Appointments | Smiles & Braces Lucknow</title>
-  <meta name="description" content="Book appointments at Smiles & Braces Dental Clinic in Lucknow. Contact Dr. Vikram Jeet Singh (BDS, MDS) via WhatsApp, phone, email or visit our clinic location." />
-  <link rel="canonical" href="https://www.bestindiandentist.com/contact.html" />
+  <title>Contact & Book Appointments | Smiles & Braces Dental Clinic Lucknow</title>
+  <meta name="description" content="Book an appointment with Smiles & Braces Dental Clinic, Lucknow. WhatsApp, call, or use the form to reach Dr. Vikram Jeet Singh (BDS, MDS). Clear aligners, braces, implants & more."/>
+  <link rel="canonical" href="https://www.bestindiandentist.com/contact.html"/>
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact & Book Appointments | Smiles & Braces Lucknow" />
-  <meta property="og:description" content="Contact Smiles & Braces Dental Clinic for braces, aligners, implants and orthodontics. Book via WhatsApp, phone, email or our appointment form." />
-  <meta property="og:url" content="https://www.bestindiandentist.com/contact.html" />
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Contact & Book Appointments | Smiles & Braces Lucknow"/>
+  <meta property="og:description" content="Fast booking via WhatsApp, phone or contact form."/>
+  <meta property="og:url" content="https://www.bestindiandentist.com/contact.html"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
-  <link rel="icon" href="/assets/icons/favicon.ico" />
-  <meta name="theme-color" content="#0e7fa8" />
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico"/>
+  <meta name="theme-color" content="#0e7fa8"/>
+
+  <!-- Fonts & Global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
+
+  <!-- Page-scoped, safe CSS (form + map) -->
+  <style>
+    .ui-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,16px);margin-top:8px}
+    .ui-form label{display:flex;flex-direction:column;gap:6px}
+    .ui-form label.full,.ui-form .full{grid-column:1/-1}
+    .ui-form input,.ui-form textarea,.ui-form select{width:100%;padding:12px 14px;border:1px solid var(--stroke,#e2e8f0);border-radius:12px;background:#fff;font:inherit;color:var(--ink,#0f172a)}
+    .ui-form input:focus,.ui-form textarea:focus,.ui-form select:focus{outline:2px solid var(--brand,#0e7fa8);outline-offset:2px;border-color:var(--brand,#0e7fa8)}
+    .form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px}
+    @media (max-width:800px){.ui-form{grid-template-columns:1fr}}
+    .map-wrap{aspect-ratio:16/9;border:1px solid var(--stroke,#e2e8f0);border-radius:16px;overflow:hidden}
+    .map-wrap iframe{width:100%;height:100%;border:0}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
@@ -44,82 +63,109 @@
   </header>
 
   <!-- Hero -->
-  <section class="home-hero service-hero">
+  <section class="home-hero service-hero" role="banner">
     <div class="home-hero__inner">
       <h1>Contact & Appointments</h1>
       <p class="measure">Fast booking via WhatsApp or phone — or send us a note below.</p>
-      <div class="cta-buttons">
+      <div class="cta-buttons" role="group" aria-label="Quick contact">
         <a class="btn btn-whatsapp" href="https://wa.me/919565321625?text=Hi%20Dr.%20Vikram%2C%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp +91&nbsp;95653&nbsp;21625</a>
         <a class="btn btn-call" href="tel:+919565321625">Call +91&nbsp;95653&nbsp;21625</a>
       </div>
     </div>
   </section>
 
-  <aside class="container small" aria-label="Breadcrumb">
+  <!-- Breadcrumb -->
+  <nav class="container small" aria-label="Breadcrumb">
     <span><a class="link-more" href="/">Home</a> / Contact</span>
-  </aside>
+  </nav>
 
   <main id="main" class="container section">
     <div class="grid grid-2">
       <!-- Contact form -->
-      <section class="card">
-        <h2>Book Your Appointment</h2>
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Book Your Appointment</h2>
 
-        <!-- FORM -->
-        <form id="contactForm" class="ui-form" novalidate>
+        <!--
+          Progressive enhancement:
+          - Works anywhere with JS redirect to /thank-you.html
+          - Also supports Netlify Forms (if you ever host there)
+        -->
+        <form id="contactForm" name="contact" class="ui-form" method="POST" data-netlify="true" action="/thank-you.html" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact"/>
+          <p hidden><label>Don’t fill this out: <input name="bot-field"/></label></p>
+
           <label>
             <span>Full Name</span>
-            <input type="text" name="name" placeholder="John Doe" required />
+            <input type="text" name="name" placeholder="John Doe" autocomplete="name" required aria-required="true"/>
           </label>
 
           <label>
             <span>Email Address</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
+            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
           </label>
 
           <label>
             <span>Phone Number</span>
-            <input type="tel" name="phone" placeholder="+91 9xxxxxxxxx" required />
+            <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
           </label>
 
           <label>
             <span>Preferred Date</span>
-            <input type="date" name="date" />
+            <input type="date" name="date" autocomplete="off"/>
           </label>
 
           <label class="full">
             <span>Message / Concerns</span>
-            <textarea name="message" rows="5" placeholder="Your message…"></textarea>
+            <textarea name="message" rows="5" placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice"></textarea>
           </label>
 
           <div class="form-actions full">
             <button type="submit" class="btn btn-call">Submit</button>
-            <a class="btn btn-ghost" href="https://wa.me/919565321625">Message on WhatsApp</a>
+            <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
           </div>
+
+          <p class="small full">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
         </form>
+
+        <noscript>
+          <p class="small">JavaScript is disabled. After submitting, you’ll be taken to our Thank-You page.</p>
+        </noscript>
       </section>
 
       <!-- Clinic info -->
-      <aside class="card">
-        <h2>Clinic Information</h2>
+      <aside class="card" aria-labelledby="clinic-info">
+        <h2 id="clinic-info">Clinic Information</h2>
+
         <p><strong>Address</strong><br/>
           Shop No. 6, Javed Market, near Aurobindo Park,<br/>
-          Munshi Pulia, Sector 12, Indira Nagar,<br/> Lucknow, Uttar Pradesh 226016
+          Munshi Pulia, Sector 12, Indira Nagar,<br/>
+          Lucknow, Uttar Pradesh 226016
         </p>
+
         <p><strong>Phone / WhatsApp</strong><br/>
           <a href="tel:+917570000801">+91 75700 00801</a><br/>
           <a href="tel:+919565321625">+91 95653 21625</a>
         </p>
+
         <p><strong>Email</strong><br/>
-          <a href="mailto:smilesandbracesmunshipuliya@gmail.com">smilesandbracesmunshipuliya@gmail.com</a></p>
+          <a href="mailto:smilesandbracesmunshipuliya@gmail.com">smilesandbracesmunshipuliya@gmail.com</a>
+        </p>
+
         <p><strong>Instagram</strong><br/>
-          <a href="https://instagram.com/drvikramjeetdental" target="_blank">@drvikramjeetdental</a></p>
+          <a href="https://instagram.com/drvikramjeetdental" target="_blank" rel="noopener">@drvikramjeetdental</a>
+        </p>
+
+        <p><strong>Timings</strong><br/>
+          Mon–Sat: 10:00 AM – 8:00 PM · Sunday by prior appointment
+        </p>
+
+        <p><a class="link-more" href="https://maps.google.com/?q=Smiles%20%26%20Braces%20Dental%20Clinic%20Lucknow" target="_blank" rel="noopener">Open in Google Maps →</a></p>
       </aside>
     </div>
 
     <!-- Map -->
-    <section class="section glass">
-      <h2>Find Us Here</h2>
+    <section class="section glass" aria-labelledby="map-title">
+      <h2 id="map-title">Find Us Here</h2>
       <div class="map-wrap">
         <iframe
           title="Map to Smiles & Braces Dental Clinic"
@@ -130,6 +176,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -145,27 +192,46 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script>
+    // Mobile menu
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.querySelector('.navlinks').classList.toggle('show');
     });
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Redirect form to thank-you page
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      window.location.href = "/thank-you.html";
+    // Client-side redirect (works anywhere). Netlify will also catch via form action.
+    const f = document.getElementById('contactForm');
+    f?.addEventListener('submit', (e) => {
+      // If Netlify handles it, this JS is ignored; otherwise prevent default and redirect.
+      if (!f.hasAttribute('data-netlify')) {
+        e.preventDefault();
+        window.location.href = "/thank-you.html";
+      }
     });
   </script>
 
-  <!-- Schema -->
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Contact & Appointments - Smiles & Braces Dental Clinic",
+    "url":"https://www.bestindiandentist.com/contact.html",
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.bestindiandentist.com/"},
+      {"@type":"ListItem","position":2,"name":"Contact","item":"https://www.bestindiandentist.com/contact.html"}
+    ]}
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Dentist",
     "name":"Smiles & Braces Dental Clinic",
-    "url":"https://www.bestindiandentist.com/contact.html",
-    "telephone":"+919565321625",
+    "url":"https://www.bestindiandentist.com/",
+    "telephone":"+91-95653-21625",
+    "image":"https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg",
     "address":{
       "@type":"PostalAddress",
       "streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
@@ -173,7 +239,11 @@
       "addressRegion":"UP",
       "postalCode":"226016",
       "addressCountry":"IN"
-    }
+    },
+    "geo":{"@type":"GeoCoordinates","latitude":26.886421,"longitude":80.998002},
+    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"}],
+    "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+91-95653-21625","areaServed":"IN","availableLanguage":["en","hi"]},
+    "sameAs":["https://instagram.com/drvikramjeetdental","https://www.drvikramjeet.com"]
   }
   </script>
 </body>
