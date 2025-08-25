@@ -193,14 +193,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   z-index: 1000;
 }
 
-/* If you want the header to stay pinned below the topbar: */
-.header{
-  position: sticky;
-  top: var(--topbar-h);
-  z-index: 999;
-  background: #fff;           /* prevent see-through over hero */
-  box-shadow: 0 1px 0 var(--stroke, #e5eef6);
-}
 
 /* === C) When jumping to anchors (e.g., #main), don't hide under masthead === */
 #main{ scroll-margin-top: var(--masthead-offset); }
