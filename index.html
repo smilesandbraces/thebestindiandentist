@@ -7,7 +7,7 @@
 
   <!-- SEO -->
   <title>Smiles & Braces Dental Clinic | Dr. Vikram Jeet Singh, Orthodontist in Lucknow</title>
-  <meta name="description" content="Comfort-first orthodontics and comprehensive dentistry in Lucknow by Dr. Vikram Jeet Singh (BDS, MDS). Braces, clear aligners, implants, veneers, root canal therapy & emergency care with transparent pricing."/>
+  <meta name="description" content="Comfort-first orthodontics and comprehensive dentistry in Lucknow by Dr. Vikram Jeet Singh (BDS, MDS). Braces, clear aligners, implants, veneers, root canal therapy & emergency care with transparent pricing and live world clocks."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/"/>
 
   <!-- Social cards -->
@@ -60,7 +60,6 @@
     .o2{left:88%; top:12%; width:300px; height:300px; background:radial-gradient(circle at 60% 70%, #31b2ff, #a7e2ff 58%, transparent 70%); animation:float 23s ease-in-out infinite}
     .o3{left:10%; top:80%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #61d7a2, #d2ffe9 58%, transparent 70%); animation:float 22s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
-
     .home-hero__inner .kicker{display:inline-block;margin-bottom:6px;padding:6px 10px;border:1px solid var(--stroke,#e2e8f0);border-radius:999px;background:#fff}
     .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
     .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
@@ -72,9 +71,9 @@
     .info-card .big{font-weight:800;font-size:clamp(22px,4vw,34px)}
     .muted{opacity:.72}
 
-    /* ===== Services grid with hover lift ===== */
+    /* ===== Services grid (uses your /assets/images/services/*) ===== */
     .service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .service-grid > article{grid-column:span 3; background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
+    .service-grid > article{grid-column:span 3;background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
     .service-grid > article:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(2,29,59,.08)}
     .service-grid img{width:100%;height:160px;object-fit:cover}
     .service-grid .pad{padding:10px}
@@ -97,6 +96,11 @@
     @media (max-width:1100px){.clock-card{grid-column:span 4}}
     @media (max-width:780px){.clock-card{grid-column:span 6}}
     @media (max-width:560px){.clock-card{grid-column:span 12}}
+
+    /* ===== Mini Price Widget ===== */
+    .mini-price{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mini-price .panel{background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
+    @media (max-width:680px){.mini-price{grid-template-columns:1fr}}
 
     /* ===== Testimonials carousel ===== */
     .carousel{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--stroke,#e2e8f0)}
@@ -181,7 +185,7 @@
   </aside>
 
   <main id="main" class="home-main container">
-    <!-- ===== INFO STRIP (Open Now / Response speed / Address) ===== -->
+    <!-- ===== INFO STRIP ===== -->
     <section class="section">
       <div class="info-strip">
         <div class="info-card">
@@ -199,7 +203,50 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES (premium grid) ===== -->
+    <!-- ===== MINI PRICE WIDGET (live rates) ===== -->
+    <section class="section glass">
+      <div class="section-head">
+        <h2>Quick price check</h2>
+        <span class="section-tag">Live currency conversion for popular procedures</span>
+      </div>
+      <div class="mini-price" id="miniPrice">
+        <div class="panel">
+          <label class="small muted">Treatment</label>
+          <select id="mpTreat" class="input">
+            <option value="CLEANING">Professional Cleaning — ₹2,200</option>
+            <option value="ALIGNERS">Clear Aligners (per arch) — from ₹85,000</option>
+            <option value="BRACES">Metal/Ceramic Braces — from ₹65,000</option>
+            <option value="IMPLANT">Dental Implant (base) — from ₹28,000</option>
+            <option value="RCT">Root Canal (single tooth) — from ₹5,500</option>
+            <option value="VENEER">Porcelain Veneer (per tooth) — from ₹12,000</option>
+            <option value="WHITEN">Teeth Whitening — from ₹9,500</option>
+          </select>
+        </div>
+        <div class="panel">
+          <label class="small muted">Show in currency</label>
+          <select id="mpCurr" class="input mono">
+            <option value="USD">USD — $</option>
+            <option value="EUR">EUR — €</option>
+            <option value="GBP">GBP — £</option>
+            <option value="CNY">CNY — ¥</option>
+            <option value="AED">AED — د.إ</option>
+            <option value="AUD">AUD — $</option>
+            <option value="INR" selected>INR — ₹</option>
+          </select>
+        </div>
+        <div class="panel">
+          <div class="muted small">Estimated price</div>
+          <div id="mpOut" class="h3">—</div>
+          <div id="mpMeta" class="small muted">Live mid-market rate</div>
+        </div>
+        <div class="panel">
+          <div class="muted small">Tip</div>
+          <p class="small">Bank/card rates may vary slightly. For a written estimate, <a href="/contact.html">contact us</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES (arranged to your repo images) ===== -->
     <section class="section glass">
       <div class="section-head">
         <h2>What we do best</h2>
@@ -207,69 +254,73 @@
       </div>
 
       <div class="service-grid">
-        <!-- 1 -->
+        <!-- Uses files in /assets/images/services/ (per your screenshot) -->
         <article class="reveal">
           <img src="/assets/images/services/clearaligners.jpg" alt="Clear aligners planned digitally"/>
-          <div class="pad">
-            <h3>Clear Aligners</h3>
-            <p>Discreet, removable trays with digital planning for precise tooth movement.</p>
-          </div>
+          <div class="pad"><h3>Clear Aligners</h3><p>Discreet, removable trays with digital planning for precise movement.</p></div>
         </article>
-        <!-- 2 -->
         <article class="reveal">
           <img src="/assets/images/services/selfligatingbraces.jpg" alt="Self-ligating braces"/>
-          <div class="pad">
-            <h3>Self-ligating Braces</h3>
-            <p>Modern brackets that reduce chair time and enable gentle, efficient movement.</p>
-          </div>
+          <div class="pad"><h3>Self-ligating Braces</h3><p>Modern brackets that reduce chair time and enable efficient movement.</p></div>
         </article>
-        <!-- 3 -->
         <article class="reveal">
-          <img src="/assets/images/services/lingualbraces.jpg" alt="Lingual braces hidden behind teeth"/>
-          <div class="pad">
-            <h3>Lingual Braces</h3>
-            <p>Bonded behind the teeth — truly invisible orthodontics for professionals.</p>
-          </div>
+          <img src="/assets/images/services/lingualbraces.jpg" alt="Lingual braces behind teeth"/>
+          <div class="pad"><h3>Lingual Braces</h3><p>Bonded behind the teeth — truly invisible orthodontics.</p></div>
         </article>
-        <!-- 4 -->
         <article class="reveal">
-          <img src="/assets/images/services/implants.jpg" alt="Dental implants"/>
-          <div class="pad">
-            <h3>Dental Implants</h3>
-            <p>Comfort-focused tooth replacement for long-term function and aesthetics.</p>
-          </div>
+          <img src="/assets/images/services/traditionalbraces.jpg" alt="Traditional braces"/>
+          <div class="pad"><h3>Traditional Braces</h3><p>Reliable alignment for simple to complex orthodontic cases.</p></div>
         </article>
-        <!-- 5 -->
+
+        <article class="reveal">
+          <img src="/assets/images/services/dental-implants.jpg" alt="Dental implants"/>
+          <div class="pad"><h3>Dental Implants</h3><p>Comfort-focused tooth replacement for long-term function.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/root-canal.jpg" alt="Root canal therapy"/>
+          <div class="pad"><h3>Root Canal Therapy</h3><p>Pain-managed care with modern anesthesia and after-care.</p></div>
+        </article>
         <article class="reveal">
           <img src="/assets/images/services/veneers.jpg" alt="Porcelain veneers"/>
-          <div class="pad">
-            <h3>Porcelain Veneers</h3>
-            <p>Minimal-prep smile makeovers crafted for balance, shade and bite harmony.</p>
-          </div>
+          <div class="pad"><h3>Porcelain Veneers</h3><p>Minimal-prep smile makeovers for balance and shade harmony.</p></div>
         </article>
-        <!-- 6 -->
         <article class="reveal">
-          <img src="/assets/images/services/rootcanal.jpg" alt="Root canal therapy"/>
-          <div class="pad">
-            <h3>Root Canal Therapy</h3>
-            <p>Pain-managed treatment with modern anesthesia and careful after-care.</p>
-          </div>
+          <img src="/assets/images/services/teethwhitening.jpg" alt="Teeth whitening"/>
+          <div class="pad"><h3>Teeth Whitening</h3><p>Safe, predictable brightening with sensitivity control.</p></div>
         </article>
-        <!-- 7 -->
+
         <article class="reveal">
-          <img src="/assets/images/services/whitening.jpg" alt="Teeth whitening"/>
-          <div class="pad">
-            <h3>Teeth Whitening</h3>
-            <p>Safe, predictable brightening with sensitivity control where needed.</p>
-          </div>
+          <img src="/assets/images/services/kids-braces.jpg" alt="Kids braces"/>
+          <div class="pad"><h3>Kids’ Braces</h3><p>Interceptive care for growing patients and balanced jaws.</p></div>
         </article>
-        <!-- 8 -->
         <article class="reveal">
-          <img src="/assets/images/services/pediatric.jpg" alt="Pediatric and preventive care"/>
-          <div class="pad">
-            <h3>Pediatric & Preventive</h3>
-            <p>Sealants, fluoride, habit guidance and early interceptive orthodontics.</p>
-          </div>
+          <img src="/assets/images/services/space-maintainers.jpg" alt="Space maintainers"/>
+          <div class="pad"><h3>Space Maintainers</h3><p>Prevents shifting when baby teeth are lost early.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/night-guard.jpg" alt="Night guard"/>
+          <div class="pad"><h3>Night Guards</h3><p>Protect teeth from grinding and reduce jaw strain.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/wisdom-tooth.jpg" alt="Wisdom tooth"/>
+          <div class="pad"><h3>Wisdom Tooth</h3><p>Assessment and removal with comfort-first protocols.</p></div>
+        </article>
+
+        <article class="reveal">
+          <img src="/assets/images/services/retainers.jpg" alt="Retainers"/>
+          <div class="pad"><h3>Retainers</h3><p>Retention plans to keep your smile beautifully stable.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/bonding.jpg" alt="Dental bonding"/>
+          <div class="pad"><h3>Bonding</h3><p>Shape and chip repairs for natural-looking results.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/cleaning.jpg" alt="Professional cleaning"/>
+          <div class="pad"><h3>Cleaning & Polishing</h3><p>Professional hygiene and home-care guidance.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/images/services/emergency-care.jpg" alt="Emergency dental care"/>
+          <div class="pad"><h3>Emergency Care</h3><p>Same-day guidance and slots whenever possible.</p></div>
         </article>
       </div>
     </section>
@@ -295,15 +346,13 @@
       </div>
     </section>
 
-    <!-- ===== WORLD CLOCK (global patients) ===== -->
+    <!-- ===== WORLD CLOCK ===== -->
     <section class="section">
       <div class="section-head">
         <h2>Live global time zones</h2>
         <span class="section-tag">Plan calls and travel effortlessly</span>
       </div>
-      <div class="clock-grid" id="worldClock">
-        <!-- Cards injected by JS -->
-      </div>
+      <div class="clock-grid" id="worldClock"></div>
       <p class="small muted" style="margin-top:8px">Times auto-update every second. Tap a card to copy the time.</p>
     </section>
 
@@ -332,24 +381,24 @@
       <div class="dots" id="dots"><span class="dot is-active"></span><span class="dot"></span><span class="dot"></span></div>
     </section>
 
-    <!-- ===== BLOG PREVIEW ===== -->
+    <!-- ===== BLOG PREVIEW (uses your /assets/images/blog/*) ===== -->
     <section class="section glass">
       <div class="section-head">
         <h2>From our blog</h2>
         <a href="/blog.html" class="link-more">Read all posts →</a>
       </div>
       <div class="blog-preview">
-        <a class="preview-card reveal" href="/blog.html#aligners-vs-braces">
-          <img src="/assets/images/blog/aligners.jpg" alt="Aligners vs braces"/>
-          <div><h3>Aligners vs Braces: which is right for you?</h3><div class="meta">2 min read · Updated weekly</div></div>
+        <a class="preview-card reveal" href="/blog/tips-for-oral-hygiene.html">
+          <img src="/assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips"/>
+          <div><h3>5 Expert Tips for Maintaining Oral Hygiene</h3><div class="meta">Aug 1, 2025 · 3 min read</div></div>
         </a>
-        <a class="preview-card reveal" href="/blog.html#root-canal-myths">
-          <img src="/assets/images/blog/rct.jpg" alt="Root canal myths"/>
-          <div><h3>Root canal myths — the facts</h3><div class="meta">3 min read</div></div>
+        <a class="preview-card reveal" href="/blog/importance-of-regular-checkups.html">
+          <img src="/assets/images/blog/regular-checkups.jpg" alt="Regular check-ups"/>
+          <div><h3>The Importance of Regular Dental Check-ups</h3><div class="meta">Jul 25, 2025 · 3 min read</div></div>
         </a>
-        <a class="preview-card reveal" href="/blog.html#travel-dental">
-          <img src="/assets/images/blog/travel.jpg" alt="Travel to Lucknow for dental care"/>
-          <div><h3>Traveling to Lucknow for dental care</h3><div class="meta">Guide for international patients</div></div>
+        <a class="preview-card reveal" href="/blog/choosing-the-right-toothbrush.html">
+          <img src="/assets/images/blog/toothbrushchoice.jpg" alt="Choosing toothbrush and toothpaste"/>
+          <div><h3>How to Choose the Right Toothbrush &amp; Toothpaste</h3><div class="meta">Jul 15, 2025 · 2 min read</div></div>
         </a>
       </div>
     </section>
@@ -422,7 +471,7 @@
   }
   </script>
 
-  <!-- ===== JS: menu, year, parallax, reveal, open-hours, clocks, carousel ===== -->
+  <!-- ===== JS: menu, year, parallax, reveal, open-hours, clocks, carousel, mini price ===== -->
   <script>
     // Mobile menu + year
     document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
@@ -519,6 +568,47 @@
       const dots=[...document.querySelectorAll('#dots .dot')];
       let idx=0; function go(i){ idx=(i+dots.length)%dots.length; slides.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,k)=>d.classList.toggle('is-active',k===idx)); }
       setInterval(()=>go(idx+1),4500);
+    })();
+
+    // ===== Mini Price (multi-source live rates) =====
+    (function(){
+      const PRICES={CLEANING:2200, ALIGNERS:85000, BRACES:65000, IMPLANT:28000, RCT:5500, VENEER:12000, WHITEN:9500};
+      const SYMBOL={INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
+      const WANTED=Object.keys(SYMBOL).join(',');
+      const SOURCES=[
+        {name:'exchangerate.host', make:(base,syms)=>`https://api.exchangerate.host/latest?base=${base}&symbols=${syms}`, pick:d=>({date:d.date, rates:d.rates})},
+        {name:'frankfurter.app',   make:(base,syms)=>`https://api.frankfurter.app/latest?from=${base}&to=${syms}`,     pick:d=>({date:d.date, rates:d.rates})},
+        {name:'open.er-api.com',   make:(base)=>`https://open.er-api.com/v6/latest/${base}`,                           pick:d=>({date:d.time_last_update_utc, rates:d.rates})}
+      ];
+      let rates={base:'INR', date:'offline', source:'fallback', rates:{INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018}};
+
+      const tSel=document.getElementById('mpTreat');
+      const cSel=document.getElementById('mpCurr');
+      const out=document.getElementById('mpOut');
+      const meta=document.getElementById('mpMeta');
+
+      async function fetchRates(){
+        for(const s of SOURCES){
+          try{
+            const url=s.make('INR', WANTED);
+            const res=await fetch(url,{mode:'cors'});
+            const data=await res.json();
+            const pick=s.pick(data);
+            if(pick && pick.rates && Object.keys(pick.rates).length){
+              rates={base:'INR', date: pick.date || new Date().toISOString().slice(0,10), source:s.name, rates:pick.rates};
+              meta.textContent=`Source: ${s.name} • ${rates.date}`;
+              return;
+            }
+          }catch(e){/*next*/}
+        }
+        meta.textContent='Live feed unavailable, using fallback.';
+      }
+      function fmt(cur, val){const sym=SYMBOL[cur]||'';const loc=(cur==='INR')?'en-IN':'en-US';return `${sym} ${val.toLocaleString(loc,{maximumFractionDigits:0})}`;}
+      function convINR(inr, to){return to==='INR'?inr:inr*(rates.rates[to]||0);}
+      function update(){const inr=PRICES[tSel.value]||0;const cur=cSel.value;const v=(cur==='INR')?inr:Math.round(convINR(inr,cur)); out.textContent=fmt(cur,v); localStorage.setItem('preferredCurrency',cur);}
+      cSel.value=localStorage.getItem('preferredCurrency')||'INR';
+      tSel.addEventListener('change',update); cSel.addEventListener('change',update);
+      (async()=>{await fetchRates(); update();})();
     })();
   </script>
 </body>
