@@ -19,15 +19,23 @@
 
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
+
+  <!-- Fonts + Global CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 
   <style>
-    .article-hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;margin-bottom:14px}
+    .header .brand-line.clinic{font-family:"Carattere",cursive;line-height:1;margin:0;font-size:clamp(22px,2.2vw,28px)}
+    .header .brand-line.doctor{font-family:"Fanwood Text",serif;line-height:1;margin:0;font-size:clamp(12px,1.2vw,14px)}
+    .article-hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;margin:10px 0 16px}
     .article-hero img{width:100%;height:100%;object-fit:cover}
     .byline{display:flex;gap:14px;flex-wrap:wrap;align-items:center;opacity:.8}
     .proscons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .proscons > div{border:1px solid var(--stroke,#e2e8f0);border-radius:12px;padding:12px}
+    .proscons>div{border:1px solid var(--stroke,#e2e8f0);border-radius:12px;padding:12px}
     @media (max-width:900px){.proscons{grid-template-columns:1fr}}
+    :target{scroll-margin-top:96px}
   </style>
 </head>
 <body>
@@ -40,11 +48,11 @@
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <nav class="navlinks" aria-label="Primary">
+      <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
-        <a class="active" href="/blog.html">Blog</a>
+        <a class="active" href="/blog.html" aria-current="page">Blog</a>
         <a href="/contact.html">Contact</a>
         <a href="/international.html">International Patients</a>
       </nav>
@@ -70,21 +78,21 @@
       </header>
 
       <div class="article-content" itemprop="articleBody">
-        <section>
+        <section id="bristles">
           <h2>Start with the bristles: soft wins</h2>
-          <p>Soft bristles flex into the gumline to remove plaque without abrading enamel. Medium and hard bristles can cause **gum recession** and sensitivity. If you tend to scrub hard, look for a brush with a **pressure sensor** or a flexible neck.</p>
+          <p>Soft bristles flex into the gumline to remove plaque without abrading enamel. Medium and hard bristles can cause <strong>gum recession</strong> and sensitivity. If you tend to scrub hard, look for a brush with a <strong>pressure sensor</strong> or a flexible neck.</p>
         </section>
 
-        <section>
+        <section id="head">
           <h2>Head size & handle design</h2>
           <ul class="bullets">
-            <li>Choose a **small to medium head** to access back teeth easily.</li>
+            <li>Choose a <strong>small to medium head</strong> to access back teeth easily.</li>
             <li>Non-slip, ergonomic handles improve control and reduce over-pressure.</li>
-            <li>Tongue scraper on the back of the head is a useful plus.</li>
+            <li>A tongue scraper on the back of the head is a helpful plus.</li>
           </ul>
         </section>
 
-        <section>
+        <section id="type">
           <h2>Manual vs electric</h2>
           <div class="proscons">
             <div>
@@ -97,8 +105,8 @@
             <div>
               <h3>Electric (oscillating or sonic)</h3>
               <ul class="bullets">
-                <li>Built-in **2-minute timers** and **quadrant pacing**</li>
-                <li>**Pressure sensors** prevent over-brushing</li>
+                <li>Built-in <strong>2-minute timers</strong> and <strong>quadrant pacing</strong></li>
+                <li><strong>Pressure sensors</strong> prevent over-brushing</li>
                 <li>Helpful for braces, limited dexterity or gum issues</li>
               </ul>
             </div>
@@ -106,38 +114,38 @@
           <p>We often recommend a quality electric brush for consistent results—especially during <a href="/services.html#orthodontics" class="link-more">orthodontic treatment</a>.</p>
         </section>
 
-        <section>
+        <section id="paste">
           <h2>Which toothpaste should I pick?</h2>
           <ul class="bullets">
-            <li>**Fluoride:** aim for ~1000–1500 ppm fluoride for adults; use a **smear** for kids under 3, **pea-sized** for ages 3–6.</li>
-            <li>**Sensitivity:** look for stannous fluoride or potassium nitrate.</li>
-            <li>**Whitening:** avoid overly abrasive pastes if you have sensitivity or recession.</li>
-            <li>**Tartar control:** useful for heavy calculus formers but may increase sensitivity—ask us first.</li>
+            <li><strong>Fluoride:</strong> ~1000–1500 ppm for adults; a smear for kids under 3, pea-sized for ages 3–6.</li>
+            <li><strong>Sensitivity:</strong> stannous fluoride or potassium nitrate help.</li>
+            <li><strong>Whitening:</strong> avoid overly abrasive pastes if you have recession or sensitivity.</li>
+            <li><strong>Tartar control:</strong> useful for heavy calculus formers—ask us first.</li>
           </ul>
         </section>
 
-        <section>
+        <section id="special">
           <h2>Special cases: braces, aligners & implants</h2>
           <ul class="bullets">
-            <li>**Braces:** orthodontic brush heads + **interdental brushes** under the wire.</li>
-            <li>**Aligners:** brush teeth before reinserting trays; clean trays with cool water and a soft brush.</li>
-            <li>**Implants:** super-floss or soft interdental brushes around implant crowns.</li>
+            <li><strong>Braces:</strong> orthodontic brush heads + <strong>interdental brushes</strong> under the wire.</li>
+            <li><strong>Aligners:</strong> brush teeth before reinserting trays; clean trays with cool water and a soft brush.</li>
+            <li><strong>Implants:</strong> super-floss or soft interdental brushes around implant crowns.</li>
           </ul>
         </section>
 
-        <section>
+        <section id="replace">
           <h2>When to replace your brush</h2>
-          <p>Every **3 months** or when bristles splay. Replace sooner after colds or flu. A worn brush removes far less plaque.</p>
+          <p>Every <strong>3 months</strong> or when bristles splay. Replace sooner after colds or flu. A worn brush removes far less plaque.</p>
         </section>
 
         <section class="callout">
-          <p><strong>Bottom line:</strong> A **soft-bristle**, small-headed brush used for **two minutes twice daily** with fluoride toothpaste is the safest choice for most people. Tools help, but **technique** wins.</p>
+          <p><strong>Bottom line:</strong> A <strong>soft-bristle</strong>, small-headed brush used for <strong>two minutes twice daily</strong> with fluoride toothpaste is the safest choice for most people. Tools help, but <strong>technique</strong> wins.</p>
           <p>Need personalised advice? <a href="/contact.html">Book a consultation</a> or WhatsApp <a href="https://wa.me/919565321625">+91 95653 21625</a>.</p>
         </section>
       </div>
 
       <footer class="section">
-        <nav class="pagination">
+        <nav class="pagination" aria-label="Post navigation">
           <a class="prev" href="/blog/tips-for-oral-hygiene.html">← 5 Expert Tips for Maintaining Oral Hygiene</a>
           <a class="next" href="/blog/importance-of-regular-checkups.html">The Importance of Regular Check-ups →</a>
         </nav>
@@ -176,18 +184,7 @@
 
   <!-- Schema -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BlogPosting",
-    "headline":"How to Choose the Right Toothbrush & Toothpaste",
-    "description":"Manual vs electric, bristle type, head size, timers & pressure sensors, fluoride levels, kids’ brushes, and what to choose if you have braces or aligners.",
-    "image":"https://www.bestindiandentist.com/assets/images/blog/toothbrushchoice.jpg",
-    "datePublished":"2025-07-15",
-    "dateModified":"2025-07-15",
-    "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-    "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-    "mainEntityOfPage":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"
-  }
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Choose the Right Toothbrush & Toothpaste","description":"Manual vs electric, bristle type, head size, timers & pressure sensors, fluoride levels, kids’ brushes, and what to choose if you have braces or aligners.","image":"https://www.bestindiandentist.com/assets/images/blog/toothbrushchoice.jpg","datePublished":"2025-07-15","dateModified":"2025-07-15","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"mainEntityOfPage":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"}
   </script>
 </body>
 </html>
