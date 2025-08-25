@@ -200,3 +200,34 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* Optional: if you don’t like the little live-status dot in the topbar */
 .topbar .dot{ display: none; }
+/* === Gap between the top blue strip (.topbar) and the navigation bar (.header) === */
+:root{
+  --topbar-h: 44px;   /* your current topbar height */
+  --header-h: 70px;   /* approx header height */
+  --mast-gap: 8px;    /* 👈 adjust this for more/less space */
+  --masthead-offset: calc(var(--topbar-h) + var(--mast-gap) + var(--header-h));
+}
+
+/* Keep topbar sticky and add a small visual separation */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: var(--mast-gap);              /* creates the visible gap */
+  box-shadow: 0 1px 0 rgba(2,29,59,.08);       /* optional, subtle divider */
+}
+
+/* Header stays pinned just below the topbar + the gap */
+.header{
+  position: sticky;
+  top: calc(var(--topbar-h) + var(--mast-gap)); /* account for the gap */
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 1px 0 var(--stroke, #e5eef6);
+}
+
+/* Ensure anchor jumps don't hide under the masthead */
+#main,
+:target{
+  scroll-margin-top: var(--masthead-offset);
+}
