@@ -2,110 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="index,follow"/>
 
   <title>International Patients | Dental Tourism to Lucknow | Smiles & Braces</title>
-  <meta name="description" content="Fly to Lucknow for world-class orthodontics and dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Concierge help, fast timelines, transparent costs—with live currency conversion in USD, EUR, GBP, CNY & more."/>
+  <meta name="description" content="Fly to Lucknow for predictable orthodontics and comprehensive dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Concierge planning, clear timelines, and transparent multi-currency pricing (USD, EUR, GBP, CNY, AED, AUD)."/>
+
   <link rel="canonical" href="https://www.bestindiandentist.com/international.html"/>
 
-  <!-- Social cards -->
+  <!-- Social -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="International Patients | Smiles & Braces Dental Clinic"/>
-  <meta property="og:description" content="Concierge care, clear timelines, and live multi-currency pricing for global patients traveling to Lucknow."/>
+  <meta property="og:description" content="Concierge care, fast timelines and live currency prices for global patients traveling to Lucknow."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/international.html"/>
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
-  <!-- Favicons -->
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts (match site) + Global CSS -->
+  <!-- Fonts (match site) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Global CSS -->
   <link rel="stylesheet" href="/css/site.css"/>
 
-  <!-- Page styling & animations -->
+  <!-- Page styles & tasteful motion -->
   <style>
     /* HERO */
     .intl-hero{
       --grad1:#e6f7ff; --grad2:#f7fbff;
-      background: radial-gradient(1200px 600px at 10% -20%, var(--grad1), transparent 70%),
-                  radial-gradient(900px 500px at 90% 0%, var(--grad2), transparent 65%);
-      position: relative; overflow: clip;
+      background:
+        radial-gradient(1200px 600px at 10% -20%, var(--grad1), transparent 70%),
+        radial-gradient(900px 500px at 90% 0%, var(--grad2), transparent 65%);
+      position:relative; overflow:clip;
     }
-    .intl-hero .orbs{
-      position:absolute; inset:0; pointer-events:none; opacity:.6;
-      filter: blur(30px);
+    .hero-media{
+      position:absolute; inset:-8% -8% 0 -8%;
+      background:url("/assets/illustrations/global.jpg") center/cover no-repeat;
+      transform: translateY(var(--parY,0px)) scale(1.03);
+      filter:saturate(1.02) contrast(1.02) brightness(1.02);
+      opacity:.25;
+      will-change: transform;
     }
-    .intl-hero .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%);
-      animation: float 16s ease-in-out infinite;
-      background: radial-gradient(circle at 30% 30%, #0e7fa8, #5ac1ff 60%, transparent 70%);
-      width:200px; height:200px; mix-blend-mode:multiply;
-    }
-    .intl-hero .orb.o2{left:85%; top:10%; width:260px; height:260px; animation-duration:18s}
-    .intl-hero .orb.o3{left:10%; top:75%; width:220px; height:220px; animation-duration:20s}
-    @keyframes float { 0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(20px)} }
+    .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(30px); opacity:.65}
+    .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%); mix-blend-mode:multiply}
+    .orb.o1{left:14%; top:12%; width:220px; height:220px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #5ac1ff 60%, transparent 70%); animation:float 18s ease-in-out infinite}
+    .orb.o2{left:86%; top:14%; width:280px; height:280px; background:radial-gradient(circle at 70% 70%, #00a3e0, #7fd3ff 55%, transparent 72%); animation:float 22s ease-in-out infinite}
+    .orb.o3{left:10%; top:76%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #5bd6a0, #c6ffe6 55%, transparent 72%); animation:float 20s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
 
-    /* Subnav */
     .intl-subnav{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:14px}
     .intl-subnav a{border:1px solid var(--stroke,#e2e8f0); background:#fff; padding:8px 12px; border-radius:999px; text-decoration:none}
     .intl-subnav a:hover{border-color:var(--brand,#0e7fa8)}
 
-    /* Sections */
-    .section.grid-2{display:grid; grid-template-columns: 1.15fr .85fr; gap:clamp(16px,3vw,28px)}
-    @media (max-width:1000px){.section.grid-2{grid-template-columns:1fr}}
+    /* Trust counters */
+    .trust{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:10px}
+    .trust .t{background:#fff; border:1px solid var(--stroke,#e2e8f0); border-radius:14px; padding:12px; text-align:center}
+    .trust .num{font-size:clamp(24px,4.2vw,40px); font-weight:800; letter-spacing:.5px}
+    .trust small{opacity:.75}
 
-    /* Cards & glass */
-    .glass-2{background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.9));
-      border:1px solid rgba(14,127,168,.08); box-shadow:0 10px 30px rgba(2,29,59,.06); border-radius:18px}
-    .thin{max-width:860px; margin-inline:auto}
+    /* Layout helpers */
+    .section.grid-2{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(16px,3vw,28px)}
+    @media (max-width:1024px){.section.grid-2{grid-template-columns:1fr}}
+    .glass-2{background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.92)); border:1px solid rgba(14,127,168,.08); box-shadow:0 10px 30px rgba(2,29,59,.06); border-radius:18px}
+    .thin{max-width:880px; margin-inline:auto}
 
-    /* Reveal animations */
+    /* Reveal */
     .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
     .reveal.is-visible{opacity:1; transform:none}
-    .stagger > *{opacity:0; transform:translateY(14px)}
-    .stagger.is-visible > *{animation:fadeUp .7s ease forwards}
-    .stagger.is-visible > *:nth-child(2){animation-delay:.08s}
-    .stagger.is-visible > *:nth-child(3){animation-delay:.16s}
-    .stagger.is-visible > *:nth-child(4){animation-delay:.24s}
-    @keyframes fadeUp{to{opacity:1; transform:none}}
+    :target{scroll-margin-top:96px}
 
-    /* Price widget */
+    /* Pricing widgets */
     .price-widget{display:grid; gap:12px}
     .price-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
     @media (max-width:640px){.price-row{grid-template-columns:1fr}}
     .price-table{width:100%; border-collapse:collapse; font-size:.95rem}
-    .price-table th, .price-table td{border-bottom:1px solid var(--stroke,#e2e8f0); padding:10px 8px; text-align:left}
+    .price-table th,.price-table td{border-bottom:1px solid var(--stroke,#e2e8f0); padding:10px 8px; text-align:left}
     .price-table th{font-weight:700}
-    .muted{opacity:.7}
-    .badge{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stroke,#e2e8f0); border-radius:999px; padding:4px 10px; font-size:.85rem; background:#fff}
+    .muted{opacity:.72}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 
-    /* Journey timeline */
-    .timeline{position:relative; padding-left:26px}
-    .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(#cfefff,#0e7fa8)}
-    .tl-step{position:relative; margin:16px 0; padding-left:8px}
-    .tl-step::before{content:""; position:absolute; left:-18px; top:2px; width:12px; height:12px; border-radius:50%; background:#0e7fa8; box-shadow:0 0 0 4px #e6f7ff}
+    /* Packages (Bento) */
     .bento{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
-    .bento > *{grid-column: span 6; }
+    .bento > *{grid-column: span 6}
     .bento .wide{grid-column: span 12}
     @media (max-width:900px){.bento > *{grid-column: span 12}}
+    .tile{position:relative; overflow:hidden; border-radius:16px}
+    .tile img{width:100%; height:100%; object-fit:cover; transform:scale(1.03); transition:transform .8s ease}
+    .tile:hover img{transform:scale(1.08)}
+    .tile .overlay{position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0)); color:#fff; padding:14px; display:flex; align-items:end}
+    .tile .overlay h3{margin:0}
 
-    /* CTA */
+    /* Timeline */
+    .timeline{position:relative; padding-left:26px}
+    .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(#cfefff,#0e7fa8)}
+    .tl-step{position:relative; margin:16px 0; padding-left:6px}
+    .tl-step::before{content:""; position:absolute; left:-18px; top:2px; width:12px; height:12px; border-radius:50%; background:#0e7fa8; box-shadow:0 0 0 4px #e6f7ff}
+
+    /* Gallery */
+    .masonry{columns:3 280px; column-gap:12px}
+    .masonry figure{break-inside:avoid; margin:0 0 12px; overflow:hidden; border-radius:14px; border:1px solid var(--stroke,#e2e8f0)}
+    .masonry img{width:100%; display:block; transition:transform .6s ease}
+    .masonry figure:hover img{transform:scale(1.05)}
+
+    /* Carousel (testimonials) */
+    .carousel{position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--stroke,#e2e8f0)}
+    .slides{display:flex; transition:transform .6s ease}
+    .slide{min-width:100%; padding:16px}
+    .dots{display:flex; gap:6px; justify-content:center; margin-top:8px}
+    .dot{width:8px; height:8px; border-radius:50%; background:#c9d8e6}
+    .dot.is-active{background:#0e7fa8}
+
+    /* CTA bar */
     .cta-bar{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
     .cta-bar .btn{min-width:180px}
 
-    /* Currency flag-ish chips */
     .flaglist{display:flex; flex-wrap:wrap; gap:8px}
-    .flaglist .badge{background:#f8fbfd}
-
-    /* Small helpers */
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-    .ok{color:#0f7a2e}
-    .warn{color:#b35b00}
-    :target{scroll-margin-top:96px}
+    .badge{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stroke,#e2e8f0); border-radius:999px; padding:4px 10px; font-size:.85rem; background:#fff}
   </style>
 </head>
 <body>
@@ -132,20 +148,20 @@
 
   <!-- HERO -->
   <section class="home-hero intl-hero">
+    <div class="hero-media" aria-hidden="true"></div>
     <div class="orbs" aria-hidden="true">
-      <div class="orb o1" style="left:12%; top:12%"></div>
-      <div class="orb o2"></div>
-      <div class="orb o3"></div>
+      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
     </div>
     <div class="home-hero__inner">
       <h1>International Patients & Dental Tourism</h1>
-      <p class="measure">Fly in for <strong>predictable orthodontics</strong> and <strong>comprehensive dentistry</strong> by Dr. Vikram Jeet Singh (BDS, MDS) in Lucknow—supported by concierge planning, fast timelines, and <strong>transparent multi-currency pricing</strong>.</p>
+      <p class="measure">Fly in for <strong>predictable orthodontics</strong> and <strong>comprehensive dentistry</strong> by Dr. Vikram Jeet Singh (BDS, MDS) in Lucknow—backed by concierge planning, tight timelines, and <strong>live multi-currency pricing</strong>.</p>
       <div class="intl-subnav" aria-label="Jump to">
-        <a href="#pricing">Pricing & Currency</a>
+        <a href="#pricing">Prices & Currency</a>
         <a href="#packages">Packages</a>
-        <a href="#journey">Your Journey</a>
-        <a href="#concierge">Concierge & Travel</a>
-        <a href="#docs">Documents</a>
+        <a href="#journey">Journey</a>
+        <a href="#concierge">Concierge</a>
+        <a href="#city">About Lucknow</a>
+        <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="cta-buttons">
@@ -153,54 +169,61 @@
         <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
         <a href="/contact.html" class="btn btn-ghost">Book Virtual Consult</a>
       </div>
+      <div class="trust" aria-label="Clinic at a glance">
+        <div class="t">
+          <div class="num" data-count="26">0</div>
+          <small>Countries visited us</small>
+        </div>
+        <div class="t">
+          <div class="num" data-count="4.9">0</div>
+          <small>Avg. patient rating</small>
+        </div>
+        <div class="t">
+          <div class="num" data-count="15">0</div>
+          <small>Years of experience</small>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- BREADCRUMB -->
+  <!-- Breadcrumb -->
   <aside class="container small" aria-label="Breadcrumb">
     <span><a class="link-more" href="/">Home</a> / International Patients</span>
   </aside>
 
   <main id="main" class="container">
-
-    <!-- WHY INDIA / WHY US -->
+    <!-- Why us -->
     <section class="section grid-2 reveal">
       <div class="glass-2" style="padding:16px 18px">
-        <h2>Why patients travel to us</h2>
+        <h2>Why patients fly to us</h2>
         <ul class="bullets">
-          <li><strong>Predictable outcomes</strong> via digital planning & measured follow-ups</li>
-          <li><strong>Comfort-first care</strong> with conservative protocols</li>
-          <li><strong>Fast tracks</strong> for travelers: bundled appointments, weekend options</li>
-          <li><strong>Transparent costs</strong> with live currency conversion</li>
-          <li>Dedicated support for <strong>itineraries, letters & post-care</strong></li>
+          <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
+          <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
+          <li><strong>Bundled appointments</strong> to minimize days in town</li>
+          <li><strong>Transparent prices</strong> with live currency conversion</li>
+          <li>Visa letters, <strong>concierge support</strong>, and tele-follow ups</li>
         </ul>
         <div class="flaglist" aria-label="Supported currencies">
-          <span class="badge mono">USD $</span>
-          <span class="badge mono">EUR €</span>
-          <span class="badge mono">GBP £</span>
-          <span class="badge mono">CNY ¥</span>
-          <span class="badge mono">INR ₹</span>
-          <span class="badge mono">AED د.إ</span>
-          <span class="badge mono">AUD $</span>
+          <span class="badge mono">USD $</span><span class="badge mono">EUR €</span><span class="badge mono">GBP £</span>
+          <span class="badge mono">CNY ¥</span><span class="badge mono">AED د.إ</span><span class="badge mono">AUD $</span><span class="badge mono">INR ₹</span>
         </div>
       </div>
       <figure class="glass-2" style="padding:10px">
-        <img src="/assets/illustrations/global.jpg" alt="Global patients traveling for dental care" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
-        <figcaption class="small muted" style="padding:6px 8px">We routinely help with schedules, visa letters and remote follow-ups.</figcaption>
+        <img src="/assets/illustrations/experience.jpg" alt="Comfortable modern dental treatment experience" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
+        <figcaption class="small muted" style="padding:6px 8px">Comfort-first clinical spaces, clear itineraries & time-boxed visits.</figcaption>
       </figure>
     </section>
 
-    <!-- PRICING & CURRENCY -->
+    <!-- Pricing & Currency -->
     <section id="pricing" class="section reveal">
       <div class="section-head">
         <h2>Pricing & live currency checker</h2>
-        <span class="section-tag">Transparent & up-to-date</span>
+        <span class="section-tag">Up-to-date, transparent, travel-friendly</span>
       </div>
 
       <div class="glass-2" style="padding:16px 18px">
-        <p class="muted">Base prices are listed in <strong>INR</strong>. Choose a treatment and currency to see live converted estimates. We fetch current mid-market rates from a public source; minor variations may occur with your bank or card provider.</p>
+        <p class="muted">Base prices are in <strong>INR</strong>. Select a treatment and currency to see a live converted estimate. We fetch mid-market rates from a public source; your bank/card may apply minor differences.</p>
 
-        <!-- Widget -->
         <div class="price-widget" id="priceWidget" data-api="https://api.exchangerate.host/latest">
           <div class="price-row">
             <label>
@@ -210,10 +233,10 @@
                 <option value="CLEANING">Professional Cleaning — ₹2,200</option>
                 <option value="ALIGNERS">Clear Aligners (per arch) — from ₹85,000</option>
                 <option value="BRACES">Metal/Ceramic Braces — from ₹65,000</option>
-                <option value="IMPLANT">Dental Implant (crown extra) — from ₹28,000</option>
+                <option value="IMPLANT">Dental Implant (base) — from ₹28,000</option>
                 <option value="RCT">Root Canal (single tooth) — from ₹5,500</option>
                 <option value="VENEER">Porcelain Veneer (per tooth) — from ₹12,000</option>
-                <option value="WHITEN">Teeth Whitening — ₹9,500</option>
+                <option value="WHITEN">Teeth Whitening — from ₹9,500</option>
               </select>
             </label>
 
@@ -246,17 +269,57 @@
           <details class="preview-card" style="margin-top:8px">
             <summary><strong>See base price list (INR)</strong></summary>
             <table class="price-table" aria-label="Base price list in INR">
-              <thead>
-                <tr><th>Treatment</th><th>From (₹)</th><th>Notes</th></tr>
-              </thead>
+              <thead><tr><th>Treatment</th><th>From (₹)</th><th>Notes</th></tr></thead>
               <tbody id="basePriceTable"></tbody>
             </table>
           </details>
         </div>
+
+        <!-- Savings calculator -->
+        <div class="glass-2" style="padding:16px 18px; margin-top:12px">
+          <h3>Estimate your savings vs home country</h3>
+          <div class="price-row">
+            <label>
+              <span class="small muted">Choose procedure</span>
+              <select id="saveProc" class="input">
+                <option value="ALIGNERS">Clear Aligners (per arch)</option>
+                <option value="BRACES">Braces (case)</option>
+                <option value="IMPLANT">Single Implant (base)</option>
+                <option value="VENEER">Porcelain Veneer (per tooth)</option>
+                <option value="RCT">Root Canal</option>
+                <option value="WHITEN">Teeth Whitening</option>
+              </select>
+            </label>
+            <label>
+              <span class="small muted">Home market</span>
+              <select id="saveMarket" class="input">
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="EU">EU</option>
+                <option value="AUS">Australia</option>
+                <option value="GCC">GCC</option>
+              </select>
+            </label>
+          </div>
+          <div class="price-row">
+            <div class="glass-2" style="padding:12px">
+              <div class="muted small">Typical home price</div>
+              <div id="homePrice" class="h4">—</div>
+            </div>
+            <div class="glass-2" style="padding:12px">
+              <div class="muted small">Our estimated price (converted)</div>
+              <div id="ourPrice" class="h4">—</div>
+            </div>
+          </div>
+          <div class="glass-2" style="padding:12px; margin-top:8px">
+            <div class="muted small">Indicative saving</div>
+            <div id="savingPct" class="h3">—</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PACKAGES -->
+    <!-- Packages -->
     <section id="packages" class="section reveal">
       <div class="section-head">
         <h2>Travel-friendly packages</h2>
@@ -265,17 +328,23 @@
 
       <div class="bento">
         <article class="glass-2 reveal" style="padding:16px">
-          <h3>Smile Refresh (3–4 days)</h3>
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/hygiene.jpg" alt="Hygiene and whitening" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Smile Refresh (3–4 days)</h3></div>
+          </div>
           <ul class="bullets">
             <li>Consultation + digital scans</li>
             <li>Professional cleaning + whitening</li>
-            <li>Minor fillings / polishes (as indicated)</li>
+            <li>Minor fillings/polishes as indicated</li>
           </ul>
           <p><strong>From ₹18,000</strong> (<span class="mono" data-pkg="REFRESH">auto-convert</span>)</p>
         </article>
 
         <article class="glass-2 reveal" style="padding:16px">
-          <h3>Aligner Fast-Track (2 visits)</h3>
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/scanner.jpg" alt="Digital scan for clear aligners" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Aligner Fast-Track (2 visits)</h3></div>
+          </div>
           <ul class="bullets">
             <li>Consult + scans + treatment planning</li>
             <li>First set of aligners delivered in 5–10 days</li>
@@ -285,7 +354,10 @@
         </article>
 
         <article class="glass-2 reveal" style="padding:16px">
-          <h3>Implant + Crown Plan</h3>
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/treatment.jpg" alt="Dental implant treatment" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Implant + Crown Plan</h3></div>
+          </div>
           <ul class="bullets">
             <li>Stage 1: Implant placement (3–5 days stay)</li>
             <li>Healing period (3–4 months) with remote check-ins</li>
@@ -295,8 +367,8 @@
         </article>
 
         <figure class="glass-2 wide reveal" style="padding:10px">
-          <img src="/assets/illustrations/experience.jpg" alt="Comfort-first clinical experience" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
-          <figcaption class="small muted" style="padding:6px 8px">Comfort-first experience with clear itineraries & time-boxed visits.</figcaption>
+          <img src="/assets/illustrations/comfort.jpg" alt="Comfort-first environment" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
+          <figcaption class="small muted" style="padding:6px 8px">Relaxed, friendly rooms designed for comfort and predictability.</figcaption>
         </figure>
       </div>
 
@@ -306,11 +378,11 @@
       </div>
     </section>
 
-    <!-- YOUR JOURNEY -->
+    <!-- Journey -->
     <section id="journey" class="section reveal">
       <div class="section-head">
         <h2>Your international patient journey</h2>
-        <span class="section-tag">Clear steps & timelines</span>
+        <span class="section-tag">Simple, safe, time-efficient</span>
       </div>
 
       <div class="grid-2 glass-2" style="padding:16px 18px">
@@ -322,19 +394,19 @@
             </li>
             <li class="tl-step">
               <h3>2) Plan & itinerary</h3>
-              <p>Receive a written plan with visits per day, total chair-time, and recovery guidance. We provide visa letters if required.</p>
+              <p>Written plan with daily chair-time, recovery guidance, and visa letter (if needed).</p>
             </li>
             <li class="tl-step">
               <h3>3) Fly-in & day-1 review</h3>
-              <p>Clinical assessment, updated scans, and consent. We can arrange airport pickup and hotel coordination on request.</p>
+              <p>Clinical assessment, updated scans, and consent. Airport pickup & hotel coordination available.</p>
             </li>
             <li class="tl-step">
               <h3>4) Treatment</h3>
-              <p>Bundled appointments to reduce days in town. Aligners/implants/orthodontics proceed per plan with conservative protocols.</p>
+              <p>Bundled appointments to reduce days in town. Conservative protocols, clear after-care.</p>
             </li>
             <li class="tl-step">
-              <h3>5) Fly-back & remote follow-ups</h3>
-              <p>We schedule tele-checks, share care sheets, and coordinate any local support you may need between visits.</p>
+              <h3>5) Remote follow-ups</h3>
+              <p>Tele-checks with photo guides; local referrals if anything urgent arises back home.</p>
             </li>
           </ol>
         </div>
@@ -344,77 +416,128 @@
             <ul class="bullets">
               <li><strong>Smile Refresh:</strong> 3–4 days</li>
               <li><strong>Aligners (start):</strong> 5–10 days to first delivery</li>
-              <li><strong>Braces bonding:</strong> 1–2 days + reviews (virtual as possible)</li>
-              <li><strong>Implant stage-1:</strong> 3–5 days; stage-2 in 3–4 months</li>
+              <li><strong>Braces bonding:</strong> 1–2 days + periodic virtual reviews</li>
+              <li><strong>Implant stage-1:</strong> 3–5 days; stage-2 in ~3–4 months</li>
             </ul>
           </div>
           <div class="preview-card" style="margin-top:10px">
             <h3>What to bring</h3>
             <ul class="bullets">
               <li>Passport & visa copy (if applicable)</li>
-              <li>Medical history & medication list</li>
-              <li>Past dental X-rays, scans or aligner plans (if any)</li>
-              <li>Travel insurance details (recommended)</li>
+              <li>Medical history & medications</li>
+              <li>Past X-rays/scans or aligner plans (if any)</li>
+              <li>Travel insurance (recommended)</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONCIERGE -->
+    <!-- Concierge -->
     <section id="concierge" class="section reveal">
       <div class="section-head">
         <h2>Concierge & travel support</h2>
-        <span class="section-tag">Stress-free logistics</span>
+        <span class="section-tag">We’ll help you make it easy</span>
       </div>
-
       <div class="bento">
         <article class="glass-2" style="padding:16px">
-          <h3>Airport pickup</h3>
-          <p>Door-to-door pickups between Lucknow Airport (LKO) and your hotel/clinic with vetted drivers.</p>
-          <p class="small muted">Add-on fee; available on request.</p>
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/concierge.jpg" alt="Concierge coordination" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Airport pickup</h3></div>
+          </div>
+          <p>Door-to-door transfers between Lucknow Airport (LKO) and your hotel/clinic with vetted drivers.</p>
+          <p class="small muted">Add-on fee; request while booking.</p>
         </article>
 
         <article class="glass-2" style="padding:16px">
-          <h3>Hotel coordination</h3>
-          <p>Shortlist options near the clinic (3★–5★). We can share medical-rate partners when available.</p>
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/email.jpg" alt="Itinerary and visa letter" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Visa letter & itinerary</h3></div>
+          </div>
+          <p>Official appointment confirmation letter with clinic details. We also share a clear visit-plan for your stay.</p>
         </article>
 
         <article class="glass-2" style="padding:16px">
-          <h3>Tele-follow ups</h3>
-          <p>Secure video check-ins for aligners and braces adjustments planning; photo guides provided.</p>
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/video-call.jpg" alt="Tele follow up" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Tele follow-ups</h3></div>
+          </div>
+          <p>Scheduled video check-ins for aligners/braces; easy photo guides and retention instructions.</p>
         </article>
 
         <article class="glass-2" style="padding:16px">
-          <h3>Priority scheduling</h3>
-          <p>Bundled chair-time to minimize your stay without compromising safety or outcomes.</p>
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/calendar.jpg" alt="Priority scheduling" loading="lazy" decoding="async">
+            <div class="overlay"><h3>Priority scheduling</h3></div>
+          </div>
+          <p>Bundled chair-time to compress your travel days without compromising safety or outcomes.</p>
         </article>
       </div>
     </section>
 
-    <!-- DOCUMENTS -->
-    <section id="docs" class="section reveal">
+    <!-- City -->
+    <section id="city" class="section reveal">
       <div class="section-head">
-        <h2>Documents, letters & payment info</h2>
-        <span class="section-tag">Before you fly</span>
+        <h2>Welcome to Lucknow</h2>
+        <span class="section-tag">Heritage, food and warm people</span>
       </div>
-
       <div class="glass-2 thin" style="padding:16px 18px">
+        <p>Lucknow blends historical architecture, refined cuisine and modern conveniences. Safe neighborhoods around Indira Nagar make stays comfortable and accessible.</p>
         <ul class="bullets">
-          <li><strong>Visa letter:</strong> We can provide a clinic letter with appointment schedule & contact details.</li>
-          <li><strong>Payment methods:</strong> INR cards, international cards, bank transfer, UPI; currency conversion fees vary by bank.</li>
-          <li><strong>Insurance:</strong> We issue detailed invoices; claim eligibility varies by insurer & destination country.</li>
-          <li><strong>Medical records:</strong> We maintain secure charts; copies shared upon request for your home dentist.</li>
+          <li>Airport (LKO) → Clinic: ~30–40 min by car</li>
+          <li>Local delicacies: kebabs, sheermal, chaat — many hygienic modern options</li>
+          <li>Popular sights: Bara Imambara, Rumi Darwaza, British Residency</li>
+          <li>Weather: pleasant Nov–Feb; pre-monsoon heat Apr–Jun</li>
         </ul>
-        <p class="small muted">Note: Rates shown on this page are estimates for planning. Final quotes follow clinical assessment.</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section reveal">
+      <div class="section-head">
+        <h2>Clinic & care gallery</h2>
+      </div>
+      <div class="masonry" aria-label="Clinic gallery">
+        <figure><img src="/assets/illustrations/shield.jpg" alt="Sterilization & safety"/></figure>
+        <figure><img src="/assets/illustrations/treatment.jpg" alt="Precise clinical care"/></figure>
+        <figure><img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene"/></figure>
+        <figure><img src="/assets/illustrations/digital.jpg" alt="Digital planning"/></figure>
+        <figure><img src="/assets/illustrations/follow-up.jpg" alt="Follow ups"/></figure>
+        <figure><img src="/assets/illustrations/scanner.jpg" alt="Digital scan"/></figure>
+        <figure><img src="/assets/illustrations/comfort.jpg" alt="Comfort-first rooms"/></figure>
+        <figure><img src="/assets/illustrations/experience.jpg" alt="Patient experience"/></figure>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section reveal">
+      <div class="section-head">
+        <h2>What our patients say</h2>
+      </div>
+      <div class="carousel" id="carousel">
+        <div class="slides">
+          <div class="slide">
+            <p class="h4">“Traveled from Dubai for aligners—planning was clear, first sets ready in a week, and follow-ups on video. Couldn’t be happier.”</p>
+            <p class="small muted">— A. Rahman • UAE</p>
+          </div>
+          <div class="slide">
+            <p class="h4">“Implant & crown over two short trips. Costs were transparent and the team is incredibly kind.”</p>
+            <p class="small muted">— M. Collins • UK</p>
+          </div>
+          <div class="slide">
+            <p class="h4">“We combined a family visit with orthodontic care. The itinerary made it easy to plan our days.”</p>
+            <p class="small muted">— S. Patel • USA</p>
+          </div>
+        </div>
+      </div>
+      <div class="dots" id="dots" aria-hidden="true">
+        <span class="dot is-active"></span><span class="dot"></span><span class="dot"></span>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="section reveal">
-      <div class="section-head">
-        <h2>Frequently asked questions</h2>
-      </div>
+      <div class="section-head"><h2>Frequently asked questions</h2></div>
       <div class="blog-preview thin">
         <details class="preview-card" open>
           <summary><h3>Can I finish aligner treatment with only two trips?</h3></summary>
@@ -435,7 +558,7 @@
       </div>
     </section>
 
-    <!-- FINAL CTA -->
+    <!-- CTA -->
     <section class="section home-cta center reveal">
       <h2>Ready to plan your trip?</h2>
       <p class="measure">Share your photos, timeline and goals. We’ll propose the safest, fastest path for your smile.</p>
@@ -445,7 +568,6 @@
         <a href="/contact.html" class="btn btn-ghost">Book Virtual Consult</a>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -464,21 +586,47 @@
     </div>
   </footer>
 
-  <!-- JS: nav + reveal + currency + packages -->
+  <!-- JS: nav, parallax, reveal, counters, currency, savings, carousel -->
   <script>
     // Mobile menu + year
-    document.querySelector('.nav-toggle').addEventListener('click', () => {
-      document.querySelector('.navlinks').classList.toggle('show');
-    });
+    document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // Parallax hero (tiny & smooth)
+    (function(){
+      const media = document.querySelector('.hero-media');
+      function onScroll(){
+        const y = Math.min(40, window.scrollY/12);
+        media && (media.style.setProperty('--parY', y+'px'));
+      }
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+    })();
+
     // Reveal on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('is-visible'); observer.unobserve(e.target); }
-      })
-    },{rootMargin:'-10% 0px -10% 0px', threshold:.1});
-    document.querySelectorAll('.reveal, .stagger').forEach(el=>observer.observe(el));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Animated trust counters
+    (function(){
+      const els = document.querySelectorAll('.trust .num');
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(({isIntersecting, target})=>{
+          if(!isIntersecting) return;
+          obs.unobserve(target);
+          const end = parseFloat(target.dataset.count||'0'), dur=1200, start=0, t0=performance.now();
+          function tick(ts){
+            const p = Math.min(1,(ts-t0)/dur);
+            const val = start + (end-start)*p;
+            target.textContent = end<10 ? val.toFixed(1) : Math.round(val);
+            if(p<1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      },{threshold:.5});
+      els.forEach(el=>obs.observe(el));
+    })();
 
     // ---------- Currency & Prices ----------
     (function(){
@@ -490,103 +638,137 @@
       const basePriceTable  = document.getElementById('basePriceTable');
       const pkgSpans        = document.querySelectorAll('[data-pkg]');
 
-      // INR base price list
       const PRICES = {
-        CONSULT: 700,
-        CLEANING: 2200,
-        ALIGNERS: 85000,
-        BRACES:   65000,
-        IMPLANT:  28000,
-        RCT:      5500,
-        VENEER:   12000,
-        WHITEN:   9500,
-        // packages:
-        PKG_REFRESH: 18000,
-        PKG_ALIGNER: 95000,
-        PKG_IMPLANT: 58000
+        CONSULT:700, CLEANING:2200, ALIGNERS:85000, BRACES:65000, IMPLANT:28000, RCT:5500, VENEER:12000, WHITEN:9500,
+        PKG_REFRESH:18000, PKG_ALIGNER:95000, PKG_IMPLANT:58000
       };
-
-      const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
-
-      // Make base table
-      const labels = {
-        CONSULT:'First Consultation',
-        CLEANING:'Professional Cleaning',
-        ALIGNERS:'Clear Aligners (per arch)',
-        BRACES:'Metal/Ceramic Braces',
-        IMPLANT:'Dental Implant (base)',
-        RCT:'Root Canal (single tooth)',
-        VENEER:'Porcelain Veneer (per tooth)',
-        WHITEN:'Teeth Whitening'
+      const LABELS = {
+        CONSULT:'First Consultation', CLEANING:'Professional Cleaning', ALIGNERS:'Clear Aligners (per arch)', BRACES:'Metal/Ceramic Braces',
+        IMPLANT:'Dental Implant (base)', RCT:'Root Canal (single tooth)', VENEER:'Porcelain Veneer (per tooth)', WHITEN:'Teeth Whitening'
       };
-      basePriceTable.innerHTML = Object.keys(labels).map(k=>{
-        return `<tr><td>${labels[k]}</td><td class="mono">₹ ${PRICES[k].toLocaleString('en-IN')}</td><td class="muted">From price</td></tr>`;
-      }).join('');
+      const SYMBOL = {INR:'₹',USD:'$',EUR:'€',GBP:'£',CNY:'¥',AED:'د.إ',AUD:'$'};
 
-      let rates = { // fallback (approx) if network blocks
-        base: 'INR', date: 'offline',
-        rates: {INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018}
-      };
+      // Base table
+      basePriceTable.innerHTML = Object.keys(LABELS).map(k =>
+        `<tr><td>${LABELS[k]}</td><td class="mono">₹ ${PRICES[k].toLocaleString('en-IN')}</td><td class="muted">From price</td></tr>`
+      ).join('');
 
+      // Rates
+      let rates = {base:'INR', date:'offline', rates:{INR:1,USD:0.012,EUR:0.011,GBP:0.0095,CNY:0.088,AED:0.044,AUD:0.018}};
       async function fetchRates(){
         try{
-          const symbols = Object.keys(SYMBOL).join(',');
-          const url = `${API}?base=INR&symbols=${symbols}`;
+          const syms = Object.keys(SYMBOL).join(',');
+          const url = `${API}?base=INR&symbols=${syms}`;
           const res = await fetch(url, {mode:'cors'});
           const data = await res.json();
           if(data && data.rates){
-            rates = {base:'INR', date:data.date || new Date().toISOString().slice(0,10), rates:data.rates};
+            rates = {base:'INR', date: data.date || new Date().toISOString().slice(0,10), rates:data.rates};
             rateMeta.textContent = `INR base • ${rates.date} • ${Object.keys(rates.rates).length} currencies`;
-          }else{
-            rateMeta.textContent = 'Live feed unavailable, using fallback.';
-          }
-        }catch(e){
-          rateMeta.textContent = 'Live feed unavailable, using fallback.';
-        }
+          } else { rateMeta.textContent = 'Live feed unavailable, using fallback.'; }
+        } catch(e){ rateMeta.textContent = 'Live feed unavailable, using fallback.'; }
       }
 
-      function format(cur, amount){
+      function fmt(cur, amount){
         const sym = SYMBOL[cur] || '';
         const locale = (cur==='INR') ? 'en-IN' : 'en-US';
         return `${sym} ${amount.toLocaleString(locale,{maximumFractionDigits:0})}`;
       }
-
-      function convert(inr, toCur){
-        if(toCur==='INR') return inr;
-        const r = rates.rates[toCur] || 0;
-        return inr * r;
-      }
+      function convINR(inr, to){ return to==='INR' ? inr : inr * (rates.rates[to]||0); }
 
       function updatePrice(){
-        const t = treatmentSelect.value;
-        const cur = currencySelect.value;
-        const inr = PRICES[t];
-        if(!inr){ convertedPrice.textContent = '—'; return; }
-        const val = (cur==='INR') ? inr : Math.round(convert(inr, cur));
-        convertedPrice.textContent = format(cur, val);
+        const t = treatmentSelect.value, cur = currencySelect.value;
+        const inr = PRICES[t]; if(!inr){ convertedPrice.textContent = '—'; return; }
+        const val = (cur==='INR') ? inr : Math.round(convINR(inr,cur));
+        convertedPrice.textContent = fmt(cur,val);
+        localStorage.setItem('preferredCurrency', cur);
       }
 
-      async function init(){
-        await fetchRates();
-        updatePrice();
-        // Convert package labels
-        pkgSpans.forEach(span=>{
-          const key = span.dataset.pkg;
-          const inr = {REFRESH:'PKG_REFRESH', ALIGNER:'PKG_ALIGNER', IMPLANT:'PKG_IMPLANT'}[key];
-          const cur = currencySelect.value;
-          const v = (cur==='INR') ? PRICES[inr] : Math.round(convert(PRICES[inr], cur));
-          span.textContent = `${format(cur, v)}`;
+      function updatePackages(){
+        const cur = currencySelect.value;
+        const map = {REFRESH:'PKG_REFRESH', ALIGNER:'PKG_ALIGNER', IMPLANT:'PKG_IMPLANT'};
+        pkgSpans.forEach(el=>{
+          const k = map[el.dataset.pkg]; const val = (cur==='INR') ? PRICES[k] : Math.round(convINR(PRICES[k],cur));
+          el.textContent = fmt(cur,val);
         });
       }
 
+      currencySelect.value = localStorage.getItem('preferredCurrency') || 'INR';
       treatmentSelect.addEventListener('change', updatePrice);
-      currencySelect.addEventListener('change', ()=>{ updatePrice(); init(); });
+      currencySelect.addEventListener('change', ()=>{ updatePrice(); updatePackages(); });
 
-      init();
+      (async function init(){ await fetchRates(); updatePrice(); updatePackages(); })();
+    })();
+
+    // Savings calculator (rough public averages in local currency)
+    (function(){
+      // Typical home prices (indicative)
+      const HOME = {
+        USA:    {ALIGNERS:2500, BRACES:5500, IMPLANT:3200, VENEER:1000, RCT:1200, WHITEN:500, CUR:'USD'},
+        UK:     {ALIGNERS:2000, BRACES:4000, IMPLANT:2500, VENEER:800,  RCT:400,  WHITEN:350, CUR:'GBP'},
+        EU:     {ALIGNERS:2200, BRACES:4500, IMPLANT:2700, VENEER:900,  RCT:450,  WHITEN:350, CUR:'EUR'},
+        AUS:    {ALIGNERS:3000, BRACES:6000, IMPLANT:3500, VENEER:1100, RCT:900,  WHITEN:450, CUR:'AUD'},
+        GCC:    {ALIGNERS:2800, BRACES:5200, IMPLANT:3000, VENEER:900,  RCT:600,  WHITEN:400, CUR:'AED'}
+      };
+      const INR = {ALIGNERS:85000, BRACES:65000, IMPLANT:28000, VENEER:12000, RCT:5500, WHITEN:9500};
+
+      const saveProc = document.getElementById('saveProc');
+      const saveMarket = document.getElementById('saveMarket');
+      const homePrice = document.getElementById('homePrice');
+      const ourPrice  = document.getElementById('ourPrice');
+      const savingPct = document.getElementById('savingPct');
+
+      // currency from widget
+      function curSymbol(cur){ return ({USD:'$',EUR:'€',GBP:'£',CNY:'¥',AED:'د.إ',AUD:'$',INR:'₹'})[cur] || ''; }
+
+      async function convertINRTo(cur, amount){
+        try{
+          const res = await fetch(`https://api.exchangerate.host/convert?from=INR&to=${cur}&amount=${amount}`);
+          const data = await res.json(); return Math.round(data.result||0);
+        }catch(e){ return 0; }
+      }
+
+      async function update(){
+        const proc = saveProc.value, market = saveMarket.value;
+        const h = HOME[market]; const home = h[proc]; const sym = curSymbol(h.CUR);
+        homePrice.textContent = `${sym} ${home.toLocaleString('en-US')}`;
+
+        const ourConverted = await convertINRTo(h.CUR, INR[proc]);
+        ourPrice.textContent = `${sym} ${ourConverted.toLocaleString('en-US')}`;
+
+        const pct = Math.max(0, Math.round((1 - (ourConverted / home)) * 100));
+        savingPct.textContent = `${pct}% potential saving`;
+      }
+
+      saveProc.addEventListener('change', update);
+      saveMarket.addEventListener('change', update);
+      update();
+    })();
+
+    // Testimonials carousel (auto)
+    (function(){
+      const slides = document.querySelector('#carousel .slides');
+      const dots   = Array.from(document.querySelectorAll('#dots .dot'));
+      let idx = 0;
+      function go(i){
+        idx = (i + dots.length) % dots.length;
+        slides.style.transform = `translateX(-${idx*100}%)`;
+        dots.forEach((d,k)=>d.classList.toggle('is-active', k===idx));
+      }
+      setInterval(()=>go(idx+1), 4500);
     })();
   </script>
 
-  <!-- Structured Data -->
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.bestindiandentist.com/"},
+      {"@type":"ListItem","position":2,"name":"International Patients","item":"https://www.bestindiandentist.com/international.html"}
+    ]
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
