@@ -3,27 +3,52 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="index,follow"/>
+
   <title>Dental Blog | Smiles & Braces Lucknow</title>
-  <meta name="description" content="Tips, guides and insights on braces, aligners, implants and smile care from Smiles & Braces Dental Clinic in Lucknow."/>
+  <meta name="description" content="Tips, guides and insights on braces, aligners, hygiene and smile care from Smiles & Braces Dental Clinic, Lucknow."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/blog.html"/>
 
   <!-- Social -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Dental Blog | Smiles & Braces Lucknow"/>
   <meta property="og:description" content="Braces, aligners, hygiene and orthodontic tips from Dr. Vikram Jeet Singh (BDS, MDS)."/>
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta property="og:url" content="https://www.bestindiandentist.com/blog.html"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
   <!-- Favicons -->
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts & CSS -->
+  <!-- Fonts & Global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
+
+  <!-- Page-scoped CSS: tidy grid + chips (won’t clash with site.css) -->
+  <style>
+    .blog-controls{display:grid;gap:12px;margin-top:14px}
+    .blog-controls .search{padding:12px 14px;border:1px solid var(--stroke,#e2e8f0);border-radius:12px;width:100%}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:8px 12px;font:inherit;cursor:pointer}
+    .chip.is-active{border-color:var(--brand,#0e7fa8)}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.2vw,22px)}
+    @media (max-width:1000px){.blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.blog-grid{grid-template-columns:1fr}}
+    .blog-card{border:1px solid var(--stroke,#e2e8f0);border-radius:16px;overflow:hidden;background:#fff}
+    .card-link{display:block;color:inherit;text-decoration:none;height:100%}
+    .card-header{position:relative;aspect-ratio:16/9;overflow:hidden}
+    .card-header img{width:100%;height:100%;object-fit:cover;display:block}
+    .date-badge{position:absolute;left:12px;bottom:12px;background:#fff;border-radius:999px;padding:6px 10px;font-size:.85rem;border:1px solid var(--stroke,#e2e8f0)}
+    .badge-latest{position:absolute;right:12px;bottom:12px;background:var(--brand,#0e7fa8);color:#fff;border-radius:999px;padding:6px 10px;font-size:.85rem}
+    .card-body{padding:14px 16px}
+    .card-title{font-size:1.1rem;line-height:1.35;margin:0 0 6px}
+    .card-excerpt{opacity:.85;margin:0}
+    .pagination{display:flex;justify-content:space-between;margin-top:18px}
+    .pagination a[aria-disabled="true"]{opacity:.5;pointer-events:none}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,9 +81,9 @@
         <input id="blogSearch" class="search" type="search" placeholder="Search topics… (aligners, braces, hygiene)" aria-label="Search blog posts"/>
         <div class="chips" role="tablist" aria-label="Filter by category">
           <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="Orthodontics" role="tab">Orthodontics</button>
-          <button class="chip" data-filter="Hygiene" role="tab">Hygiene</button>
-          <button class="chip" data-filter="Clinic News" role="tab">Clinic News</button>
+          <button class="chip" data-filter="Orthodontics" role="tab" aria-selected="false">Orthodontics</button>
+          <button class="chip" data-filter="Hygiene" role="tab" aria-selected="false">Hygiene</button>
+          <button class="chip" data-filter="Clinic News" role="tab" aria-selected="false">Clinic News</button>
         </div>
       </div>
     </div>
@@ -71,14 +96,15 @@
 
   <!-- Blog grid -->
   <main id="main" class="blog-page container">
-    <section class="section glass">
+    <section class="section glass" aria-label="Blog posts">
       <div id="blogGrid" class="blog-grid">
+
         <!-- Post 1 -->
         <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-          data-category="Hygiene" data-tags="hygiene, brushing, flossing">
-          <a class="card-link" href="blog/tips-for-oral-hygiene.html" itemprop="url">
+                 data-category="Hygiene" data-tags="hygiene, brushing, flossing">
+          <a class="card-link" href="/blog/tips-for-oral-hygiene.html" itemprop="url">
             <div class="card-header">
-              <img src="/assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips" loading="lazy" itemprop="image"/>
+              <img src="/assets/images/blog/oral-hygiene.jpg" alt="Oral hygiene tips" loading="lazy" decoding="async" itemprop="image">
               <time class="date-badge" itemprop="datePublished" datetime="2025-08-01">Aug 1, 2025</time>
             </div>
             <div class="card-body">
@@ -86,15 +112,15 @@
               <p class="card-excerpt" itemprop="description">Simple, proven habits—from brushing angles to floss timing—that keep your smile healthy.</p>
             </div>
           </a>
-          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic">
         </article>
 
         <!-- Post 2 -->
         <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-          data-category="Orthodontics" data-tags="checkup, braces, prevention">
-          <a class="card-link" href="blog/importance-of-regular-checkups.html" itemprop="url">
+                 data-category="Orthodontics" data-tags="checkup, braces, prevention">
+          <a class="card-link" href="/blog/importance-of-regular-checkups.html" itemprop="url">
             <div class="card-header">
-              <img src="/assets/images/blog/regular-checkups.jpg" alt="Routine dental checkups" loading="lazy" itemprop="image"/>
+              <img src="/assets/images/blog/regular-checkups.jpg" alt="Routine dental check-ups" loading="lazy" decoding="async" itemprop="image">
               <time class="date-badge" itemprop="datePublished" datetime="2025-07-25">Jul 25, 2025</time>
             </div>
             <div class="card-body">
@@ -102,30 +128,31 @@
               <p class="card-excerpt" itemprop="description">Why bi-annual visits prevent small issues becoming big problems, saving time and money.</p>
             </div>
           </a>
-          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic">
         </article>
 
         <!-- Post 3 -->
         <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-          data-category="Orthodontics" data-tags="toothbrush, toothpaste, aligners">
-          <a class="card-link" href="blog/choosing-the-right-toothbrush.html" itemprop="url">
+                 data-category="Orthodontics" data-tags="toothbrush, toothpaste, aligners">
+          <a class="card-link" href="/blog/choosing-the-right-toothbrush.html" itemprop="url">
             <div class="card-header">
-              <img src="/assets/images/blog/toothbrushchoice.jpg" alt="Choosing the right toothbrush and toothpaste" loading="lazy" itemprop="image"/>
+              <img src="/assets/images/blog/toothbrushchoice.jpg" alt="Choosing the right toothbrush and toothpaste" loading="lazy" decoding="async" itemprop="image">
               <time class="date-badge" itemprop="datePublished" datetime="2025-07-15">Jul 15, 2025</time>
             </div>
             <div class="card-body">
               <h2 class="card-title" itemprop="headline">How to Choose the Right Toothbrush &amp; Toothpaste</h2>
-              <p class="card-excerpt" itemprop="description">Soft vs medium bristles? Electric or manual? What to consider for your oral care routine.</p>
+              <p class="card-excerpt" itemprop="description">Soft vs medium bristles? Electric or manual? What to consider for your daily routine.</p>
             </div>
           </a>
-          <meta itemprop="author" content="Smiles & Braces Dental Clinic"/>
+          <meta itemprop="author" content="Smiles & Braces Dental Clinic">
         </article>
+
       </div>
 
-      <!-- Pagination -->
+      <!-- Pagination (disabled placeholder for now) -->
       <nav class="pagination" aria-label="Pagination">
         <a class="prev" href="#" aria-disabled="true">← Newer Posts</a>
-        <a class="next" href="#">Older Posts →</a>
+        <a class="next" href="#" aria-disabled="true">Older Posts →</a>
       </nav>
     </section>
   </main>
@@ -148,6 +175,7 @@
 
   <!-- JS -->
   <script>
+    // Mobile menu
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.querySelector('.navlinks').classList.toggle('show');
     });
@@ -180,13 +208,13 @@
           applyFilter();
         });
       });
-      if(search) search.addEventListener('input', applyFilter);
+      search?.addEventListener('input', applyFilter);
     })();
 
-    // Auto "Latest" badge
+    // Auto “Latest” badge (adds to the most recent date)
     (function(){
       const posts = Array.from(document.querySelectorAll('.blog-card'));
-      let latest = null, latestTime = 0;
+      let latest=null, latestTime=0;
       for(const p of posts){
         const t = p.querySelector('time[datetime]')?.getAttribute('datetime');
         const val = t ? +new Date(t) : 0;
@@ -201,7 +229,7 @@
     })();
   </script>
 
-  <!-- Schema -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -209,28 +237,32 @@
     "name":"Smiles & Braces Dental Blog",
     "url":"https://www.bestindiandentist.com/blog.html",
     "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
+    "inLanguage":"en",
     "blogPost":[
-      {
-        "@type":"BlogPosting",
-        "headline":"5 Expert Tips for Maintaining Oral Hygiene",
-        "datePublished":"2025-08-01",
-        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-        "url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"
-      },
-      {
-        "@type":"BlogPosting",
-        "headline":"The Importance of Regular Dental Check-ups",
-        "datePublished":"2025-07-25",
-        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-        "url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"
-      },
-      {
-        "@type":"BlogPosting",
-        "headline":"How to Choose the Right Toothbrush & Toothpaste",
-        "datePublished":"2025-07-15",
-        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-        "url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"
-      }
+      {"@type":"BlogPosting","headline":"5 Expert Tips for Maintaining Oral Hygiene","datePublished":"2025-08-01","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"},
+      {"@type":"BlogPosting","headline":"The Importance of Regular Dental Check-ups","datePublished":"2025-07-25","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"},
+      {"@type":"BlogPosting","headline":"How to Choose the Right Toothbrush & Toothpaste","datePublished":"2025-07-15","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.bestindiandentist.com/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.bestindiandentist.com/blog.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"},
+      {"@type":"ListItem","position":2,"url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"},
+      {"@type":"ListItem","position":3,"url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"}
     ]
   }
   </script>
