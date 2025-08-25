@@ -6,7 +6,7 @@
   <meta name="robots" content="index,follow"/>
 
   <title>5 Expert Tips for Maintaining Oral Hygiene | Smiles & Braces Lucknow</title>
-  <meta name="description" content="Dentist-approved routine for healthy teeth and gums: correct brushing technique, flossing, tongue cleaning, fluoride use, diet, and aligner/brace care."/>
+  <meta name="description" content="Dentist-approved routine for healthy teeth and gums: correct brushing technique, flossing, tongue cleaning, fluoride, diet, and care with braces or aligners."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"/>
 
   <!-- Social -->
@@ -19,19 +19,30 @@
 
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
+
+  <!-- Fonts + Global CSS (fixes header fonts/layout) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 
-  <!-- Local article tweaks -->
+  <!-- Page-scoped tweaks -->
   <style>
-    .article-hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;margin-bottom:14px}
+    /* Ensure compact, consistent brand in header even if fonts load late */
+    .header .brand-line.clinic{font-family:"Carattere",cursive;line-height:1;margin:0;font-size:clamp(22px,2.2vw,28px)}
+    .header .brand-line.doctor{font-family:"Fanwood Text",serif;line-height:1;margin:0;font-size:clamp(12px,1.2vw,14px)}
+    .header .cred{font-weight:600;opacity:.9}
+
+    .article-hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;margin:10px 0 16px}
     .article-hero img{width:100%;height:100%;object-fit:cover}
     .byline{display:flex;gap:14px;flex-wrap:wrap;align-items:center;opacity:.8}
-    .toc{border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px;background:#fff}
+    .toc{position:sticky;top:84px;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px;background:#fff;max-height:70svh;overflow:auto}
     .toc h3{margin:0 0 6px}
     .article-content img{max-width:100%;border-radius:12px}
     .callout{border-left:4px solid var(--brand,#0e7fa8);background:#f8fbfd;border-radius:10px;padding:12px 14px}
     .tips-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     @media (max-width:900px){.tips-grid{grid-template-columns:1fr}}
+    :target{scroll-margin-top:96px}
   </style>
 </head>
 <body>
@@ -45,11 +56,11 @@
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <nav class="navlinks" aria-label="Primary">
+      <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
-        <a class="active" href="/blog.html">Blog</a>
+        <a class="active" href="/blog.html" aria-current="page">Blog</a>
         <a href="/contact.html">Contact</a>
         <a href="/international.html">International Patients</a>
       </nav>
@@ -77,7 +88,7 @@
       </header>
 
       <div class="grid" style="gap:18px">
-        <aside class="toc">
+        <aside class="toc" aria-label="On this page">
           <h3>On this page</h3>
           <ol>
             <li><a href="#brush">Brush the right way (2× daily)</a></li>
@@ -92,45 +103,45 @@
         <div class="article-content" itemprop="articleBody">
           <section id="brush">
             <h2>1) Brush the right way (twice daily, 2 minutes)</h2>
-            <p>Use a **soft-bristle** brush and **fluoride toothpaste**. Angle the bristles 45° to the gumline (modified **Bass technique**), use short, gentle strokes, and cover all surfaces: outer, inner and chewing. Don’t scrub aggressively—let the bristles do the work.</p>
+            <p>Use a <strong>soft-bristle</strong> brush and <strong>fluoride toothpaste</strong>. Angle the bristles 45° to the gumline (modified <strong>Bass technique</strong>), use short, gentle strokes, and cover all surfaces. Don’t scrub aggressively—let the bristles do the work.</p>
             <div class="tips-grid">
               <ul class="bullets">
-                <li>2 minutes total: 30 seconds per quadrant</li>
+                <li>2 minutes total: ~30 seconds per quadrant</li>
                 <li>Pea-sized fluoride paste for adults; rice-grain for kids</li>
                 <li>Replace the brush head every 3 months or after illness</li>
               </ul>
               <ul class="bullets">
-                <li>Electric brushes with a **pressure sensor** help prevent over-brushing</li>
-                <li>Brush the **gumline**—that’s where plaque hides</li>
-                <li>Finish by lightly brushing the palate and cheek sides</li>
+                <li>Electric brushes with a <strong>pressure sensor</strong> help prevent over-brushing</li>
+                <li>Brush the <strong>gumline</strong>—that’s where plaque hides</li>
+                <li>Finish by lightly brushing palate and inner cheeks</li>
               </ul>
             </div>
           </section>
 
           <section id="floss">
             <h2>2) Clean between teeth (daily)</h2>
-            <p>Toothbrush bristles can’t reach tight contacts. Use **floss** (slide along the tooth in a gentle “C” shape) or **interdental brushes** (great for wider spaces and around braces). Water flossers are a helpful add-on for those with dexterity issues or dental work.</p>
+            <p>Toothbrush bristles can’t reach tight contacts. Use <strong>floss</strong> (slide along the tooth in a gentle “C”) or <strong>interdental brushes</strong> (great around braces). Water flossers help if you have dexterity issues or dental work.</p>
           </section>
 
           <section id="tongue">
             <h2>3) Don’t skip the tongue & consider mouthwash</h2>
-            <p>Most bad breath originates on the **tongue**. Use a scraper or your brush to remove residue from back to front. An **alcohol-free fluoride mouthwash** can reduce bacterial load and strengthen enamel—swish for 30 seconds, but avoid rinsing with water immediately after.</p>
+            <p>Most bad breath originates on the <strong>tongue</strong>. Use a scraper or your brush from back to front. An <strong>alcohol-free fluoride mouthwash</strong> can reduce bacteria and strengthen enamel—swish for 30 seconds, and don’t rinse with water immediately after.</p>
           </section>
 
           <section id="diet">
             <h2>4) Diet, timing & hydration matter</h2>
             <div class="callout"><strong>Rule of frequency:</strong> It’s not only what you eat, it’s how often. Frequent snacking or sugary drinks keep mouth pH low and fuel cavities. Keep sweet/acidic items to mealtimes and rinse with water after.</div>
             <ul class="bullets">
-              <li>Limit sticky sweets, sports drinks and frequent sipping</li>
-              <li>Chew **sugar-free xylitol** gum after meals to stimulate saliva</li>
-              <li>Drink plenty of water; dry mouth increases decay risk</li>
+              <li>Limit sticky sweets and frequent sipping</li>
+              <li>Chew <strong>sugar-free xylitol</strong> gum after meals</li>
+              <li>Stay hydrated; dry mouth increases decay risk</li>
             </ul>
           </section>
 
           <section id="extras">
             <h2>5) If you wear braces or aligners</h2>
             <ul class="bullets">
-              <li>Use **interdental brushes** under wires and around brackets</li>
+              <li>Use <strong>interdental brushes</strong> under wires and around brackets</li>
               <li>Aligner users: rinse trays with cool water every time you remove them; brush trays gently (no hot water)</li>
               <li>Avoid hard, sticky foods that can dislodge brackets</li>
             </ul>
@@ -145,19 +156,18 @@
               <li>Tongue cleaning</li>
               <li>Optional: fluoride mouthwash (don’t rinse with water after)</li>
             </ol>
-            <p>Visit us every **6 months** (or as advised) for a professional clean and exam. Book via our <a href="/contact.html">contact page</a> or WhatsApp <a href="https://wa.me/919565321625">+91 95653 21625</a>.</p>
+            <p>Visit us every <strong>6 months</strong> (or as advised) for a professional clean and exam. Book via our <a href="/contact.html">contact page</a> or WhatsApp <a href="https://wa.me/919565321625">+91 95653 21625</a>.</p>
           </section>
         </div>
       </div>
 
       <footer class="section">
-        <nav class="pagination">
+        <nav class="pagination" aria-label="Post navigation">
           <a class="prev" href="/blog/importance-of-regular-checkups.html">← The Importance of Regular Check-ups</a>
           <a class="next" href="/blog/choosing-the-right-toothbrush.html">How to Choose the Right Toothbrush &amp; Toothpaste →</a>
         </nav>
       </footer>
 
-      <!-- Hidden meta for schema -->
       <meta itemprop="dateModified" content="2025-08-01"/>
       <meta itemprop="mainEntityOfPage" content="https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"/>
     </article>
@@ -184,7 +194,7 @@
     document.querySelector('.nav-toggle').addEventListener('click', ()=>document.querySelector('.navlinks').classList.toggle('show'));
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Reading time (roughly 200 wpm)
+    // Reading time (≈200 wpm)
     (function(){
       const body = document.querySelector('.article-content');
       const words = body?.innerText.trim().split(/\s+/g).length || 0;
@@ -196,18 +206,7 @@
 
   <!-- Schema -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BlogPosting",
-    "headline":"5 Expert Tips for Maintaining Oral Hygiene",
-    "description":"Dentist-approved routine for healthy teeth and gums: brushing technique, flossing, tongue cleaning, fluoride, diet, and care with braces or aligners.",
-    "image":"https://www.bestindiandentist.com/assets/images/blog/oral-hygiene.jpg",
-    "datePublished":"2025-08-01",
-    "dateModified":"2025-08-01",
-    "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-    "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
-    "mainEntityOfPage":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"
-  }
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"5 Expert Tips for Maintaining Oral Hygiene","description":"Dentist-approved routine for healthy teeth and gums: brushing technique, flossing, tongue cleaning, fluoride, diet, and care with braces or aligners.","image":"https://www.bestindiandentist.com/assets/images/blog/oral-hygiene.jpg","datePublished":"2025-08-01","dateModified":"2025-08-01","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"mainEntityOfPage":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"}
   </script>
 </body>
 </html>
