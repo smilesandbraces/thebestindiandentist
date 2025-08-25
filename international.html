@@ -1,349 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>International Patients | Smiles & Braces Dental Clinic</title>
-  <meta name="description" content="Travel to Lucknow for world-class orthodontics. Clear aligners, braces, and luxury care for international patients—visa support, airport pickup, hotel tie-ups, and virtual follow-ups." />
-  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/international.html" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <!-- SEO -->
+  <title>International Patients | Smiles & Braces Dental Clinic Lucknow</title>
+  <meta name="description" content="Travel to Lucknow for world-class orthodontics. Clear aligners, braces & luxury care for international patients—visa support, airport pickup, hotel tie-ups, and virtual follow-ups."/>
+  <link rel="canonical" href="https://www.bestindiandentist.com/international.html"/>
 
   <!-- Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="International Patients | Smiles & Braces" />
-  <meta property="og:description" content="Seamless dental tourism: expert orthodontics, travel support, and virtual follow-ups." />
-  <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/international.html" />
-  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-  <meta name="theme-color" content="#0e7fa8" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="International Patients | Smiles & Braces Dental Clinic"/>
+  <meta property="og:description" content="Seamless dental tourism: orthodontics, travel support & follow-ups in Lucknow, India."/>
+  <meta property="og:url" content="https://www.bestindiandentist.com/international.html"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
-  <!-- Fonts (brand lockup + UI) -->
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico"/>
+  <meta name="theme-color" content="#0e7fa8"/>
+
+  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== Design tokens & reset ===== */
-    :root{
-      --bg: #f6fbff;
-      --ink:#0f1720; --muted:#5f7483;
-      --brand:#0e7fa8; --brand-2:#20b2aa; --accent:#7c3aed;
-      --glass: rgba(255,255,255,.72);
-      --stroke:#e6eef6;
-      --radius-xl:22px; --radius-lg:18px; --radius-md:14px;
-      --shadow-xl:0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
-      --shadow-md:0 10px 24px rgba(15,23,32,.12);
-      --ring:0 0 0 8px rgba(14,127,168,.08);
-      --container:min(1160px,92vw);
-      --gap:clamp(14px,1.6vw,22px);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
-        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
-        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-    }
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-
-    /* ===== Navbar ===== */
-    .navbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#ffffffd9,#ffffffb8);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--stroke)}
-    .nav-container{width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px clamp(8px,1.2vw,14px);gap:12px}
-    .brand{display:flex;flex-direction:column;gap:2px}
-    .brand-line.clinic{font-family:"Carattere",cursive;font-size:clamp(2rem,1.1rem + 3.2vw,3.2rem);line-height:1.02;color:#111;letter-spacing:.01em}
-    .brand-line.doctor{font-family:"Fanwood Text",serif;font-size:clamp(1rem,.9rem + .9vw,1.4rem);line-height:1;margin-top:-2px}
-    .brand-line .cred{margin-left:.35rem;opacity:.85}
-    .nav-links{list-style:none;display:flex;gap:10px;align-items:center}
-    .nav-links a{padding:8px clamp(8px,.6vw,10px);border-radius:999px;font-weight:600;color:#0d2230}
-    .nav-links a:hover{background:#f0f7fb}
-    .nav-links a.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--ring)}
-    .nav-toggle{display:none}
-
-    /* ===== Hero ===== */
-    .intl-hero{
-      width:var(--container);margin:26px auto 0;border-radius:calc(var(--radius-xl) + 6px);
-      background:linear-gradient(180deg,#f7fcff,#f2fbff), radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
-      border:1px solid #e8f2fb; padding:clamp(22px,3.2vw,40px); box-shadow:var(--shadow-md); position:relative;overflow:hidden
-    }
-    .intl-hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:220px;background:
-      radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
-      radial-gradient(60% 120% at 25% 0%, rgba(14,127,168,.15), transparent 60%);filter:blur(30px)}
-    .intl-hero h1{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.8rem,1.1rem + 2.5vw,2.6rem);line-height:1.15;margin-bottom:6px}
-    .intl-hero p{color:var(--muted);font-size:clamp(.98rem,.9rem + .35vw,1.06rem);max-width:68ch}
-
-    .intl-subnav{position:sticky;top:72px;z-index:40;display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;padding-top:8px}
-    .intl-subnav a{font-weight:700;color:#0c2b3a;background:#fff;border:1px solid #e7f0f6;padding:10px 14px;border-radius:999px;box-shadow:0 2px 0 #e5f3f8 inset,0 1px 0 #fff;transition:all .2s ease}
-    .intl-subnav a:hover{transform:translateY(-1px);background:#f8fdff}
-    .intl-subnav a.is-current{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent;box-shadow:var(--ring)}
-
-    /* ===== Breadcrumb ===== */
-    .breadcrumb-wrap{background:#ffffffc7;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);width:100%}
-    .breadcrumb{width:var(--container);margin:auto;padding:.6rem 0;display:flex;gap:10px;list-style:none;color:#406074}
-    .breadcrumb li{display:flex;align-items:center;gap:10px}
-    .breadcrumb li+li::before{content:"/";color:#a2b7c4}
-    .breadcrumb a{color:#0e3b52}
-    .breadcrumb a:hover{text-decoration:underline}
-
-    /* ===== Page container ===== */
-    .international-page{width:var(--container);margin:24px auto 80px}
-
-    .glass-section{margin-top:clamp(18px,2.2vw,28px);border-radius:var(--radius-xl);padding:clamp(18px,2.4vw,30px);background:var(--glass);box-shadow:var(--shadow-md);border:1px solid #e8f1f7;position:relative;overflow:hidden}
-    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-    .section-head h2{font-size:clamp(1.3rem,1rem + 1.2vw,1.7rem);letter-spacing:-.01em}
-    .section-tag{font-size:.88rem;font-weight:800;color:#0b3b4d;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,#dff8ff,#e9fffb);border:1px solid #d0eef6}
-
-    /* ===== Grids & Cards ===== */
-    .steps-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .step-card{grid-column:span 4;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:16px;box-shadow:0 1px 0 #fff inset,0 8px 20px rgba(12,33,48,.06);transition:.25s}
-    .step-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
-    .icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--ring);display:flex;align-items:center;justify-content:center;margin-bottom:10px;overflow:hidden}
-    .icon-img{width:100%;height:100%;object-fit:cover}
-    .step-card h3{font-size:1.08rem;margin-bottom:4px}
-
-    @media (max-width:1024px){.step-card{grid-column:span 6}}
-    @media (max-width:640px){.step-card{grid-column:span 12}}
-
-    .plans-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .plan-card{grid-column:span 4;background:#fff;border:1px solid #dfe9f5;border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(12,33,48,.06);position:relative;overflow:hidden}
-    .plan-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
-    .plan-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-    .plan-card h3{font-size:1.2rem}
-    .chip{font-size:.8rem;font-weight:800;padding:6px 10px;border-radius:999px;background:#eef7ff;border:1px solid #d5e9ff}
-    .chip-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:var(--ring)}
-    .plan-points{list-style:none;display:grid;gap:6px;margin:10px 0}
-    .plan-points li{position:relative;padding-left:22px;color:#3e5a6b}
-    .plan-points li::before{content:"";width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:absolute;left:0;top:7px;box-shadow:0 0 0 3px rgba(14,127,168,.14)}
-    .price{font-weight:900;letter-spacing:.02em;font-size:1.15rem;margin-top:8px;color:#0c2b3a}
-    .plan-standard{transform:translateY(-4px);border-color:#cfe7f3}
-    @media (max-width:1024px){.plan-card{grid-column:span 6}}
-    @media (max-width:640px){.plan-card{grid-column:span 12;transform:none}}
-
-    .why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);list-style:none;padding:0;margin:0}
-    .why-grid li{grid-column:span 6;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-md);padding:12px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
-    .bullet-icon{width:24px;height:24px;object-fit:cover;border-radius:6px}
-    @media (max-width:640px){.why-grid li{grid-column:span 12}}
-
-    .assist-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .assist-card{grid-column:span 4;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:16px;box-shadow:0 1px 0 #fff inset,0 8px 14px rgba(12,33,48,.05)}
-    .assist-card h3{font-size:1.05rem;margin-bottom:4px}
-    @media (max-width:1024px){.assist-card{grid-column:span 6}}
-    @media (max-width:640px){.assist-card{grid-column:span 12}}
-
-    .checklist{list-style:none;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);padding:0;margin:0}
-    .checklist li{grid-column:span 6;background:#fff;border:1px dashed #d9e7f2;border-radius:var(--radius-md);padding:12px 14px}
-    @media (max-width:640px){.checklist li{grid-column:span 12}}
-
-    .faq-list{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .faq-item{grid-column:span 12;background:#fff;border:1px solid #e8eef5;border-radius:var(--radius-lg);padding:12px 14px}
-    .faq-item + .faq-item{margin-top:6px}
-    .faq-item summary{cursor:pointer;font-weight:700;color:#0d2a3a}
-    .faq-body{color:#3a5666;margin-top:8px}
-    .faq-item[open]{box-shadow:0 10px 24px rgba(12,33,48,.06)}
-
-    /* ===== CTA ===== */
-    .intl-cta{text-align:center;background:linear-gradient(180deg,#fdfefe,#fbfeff 32%,#f2fbff), radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);border:1px solid #e5f2f9}
-    .intl-cta h2{font-size:clamp(1.4rem,1rem + 1.4vw,1.9rem);margin-bottom:6px;letter-spacing:-.01em}
-    .intl-cta p{color:#3a5666;margin-bottom:16px}
-    .cta-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .btn-whatsapp,.btn-call,.btn-ghost{appearance:none;border:none;cursor:pointer;text-decoration:none;font-weight:800;letter-spacing:.02em;padding:12px 16px;border-radius:14px;transition:.18s}
-    .btn-whatsapp{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:var(--ring)}
-    .btn-call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
-    .btn-ghost{background:#fff;color:#073043;border:1px solid #e3eef6}
-    .btn-whatsapp:hover,.btn-call:hover,.btn-ghost:hover{transform:translateY(-2px)}
-
-    /* ===== Footer ===== */
-    footer{width:var(--container);margin:24px auto 40px;color:#496678;font-size:.95rem;text-align:center}
-
-    /* ===== Mobile nav ===== */
-    @media (max-width:900px){
-      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--stroke);border-radius:12px;background:#fff;cursor:pointer}
-      .hamburger,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:#0f2432;border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
-      .hamburger::before{position:absolute;top:-6px}
-      .hamburger::after{position:absolute;top:6px}
-      .nav-links{position:absolute;inset:calc(100% + 8px) 0 auto 0;width:100%;background:#ffffffea;backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);transform-origin:top center;transform:scaleY(0);opacity:0;pointer-events:none;display:flex;flex-direction:column;gap:6px;padding:10px}
-      .nav-links.nav-open{transform:scaleY(1);opacity:1;pointer-events:auto}
-    }
-
-    html{scroll-behavior:smooth}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important;animation:none !important}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Primary">
-    <div class="nav-container">
-      <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <ul class="nav-links" id="site-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="active" href="international.html" aria-current="page">International Patients</a></li>
-      </ul>
+      <nav class="navlinks" id="site-menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/contact.html">Contact</a>
+        <a class="active" href="/international.html" aria-current="page">International Patients</a>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="intl-hero">
-    <h1>International Dental Tourism</h1>
-    <p>Your seamless journey to a perfect smile in Lucknow, India.</p>
-
-    <nav class="intl-subnav" aria-label="Jump to sections">
-      <a href="#how">How it works</a>
-      <a href="#plans">Plans</a>
-      <a href="#why">Why us</a>
-      <a href="#travel">Travel support</a>
-      <a href="#documents">Documents</a>
-      <a href="#faq">FAQs</a>
-      <a href="#book">Book</a>
-    </nav>
   </header>
 
-  <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap">
-    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1" />
-      </li>
-      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">International Patients</span>
-        <meta itemprop="position" content="2" />
-      </li>
-    </ol>
-  </nav>
+  <!-- Hero -->
+  <section class="home-hero">
+    <div class="home-hero__inner">
+      <h1>International Dental Tourism</h1>
+      <p class="measure">Your seamless journey to a perfect smile in Lucknow, India — with travel, concierge & follow-ups built in.</p>
+      <nav class="services-subnav" aria-label="Jump to sections">
+        <a href="#how">How it works</a>
+        <a href="#plans">Plans</a>
+        <a href="#why">Why us</a>
+        <a href="#travel">Travel support</a>
+        <a href="#documents">Documents</a>
+        <a href="#faq">FAQs</a>
+        <a href="#book">Book</a>
+      </nav>
+    </div>
+  </section>
 
-  <main class="international-page">
+  <!-- Breadcrumb -->
+  <aside class="container small" aria-label="Breadcrumb">
+    <span><a class="link-more" href="/">Home</a> / International Patients</span>
+  </aside>
+
+  <main id="main" class="container international-page">
     <!-- How It Works -->
-    <section id="how" class="glass-section">
+    <section id="how" class="section glass">
       <div class="section-head">
-        <h2>How It Works</h2>
+        <h2>How it works</h2>
         <span class="section-tag">Step-by-step</span>
       </div>
-      <div class="steps-grid">
-        <article class="step-card">
-          <div class="icon"><img class="icon-img" src="assets/illustrations/email.jpg" alt="Online inquiry" loading="lazy" decoding="async"></div>
-          <h3>Online Inquiry</h3>
-          <p>Share history, photos, or X-rays via <a href="contact.html">form</a> or WhatsApp.</p>
-        </article>
-        <article class="step-card">
-          <div class="icon"><img class="icon-img" src="assets/illustrations/video-call.jpg" alt="Virtual consultation" loading="lazy" decoding="async"></div>
-          <h3>Virtual Consultation</h3>
-          <p>Meet Dr. Singh, review options, timeline, and budget transparently.</p>
-        </article>
-        <article class="step-card">
-          <div class="icon"><img class="icon-img" src="assets/illustrations/calendar.jpg" alt="Plan & travel" loading="lazy" decoding="async"></div>
-          <h3>Plan & Travel</h3>
-          <p>We assist with visa letters, dates, and hotel recommendations.</p>
-        </article>
-        <article class="step-card">
-          <div class="icon"><img class="icon-img" src="assets/illustrations/treatment.jpg" alt="Treatment" loading="lazy" decoding="async"></div>
-          <h3>Treatment</h3>
-          <p>Comfort-first orthodontics with digital planning and gentle protocols.</p>
-        </article>
-        <article class="step-card">
-          <div class="icon"><img class="icon-img" src="assets/illustrations/follow-up.jpg" alt="Follow-up" loading="lazy" decoding="async"></div>
-          <h3>Follow-up</h3>
-          <p>Telehealth reviews and retainers shipped if required.</p>
-        </article>
+      <div class="teaser-grid">
+        <article class="teaser"><h3>1. Online Inquiry</h3><p>Share history, photos, or X-rays via <a href="/contact.html">form</a> or WhatsApp.</p></article>
+        <article class="teaser"><h3>2. Virtual Consultation</h3><p>Meet Dr. Singh, review options, timelines & budget transparently.</p></article>
+        <article class="teaser"><h3>3. Plan & Travel</h3><p>We assist with visa letters, flight dates, and hotel recommendations.</p></article>
+        <article class="teaser"><h3>4. Treatment</h3><p>Comfort-first orthodontics with digital planning and gentle protocols.</p></article>
+        <article class="teaser"><h3>5. Follow-up</h3><p>Telehealth reviews and retainers shipped if required.</p></article>
       </div>
     </section>
 
     <!-- Plans -->
-    <section id="plans" class="glass-section">
+    <section id="plans" class="section glass">
       <div class="section-head">
         <h2>Treatment Plans</h2>
         <span class="section-tag">Tailored care</span>
       </div>
-      <div class="plans-wrap">
-        <article class="plan-card plan-basic">
-          <div class="plan-top"><h3>Basic</h3><span class="chip">Starter</span></div>
-          <p>Ideal for minor alignments.</p>
-          <ul class="plan-points">
-            <li>Exam & digital X-ray</li>
-            <li>Basic braces or aligners</li>
-            <li>2 follow-ups</li>
-          </ul>
-          <div class="price">₹30,000+</div>
-        </article>
-
-        <article class="plan-card plan-standard">
-          <div class="plan-top"><h3>Standard</h3><span class="chip chip-primary">Most Popular</span></div>
-          <p>Comprehensive smile makeover.</p>
-          <ul class="plan-points">
-            <li>Full orthodontic treatment</li>
-            <li>Digital smile preview</li>
-            <li>5 follow-ups</li>
-          </ul>
-          <div class="price">₹80,000+</div>
-        </article>
-
-        <article class="plan-card plan-premium">
-          <div class="plan-top"><h3>Premium</h3><span class="chip">VIP</span></div>
-          <p>All-inclusive luxury care.</p>
-          <ul class="plan-points">
-            <li>VIP transfers & stay</li>
-            <li>Premium braces & retainers</li>
-            <li>Unlimited follow-ups</li>
-            <li>City tour extras</li>
-          </ul>
-          <div class="price">₹150,000+</div>
-        </article>
+      <div class="teaser-grid">
+        <article class="teaser"><h3>Basic</h3><p>Exam & basic aligners/braces with 2 follow-ups.<br/><strong>₹30,000+</strong></p></article>
+        <article class="teaser"><h3>Standard</h3><p>Full smile makeover with digital planning & 5 follow-ups.<br/><strong>₹80,000+</strong></p></article>
+        <article class="teaser"><h3>Premium</h3><p>VIP transfers, premium appliances, unlimited follow-ups.<br/><strong>₹150,000+</strong></p></article>
       </div>
     </section>
 
     <!-- Why Us -->
-    <section id="why" class="glass-section">
-      <div class="section-head">
-        <h2>Why Choose Us?</h2>
-        <span class="section-tag">Confidence</span>
-      </div>
-      <ul class="why-grid">
-        <li><img class="bullet-icon" src="assets/illustrations/experience.jpg" alt="" aria-hidden="true"> <strong>15+ years</strong> of orthodontic excellence</li>
-        <li><img class="bullet-icon" src="assets/illustrations/savings.jpg" alt="" aria-hidden="true"> <strong>Up to 60% savings</strong> vs. Western clinics</li>
-        <li><img class="bullet-icon" src="assets/illustrations/concierge.jpg" alt="" aria-hidden="true"> <strong>End-to-end support</strong>—flights, visa, hotel</li>
-        <li><img class="bullet-icon" src="assets/illustrations/scanner.jpg" alt="" aria-hidden="true"> <strong>Digital planning</strong> with scanners & 3D</li>
-        <li><img class="bullet-icon" src="assets/illustrations/global.jpg" alt="" aria-hidden="true"> <strong>International-friendly</strong> scheduling & follow-ups</li>
-        <li><img class="bullet-icon" src="assets/illustrations/hygiene.jpg" alt="" aria-hidden="true"> <strong>Sterilization & safety</strong> first protocols</li>
+    <section id="why" class="section glass">
+      <h2>Why choose us?</h2>
+      <ul class="bullets">
+        <li>15+ years of orthodontic excellence</li>
+        <li>Up to 60% savings vs. Western clinics</li>
+        <li>End-to-end support — flights, visa, hotel</li>
+        <li>Digital planning with scanners & 3D</li>
+        <li>International-friendly scheduling & follow-ups</li>
+        <li>Strict sterilization & safety protocols</li>
       </ul>
     </section>
 
     <!-- Travel Support -->
-    <section id="travel" class="glass-section">
-      <div class="section-head">
-        <h2>Travel & Care Support</h2>
-        <span class="section-tag">We’ve got you</span>
-      </div>
-      <div class="assist-grid">
-        <article class="assist-card"><h3>Visa Letter</h3><p>Formal invitation for medical travel on request.</p></article>
-        <article class="assist-card"><h3>Airport Pickup</h3><p>Coordinated arrival & clinic transfer (premium plans).</p></article>
-        <article class="assist-card"><h3>Hotel Tie-ups</h3><p>Budget to boutique stays near the clinic.</p></article>
-        <article class="assist-card"><h3>Language Support</h3><p>Clear English; translation help on request.</p></article>
-        <article class="assist-card"><h3>Payment Options</h3><p>UPI / cards / bank transfer; itemized invoices.</p></article>
+    <section id="travel" class="section glass">
+      <h2>Travel & Care Support</h2>
+      <div class="teaser-grid">
+        <article class="teaser"><h3>Visa Letter</h3><p>Formal invitation for medical travel on request.</p></article>
+        <article class="teaser"><h3>Airport Pickup</h3><p>Coordinated arrival & clinic transfer (premium plans).</p></article>
+        <article class="teaser"><h3>Hotel Tie-ups</h3><p>Budget to boutique stays near the clinic.</p></article>
+        <article class="teaser"><h3>Language Support</h3><p>Clear English; translation help on request.</p></article>
+        <article class="teaser"><h3>Payment Options</h3><p>UPI / cards / bank transfer; itemized invoices.</p></article>
       </div>
     </section>
 
     <!-- Documents -->
-    <section id="documents" class="glass-section">
-      <div class="section-head">
-        <h2>What to Prepare</h2>
-        <span class="section-tag">Checklist</span>
-      </div>
-      <ul class="checklist">
+    <section id="documents" class="section glass">
+      <h2>What to Prepare</h2>
+      <ul class="bullets">
         <li>Passport & visa (if applicable)</li>
-        <li>Recent dental records / X-rays (JPEG/PDF)</li>
+        <li>Recent dental records / X-rays</li>
         <li>Medical conditions & allergy list</li>
         <li>Medications you’re taking</li>
         <li>Travel insurance (recommended)</li>
@@ -352,91 +139,65 @@
     </section>
 
     <!-- FAQs -->
-    <section id="faq" class="glass-section">
-      <div class="section-head">
-        <h2>FAQs</h2>
-        <span class="section-tag">Good to know</span>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item" open>
-          <summary><span>How long do I need to stay in Lucknow?</span></summary>
-          <div class="faq-body">Most orthodontic starts need 3–5 days initially (records, fitting). Follow-ups can be planned in 4–8 week blocks, with video check-ins in between.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Can I start treatment and continue abroad?</span></summary>
-          <div class="faq-body">Yes. We coordinate schedules, provide clear instructions, ship retainers if needed, and arrange teleconsults for ongoing guidance.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>What about pain and downtime?</span></summary>
-          <div class="faq-body">Expect mild soreness for 1–3 days after braces activation or new aligners. You can resume sightseeing/work the next day.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Do you help with visas and hotels?</span></summary>
-          <div class="faq-body">We issue a formal appointment letter for visa and share hotel options in nearby areas.</div>
-        </details>
-      </div>
+    <section id="faq" class="section glass">
+      <h2>FAQs</h2>
+      <details><summary>How long do I need to stay in Lucknow?</summary><p>Most orthodontic starts need 3–5 days. Follow-ups can be clustered with video check-ins in between.</p></details>
+      <details><summary>Can I start treatment and continue abroad?</summary><p>Yes. We coordinate schedules, ship retainers if needed, and arrange teleconsults.</p></details>
+      <details><summary>What about pain and downtime?</summary><p>Mild soreness for 1–3 days after braces activation or new aligners. Most resume sightseeing/work next day.</p></details>
+      <details><summary>Do you help with visas and hotels?</summary><p>Yes, we issue a formal appointment letter for visas and share hotel tie-ups nearby.</p></details>
     </section>
 
-    <!-- Book Now -->
-    <section id="book" class="glass-section intl-cta">
+    <!-- CTA -->
+    <section id="book" class="section home-cta center">
       <h2>Ready to transform your smile?</h2>
       <p>Quick responses • Clear timelines • Concierge support</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/919565321625" class="btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-        <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
-        <a href="contact.html" class="btn-ghost">Book Appointment</a>
+        <a href="https://wa.me/919565321625" class="btn btn-whatsapp" target="_blank">WhatsApp Us</a>
+        <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
+        <a href="/contact.html" class="btn btn-ghost">Book Appointment</a>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Smiles &amp; Braces Dental Clinic</h3>
+        <p class="small">Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
+        <p class="small">Call/WhatsApp: <a href="tel:+919565321625">+91 95653 21625</a> • <a href="tel:+917570000801">+91 75700 00801</a></p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p class="small"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/sitemap.xml">Sitemap</a></p>
+        <p class="small">© <span id="y"></span> Smiles & Braces. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Mobile nav + subnav scrollspy -->
+  <!-- JS -->
   <script>
-    (function(){
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks  = document.querySelector('.nav-links');
-      if(navToggle && navLinks){
-        navToggle.addEventListener('click', ()=>{
-          const open = navLinks.classList.toggle('nav-open');
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-      // Scrollspy for intl-subnav
-      const sections = [...document.querySelectorAll('main section[id]')];
-      const pills = [...document.querySelectorAll('.intl-subnav a')];
-      const pillFor = id => pills.find(a => a.getAttribute('href') === `#${id}`);
-      const spy = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){
-            pills.forEach(p=>p.classList.remove('is-current'));
-            const p = pillFor(e.target.id); if(p) p.classList.add('is-current');
-          }
-        });
-      }, {rootMargin:"-30% 0px -60% 0px", threshold:0.01});
-      sections.forEach(s=>spy.observe(s));
-    })();
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.navlinks').classList.toggle('show');
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Structured data -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Dentist",
+    "@type":"MedicalBusiness",
     "name":"Smiles & Braces Dental Clinic",
-    "url":"https://smilesandbraces.github.io/thebestindiandentist/",
+    "url":"https://www.bestindiandentist.com/international.html",
     "telephone":"+91-95653-21625",
-    "areaServed":{"@type":"AdministrativeArea","name":"International Patients"},
     "medicalSpecialty":"Orthodontics",
+    "areaServed":{"@type":"AdministrativeArea","name":"International"},
     "address":{
       "@type":"PostalAddress",
-      "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
-      "addressLocality":"Lucknow",
-      "addressRegion":"UP",
-      "postalCode":"226016",
-      "addressCountry":"IN"
-    },
-    "sameAs":["https://instagram.com/drvikramjeetdental"]
+      "streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+      "addressLocality":"Lucknow","addressRegion":"UP","postalCode":"226016","addressCountry":"IN"
+    }
   }
   </script>
 </body>
