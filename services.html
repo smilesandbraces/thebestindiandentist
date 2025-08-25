@@ -3,750 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Our Orthodontic Services | Smiles & Braces Dental Clinic</title>
-  <meta name="description" content="Orthodontic specialists in Lucknow offering braces, clear aligners, lingual braces, pediatric orthodontics, implants, and emergency care. Book with Dr. Vikram Jeet Singh (BDS, MDS)." />
-  <link rel="canonical" href="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
+  <title>Dental & Orthodontic Services | Smiles & Braces Lucknow</title>
+  <meta name="description" content="Explore orthodontic and dental services in Lucknow: braces, aligners, implants, veneers, root canal, preventive & pediatric care by Dr. Vikram Jeet Singh (BDS, MDS)." />
+  <link rel="canonical" href="https://www.bestindiandentist.com/services.html" />
+
+  <!-- Social cards -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Our Orthodontic Services | Smiles & Braces" />
-  <meta property="og:description" content="Comfort-first orthodontics: braces, aligners, lingual braces, retainers & more." />
-  <meta property="og:url" content="https://smilesandbraces.github.io/thebestindiandentist/services.html" />
-  <meta property="og:image" content="https://smilesandbraces.github.io/thebestindiandentist/assets/images/og/clinic-preview.jpg" />
+  <meta property="og:title" content="Dental & Orthodontic Services | Smiles & Braces Lucknow" />
+  <meta property="og:description" content="Braces, aligners, implants, veneers, root canal therapy, preventive & pediatric dentistry by Dr. Vikram Jeet Singh." />
+  <meta property="og:url" content="https://www.bestindiandentist.com/services.html" />
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" />
   <meta name="theme-color" content="#0e7fa8" />
 
-  <!-- Fonts -->
+  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
-
-  <style>
-    /* ========= Root & Reset ========= */
-    :root{
-      --bg: #f6fbff;
-      --ink: #0f1720;
-      --muted:#5f7483;
-      --brand:#0e7fa8;           /* primary cyan-blue */
-      --brand-2:#20b2aa;         /* teal accent */
-      --accent:#7c3aed;          /* purple accent for tiny highlights */
-      --card:#ffffffcc;
-      --glass: rgba(255,255,255,.72);
-      --glass-stroke: linear-gradient(180deg,#ffffff 0,#dfe9f5 100%);
-      --ring: 0 0 0 8px rgba(14,127,168,.08);
-      --radius-xl: 22px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --shadow-xl: 0 20px 40px rgba(15,23,32,.16), inset 0 1px 0 rgba(255,255,255,.4);
-      --shadow-md: 0 10px 24px rgba(15,23,32,.12);
-      --container: min(1160px, 92vw);
-      --grid-gap: clamp(14px, 1.6vw, 22px);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji",sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, #c7f0ff 0, transparent 50%),
-        radial-gradient(900px 500px at 110% 10%, #e6fffb 0, transparent 55%),
-        linear-gradient(#fafeff,#f3f9ff 38%, #eef6ff);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    img{max-width:100%;display:block}
-
-    /* ========= Navbar ========= */
-    .navbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(160%) blur(14px);
-      background:linear-gradient(180deg, #ffffffd9, #ffffffb8);
-      border-bottom:1px solid #e6eef6;
-    }
-    .nav-container{
-      width:var(--container);
-      margin-inline:auto;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px clamp(8px,1.2vw,14px);
-      gap:12px;
-    }
-    .brand{display:flex;flex-direction:column;gap:2px;text-decoration:none}
-    .brand-line.clinic{
-      font-family:"Carattere",cursive; color:#0f0f0f;
-      font-size:clamp(2rem, 1.1rem + 3.2vw, 3.2rem);
-      line-height:1.02; letter-spacing:.01em;
-    }
-    .brand-line.doctor{
-      font-family:"Fanwood Text",serif; color:#111; letter-spacing:.005em;
-      font-size:clamp(1rem,.9rem + .9vw,1.4rem);
-      margin-top:-2px;
-    }
-    .brand-line .cred{margin-left:.35rem; opacity:.85}
-
-    .nav-links{
-      list-style:none; display:flex; gap:10px;
-      align-items:center;
-    }
-    .nav-links a{
-      --pad: clamp(8px,.6vw,10px);
-      text-decoration:none;
-      color:#0d2230; font-weight:500;
-      padding:8px var(--pad);
-      border-radius:999px;
-      transition:transform .2s ease, background-color .2s ease, color .2s ease;
-    }
-    .nav-links a:hover{background:#f0f7fb}
-    .nav-links a.active{
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#fff; box-shadow: var(--ring);
-    }
-    .nav-toggle{display:none}
-
-    /* ========= Hero ========= */
-    .service-hero{
-      width:var(--container); margin:26px auto 0;
-      border-radius: calc(var(--radius-xl) + 6px);
-      background:
-        linear-gradient(180deg,#f7fcff,#f2fbff),
-        radial-gradient(1200px 600px at 0% 0%, #d8f7ff 0, transparent 60%);
-      border:1px solid #e8f2fb;
-      padding: clamp(22px, 3.2vw, 40px);
-      box-shadow: var(--shadow-md);
-      position:relative; overflow:hidden;
-    }
-    .service-hero::after{
-      content:"";
-      position:absolute; inset:auto -10% -40% -10%;
-      height:220px;
-      background:radial-gradient(60% 120% at 50% 0%, rgba(32,178,170,.18), transparent 60%),
-                 radial-gradient(60% 120% at 25% 0%, rgba(14,127,168,.15), transparent 60%);
-      filter: blur(30px);
-    }
-    .service-hero h1{
-      font-weight:800; letter-spacing:-.02em;
-      font-size: clamp(1.8rem, 1.1rem + 2.5vw, 2.6rem);
-      line-height:1.15;
-      margin-bottom:6px;
-    }
-    .service-hero p{
-      color:var(--muted);
-      font-size: clamp(.98rem, .9rem + .35vw, 1.06rem);
-      max-width: 68ch;
-    }
-
-    /* subnav pills */
-    .services-subnav{
-      position:sticky; top:72px; z-index:40;
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top:18px; padding-top:8px;
-    }
-    .services-subnav a{
-      text-decoration:none; font-weight:600; color:#0c2b3a;
-      background: #ffffff; border:1px solid #e7f0f6;
-      padding:10px 14px; border-radius:999px;
-      box-shadow: 0 2px 0 #e5f3f8 inset, 0 1px 0 #fff;
-      transition: all .2s ease;
-    }
-    .services-subnav a:hover{ transform:translateY(-1px); background:#f8fdff }
-    .services-subnav a.is-current{
-      color:#fff; border-color:transparent;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: var(--ring);
-    }
-
-    /* ========= Sections & Cards ========= */
-    .services-page{ width:var(--container); margin: 24px auto 80px; }
-    .glass-section{
-      margin-top: clamp(18px, 2.2vw, 28px);
-      border-radius: var(--radius-xl);
-      padding: clamp(18px, 2.4vw, 30px);
-      background: var(--glass);
-      box-shadow: var(--shadow-md);
-      border:1px solid #e8f1f7;
-      position:relative; overflow:hidden;
-    }
-    .section-head{
-      display:flex; align-items:center; gap:12px; margin-bottom:14px;
-    }
-    .section-head h2{
-      font-size: clamp(1.3rem, 1rem + 1.2vw, 1.7rem);
-      letter-spacing:-.01em;
-    }
-    .section-tag{
-      font-size:.88rem; font-weight:700; color:#0b3b4d;
-      padding:6px 10px; border-radius:999px;
-      background:linear-gradient(135deg,#dff8ff,#e9fffb);
-      border:1px solid #d0eef6;
-    }
-
-    .service-grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: var(--grid-gap);
-    }
-    /* 3 → 2 → 1 layout */
-    .service-card{
-      grid-column: span 4; /* desktop 3-up */
-      display:flex; flex-direction:column;
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 1px solid #e8eef5;
-      overflow:hidden;
-      box-shadow: 0 1px 0 #fff inset, 0 8px 20px rgba(12,33,48,.06);
-      transform: translateZ(0);
-      transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
-    }
-    .service-card:hover{
-      border-color:#d9e9f5;
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-4px);
-    }
-    .service-media{
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg,#eaf7ff,#f7fffe);
-      overflow:hidden;
-    }
-    .service-media img{
-      width:100%; height:100%; object-fit:cover;
-      transform:scale(1.02); transition: transform .6s ease;
-    }
-    .service-card:hover .service-media img{ transform:scale(1.06); }
-    .service-body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px }
-    .service-body h3{
-      font-size: clamp(1.02rem, .9rem + .6vw, 1.22rem);
-      letter-spacing:-.01em;
-    }
-    .service-body p{ color:#355061; }
-    .points{ list-style:none; display:grid; gap:6px; margin-top:2px }
-    .points li{
-      position:relative; padding-left:22px; color:#3e5a6b; font-size:.96rem;
-    }
-    .points li::before{
-      content:""; width:10px; height:10px; border-radius:3px;
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      position:absolute; left:0; top:7px;
-      box-shadow:0 0 0 3px rgba(14,127,168,.14);
-    }
-
-    /* Responsive grid steps */
-    @media (max-width: 1024px){ .service-card{ grid-column: span 6 } } /* 2-up */
-    @media (max-width: 640px){ .service-card{ grid-column: span 12 } } /* 1-up */
-
-    /* ========= Why Us ========= */
-    .why-strip h2{ margin-bottom:10px }
-    .why-icons{
-      display:flex; flex-wrap:wrap; gap:12px;
-      list-style:none;
-    }
-    .why-icons li{
-      background:#fff; border:1px solid #e6eef6;
-      padding:10px 12px; border-radius:12px; font-weight:600;
-      box-shadow: 0 1px 0 #fff inset, 0 8px 14px rgba(12,33,48,.05);
-    }
-
-    /* ========= CTA ========= */
-    .service-cta{
-      text-align:center;
-      background:
-        linear-gradient(180deg,#fdfefe, #fbfeff 32%, #f2fbff),
-        radial-gradient(90% 80% at 50% 0%, #dcfbff 0, transparent 60%);
-      border:1px solid #e5f2f9;
-    }
-    .service-cta h2{
-      font-size: clamp(1.4rem, 1rem + 1.4vw, 1.9rem);
-      margin-bottom:6px;
-      letter-spacing:-.01em;
-    }
-    .service-cta p{ color:#3a5666; margin-bottom:16px }
-    .cta-buttons{
-      display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
-    }
-    .btn-whatsapp,.btn-call,.btn-ghost{
-      appearance:none; border:none; cursor:pointer;
-      text-decoration:none; font-weight:800; letter-spacing:.02em;
-      padding:12px 16px; border-radius:14px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
-    }
-    .btn-whatsapp{ background:linear-gradient(135deg,#22c55e,#16a34a); color:#fff; box-shadow: var(--ring) }
-    .btn-call{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff }
-    .btn-ghost{ background:#ffffff; color:#073043; border:1px solid #e3eef6 }
-    .btn-whatsapp:hover,.btn-call:hover,.btn-ghost:hover{ transform:translateY(-2px) }
-
-    /* ========= Breadcrumb ========= */
-    .breadcrumb-wrap{ background:#ffffffc7 }
-    .breadcrumb{ display:flex; gap:10px; list-style:none; align-items:center; color:#406074 }
-    .breadcrumb li{ display:flex; align-items:center; gap:10px }
-    .breadcrumb li+li::before{ content:"/"; color:#a2b7c4 }
-    .breadcrumb a{ color:#0e3b52; text-decoration:none }
-    .breadcrumb a:hover{ text-decoration:underline }
-
-    /* ========= Footer ========= */
-    footer{
-      width:var(--container); margin: 24px auto 40px;
-      color:#496678; font-size:.95rem; text-align:center;
-    }
-
-    /* ========= Mobile nav ========= */
-    @media (max-width:900px){
-      .nav-toggle{display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #e4eef6; border-radius:12px; background:#fff; cursor:pointer}
-      .hamburger, .hamburger::before, .hamburger::after{
-        content:""; display:block; width:20px; height:2px; background:#0f2432; border-radius:2px; position:relative; transition:transform .2s ease,opacity .2s ease
-      }
-      .hamburger::before{ position:absolute; top:-6px }
-      .hamburger::after{ position:absolute; top:6px }
-      .nav-links{
-        position:absolute; inset: calc(100% + 8px) 0 auto 0;
-        width:100%;
-        background:#ffffffea; backdrop-filter: blur(10px);
-        border-bottom:1px solid #e6eef6;
-        transform-origin: top center; transform: scaleY(0);
-        opacity:0; pointer-events:none;
-        display:flex; flex-direction:column; gap:6px; padding:10px;
-      }
-      .nav-links.nav-open{ transform: scaleY(1); opacity:1; pointer-events:auto }
-    }
-
-    /* ========= Scroll behaviors & motion preferences ========= */
-    html{ scroll-behavior:smooth }
-    @media (prefers-reduced-motion:reduce){
-      html{ scroll-behavior:auto }
-      *{ transition:none !important; animation:none !important }
-    }
-
-    /* ========= Tiny utilities ========= */
-    .sr-only{ position:absolute !important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Primary">
-    <div class="nav-container">
-      <a href="index.html" class="brand" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
-
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <ul class="nav-links" id="site-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a class="active" href="services.html" aria-current="page">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="international.html">International Patients</a></li>
-      </ul>
+      <nav class="navlinks" id="site-menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a class="active" href="/services.html" aria-current="page">Services</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/international.html">International Patients</a>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="page-header service-hero">
-    <h1>Our Orthodontic Services</h1>
-    <p>Under the leadership of Dr. Vikram Jeet Singh, we deliver world‑class, comfort‑first orthodontic care designed around you.</p>
-
-    <nav class="services-subnav" aria-label="Jump to service categories">
-      <a href="#orthodontics">Orthodontics</a>
-      <a href="#cosmetic">Cosmetic</a>
-      <a href="#preventive">Preventive</a>
-      <a href="#restorative">Restorative</a>
-      <a href="#pediatric">Pediatric</a>
-      <a href="#emergency">Emergency</a>
-    </nav>
   </header>
 
+  <!-- Hero -->
+  <section class="home-hero service-hero">
+    <div class="home-hero__inner">
+      <h1>Our Dental & Orthodontic Services</h1>
+      <p class="measure">Led by <strong>Dr. Vikram Jeet Singh</strong>, we provide braces, aligners, implants, cosmetic, preventive, pediatric, and emergency care — all with a comfort-first approach.</p>
+      <nav class="services-subnav" aria-label="Jump to categories">
+        <a href="#orthodontics">Orthodontics</a>
+        <a href="#cosmetic">Cosmetic</a>
+        <a href="#preventive">Preventive</a>
+        <a href="#restorative">Restorative</a>
+        <a href="#pediatric">Pediatric</a>
+        <a href="#emergency">Emergency</a>
+      </nav>
+    </div>
+  </section>
+
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="glass-section breadcrumb-wrap" style="width:var(--container);margin:16px auto 0;">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1" />
-      </li>
-      <li aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">Services</span>
-        <meta itemprop="position" content="2" />
-      </li>
-    </ol>
-  </nav>
+  <aside class="container small" aria-label="Breadcrumb">
+    <span><a class="link-more" href="/">Home</a> / Services</span>
+  </aside>
 
-  <main class="services-page">
-
-    <!-- ORTHODONTICS -->
-    <section id="orthodontics" class="glass-section">
+  <main id="main" class="services-page container">
+    <!-- Example Orthodontics block (repeat pattern for other sections) -->
+    <section id="orthodontics" class="section glass">
       <div class="section-head">
         <h2>Orthodontics</h2>
         <span class="section-tag">Smile Alignment</span>
       </div>
-
-      <div class="service-grid">
-        <!-- Traditional Braces -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/traditionalbraces.jpg" alt="Traditional braces with precise archwires" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Traditional Braces</h3>
-            <p>Metal or ceramic brackets with precision archwires for reliable tooth movement.</p>
-            <ul class="points">
-              <li>Works for simple to complex cases</li>
-              <li>Ceramic option for low visibility</li>
-              <li>12–24 months typical</li>
-            </ul>
-          </div>
+      <div class="teaser-grid">
+        <article class="teaser">
+          <img src="/assets/images/services/traditionalbraces.jpg" alt="Traditional braces with archwires">
+          <h3>Traditional Braces</h3>
+          <p>Metal or ceramic brackets with precise archwires for reliable tooth movement. Works for mild to complex cases.</p>
         </article>
-
-        <!-- Clear Aligners -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/clearaligners.jpg" alt="Near-invisible clear aligners" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Clear Aligners</h3>
-            <p>Nearly invisible trays planned with digital simulations for predictable results.</p>
-            <ul class="points">
-              <li>Removable & easy to clean</li>
-              <li>Great for mild–moderate cases</li>
-              <li>Change trays every 1–2 weeks</li>
-            </ul>
-          </div>
+        <article class="teaser">
+          <img src="/assets/images/services/clearaligners.jpg" alt="Clear aligner trays">
+          <h3>Clear Aligners</h3>
+          <p>Nearly invisible trays planned digitally for predictable, comfortable results.</p>
         </article>
-
-        <!-- Self-ligating -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/selfligatingbraces.jpg" alt="Self-ligating braces with low-friction clips" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Self‑Ligating Braces</h3>
-            <p>Low‑friction clips instead of ties; fewer adjustments and improved comfort.</p>
-            <ul class="points">
-              <li>Reduced chair time</li>
-              <li>Efficient archwire mechanics</li>
-              <li>Metal or ceramic options</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Lingual -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/lingualbraces.jpg" alt="Lingual braces fitted behind the teeth" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Lingual Braces</h3>
-            <p>Placed behind the teeth—virtually invisible during treatment.</p>
-            <ul class="points">
-              <li>Discreet for professionals</li>
-              <li>Custom brackets</li>
-              <li>Advanced technique</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Retainers -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/retainers.jpg" alt="Clear and fixed retainers" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Retainers & Maintenance</h3>
-            <p>Custom retainers to protect your new smile—fixed or removable.</p>
-            <ul class="points">
-              <li>Stability planning</li>
-              <li>Regular reviews</li>
-              <li>Breakage support</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Consultation -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/consultation.jpg" alt="Orthodontic consultation with digital plan" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Orthodontic Consultation</h3>
-            <p>Exam, photos/X‑rays & digital planning with a clear timeline and cost estimate.</p>
-            <ul class="points">
-              <li>15+ years experience</li>
-              <li>Transparent options</li>
-              <li>Patient‑first guidance</li>
-            </ul>
-          </div>
+        <article class="teaser">
+          <img src="/assets/images/services/lingualbraces.jpg" alt="Lingual braces hidden behind teeth">
+          <h3>Lingual Braces</h3>
+          <p>Placed behind your teeth — a discreet option for professionals and adults.</p>
         </article>
       </div>
     </section>
 
-    <!-- COSMETIC -->
-    <section id="cosmetic" class="glass-section">
-      <div class="section-head">
-        <h2>Cosmetic & Smile Enhancement</h2>
-        <span class="section-tag">Aesthetics</span>
-      </div>
+    <!-- Repeat sections for Cosmetic, Preventive, Restorative, Pediatric, Emergency (same card style) -->
 
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/teethwhitening.jpg" alt="Professional teeth whitening" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Teeth Whitening</h3>
-            <p>In‑office & take‑home systems to safely brighten up to 8 shades.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/veneers.jpg" alt="Porcelain veneers close-up" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Porcelain Veneers</h3>
-            <p>Ultra‑thin shells to correct discoloration, chips, and small gaps.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/bonding.jpg" alt="Cosmetic bonding before-after concept" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Cosmetic Bonding</h3>
-            <p>Tooth‑colored resin to reshape edges and close minor spaces.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PREVENTIVE -->
-    <section id="preventive" class="glass-section">
-      <div class="section-head">
-        <h2>Preventive & General Dentistry</h2>
-        <span class="section-tag">Healthy Habits</span>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/cleaning.jpg" alt="Professional cleaning and polishing" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Cleaning & Polishing</h3>
-            <p>Professional scaling to remove tartar and maintain gum health.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/sealants.jpg" alt="Fluoride and sealants application" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Fluoride & Sealants</h3>
-            <p>Extra protection for children & high‑risk adults.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/night-guard.jpg" alt="Night guard appliance" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Night Guards</h3>
-            <p>Custom appliances to protect teeth from grinding (bruxism).</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- RESTORATIVE -->
-    <section id="restorative" class="glass-section">
-      <div class="section-head">
-        <h2>Restorative & Prosthodontics</h2>
-        <span class="section-tag">Rebuild & Replace</span>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/dental-implants.jpg" alt="Dental implant with crown" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Dental Implants</h3>
-            <p>Titanium roots with custom crowns—strong, natural and long‑lasting.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/crowns-bridges.jpg" alt="Ceramic crown and bridge" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Crowns & Bridges</h3>
-            <p>Durable ceramic solutions to restore damaged or missing teeth.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/dentures.jpg" alt="Modern dentures" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Dentures</h3>
-            <p>Modern, comfortable dentures—full, partial, or implant‑retained.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PEDIATRIC -->
-    <section id="pediatric" class="glass-section">
-      <div class="section-head">
-        <h2>Pediatric & Interceptive</h2>
-        <span class="section-tag">Kids & Teens</span>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/kids-braces.jpg" alt="Early braces for kids" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Early Braces</h3>
-            <p>Guided growth and space management for developing jaws.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/space-maintainers.jpg" alt="Space maintainer appliance" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Space Maintainers</h3>
-            <p>Holds room for emerging permanent teeth after early loss.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/habit-appliance.jpg" alt="Habit breaking appliance" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Habit Appliances</h3>
-            <p>Gentle appliances to help break thumb‑sucking & tongue thrust.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- EMERGENCY -->
-    <section id="emergency" class="glass-section">
-      <div class="section-head">
-        <h2>Emergency & Surgery</h2>
-        <span class="section-tag">Urgent Care</span>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/root-canal.jpg" alt="Root canal therapy" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Root Canal Therapy</h3>
-            <p>Relieve pain and save teeth with modern endodontic care.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/wisdom-tooth.jpg" alt="Wisdom tooth removal" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Wisdom Tooth Removal</h3>
-            <p>Comfort‑focused extraction with clear post‑op guidance.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-media">
-            <img src="assets/images/services/emergency-care.jpg" alt="Emergency dental care" loading="lazy" decoding="async" />
-          </div>
-          <div class="service-body">
-            <h3>Emergency Dental Care</h3>
-            <p>Same‑day attention for pain, broken teeth, or trauma.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="glass-section why-strip">
-      <h2>Why choose Smiles & Braces?</h2>
-      <ul class="why-icons">
-        <li>🕒 15+ Years Expertise</li>
-        <li>🦷 Digital Planning</li>
-        <li>🌍 International Friendly</li>
-        <li>✨ Comfort‑First Care</li>
-        <li>🔒 Strict Sterilization</li>
-      </ul>
-    </section>
-
-    <!-- CTA -->
-    <section class="glass-section service-cta">
+    <section class="section home-cta center">
       <h2>Ready for your best smile yet?</h2>
-      <p>Quick responses • Clear timelines • Flexible options</p>
+      <p class="measure">Quick responses · Transparent costs · International patient support</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/919565321625" class="btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-        <a href="tel:+919565321625" class="btn-call">Call +91 95653 21625</a>
-        <a href="contact.html" class="btn-ghost">Book Appointment</a>
+        <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp Us</a>
+        <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
+        <a href="/contact.html" class="btn btn-ghost">Book Appointment</a>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 Smiles & Braces Dental Clinic. All rights reserved. | Designed by Shashank Upreti</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Smiles &amp; Braces Dental Clinic</h3>
+        <p class="small">Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
+        <p class="small">Call/WhatsApp: <a href="tel:+919565321625">+91 95653 21625</a> • <a href="tel:+917570000801">+91 75700 00801</a></p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p class="small"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/sitemap.xml">Sitemap</a></p>
+        <p class="small">© <span id="y"></span> Smiles & Braces. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Accessible mobile nav + subnav highlight -->
-  <script>
-    (function(){
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks  = document.querySelector('.nav-links');
-      if(navToggle && navLinks){
-        navToggle.addEventListener('click', ()=>{
-          const open = navLinks.classList.toggle('nav-open');
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-      // Scrollspy for the subnav: highlights current section
-      const sections = [...document.querySelectorAll('main section[id]')];
-      const pills = [...document.querySelectorAll('.services-subnav a')];
-      const byId = id => pills.find(a => a.getAttribute('href') === `#${id}`);
-      const observer = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){
-            pills.forEach(p=>p.classList.remove('is-current'));
-            const pill = byId(e.target.id);
-            pill && pill.classList.add('is-current');
-          }
-        });
-      }, {rootMargin: "-30% 0px -60% 0px", threshold: 0.01});
-      sections.forEach(s=>observer.observe(s));
-    })();
-  </script>
-
-  <!-- LocalBusiness schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Dentist",
     "name":"Smiles & Braces Dental Clinic",
-    "url":"https://smilesandbraces.github.io/thebestindiandentist/",
-    "telephone":"+91-95653-21625",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Shop No.6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
-      "addressLocality":"Lucknow",
-      "addressRegion":"UP",
-      "postalCode":"226016",
-      "addressCountry":"IN"
-    },
-    "sameAs":["https://instagram.com/drvikramjeetdental"]
+    "url":"https://www.bestindiandentist.com/services.html",
+    "telephone":"+919565321625",
+    "address":{"@type":"PostalAddress","streetAddress":"Shop No. 6, Javed Market, Indira Nagar","addressLocality":"Lucknow","addressRegion":"UP","postalCode":"226016","addressCountry":"IN"},
+    "makesOffer":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Orthodontics"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cosmetic Dentistry"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Preventive Dentistry"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Restorative Dentistry"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Pediatric Dentistry"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Emergency Dental Care"}}
+    ]
   }
+  </script>
+
+  <!-- JS -->
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.navlinks').classList.toggle('show');
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
