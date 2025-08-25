@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- SEO -->
   <title>Contact & Book Appointments | Smiles & Braces Lucknow</title>
   <meta name="description" content="Book appointments at Smiles & Braces Dental Clinic in Lucknow. Contact Dr. Vikram Jeet Singh (BDS, MDS) via WhatsApp, phone, email or visit our clinic location." />
   <link rel="canonical" href="https://www.bestindiandentist.com/contact.html" />
 
-  <!-- Social cards -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact & Book Appointments | Smiles & Braces Lucknow" />
   <meta property="og:description" content="Contact Smiles & Braces Dental Clinic for braces, aligners, implants and orthodontics. Book via WhatsApp, phone, email or our appointment form." />
@@ -17,11 +15,8 @@
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicons -->
   <link rel="icon" href="/assets/icons/favicon.ico" />
   <meta name="theme-color" content="#0e7fa8" />
-
-  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -30,7 +25,6 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
@@ -61,7 +55,6 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
   <aside class="container small" aria-label="Breadcrumb">
     <span><a class="link-more" href="/">Home</a> / Contact</span>
   </aside>
@@ -71,23 +64,35 @@
       <!-- Contact form -->
       <section class="card">
         <h2>Book Your Appointment</h2>
+
+        <!-- FORM -->
         <form id="contactForm" class="ui-form" novalidate>
-          <label><span>Full Name</span>
+          <label>
+            <span>Full Name</span>
             <input type="text" name="name" placeholder="John Doe" required />
           </label>
-          <label><span>Email Address</span>
+
+          <label>
+            <span>Email Address</span>
             <input type="email" name="email" placeholder="you@example.com" required />
           </label>
-          <label><span>Phone Number</span>
+
+          <label>
+            <span>Phone Number</span>
             <input type="tel" name="phone" placeholder="+91 9xxxxxxxxx" required />
           </label>
-          <label><span>Preferred Date</span>
+
+          <label>
+            <span>Preferred Date</span>
             <input type="date" name="date" />
           </label>
-          <label><span>Message / Concerns</span>
-            <textarea name="message" rows="4" placeholder="Your message…"></textarea>
+
+          <label class="full">
+            <span>Message / Concerns</span>
+            <textarea name="message" rows="5" placeholder="Your message…"></textarea>
           </label>
-          <div class="form-actions">
+
+          <div class="form-actions full">
             <button type="submit" class="btn btn-call">Submit</button>
             <a class="btn btn-ghost" href="https://wa.me/919565321625">Message on WhatsApp</a>
           </div>
@@ -125,7 +130,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -141,14 +145,13 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.querySelector('.navlinks').classList.toggle('show');
     });
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Redirect form to thank-you.html
+    // Redirect form to thank-you page
     document.getElementById('contactForm').addEventListener('submit', e => {
       e.preventDefault();
       window.location.href = "/thank-you.html";
@@ -170,8 +173,7 @@
       "addressRegion":"UP",
       "postalCode":"226016",
       "addressCountry":"IN"
-    },
-    "sameAs":["https://instagram.com/drvikramjeetdental"]
+    }
   }
   </script>
 </body>
