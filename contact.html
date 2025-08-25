@@ -91,7 +91,6 @@
             <button type="submit" class="btn btn-call">Submit</button>
             <a class="btn btn-ghost" href="https://wa.me/919565321625">Message on WhatsApp</a>
           </div>
-          <div id="formStatus" role="status" aria-live="polite" class="small"></div>
         </form>
       </section>
 
@@ -149,11 +148,10 @@
     });
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Simple form handler
+    // Redirect form to thank-you.html
     document.getElementById('contactForm').addEventListener('submit', e => {
       e.preventDefault();
-      document.getElementById('formStatus').textContent = "✅ Thank you! We'll contact you soon.";
-      e.target.reset();
+      window.location.href = "/thank-you.html";
     });
   </script>
 
