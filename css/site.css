@@ -110,3 +110,55 @@ a{color:inherit;text-decoration:none}
 a, button, summary { outline-color: var(--brand); outline-offset: 2px; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== Contact form layout ===== */
+.ui-form{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 16px);
+  margin-top: 8px;
+}
+
+.ui-form label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.ui-form label.full,
+.ui-form .full{ grid-column: 1 / -1; }
+
+.ui-form input,
+.ui-form textarea,
+.ui-form select{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--stroke);
+  border-radius:12px;
+  font:inherit;
+  background:#fff;
+  color:var(--ink);
+}
+
+.ui-form input:focus,
+.ui-form textarea:focus,
+.ui-form select:focus{
+  outline:2px solid var(--brand);
+  outline-offset:2px;
+  border-color:var(--brand);
+}
+
+.form-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:4px;
+}
+
+@media (max-width: 800px){
+  .ui-form{ grid-template-columns: 1fr; }
+}
+
+/* Map */
+.map-wrap{ aspect-ratio: 16 / 9; border:1px solid var(--stroke); border-radius:16px; overflow:hidden; }
+.map-wrap iframe{ width:100%; height:100%; border:0; }
