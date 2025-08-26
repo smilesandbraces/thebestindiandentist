@@ -17,18 +17,33 @@
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
+  <!-- Icons & color -->
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts + global CSS -->
+  <!-- Fonts + Global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css"/>
 
-  <!-- Page styles (focus: images + Journey + FAQ) -->
+  <!-- Page styles (polish + sections) -->
   <style>
-    /* ---------- HERO ---------- */
+    :root{
+      --brand:#0e7fa8; --ink:#0d2235; --muted:#6b7b8a; --card:#ffffff;
+      --stroke:#e6edf4; --shadow:0 14px 40px rgba(9,31,59,.08);
+    }
+    .h0{font-size:clamp(28px,4vw,44px);letter-spacing:-.01em;line-height:1.1}
+    .h2{font-size:clamp(22px,2.4vw,28px);line-height:1.25}
+    .h3{font-size:clamp(18px,2vw,22px);line-height:1.25}
+    .kicker{font-weight:600;letter-spacing:.02em;color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;box-shadow:var(--shadow)}
+    .pad-s{padding:10px 12px}.pad-m{padding:16px 18px}.pad-l{padding:22px 24px}
+    .muted{color:var(--muted)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .small{font-size:.92rem}
+
+    /* HERO (parallax bg + orbs + stat chips) */
     .intl-hero{
       --grad1:#e6f7ff; --grad2:#f7fbff;
       background:
@@ -36,101 +51,80 @@
         radial-gradient(900px 500px at 90% 0%, var(--grad2), transparent 65%);
       position:relative; overflow:clip;
     }
-    .hero-media{
-      position:absolute; inset:-10% -8% 0 -8%;
-      /* Use a REAL photo you uploaded (illustrations folder is fine)  */
+    .hero-media{position:absolute; inset:-10% -8% 0 -8%;
       background:url("/assets/illustrations/global.jpg") center/cover no-repeat;
       transform: translateY(var(--parY,0px)) scale(1.04);
-      opacity:.22; filter:contrast(1.02) saturate(1.03) brightness(1.02);
-      will-change: transform;
-    }
+      opacity:.25; filter:contrast(1.02) saturate(1.03) brightness(1.02);}
     .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(34px); opacity:.6}
     .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%); mix-blend-mode:multiply}
     .orb.o1{left:14%; top:14%; width:240px; height:240px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #63caff 60%, transparent 72%); animation:float 20s ease-in-out infinite}
     .orb.o2{left:86%; top:12%; width:300px; height:300px; background:radial-gradient(circle at 60% 70%, #31b2ff, #a7e2ff 60%, transparent 70%); animation:float 23s ease-in-out infinite}
     .orb.o3{left:10%; top:78%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #61d7a2, #d2ffe9 58%, transparent 70%); animation:float 22s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
+    .hero-billboard{max-width:1024px;margin-inline:auto;text-align:center}
+    .hero-chipnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+    .hero-chipnav a{border:1px solid var(--stroke);background:#fff;border-radius:999px;padding:8px 12px;text-decoration:none}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}
+    .stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+    .stat{background:#fff;border:1px solid var(--stroke);border-radius:16px;padding:14px 12px}
+    .stat .num{font-weight:800;font-size:clamp(24px,4vw,38px)}
+    @media (max-width:880px){.stat-row{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}}
 
-    /* ---------- QUICK NAV + TRUST ---------- */
-    .intl-subnav{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:14px}
-    .intl-subnav a{border:1px solid var(--stroke,#e2e8f0); background:#fff; padding:8px 12px; border-radius:999px; text-decoration:none}
-    .intl-subnav a:hover{border-color:var(--brand,#0e7fa8)}
-    .trust{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:10px}
-    .trust .t{background:#fff; border:1px solid var(--stroke,#e2e8f0); border-radius:14px; padding:12px; text-align:center}
-    .trust .num{font-size:clamp(24px,4.2vw,40px); font-weight:800; letter-spacing:.5px}
-    .trust small{opacity:.75}
-
-    /* ---------- Layout helpers ---------- */
-    .section.grid-2{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(16px,3vw,28px)}
+    /* Helper layout */
+    .section.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(16px,3vw,28px)}
     @media (max-width:1024px){.section.grid-2{grid-template-columns:1fr}}
-    .glass-2{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.98)); border:1px solid rgba(14,127,168,.10); box-shadow:0 10px 30px rgba(2,29,59,.06); border-radius:18px}
+    .glass-2{background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.92)); border:1px solid rgba(14,127,168,.08); box-shadow:0 10px 30px rgba(2,29,59,.06); border-radius:18px}
     .thin{max-width:880px; margin-inline:auto}
     .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
     .reveal.is-visible{opacity:1; transform:none}
     :target{scroll-margin-top:96px}
 
-    /* ---------- Big, consistent IMAGES ---------- */
-    .img-fit{width:100%; height:100%; object-fit:cover; display:block}
-    .tile{position:relative; overflow:hidden; border-radius:16px; height:clamp(220px, 32vh, 360px)}
-    .tile img{width:100%; height:100%; object-fit:cover; transform:scale(1.03); transition:transform .8s ease}
-    .tile:hover img{transform:scale(1.08)}
-    .tile .overlay{position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.48), rgba(0,0,0,0)); color:#fff; padding:16px; display:flex; align-items:end}
-    .tile .overlay h3{margin:0}
+    /* Why us flags */
+    .flaglist{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stroke); border-radius:999px; padding:4px 10px; font-size:.85rem; background:#fff}
 
+    /* Pricing */
+    .pricing-frame{display:grid;gap:12px}
+    .pricing-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
+    @media (max-width:820px){.pricing-grid{grid-template-columns:1fr}}
+    .pricing-note{border-left:3px solid var(--brand);padding-left:10px}
+    .price-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:640px){.price-row{grid-template-columns:1fr}}
+    .price-table{width:100%; border-collapse:collapse; font-size:.95rem}
+    .price-table th,.price-table td{border-bottom:1px solid var(--stroke); padding:10px 8px; text-align:left}
+    .price-table th{font-weight:700}
+
+    /* Packages bento */
     .bento{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
     .bento > *{grid-column: span 6}
     .bento .wide{grid-column: span 12}
     @media (max-width:900px){.bento > *{grid-column: span 12}}
+    .tile{position:relative; overflow:hidden; border-radius:16px}
+    .tile img{width:100%; height:100%; object-fit:cover; transform:scale(1.03); transition:transform .8s ease}
+    .tile:hover img{transform:scale(1.08)}
+    .tile .overlay{position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0)); color:#fff; padding:14px; display:flex; align-items:end}
+    .tile .overlay h3{margin:0}
 
-    .masonry{columns:3 320px; column-gap:12px}
-    .masonry figure{break-inside:avoid; margin:0 0 12px; overflow:hidden; border-radius:14px; border:1px solid var(--stroke,#e2e8f0)}
-    .masonry img{width:100%; height:auto; display:block; transition:transform .6s ease}
-    .masonry figure:hover img{transform:scale(1.05)}
+    /* Journey (redesigned) */
+    .journey-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    @media (max-width:980px){.journey-wrap{grid-template-columns:1fr}}
+    .timeline{position:relative; padding-left:28px}
+    .timeline::before{content:""; position:absolute; left:11px; top:6px; bottom:6px; width:2px; background:linear-gradient(#cfefff,#0e7fa8)}
+    .tl{position:relative; margin:14px 0}
+    .tl h3{margin:0 0 6px}
+    .tl::before{content:""; position:absolute; left:-18px; top:.35rem; width:12px; height:12px; border-radius:50%; background:#0e7fa8; box-shadow:0 0 0 4px #e6f7ff}
+    .journey-aside .card{height:100%}
 
-    /* ---------- Pricing widgets ---------- */
-    .price-widget{display:grid; gap:12px}
-    .price-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    @media (max-width:640px){.price-row{grid-template-columns:1fr}}
-    .price-table{width:100%; border-collapse:collapse; font-size:.95rem}
-    .price-table th,.price-table td{border-bottom:1px solid var(--stroke,#e2e8f0); padding:10px 8px; text-align:left}
-    .price-table th{font-weight:700}
-    .muted{opacity:.72}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    /* Feature photo */
+    .feature-photo{border-radius:16px;overflow:hidden;border:1px solid var(--stroke)}
+    .feature-photo img{display:block;width:100%;height:100%;max-height:520px;object-fit:cover}
+    .feature-caption{padding:8px 10px;color:var(--muted);background:#fff;border-top:1px solid var(--stroke)}
+    .cta-bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 
-    /* ---------- JOURNEY (timeline like screenshot) ---------- */
-    .journey-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(16px,3vw,28px)}
-    @media (max-width:1024px){.journey-wrap{grid-template-columns:1fr}}
-    .timeline2{position:relative; padding-left:34px; margin:6px 0}
-    .timeline2::before{content:""; position:absolute; left:16px; top:0; bottom:0; width:2px; background:linear-gradient(#cfefff,#0e7fa8)}
-    .step{position:relative; margin:16px 0; padding:12px 6px 12px 2px; border-radius:12px}
-    .step::before{
-      content:""; position:absolute; left:10px; top:14px; width:14px; height:14px; border-radius:50%;
-      background:conic-gradient(from 180deg, #0e7fa8, #6dd6ff); box-shadow:0 0 0 5px #e6f7ff;
-    }
-    .step h3{margin:.1rem 0 .35rem 0}
-    .side-card{background:#fff; border:1px solid var(--stroke,#e5eef6); border-radius:16px; padding:16px}
-    .side-card + .side-card{margin-top:12px}
-
-    /* ---------- FAQ (card grid with caret) ---------- */
-    .faq-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,2vw,18px)}
-    @media (max-width:1100px){.faq-grid{grid-template-columns:1fr}}
-    details.faq{background:#fff; border:1px solid var(--stroke,#e2e8f0); border-radius:16px; transition:.25s box-shadow,.25s transform}
-    details.faq:hover{box-shadow:0 10px 28px rgba(2,29,59,.06); transform:translateY(-1px)}
-    details.faq[open]{border-color:#d6ecf8}
-    .faq summary{display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start; cursor:pointer; padding:16px}
-    .faq summary::-webkit-details-marker{display:none}
-    .caret{margin-top:6px; width:0; height:0; border-left:8px solid currentColor; border-top:7px solid transparent; border-bottom:7px solid transparent; transition:transform .25s}
-    details[open] .caret{transform:rotate(90deg)}
-    .faq h3{margin:0}
-    .faq-body{color:#334155; line-height:1.7; padding:0 16px 16px 36px}
-
-    /* ---------- CTA bar ---------- */
-    .cta-bar{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
-    .cta-bar .btn{min-width:180px}
-
-    /* ---------- Flags ---------- */
-    .flaglist{display:flex; flex-wrap:wrap; gap:8px}
-    .badge{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stroke,#e2e8f0); border-radius:999px; padding:4px 10px; font-size:.85rem; background:#fff}
+    /* Gallery masonry (bigger) */
+    .masonry{columns:3 320px;column-gap:12px}
+    .masonry figure{break-inside:avoid; margin:0 0 12px; overflow:hidden; border-radius:14px; border:1px solid var(--stroke)}
+    .masonry img{width:100%; display:block}
   </style>
 </head>
 <body>
@@ -160,12 +154,16 @@
     <div class="hero-media" aria-hidden="true"></div>
     <div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
 
-    <div class="home-hero__inner">
-      <h1>International Patients & Dental Tourism</h1>
-      <p class="measure">Fly in for <strong>predictable orthodontics</strong> and <strong>comprehensive dentistry</strong> by Dr. Vikram Jeet Singh (BDS, MDS) in Lucknow—backed by concierge planning, tight timelines, and <strong>live multi-currency pricing</strong>.</p>
+    <div class="home-hero__inner hero-billboard">
+      <h1 class="h0">International Patients &amp; Dental Tourism</h1>
+      <p class="measure">
+        Fly in for <strong>predictable orthodontics</strong> and <strong>comprehensive dentistry</strong> by
+        Dr. Vikram Jeet Singh (BDS, MDS) in Lucknow—concierge planning, tight timelines,
+        and <strong>live multi-currency pricing</strong>.
+      </p>
 
-      <nav class="intl-subnav" aria-label="Jump to">
-        <a href="#pricing">Prices & Currency</a>
+      <nav class="hero-chipnav" aria-label="Jump to">
+        <a href="#pricing">Prices &amp; Currency</a>
         <a href="#packages">Packages</a>
         <a href="#journey">Journey</a>
         <a href="#concierge">Concierge</a>
@@ -174,16 +172,16 @@
         <a href="#faq">FAQ</a>
       </nav>
 
-      <div class="cta-buttons">
+      <div class="hero-cta">
         <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp Us</a>
         <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
         <a href="/contact.html" class="btn btn-ghost">Book Virtual Consult</a>
       </div>
 
-      <div class="trust" aria-label="Clinic at a glance">
-        <div class="t"><div class="num" data-count="26">0</div><small>Countries visited us</small></div>
-        <div class="t"><div class="num" data-count="4.9">0</div><small>Avg. patient rating</small></div>
-        <div class="t"><div class="num" data-count="15">0</div><small>Years of experience</small></div>
+      <div class="stat-row" aria-label="Clinic at a glance">
+        <div class="stat"><div class="num" data-count="26">0</div><div class="muted">Countries visited us</div></div>
+        <div class="stat"><div class="num" data-count="4.9">0</div><div class="muted">Avg. patient rating</div></div>
+        <div class="stat"><div class="num" data-count="15">0</div><div class="muted">Years of experience</div></div>
       </div>
     </div>
   </section>
@@ -196,8 +194,8 @@
   <main id="main" class="container">
     <!-- WHY US -->
     <section class="section grid-2 reveal">
-      <div class="glass-2" style="padding:16px 18px">
-        <h2>Why patients fly to us</h2>
+      <div class="glass-2 pad-m">
+        <h2 class="h2">Why patients fly to us</h2>
         <ul class="bullets">
           <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
           <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
@@ -210,128 +208,130 @@
           <span class="badge mono">CNY ¥</span><span class="badge mono">AED د.إ</span><span class="badge mono">AUD $</span><span class="badge mono">INR ₹</span>
         </div>
       </div>
-      <figure class="glass-2" style="padding:10px">
-        <img class="img-fit" src="/assets/illustrations/experience.jpg" alt="Comfortable modern dental treatment experience" loading="lazy" decoding="async" style="border-radius:12px; height:clamp(260px,34vh,420px)">
+      <figure class="glass-2 pad-s">
+        <img src="/assets/illustrations/experience.jpg" alt="Comfortable modern dental treatment experience" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
         <figcaption class="small muted" style="padding:6px 8px">Comfort-first clinical spaces, clear itineraries & time-boxed visits.</figcaption>
       </figure>
     </section>
 
-    <!-- PRICING & CURRENCY -->
+    <!-- PRICING -->
     <section id="pricing" class="section reveal">
       <div class="section-head">
-        <h2>Pricing & live currency checker</h2>
+        <h2 class="h2">Pricing &amp; live currency checker</h2>
         <span class="section-tag">Up-to-date, transparent, travel-friendly</span>
       </div>
 
-      <div class="glass-2" style="padding:16px 18px">
-        <p class="muted">Base prices are in <strong>INR</strong>. Select a treatment and currency to see a live converted estimate. We use mid-market rates from public sources; your bank’s rate may vary slightly.</p>
+      <div class="card pad-m pricing-frame">
+        <p class="pricing-note muted">
+          Base prices are in <strong>INR</strong>. Select a treatment &amp; currency to see a live converted estimate.
+          We use mid-market rates from public sources; your bank may vary slightly.
+        </p>
 
-        <!-- Widget -->
-        <div class="price-widget" id="priceWidget">
-          <div class="price-row">
-            <label>
-              <span class="small muted">Treatment</span>
-              <select id="treatmentSelect" class="input">
-                <option value="CONSULT">First Consultation — ₹700</option>
-                <option value="CLEANING">Professional Cleaning — ₹2,200</option>
-                <option value="ALIGNERS">Clear Aligners (per arch) — from ₹85,000</option>
-                <option value="BRACES">Metal/Ceramic Braces — from ₹65,000</option>
-                <option value="IMPLANT">Dental Implant (base) — from ₹28,000</option>
-                <option value="RCT">Root Canal (single tooth) — from ₹5,500</option>
-                <option value="VENEER">Porcelain Veneer (per tooth) — from ₹12,000</option>
-                <option value="WHITEN">Teeth Whitening — from ₹9,500</option>
-              </select>
-            </label>
-            <label>
-              <span class="small muted">Show in currency</span>
-              <select id="currencySelect" class="input mono">
-                <option value="USD">USD — $</option>
-                <option value="EUR">EUR — €</option>
-                <option value="GBP">GBP — £</option>
-                <option value="CNY">CNY — ¥</option>
-                <option value="AED">AED — د.إ</option>
-                <option value="AUD">AUD — $</option>
-                <option value="INR" selected>INR — ₹</option>
-              </select>
-            </label>
-          </div>
+        <div class="pricing-grid">
+          <!-- Estimator -->
+          <div class="card pad-m">
+            <div class="price-widget" id="priceWidget">
+              <div class="price-row">
+                <label>
+                  <span class="small muted">Treatment</span>
+                  <select id="treatmentSelect" class="input">
+                    <option value="CONSULT">First Consultation — ₹700</option>
+                    <option value="CLEANING">Professional Cleaning — ₹2,200</option>
+                    <option value="ALIGNERS">Clear Aligners (per arch) — from ₹85,000</option>
+                    <option value="BRACES">Metal/Ceramic Braces — from ₹65,000</option>
+                    <option value="IMPLANT">Dental Implant (base) — from ₹28,000</option>
+                    <option value="RCT">Root Canal (single tooth) — from ₹5,500</option>
+                    <option value="VENEER">Porcelain Veneer (per tooth) — from ₹12,000</option>
+                    <option value="WHITEN">Teeth Whitening — from ₹9,500</option>
+                  </select>
+                </label>
 
-          <div class="price-row">
-            <div class="glass-2" style="padding:12px">
-              <div class="muted small">Estimated price</div>
-              <div id="convertedPrice" class="h3" style="margin-top:6px">—</div>
-              <div id="priceNotes" class="small muted" style="margin-top:4px">Includes live rate conversion.</div>
-            </div>
-            <div class="glass-2" style="padding:12px">
-              <div class="muted small">Live rate source</div>
-              <div id="rateMeta" class="mono" style="margin-top:6px">Loading…</div>
-            </div>
-          </div>
+                <label>
+                  <span class="small muted">Show in currency</span>
+                  <select id="currencySelect" class="input mono">
+                    <option value="USD">USD — $</option>
+                    <option value="EUR">EUR — €</option>
+                    <option value="GBP">GBP — £</option>
+                    <option value="CNY">CNY — ¥</option>
+                    <option value="AED">AED — د.إ</option>
+                    <option value="AUD">AUD — $</option>
+                    <option value="INR" selected>INR — ₹</option>
+                  </select>
+                </label>
+              </div>
 
-          <details class="preview-card" style="margin-top:8px">
-            <summary><strong>See base price list (INR)</strong></summary>
-            <table class="price-table" aria-label="Base price list in INR">
-              <thead><tr><th>Treatment</th><th>From (₹)</th><th>Notes</th></tr></thead>
-              <tbody id="basePriceTable"></tbody>
-            </table>
-          </details>
-        </div>
+              <div class="price-row">
+                <div class="card pad-s">
+                  <div class="muted small">Estimated price</div>
+                  <div id="convertedPrice" class="h3" style="margin-top:6px">—</div>
+                  <div id="priceNotes" class="small muted" style="margin-top:4px">Includes live rate conversion.</div>
+                </div>
+                <div class="card pad-s">
+                  <div class="muted small">Live rate source</div>
+                  <div id="rateMeta" class="mono" style="margin-top:6px">Loading…</div>
+                </div>
+              </div>
 
-        <!-- Savings -->
-        <div class="glass-2" style="padding:16px 18px; margin-top:12px">
-          <h3>Estimate your savings vs home country</h3>
-          <div class="price-row">
-            <label>
-              <span class="small muted">Choose procedure</span>
-              <select id="saveProc" class="input">
-                <option value="ALIGNERS">Clear Aligners (per arch)</option>
-                <option value="BRACES">Braces (case)</option>
-                <option value="IMPLANT">Single Implant (base)</option>
-                <option value="VENEER">Porcelain Veneer (per tooth)</option>
-                <option value="RCT">Root Canal</option>
-                <option value="WHITEN">Teeth Whitening</option>
-              </select>
-            </label>
-            <label>
-              <span class="small muted">Home market</span>
-              <select id="saveMarket" class="input">
-                <option value="USA">USA</option>
-                <option value="UK">UK</option>
-                <option value="EU">EU</option>
-                <option value="AUS">Australia</option>
-                <option value="GCC">GCC</option>
-              </select>
-            </label>
-          </div>
-          <div class="price-row">
-            <div class="glass-2" style="padding:12px">
-              <div class="muted small">Typical home price</div>
-              <div id="homePrice" class="h4">—</div>
-            </div>
-            <div class="glass-2" style="padding:12px">
-              <div class="muted small">Our estimated price (converted)</div>
-              <div id="ourPrice" class="h4">—</div>
+              <details class="preview-card" style="margin-top:8px">
+                <summary><strong>See base price list (INR)</strong></summary>
+                <table class="price-table" aria-label="Base price list in INR">
+                  <thead><tr><th>Treatment</th><th>From (₹)</th><th>Notes</th></tr></thead>
+                  <tbody id="basePriceTable"></tbody>
+                </table>
+              </details>
             </div>
           </div>
-          <div class="glass-2" style="padding:12px; margin-top:8px">
-            <div class="muted small">Indicative saving</div>
-            <div id="savingPct" class="h3">—</div>
+
+          <!-- Savings -->
+          <div class="card pad-m">
+            <h3 class="h3">Estimate your savings vs home country</h3>
+            <div class="price-row">
+              <label>
+                <span class="small muted">Choose procedure</span>
+                <select id="saveProc" class="input">
+                  <option value="ALIGNERS">Clear Aligners (per arch)</option>
+                  <option value="BRACES">Braces (case)</option>
+                  <option value="IMPLANT">Single Implant (base)</option>
+                  <option value="VENEER">Porcelain Veneer (per tooth)</option>
+                  <option value="RCT">Root Canal</option>
+                  <option value="WHITEN">Teeth Whitening</option>
+                </select>
+              </label>
+              <label>
+                <span class="small muted">Home market</span>
+                <select id="saveMarket" class="input">
+                  <option value="USA">USA</option>
+                  <option value="UK">UK</option>
+                  <option value="EU">EU</option>
+                  <option value="AUS">Australia</option>
+                  <option value="GCC">GCC</option>
+                </select>
+              </label>
+            </div>
+            <div class="price-row">
+              <div class="card pad-s"><div class="muted small">Typical home price</div><div id="homePrice" class="h4">—</div></div>
+              <div class="card pad-s"><div class="muted small">Our estimated price (converted)</div><div id="ourPrice" class="h4">—</div></div>
+            </div>
+            <div class="card pad-s" style="margin-top:8px">
+              <div class="muted small">Indicative saving</div>
+              <div id="savingPct" class="h3">—</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PACKAGES (bigger tiles) -->
+    <!-- PACKAGES (image-first) -->
     <section id="packages" class="section reveal">
       <div class="section-head">
-        <h2>Travel-friendly packages</h2>
+        <h2 class="h2">Travel-friendly packages</h2>
         <span class="section-tag">Bundled care & fewer visits</span>
       </div>
 
       <div class="bento">
-        <article class="glass-2 reveal" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene and whitening" loading="lazy" decoding="async">
+        <article class="glass-2 reveal pad-m">
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene and whitening" loading="lazy" decoding="async">
             <div class="overlay"><h3>Smile Refresh (3–4 days)</h3></div>
           </div>
           <ul class="bullets">
@@ -342,9 +342,9 @@
           <p><strong>From ₹18,000</strong> (<span class="mono" data-pkg="REFRESH">auto-convert</span>)</p>
         </article>
 
-        <article class="glass-2 reveal" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/scanner.jpg" alt="Digital scan for clear aligners" loading="lazy" decoding="async">
+        <article class="glass-2 reveal pad-m">
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/scanner.jpg" alt="Digital scan for clear aligners" loading="lazy" decoding="async">
             <div class="overlay"><h3>Aligner Fast-Track (2 visits)</h3></div>
           </div>
           <ul class="bullets">
@@ -355,9 +355,9 @@
           <p><strong>From ₹95,000</strong> (<span class="mono" data-pkg="ALIGNER">auto-convert</span>)</p>
         </article>
 
-        <article class="glass-2 reveal" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/treatment.jpg" alt="Dental implant procedure" loading="lazy" decoding="async">
+        <article class="glass-2 reveal pad-m">
+          <div class="tile" style="height:220px; margin-bottom:10px">
+            <img src="/assets/illustrations/treatment.jpg" alt="Dental implant procedure" loading="lazy" decoding="async">
             <div class="overlay"><h3>Implant + Crown Plan</h3></div>
           </div>
           <ul class="bullets">
@@ -368,38 +368,49 @@
           <p><strong>From ₹58,000</strong> (<span class="mono" data-pkg="IMPLANT">auto-convert</span>)</p>
         </article>
 
-        <figure class="glass-2 wide reveal" style="padding:10px">
-          <img class="img-fit" src="/assets/illustrations/comfort.jpg" alt="Comfort-first environment" loading="lazy" decoding="async" style="border-radius:12px; height:clamp(260px,34vh,420px)">
+        <figure class="glass-2 wide reveal pad-s">
+          <img src="/assets/illustrations/comfort.jpg" alt="Comfort-first environment" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
           <figcaption class="small muted" style="padding:6px 8px">Relaxed, friendly rooms designed for comfort and predictability.</figcaption>
         </figure>
       </div>
-
-      <div class="cta-bar" style="margin-top:10px">
-        <a href="/contact.html" class="btn btn-ghost">Get a custom quote</a>
-        <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp your scans</a>
-      </div>
     </section>
 
-    <!-- JOURNEY (screenshot-style) -->
+    <!-- JOURNEY (redesigned like screenshot) -->
     <section id="journey" class="section reveal">
       <div class="section-head">
-        <h2>Your international patient journey</h2>
+        <h2 class="h2">Your international patient journey</h2>
         <span class="section-tag">Simple, safe, time-efficient</span>
       </div>
 
-      <div class="journey-wrap glass-2" style="padding:16px 18px">
+      <div class="card pad-l journey-wrap">
         <div>
-          <ol class="timeline2">
-            <li class="step"><h3>1) Virtual consult</h3><p>Share photos/scans, medical history and goals. We discuss options, indicative costs and time windows.</p></li>
-            <li class="step"><h3>2) Plan & itinerary</h3><p>Written plan with daily chair-time, recovery guidance, and visa letter (if needed).</p></li>
-            <li class="step"><h3>3) Fly-in & day-1 review</h3><p>Clinical assessment, updated scans, and consent. Airport pickup & hotel coordination available.</p></li>
-            <li class="step"><h3>4) Treatment</h3><p>Bundled appointments to reduce days in town. Conservative protocols, clear after-care.</p></li>
-            <li class="step"><h3>5) Remote follow-ups</h3><p>Tele-checks with photo guides; local referrals if anything urgent arises back home.</p></li>
+          <ol class="timeline" aria-label="Steps">
+            <li class="tl">
+              <h3>1) Virtual consult</h3>
+              <p>Share photos/scans, medical history and goals. We discuss options, indicative costs and time windows.</p>
+            </li>
+            <li class="tl">
+              <h3>2) Plan &amp; itinerary</h3>
+              <p>Written plan with daily chair-time, recovery guidance, and visa letter (if needed).</p>
+            </li>
+            <li class="tl">
+              <h3>3) Fly-in &amp; day-1 review</h3>
+              <p>Clinical assessment, updated scans, and consent. Airport pickup &amp; hotel coordination available.</p>
+            </li>
+            <li class="tl">
+              <h3>4) Treatment</h3>
+              <p>Bundled appointments to reduce days in town. Conservative protocols, clear after-care.</p>
+            </li>
+            <li class="tl">
+              <h3>5) Remote follow-ups</h3>
+              <p>Tele-checks with photo guides; local referrals if anything urgent arises back home.</p>
+            </li>
           </ol>
         </div>
-        <div>
-          <div class="side-card">
-            <h3>Typical time windows</h3>
+
+        <div class="journey-aside">
+          <div class="card pad-m" style="margin-bottom:12px">
+            <h3 class="h3">Typical time windows</h3>
             <ul class="bullets">
               <li><strong>Smile Refresh:</strong> 3–4 days</li>
               <li><strong>Aligners (start):</strong> 5–10 days to first delivery</li>
@@ -407,11 +418,11 @@
               <li><strong>Implant stage-1:</strong> 3–5 days; stage-2 in ~3–4 months</li>
             </ul>
           </div>
-          <div class="side-card">
-            <h3>What to bring</h3>
+          <div class="card pad-m">
+            <h3 class="h3">What to bring</h3>
             <ul class="bullets">
-              <li>Passport & visa copy (if applicable)</li>
-              <li>Medical history & medications</li>
+              <li>Passport &amp; visa copy (if applicable)</li>
+              <li>Medical history &amp; medications</li>
               <li>Past X-rays/scans or aligner plans (if any)</li>
               <li>Travel insurance (recommended)</li>
             </ul>
@@ -420,41 +431,51 @@
       </div>
     </section>
 
+    <!-- Feature photo + CTAs (large, responsive) -->
+    <figure class="feature-photo reveal">
+      <img src="/assets/illustrations/comfort.jpg" alt="Relaxed, friendly rooms designed for comfort and predictability" loading="lazy" decoding="async">
+      <figcaption class="feature-caption">Relaxed, friendly rooms designed for comfort and predictability.</figcaption>
+    </figure>
+    <div class="cta-bar" style="margin-top:10px">
+      <a href="/contact.html" class="btn btn-ghost">Get a custom quote</a>
+      <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp your scans</a>
+    </div>
+
     <!-- CONCIERGE -->
     <section id="concierge" class="section reveal">
       <div class="section-head">
-        <h2>Concierge & travel support</h2>
+        <h2 class="h2">Concierge &amp; travel support</h2>
         <span class="section-tag">We’ll help you make it easy</span>
       </div>
       <div class="bento">
-        <article class="glass-2" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/concierge.jpg" alt="Airport pickup concierge" loading="lazy" decoding="async">
+        <article class="glass-2 pad-m">
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/concierge.jpg" alt="Airport pickup concierge" loading="lazy" decoding="async">
             <div class="overlay"><h3>Airport pickup</h3></div>
           </div>
           <p>Door-to-door transfers between Lucknow Airport (LKO) and your hotel/clinic with vetted drivers.</p>
           <p class="small muted">Add-on fee; request while booking.</p>
         </article>
 
-        <article class="glass-2" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/email.jpg" alt="Itinerary and visa letter" loading="lazy" decoding="async">
+        <article class="glass-2 pad-m">
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/email.jpg" alt="Itinerary and visa letter" loading="lazy" decoding="async">
             <div class="overlay"><h3>Visa letter & itinerary</h3></div>
           </div>
           <p>Official appointment confirmation letter with clinic details. We also share a clear visit-plan for your stay.</p>
         </article>
 
-        <article class="glass-2" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/video-call.jpg" alt="Tele follow up video call" loading="lazy" decoding="async">
+        <article class="glass-2 pad-m">
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/video-call.jpg" alt="Tele follow up video call" loading="lazy" decoding="async">
             <div class="overlay"><h3>Tele follow-ups</h3></div>
           </div>
           <p>Scheduled video check-ins for aligners/braces; easy photo guides and retention instructions.</p>
         </article>
 
-        <article class="glass-2" style="padding:16px">
-          <div class="tile" style="margin-bottom:10px">
-            <img class="img-fit" src="/assets/illustrations/calendar.jpg" alt="Priority scheduling calendar" loading="lazy" decoding="async">
+        <article class="glass-2 pad-m">
+          <div class="tile" style="height:180px; margin-bottom:10px">
+            <img src="/assets/illustrations/calendar.jpg" alt="Priority scheduling calendar" loading="lazy" decoding="async">
             <div class="overlay"><h3>Priority scheduling</h3></div>
           </div>
           <p>Bundled chair-time to compress your travel days without compromising safety or outcomes.</p>
@@ -465,10 +486,10 @@
     <!-- CITY -->
     <section id="city" class="section reveal">
       <div class="section-head">
-        <h2>Welcome to Lucknow</h2>
+        <h2 class="h2">Welcome to Lucknow</h2>
         <span class="section-tag">Heritage, food and warm people</span>
       </div>
-      <div class="glass-2 thin" style="padding:16px 18px">
+      <div class="glass-2 thin pad-m">
         <p>Lucknow blends historical architecture, refined cuisine and modern conveniences. Safe neighborhoods around Indira Nagar make stays comfortable and accessible.</p>
         <ul class="bullets">
           <li>Airport (LKO) → Clinic: ~30–40 min by car</li>
@@ -481,64 +502,64 @@
 
     <!-- GALLERY -->
     <section id="gallery" class="section reveal">
-      <div class="section-head"><h2>Clinic & care gallery</h2></div>
+      <div class="section-head"><h2 class="h2">Clinic &amp; care gallery</h2></div>
       <div class="masonry" aria-label="Clinic gallery">
-        <figure><img src="/assets/illustrations/shield.jpg" alt="Sterilization & safety"/></figure>
-        <figure><img src="/assets/illustrations/treatment.jpg" alt="Precise clinical care"/></figure>
-        <figure><img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene"/></figure>
-        <figure><img src="/assets/illustrations/digital.jpg" alt="Digital planning"/></figure>
-        <figure><img src="/assets/illustrations/follow-up.jpg" alt="Follow-ups"/></figure>
-        <figure><img src="/assets/illustrations/scanner.jpg" alt="Digital scan"/></figure>
-        <figure><img src="/assets/illustrations/comfort.jpg" alt="Comfort-first rooms"/></figure>
-        <figure><img src="/assets/illustrations/experience.jpg" alt="Patient experience"/></figure>
+        <figure><img src="/assets/illustrations/shield.jpg" alt="Sterilization & safety" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/treatment.jpg" alt="Precise clinical care" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/hygiene.jpg" alt="Professional hygiene" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/digital.jpg" alt="Digital planning" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/follow-up.jpg" alt="Follow-ups" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/scanner.jpg" alt="Digital scan" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/comfort.jpg" alt="Comfort-first rooms" loading="lazy" decoding="async"/></figure>
+        <figure><img src="/assets/illustrations/experience.jpg" alt="Patient experience" loading="lazy" decoding="async"/></figure>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="section reveal">
-      <div class="section-head"><h2>What our patients say</h2></div>
+      <div class="section-head"><h2 class="h2">What our patients say</h2></div>
       <div class="carousel" id="carousel">
-        <div class="slides">
-          <div class="slide">
-            <p class="h4">“Traveled from Dubai for aligners—planning was clear, first sets ready in a week, and follow-ups on video. Couldn’t be happier.”</p>
+        <div class="slides" style="display:flex; transition:transform .6s ease">
+          <div class="slide" style="min-width:100%; padding:16px; background:#fff">
+            <p class="h3">“Traveled from Dubai for aligners—planning was clear, first sets ready in a week, and follow-ups on video.”</p>
             <p class="small muted">— A. Rahman • UAE</p>
           </div>
-          <div class="slide">
-            <p class="h4">“Implant & crown over two short trips. Costs were transparent and the team is incredibly kind.”</p>
+          <div class="slide" style="min-width:100%; padding:16px; background:#fff">
+            <p class="h3">“Implant & crown over two short trips. Costs were transparent and the team is incredibly kind.”</p>
             <p class="small muted">— M. Collins • UK</p>
           </div>
-          <div class="slide">
-            <p class="h4">“We combined a family visit with orthodontic care. The itinerary made it easy to plan our days.”</p>
+          <div class="slide" style="min-width:100%; padding:16px; background:#fff">
+            <p class="h3">“We combined a family visit with orthodontic care. The itinerary made it easy to plan our days.”</p>
             <p class="small muted">— S. Patel • USA</p>
           </div>
         </div>
       </div>
-      <div class="dots" id="dots" aria-hidden="true"><span class="dot is-active"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="dots" id="dots" aria-hidden="true" style="display:flex;gap:6px;justify-content:center;margin-top:8px">
+        <span class="dot is-active" style="width:8px;height:8px;border-radius:50%;background:#0e7fa8"></span>
+        <span class="dot" style="width:8px;height:8px;border-radius:50%;background:#c9d8e6"></span>
+        <span class="dot" style="width:8px;height:8px;border-radius:50%;background:#c9d8e6"></span>
+      </div>
     </section>
 
-    <!-- FAQ (card grid like screenshot) -->
+    <!-- FAQ -->
     <section id="faq" class="section reveal">
-      <div class="section-head"><h2>Frequently asked questions</h2></div>
-
-      <div class="faq-grid thin">
-        <details class="faq" open>
-          <summary><span class="caret" aria-hidden="true"></span><h3>Can I finish aligner treatment with only two trips?</h3></summary>
-          <div class="faq-body">Often yes. We start with scans & planning, deliver first sets within ~5–10 days, and schedule virtual checks. A second trip finalizes refinements if needed.</div>
+      <div class="section-head"><h2 class="h2">Frequently asked questions</h2></div>
+      <div class="blog-preview thin">
+        <details class="preview-card" open>
+          <summary><h3>Can I finish aligner treatment with only two trips?</h3></summary>
+          <div class="meta">Often yes. We start with scans & planning, deliver first sets within ~5–10 days, and schedule virtual checks. A second trip finalizes refinements if needed.</div>
         </details>
-
-        <details class="faq">
-          <summary><span class="caret" aria-hidden="true"></span><h3>Do you help with visa letters?</h3></summary>
-          <div class="faq-body">Yes—we issue appointment confirmation letters with clinic details and itinerary. Please share passport info and tentative dates.</div>
+        <details class="preview-card">
+          <summary><h3>Do you help with visa letters?</h3></summary>
+          <div class="meta">Yes—we issue appointment confirmation letters with clinic details and itinerary. Please share passport info and tentative dates.</div>
         </details>
-
-        <details class="faq">
-          <summary><span class="caret" aria-hidden="true"></span><h3>How accurate is the currency conversion?</h3></summary>
-          <div class="faq-body">Rates use a public mid-market feed and auto-refresh. Your bank’s settlement rate and fees may differ slightly.</div>
+        <details class="preview-card">
+          <summary><h3>How accurate is the currency conversion?</h3></summary>
+          <div class="meta">Rates use a public mid-market feed and auto-refresh. Your bank’s settlement rate and fees may differ slightly.</div>
         </details>
-
-        <details class="faq">
-          <summary><span class="caret" aria-hidden="true"></span><h3>Is post-treatment care available after I return?</h3></summary>
-          <div class="faq-body">Yes, via scheduled tele-follow ups. For urgent care, we coordinate with a local dentist and share your clinical notes.</div>
+        <details class="preview-card">
+          <summary><h3>Is post-treatment care available after I return?</h3></summary>
+          <div class="meta">Yes, via scheduled tele-follow ups. For urgent care, we coordinate with a local dentist and share your clinical notes.</div>
         </details>
       </div>
     </section>
@@ -571,37 +592,48 @@
     </div>
   </footer>
 
-  <!-- JS: nav, parallax, reveal, counters, currency, savings, carousel -->
+  <!-- JS: nav, parallax, reveal, counters, currency (cached), savings, carousel -->
   <script>
     // Menu + year
     document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Parallax hero
+    // Parallax hero (safe)
     (function(){
       const media = document.querySelector('.hero-media');
-      function onScroll(){ const y = Math.min(40, window.scrollY/12); media && media.style.setProperty('--parY', y+'px'); }
+      function onScroll(){ const y = Math.min(40, window.scrollY/12); if(media) media.style.setProperty('--parY', y+'px'); }
       onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
     })();
 
-    // Reveal on view
-    const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} }),{threshold:.1});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // Counters
+    // Reveal (with fallback for old browsers)
     (function(){
-      const els = document.querySelectorAll('.trust .num');
-      const obs = new IntersectionObserver((entries)=>{
-        entries.forEach(({isIntersecting, target})=>{
-          if(!isIntersecting) return; obs.unobserve(target);
-          const end = parseFloat(target.dataset.count||'0'), dur=1200, t0=performance.now();
-          (function tick(ts){ const p=Math.min(1,(ts-t0)/dur); const v=end<10? (end*p).toFixed(1):Math.round(end*p); target.textContent=v; if(p<1) requestAnimationFrame(tick); })(t0);
-        });
-      },{threshold:.5});
-      els.forEach(el=>obs.observe(el));
+      const els = Array.from(document.querySelectorAll('.reveal'));
+      if('IntersectionObserver' in window){
+        const io = new IntersectionObserver(es=>es.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);}
+        }),{threshold:.1});
+        els.forEach(el=>io.observe(el));
+      }else{
+        els.forEach(el=>el.classList.add('is-visible'));
+      }
     })();
 
-    // Currency & Prices (multi-source)
+    // Animated stats
+    (function(){
+      const els = document.querySelectorAll('.stat .num, .trust .num');
+      const io = new IntersectionObserver(es=>{
+        es.forEach(e=>{
+          if(!e.isIntersecting) return;
+          io.unobserve(e.target);
+          const end = parseFloat(e.target.dataset.count||'0'), d=1200, t0=performance.now();
+          (function tick(ts){const p=Math.min(1,(ts-t0)/d);const v=end<10?(end*p).toFixed(1):Math.round(end*p);
+            e.target.textContent=v; if(p<1) requestAnimationFrame(tick);} )(t0);
+        });
+      },{threshold:.5});
+      els.forEach(el=>io.observe(el));
+    })();
+
+    /* ---------- PRICES + CURRENCY (multi-source fetch with caching) ---------- */
     (function(){
       const treatmentSelect = document.getElementById('treatmentSelect');
       const currencySelect  = document.getElementById('currencySelect');
@@ -617,72 +649,75 @@
         CONSULT:'First Consultation', CLEANING:'Professional Cleaning', ALIGNERS:'Clear Aligners (per arch)', BRACES:'Metal/Ceramic Braces',
         IMPLANT:'Dental Implant (base)', RCT:'Root Canal (single tooth)', VENEER:'Porcelain Veneer (per tooth)', WHITEN:'Teeth Whitening'
       };
-      const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
-
       basePriceTable.innerHTML = Object.keys(LABELS).map(k =>
         `<tr><td>${LABELS[k]}</td><td class="mono">₹ ${PRICES[k].toLocaleString('en-IN')}</td><td class="muted">From price</td></tr>`
       ).join('');
 
-      const WANTED = Object.keys(SYMBOL).join(',');
-      const SOURCES = [
-        { name: 'exchangerate.host', make:(base,syms)=>`https://api.exchangerate.host/latest?base=${base}&symbols=${syms}`, pick:d=>({date:d.date, rates:d.rates}) },
-        { name: 'frankfurter.app',   make:(base,syms)=>`https://api.frankfurter.app/latest?from=${base}&to=${syms}`,     pick:d=>({date:d.date, rates:d.rates}) },
-        { name: 'open.er-api.com',   make:(base)=>`https://open.er-api.com/v6/latest/${base}`,                           pick:d=>({date:d.time_last_update_utc, rates:d.rates}) }
-      ];
+      const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
 
-      let rates = { base:'INR', date:'offline', source:'fallback',
-        rates:{INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018 }
-      };
+      function loadCachedRates(){
+        try{
+          const raw = localStorage.getItem('fx_rates');
+          if(!raw) return null;
+          const obj = JSON.parse(raw);
+          if(!obj || !obj.when) return null;
+          if(Date.now() - obj.when > 12*60*60*1000) return null;
+          return obj;
+        }catch{ return null; }
+      }
+      function saveRates(rates, source, date){
+        localStorage.setItem('fx_rates', JSON.stringify({base:'INR', rates, source, date, when:Date.now()}));
+      }
+
+      let FX = loadCachedRates() || {base:'INR',rates:{INR:1},source:'fallback',date:'offline'};
+      rateMeta.textContent = `Source: ${FX.source} • ${FX.date}`;
 
       async function fetchRates(){
-        for(const s of SOURCES){
+        const want = 'INR,USD,EUR,GBP,CNY,AED,AUD';
+        const sources = [
+          { name:'frankfurter.app', url:`https://api.frankfurter.app/latest?from=INR&to=${want}`, pick: d=>({date:d.date, rates:d.rates}) },
+          { name:'exchangerate.host', url:`https://api.exchangerate.host/latest?base=INR&symbols=${want}`, pick:d=>({date:d.date, rates:d.rates}) },
+          { name:'open.er-api.com', url:`https://open.er-api.com/v6/latest/INR`, pick: d=>({date:d.time_last_update_utc, rates:d.rates}) }
+        ];
+        for(const s of sources){
           try{
-            const url = s.make('INR', WANTED);
-            const res = await fetch(url, {mode:'cors'});
-            const data = await res.json();
-            const picked = s.pick(data);
-            if(picked && picked.rates && Object.keys(picked.rates).length){
-              rates = { base:'INR', date:picked.date || new Date().toISOString().slice(0,10), source:s.name, rates:picked.rates };
-              rateMeta.textContent = `Source: ${s.name} • ${rates.date}`;
-              return;
+            const r = await fetch(s.url,{mode:'cors'}); const j = await r.json(); const p = s.pick(j);
+            if(p && p.rates && p.rates.USD){
+              FX = {base:'INR',rates:p.rates,source:s.name,date:p.date};
+              saveRates(FX.rates, FX.source, FX.date);
+              break;
             }
-          }catch(e){/* next */}
+          }catch(_){}
         }
-        rateMeta.textContent = 'Live feed unavailable, using fallback.';
+        rateMeta.textContent = `Source: ${FX.source} • ${FX.date}`;
       }
 
-      function fmt(cur, amount){
-        const sym = SYMBOL[cur] || '';
-        const locale = (cur==='INR') ? 'en-IN' : 'en-US';
-        return `${sym} ${amount.toLocaleString(locale,{maximumFractionDigits:0})}`;
-      }
-      function convINR(inr,to){ return to==='INR' ? inr : inr*(rates.rates[to]||0); }
+      function fmt(cur, amt){ const sym = SYMBOL[cur]||''; const loc = (cur==='INR')?'en-IN':'en-US'; return `${sym} ${Math.round(amt).toLocaleString(loc)}`; }
+      function convINR(inr,to){ return to==='INR' ? inr : inr*(FX.rates[to]||0); }
 
-      function updatePrice(){
+      function updateEstimate(){
         const t = treatmentSelect.value, cur = currencySelect.value;
         const inr = PRICES[t]; if(!inr){ convertedPrice.textContent='—'; return; }
-        const val = (cur==='INR') ? inr : Math.round(convINR(inr,cur));
-        convertedPrice.textContent = fmt(cur,val);
+        convertedPrice.textContent = fmt(cur, convINR(inr, cur));
         localStorage.setItem('preferredCurrency', cur);
+        localStorage.setItem('fx_current_currency', cur); // for savings widget
       }
-      function updatePackages(){
+      function updatePackageBadges(){
         const cur = currencySelect.value;
         const map = {REFRESH:'PKG_REFRESH', ALIGNER:'PKG_ALIGNER', IMPLANT:'PKG_IMPLANT'};
         document.querySelectorAll('[data-pkg]').forEach(el=>{
-          const key = map[el.dataset.pkg];
-          const v = (cur==='INR') ? PRICES[key] : Math.round(convINR(PRICES[key],cur));
-          el.textContent = fmt(cur,v);
+          const key = map[el.dataset.pkg]; el.textContent = fmt(cur, convINR(PRICES[key],cur));
         });
       }
 
       currencySelect.value = localStorage.getItem('preferredCurrency') || 'INR';
-      treatmentSelect.addEventListener('change', updatePrice);
-      currencySelect.addEventListener('change', ()=>{ updatePrice(); updatePackages(); });
+      treatmentSelect.addEventListener('change', updateEstimate);
+      currencySelect.addEventListener('change', ()=>{ updateEstimate(); updatePackageBadges(); });
 
-      (async function init(){ await fetchRates(); updatePrice(); updatePackages(); })();
+      (async function init(){ await fetchRates(); updateEstimate(); updatePackageBadges(); })();
     })();
 
-    // Savings calculator
+    /* ---------- SAVINGS calculator (reuses cached FX so it never shows $0) ---------- */
     (function(){
       const HOME = {
         USA:{ALIGNERS:2500,BRACES:5500,IMPLANT:3200,VENEER:1000,RCT:1200,WHITEN:500,CUR:'USD'},
@@ -700,21 +735,17 @@
       const ourPrice=document.getElementById('ourPrice');
       const savingPct=document.getElementById('savingPct');
 
-      async function convertINRTo(cur, amount){
-        try{
-          const r = await fetch(`https://api.exchangerate.host/convert?from=INR&to=${cur}&amount=${amount}`);
-          const d = await r.json(); return Math.round(d.result||0);
-        }catch(e){ return 0; }
-      }
+      function getFX(){ try{ return JSON.parse(localStorage.getItem('fx_rates'))||{rates:{INR:1}}; }catch{ return {rates:{INR:1}}; } }
+      function convINR(inr,to){ const fx=getFX(); return to==='INR'?inr: inr*(fx.rates[to]||0); }
+      function fmt(cur, amt){ const loc=(cur==='INR')?'en-IN':'en-US'; return `${SYM[cur]||''} ${Math.round(amt).toLocaleString(loc)}`; }
 
-      async function update(){
+      function update(){
         const proc = saveProc.value, m = saveMarket.value;
-        const h = HOME[m]; const sym=SYM[h.CUR]||'';
-        const home=h[proc]; homePrice.textContent = `${sym} ${home.toLocaleString('en-US')}`;
-
-        const ours = await convertINRTo(h.CUR, INR[proc]);
-        ourPrice.textContent = `${sym} ${ours.toLocaleString('en-US')}`;
-
+        const h = HOME[m]; const cur=h.CUR;
+        const home = h[proc];
+        const ours = convINR(INR[proc], cur);
+        homePrice.textContent = fmt(cur, home);
+        ourPrice.textContent  = fmt(cur, ours);
         const pct = Math.max(0, Math.round((1 - (ours/home)) * 100));
         savingPct.textContent = `${pct}% potential saving`;
       }
@@ -727,12 +758,12 @@
     (function(){
       const slides = document.querySelector('#carousel .slides');
       const dots   = Array.from(document.querySelectorAll('#dots .dot'));
-      let idx=0; function go(i){ idx=(i + dots.length)%dots.length; slides.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,k)=>d.classList.toggle('is-active',k===idx)); }
+      let idx=0; function go(i){ idx=(i + dots.length)%dots.length; slides.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,k)=>d.style.background = k===idx ? '#0e7fa8' : '#c9d8e6'); }
       setInterval(()=>go(idx+1), 4500);
     })();
   </script>
 
-  <!-- SCHEMA -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -771,7 +802,7 @@
       {"@type":"Question","name":"Can aligner treatment be finished with only two trips?","acceptedAnswer":{"@type":"Answer","text":"Often yes. We start with scans and planning, deliver first sets within ~5–10 days, and schedule virtual checks. A second trip finalizes refinements if needed."}},
       {"@type":"Question","name":"Do you help with visa letters?","acceptedAnswer":{"@type":"Answer","text":"Yes, we issue appointment confirmation letters with clinic details and itinerary once you share passport info and tentative dates."}},
       {"@type":"Question","name":"How accurate is the currency conversion?","acceptedAnswer":{"@type":"Answer","text":"We use a public mid-market feed that auto-refreshes. Your bank’s settlement rate and fees may differ slightly."}},
-      {"@type":"Question","name":"Is post-treatment care available after I return?","acceptedAnswer":{"@type":"Answer","text":"Yes—via scheduled tele-follow ups. For urgent care, we coordinate with a local dentist and share your clinical notes."}}
+      {"@type":"Question","name":"Is post-treatment care available after I return?","acceptedAnswer":{"@type":"Answer","text":"Yes—via scheduled tele follow-ups. For urgent care, we coordinate with a local dentist and share your clinical notes."}}
     ]
   }
   </script>
