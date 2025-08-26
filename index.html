@@ -185,23 +185,59 @@
   </aside>
 
   <main id="main" class="home-main container">
-    <!-- ===== INFO STRIP ===== -->
-    <section class="section">
-      <div class="info-strip">
-        <div class="info-card">
-          <div class="big" id="openStatus">Checking hours…</div>
-          <div class="muted small">Mon–Sat • 10:00–20:00 IST</div>
-        </div>
-        <div class="info-card">
-          <div class="big">~15 min</div>
-          <div class="muted small">Typical WhatsApp response time</div>
-        </div>
-        <div class="info-card">
-          <div class="big">Indira Nagar, Lucknow</div>
-          <div class="muted small">Shop 6, Javed Market, near Aurobindo Park (226016)</div>
-        </div>
+  <!-- ===== INFO STRIP (responsive, colorful) ===== -->
+<section class="section kpi-section" aria-labelledby="kpi-title">
+  <h2 id="kpi-title" class="visually-hidden">Clinic quick information</h2>
+
+  <div class="kpis" role="list">
+    <!-- Open/Close -->
+    <article class="kpi-card kpi-open" role="listitem" aria-live="polite" id="kpiOpenCard">
+      <div class="kpi-icon" aria-hidden="true">
+        <!-- clock -->
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v6l3 2"></path>
+        </svg>
       </div>
-    </section>
+      <div class="kpi-body">
+        <p class="kpi-title" id="openStatus">Checking hours…</p>
+        <p class="kpi-sub">Mon–Sat • 10:00–20:00 IST</p>
+      </div>
+    </article>
+
+    <!-- Reply time -->
+    <article class="kpi-card kpi-reply" role="listitem">
+      <div class="kpi-icon" aria-hidden="true">
+        <!-- chat -->
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+        </svg>
+      </div>
+      <div class="kpi-body">
+        <p class="kpi-title">~15 min</p>
+        <p class="kpi-sub">Typical WhatsApp response time</p>
+      </div>
+    </article>
+
+    <!-- Map / Address -->
+    <a class="kpi-card kpi-map" role="listitem"
+       href="https://www.google.com/maps?q=Smiles%20%26%20Braces%20Dental%20Clinic%20Lucknow"
+       target="_blank" rel="noopener">
+      <div class="kpi-icon" aria-hidden="true">
+        <!-- pin -->
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 21s7-4.35 7-11a7 7 0 0 0-14 0c0 6.65 7 11 7 11z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </div>
+      <div class="kpi-body">
+        <p class="kpi-title">Indira Nagar, Lucknow</p>
+        <p class="kpi-sub">Shop 6, Javed Market, near Aurobindo Park (226016)</p>
+      </div>
+      <span class="kpi-cta">Open map →</span>
+    </a>
+  </div>
+</section>
 
     <!-- ===== MINI PRICE WIDGET (live rates) ===== -->
     <section class="section glass">
@@ -611,5 +647,50 @@
       (async()=>{await fetchRates(); update();})();
     })();
   </script>
+  <script>
+  (function(){
+    const el = document.getElementById('openStatus');
+    const card = document.getElementById('kpiOpenCard');
+    if(!el || !card) return;
+
+    const nowIST = () => new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+    const fmt = (h,m=0)=>`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} IST`;
+
+    function update(){
+      const d = nowIST();
+      const day = d.getDay();         // 0 Sun .. 6 Sat
+      const h = d.getHours() + d.getMinutes()/60;
+      const openH = 10, closeH = 20;
+      const isWorkday = (day>=1 && day<=6); // Mon–Sat
+
+      if(isWorkday && h>=openH && h<closeH){
+        el.textContent = `Open now (till ${fmt(closeH)})`;
+        card.classList.remove('is-closed');
+      }else{
+        // compute next open day/time
+        let daysToAdd = 0, nextDay = day, nextDate = d;
+        function advanceOne(){
+          nextDate.setDate(nextDate.getDate()+1);
+          nextDay = nextDate.getDay();
+        }
+        nextDate = nowIST();
+        if(day===0 || h>=closeH){      // Sunday or after 20:00
+          do { advanceOne(); } while(!(nextDay>=1 && nextDay<=6));
+        } else if(h<openH){            // before 10:00 same day
+          /* same date */
+        }
+        const opensWhen = (day>=1 && day<=6 && h<openH) ? d : nextDate;
+        const label = (opensWhen.toDateString()===d.toDateString()) ? 'today' :
+                      opensWhen.toLocaleDateString('en-IN', {weekday:'short'});
+        el.textContent = `Closed now (opens ${label} ${fmt(openH)})`;
+        card.classList.add('is-closed');
+      }
+    }
+    update();
+    // Refresh roughly every minute
+    setInterval(update, 60*1000);
+  })();
+</script>
+
 </body>
 </html>
