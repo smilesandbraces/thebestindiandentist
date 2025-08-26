@@ -391,3 +391,92 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 @media (min-width: 481px) and (max-width: 768px){
   .topbar .tz-badge{ font-size: .9rem; padding: 7px 11px; }
 }
+/* Hide headings for screen-readers only */
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* KPI – mobile-first horizontal carousel with snap */
+.kpi-section .kpis{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:2px 2px 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.kpi-section .kpi-card{
+  scroll-snap-align:start;
+  flex:0 0 80%;
+  min-width:260px;
+  max-width:420px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:10px;
+  padding:14px;
+  border-radius:18px;
+  border:1px solid rgba(2,29,59,.06);
+  box-shadow:0 8px 22px rgba(2,29,59,.06);
+  color:#0b1b2a;
+  position:relative;
+}
+
+/* Icon bubble */
+.kpi-section .kpi-icon{
+  display:grid; place-items:center;
+  width:42px; height:42px;
+  border-radius:12px;
+  color:#0b1b2a;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(2,29,59,.06);
+}
+
+/* Typo */
+.kpi-section .kpi-title{
+  margin:0 0 2px 0;
+  font-weight:800;
+  font-size:clamp(18px,3.4vw,22px);
+  line-height:1.2;
+}
+.kpi-section .kpi-sub{
+  margin:0;
+  font-size:.95rem;
+  opacity:.8;
+}
+
+/* Link card affordance */
+.kpi-section .kpi-card.kpi-map{ text-decoration:none }
+.kpi-section .kpi-cta{
+  position:absolute; right:12px; bottom:10px;
+  font-size:.9rem; font-weight:600; opacity:.8;
+}
+
+/* Colorful backgrounds */
+.kpi-open{
+  background:linear-gradient(135deg,#e8fff2 0%,#d7fff4 100%);
+  border-color:#b7f1de;
+}
+.kpi-reply{
+  background:linear-gradient(135deg,#e9f7ff 0%,#d9efff 100%);
+  border-color:#bfe3ff;
+}
+.kpi-map{
+  background:linear-gradient(135deg,#f3e9ff 0%,#eadcff 100%);
+  border-color:#ddc6ff;
+}
+
+/* When closed, tint red a bit */
+.kpi-open.is-closed{
+  background:linear-gradient(135deg,#ffe9ea 0%,#ffe0e5 100%);
+  border-color:#ffd1d8;
+}
+
+/* Desktop/tablet: switch to grid 3-up */
+@media (min-width: 900px){
+  .kpi-section .kpis{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:14px;
+    overflow:visible;
+  }
+  .kpi-section .kpi-card{ flex:initial; min-width:0 }
+}
