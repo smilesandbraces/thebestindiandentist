@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="index,follow"/>
 
-  <!-- SEO -->
-  <title>Smiles & Braces Dental Clinic | Dr. Vikram Jeet Singh, Orthodontist in Lucknow</title>
-  <meta name="description" content="Comfort-first orthodontics and comprehensive dentistry in Lucknow by Dr. Vikram Jeet Singh (BDS, MDS). Braces, clear aligners, implants, veneers, root canal therapy & emergency care with transparent pricing and live world clocks."/>
+  <!-- SEO (short, focused) -->
+  <title>Smiles & Braces Dental Clinic, Lucknow | Orthodontist</title>
+  <meta name="description" content="Comfort-first orthodontics and dentistry in Lucknow by Dr. Vikram Jeet Singh (BDS, MDS). Braces, aligners, implants & emergency care with clear timelines and prices."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/"/>
 
   <!-- Social cards -->
@@ -29,14 +29,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css"/>
 
-  <!-- Page-only styles (premium visuals + motion) -->
+  <!-- Page-only styles -->
   <style>
+    :root{
+      --brand:#0e7fa8; --ink:#0d2235; --muted:#6b7b8a; --card:#ffffff;
+      --stroke:#e6edf4; --shadow:0 14px 40px rgba(9,31,59,.08);
+    }
+    .h0{font-size:clamp(28px,4vw,44px);letter-spacing:-.01em;line-height:1.1}
+    .h2{font-size:clamp(22px,2.4vw,28px);line-height:1.25}
+    .h3{font-size:clamp(18px,2vw,22px);line-height:1.25}
+    .kicker{font-weight:600;letter-spacing:.02em;color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;box-shadow:var(--shadow)}
+    .pad-s{padding:10px 12px}.pad-m{padding:16px 18px}.pad-l{padding:22px 24px}
+    .muted{color:var(--muted)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .small{font-size:.92rem}
+
     /* ===== Top status bar with live time ===== */
     .topbar{background:#0e7fa8;color:#e9fbff}
     .topbar .container{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:6px 0;font-size:.95rem}
     .clock{display:flex;gap:10px;align-items:center;white-space:nowrap}
     .dot{width:6px;height:6px;border-radius:50%;background:#c2f1ff;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
-    .tz-badge{display:inline-flex;gap:6px;align-items:center;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 8px}
+    .tz-badge{display:inline-flex;gap:6px;align-items:center;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 8px;text-decoration:none;color:#e9fbff}
+    .tz-badge:focus-visible{outline:2px solid #fff;outline-offset:2px}
     .tz-badge strong{font-variation-settings:'wght' 700}
 
     /* ===== Hero (photo + parallax + soft orbs) ===== */
@@ -62,16 +77,24 @@
     @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
     .home-hero__inner .kicker{display:inline-block;margin-bottom:6px;padding:6px 10px;border:1px solid var(--stroke,#e2e8f0);border-radius:999px;background:#fff}
     .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
-    .trust-badges li{border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:6px 10px}
 
-    /* ===== Info strips ===== */
-    .info-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .info-card{background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
-    .info-card .big{font-weight:800;font-size:clamp(22px,4vw,34px)}
-    .muted{opacity:.72}
+    /* Hero highlight chips */
+    .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;padding:0}
+    .trust-badges li{list-style:none;border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:6px 10px}
+    .trust-badges li span{display:block;text-align:center}
 
-    /* ===== Services grid (uses your /assets/images/services/*) ===== */
+    /* KPI cards (Open now / reply time / map) */
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .kpi-card{display:flex;align-items:flex-start;gap:10px;border-radius:16px;border:1px solid var(--stroke);padding:12px;background:linear-gradient(180deg,#ffffff,#fbfeff)}
+    .kpi-card .kpi-icon{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#eef8ff;color:#0e7fa8;border:1px solid #d9eefb}
+    .kpi-title{font-weight:800;font-size:clamp(18px,3vw,22px);margin:0}
+    .kpi-sub{margin:.25rem 0 0 0;color:var(--muted)}
+    .kpi-cta{font-weight:600;color:#0e7fa8}
+    .kpi-card.is-closed{background:linear-gradient(180deg,#fff5f5,#fff)}
+    @media (max-width:920px){.kpis{grid-template-columns:1fr}}
+    a.kpi-card{text-decoration:none;color:inherit}
+
+    /* Services grid */
     .service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
     .service-grid > article{grid-column:span 3;background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
     .service-grid > article:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(2,29,59,.08)}
@@ -81,12 +104,12 @@
     @media (max-width:780px){.service-grid > article{grid-column:span 6}}
     @media (max-width:560px){.service-grid > article{grid-column:span 12}}
 
-    /* ===== Bento About (photo + copy) ===== */
+    /* About bento */
     .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(16px,3vw,28px)}
     @media (max-width:1024px){.about-grid{grid-template-columns:1fr}}
     .about-photo img{width:100%;height:auto;border-radius:12px}
 
-    /* ===== World clock ===== */
+    /* Clocks */
     .clock-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
     .clock-card{grid-column:span 3;background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
     .clock-card h4{margin:0 0 4px 0}
@@ -97,12 +120,12 @@
     @media (max-width:780px){.clock-card{grid-column:span 6}}
     @media (max-width:560px){.clock-card{grid-column:span 12}}
 
-    /* ===== Mini Price Widget ===== */
+    /* Mini price widget */
     .mini-price{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .mini-price .panel{background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
     @media (max-width:680px){.mini-price{grid-template-columns:1fr}}
 
-    /* ===== Testimonials carousel ===== */
+    /* Carousel */
     .carousel{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--stroke,#e2e8f0)}
     .slides{display:flex;transition:transform .6s ease}
     .slide{min-width:100%;padding:16px;background:#fff}
@@ -110,7 +133,7 @@
     .dot{width:8px;height:8px;border-radius:50%;background:#c9d8e6}
     .dot.is-active{background:#0e7fa8}
 
-    /* ===== Reveal animation ===== */
+    /* Reveal */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
     .reveal.is-visible{opacity:1;transform:none}
     :target{scroll-margin-top:96px}
@@ -122,12 +145,17 @@
   <!-- ===== TOP BAR: live date/time (IST) ===== -->
   <div class="topbar" aria-label="Live time and contact">
     <div class="container">
-      <div class="clock">
+      <div class="clock" aria-label="Time and date">
         <span class="dot" aria-hidden="true"></span>
         <span id="istNow" class="tz-badge"><strong>Lucknow (IST)</strong> <span class="mono" id="istTime">—:—</span></span>
         <span class="tz-badge"><strong>Today</strong> <span class="mono" id="todayDate">—</span></span>
       </div>
-   
+      <div class="clock" aria-label="Quick actions">
+        <a class="tz-badge" href="tel:+919565321625"><strong>Call</strong> +91&nbsp;95653&nbsp;21625</a>
+        <a class="tz-badge" href="https://wa.me/919565321625" target="_blank" rel="noopener"><strong>WhatsApp</strong> now</a>
+      </div>
+    </div>
+  </div> <!-- ✅ properly closes topbar -->
 
   <!-- ===== HEADER / NAVBAR ===== -->
   <header class="header">
@@ -165,12 +193,11 @@
       </div>
 
       <ul class="trust-badges" aria-label="Highlights">
-  <li><span>15+ Years Experience</span></li>
-  <li><span>4.9★ Patient Satisfaction</span></li>
-  <li><span>Digital Planning &amp; 3D Diagnostics</span></li>
-  <li><span>International Patients Welcome</span></li>
-</ul>
-
+        <li><span>15+ Years Experience</span></li>
+        <li><span>4.9★ Patient Satisfaction</span></li>
+        <li><span>Digital Planning &amp; 3D Diagnostics</span></li>
+        <li><span>International Patients Welcome</span></li>
+      </ul>
     </div>
   </section>
 
@@ -181,62 +208,57 @@
   </aside>
 
   <main id="main" class="home-main container">
-  <!-- ===== INFO STRIP (responsive, colorful) ===== -->
-<section class="section kpi-section" aria-labelledby="kpi-title">
-  <h2 id="kpi-title" class="visually-hidden">Clinic quick information</h2>
+    <!-- ===== KPI INFO STRIP ===== -->
+    <section class="section kpi-section" aria-labelledby="kpi-title">
+      <h2 id="kpi-title" class="visually-hidden">Clinic quick information</h2>
 
-  <div class="kpis" role="list">
-    <!-- Open/Close -->
-    <article class="kpi-card kpi-open" role="listitem" aria-live="polite" id="kpiOpenCard">
-      <div class="kpi-icon" aria-hidden="true">
-        <!-- clock -->
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="9"></circle>
-          <path d="M12 7v6l3 2"></path>
-        </svg>
-      </div>
-      <div class="kpi-body">
-        <p class="kpi-title" id="openStatus">Checking hours…</p>
-        <p class="kpi-sub">Mon–Sat • 10:00–20:00 IST</p>
-      </div>
-    </article>
+      <div class="kpis" role="list">
+        <!-- Open/Close -->
+        <article class="kpi-card kpi-open" role="listitem" aria-live="polite" id="kpiOpenCard">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle><path d="M12 7v6l3 2"></path>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title" id="openStatus">Checking hours…</p>
+            <p class="kpi-sub">Mon–Sat • 10:00–20:00 IST</p>
+          </div>
+        </article>
 
-    <!-- Reply time -->
-    <article class="kpi-card kpi-reply" role="listitem">
-      <div class="kpi-icon" aria-hidden="true">
-        <!-- chat -->
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
-        </svg>
-      </div>
-      <div class="kpi-body">
-        <p class="kpi-title">~15 min</p>
-        <p class="kpi-sub">Typical WhatsApp response time</p>
-      </div>
-    </article>
+        <!-- Reply time -->
+        <article class="kpi-card kpi-reply" role="listitem">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title">~15 min</p>
+            <p class="kpi-sub">Typical WhatsApp response time</p>
+          </div>
+        </article>
 
-    <!-- Map / Address -->
-    <a class="kpi-card kpi-map" role="listitem"
-       href="https://www.google.com/maps?q=Smiles%20%26%20Braces%20Dental%20Clinic%20Lucknow"
-       target="_blank" rel="noopener">
-      <div class="kpi-icon" aria-hidden="true">
-        <!-- pin -->
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 21s7-4.35 7-11a7 7 0 0 0-14 0c0 6.65 7 11 7 11z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
+        <!-- Map / Address -->
+        <a class="kpi-card kpi-map" role="listitem"
+           href="https://www.google.com/maps?q=Smiles%20%26%20Braces%20Dental%20Clinic%20Lucknow"
+           target="_blank" rel="noopener">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 21s7-4.35 7-11a7 7 0 0 0-14 0c0 6.65 7 11 7 11z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title">Indira Nagar, Lucknow</p>
+            <p class="kpi-sub">Shop 6, Javed Market, near Aurobindo Park (226016)</p>
+          </div>
+          <span class="kpi-cta">Open map →</span>
+        </a>
       </div>
-      <div class="kpi-body">
-        <p class="kpi-title">Indira Nagar, Lucknow</p>
-        <p class="kpi-sub">Shop 6, Javed Market, near Aurobindo Park (226016)</p>
-      </div>
-      <br>
-      <span class="kpi-cta">Open map →</span>
-    </a>
-  </div>
-</section>
+    </section>
 
-    <!-- ===== MINI PRICE WIDGET (live rates) ===== -->
+    <!-- ===== MINI PRICE WIDGET ===== -->
     <section class="section glass">
       <div class="section-head">
         <h2>Quick price check</h2>
@@ -279,7 +301,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES (arranged to your repo images) ===== -->
+    <!-- ===== SERVICES ===== -->
     <section class="section glass">
       <div class="section-head">
         <h2>What we do best</h2>
@@ -287,7 +309,6 @@
       </div>
 
       <div class="service-grid">
-        <!-- Uses files in /assets/images/services/ (per your screenshot) -->
         <article class="reveal">
           <img src="/assets/images/services/clearaligners.jpg" alt="Clear aligners planned digitally"/>
           <div class="pad"><h3>Clear Aligners</h3><p>Discreet, removable trays with digital planning for precise movement.</p></div>
@@ -414,7 +435,7 @@
       <div class="dots" id="dots"><span class="dot is-active"></span><span class="dot"></span><span class="dot"></span></div>
     </section>
 
-    <!-- ===== BLOG PREVIEW (uses your /assets/images/blog/*) ===== -->
+    <!-- ===== BLOG PREVIEW ===== -->
     <section class="section glass">
       <div class="section-head">
         <h2>From our blog</h2>
@@ -464,7 +485,7 @@
     </div>
   </footer>
 
-  <!-- ===== JSON-LD (Dentist + Website Search + FAQ) ===== -->
+  <!-- ===== JSON-LD ===== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -504,7 +525,7 @@
   }
   </script>
 
-  <!-- ===== JS: menu, year, parallax, reveal, open-hours, clocks, carousel, mini price ===== -->
+  <!-- ===== JS: menu, year, parallax, reveal, time, open-hours, clocks, carousel, mini price ===== -->
   <script>
     // Mobile menu + year
     document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
@@ -531,68 +552,45 @@
       tick(); setInterval(tick,1000);
     })();
 
-    // Open/Closed status (Mon-Sat 10:00–20:00 IST)
+    // Open/Closed status (Mon–Sat 10:00–20:00 IST) with next-open hint
     (function(){
-      const el=document.getElementById('openStatus');
-      function check(){
-        const now=new Date();
-        const opts={timeZone:'Asia/Kolkata',hour12:false,hour:'2-digit',weekday:'short'};
-        const fmt=new Intl.DateTimeFormat('en-GB',opts);
-        const parts = fmt.formatToParts(now).reduce((a,p)=>{a[p.type]=p.value;return a;},{});
-        const hr=parseInt(parts.hour,10);
-        const day=parts.weekday; // Mon..Sun (short)
-        const openDays=['Mon','Tue','Wed','Thu','Fri','Sat'];
-        const isOpen=openDays.includes(day) && hr>=10 && hr<20;
-        el.textContent=isOpen?'Open now (till 20:00 IST)':'Closed now';
+      const el = document.getElementById('openStatus');
+      const card = document.getElementById('kpiOpenCard');
+      const nowIST = () => new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+      const fmt = (h,m=0)=>`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} IST`;
+
+      function update(){
+        const d = nowIST();
+        const day = d.getDay();            // 0 Sun .. 6 Sat
+        const h = d.getHours() + d.getMinutes()/60;
+        const openH = 10, closeH = 20;
+        const workday = (day>=1 && day<=6);
+
+        if(workday && h>=openH && h<closeH){
+          el.textContent = `Open now (till ${fmt(closeH)})`;
+          card.classList.remove('is-closed');
+        }else{
+          let next = nowIST();
+          if(!workday || h>=closeH){ // next workday
+            do { next.setDate(next.getDate()+1); } while(!(next.getDay()>=1 && next.getDay()<=6));
+          }
+          const label = (workday && h<openH) ? 'today' :
+                        next.toLocaleDateString('en-IN',{weekday:'short'});
+          el.textContent = `Closed now (opens ${label} ${fmt(openH)})`;
+          card.classList.add('is-closed');
+        }
       }
-      check(); setInterval(check,60000);
+      update(); setInterval(update,60000);
     })();
 
     // World clock cards
     (function(){
-      const zones=[
-        {label:'Lucknow', tz:'Asia/Kolkata'},
-        {label:'New York', tz:'America/New_York'},
-        {label:'London',   tz:'Europe/London'},
-        {label:'Dubai',    tz:'Asia/Dubai'},
-        {label:'Singapore',tz:'Asia/Singapore'},
-        {label:'Sydney',   tz:'Australia/Sydney'},
-        {label:'Beijing',  tz:'Asia/Shanghai'},
-        {label:'UTC',      tz:'UTC'}
-      ];
+      const zones=[{label:'Lucknow', tz:'Asia/Kolkata'},{label:'New York', tz:'America/New_York'},{label:'London', tz:'Europe/London'},{label:'Dubai', tz:'Asia/Dubai'},{label:'Singapore',tz:'Asia/Singapore'},{label:'Sydney',tz:'Australia/Sydney'},{label:'Beijing',tz:'Asia/Shanghai'},{label:'UTC',tz:'UTC'}];
       const grid=document.getElementById('worldClock');
-      const cards=zones.map(z=>{
-        const card=document.createElement('div');
-        card.className='clock-card reveal';
-        card.innerHTML=`<h4>${z.label}</h4>
-          <div class="time mono" data-tz="${z.tz}">—:—</div>
-          <div class="sub small muted">
-            <span class="mono" data-date="${z.tz}">—</span>
-            <button class="copy" type="button" data-copy="${z.tz}">Copy</button>
-          </div>`;
-        grid.appendChild(card); io.observe(card); return card;
-      });
-
-      function update(){
-        const now=new Date();
-        cards.forEach(c=>{
-          const tz=c.querySelector('.time').dataset.tz;
-          const time=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(now);
-          const date=new Intl.DateTimeFormat('en-GB',{timeZone:tz,weekday:'short',day:'2-digit',month:'short'}).format(now);
-          c.querySelector('.time').textContent=time;
-          c.querySelector('[data-date]').textContent=date;
-        });
-      }
+      const cards=zones.map(z=>{const c=document.createElement('div');c.className='clock-card reveal';c.innerHTML=`<h4>${z.label}</h4><div class="time mono" data-tz="${z.tz}">—:—</div><div class="sub small muted"><span class="mono" data-date="${z.tz}">—</span><button class="copy" type="button" data-copy="${z.tz}">Copy</button></div>`;grid.appendChild(c);io.observe(c);return c;});
+      function update(){const now=new Date();cards.forEach(c=>{const tz=c.querySelector('.time').dataset.tz;const time=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(now);const date=new Intl.DateTimeFormat('en-GB',{timeZone:tz,weekday:'short',day:'2-digit',month:'short'}).format(now);c.querySelector('.time').textContent=time;c.querySelector('[data-date]').textContent=date;});}
       update(); setInterval(update,1000);
-
-      // Copy time
-      grid.addEventListener('click',e=>{
-        const btn=e.target.closest('[data-copy]'); if(!btn) return;
-        const tz=btn.getAttribute('data-copy'); const now=new Date();
-        const time=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(now);
-        navigator.clipboard?.writeText(`${time} (${tz})`);
-        btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);
-      });
+      grid.addEventListener('click',e=>{const btn=e.target.closest('[data-copy]'); if(!btn) return; const tz=btn.getAttribute('data-copy'); const now=new Date(); const t=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(now); navigator.clipboard?.writeText(`${t} (${tz})`); btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);});
     })();
 
     // Testimonials carousel
@@ -603,7 +601,7 @@
       setInterval(()=>go(idx+1),4500);
     })();
 
-    // ===== Mini Price (multi-source live rates) =====
+    // Mini price (multi-source live rates)
     (function(){
       const PRICES={CLEANING:2200, ALIGNERS:85000, BRACES:65000, IMPLANT:28000, RCT:5500, VENEER:12000, WHITEN:9500};
       const SYMBOL={INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
@@ -614,80 +612,15 @@
         {name:'open.er-api.com',   make:(base)=>`https://open.er-api.com/v6/latest/${base}`,                           pick:d=>({date:d.time_last_update_utc, rates:d.rates})}
       ];
       let rates={base:'INR', date:'offline', source:'fallback', rates:{INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018}};
-
-      const tSel=document.getElementById('mpTreat');
-      const cSel=document.getElementById('mpCurr');
-      const out=document.getElementById('mpOut');
-      const meta=document.getElementById('mpMeta');
-
-      async function fetchRates(){
-        for(const s of SOURCES){
-          try{
-            const url=s.make('INR', WANTED);
-            const res=await fetch(url,{mode:'cors'});
-            const data=await res.json();
-            const pick=s.pick(data);
-            if(pick && pick.rates && Object.keys(pick.rates).length){
-              rates={base:'INR', date: pick.date || new Date().toISOString().slice(0,10), source:s.name, rates:pick.rates};
-              meta.textContent=`Source: ${s.name} • ${rates.date}`;
-              return;
-            }
-          }catch(e){/*next*/}
-        }
-        meta.textContent='Live feed unavailable, using fallback.';
-      }
-      function fmt(cur, val){const sym=SYMBOL[cur]||'';const loc=(cur==='INR')?'en-IN':'en-US';return `${sym} ${val.toLocaleString(loc,{maximumFractionDigits:0})}`;}
-      function convINR(inr, to){return to==='INR'?inr:inr*(rates.rates[to]||0);}
+      const tSel=document.getElementById('mpTreat'), cSel=document.getElementById('mpCurr'), out=document.getElementById('mpOut'), meta=document.getElementById('mpMeta');
+      async function fetchRates(){for(const s of SOURCES){try{const url=s.make('INR', WANTED);const res=await fetch(url,{mode:'cors'});const data=await res.json();const pick=s.pick(data);if(pick && pick.rates && Object.keys(pick.rates).length){rates={base:'INR', date: pick.date || new Date().toISOString().slice(0,10), source:s.name, rates:pick.rates};meta.textContent=`Source: ${s.name} • ${rates.date}`;return;}}catch(e){}} meta.textContent='Live feed unavailable, using fallback.';}
+      function fmt(cur,val){const sym=SYMBOL[cur]||'';const loc=(cur==='INR')?'en-IN':'en-US';return `${sym} ${val.toLocaleString(loc,{maximumFractionDigits:0})}`;}
+      function convINR(inr,to){return to==='INR'?inr:inr*(rates.rates[to]||0);}
       function update(){const inr=PRICES[tSel.value]||0;const cur=cSel.value;const v=(cur==='INR')?inr:Math.round(convINR(inr,cur)); out.textContent=fmt(cur,v); localStorage.setItem('preferredCurrency',cur);}
       cSel.value=localStorage.getItem('preferredCurrency')||'INR';
       tSel.addEventListener('change',update); cSel.addEventListener('change',update);
       (async()=>{await fetchRates(); update();})();
     })();
   </script>
-  <script>
-  (function(){
-    const el = document.getElementById('openStatus');
-    const card = document.getElementById('kpiOpenCard');
-    if(!el || !card) return;
-
-    const nowIST = () => new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
-    const fmt = (h,m=0)=>`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} IST`;
-
-    function update(){
-      const d = nowIST();
-      const day = d.getDay();         // 0 Sun .. 6 Sat
-      const h = d.getHours() + d.getMinutes()/60;
-      const openH = 10, closeH = 20;
-      const isWorkday = (day>=1 && day<=6); // Mon–Sat
-
-      if(isWorkday && h>=openH && h<closeH){
-        el.textContent = `Open now (till ${fmt(closeH)})`;
-        card.classList.remove('is-closed');
-      }else{
-        // compute next open day/time
-        let daysToAdd = 0, nextDay = day, nextDate = d;
-        function advanceOne(){
-          nextDate.setDate(nextDate.getDate()+1);
-          nextDay = nextDate.getDay();
-        }
-        nextDate = nowIST();
-        if(day===0 || h>=closeH){      // Sunday or after 20:00
-          do { advanceOne(); } while(!(nextDay>=1 && nextDay<=6));
-        } else if(h<openH){            // before 10:00 same day
-          /* same date */
-        }
-        const opensWhen = (day>=1 && day<=6 && h<openH) ? d : nextDate;
-        const label = (opensWhen.toDateString()===d.toDateString()) ? 'today' :
-                      opensWhen.toLocaleDateString('en-IN', {weekday:'short'});
-        el.textContent = `Closed now (opens ${label} ${fmt(openH)})`;
-        card.classList.add('is-closed');
-      }
-    }
-    update();
-    // Refresh roughly every minute
-    setInterval(update, 60*1000);
-  })();
-</script>
-
 </body>
 </html>
