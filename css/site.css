@@ -297,3 +297,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 @media (max-width:520px){
   .timeline.coin .tl::before{ left:-26px; width:24px; height:24px; font-size:12px; }
 }
+/* === International: Timeline coin spacing overrides === */
+#journey .timeline.coin { padding-left: 44px; }   /* pushes content away from the coin */
+#journey .timeline.coin .tl { padding-left: 8px; } /* extra breathing room per step */
+#journey .timeline.coin .tl h3 { margin-left: 4px; } /* tiny nudge for the title */
