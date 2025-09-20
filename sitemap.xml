@@ -1,18 +1,86 @@
-User-agent: *
-Allow: /
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Primary pages -->
+  <url>
+    <loc>https://www.bestindiandentist.com/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/index.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/about.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/services.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/blog.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/contact.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/international.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
 
-# Block internal or duplicate pages (uncomment if you have these)
-# Disallow: /private/
-# Disallow: /tmp/
-# Disallow: /drafts/
+  <!-- Blog posts (detail pages) -->
+  <url>
+    <loc>https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.70</priority>
+  </url>
 
-# Block common spammy bots
-User-agent: AhrefsBot
-Disallow: /
-User-agent: SemrushBot
-Disallow: /
-User-agent: MJ12bot
-Disallow: /
-
-# Sitemap location
-Sitemap: https://bestindiandentist.com/sitemap.xml
+  <!-- Policies / utility pages -->
+  <url>
+    <loc>https://www.bestindiandentist.com/privacy.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/terms.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/thank-you.html</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+</urlset>
