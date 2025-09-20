@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.bestindiandentist.com/</loc></url>
-  <url><loc>https://www.bestindiandentist.com/services.html</loc></url>
-  <url><loc>https://www.bestindiandentist.com/about.html</loc></url>
-  <url><loc>https://www.bestindiandentist.com/contact.html</loc></url>
-  <url><loc>https://www.bestindiandentist.com/blog.html</loc></url>
-</urlset>
+User-agent: *
+Allow: /
 
+# Block internal or duplicate pages (uncomment if you have these)
+# Disallow: /private/
+# Disallow: /tmp/
+# Disallow: /drafts/
+
+# Block common spammy bots
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://bestindiandentist.com/sitemap.xml
