@@ -711,3 +711,86 @@ img, svg, video { max-width: 100%; height: auto; }
 .accent{color:#0e7fa8;}
 .price-table{width:100%; border-collapse:collapse; margin-top:10px; font-size:.9rem;}
 .price-table th, .price-table td{border-bottom:1px solid #e6edf4; padding:8px; text-align:left;}
+/* ===== Ultra-pro pricing layout ===== */
+.section-head--pro{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.section-head--pro .section-tag{margin-top:0}
+
+.pro-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+@media (max-width:980px){ .pro-grid{ grid-template-columns:1fr; } }
+
+.card-pro{
+  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.98));
+  border:1px solid var(--stroke);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 12px 32px rgba(2,29,59,.08);
+}
+.card-pro__title{font-weight:700; font-size:1.15rem; margin-bottom:6px}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 230px;
+  gap:12px;
+  margin:12px 0 6px;
+  align-items:end;
+}
+.form-col{display:flex; flex-direction:column; gap:6px}
+.form-col--narrow{max-width:230px}
+.label{color:var(--muted); font-size:.85rem}
+.input-pro{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--stroke);
+  border-radius:10px;
+  background:#f9fbfd;
+}
+.input-pro:focus{outline:none; border-color:#bcd8ea; box-shadow:0 0 0 3px rgba(14,127,168,.12)}
+
+.output-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:12px 0 6px;
+}
+@media (max-width:640px){
+  .form-row{ grid-template-columns:1fr; }
+  .form-col--narrow{max-width:none}
+  .output-grid{ grid-template-columns:1fr; }
+}
+
+.output-tile{
+  background:#fff;
+  border:1px solid var(--stroke);
+  border-radius:12px;
+  padding:12px;
+}
+.kicker{font-weight:600; letter-spacing:.02em; color:var(--muted)}
+
+.price-xl{font-size:clamp(26px,3.6vw,36px); line-height:1; margin-top:4px}
+.price-lg{font-size:clamp(20px,3vw,28px); line-height:1; margin-top:4px}
+
+.saving-banner{
+  background:linear-gradient(180deg,#eafff3,#f7fffb);
+  border:1px solid #cdeedf;
+  border-radius:14px;
+  padding:14px;
+  margin-top:10px;
+}
+
+/* table polish */
+.pro-details{margin-top:8px}
+.pro-table{font-size:.95rem}
+.pro-table th,.pro-table td{padding:10px 8px}
+.ta-r{text-align:right}
+
+/* numbers look tight and aligned */
+.mono{font-variant-numeric:tabular-nums;}
+
+/* optional: make cards feel “fixed-width” on large screens */
+@media (min-width:1200px){
+  .card-pro{ padding:24px; }
+}
