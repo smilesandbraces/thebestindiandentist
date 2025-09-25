@@ -666,3 +666,24 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* (Optional) general media safety */
 img, svg, video { max-width: 100%; height: auto; }
+/* --- World clock layout + cards --- */
+.clock-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+.clock-card{
+  background:#fff;
+  border:1px solid var(--stroke, #e6edf4);
+  border-radius:14px;
+  padding:12px;
+  box-shadow:var(--shadow, 0 10px 30px rgba(2,29,59,.06));
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .2s ease;
+}
+.clock-card:hover{ transform:translateY(-2px); box-shadow:0 14px 40px rgba(9,31,59,.08); }
+.clock-city{ font-weight:700; margin-bottom:4px; }
+.clock-time{ font-size:clamp(20px,3.6vw,28px); letter-spacing:.2px; }
+.clock-date{ color:var(--muted, #6b7b8a); font-size:.9rem; margin-top:2px; }
+.clock-copied{ color:#2e7d32; font-size:.85rem; margin-top:6px; display:none; }
+.clock-card.copied .clock-copied{ display:block; }
