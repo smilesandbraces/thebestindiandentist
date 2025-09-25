@@ -839,3 +839,15 @@ img, svg, video { max-width: 100%; height: auto; }
   background:#cfd8e3; cursor:pointer; transition:background .3s
 }
 .dot.is-active{background:#0e7fa8}
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+.slide {
+  min-width: 100%;
+  padding: 10px;
+}
