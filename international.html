@@ -214,37 +214,38 @@
       </figure>
     </section>
 
- <!-- ===== PRICING (Redesigned) ===== -->
+ <!-- ===== PRICING (Ultra-pro layout) ===== -->
 <section id="pricing" class="section reveal">
-  <div class="section-head center">
-    <h2 class="h2">💳 Pricing &amp; Live Currency Checker</h2>
+  <div class="section-head section-head--pro">
+    <h2 class="h2">Pricing &amp; Live Currency Checker</h2>
     <span class="section-tag">Transparent • Global • Travel-friendly</span>
   </div>
 
-  <div class="pricing-frame-grid">
+  <div class="pro-grid">
     <!-- Estimator -->
-    <div class="pricing-card glass">
-      <h3 class="h3">Quick Estimate</h3>
-      <p class="muted small">Select a treatment &amp; preferred currency.</p>
+    <div class="card-pro">
+      <div class="card-pro__title">Quick Estimate</div>
+      <p class="muted small">Select a treatment and preferred currency.</p>
 
-      <div class="price-form">
-        <label>
-          <span class="small muted">Treatment</span>
-          <select id="treatmentSelect" class="input fancy-input">
-            <option value="CONSULT">🩺 First Consultation — ₹700</option>
-            <option value="CLEANING">✨ Professional Cleaning — ₹2,200</option>
-            <option value="ALIGNERS">😬 Clear Aligners (per arch) — from ₹85,000</option>
-            <option value="BRACES">🦷 Braces — from ₹65,000</option>
-            <option value="IMPLANT">🔩 Dental Implant (base) — from ₹28,000</option>
-            <option value="RCT">🪥 Root Canal — from ₹5,500</option>
-            <option value="VENEER">🪞 Veneer (per tooth) — from ₹12,000</option>
-            <option value="WHITEN">🌟 Whitening — from ₹9,500</option>
+      <!-- aligned form row -->
+      <div class="form-row">
+        <label class="form-col">
+          <span class="label">Treatment</span>
+          <select id="treatmentSelect" class="input input-pro">
+            <option value="CONSULT">First Consultation — ₹700</option>
+            <option value="CLEANING">Professional Cleaning — ₹2,200</option>
+            <option value="ALIGNERS">Clear Aligners (per arch) — from ₹85,000</option>
+            <option value="BRACES">Metal/Ceramic Braces — from ₹65,000</option>
+            <option value="IMPLANT">Dental Implant (base) — from ₹28,000</option>
+            <option value="RCT">Root Canal (single tooth) — from ₹5,500</option>
+            <option value="VENEER">Porcelain Veneer (per tooth) — from ₹12,000</option>
+            <option value="WHITEN">Teeth Whitening — from ₹9,500</option>
           </select>
         </label>
 
-        <label>
-          <span class="small muted">Currency</span>
-          <select id="currencySelect" class="input fancy-input">
+        <label class="form-col form-col--narrow">
+          <span class="label">Currency</span>
+          <select id="currencySelect" class="input input-pro mono">
             <option value="USD">USD — $</option>
             <option value="EUR">EUR — €</option>
             <option value="GBP">GBP — £</option>
@@ -256,74 +257,75 @@
         </label>
       </div>
 
-      <div class="price-output">
-        <div class="output-box">
-          <div class="muted small">Estimated Price</div>
-          <div id="convertedPrice" class="h2 accent">—</div>
+      <!-- outputs aligned -->
+      <div class="output-grid">
+        <div class="output-tile">
+          <div class="kicker">Estimated Price</div>
+          <div id="convertedPrice" class="price-xl mono">—</div>
         </div>
-        <div class="output-box">
-          <div class="muted small">Live Rate Source</div>
-          <div id="rateMeta" class="mono small">Loading…</div>
+        <div class="output-tile">
+          <div class="kicker">Live Rate Source</div>
+          <div id="rateMeta" class="mono small muted">Loading…</div>
         </div>
       </div>
 
-      <details class="preview-card">
-        <summary><strong>📋 See base price list (INR)</strong></summary>
-        <table class="price-table">
-          <thead><tr><th>Treatment</th><th>From (₹)</th></tr></thead>
+      <details class="preview-card pro-details">
+        <summary><strong>See base price list (INR)</strong></summary>
+        <table class="price-table pro-table" aria-label="Base price list in INR">
+          <thead><tr><th>Treatment</th><th class="ta-r">From (₹)</th><th>Notes</th></tr></thead>
           <tbody id="basePriceTable"></tbody>
         </table>
       </details>
     </div>
 
     <!-- Savings -->
-    <div class="pricing-card glass">
-      <h3 class="h3">💰 Savings vs Home Country</h3>
-      <p class="muted small">Compare treatment costs with your home market.</p>
+    <div class="card-pro">
+      <div class="card-pro__title">Savings vs Home Country</div>
+      <p class="muted small">Compare with typical prices in your market.</p>
 
-      <div class="price-form">
-        <label>
-          <span class="small muted">Procedure</span>
-          <select id="saveProc" class="input fancy-input">
-            <option value="ALIGNERS">Clear Aligners</option>
-            <option value="BRACES">Braces</option>
-            <option value="IMPLANT">Implant</option>
-            <option value="VENEER">Veneer</option>
+      <div class="form-row">
+        <label class="form-col">
+          <span class="label">Procedure</span>
+          <select id="saveProc" class="input input-pro">
+            <option value="ALIGNERS">Clear Aligners (per arch)</option>
+            <option value="BRACES">Braces (case)</option>
+            <option value="IMPLANT">Single Implant (base)</option>
+            <option value="VENEER">Porcelain Veneer (per tooth)</option>
             <option value="RCT">Root Canal</option>
-            <option value="WHITEN">Whitening</option>
+            <option value="WHITEN">Teeth Whitening</option>
           </select>
         </label>
-        <label>
-          <span class="small muted">Market</span>
-          <select id="saveMarket" class="input fancy-input">
-            <option value="USA">🇺🇸 USA</option>
-            <option value="UK">🇬🇧 UK</option>
-            <option value="EU">🇪🇺 EU</option>
-            <option value="AUS">🇦🇺 Australia</option>
-            <option value="GCC">🌍 GCC</option>
+
+        <label class="form-col form-col--narrow">
+          <span class="label">Market</span>
+          <select id="saveMarket" class="input input-pro">
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="EU">EU</option>
+            <option value="AUS">Australia</option>
+            <option value="GCC">GCC</option>
           </select>
         </label>
       </div>
 
-      <div class="price-output">
-        <div class="output-box">
-          <div class="muted small">Typical Home Price</div>
-          <div id="homePrice" class="h3">—</div>
+      <div class="output-grid">
+        <div class="output-tile">
+          <div class="kicker">Typical Home Price</div>
+          <div id="homePrice" class="price-lg mono">—</div>
         </div>
-        <div class="output-box">
-          <div class="muted small">Our Price</div>
-          <div id="ourPrice" class="h3">—</div>
+        <div class="output-tile">
+          <div class="kicker">Our Price</div>
+          <div id="ourPrice" class="price-lg mono">—</div>
         </div>
       </div>
 
-      <div class="saving-box">
-        <div class="muted small">Indicative Saving</div>
-        <div id="savingPct" class="h2 accent">—</div>
+      <div class="saving-banner">
+        <div class="kicker">Indicative Saving</div>
+        <div id="savingPct" class="price-xl mono">—</div>
       </div>
     </div>
   </div>
 </section>
-
 
     <!-- PACKAGES (image-first) -->
     <section id="packages" class="section reveal">
