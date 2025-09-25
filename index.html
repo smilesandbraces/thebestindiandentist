@@ -612,5 +612,61 @@
       (async()=>{await fetchRates(); update();})();
     })();
   </script>
+  <script>
+  // === MINI PRICE WIDGET SCRIPT ===
+  (function(){
+    const PRICES = {
+      CLEANING:2200,
+      ALIGNERS:85000,
+      BRACES:65000,
+      IMPLANT:28000,
+      RCT:5500,
+      VENEER:12000,
+      WHITEN:9500
+    };
+    const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
+
+    const mpTreat = document.getElementById('mpTreat');
+    const mpCurr  = document.getElementById('mpCurr');
+    const mpOut   = document.getElementById('mpOut');
+    const mpMeta  = document.getElementById('mpMeta');
+
+    let FX = {base:'INR', rates:{INR:1}, source:'offline', date:'—'};
+
+    async function fetchRates(){
+      try {
+        const res = await fetch("https://api.frankfurter.app/latest?from=INR&to=USD,EUR,GBP,CNY,AED,AUD");
+        const data = await res.json();
+        FX = {base:'INR', rates:{...data.rates, INR:1}, source:'frankfurter.app', date:data.date};
+        mpMeta.textContent = `Source: ${FX.source} • ${FX.date}`;
+      } catch {
+        mpMeta.textContent = "Using offline fallback rates";
+        FX.rates = {INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.086, AED:0.044, AUD:0.018};
+      }
+      update();
+    }
+
+    function fmt(cur, amt){
+      const sym = SYMBOL[cur] || '';
+      const loc = (cur==='INR')?'en-IN':'en-US';
+      return `${sym} ${Math.round(amt).toLocaleString(loc)}`;
+    }
+
+    function convINR(inr, to){ return inr * (FX.rates[to] || 1); }
+
+    function update(){
+      const t = mpTreat.value;
+      const cur = mpCurr.value;
+      const inr = PRICES[t];
+      mpOut.textContent = fmt(cur, convINR(inr, cur));
+    }
+
+    mpTreat.addEventListener('change', update);
+    mpCurr.addEventListener('change', update);
+
+    fetchRates();
+  })();
+</script>
+
 </body>
 </html>
