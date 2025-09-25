@@ -617,3 +617,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* Optional: ensure hero chips don’t collide with sticky header when using #hash links */
 :target{ scroll-margin-top: 90px; }
+/* --- Page safety: prevent accidental horizontal scrolling --- */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Root cause: the testimonial strip is wider than the viewport */
+.carousel { position: relative; width: 100%; overflow: hidden; }
+
+/* (Optional) general media safety */
+img, svg, video { max-width: 100%; height: auto; }
