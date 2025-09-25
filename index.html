@@ -667,6 +667,77 @@
     fetchRates();
   })();
 </script>
+<script>
+(function(){
+  // Where to render
+  const grid = document.getElementById('worldClock');
+  if(!grid) return;
+
+  // Pick the zones you want to display
+  const ZONES = [
+    {label:'Lucknow (IST)', tz:'Asia/Kolkata'},
+    {label:'London (UK)', tz:'Europe/London'},
+    {label:'New York (ET)', tz:'America/New_York'},
+    {label:'Dubai (GST)', tz:'Asia/Dubai'},
+    {label:'Berlin (CET/CEST)', tz:'Europe/Berlin'},
+    {label:'Singapore', tz:'Asia/Singapore'},
+    {label:'Sydney (AET)', tz:'Australia/Sydney'},
+    {label:'Toronto (ET)', tz:'America/Toronto'}
+  ];
+
+  // Create cards
+  const cards = ZONES.map(z => {
+    const el = document.createElement('div');
+    el.className = 'clock-card';
+    el.innerHTML = `
+      <div class="clock-city">${z.label}</div>
+      <div class="clock-time" data-time></div>
+      <div class="clock-date" data-date></div>
+      <div class="clock-copied">Copied ✓</div>
+    `;
+    // Click to copy current time text
+    el.addEventListener('click', () => {
+      try{
+        const t = el.querySelector('[data-time]').textContent;
+        const d = el.querySelector('[data-date]').textContent;
+        navigator.clipboard?.writeText(`${z.label}: ${t} — ${d}`);
+        el.classList.add('copied');
+        setTimeout(()=>el.classList.remove('copied'), 1200);
+      }catch(_){}
+    });
+    grid.appendChild(el);
+    return {el, tz:z.tz};
+  });
+
+  // Formatters (24-hour vs 12-hour: change hour12 to true if you prefer)
+  function fmtTime(zone){
+    try{
+      return new Intl.DateTimeFormat([], {
+        hour:'2-digit', minute:'2-digit', second:'2-digit',
+        hour12:false, timeZone:zone
+      }).format(new Date());
+    }catch{ return '—'; }
+  }
+  function fmtDate(zone){
+    try{
+      return new Intl.DateTimeFormat([], {
+        weekday:'short', year:'numeric', month:'short', day:'2-digit',
+        timeZone:zone
+      }).format(new Date());
+    }catch{ return ''; }
+  }
+
+  // Update all clocks every second
+  function tick(){
+    for(const c of cards){
+      c.el.querySelector('[data-time]').textContent = fmtTime(c.tz);
+      c.el.querySelector('[data-date]').textContent = fmtDate(c.tz);
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 
 </body>
 </html>
