@@ -589,7 +589,7 @@
 }
 </style>
 
-<!-- 🌍 Row 1: Big Intro with Refined Background -->
+<!-- 🌍 Row 1: Big Intro with Snow White Text -->
 <div class="intl-row hero-intro">
   <div class="overlay"></div>
   <div class="intro-text">
@@ -618,11 +618,10 @@
   box-shadow: 0 14px 36px rgba(0,0,0,0.15);
 }
 
-/* Light overlay for visibility */
 .hero-intro .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(14,127,168,0.25));
+  background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)); /* subtle darkening */
   z-index: 1;
 }
 
@@ -638,36 +637,38 @@
   line-height: 1.65;
   max-width: 920px;
   margin: 0 auto;
-  color: #0d2235; /* darker text for readability */
+  color: #fff; /* snow white text */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.85); /* black shadow for visibility */
 }
 
 .big-accent {
   font-weight: 800;
-  color: #07344f; /* deep navy */
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.9);
 }
 
 .soft {
-  color: #345b7e; /* soft slate blue */
-  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.85);
 }
 
 .highlight {
   font-weight: 700;
-  color: #c68a00; /* gold */
-  background: rgba(255, 223, 128, 0.2);
-  padding: 2px 6px;
-  border-radius: 6px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,1);
 }
 
 .savings {
   font-weight: 700;
-  color: #007f5f; /* mint green */
-  background: rgba(0, 180, 130, 0.15);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
   padding: 4px 10px;
   border-radius: 6px;
   font-style: normal;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.95);
 }
 </style>
+
 
   <!-- Row 2: Affordability Breakdown -->
   <div class="intl-row highlight-row">
