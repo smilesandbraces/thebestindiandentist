@@ -635,27 +635,157 @@
 </style>
 
 
-  <!-- Row 3: Comparison Row -->
-  <div class="intl-row">
-    <h3>📊 Lucknow vs other cities</h3>
-    <div class="comparison-table">
-      <div class="row head">
-        <div>Item</div><div>Lucknow</div><div>Delhi/Mumbai</div><div>Dubai</div>
-      </div>
-      <div class="row">
-        <div>Dental Consultation</div><div>₹500–1,000</div><div>₹1,500–3,000</div><div>₹5,000–8,000</div>
-      </div>
-      <div class="row">
-        <div>Hotel (per night)</div><div>₹3.5k–7k</div><div>₹6k–12k</div><div>₹12k–25k</div>
-      </div>
-      <div class="row">
-        <div>Meals (per day)</div><div>₹400–900</div><div>₹800–1,800</div><div>₹2,000–4,000</div>
-      </div>
-      <div class="row">
-        <div>Airport–Clinic Taxi</div><div>₹400–700</div><div>₹700–1,200</div><div>₹1,800–3,200</div>
-      </div>
-    </div>
+ <!-- 📊 COST COMPARISON: LUCKNOW VS OTHER CITIES -->
+<section id="city-compare" class="section reveal">
+  <div class="section-head center">
+    <h2 class="h2">📊 Lucknow vs Major Cities — Cost Snapshot</h2>
+    <p class="muted small">Indicative mid-range prices for common items (local currencies). Actuals vary by case, clinic & season.</p>
   </div>
+
+  <div class="table-wrap">
+    <table class="price-table" aria-describedby="compare-note">
+      <caption class="visually-hidden">Cost comparison of dental care, travel and stay: Lucknow vs Delhi/Mumbai, Dubai, London, New York</caption>
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Lucknow <span class="unit">₹</span></th>
+          <th scope="col">Delhi / Mumbai <span class="unit">₹</span></th>
+          <th scope="col">Dubai <span class="unit">AED</span></th>
+          <th scope="col">London <span class="unit">£</span></th>
+          <th scope="col">New York <span class="unit">$</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Dental Consultation</th>
+          <td>₹500–1,000</td>
+          <td>₹1,500–3,000</td>
+          <td>AED 200–400</td>
+          <td>£60–120</td>
+          <td>$120–250</td>
+        </tr>
+        <tr>
+          <th scope="row">Hotel (per night)</th>
+          <td>₹3,500–7,000</td>
+          <td>₹6,000–12,000</td>
+          <td>AED 300–700</td>
+          <td>£140–280</td>
+          <td>$180–350</td>
+        </tr>
+        <tr>
+          <th scope="row">Meals (per day)</th>
+          <td>₹400–900</td>
+          <td>₹800–1,800</td>
+          <td>AED 60–120</td>
+          <td>£25–45</td>
+          <td>$30–55</td>
+        </tr>
+        <tr>
+          <th scope="row">Airport → Clinic Taxi</th>
+          <td>₹400–700</td>
+          <td>₹700–1,200</td>
+          <td>AED 60–120</td>
+          <td>£45–85</td>
+          <td>$50–80</td>
+        </tr>
+        <tr>
+          <th scope="row">Root Canal (single tooth)</th>
+          <td>₹5,500–9,000</td>
+          <td>₹7,000–15,000</td>
+          <td>AED 800–1,500</td>
+          <td>£350–650</td>
+          <td>$700–1,200</td>
+        </tr>
+        <tr>
+          <th scope="row">Dental Implant (base)</th>
+          <td>₹28,000–45,000</td>
+          <td>₹35,000–65,000</td>
+          <td>AED 3,500–7,000</td>
+          <td>£1,800–2,500</td>
+          <td>$2,500–4,000</td>
+        </tr>
+        <tr>
+          <th scope="row">Clear Aligners (per arch, start)</th>
+          <td>₹85,000–1,35,000</td>
+          <td>₹1,25,000–2,25,000</td>
+          <td>AED 6,000–12,000</td>
+          <td>£2,500–4,500</td>
+          <td>$3,000–6,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p id="compare-note" class="small muted center" style="margin-top:10px">
+    Figures are illustrative mid-market ranges for typical, mid-range choices. Exchange rates & seasons impact totals.
+  </p>
+</section>
+
+<style>
+/* Container */
+.table-wrap{
+  max-width: 1100px;
+  margin: 16px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(2,29,59,.08);
+  border: 1px solid #e6edf4;
+}
+
+/* Table */
+.price-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.98rem;
+}
+.price-table thead th{
+  background: linear-gradient(180deg,#f7fbff,#eef6ff);
+  color:#0d2235;
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e6edf4;
+  font-weight: 700;
+  position: sticky;
+  top: 0; /* helps if container scrolls on mobile */
+  z-index: 1;
+}
+.price-table th .unit{
+  color:#0e7fa8;
+  font-weight: 700;
+  font-size: .9em;
+  margin-left: 2px;
+}
+.price-table tbody th{
+  font-weight: 700;
+  color:#0d2235;
+  background: #fcfeff;
+}
+.price-table th, .price-table td{
+  padding: 14px 16px;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+.price-table tbody tr:nth-child(odd){ background: #fcfeff; }
+.price-table tbody tr:hover{ background:#f2f8ff; }
+
+/* Typographic helpers */
+.muted{color:#5e6b78}
+.small{font-size:.92rem}
+.center{text-align:center}
+.visually-hidden{
+  position:absolute!important;
+  height:1px;width:1px;overflow:hidden;
+  clip:rect(1px,1px,1px,1px);white-space:nowrap;
+}
+
+/* Mobile: horizontal scroll with soft hint */
+@media (max-width: 860px){
+  .table-wrap{ overflow-x:auto; border-radius:12px; }
+  .price-table{ min-width: 720px; } /* keep columns readable */
+}
+</style>
+
 
   <!-- Row 4: Experience -->
   <div class="intl-row">
