@@ -540,19 +540,108 @@
 
 <!-- 🌎 INTERNATIONAL PATIENTS: WHY LUCKNOW -->
 <section id="intl-patients" class="section reveal">
-  <div class="section-head center">
-    <h2 class="h2">Why International Patients Choose Lucknow for Dental Care</h2>
-    <p class="section-tag">World-class treatment • Affordable stays • Enriching experience</p>
-  </div>
+ <div class="section-head center intl-head">
+  <h2 class="h2">
+    <span class="accent">🌍 Why International Patients</span><br/>
+    Choose <span class="highlight">Lucknow</span> for Dental Care
+  </h2>
+  <p class="section-tag">World-class Treatment • Affordable Stays • Enriching Experience</p>
+</div>
 
-  <!-- Row 1: Big Intro -->
-  <div class="intl-row">
-    <p class="lead">
-      <strong>Lucknow is one of the best-kept secrets for international dental patients</strong>. 
-      You receive specialist-level orthodontic and dental care at global standards — but with 
-      total trip costs that are <em>30–60% lower</em> than India’s metros and foreign hubs.
-    </p>
-  </div>
+<!-- ✨ Aesthetic CSS -->
+<style>
+.intl-head {
+  margin-bottom: 40px;
+  position: relative;
+}
+.intl-head h2 {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: #0d2235;
+}
+.intl-head .accent {
+  font-weight: 700;
+  color: #0e7fa8;
+  background: linear-gradient(90deg,#0e7fa8,#31b2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intl-head .highlight {
+  color: #0b5582;
+  position: relative;
+}
+.intl-head .highlight::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,#0e7fa8,#63caff);
+  border-radius: 2px;
+  opacity: .7;
+}
+.intl-head .section-tag {
+  font-size: 1.05rem;
+  margin-top: 12px;
+  color: #546778;
+  letter-spacing: .5px;
+}
+</style>
+
+  <!-- 🌍 Row 1: Big Intro -->
+<div class="intl-row intro-highlight">
+  <p class="lead">
+    <strong class="big-accent">Lucknow is one of the best-kept secrets for international dental patients</strong>.  
+    Experience <span class="highlight">specialist-level orthodontic & dental care</span> at world-class standards —  
+    with total trip costs that are <em class="savings">30–60% lower</em> than India’s metros and global hubs.
+  </p>
+</div>
+
+<!-- ✨ Premium CSS -->
+<style>
+.intro-highlight {
+  background: linear-gradient(135deg, #f5fbff, #ffffff);
+  border-left: 6px solid #0e7fa8;
+  padding: 32px 28px;
+  margin: 28px 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  position: relative;
+}
+.intro-highlight::before {
+  content: "★";
+  position: absolute;
+  top: 18px; left: -18px;
+  font-size: 1.8rem;
+  color: #0e7fa8;
+  opacity: 0.7;
+}
+.intro-highlight .lead {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.6;
+  color: #102437;
+  margin: 0;
+}
+.big-accent {
+  font-weight: 800;
+  color: #0b5582;
+  background: linear-gradient(90deg, #0e7fa8, #31b2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.highlight {
+  font-weight: 700;
+  color: #0e7fa8;
+}
+.savings {
+  font-weight: 700;
+  color: #008c45; /* green accent */
+  background: rgba(0, 140, 69, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+</style>
 
   <!-- Row 2: Affordability Breakdown -->
   <div class="intl-row highlight-row">
