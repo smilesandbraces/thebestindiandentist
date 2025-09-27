@@ -589,59 +589,66 @@
 }
 </style>
 
-  <!-- 🌍 Row 1: Big Intro with Background -->
-<div class="intl-row intro-highlight hero-intro">
+<!-- 🌍 Row 1: Big Intro with Refined Background -->
+<div class="intl-row hero-intro">
   <div class="overlay"></div>
-  <center></center><p class="lead">
-    <strong class="big-accent">Lucknow is one of the best-kept secrets for international dental patients</strong>.  
-    Experience <span class="highlight">specialist-level orthodontic & dental care</span> at world-class standards —  
-    with total trip costs that are <em class="savings">30–60% lower</em> than India’s metros and global hubs.
-  </p></center>
+  <div class="intro-text">
+    <p class="lead">
+      <strong class="big-accent">Lucknow is one of the best-kept secrets for international dental patients.</strong>  
+      Receive <span class="highlight">specialist-level orthodontic & dental care</span> at world-class standards —  
+      with total trip costs that are <em class="savings">30–60% lower</em> than India’s metros and global hubs.
+    </p>
+  </div>
 </div>
 
-<!-- ✨ Premium CSS with background -->
+<!-- ✨ Premium CSS -->
 <style>
 .hero-intro {
   position: relative;
-  background: url("/assets/images/lucknow-skyline.jpg") center/cover no-repeat;
+  background: url("/assets/images/lucknow-skyline.jpg") center center/cover no-repeat;
   border-radius: 18px;
   overflow: hidden;
-  margin: 40px 0;
-  padding: 50px 40px;
+  margin: 40px auto;
+  padding: 60px 40px;
+  max-width: 1100px;
   color: #fff;
-  text-align: center;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.2);
 }
 .hero-intro .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(14,127,168,0.85), rgba(2,29,59,0.75));
+  background: linear-gradient(135deg, rgba(14,127,168,0.55), rgba(2,29,59,0.55));
   z-index: 1;
 }
-.hero-intro .lead {
+.hero-intro .intro-text {
   position: relative;
   z-index: 2;
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  text-align: center;
+}
+.hero-intro .lead {
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+  font-weight: 500;
   line-height: 1.65;
-  margin: 0;
-  color: #f9fcff;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fefefe;
 }
 .big-accent {
   font-weight: 800;
-  background: linear-gradient(90deg,#ffffff,#c2f1ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 .highlight {
   font-weight: 700;
-  color: #ffe27a;
+  color: #ffd86b; /* warm golden */
 }
 .savings {
   font-weight: 700;
-  color: #7cffc2;
-  background: rgba(255,255,255,0.1);
-  padding: 3px 8px;
-  border-radius: 8px;
+  color: #00d49f; /* teal green */
+  background: rgba(0, 212, 159, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-style: normal;
 }
 </style>
 
