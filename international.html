@@ -535,124 +535,102 @@
 }
 </style>
 
- <!-- 💰 Affordability Advantage -->
-<section class="affordability section reveal" aria-labelledby="afford-title">
+<!-- 🌟 Affordability Advantage -->
+<section id="affordability" class="section reveal">
   <div class="section-head center">
-    <h2 id="afford-title" class="h2">💰 The Affordability Advantage</h2>
-    <p class="section-tag">Global standards • Fraction of the cost • Seamless trip planning</p>
+    <h2 class="h2">💰 The Affordability Advantage</h2>
+    <p class="section-tag">
+      Global standards • Fraction of the cost • Seamless trip planning
+    </p>
   </div>
 
-  <div class="afford-row">
-    <!-- 1. Treatment -->
-    <article class="afford-item">
-      <header><span class="pill">1</span><h3>🦷 Treatment</h3></header>
-      <p>
-        Receive <strong>BDS/MDS specialist care</strong> comparable to India’s metros and
-        international hubs—at a fraction of the <strong>consultation</strong> and <strong>chair-time</strong> fees.
-      </p>
-    </article>
+  <div class="afford-grid">
+    <!-- Row 1 -->
+    <div class="afford-item">
+      <span class="badge">1</span>
+      <h4>🦷 Treatment</h4>
+      <p>Receive <strong>BDS/MDS specialist care</strong> comparable to India’s metros and international hubs — at a fraction of the <em>consultation</em> and <em>chair-time</em> fees.</p>
+    </div>
 
-    <!-- 2. Accommodation -->
-    <article class="afford-item">
-      <header><span class="pill">2</span><h3>🏨 Accommodation</h3></header>
-      <p>
-        Safe <strong>mid-range to upscale hotels</strong> in Indira Nagar & Gomti Nagar from
-        <strong>₹3,500–7,000/night</strong>, close to the clinic and dining.
-      </p>
-    </article>
+    <div class="afford-item">
+      <span class="badge">2</span>
+      <h4>🏨 Accommodation</h4>
+      <p>Safe <strong>mid-range to upscale hotels</strong> in Indira Nagar & Gomti Nagar from <strong>₹3,500–7,000/night</strong>, close to the clinic and dining.</p>
+    </div>
 
-    <!-- 3. Food -->
-    <article class="afford-item">
-      <header><span class="pill">3</span><h3>🍲 Food</h3></header>
-      <p>
-        Relish <strong>authentic Awadhi kebabs & chaat</strong> plus hygienic international options—
-        delicious, varied, and <strong>pocket-friendly</strong>.
-      </p>
-    </article>
+    <div class="afford-item">
+      <span class="badge">3</span>
+      <h4>🍲 Food</h4>
+      <p>Relish <strong>authentic Awadhi kebabs & chaat</strong> plus hygienic international restaurants — delicious, varied, and <em>pocket-friendly</em>.</p>
+    </div>
 
-    <!-- 4. Tourism -->
-    <article class="afford-item">
-      <header><span class="pill">4</span><h3>🌍 Tourism</h3></header>
-      <p>
-        Heritage monuments, gardens & bazaars with entry fees <em>5–10× lower</em> than global tourist hubs—
-        make it a <strong>memorable mini-vacation</strong>.
-      </p>
-    </article>
+    <!-- Row 2 -->
+    <div class="afford-item">
+      <span class="badge">4</span>
+      <h4>🌍 Tourism</h4>
+      <p>Heritage monuments, gardens & bazaars with entry fees <strong>5–10× lower</strong> than global tourist hubs — making it a <em>mini-vacation</em>.</p>
+    </div>
 
-    <!-- 5. Time-efficient Scheduling (NEW) -->
-    <article class="afford-item">
-      <header><span class="pill">5</span><h3>⏱️ Time-efficient Scheduling</h3></header>
-      <p>
-        <strong>Bundled appointments</strong> reduce days in town. Clear timelines and
-        <strong>same-day follow-ups</strong> keep your trip short and efficient.
-      </p>
-    </article>
+    <div class="afford-item">
+      <span class="badge">5</span>
+      <h4>⏱️ Time-efficient Scheduling</h4>
+      <p><strong>Bundled appointments</strong> reduce days in town. Clear timelines & <em>same-day follow-ups</em> ensure efficiency & comfort.</p>
+    </div>
 
-    <!-- 6. Connectivity & Local Transport (NEW) -->
-    <article class="afford-item">
-      <header><span class="pill">6</span><h3>🚖 Easy Connectivity</h3></header>
-      <p>
-        Short airport transfers, safe taxis, ride-hailing apps, and <strong>clinic-area stays</strong>
-        make moving around simple and affordable.
-      </p>
-    </article>
+    <div class="afford-item">
+      <span class="badge">6</span>
+      <h4>🚖 Easy Connectivity</h4>
+      <p>Short <strong>airport transfers</strong>, safe taxis, ride-hailing apps, and <em>clinic-area stays</em> make travel stress-free & affordable.</p>
+    </div>
   </div>
 </section>
 
-<!-- ✨ Premium CSS -->
+<!-- ✨ CSS -->
 <style>
-.affordability { margin: 56px auto; max-width: 1200px; }
-.afford-row {
+.afford-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(220px, 1fr));
-  gap: 22px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
 }
-@media (max-width: 1180px){ .afford-row{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 780px){ .afford-row{ grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px){ .afford-row{ grid-template-columns: 1fr; } }
-
-/* Tile aesthetic (soft, premium, not “boxy”) */
-.afford-item{
+.afford-item {
+  background: #fff;
+  border: 1px solid #e6edf4;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: all .3s ease;
   position: relative;
-  background:
-    linear-gradient(180deg, #ffffff, #fbfdff) padding-box,
-    linear-gradient(135deg, #e7f3ff, #e9fff7 60%, #fff0da) border-box;
-  border: 1px solid transparent;
-  border-radius: 16px;
-  padding: 18px 18px 20px;
-  box-shadow: 0 10px 26px rgba(6,29,59,.06);
-  transition: transform .28s ease, box-shadow .28s ease;
 }
-.afford-item:hover{ transform: translateY(-6px); box-shadow: 0 16px 36px rgba(6,29,59,.12); }
-
-.afford-item header{
-  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+.afford-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
-.afford-item h3{
-  margin:0; font-size:1.08rem; font-weight:800; color:#0e7fa8; letter-spacing:.2px;
+.afford-item h4 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #0d2235;
 }
-.afford-item p{
-  margin:0; font-size:.95rem; line-height:1.55; color:#24323f;
+.afford-item p {
+  font-size: .95rem;
+  color: #444;
+  line-height: 1.55;
 }
-.afford-item strong{ color:#0d2235; font-weight:700; }
-.afford-item em{ color:#08a072; font-weight:700; font-style:normal; }
-
-/* Number badge */
-.pill{
-  display:inline-grid; place-items:center;
-  width:26px; height:26px; border-radius:999px;
-  background: linear-gradient(135deg,#0e7fa8,#00c389);
-  color:#fff; font-size:.9rem; font-weight:800;
-  box-shadow: 0 4px 12px rgba(14,127,168,.25);
-}
-
-/* Section tag (subtle, smaller) */
-.section-tag{
-  font-size:.86rem; font-weight:600; letter-spacing:.6px;
-  margin-top:6px; display:inline-block; padding:2px 10px;
-  background: linear-gradient(90deg,#0e7fa8,#00c389,#ffb347);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+.badge {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  background: linear-gradient(135deg, #0e7fa8, #00c389);
+  color: #fff;
+  font-weight: 700;
+  font-size: .9rem;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 </style>
 
