@@ -906,3 +906,38 @@ img, svg, video { max-width: 100%; height: auto; }
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(9,31,59,0.08);
 }
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.city-grid .card {
+  background: linear-gradient(180deg,#ffffff,#f9fcff);
+  border: 1px solid var(--stroke, #e6edf4);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(9,31,59,.06);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.city-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(9,31,59,.1);
+}
+
+.hotel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hotel-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px dashed #dce3ec;
+}
+.hotel-list li:last-child { border-bottom: none; }
+.hotel-list strong {
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 6px;
+}
