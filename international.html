@@ -564,49 +564,39 @@
     <span class="accent">🌍 Why International Patients</span><br/>
     Choose <span class="highlight">Lucknow</span> for Dental Care
   </h2>
-  <p class="section-tag">World-class Treatment • Affordable Stays • Enriching Experience</p>
-</div>
+  <p class="section-tag">
+  Trusted by patients worldwide • Safe • Efficient • Professional
+</p>
 
-<!-- ✨ Aesthetic CSS -->
 <style>
-.intl-head {
-  margin-bottom: 40px;
-  position: relative;
-}
-.intl-head h2 {
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-  font-weight: 800;
-  line-height: 1.3;
-  color: #0d2235;
-}
-.intl-head .accent {
-  font-weight: 700;
-  color: #0e7fa8;
-  background: linear-gradient(90deg,#0e7fa8,#31b2ff);
+.section-tag {
+  font-size: 0.9rem; /* subtle size */
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin: 6px auto 0;
+  background: linear-gradient(90deg, #0e7fa8, #00c389, #ffb347);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.intl-head .highlight {
-  color: #0b5582;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.15);
   position: relative;
 }
-.intl-head .highlight::after {
+
+/* underline accent */
+.section-tag::after {
   content: "";
-  position: absolute;
-  left: 0; bottom: -6px;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg,#0e7fa8,#63caff);
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, #0e7fa8, #00c389, #ffb347);
+  margin: 6px auto 0;
   border-radius: 2px;
-  opacity: .7;
-}
-.intl-head .section-tag {
-  font-size: 1.05rem;
-  margin-top: 12px;
-  color: #546778;
-  letter-spacing: .5px;
 }
 </style>
+
 
 <!-- 🌍 Row 1: Big Intro with Snow White Text -->
 <div class="intl-row hero-intro">
