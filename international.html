@@ -535,28 +535,107 @@
 }
 </style>
 
-  <!-- Row 2: Affordability Breakdown -->
-  <div class="intl-row highlight-row">
-    <h3>💰 The affordability advantage</h3>
-    <div class="four-cols">
-      <div>
-        <h4>Treatment</h4>
-        <p>Same BDS/MDS specialist care as big metros, at a fraction of the consultation & chair-time fees.</p>
-      </div>
-      <div>
-        <h4>Accommodation</h4>
-        <p>Safe mid-to-upscale hotels in Indira Nagar & Gomti Nagar from ₹3,500–7,000 per night.</p>
-      </div>
-      <div>
-        <h4>Food</h4>
-        <p>Authentic Awadhi kebabs & chaat + international restaurants, all hygienic & pocket-friendly.</p>
-      </div>
-      <div>
-        <h4>Tourism</h4>
-        <p>Heritage monuments, parks & bazaars at entry fees <em>5–10× lower</em> than global tourist hubs.</p>
-      </div>
+ <!-- 💰 Affordability Advantage -->
+<section class="affordability section reveal">
+  <div class="section-head center">
+    <h2 class="h2">💰 The Affordability Advantage</h2>
+    <p class="section-tag">Global standards • Fraction of the cost • Complete experience</p>
+  </div>
+
+  <div class="afford-row">
+    <!-- Treatment -->
+    <div class="afford-item">
+      <h3>🦷 Treatment</h3>
+      <p>
+        Receive <strong>BDS/MDS specialist care</strong> at par with India’s metros & 
+        international hubs — but at a fraction of consultation and chair-time fees.
+      </p>
+    </div>
+
+    <!-- Accommodation -->
+    <div class="afford-item">
+      <h3>🏨 Accommodation</h3>
+      <p>
+        Safe <strong>mid-range to upscale hotels</strong> in Indira Nagar & Gomti Nagar 
+        from <strong>₹3,500–7,000/night</strong>, ensuring comfort and easy clinic access.
+      </p>
+    </div>
+
+    <!-- Food -->
+    <div class="afford-item">
+      <h3>🍲 Food</h3>
+      <p>
+        Relish <strong>authentic Awadhi kebabs & chaat</strong> alongside hygienic 
+        international restaurants — delicious and pocket-friendly.
+      </p>
+    </div>
+
+    <!-- Tourism -->
+    <div class="afford-item">
+      <h3>🌍 Tourism</h3>
+      <p>
+        Explore heritage monuments, gardens & bazaars with entry fees 
+        <em>5–10× lower</em> than global tourist destinations.
+      </p>
     </div>
   </div>
+</section>
+
+<!-- ✨ Premium CSS -->
+<style>
+.affordability {
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+.afford-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.afford-item {
+  background: linear-gradient(180deg,#ffffff,#f9fcff);
+  border: 1px solid #e6edf4;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.afford-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+.afford-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #0e7fa8;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.afford-item p {
+  font-size: .95rem;
+  color: #444;
+  line-height: 1.55;
+}
+
+.afford-item strong {
+  color: #0d2235;
+}
+
+.afford-item em {
+  color: #00a779;
+  font-weight: 600;
+}
+</style>
+
 
   <!-- Row 3: Comparison Row -->
   <div class="intl-row">
