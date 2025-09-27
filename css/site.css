@@ -941,3 +941,82 @@ img, svg, video { max-width: 100%; height: auto; }
   font-weight: 700;
   margin-right: 6px;
 }
+/* ===== Premium CTA (scoped) ===== */
+#intl-patients .cta-premium{
+  --bg1:#f7fbff; --bg2:#ffffff; --glass:#ffffffcc; --ink:#0d2235; --muted:#4a5a6a;
+  --brand:#0e7fa8; --brand-2:#12b3a0; --line:#e6eef6; --wh:#0b6a35;
+  background:
+    radial-gradient(1200px 600px at 10% -20%, #dff2ff 0%, transparent 60%),
+    linear-gradient(90deg, var(--bg1), var(--bg2));
+  border:1px solid #eef3f7; border-radius:16px; padding:28px; text-align:center;
+  box-shadow: 0 12px 40px rgba(13,34,53,.06);
+  position: relative; overflow: hidden;
+}
+#intl-patients .cta-premium::after{
+  content:""; position:absolute; inset:-40% -10% auto auto; height:240px; width:240px;
+  background: radial-gradient(closest-side, rgba(18,179,160,.12), transparent 70%);
+  transform: translate(10%, -10%); pointer-events:none;
+}
+#intl-patients .cta-wrap{ max-width: 980px; margin: 0 auto; }
+#intl-patients .cta-head h3{
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 1.8rem);
+  color: var(--ink); margin: 0 0 8px; letter-spacing:.2px;
+}
+#intl-patients .cta-lead{
+  color: var(--muted); font-size: clamp(1rem, .95rem + .2vw, 1.1rem);
+  margin: 0 auto 14px; max-width: 760px; line-height: 1.65;
+}
+
+/* Buttons */
+#intl-patients .cta-actions{
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:12px;
+}
+#intl-patients .btn{
+  display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px;
+  text-decoration:none; font-weight:700; letter-spacing:.2px; transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  border:1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(13,34,53,.06);
+  will-change: transform;
+}
+#intl-patients .btn svg{ width:18px; height:18px; flex:0 0 18px; }
+#intl-patients .btn:hover{ transform: translateY(-2px); box-shadow:0 12px 26px rgba(13,34,53,.12); }
+
+#intl-patients .btn-whatsapp{
+  background: linear-gradient(180deg,#e9fff0,#d8fde7); color: var(--wh);
+  border-color:#c9f2d7;
+}
+#intl-patients .btn-primary{
+  background: linear-gradient(180deg,#0e7fa8,#0d6f91); color:#fff; border-color:#0e7fa8;
+}
+#intl-patients .btn-primary:hover{ background: linear-gradient(180deg,#1190bf,#0e7fa8); }
+#intl-patients .btn-ghost{
+  background:#fff; color:#0b5582; border-color:#d7e7f4;
+}
+
+/* Trust bar */
+#intl-patients .cta-trust{
+  margin: 18px auto 0; display:grid; gap:10px;
+  grid-template-columns: repeat(4, minmax(140px,1fr));
+  background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35));
+  border: 1px solid #e8f0f7; border-radius: 14px; padding: 10px;
+  backdrop-filter: blur(4px);
+}
+#intl-patients .trust-item{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding: 8px 10px; border-radius:12px; border:1px dashed #e2ebf4;
+}
+#intl-patients .ti-k{ font-weight:700; color:#0b3a5a; }
+#intl-patients .ti-v{ font-size:.9rem; color:#577089; }
+
+/* Note */
+#intl-patients .cta-note{
+  margin-top: 14px; display:flex; align-items:center; gap:10px; justify-content:center;
+  color:#2a445b; background: linear-gradient(90deg, #f0fbff, #f7fffd);
+  border:1px solid #dff1fa; border-radius:12px; padding:10px 12px;
+}
+#intl-patients .cta-note svg{ width:18px; height:18px; fill:#0e7fa8; }
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce){
+  #intl-patients .btn{ transition:none; }
+}
