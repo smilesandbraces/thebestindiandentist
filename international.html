@@ -589,161 +589,83 @@
 }
 </style>
 
-<!-- 🌍 International Intro (SEO-friendly, light theme) -->
-<section id="intl-intro" class="intl-row hero-intro" aria-labelledby="intl-intro-title">
-  <!-- Real image element (better for SEO than CSS-only bg) -->
-  <figure class="hero-bg" aria-hidden="true">
-    <picture>
-      <source srcset="/assets/images/lucknow-skyline.jpg" type="image/webp">
-      <img
-        src="/assets/images/lucknow-skyline.jpg"
-        alt="Lucknow skyline with heritage domes at sunset"
-        loading="lazy"
-        fetchpriority="low"
-        width="1600" height="500">
-    </picture>
-  </figure>
-
-  <div class="overlay" aria-hidden="true"></div>
-
+<!-- 🌍 Row 1: Big Intro with Refined Background -->
+<div class="intl-row hero-intro">
+  <div class="overlay"></div>
   <div class="intro-text">
-    <h2 id="intl-intro-title" class="visually-hidden">
-      International Dental Care in Lucknow — World-class Treatment at Lower Total Trip Costs
-    </h2>
-
     <p class="lead">
-      <strong class="big-accent">
-        Lucknow is one of the best-kept secrets for international dental patients.
-      </strong>
-      <span class="soft">Receive</span>
-      <a href="/services.html#orthodontics" class="highlight" aria-label="Specialist-level orthodontic and dental care services">
-        specialist-level orthodontic &amp; dental care
-      </a>
-      <span class="soft">at world-class standards — with total trip costs that are</span>
-      <em class="savings" aria-label="Savings between thirty and sixty percent">30–60% lower</em>
+      <strong class="big-accent">Lucknow is one of the best-kept secrets for international dental patients.</strong>  
+      <span class="soft">Receive</span> 
+      <span class="highlight">specialist-level orthodontic & dental care</span>  
+      <span class="soft">at world-class standards — with total trip costs that are</span>  
+      <em class="savings">30–60% lower</em>  
       <span class="soft">than India’s metros and global hubs.</span>
     </p>
-
-    <!-- Helpful internal CTAs with keywords -->
-    <nav class="hero-ctas" aria-label="International patient quick links">
-      <a class="btn btn-ghost" href="/international.html">International patient guide</a>
-      <a class="btn btn-call" href="/services.html">Orthodontics &amp; implants</a>
-      <a class="btn btn-whatsapp" rel="noopener" target="_blank" href="https://wa.me/919565321625">WhatsApp a case</a>
-    </nav>
   </div>
-</section>
+</div>
 
+<!-- ✨ Premium CSS -->
 <style>
-/* Accessibility helpers */
-.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-
-/* Container */
-.hero-intro{
-  position:relative;
-  border-radius:18px;
-  overflow:hidden;
-  margin:28px auto 8px;
-  max-width:1120px;
-  box-shadow:0 14px 36px rgba(0,0,0,.12);
+.hero-intro {
+  position: relative;
+  background: url("/assets/images/lucknow-skyline.jpg") center center/cover no-repeat;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 40px auto;
+  padding: 60px 40px;
+  max-width: 1100px;
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.15);
 }
 
-/* Image fills area but remains responsive */
-.hero-bg,
-.hero-bg picture,
-.hero-bg img{
-  display:block;
-  width:100%;
-  height:100%;
-}
-.hero-bg{
-  position:absolute; inset:0;
-}
-.hero-bg img{
-  object-fit:cover; object-position:center 45%;
-  filter:saturate(1.05) contrast(1.02) brightness(1.02);
+/* Light overlay for visibility */
+.hero-intro .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(14,127,168,0.25));
+  z-index: 1;
 }
 
-/* Light, airy overlay tuned for readability */
-.hero-intro .overlay{
-  position:absolute; inset:0;
-  background:
-    radial-gradient(120% 120% at 15% 0%, rgba(255,255,255,.55), rgba(255,255,255,.15) 50%, transparent 70%),
-    linear-gradient(135deg, rgba(14,127,168,.18), rgba(2,29,59,.28));
-  backdrop-filter:saturate(1.1) blur(.4px);
-  pointer-events:none;
+.hero-intro .intro-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
-/* Text block */
-.hero-intro .intro-text{
-  position:relative; z-index:2;
-  padding: clamp(28px, 4vw, 48px) clamp(18px, 4vw, 42px);
-  text-align:center;
-  color:#0d2235;
+.hero-intro .lead {
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 920px;
+  margin: 0 auto;
+  color: #0d2235; /* darker text for readability */
 }
 
-.hero-intro .lead{
-  margin:0 auto 14px;
-  max-width:980px;
-  line-height:1.6;
-  font-size: clamp(1.12rem, 2.2vw, 1.6rem);
-  font-weight:500;
-  color:#163246;
-  text-wrap:balance;
+.big-accent {
+  font-weight: 800;
+  color: #07344f; /* deep navy */
 }
 
-/* Accents (light theme) */
-.big-accent{
-  display:block;
-  margin-bottom:.35rem;
-  font-weight:800;
-  color:#0f2b3c;
+.soft {
+  color: #345b7e; /* soft slate blue */
+  font-weight: 500;
 }
 
-.soft{
-  color:#3c647c;            /* soft slate-blue */
-  font-weight:600;
+.highlight {
+  font-weight: 700;
+  color: #c68a00; /* gold */
+  background: rgba(255, 223, 128, 0.2);
+  padding: 2px 6px;
+  border-radius: 6px;
 }
 
-.highlight{
-  font-weight:800;
-  color:#b37a00;            /* warm gold text */
-  text-decoration:none;
-  border-bottom: 3px solid rgba(255,208,90,.55);
-  padding-bottom:1px;
-}
-.highlight:hover{ color:#8d6100; border-bottom-color:rgba(255,208,90,.85); }
-
-.savings{
-  font-style:normal;
-  font-weight:800;
-  color:#077a61;            /* mint green text */
-  background:linear-gradient(180deg, #e9fff7, #d6fff1);
-  border:1px solid #b9f5e3;
-  border-radius:10px;
-  padding:.22rem .6rem;
-  box-shadow:0 3px 8px rgba(7,122,97,.08);
-  margin: 0 .15rem;
-}
-
-/* Buttons (reuse site palette) */
-.hero-ctas{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
-.btn{ display:inline-flex; align-items:center; gap:6px; padding:10px 14px; border-radius:999px; font-weight:700; text-decoration:none; }
-.btn-ghost{ border:1px solid #d7e7f2; color:#0e7fa8; background:#ffffffaa; }
-.btn-ghost:hover{ background:#fff; }
-.btn-call{ background:#0e7fa8; color:#fff; }
-.btn-call:hover{ filter:brightness(0.95); }
-.btn-whatsapp{ background:#21c063; color:#fff; }
-.btn-whatsapp:hover{ filter:brightness(0.95); }
-
-/* Small motion to feel premium without distraction */
-@media (prefers-reduced-motion:no-preference){
-  .hero-intro .lead .highlight,
-  .hero-intro .lead .savings{ animation:popIn .7s ease both; }
-  .hero-intro .lead .savings{ animation-delay:.08s; }
-}
-@keyframes popIn{
-  from{ transform: translateY(6px) scale(.98); opacity:.0; }
-  to{   transform: none; opacity:1; }
+.savings {
+  font-weight: 700;
+  color: #007f5f; /* mint green */
+  background: rgba(0, 180, 130, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-style: normal;
 }
 </style>
 
