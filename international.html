@@ -430,14 +430,110 @@
 </style>
 
 
-  <!-- Row 1: Big Intro -->
-  <div class="intl-row">
+  <!-- 🌆 Row 1: Big Intro / Skyline Banner -->
+<div class="intl-row intl-hero" aria-label="Affordable world-class dental care in Lucknow">
+  <!-- Background image (covered, responsive) -->
+  <img
+    class="intl-hero__bg"
+    src="/assets/images/lucknow-skyline.jpg"
+    alt="Lucknow skyline at sunrise"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <!-- Gentle scrim for readability -->
+  <div class="intl-hero__overlay"></div>
+
+  <!-- Text -->
+  <div class="intl-hero__content">
     <p class="lead">
-      <strong>Lucknow is one of the best-kept secrets for international dental patients</strong>. 
-      You receive specialist-level orthodontic and dental care at global standards — but with 
-      total trip costs that are <em>30–60% lower</em> than India’s metros and foreign hubs.
+      <strong class="lead-strong">
+        Lucknow is one of the best-kept secrets for international dental patients.
+      </strong>
+      <span class="lead-soft">Receive</span>
+      <span class="lead-highlight">specialist-level orthodontic &amp; dental care</span>
+      <span class="lead-soft">at world-class standards — with total trip costs that are</span>
+      <em class="lead-saving">30–60% lower</em>
+      <span class="lead-soft">than India’s metros and global hubs.</span>
     </p>
   </div>
+</div>
+
+<style>
+/* ========== Skyline Hero ========== */
+.intl-hero{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  min-height:240px;
+  margin:34px auto 18px;
+  box-shadow:0 18px 40px rgba(9,31,59,.14);
+  isolation:isolate;           /* keep overlay effects contained */
+}
+.intl-hero__bg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  transform:scale(1.02);       /* small zoom for elegance */
+}
+.intl-hero__overlay{
+  position:absolute; inset:0; z-index:1;
+  /* Soft daylight scrim + subtle top/bottom fades for text legibility */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.08) 35%, rgba(0,0,0,.22) 100%),
+    linear-gradient(90deg, rgba(14,127,168,.18), rgba(0,195,137,.18));
+  backdrop-filter:saturate(110%) blur(1px);
+}
+.intl-hero__content{
+  position:relative; z-index:2;
+  padding: clamp(18px, 4vw, 40px) clamp(16px, 4vw, 42px);
+  max-width:1100px; margin:0 auto;
+  text-align:center;
+}
+
+/* ========== Typography ========== */
+.lead{
+  margin:0;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  line-height:1.6;
+  color:#fff;
+  text-shadow: 0 2px 5px rgba(0,0,0,.28);
+}
+.lead-strong{
+  font-weight:800;
+  color:#ffffff;
+  letter-spacing:.1px;
+}
+.lead-soft{
+  color:#f1fbff;               /* light pastel for connectors */
+  font-weight:500;
+}
+.lead-highlight{
+  font-weight:800;
+  /* gentle golden-teal gradient text for emphasis */
+  background:linear-gradient(90deg,#ffd86b,#00d49f);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow: 0 2px 5px rgba(0,0,0,.25);
+}
+.lead-saving{
+  font-style:normal;
+  font-weight:800;
+  color:#0b3e2e;
+  background:linear-gradient(90deg,#baffd8,#7ff3c5);
+  padding:.18em .5em;
+  border-radius:999px;
+  box-shadow:0 6px 20px rgba(0,195,137,.35), inset 0 1px 0 rgba(255,255,255,.6);
+  margin:0 .2em;
+  display:inline-block;
+}
+
+/* Spacing polish on small screens */
+@media (max-width:560px){
+  .intl-hero{ border-radius:16px; }
+  .lead{ line-height:1.55; }
+}
+</style>
 
   <!-- Row 2: Affordability Breakdown -->
   <div class="intl-row highlight-row">
