@@ -941,3 +941,21 @@ img, svg, video { max-width: 100%; height: auto; }
   font-weight: 700;
   margin-right: 6px;
 }
+/* Remove unwanted gap between header and hero */
+.header {
+  margin-bottom: 0;   /* reset spacing */
+  padding-bottom: 0;  /* reset spacing */
+}
+
+.home-hero.intl-hero,
+.intl-hero {
+  margin-top: 0 !important;   /* no top gap */
+  padding-top: 0 !important;
+  border-radius: 0 !important; /* full-bleed edge */
+}
+.header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: transparent;   /* header text over hero */
+  z-index: 1000;
+}
