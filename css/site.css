@@ -941,23 +941,3 @@ img, svg, video { max-width: 100%; height: auto; }
   font-weight: 700;
   margin-right: 6px;
 }
-/* Make sure header is fixed */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #fff; /* keep it solid */
-  border-bottom: 1px solid #eef3f7;
-}
-
-/* International Patients Hero Section */
-#intl-patients {
-  margin-top: 0;  /* remove accidental gap */
-  padding-top: 90px; /* equal or slightly larger than header height */
-  background: url("/images/your-international-bg.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed; /* optional parallax */
-  min-height: 80vh; /* ensure big hero */
-  position: relative;
-}
