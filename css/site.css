@@ -953,9 +953,4 @@ img, svg, video { max-width: 100%; height: auto; }
   padding-top: 0 !important;
   border-radius: 0 !important; /* full-bleed edge */
 }
-.header {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  background: transparent;   /* header text over hero */
-  z-index: 1000;
-}
+
