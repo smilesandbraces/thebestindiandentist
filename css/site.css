@@ -949,7 +949,7 @@ img, svg, video { max-width: 100%; height: auto; }
 
 .home-hero.intl-hero,
 .intl-hero {
-  margin-top: 1 !important;   /* no top gap */
+  margin-top: 0 !important;   /* no top gap */
   padding-top: 1 !important;
   border-radius: 1 !important; /* full-bleed edge */
 }
