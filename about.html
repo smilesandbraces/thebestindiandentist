@@ -141,141 +141,24 @@
   </div>
 </section>
 
-<!-- ===================== ABOUT (ULTRA) CSS ===================== -->
-<style>
-:root{
-  --ink:#0d2235; --muted:#5e6b78; --line:#e6edf4; --brand:#0e7fa8; --accent:#00c389;
-  --card:#ffffff; --glass:rgba(255,255,255,.82);
-  --radius:18px; --radius-xl:22px;
-  --shadow-sm:0 8px 22px rgba(2,29,59,.08);
-  --shadow-md:0 14px 38px rgba(2,29,59,.12);
-  --shadow-lg:0 24px 60px rgba(2,29,59,.18);
-}
-
-.about-ultra{
-  position:relative;
-  padding: clamp(28px, 6vw, 56px) 0;
-  color:var(--ink);
-  overflow:clip;
-  background:
-    radial-gradient(1200px 600px at 8% -10%, #e6f7ff, transparent 70%),
-    radial-gradient(900px 400px at 95% 0%, #f7fbff, transparent 65%);
-}
-
-/* Ambient gradient glow behind content */
-.about-ultra__glow{
-  position:absolute; inset:-8% -4% auto -4%; height: 60%;
-  background:
-    radial-gradient(800px 260px at 20% 10%, rgba(14,127,168,.20), transparent 60%),
-    radial-gradient(720px 240px at 80% 5%, rgba(0,195,137,.16), transparent 65%);
-  filter: blur(18px) saturate(110%);
-  z-index:0;
-}
-
-/* Grid */
-.about-ultra__grid{
-  position:relative; z-index:1;
-  display:grid; grid-template-columns: 1.1fr .9fr;
-  gap: clamp(18px, 3vw, 32px);
-  align-items:stretch;
-  max-width:1100px; margin-inline:auto; padding: 0 20px;
-}
-@media (max-width: 980px){ .about-ultra__grid{ grid-template-columns: 1fr; } }
-
-/* Glass card text */
-.glass{
-  background: var(--glass);
-  border: 1px solid rgba(14,127,168,.10);
-  box-shadow: var(--shadow-md);
-  border-radius: var(--radius-xl);
-  backdrop-filter: blur(10px) saturate(120%);
-}
-.about-ultra__text{
-  padding: clamp(18px, 2.4vw, 26px) clamp(18px, 2.6vw, 30px);
-}
-.about-ultra__head .kicker{
-  margin: 2px 0 6px;
-  font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--brand);
-}
-.about-ultra__h2{
-  margin: 0 0 8px;
-  font-size: clamp(26px, 3.6vw, 42px);
-  line-height: 1.12; letter-spacing: -.015em;
-  background: linear-gradient(90deg, #0e7fa8, #00c389 55%, #3cc9ff);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-}
-.about-ultra__lead{
-  font-size: clamp(16px, 1.6vw, 18px);
-  color:#2c3b50;
-  margin: 8px 0 10px;
-}
-
-/* Bullets */
-.about-ultra__bullets{
-  list-style: none; margin: 12px 0 16px; padding: 0;
-  display:grid; grid-template-columns: 1fr 1fr; gap: 10px 14px;
-}
-.about-ultra__bullets li{
-  position:relative; padding-left:28px; line-height:1.55; color:#31465a; font-weight:600;
-}
-.about-ultra__bullets li::before{
-  content:""; position:absolute; left:0; top:.45em; width:18px; height:18px; border-radius:50%;
-  background: linear-gradient(135deg, #0e7fa8, #00c389);
-  box-shadow: 0 4px 14px rgba(14,127,168,.35);
-}
-@media (max-width:700px){ .about-ultra__bullets{ grid-template-columns: 1fr; } }
-
-/* CTA row */
-.about-ultra__meta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center }
-.btn{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:12px 16px; border-radius:999px; font-weight:800; border:1px solid var(--line);
-  background:#fff; transition: transform .2s ease, box-shadow .2s ease;
-}
-.btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-.btn-primary{ background:#0d6efd; border-color:#0d6efd; color:#fff; }
-.btn-ghost{ background:#fff; color:#0e7fa8; }
-
-/* Photo card */
-.about-ultra__photo{
-  position:relative; margin:0; overflow:hidden;
-  border-radius: var(--radius-xl); background:#fff; box-shadow: var(--shadow-lg); border:1px solid var(--line);
-}
-.about-ultra__photo img{
-  width:100%; height:auto; object-fit:cover; transform: scale(1.02);
-  transition: transform .8s ease;
-}
-.about-ultra__photo:hover img{ transform: scale(1.06); }
-.about-ultra__fig{
-  padding:10px 12px; color:var(--muted); background:#fff; border-top:1px solid var(--line);
-}
-
-/* Badge stack on photo */
-.about-ultra__badges{
-  position:absolute; left:14px; bottom:14px; margin:0; padding:0;
-  display:flex; flex-wrap:wrap; gap:8px; list-style:none; pointer-events:none;
-}
-.about-ultra__badges li{
-  pointer-events:auto;
-  padding:8px 12px; border-radius:999px; font-weight:700; font-size:.9rem;
-  color:#0e7fa8; background: rgba(255,255,255,.95); border:1px solid #d7eaf5;
-  box-shadow: 0 10px 24px rgba(2,29,59,.18);
-}
-
-/* Helper components (reuse) */
-.card{ background:var(--card); border: 1px solid var(--line); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
-.small{ font-size:.92rem }
-</style>
-
-<!-- Optional: motion preferences -->
-<style>
-@media (prefers-reduced-motion: reduce){
-  .about-ultra__photo img{ transition: none }
-  .btn{ transition: none }
-}
-</style>
-
+<!-- About split --> 
+    <section class="section glass about-grid"> 
+      <div class="about-text"> 
+        <h2>Compassion, precision & modern orthodontics</h2> 
+        <p>With a foundation in <strong>BDS</strong> and <strong>MDS (Orthodontics)</strong>, 
+          Dr. Vikram Jeet Singh blends evidence-based protocols with a gentle, listener-first approach. At <strong>Smiles &amp; Braces Dental Clinic</strong>, 
+          he leads a team focused on predictable outcomes—from conventional braces to discreet aligner therapy—guided by digital planning and meticulous follow-ups.</p> 
+        <p>International patients appreciate clear itineraries and responsive communication. Every treatment plan includes timelines, visit frequency, and transparent costs so you can make confident decisions.</p> 
+        <ul class="bullets" aria-label="Highlights">
+          <li>Comfort-first, conservative care</li> 
+          <li>Digital diagnostics (scans & planning)</li> 
+          <li>Transparent timelines & costs</li>
+          <li>Long-term stability & retention protocols</li> 
+        </ul> </div> <figure class="about-photo"> 
+          <img src="/assets/images/drvikramjeet.jpeg" alt="Dr. Vikram Jeet Singh, Orthodontist at Smiles & Braces Dental Clinic, Lucknow" loading="lazy" decoding="async">
+          <figcaption class="small">Dr. Vikram Jeet Singh — Orthodontist (BDS, MDS)</figcaption>
+        </figure>
+    </section>
 
     <!-- Expertise / Philosophy -->
     <section class="section glass">
