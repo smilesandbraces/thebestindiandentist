@@ -91,19 +91,108 @@
       </figure>
     </section> 
 
-    <!-- Credentials & Memberships -->
-    <section class="section glass">
-      <div class="section-head">
-        <h2>Credentials & memberships</h2>
-        <span class="section-tag">Qualifications</span>
-      </div>
-      <div class="teaser-grid">
-        <article class="teaser"><h3>BDS</h3><p>Dental Surgery foundation with strong clinical training.</p></article>
-        <article class="teaser"><h3>MDS (Orthodontics)</h3><p>Advanced specialization with focus on modern biomechanics.</p></article>
-        <article class="teaser"><h3>Continual education</h3><p>Regular upgrades in aligner planning, self-ligating systems & digital diagnostics.</p></article>
-        <article class="teaser"><h3>International patients</h3><p>Experience with travel-friendly scheduling & tele-follow-ups.</p></article>
-      </div>
-    </section>
+   <!-- ================== CREDENTIALS & MEMBERSHIPS ================== -->
+<section class="section creds" aria-labelledby="creds-title">
+  <div class="container">
+    <!-- Section Header -->
+    <header class="section-head center">
+      <p class="kicker">Qualifications</p>
+      <h2 id="creds-title" class="h2">Credentials &amp; Memberships</h2>
+      <p class="muted small">A commitment to continual learning, precision, and global patient trust</p>
+    </header>
+
+    <!-- Grid -->
+    <div class="creds-grid" role="list">
+      <article class="creds-card" role="listitem">
+        <span class="creds-icon">🎓</span>
+        <h3 class="h3">BDS</h3>
+        <p>Strong foundation in <strong>Dental Surgery</strong> with comprehensive clinical training.</p>
+      </article>
+
+      <article class="creds-card" role="listitem">
+        <span class="creds-icon">🦷</span>
+        <h3 class="h3">MDS (Orthodontics)</h3>
+        <p>Advanced specialization in <strong>modern orthodontic biomechanics</strong> and precision care.</p>
+      </article>
+
+      <article class="creds-card" role="listitem">
+        <span class="creds-icon">📚</span>
+        <h3 class="h3">Continual Education</h3>
+        <p>Regular upgrades in <em>aligner planning</em>, <em>self-ligating systems</em>, and <em>digital diagnostics</em>.</p>
+      </article>
+
+      <article class="creds-card" role="listitem">
+        <span class="creds-icon">🌍</span>
+        <h3 class="h3">International Patients</h3>
+        <p>Extensive experience in <strong>travel-friendly scheduling</strong> and <strong>tele-follow-ups</strong>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CSS ================== -->
+<style>
+.creds {
+  background: radial-gradient(1000px 600px at 20% -10%, #f3faff, transparent 70%),
+              radial-gradient(900px 500px at 80% 0%, #f9fcff, transparent 70%);
+  padding: clamp(50px, 6vw, 80px) 0;
+}
+.creds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 26px;
+  margin-top: 28px;
+}
+.creds-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid #e6edf4;
+  border-radius: 18px;
+  padding: 28px 22px;
+  box-shadow: 0 14px 36px rgba(2,29,59,.08);
+  backdrop-filter: blur(10px) saturate(120%);
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.creds-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 46px rgba(2,29,59,.12);
+}
+.creds-icon {
+  font-size: 2.2rem;
+  display: inline-block;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #0e7fa8, #00c389);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.creds-card h3 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #0d2235;
+}
+.creds-card p {
+  margin: 0;
+  font-size: .96rem;
+  color: #495c6a;
+  line-height: 1.55;
+}
+</style>
+
+<!-- ================== Structured Data (SEO) ================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalCredential",
+  "credentialCategory": "Professional Qualification",
+  "name": "BDS, MDS (Orthodontics)",
+  "recognizedBy": {
+    "@type": "Organization",
+    "name": "Dental Council of India"
+  },
+  "description": "Dr. Vikram Jeet Singh holds a Bachelor of Dental Surgery (BDS) and a Master of Dental Surgery (MDS) in Orthodontics, with ongoing education in aligner systems, digital diagnostics, and international patient care."
+}
+</script>
+
 
  <!-- ================== AT A GLANCE ================== -->
 <section class="section glance" aria-labelledby="glance-title">
@@ -122,7 +211,7 @@
 
       <li class="glance-card">
         <span class="glance-icon">😊</span>
-        <span class="glance-number" data-count="1000">0</span><span class="unit">+ smiles</span>
+        <span class="glance-number" data-count="10000">0</span><span class="unit">+ smiles</span>
         <p>Transformed &amp; guided</p>
       </li>
 
