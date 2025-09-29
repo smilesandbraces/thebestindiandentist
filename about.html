@@ -91,121 +91,179 @@
       </figure>
     </section> 
 
- <!-- ================== CREDENTIALS & MEMBERSHIPS ================== -->
-<section class="section creds" aria-labelledby="creds-title">
+<!-- ================== CREDENTIALS & MEMBERSHIPS (PRO) ================== -->
+<section class="section creds-pro" aria-labelledby="creds-title">
   <div class="container">
-    <!-- Section Header -->
-    <header class="section-head center">
-      <p class="kicker">Qualifications</p>
-      <h2 id="creds-title" class="h2">Credentials &amp; Memberships</h2>
-      <p class="muted small">Global expertise • Recognized education • Continual innovation</p>
-    </header>
+    <!-- Header row -->
+    <div class="creds-pro__head">
+      <span class="creds-pro__tag">Qualifications</span>
+      <h2 id="creds-title" class="creds-pro__title">Credentials &amp; Memberships</h2>
+      <ul class="creds-pro__meta" aria-label="Section context">
+        <li>Global expertise</li>
+        <li>Recognized education</li>
+        <li>Continual innovation</li>
+      </ul>
+    </div>
 
-    <!-- Grid (3 Cards) -->
-    <div class="creds-grid" role="list">
-      
+    <!-- 3-card grid -->
+    <div class="creds-pro__grid" role="list">
       <!-- Card 1 -->
-      <article class="creds-card" role="listitem">
-        <div class="creds-icon">
-          <!-- Graduation Cap Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 10L12 4 2 10l10 6 10-6z"/>
-            <path d="M6 12v10c0 2 6 4 6 4s6-2 6-4V12"/>
+      <article class="creds-pro__card" role="listitem" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+        <div class="creds-pro__badge" aria-hidden="true">
+          <!-- Graduation cap (clean SVG) -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+            <path d="M6 12v6c0 1.8 6 3 6 3s6-1.2 6-3v-6" />
           </svg>
         </div>
-        <h3 class="h3">Academic Excellence</h3>
-        <p>
-          <strong>BDS</strong> foundation and <strong>MDS (Orthodontics)</strong> specialization —
-          built on rigorous clinical training and precision-driven orthodontics.
+        <h3 class="creds-pro__h3" itemprop="name">Academic Excellence</h3>
+        <p class="creds-pro__text">
+          <strong>BDS</strong> foundation and <strong>MDS (Orthodontics)</strong> specialization — built on rigorous clinical training and precision-driven orthodontics.
         </p>
       </article>
 
       <!-- Card 2 -->
-      <article class="creds-card" role="listitem">
-        <div class="creds-icon">
-          <!-- Book Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-            <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>
-            <path d="M20 22V2"/>
+      <article class="creds-pro__card" role="listitem" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+        <div class="creds-pro__badge" aria-hidden="true">
+          <!-- Book -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15" />
+            <path d="M20 22V2" />
           </svg>
         </div>
-        <h3 class="h3">Continual Learning</h3>
-        <p>
-          Certified in <em>digital diagnostics</em>, <em>clear aligner systems</em>, 
-          and <em>modern biomechanics</em>, ensuring globally up-to-date orthodontic care.
+        <h3 class="creds-pro__h3">Continual Learning</h3>
+        <p class="creds-pro__text">
+          Certified in <em>digital diagnostics</em>, <em>clear aligner systems</em>, and <em>modern biomechanics</em> to keep care consistently up-to-date.
         </p>
       </article>
 
       <!-- Card 3 -->
-      <article class="creds-card" role="listitem">
-        <div class="creds-icon">
-          <!-- Globe Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10c0 3.866-1.5 7-4 10a15.3 15.3 0 0 1-4-10c0-3.866 1.5-7 4-10z"/>
+      <article class="creds-pro__card" role="listitem">
+        <div class="creds-pro__badge" aria-hidden="true">
+          <!-- Globe -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20" />
+            <path d="M12 2a16 16 0 0 1 0 20a16 16 0 0 1 0-20Z" />
           </svg>
         </div>
-        <h3 class="h3">Global Recognition</h3>
-        <p>
-          Trusted by <strong>international patients</strong> for transparent pricing,
-          travel-friendly scheduling, and responsive <strong>tele follow-ups</strong>.
+        <h3 class="creds-pro__h3">Global Recognition</h3>
+        <p class="creds-pro__text">
+          Trusted by <strong>international patients</strong> for transparent pricing, travel-friendly scheduling, and responsive <strong>tele follow-ups</strong>.
         </p>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- ================== CSS ================== -->
+<!-- ================== CREDENTIALS & MEMBERSHIPS (PRO) CSS ================== -->
 <style>
-.creds {
-  background: radial-gradient(1200px 600px at 20% -10%, #f3faff, transparent 70%),
-              radial-gradient(900px 500px at 80% 0%, #f9fcff, transparent 70%);
-  padding: clamp(60px, 6vw, 90px) 0;
+:root{
+  --ink:#0d2235; --muted:#536476; --line:#e6edf4;
+  --brand:#0e7fa8; --accent:#00c389;
+  --card:#fff; --radius:18px; --radius-xl:22px;
+  --sh-sm:0 10px 24px rgba(2,29,59,.06);
+  --sh-md:0 16px 42px rgba(2,29,59,.10);
 }
-.creds-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 32px;
-  margin-top: 36px;
+.creds-pro{
+  position:relative;
+  padding: clamp(52px, 6vw, 88px) 0;
+  background:
+    radial-gradient(1100px 520px at 12% -8%, #f2fbff, transparent 65%),
+    radial-gradient(900px 420px at 92% 0%, #f8fbff, transparent 60%);
 }
-.creds-card {
-  background: rgba(255,255,255,.95);
-  border: 1px solid #e6edf4;
-  border-radius: 20px;
-  padding: 32px 26px;
-  box-shadow: 0 16px 42px rgba(2,29,59,.08);
-  backdrop-filter: blur(12px) saturate(120%);
+.creds-pro .container{max-width:1120px}
+
+/* Head row */
+.creds-pro__head{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:end;
+  gap: 14px 18px;
+  margin-bottom: 18px;
+}
+.creds-pro__tag{
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--brand);
+}
+.creds-pro__title{
+  margin:0;
+  font-size: clamp(26px, 3.2vw, 34px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing:-.01em;
+  color:var(--ink);
+}
+.creds-pro__meta{
+  display:flex; gap:10px; margin:0; padding:0; list-style:none; justify-self:end;
+  color:var(--muted); font-size:.95rem;
+}
+.creds-pro__meta li{ position:relative; padding-left:10px }
+.creds-pro__meta li+li::before{
+  content:"•"; position:absolute; left:-6px; top:0; color:#8aa5b5;
+}
+
+/* Grid */
+.creds-pro__grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 22px;
+}
+@media (max-width: 940px){ .creds-pro__grid{ grid-template-columns:1fr; } }
+
+/* Card */
+.creds-pro__card{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.98));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--sh-sm);
+  padding: 26px 24px 24px;
   text-align: center;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  backdrop-filter: blur(8px) saturate(115%);
 }
-.creds-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 24px 52px rgba(2,29,59,.12);
+.creds-pro__card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--sh-md);
+  border-color: rgba(14,127,168,.18);
 }
-.creds-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #0e7fa8, #00c389);
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(14,127,168,.25);
+
+/* Badge (icon chip) */
+.creds-pro__badge{
+  width:72px; height:72px; margin:-46px auto 14px; /* floating chip */
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff;
+  background: radial-gradient(70% 70% at 30% 30%, #3fd1ff, #0e7fa8) padding-box,
+              linear-gradient(135deg, rgba(255,255,255,.8), rgba(255,255,255,0)) border-box;
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow: 0 14px 28px rgba(14,127,168,.25);
 }
-.creds-card h3 {
-  margin: 0 0 12px;
-  font-weight: 700;
-  color: #0d2235;
+.creds-pro__badge svg{
+  display:block; width:28px; height:28px;
+  stroke:#fff; fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round;
 }
-.creds-card p {
-  margin: 0;
-  font-size: .97rem;
-  color: #495c6a;
-  line-height: 1.6;
+
+/* Text */
+.creds-pro__h3{
+  margin: 6px 0 8px;
+  font-size: 1.15rem; font-weight:800; color:var(--ink);
+}
+.creds-pro__text{
+  margin:0 auto; max-width: 34ch;
+  color: var(--muted); line-height:1.6; font-size:.98rem;
+}
+.creds-pro__text strong{ color:#142a3e }
+.creds-pro__text em{ font-style:italic; color:#31465a }
+
+/* Focus visible */
+.creds-pro__card:focus-within{ outline:2px solid #bfe9ff; outline-offset:4px }
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce){
+  .creds-pro__card{ transition:none }
 }
 </style>
 
