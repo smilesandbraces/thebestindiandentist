@@ -91,47 +91,68 @@
       </figure>
     </section> 
 
-  <!-- ================== CREDENTIALS & MEMBERSHIPS ================== -->
+ <!-- ================== CREDENTIALS & MEMBERSHIPS ================== -->
 <section class="section creds" aria-labelledby="creds-title">
   <div class="container">
     <!-- Section Header -->
     <header class="section-head center">
       <p class="kicker">Qualifications</p>
       <h2 id="creds-title" class="h2">Credentials &amp; Memberships</h2>
-      <p class="muted small">Global expertise, trusted education, and continual innovation in orthodontics</p>
+      <p class="muted small">Global expertise • Recognized education • Continual innovation</p>
     </header>
 
     <!-- Grid (3 Cards) -->
     <div class="creds-grid" role="list">
+      
       <!-- Card 1 -->
       <article class="creds-card" role="listitem">
-        <span class="creds-icon">🎓</span>
+        <div class="creds-icon">
+          <!-- Graduation Cap Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+            <path d="M6 12v10c0 2 6 4 6 4s6-2 6-4V12"/>
+          </svg>
+        </div>
         <h3 class="h3">Academic Excellence</h3>
         <p>
           <strong>BDS</strong> foundation and <strong>MDS (Orthodontics)</strong> specialization —
-          built on rigorous training, evidence-based protocols, and precision-driven orthodontics.
+          built on rigorous clinical training and precision-driven orthodontics.
         </p>
       </article>
 
       <!-- Card 2 -->
       <article class="creds-card" role="listitem">
-        <span class="creds-icon">📚</span>
+        <div class="creds-icon">
+          <!-- Book Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>
+            <path d="M20 22V2"/>
+          </svg>
+        </div>
         <h3 class="h3">Continual Learning</h3>
         <p>
-          Ongoing certifications in <em>digital diagnostics</em>, <em>clear aligner systems</em>,
-          and <em>modern biomechanics</em>, ensuring treatments are always cutting-edge.
+          Certified in <em>digital diagnostics</em>, <em>clear aligner systems</em>, 
+          and <em>modern biomechanics</em>, ensuring globally up-to-date orthodontic care.
         </p>
       </article>
 
       <!-- Card 3 -->
       <article class="creds-card" role="listitem">
-        <span class="creds-icon">🌍</span>
+        <div class="creds-icon">
+          <!-- Globe Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10c0 3.866-1.5 7-4 10a15.3 15.3 0 0 1-4-10c0-3.866 1.5-7 4-10z"/>
+          </svg>
+        </div>
         <h3 class="h3">Global Recognition</h3>
         <p>
-          Trusted by <strong>international patients</strong> for transparent costs,
-          travel-friendly scheduling, and responsive tele-follow-ups across 25+ countries.
+          Trusted by <strong>international patients</strong> for transparent pricing,
+          travel-friendly scheduling, and responsive <strong>tele follow-ups</strong>.
         </p>
       </article>
+
     </div>
   </div>
 </section>
@@ -150,11 +171,11 @@
   margin-top: 36px;
 }
 .creds-card {
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.95);
   border: 1px solid #e6edf4;
   border-radius: 20px;
   padding: 32px 26px;
-  box-shadow: 0 16px 40px rgba(2,29,59,.08);
+  box-shadow: 0 16px 42px rgba(2,29,59,.08);
   backdrop-filter: blur(12px) saturate(120%);
   text-align: center;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -164,12 +185,16 @@
   box-shadow: 0 24px 52px rgba(2,29,59,.12);
 }
 .creds-icon {
-  font-size: 2.5rem;
-  display: inline-block;
-  margin-bottom: 14px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #0e7fa8, #00c389);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(14,127,168,.25);
 }
 .creds-card h3 {
   margin: 0 0 12px;
@@ -183,21 +208,6 @@
   line-height: 1.6;
 }
 </style>
-
-<!-- ================== Structured Data (SEO) ================== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOccupationalCredential",
-  "credentialCategory": "Professional Qualification",
-  "name": "BDS, MDS (Orthodontics), Digital Orthodontics Certifications",
-  "recognizedBy": {
-    "@type": "Organization",
-    "name": "Dental Council of India"
-  },
-  "description": "Dr. Vikram Jeet Singh is a BDS, MDS (Orthodontics) orthodontist with continual education in aligners, digital diagnostics, and biomechanics, trusted by international patients for predictable outcomes."
-}
-</script>
 
 
 
