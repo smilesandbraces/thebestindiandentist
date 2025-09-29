@@ -105,15 +105,102 @@
       </div>
     </section>
 
-    <!-- At a glance -->
-    <section class="section">
-      <h2 class="center">At a glance</h2>
-      <ul class="reviews-grid">
-        <li class="review-card"><span class="stars">15+ yrs</span> Orthodontic practice</li>
-        <li class="review-card"><span class="stars">1000+</span> Smiles guided</li>
-        <li class="review-card"><span class="stars">Comfort-first</span> Treatment philosophy</li>
-      </ul>
-    </section>
+ <!-- ================== AT A GLANCE ================== -->
+<section class="section glance" aria-labelledby="glance-title">
+  <div class="container">
+    <header class="glance-head">
+      <p class="kicker">Clinic Highlights</p>
+      <h2 id="glance-title" class="h2">At a Glance</h2>
+    </header>
+
+    <ul class="glance-grid" role="list">
+      <li class="glance-card">
+        <span class="glance-icon">🦷</span>
+        <span class="glance-number" data-count="15">0</span><span class="unit">+ yrs</span>
+        <p>Orthodontic practice</p>
+      </li>
+
+      <li class="glance-card">
+        <span class="glance-icon">😊</span>
+        <span class="glance-number" data-count="1000">0</span><span class="unit">+ smiles</span>
+        <p>Transformed &amp; guided</p>
+      </li>
+
+      <li class="glance-card">
+        <span class="glance-icon">💙</span>
+        <span class="glance-number">Comfort-first</span>
+        <p>Treatment philosophy</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CSS ============ -->
+<style>
+.glance { 
+  background: radial-gradient(1200px 600px at 10% -10%, #f0faff, transparent 70%),
+              radial-gradient(800px 500px at 95% 0%, #f9fcff, transparent 70%);
+  padding: clamp(40px, 6vw, 70px) 0;
+  text-align: center;
+}
+.glance-head .kicker {
+  font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  color: #0e7fa8; margin: 0;
+}
+.glance-head .h2 {
+  margin: 6px 0 24px;
+  font-size: clamp(26px, 3vw, 36px);
+  background: linear-gradient(90deg,#0e7fa8,#00c389 60%,#3cc9ff);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.glance-card {
+  background: rgba(255,255,255,.85);
+  border: 1px solid #e5eef5;
+  border-radius: 20px;
+  padding: 24px 18px;
+  box-shadow: 0 18px 36px rgba(2,29,59,.08);
+  backdrop-filter: blur(10px) saturate(120%);
+  display: flex; flex-direction: column; align-items: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.glance-card:hover { transform: translateY(-6px); box-shadow: 0 20px 46px rgba(2,29,59,.12); }
+
+.glance-icon { font-size: 2rem; margin-bottom: 10px; }
+
+.glance-number {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  color: #0e7fa8;
+}
+.unit { font-size: 1rem; font-weight: 700; margin-left: 2px; color: #333; }
+
+.glance-card p { margin: 6px 0 0; color: #4a5a6b; font-weight: 500; }
+</style>
+
+<!-- ============ JS for Animated Counter ============ -->
+<script>
+document.querySelectorAll('.glance-number[data-count]').forEach(el=>{
+  const end = parseInt(el.dataset.count,10);
+  let start=0, dur=1200, t0=null;
+  function step(ts){
+    if(!t0) t0=ts;
+    const p=Math.min((ts-t0)/dur,1);
+    el.textContent=Math.floor(p*end);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+});
+</script>
+
 
     <!-- FAQs -->
     <section class="section glass">
