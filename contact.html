@@ -80,33 +80,52 @@
         <h2 id="form-title">Book Your Appointment</h2>
 
         <!-- GitHub Pages-friendly form: JS will always redirect to thank-you.html -->
-        <form id="contactForm" class="ui-form" novalidate>
-          <label>
-            <span>Full Name</span>
-            <input type="text" name="name" placeholder="John Doe" autocomplete="name" required aria-required="true"/>
-          </label>
-          <label>
-            <span>Email Address</span>
-            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
-          </label>
-          <label>
-            <span>Phone Number</span>
-            <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
-          </label>
-          <label>
-            <span>Preferred Date</span>
-            <input type="date" name="date"/>
-          </label>
-          <label class="full">
-            <span>Message / Concerns</span>
-            <textarea name="message" rows="5" placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice"></textarea>
-          </label>
-          <div class="form-actions full">
-            <button type="submit" class="btn btn-call">Submit</button>
-            <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
-          </div>
-          <p class="small full">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
-        </form>
+       <form id="contactForm"
+      class="ui-form"
+      action="https://formspree.io/f/xqayqjez"  <!-- <-- paste your endpoint -->
+      method="POST" novalidate>
+
+  <label>
+    <span>Full Name</span>
+    <input type="text" name="name" placeholder="John Doe" autocomplete="name" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Email Address</span>
+    <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Phone Number</span>
+    <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
+           placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Preferred Date</span>
+    <input type="date" name="date"/>
+  </label>
+
+  <label class="full">
+    <span>Message / Concerns</span>
+    <textarea name="message" rows="5"
+      placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice" required></textarea>
+  </label>
+
+  <!-- Hidden helpers -->
+  <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+  <input type="hidden" name="_subject" value="New enquiry from bestindiandentist.com">
+  <input type="hidden" name="_template" value="table"> <!-- prettier email -->
+
+  <div class="form-actions full">
+    <button type="submit" class="btn btn-call">Submit</button>
+    <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
+  </div>
+
+  <p id="formStatus" class="small full" role="status" aria-live="polite"></p>
+  <p class="small full">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+</form>
+
 
         <noscript>
           <p class="small">JavaScript is required to submit this form on GitHub Pages. Please WhatsApp us or call directly.</p>
@@ -301,6 +320,37 @@
       e.preventDefault();
       window.location.href = "/thank-you.html";
     });
+    // Contact form submit via Formspree
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  statusEl.textContent = 'Sending…';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.reset();
+      statusEl.textContent = '✅ Message sent. We will contact you shortly.';
+      // Optional redirect after success:
+      // window.location.href = '/thank-you.html';
+    } else {
+      const data = await res.json().catch(()=>({}));
+      statusEl.textContent = (data && data.errors)
+        ? '❌ ' + data.errors.map(e=>e.message).join(', ')
+        : '❌ Could not send. Please WhatsApp or call.';
+    }
+  } catch (err) {
+    statusEl.textContent = '⚠️ Network error. Please try again.';
+  }
+});
+
   </script>
 
   <!-- Structured Data -->
