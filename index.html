@@ -778,6 +778,66 @@
     });
   })();
 </script>
+<!-- Triggered Popup Modal on Page Load -->
+<div id="announcementModal" class="modal">
+  <div class="modal-content">
+    <img src="your-logo.png" alt="Clinic Logo" style="height:60px; margin-bottom:10px;">
+    <h2>Exclusive Offers 🎉</h2>
+    <p><strong>Teeth Whitening</strong> – 30% Off this month</p>
+    <p><strong>Free Consultation</strong> for new patients</p>
+    <p><strong>Braces Package</strong> – Save ₹5,000</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #0d4d92;
+}
+.modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #0d4d92;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background: #083364;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+window.onload = function() {
+  document.getElementById("announcementModal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("announcementModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
