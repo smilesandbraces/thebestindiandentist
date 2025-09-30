@@ -308,50 +308,45 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile menu
-    document.querySelector('.nav-toggle').addEventListener('click', () => {
-      document.querySelector('.navlinks').classList.toggle('show');
-    });
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+  // Mobile menu
+  document.querySelector('.nav-toggle').addEventListener('click', () => {
+    document.querySelector('.navlinks').classList.toggle('show');
+  });
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Always redirect to thank-you on submit (GitHub Pages friendly)
-    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      window.location.href = "/thank-you.html";
-    });
-    // Contact form submit via Formspree
-const form = document.getElementById('contactForm');
-const statusEl = document.getElementById('formStatus');
+  // ---- Formspree submission (works on GitHub Pages) ----
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  statusEl.textContent = 'Sending…';
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.textContent = 'Sending…';
 
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
 
-    if (res.ok) {
-      form.reset();
-      statusEl.textContent = '✅ Message sent. We will contact you shortly.';
-      // Optional redirect after success:
-      // window.location.href = '/thank-you.html';
-    } else {
-      const data = await res.json().catch(()=>({}));
-      statusEl.textContent = (data && data.errors)
-        ? '❌ ' + data.errors.map(e=>e.message).join(', ')
-        : '❌ Could not send. Please WhatsApp or call.';
+      if (res.ok) {
+        form.reset();
+        statusEl.textContent = '✅ Message sent. We will contact you shortly.';
+        // If you want a thank-you page, redirect AFTER success:
+        // window.location.href = '/thank-you.html';
+      } else {
+        const data = await res.json().catch(() => ({}));
+        statusEl.textContent = (data && data.errors)
+          ? '❌ ' + data.errors.map(e => e.message).join(', ')
+          : '❌ Could not send. Please WhatsApp or call.';
+      }
+    } catch (err) {
+      statusEl.textContent = '⚠️ Network error. Please try again.';
     }
-  } catch (err) {
-    statusEl.textContent = '⚠️ Network error. Please try again.';
-  }
-});
+  });
+</script>
 
-  </script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
