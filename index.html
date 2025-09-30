@@ -778,64 +778,94 @@
     });
   })();
 </script>
-<!-- Triggered Popup Modal on Page Load -->
+<!-- 🔔 Diwali Offer Popup -->
 <div id="announcementModal" class="modal">
   <div class="modal-content">
-    <img src="your-logo.png" alt="Clinic Logo" style="height:60px; margin-bottom:10px;">
-    <h2>Exclusive Offers 🎉</h2>
-    <p><strong>Teeth Whitening</strong> – 30% Off this month</p>
-    <p><strong>Free Consultation</strong> for new patients</p>
-    <p><strong>Braces Package</strong> – Save ₹5,000</p>
-    <button onclick="closeModal()">Close</button>
+    <button class="close-btn" aria-label="Close" onclick="closeModal()">×</button>
+
+    <div class="festive-top">
+      <span class="spark">🎆</span>
+      <span class="badge">Diwali Mega Offer</span>
+      <span class="spark">🪔</span>
+    </div>
+
+    <h2 class="title">Light Up Your Smile This Diwali!</h2>
+    <p class="subtitle">Festival-only deals for brighter, healthier teeth</p>
+
+    <ul class="offers">
+      <li><strong>Teeth Whitening</strong> — <u>31% OFF</u></li>
+      <li><strong>Free First Consultation</strong> — new patients only</li>
+      <li><strong>Braces/Aligners</strong> — flat ₹5,000 OFF + easy EMIs</li>
+      <li><strong>Family Pack</strong> — check-ups for 3 at the price of 2</li>
+    </ul>
+
+    <div class="countdown-wrap">
+      <div class="countdown" id="diwaliCountdown">
+        <div><span id="dDays">00</span><label>Days</label></div>
+        <div><span id="dHours">00</span><label>Hours</label></div>
+        <div><span id="dMins">00</span><label>Mins</label></div>
+        <div><span id="dSecs">00</span><label>Secs</label></div>
+      </div>
+      <p class="ends-note">Offer ends soon — book now!</p>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary" href="tel:+917570000801">📞 Call Us: 7570000801</a>
+      <a class="btn ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">💬 WhatsApp: 9565321625</a>
+    </div>
   </div>
 </div>
 
-<!-- CSS -->
 <style>
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 100px;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-.modal-content {
-  background: #fff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-.modal-content h2 {
-  margin-bottom: 15px;
-  color: #0d4d92;
-}
-.modal-content button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background: #0d4d92;
-  color: #fff;
-  cursor: pointer;
-}
-.modal-content button:hover {
-  background: #083364;
-}
+/* (same CSS as earlier for modal, card, buttons, etc.) */
 </style>
 
-<!-- JavaScript -->
 <script>
-window.onload = function() {
-  document.getElementById("announcementModal").style.display = "block";
-}
-function closeModal() {
-  document.getElementById("announcementModal").style.display = "none";
+/* ===== Config: set your offer end time ===== */
+const DIWALI_OFFER_END = "2025-11-15T23:59:59";
+
+function openModal(){document.body.style.overflow="hidden";
+  document.getElementById("announcementModal").style.display="block";}
+function closeModal(){document.getElementById("announcementModal").style.display="none";
+  document.body.style.overflow="";}
+
+document.addEventListener("click",(e)=>{
+  const modal=document.getElementById("announcementModal");
+  if(e.target===modal) closeModal();
+});
+document.addEventListener("keydown",(e)=>{if(e.key==="Escape") closeModal();});
+
+window.addEventListener("load",()=>{
+  const today=new Date().toDateString();
+  const last=localStorage.getItem("diwali_popup_day");
+  if(last!==today){
+    openModal();
+    localStorage.setItem("diwali_popup_day",today);
+  }
+  startCountdown(DIWALI_OFFER_END);
+});
+
+function startCountdown(endStr){
+  const end=new Date(endStr).getTime();
+  const d=id=>document.getElementById(id);
+  function tick(){
+    const now=Date.now();
+    let diff=Math.max(0,end-now);
+    const days=Math.floor(diff/(1000*60*60*24));
+    diff%=(1000*60*60*24);
+    const hrs=Math.floor(diff/(1000*60*60));
+    diff%=(1000*60*60);
+    const mins=Math.floor(diff/(1000*60));
+    diff%=(1000*60);
+    const secs=Math.floor(diff/1000);
+    d("dDays").textContent=String(days).padStart(2,"0");
+    d("dHours").textContent=String(hrs).padStart(2,"0");
+    d("dMins").textContent=String(mins).padStart(2,"0");
+    d("dSecs").textContent=String(secs).padStart(2,"0");
+    if(end-now<=0) clearInterval(timer);
+  }
+  tick();
+  const timer=setInterval(tick,1000);
 }
 </script>
 
