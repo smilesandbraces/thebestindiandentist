@@ -75,140 +75,56 @@
 
   <main id="main" class="container section">
     <div class="grid grid-2">
-     <!-- ====================== CONTACT / APPOINTMENT ====================== -->
-<section class="contact-card" aria-labelledby="form-title">
-  <div class="contact-head">
-    <span class="kicker">Book Appointment</span>
-    <h2 id="form-title">Let’s Plan Your Perfect Smile</h2>
-    <p class="sub">Fast response. Flexible slots. HIPAA-style privacy.</p>
+
+<!-- Contact form -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Book Your Appointment</h2>
+
+        <!-- GitHub Pages-friendly form: JS will always redirect to thank-you.html -->
+       <form id="contactForm"
+      class="ui-form"
+      action="https://formspree.io/f/xanpokbz"  <!-- <-- paste your endpoint -->
+
+  <label>
+    <span>Full Name</span>
+    <input type="text" name="name" placeholder="John Doe" autocomplete="name" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Email Address</span>
+    <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Phone Number</span>
+    <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
+           placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
+  </label>
+
+  <label>
+    <span>Preferred Date</span>
+    <input type="date" name="date"/>
+  </label>
+
+  <label class="full">
+    <span>Message / Concerns</span>
+    <textarea name="message" rows="5"
+      placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice" required></textarea>
+  </label>
+
+  <!-- Hidden helpers -->
+  <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+  <input type="hidden" name="_subject" value="New enquiry from bestindiandentist.com">
+  <input type="hidden" name="_template" value="table"> <!-- prettier email -->
+
+  <div class="form-actions full">
+    <button type="submit" class="btn btn-call">Submit</button>
+    <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
   </div>
 
-  <form id="contactForm"
-        class="contact-form"
-        action="https://formspree.io/f/xanpokbz"
-        method="POST"
-        novalidate>
-    <!-- 2-column responsive grid -->
-    <div class="grid">
-      <label class="field">
-        <span class="label">Full Name</span>
-        <input type="text" name="name" placeholder="John Doe"
-               autocomplete="name" required aria-required="true" />
-        <span class="hint">As on your ID (optional)</span>
-      </label>
-
-      <label class="field">
-        <span class="label">Email Address</span>
-        <input type="email" name="email" placeholder="you@example.com"
-               autocomplete="email" required aria-required="true" />
-        <span class="hint">We’ll share confirmation & updates</span>
-      </label>
-
-      <label class="field">
-        <span class="label">Phone Number</span>
-        <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
-               placeholder="+91 9XXXXXXXXX"
-               pattern="^[+0-9 ()-]{7,}$" required aria-required="true" />
-        <span class="hint">WhatsApp enabled preferred</span>
-      </label>
-
-      <label class="field">
-        <span class="label">Preferred Date</span>
-        <input type="date" name="date" id="prefDate" />
-        <span class="hint">We’ll confirm availability</span>
-      </label>
-
-      <label class="field full">
-        <span class="label">Message / Concerns</span>
-        <textarea name="message" rows="5" placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice" required></textarea>
-        <span class="hint">Add any reports or history</span>
-      </label>
-    </div>
-
-    <!-- Hidden helpers -->
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-    <input type="hidden" name="_subject" value="New enquiry from bestindiandentist.com" />
-    <input type="hidden" name="_template" value="table" />
-
-    <div class="actions">
-      <button type="submit" class="btn btn-primary" id="submitBtn" aria-label="Submit Appointment Form">
-        <span class="btn-text">Submit</span>
-        <span class="spinner" aria-hidden="true"></span>
-      </button>
-
-      <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">
-        WhatsApp Us
-      </a>
-    </div>
-
-    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-    <p class="policy">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
-  </form>
-</section>
-
-
-<!-- ====================== JS ====================== -->
-<script>
-/* Set min date = today (local) */
-(function(){
-  const d = document.getElementById('prefDate');
-  if (!d) return;
-  const now = new Date();
-  const yyyy = now.getFullYear();
-  const mm = String(now.getMonth()+1).padStart(2,'0');
-  const dd = String(now.getDate()).padStart(2,'0');
-  d.min = `${yyyy}-${mm}-${dd}`;
-})();
-
-/* Handle submit → Formspree → redirect (or inline status) */
-(function(){
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-  const btn = document.getElementById('submitBtn');
-
-  if (!form) return;
-
-  form.addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    status.textContent = '';
-    form.classList.add('loading');
-    btn.disabled = true;
-
-    // Basic client checks
-    const phone = form.elements['phone']?.value?.trim() ?? '';
-    if (!/^[+0-9 ()-]{7,}$/.test(phone)) {
-      status.textContent = 'Please enter a valid phone number.';
-      form.classList.remove('loading'); btn.disabled = false;
-      return;
-    }
-
-    try{
-      const data = new FormData(form);
-      const res = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: data
-      });
-
-      if (res.ok) {
-        // Redirect to a thank-you page (static-friendly)
-        const name = encodeURIComponent(form.elements['name']?.value || '');
-        const date = encodeURIComponent(form.elements['date']?.value || '');
-        window.location.href = `/thank-you.html?name=${name}&date=${date}`;
-      } else {
-        const out = await res.json().catch(()=>({}));
-        throw new Error(out?.errors?.[0]?.message || 'Submission failed. Please try again.');
-      }
-    } catch(err){
-      status.textContent = String(err.message || err);
-    } finally {
-      form.classList.remove('loading');
-      btn.disabled = false;
-    }
-  });
-})();
-</script>
-
+  <p id="formStatus" class="small full" role="status" aria-live="polite"></p>
+  <p class="small full">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+</form>
 
         <noscript>
           <p class="small">JavaScript is required to submit this form on GitHub Pages. Please WhatsApp us or call directly.</p>
@@ -315,7 +231,29 @@
   </div>
 </aside>
 
-
+<style>
+  /* Scoped styles for the Clinic Info card */
+  .clinic-card{
+    --card-bg:#ffffff; --stroke:#e6edf4; --ink:#0d2235; --muted:#6b7b8a;
+    --ring:#0ea5e9; --shadow:0 14px 40px rgba(9,31,59,.08);
+    border:1px solid var(--stroke); border-radius:20px; background:var(--card-bg);
+    box-shadow:var(--shadow); padding:18px; color:var(--ink);
+  }
+  .clinic-title{margin:0 0 8px;font-size:clamp(20px,2.2vw,24px);line-height:1.2}
+  .clinic-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .clinic-row{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px;border:1px solid var(--stroke);border-radius:14px;background:linear-gradient(180deg,#fff,#fbfeff)}
+  .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;border:1px solid #d9eefb;background:#eef8ff;color:#0e7fa8}
+  .label{font-weight:700;font-size:.95rem;margin-bottom:4px}
+  .value{font-size:.95rem;color:#223144}
+  .row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--stroke);background:#fff;text-decoration:none;color:#0e7fa8;font-weight:600}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;text-decoration:none;font-weight:700}
+  .btn-call{background:#0e7fa8;color:#fff}
+  .btn-wa{background:#25d366;color:#fff}
+  .clinic-card a:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:12px}
+  .sr-only{position:absolute;left:-9999px}
+  @media (min-width:640px){.clinic-grid{gap:16px}}
+</style>
 
 <script>
   // Copy helper for address (non-blocking)
