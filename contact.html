@@ -76,152 +76,55 @@
   <main id="main" class="container section">
     <div class="grid grid-2">
 
-<!-- ================= Contact form (Clinic Theme) ================= -->
-<section class="contact-card clinic" aria-labelledby="form-title">
-  <h2 id="form-title" class="contact-title">Book Your Appointment</h2>
+<!-- Contact form -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Book Your Appointment</h2>
 
-  <form id="contactForm"
-        class="ui-form"
-        action="https://formspree.io/f/xanpokbz"
-        method="POST"
-        novalidate>
+        <!-- GitHub Pages-friendly form: JS will always redirect to thank-you.html -->
+       <form id="contactForm"
+      class="ui-form"
+      action="https://formspree.io/f/xanpokbz"  <!-- <-- paste your endpoint -->
 
-    <div class="form-grid">
-      <label class="field">
-        <span class="label">Full Name</span>
-        <input type="text" name="name" placeholder="John Doe"
-               autocomplete="name" required aria-required="true"/>
-      </label>
+  <label>
+    <span>Full Name</span>
+    <input type="text" name="name" placeholder="John Doe" autocomplete="name" required aria-required="true"/>
+  </label>
 
-      <label class="field">
-        <span class="label">Email Address</span>
-        <input type="email" name="email" placeholder="you@example.com"
-               autocomplete="email" required aria-required="true"/>
-      </label>
+  <label>
+    <span>Email Address</span>
+    <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
+  </label>
 
-      <label class="field">
-        <span class="label">Phone Number</span>
-        <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
-               placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
-      </label>
+  <label>
+    <span>Phone Number</span>
+    <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
+           placeholder="+91 9xxxxxxxxx" pattern="^[+0-9 ()-]{7,}$" required aria-required="true"/>
+  </label>
 
-      <label class="field">
-        <span class="label">Preferred Date</span>
-        <input type="date" name="date"/>
-      </label>
+  <label>
+    <span>Preferred Date</span>
+    <input type="date" name="date"/>
+  </label>
 
-      <label class="field full">
-        <span class="label">Message / Concerns</span>
-        <textarea name="message" rows="5"
-          placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice" required></textarea>
-      </label>
-    </div>
+  <label class="full">
+    <span>Message / Concerns</span>
+    <textarea name="message" rows="5"
+      placeholder="Your message… e.g., aligners consultation, emergency pain, implant advice" required></textarea>
+  </label>
 
-    <!-- Hidden helpers -->
-    <input type="text" name="_gotcha" style="display:none">
-    <input type="hidden" name="_subject" value="New enquiry from bestindiandentist.com">
-    <input type="hidden" name="_template" value="table">
+  <!-- Hidden helpers -->
+  <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+  <input type="hidden" name="_subject" value="New enquiry from bestindiandentist.com">
+  <input type="hidden" name="_template" value="table"> <!-- prettier email -->
 
-    <div class="form-actions full">
-      <button type="submit" class="btn btn-primary">
-        <span class="btn-text">Submit</span>
-      </button>
-      <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
-    </div>
+  <div class="form-actions full">
+    <button type="submit" class="btn btn-call">Submit</button>
+    <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">Message on WhatsApp</a>
+  </div>
 
-    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-    <p class="form-privacy">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
-  </form>
-</section>
-
-<style>
-/* ---------- Clinic palette (edit only these 3 vars) ---------- */
-:root{
-  --brand: #1e3a8a;    /* Indigo (links, focus ring, primary) */
-  --accent: #0ea5e9;   /* Light blue (hover/soft highlights) */
-  --ink: #0f172a;      /* Strong dark text */
-}
-
-/* ---------- Card ---------- */
-.contact-card.clinic{
-  max-width: 960px; margin: 40px auto; padding: clamp(20px,2.8vw,28px);
-  background: #ffffff; color: var(--ink);
-  border: 1px solid #e6eaf2; border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
-}
-
-/* Title */
-.contact-title{
-  margin: 0 0 12px;
-  font: 800 clamp(22px,2vw + 10px,32px)/1.15 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color: var(--ink);
-}
-
-/* Grid */
-.ui-form .form-grid{
-  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 16px 20px; margin-top: 6px;
-}
-.ui-form .full{ grid-column: 1 / -1; }
-
-/* Fields */
-.field{ display:grid; gap:8px; }
-.label{
-  font: 700 12px/1 ui-sans-serif, system-ui; text-transform: uppercase;
-  letter-spacing:.06em; color:#334155;
-}
-
-.field input, .field textarea{
-  width:100%; background:#f8fafc; color: var(--ink);
-  border:1px solid #dbe2ee; border-radius:10px;
-  padding:12px 12px; font:500 15px/1.4 ui-sans-serif, system-ui;
-  outline: none; transition:border-color .15s, box-shadow .15s, background .15s;
-}
-.field textarea{ min-height: 120px; resize: vertical; }
-.field input::placeholder, .field textarea::placeholder{ color:#94a3b8; }
-
-.field input:focus, .field textarea:focus{
-  background:#fff; border-color: var(--brand);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 20%, transparent);
-}
-
-/* Actions / Buttons */
-.form-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:12px 18px; border-radius:10px; font:800 14px/1 ui-sans-serif, system-ui;
-  text-decoration:none; cursor:pointer; user-select:none; transition:transform .08s, box-shadow .12s, background .2s, border-color .2s;
-}
-.btn:active{ transform: translateY(1px); }
-
-.btn-primary{
-  background: var(--brand); color:#fff; border:1px solid color-mix(in srgb, var(--brand) 85%, #000);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--brand) 30%, transparent);
-}
-.btn-primary:hover{
-  background: color-mix(in srgb, var(--brand) 85%, var(--accent));
-  box-shadow: 0 12px 24px color-mix(in srgb, var(--brand) 40%, transparent);
-}
-
-.btn-ghost{
-  background:#ffffff; color: var(--brand);
-  border:1px solid #dbe2ee;
-}
-.btn-ghost:hover{ border-color: var(--brand); color: var(--ink); background:#f1f5f9; }
-
-/* Status + Privacy */
-.form-status{ margin-top:8px; color:#16a34a; min-height:1.1em; }
-.form-privacy{ margin-top:8px; color:#64748b; }
-.form-privacy a{ color: var(--brand); text-underline-offset:2px; }
-
-/* Responsive */
-@media (max-width: 760px){
-  .ui-form .form-grid{ grid-template-columns:1fr; }
-  .form-actions{ flex-direction:column; align-items:stretch; }
-  .btn{ width:100%; }
-}
-</style>
+  <p id="formStatus" class="small full" role="status" aria-live="polite"></p>
+  <p class="small full">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+</form>
 
         <noscript>
           <p class="small">JavaScript is required to submit this form on GitHub Pages. Please WhatsApp us or call directly.</p>
