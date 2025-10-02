@@ -953,3 +953,43 @@ img, svg, video { max-width: 100%; height: auto; }
   padding-top: 1 !important;
   border-radius: 1 !important; /* full-bleed edge */
 }
+/* ===================== */
+/* Services Section Grid */
+/* ===================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.service-grid > article {
+  background: #fff;
+  border: 1px solid var(--stroke, #e2e8f0);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-grid > article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(2, 29, 59, 0.08);
+}
+
+.service-grid img {
+  width: 100%;
+  display: block;       /* removes inline spacing */
+  aspect-ratio: 4 / 3;  /* keeps uniform tile height */
+  object-fit: cover;    /* crop nicely */
+}
+
+.service-grid .pad {
+  padding: 10px;
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1100px) {
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
