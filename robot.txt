@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Block internal or duplicate pages (uncomment if you have these)
-# Disallow: /private/
-# Disallow: /tmp/
-# Disallow: /drafts/
-
-# Block common spammy bots
-User-agent: AhrefsBot
-Disallow: /
-User-agent: SemrushBot
-Disallow: /
-User-agent: MJ12bot
-Disallow: /
-
-# Sitemap location
-Sitemap: https://bestindiandentist.com/sitemap.xml
+Sitemap: https://www.bestindiandentist.com/sitemap.xml
