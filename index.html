@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="index,follow"/>
 
-  <!-- SEO (short, focused) -->
-  <title>Smiles & Braces Dental Clinic, Lucknow | Orthodontist</title>
-  <meta name="description" content="Comfort-first orthodontics and dentistry in Lucknow by Dr. Vikram Jeet Singh (BDS, MDS). Braces, aligners, implants & emergency care with clear timelines and prices."/>
+  <!-- SEO: stronger brand + locality -->
+  <title>Best Dentist & Orthodontist in Lucknow (Indira Nagar) | Smiles & Braces – Dr. Vikram Jeet Singh</title>
+  <meta name="description" content="Smiles & Braces Dental Clinic, Indira Nagar, Lucknow. Braces & aligners, dental implants, whitening, root canal & family dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Book an appointment online."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/"/>
 
   <!-- Social cards -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Smiles & Braces Dental Clinic | Orthodontist in Lucknow"/>
-  <meta property="og:description" content="Precision orthodontics, aligners, implants, cosmetic and preventive care with clear timelines and costs."/>
+  <meta property="og:site_name" content="Smiles & Braces Dental Clinic"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta property="og:title" content="Smiles & Braces – Best Dentist & Orthodontist in Lucknow"/>
+  <meta property="og:description" content="Precision orthodontics, aligners, implants & cosmetic dentistry in Indira Nagar, Lucknow. Clear prices & quick appointment."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/"/>
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
   <!-- Favicons -->
@@ -23,121 +27,56 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts & Global CSS -->
+  <!-- Performance: fonts + CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/site.css"/>
 
-  <!-- Page-only styles -->
-  <style>
-    :root{
-      --brand:#0e7fa8; --ink:#0d2235; --muted:#6b7b8a; --card:#ffffff;
-      --stroke:#e6edf4; --shadow:0 14px 40px rgba(9,31,59,.08);
-    }
-    .h0{font-size:clamp(28px,4vw,44px);letter-spacing:-.01em;line-height:1.1}
-    .h2{font-size:clamp(22px,2.4vw,28px);line-height:1.25}
-    .h3{font-size:clamp(18px,2vw,22px);line-height:1.25}
-    .kicker{font-weight:600;letter-spacing:.02em;color:var(--muted)}
-    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;box-shadow:var(--shadow)}
-    .pad-s{padding:10px 12px}.pad-m{padding:16px 18px}.pad-l{padding:22px 24px}
-    .muted{color:var(--muted)}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    .small{font-size:.92rem}
+  <!-- Preload critical CSS, then apply (improves FCP/LCP) -->
+  <link rel="preload" as="style" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/site.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/site.css"></noscript>
 
-    /* ===== Top status bar with live time ===== */
-    .topbar{background:#0e7fa8;color:#e9fbff}
-    .topbar .container{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:6px 0;font-size:.95rem}
-    .clock{display:flex;gap:10px;align-items:center;white-space:nowrap}
-    .dot{width:6px;height:6px;border-radius:50%;background:#c2f1ff;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
-    .tz-badge{display:inline-flex;gap:6px;align-items:center;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 8px;text-decoration:none;color:#e9fbff}
-    .tz-badge:focus-visible{outline:2px solid #fff;outline-offset:2px}
-    .tz-badge strong{font-variation-settings:'wght' 700}
+  <!-- Preload hero image (convert to .webp and match CSS url) -->
+  <link rel="preload" as="image" href="/assets/illustrations/comfort.webp" imagesrcset="/assets/illustrations/comfort.webp 1x" fetchpriority="high">
 
-    /* ===== Hero (photo + parallax + soft orbs) ===== */
-    .home-hero.premium{
-      --grad1:#e6f7ff; --grad2:#f7fbff;
-      position:relative; overflow:clip;
-      background:
-        radial-gradient(1200px 600px at 10% -20%, var(--grad1), transparent 70%),
-        radial-gradient(900px 500px at 90% 0%, var(--grad2), transparent 65%);
-    }
-    .hero-media{
-      position:absolute; inset:-12% -8% 0 -8%;
-      background:url("/assets/illustrations/comfort.jpg") center/cover no-repeat;
-      transform: translateY(var(--parY,0px)) scale(1.06);
-      opacity:.28; filter:contrast(1.06) saturate(1.06) brightness(1.02);
-      will-change: transform;
-    }
-    .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(34px); opacity:.55}
-    .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%); mix-blend-mode:multiply}
-    .o1{left:12%; top:14%; width:240px; height:240px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #63caff 58%, transparent 70%); animation:float 20s ease-in-out infinite}
-    .o2{left:88%; top:12%; width:300px; height:300px; background:radial-gradient(circle at 60% 70%, #31b2ff, #a7e2ff 58%, transparent 70%); animation:float 23s ease-in-out infinite}
-    .o3{left:10%; top:80%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #61d7a2, #d2ffe9 58%, transparent 70%); animation:float 22s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
-    .home-hero__inner .kicker{display:inline-block;margin-bottom:6px;padding:6px 10px;border:1px solid var(--stroke,#e2e8f0);border-radius:999px;background:#fff}
-    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  <!-- Optional: hint DNS for any CDN you use -->
+  <!-- <link rel="dns-prefetch" href="https://cdn.example.com"> -->
 
-    /* Hero highlight chips */
-    .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;padding:0}
-    .trust-badges li{list-style:none;border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:6px 10px}
-    .trust-badges li span{display:block;text-align:center}
+  <!-- LocalBusiness / Dentist structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Smiles & Braces Dental Clinic - Dr. Vikram Jeet Singh",
+    "url": "https://www.bestindiandentist.com/",
+    "image": "https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
+    "logo": "https://www.bestindiandentist.com/assets/icons/apple-touch-icon.png",
+    "description": "Orthodontics, aligners, implants, whitening and family dentistry in Indira Nagar, Lucknow.",
+    "telephone": "+91-9565321625",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Indira Nagar",
+      "addressLocality": "Lucknow",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "226016",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/yourclinicpage",
+      "https://www.instagram.com/yourclinicpage",
+      "https://www.justdial.com/Lucknow/Smiles-Braces-Dental-Clinic"
+    ]
+  }
+  </script>
 
-    /* KPI cards (Open now / reply time / map) */
-    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .kpi-card{display:flex;align-items:flex-start;gap:10px;border-radius:16px;border:1px solid var(--stroke);padding:12px;background:linear-gradient(180deg,#ffffff,#fbfeff)}
-    .kpi-card .kpi-icon{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#eef8ff;color:#0e7fa8;border:1px solid #d9eefb}
-    .kpi-title{font-weight:800;font-size:clamp(18px,3vw,22px);margin:0}
-    .kpi-sub{margin:.25rem 0 0 0;color:var(--muted)}
-    .kpi-cta{font-weight:600;color:#0e7fa8}
-    .kpi-card.is-closed{background:linear-gradient(180deg,#fff5f5,#fff)}
-    @media (max-width:920px){.kpis{grid-template-columns:1fr}}
-    a.kpi-card{text-decoration:none;color:inherit}
-
-    /* Services grid */
-    .service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .service-grid > article{grid-column:span 3;background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
-    .service-grid > article:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(2,29,59,.08)}
-    .service-grid img{width:100%;height:160px;object-fit:cover}
-    .service-grid .pad{padding:10px}
-    @media (max-width:1100px){.service-grid > article{grid-column:span 4}}
-    @media (max-width:780px){.service-grid > article{grid-column:span 6}}
-    @media (max-width:560px){.service-grid > article{grid-column:span 12}}
-
-    /* About bento */
-    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(16px,3vw,28px)}
-    @media (max-width:1024px){.about-grid{grid-template-columns:1fr}}
-    .about-photo img{width:100%;height:auto;border-radius:12px}
-
-    /* Clocks */
-    .clock-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .clock-card{grid-column:span 3;background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
-    .clock-card h4{margin:0 0 4px 0}
-    .clock-card .time{font-size:clamp(18px,3.5vw,28px);font-weight:800;letter-spacing:.3px}
-    .clock-card .sub{display:flex;justify-content:space-between;gap:8px;margin-top:4px}
-    .clock-card .copy{cursor:pointer;border:1px solid var(--stroke,#e2e8f0);border-radius:999px;padding:2px 8px;font-size:.8rem}
-    @media (max-width:1100px){.clock-card{grid-column:span 4}}
-    @media (max-width:780px){.clock-card{grid-column:span 6}}
-    @media (max-width:560px){.clock-card{grid-column:span 12}}
-
-    /* Mini price widget */
-    .mini-price{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .mini-price .panel{background:#fff;border:1px solid var(--stroke,#e2e8f0);border-radius:14px;padding:12px}
-    @media (max-width:680px){.mini-price{grid-template-columns:1fr}}
-
-    /* Carousel */
-    .carousel{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--stroke,#e2e8f0)}
-    .slides{display:flex;transition:transform .6s ease}
-    .slide{min-width:100%;padding:16px;background:#fff}
-    .dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
-    .dot{width:8px;height:8px;border-radius:50%;background:#c9d8e6}
-    .dot.is-active{background:#0e7fa8}
-
-    /* Reveal */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.is-visible{opacity:1;transform:none}
-    :target{scroll-margin-top:96px}
-  </style>
+  <!-- Your existing inline page-only styles can remain below if needed -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
