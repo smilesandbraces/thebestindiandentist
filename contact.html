@@ -315,29 +315,7 @@
   </div>
 </aside>
 
-<style>
-  /* Scoped styles for the Clinic Info card */
-  .clinic-card{
-    --card-bg:#ffffff; --stroke:#e6edf4; --ink:#0d2235; --muted:#6b7b8a;
-    --ring:#0ea5e9; --shadow:0 14px 40px rgba(9,31,59,.08);
-    border:1px solid var(--stroke); border-radius:20px; background:var(--card-bg);
-    box-shadow:var(--shadow); padding:18px; color:var(--ink);
-  }
-  .clinic-title{margin:0 0 8px;font-size:clamp(20px,2.2vw,24px);line-height:1.2}
-  .clinic-grid{display:grid;grid-template-columns:1fr;gap:14px}
-  .clinic-row{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px;border:1px solid var(--stroke);border-radius:14px;background:linear-gradient(180deg,#fff,#fbfeff)}
-  .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;border:1px solid #d9eefb;background:#eef8ff;color:#0e7fa8}
-  .label{font-weight:700;font-size:.95rem;margin-bottom:4px}
-  .value{font-size:.95rem;color:#223144}
-  .row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--stroke);background:#fff;text-decoration:none;color:#0e7fa8;font-weight:600}
-  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;text-decoration:none;font-weight:700}
-  .btn-call{background:#0e7fa8;color:#fff}
-  .btn-wa{background:#25d366;color:#fff}
-  .clinic-card a:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:12px}
-  .sr-only{position:absolute;left:-9999px}
-  @media (min-width:640px){.clinic-grid{gap:16px}}
-</style>
+
 
 <script>
   // Copy helper for address (non-blocking)
