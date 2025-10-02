@@ -76,8 +76,8 @@
   <main id="main" class="container section">
     <div class="grid grid-2">
 
-<!-- ======================= Contact form (Dark & Strong) ======================= -->
-<section class="contact-card" aria-labelledby="form-title">
+<!-- ================= Contact form (Clinic Theme) ================= -->
+<section class="contact-card clinic" aria-labelledby="form-title">
   <h2 id="form-title" class="contact-title">Book Your Appointment</h2>
 
   <form id="contactForm"
@@ -135,120 +135,91 @@
 </section>
 
 <style>
-/* Dark strong theme */
-.contact-card {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 28px;
-  background: #111;
-  border-radius: 14px;
-  border: 1px solid #333;
-  color: #eaeaea;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+/* ---------- Clinic palette (edit only these 3 vars) ---------- */
+:root{
+  --brand: #1e3a8a;    /* Indigo (links, focus ring, primary) */
+  --accent: #0ea5e9;   /* Light blue (hover/soft highlights) */
+  --ink: #0f172a;      /* Strong dark text */
 }
 
-.contact-title {
-  margin: 0 0 18px;
-  font-size: 28px;
-  font-weight: 800;
-  color: #fff;
-  border-left: 5px solid #ff4d4d;
-  padding-left: 12px;
+/* ---------- Card ---------- */
+.contact-card.clinic{
+  max-width: 960px; margin: 40px auto; padding: clamp(20px,2.8vw,28px);
+  background: #ffffff; color: var(--ink);
+  border: 1px solid #e6eaf2; border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
 }
 
-.ui-form .form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px 20px;
+/* Title */
+.contact-title{
+  margin: 0 0 12px;
+  font: 800 clamp(22px,2vw + 10px,32px)/1.15 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: var(--ink);
 }
 
-.field.full { grid-column: 1 / -1; }
-
-.label {
-  font-weight: 700;
-  font-size: 13px;
-  color: #ddd;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+/* Grid */
+.ui-form .form-grid{
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px 20px; margin-top: 6px;
 }
+.ui-form .full{ grid-column: 1 / -1; }
 
-.field input,
-.field textarea {
-  width: 100%;
-  background: #1a1a1a;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #f4f4f4;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-}
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #888;
-  font-weight: 400;
+/* Fields */
+.field{ display:grid; gap:8px; }
+.label{
+  font: 700 12px/1 ui-sans-serif, system-ui; text-transform: uppercase;
+  letter-spacing:.06em; color:#334155;
 }
 
-.field input:focus,
-.field textarea:focus {
-  border-color: #ff4d4d;
-  box-shadow: 0 0 0 3px rgba(255,77,77,0.35);
+.field input, .field textarea{
+  width:100%; background:#f8fafc; color: var(--ink);
+  border:1px solid #dbe2ee; border-radius:10px;
+  padding:12px 12px; font:500 15px/1.4 ui-sans-serif, system-ui;
+  outline: none; transition:border-color .15s, box-shadow .15s, background .15s;
+}
+.field textarea{ min-height: 120px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder{ color:#94a3b8; }
+
+.field input:focus, .field textarea:focus{
+  background:#fff; border-color: var(--brand);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 20%, transparent);
 }
 
-/* Buttons */
-.form-actions {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+/* Actions / Buttons */
+.form-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:12px 18px; border-radius:10px; font:800 14px/1 ui-sans-serif, system-ui;
+  text-decoration:none; cursor:pointer; user-select:none; transition:transform .08s, box-shadow .12s, background .2s, border-color .2s;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--brand); color:#fff; border:1px solid color-mix(in srgb, var(--brand) 85%, #000);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brand) 30%, transparent);
+}
+.btn-primary:hover{
+  background: color-mix(in srgb, var(--brand) 85%, var(--accent));
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--brand) 40%, transparent);
 }
 
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform .15s, background .2s, box-shadow .2s;
+.btn-ghost{
+  background:#ffffff; color: var(--brand);
+  border:1px solid #dbe2ee;
 }
+.btn-ghost:hover{ border-color: var(--brand); color: var(--ink); background:#f1f5f9; }
 
-.btn-primary {
-  background: linear-gradient(90deg, #ff4d4d, #ff7a3c);
-  color: #fff;
-  border: none;
-  box-shadow: 0 6px 18px rgba(255,77,77,0.35);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(255,77,77,0.5);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #666;
-}
-.btn-ghost:hover {
-  background: #222;
-  border-color: #ff4d4d;
-  color: #ff4d4d;
-}
-
-/* Status + privacy */
-.form-status { margin-top: 8px; font-size: 14px; color: #79ff92; }
-.form-privacy { font-size: 13px; color: #aaa; margin-top: 10px; }
-.form-privacy a { color: #ff7a3c; }
+/* Status + Privacy */
+.form-status{ margin-top:8px; color:#16a34a; min-height:1.1em; }
+.form-privacy{ margin-top:8px; color:#64748b; }
+.form-privacy a{ color: var(--brand); text-underline-offset:2px; }
 
 /* Responsive */
-@media(max-width: 720px) {
-  .ui-form .form-grid { grid-template-columns: 1fr; }
-  .form-actions { flex-direction: column; }
-  .btn { width: 100%; text-align: center; }
+@media (max-width: 760px){
+  .ui-form .form-grid{ grid-template-columns:1fr; }
+  .form-actions{ flex-direction:column; align-items:stretch; }
+  .btn{ width:100%; }
 }
 </style>
 
