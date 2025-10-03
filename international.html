@@ -191,28 +191,140 @@
     <span><a class="link-more" href="/">Home</a> / International Patients</span>
   </aside>
 
-  <main id="main" class="container">
-    <!-- WHY US -->
-    <section class="section grid-2 reveal">
-      <div class="glass-2 pad-m">
-        <h2 class="h2">Why patients fly to us</h2>
-        <ul class="bullets">
-          <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
-          <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
-          <li><strong>Bundled appointments</strong> to minimize days in town</li>
-          <li><strong>Transparent prices</strong> with live currency conversion</li>
-          <li>Visa letters, <strong>concierge support</strong>, and tele-follow ups</li>
-        </ul>
-        <div class="flaglist" aria-label="Supported currencies">
-          <span class="badge mono">USD $</span><span class="badge mono">EUR €</span><span class="badge mono">GBP £</span>
-          <span class="badge mono">CNY ¥</span><span class="badge mono">AED د.إ</span><span class="badge mono">AUD $</span><span class="badge mono">INR ₹</span>
-        </div>
+<!-- ===================== WHY US ===================== -->
+<section id="why-us" class="section reveal" aria-labelledby="why-title">
+  <div class="why-grid">
+    <!-- Text card -->
+    <div class="card">
+      <h2 id="why-title" class="h2">Why patients fly to us</h2>
+
+      <ul class="bullets">
+        <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
+        <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
+        <li><strong>Bundled appointments</strong> to minimize days in town</li>
+        <li><strong>Transparent prices</strong> with live currency conversion</li>
+        <li>Visa letters, <strong>concierge support</strong>, and tele-follow-ups</li>
+      </ul>
+
+      <div class="flaglist" aria-label="Supported currencies">
+        <span class="badge mono" aria-label="US Dollar">USD $</span>
+        <span class="badge mono" aria-label="Euro">EUR €</span>
+        <span class="badge mono" aria-label="British Pound">GBP £</span>
+        <span class="badge mono" aria-label="Chinese Yuan">CNY ¥</span>
+        <span class="badge mono" aria-label="UAE Dirham">AED د.إ</span>
+        <span class="badge mono" aria-label="Australian Dollar">AUD $</span>
+        <span class="badge mono" aria-label="Indian Rupee">INR ₹</span>
       </div>
-      <figure class="glass-2 pad-s">
-        <img src="/assets/illustrations/experience.jpg" alt="Comfortable modern dental treatment experience" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
-        <figcaption class="small muted" style="padding:6px 8px">Comfort-first clinical spaces, clear itineraries & time-boxed visits.</figcaption>
-      </figure>
-    </section>
+    </div>
+
+    <!-- Image card -->
+    <figure class="card media">
+      <!-- If you have WebP, list it first for better performance -->
+      <!-- <source srcset="/assets/illustrations/experience.webp" type="image/webp"> -->
+      <img
+        src="/assets/illustrations/experience.jpg"
+        alt="Comfortable, modern dental care with calm clinical spaces"
+        loading="lazy" decoding="async"
+        width="960" height="640" />
+      <figcaption class="small muted">
+        Comfort-first clinical spaces, clear itineraries & time-boxed visits.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============== Scoped styles for WHY US ============== -->
+<style>
+/* Palette — match site brand here */
+:root{
+  --ink:#0f172a;            /* main text */
+  --muted:#64748b;          /* secondary text */
+  --card:#ffffff;           /* card background */
+  --line:#e6eaf2;           /* borders */
+  --ring:#1e3a8a;           /* focus/brand */
+  --accent:#0ea5e9;         /* light brand accent */
+}
+
+/* Layout */
+#why-us .why-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(16px, 3vw, 28px);
+  align-items: start;
+}
+@media (max-width: 900px){
+  #why-us .why-grid{ grid-template-columns: 1fr; }
+}
+
+/* Cards */
+#why-us .card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(16px, 2.2vw, 22px);
+  box-shadow: 0 10px 24px rgba(15,23,42,.05);
+  color: var(--ink);
+}
+#why-us .card.media{
+  padding: 0;
+  overflow: hidden;
+}
+#why-us .card.media img{
+  display:block; width:100%; height:auto;
+  aspect-ratio: 3 / 2; object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+#why-us .card.media figcaption{
+  padding: 8px 12px 12px;
+}
+
+/* Headings */
+#why-us .h2{
+  margin: 0 0 10px;
+  font: 800 clamp(22px, 1.8vw + 10px, 30px)/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Bullets with checkmarks */
+#why-us .bullets{
+  list-style: none; margin: 10px 0 14px; padding: 0; display: grid; gap: 10px;
+}
+#why-us .bullets li{
+  position: relative; padding-left: 28px; line-height: 1.45; color: var(--ink);
+}
+#why-us .bullets li::before{
+  content: ""; position: absolute; left: 0; top: .35em;
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--ring);
+  background:
+    radial-gradient(circle at 50% 50%, var(--accent) 0 50%, transparent 51% 100%);
+  mask:
+    radial-gradient(circle 7px at 50% 50%, #000 98%, transparent 100%);
+}
+
+/* Currency badges */
+#why-us .flaglist{ display:flex; flex-wrap:wrap; gap:8px; }
+#why-us .badge{
+  font: 700 12px/1 ui-sans-serif, system-ui;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ring);
+  background: #f1f5fb;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+#why-us .badge.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+/* Small/muted */
+#why-us .small{ font-size: 12px; }
+#why-us .muted{ color: var(--muted); }
+
+/* Focus ring for accessibility if elements become focusable later */
+#why-us :where(a, button, input, textarea, select):focus{
+  outline: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 25%, transparent);
+  border-color: var(--ring);
+}
+</style>
+
 
  <!-- ===== PRICING (Ultra-pro layout) ===== -->
 <section id="pricing" class="section reveal">
