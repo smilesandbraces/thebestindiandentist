@@ -993,3 +993,31 @@ img, svg, video { max-width: 100%; height: auto; }
     grid-template-columns: repeat(4, 1fr);
   }
 }
+    /* ===== Hero (photo + parallax + soft orbs) ===== */
+    .home-hero.premium{
+      --grad1:#e6f7ff; --grad2:#f7fbff;
+      position:relative; overflow:clip;
+      background:
+        radial-gradient(1200px 600px at 10% -20%, var(--grad1), transparent 70%),
+        radial-gradient(900px 500px at 90% 0%, var(--grad2), transparent 65%);
+    }
+    .hero-media{
+      position:absolute; inset:-12% -8% 0 -8%;
+      background:url("/assets/illustrations/comfort.jpg") center/cover no-repeat;
+      transform: translateY(var(--parY,0px)) scale(1.06);
+      opacity:.28; filter:contrast(1.06) saturate(1.06) brightness(1.02);
+      will-change: transform;
+    }
+    .orbs{position:absolute; inset:0; pointer-events:none; filter:blur(34px); opacity:.55}
+    .orb{position:absolute; border-radius:999px; transform:translate(-50%,-50%); mix-blend-mode:multiply}
+    .o1{left:12%; top:14%; width:240px; height:240px; background:radial-gradient(circle at 30% 30%, #0e7fa8, #63caff 58%, transparent 70%); animation:float 20s ease-in-out infinite}
+    .o2{left:88%; top:12%; width:300px; height:300px; background:radial-gradient(circle at 60% 70%, #31b2ff, #a7e2ff 58%, transparent 70%); animation:float 23s ease-in-out infinite}
+    .o3{left:10%; top:80%; width:240px; height:240px; background:radial-gradient(circle at 50% 50%, #61d7a2, #d2ffe9 58%, transparent 70%); animation:float 22s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translate(-50%,-50%) translateY(0)} 50%{transform:translate(-50%,-50%) translateY(18px)}}
+    .home-hero__inner .kicker{display:inline-block;margin-bottom:6px;padding:6px 10px;border:1px solid var(--stroke,#e2e8f0);border-radius:999px;background:#fff}
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+    /* Hero highlight chips */
+    .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;padding:0}
+    .trust-badges li{list-style:none;border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:6px 10px}
+    .trust-badges li span{display:block;text-align:center}
