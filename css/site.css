@@ -1021,3 +1021,13 @@ img, svg, video { max-width: 100%; height: auto; }
     .trust-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;padding:0}
     .trust-badges li{list-style:none;border:1px solid var(--stroke,#e2e8f0);background:#fff;border-radius:999px;padding:6px 10px}
     .trust-badges li span{display:block;text-align:center}
+  /* KPI cards (Open now / reply time / map) */
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .kpi-card{display:flex;align-items:flex-start;gap:10px;border-radius:16px;border:1px solid var(--stroke);padding:12px;background:linear-gradient(180deg,#ffffff,#fbfeff)}
+    .kpi-card .kpi-icon{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#eef8ff;color:#0e7fa8;border:1px solid #d9eefb}
+    .kpi-title{font-weight:800;font-size:clamp(18px,3vw,22px);margin:0}
+    .kpi-sub{margin:.25rem 0 0 0;color:var(--muted)}
+    .kpi-cta{font-weight:600;color:#0e7fa8}
+    .kpi-card.is-closed{background:linear-gradient(180deg,#fff5f5,#fff)}
+    @media (max-width:920px){.kpis{grid-template-columns:1fr}}
+    a.kpi-card{text-decoration:none;color:inherit}
