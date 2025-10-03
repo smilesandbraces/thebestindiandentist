@@ -1003,7 +1003,7 @@ img, svg, video { max-width: 100%; height: auto; }
     }
     .hero-media{
       position:absolute; inset:-12% -8% 0 -8%;
-      background:url("/assets/illustrations/comfort.jpg") center/cover no-repeat;
+      background:url("/assets/illustrations/comfort.webp") center/cover no-repeat;
       transform: translateY(var(--parY,0px)) scale(1.06);
       opacity:.28; filter:contrast(1.06) saturate(1.06) brightness(1.02);
       will-change: transform;
