@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="index,follow"/>
 
-  <title>Contact & Book Appointments | Smiles & Braces Dental Clinic Lucknow</title>
-  <meta name="description" content="Book an appointment with Smiles & Braces Dental Clinic, Lucknow. WhatsApp, call, or use the form to reach Dr. Vikram Jeet Singh (BDS, MDS). Clear aligners, braces, implants & more."/>
-  <link rel="canonical" href="https://www.bestindiandentist.com/contact.html"/>
+  <title>The Importance of Regular Dental Check-ups | Smiles & Braces Dental Clinic Lucknow</title>
+  <meta name="description" content="Why regular dental check-ups matter: early detection, what to expect during a visit, how often to come, guidance for kids and seniors, and how check-ups save money. By Dr Vikram Jeet Singh, Smiles & Braces Dental Clinic Lucknow."/>
+  <link rel="canonical" href="https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"/>
 
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Contact & Book Appointments | Smiles & Braces Lucknow"/>
-  <meta property="og:description" content="Fast booking via WhatsApp, phone or contact form."/>
-  <meta property="og:url" content="https://www.bestindiandentist.com/contact.html"/>
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="The Importance of Regular Dental Check-ups"/>
+  <meta property="og:description" content="Early detection saves teeth, money and time. See what happens during a professional check-up and how often to visit."/>
+  <meta property="og:url" content="https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/blog/regular-checkups.webp"/>
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
 
   <link rel="icon" href="/assets/icons/favicon.ico"/>
@@ -21,19 +24,39 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 
-  <!-- Page-scoped styles: tidy 2-col form on desktop, 1-col on mobile -->
+  <!-- Page-scoped styles -->
   <style>
+    :root{--brand:#0e7fa8;--ink:#0f172a;--muted:#475569;--bg:#f8fafc;--stroke:#e2e8f0}
+    .article-hero img{width:100%;height:auto;border-radius:16px}
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:24px}
+    @media(max-width:1000px){.grid{grid-template-columns:1fr}}
+    .toc{position:sticky;top:90px;align-self:start;background:#fff;border:1px solid var(--stroke);border-radius:16px;padding:16px;box-shadow:0 6px 24px rgba(2,6,23,.06)}
+    .toc h3{font-size:1rem;margin:0 0 8px;color:var(--muted)}
+    .toc ol{margin:0;padding-left:18px}
+    .toc a{color:var(--ink)}
+    .article-content h2{margin-top:28px}
+    .bullets{list-style:disc;margin:8px 0 8px 22px}
+    .checklist{list-style:none;margin:8px 0;padding:0}
+    .checklist li{padding-left:28px;position:relative;margin:10px 0}
+    .checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#16a34a;font-weight:700}
+    .callout{background:var(--bg);border:1px solid var(--stroke);border-left:4px solid var(--brand);padding:14px;border-radius:12px;margin:12px 0}
+    .cta-card{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:linear-gradient(140deg,#e6f7fd,#ffffff);border:1px solid var(--stroke);border-radius:18px;padding:18px 20px;margin-top:24px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:600}
+    .btn-brand{background:var(--brand);color:#fff}
+    .btn-ghost{border:1px solid var(--brand);color:var(--brand);background:#fff}
+    .author-box{margin-top:28px;padding:18px;border:1px solid var(--stroke);border-radius:16px;background:#fff;box-shadow:0 10px 28px rgba(2,6,23,.06)}
+    .author-box strong{color:var(--brand)}
+    .meta-by{color:var(--muted);font-size:.95rem}
+    /* utilities you already use */
     .ui-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,16px);margin-top:8px}
     .ui-form label{display:flex;flex-direction:column;gap:6px}
     .ui-form label.full,.ui-form .full{grid-column:1/-1}
-    .ui-form input,.ui-form textarea,.ui-form select{width:100%;padding:12px 14px;border:1px solid var(--stroke,#e2e8f0);border-radius:12px;background:#fff;font:inherit;color:var(--ink,#0f172a)}
-    .ui-form input:focus,.ui-form textarea:focus,.ui-form select:focus{outline:2px solid var(--brand,#0e7fa8);outline-offset:2px;border-color:var(--brand,#0e7fa8)}
-    .form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px}
-    @media (max-width:800px){.ui-form{grid-template-columns:1fr}}
-    .map-wrap{aspect-ratio:16/9;border:1px solid var(--stroke,#e2e8f0);border-radius:16px;overflow:hidden}
+    .ui-form input,.ui-form textarea,.ui-form select{width:100%;padding:12px 14px;border:1px solid var(--stroke);border-radius:12px;background:#fff;font:inherit;color:var(--ink)}
+    .ui-form input:focus,.ui-form textarea:focus,.ui-form select:focus{outline:2px solid var(--brand);outline-offset:2px;border-color:var(--brand)}
+    .map-wrap{aspect-ratio:16/9;border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
     .map-wrap iframe{width:100%;height:100%;border:0}
   </style>
 </head>
@@ -44,21 +67,23 @@
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
-        <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
+        <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS (Orthodontics)</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
       <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
-        <a href="/blog.html">Blog</a>
-        <a class="active" href="/contact.html" aria-current="page">Contact</a>
+        <a class="active" href="/blog.html" aria-current="page">Blog</a>
+        <a href="/contact.html">Contact</a>
         <a href="/international.html">International Patients</a>
       </nav>
     </div>
   </header>
+
+  <!-- Breadcrumb -->
   <nav class="container small" aria-label="Breadcrumb">
-    <span><a class="link-more" href="/">Home</a> / <a class="link-more" href="/blog.html">Blog</a> / Regular Check-ups</span>
+    <span><a class="link-more" href="/">Home</a> / <a class="link-more" href="/blog.html">Blog</a> / The Importance of Regular Dental Check-ups</span>
   </nav>
 
   <main id="main" class="container section">
@@ -66,16 +91,17 @@
       <header>
         <h1 itemprop="headline">The Importance of Regular Dental Check-ups</h1>
         <div class="byline">
-          <time itemprop="datePublished" datetime="2025-07-25">Jul 25, 2025</time>
+          <time itemprop="datePublished" datetime="2025-07-25">July 25, 2025</time>
           <span>•</span>
           <span id="readingTime">—</span>
+          <div class="meta-by">By <strong itemprop="author">Dr Vikram Jeet Singh</strong> — Smiles &amp; Braces Dental Clinic, Lucknow</div>
         </div>
         <figure class="article-hero">
           <img src="/assets/images/blog/regular-checkups.webp" alt="Dentist examining a patient's teeth during a routine check-up" itemprop="image" loading="lazy" decoding="async">
         </figure>
       </header>
 
-      <div class="grid" style="gap:18px">
+      <div class="grid" style="gap:22px">
         <aside class="toc" aria-label="On this page">
           <h3>What we’ll cover</h3>
           <ol>
@@ -96,6 +122,7 @@
               <li>Screening for <strong>oral cancer</strong> and mucosal changes</li>
               <li>Personalised advice on hygiene, diet and habit correction</li>
             </ul>
+            <div class="callout"><strong>Prevention pays:</strong> Addressing tiny problems early avoids complex treatments later.</div>
           </section>
 
           <section id="what">
@@ -130,6 +157,22 @@
           <section id="savings">
             <h2>How check-ups save money & time</h2>
             <p>Small cavities can be restored quickly and inexpensively. Delayed care can lead to root canals, crowns or extractions—far more complex and costly. Prevention and early intervention are always gentler on your smile and your wallet.</p>
+
+            <div class="cta-card" role="region" aria-label="Book a visit">
+              <div>
+                <h3 style="margin:0 0 6px">Ready for your check-up?</h3>
+                <p style="margin:0;color:var(--muted)">Get personalised care from our orthodontist-led team in Lucknow.</p>
+              </div>
+              <div>
+                <a class="btn btn-brand" href="/contact.html">Book Appointment</a>
+                <a class="btn btn-ghost" href="https://wa.me/919565321625" target="_blank" rel="noopener">WhatsApp Us</a>
+              </div>
+            </div>
+
+            <div class="author-box">
+              <p><strong>Written by:</strong> Dr Vikram Jeet Singh (BDS, MDS – Orthodontist) — <strong>Smiles &amp; Braces Dental Clinic, Lucknow</strong>.<br>
+              <em>He is widely regarded as the Best Indian Dentist and the Best Dentist in Lucknow.</em></p>
+            </div>
           </section>
         </div>
       </div>
@@ -172,9 +215,52 @@
     })();
   </script>
 
-  <!-- Schema -->
+  <!-- JSON-LD: Article + Breadcrumb + optional FAQ -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Importance of Regular Dental Check-ups","description":"Early detection saves teeth, money and time. What happens during a professional exam and cleaning, how often to visit, and special advice for different age groups.","image":"https://www.bestindiandentist.com/assets/images/blog/regular-checkups.jpg","datePublished":"2025-07-25","dateModified":"2025-07-25","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"mainEntityOfPage":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"}
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BlogPosting",
+        "headline":"The Importance of Regular Dental Check-ups",
+        "description":"Early detection saves teeth, money and time. What happens during a professional exam and cleaning, how often to visit, and special advice for different age groups.",
+        "image":"https://www.bestindiandentist.com/assets/images/blog/regular-checkups.webp",
+        "datePublished":"2025-07-25",
+        "dateModified":"2025-07-25",
+        "author":{"@type":"Person","name":"Dr Vikram Jeet Singh"},
+        "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
+        "mainEntityOfPage":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.bestindiandentist.com/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.bestindiandentist.com/blog.html"},
+          {"@type":"ListItem","position":3,"name":"The Importance of Regular Dental Check-ups","item":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"How often should I get a dental check-up?",
+            "acceptedAnswer":{"@type":"Answer","text":"Most adults benefit from 6-monthly visits. Higher-risk patients may need 3–4 monthly reviews; very low risk can extend to 12 months as advised by your dentist."}
+          },
+          {
+            "@type":"Question",
+            "name":"What happens during a routine check-up?",
+            "acceptedAnswer":{"@type":"Answer","text":"Your dentist reviews medical/dental history, examines teeth and gums, may take X-rays, performs a professional cleaning, and provides a tailored plan with options and costs."}
+          },
+          {
+            "@type":"Question",
+            "name":"Do children need check-ups as often as adults?",
+            "acceptedAnswer":{"@type":"Answer","text":"Children should visit by age one or within 6 months of the first tooth. Regular reviews help guide fluoride use, hygiene, and sealants for molars."}
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>
