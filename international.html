@@ -191,113 +191,29 @@
     <span><a class="link-more" href="/">Home</a> / International Patients</span>
   </aside>
   
-<main id="main" class="container">
-<!-- ============ WHY US (compact) ============ -->
-<section id="why-us" class="section" aria-labelledby="why-title">
-  <div class="why-grid">
-    <div class="card-compact">
-      <h2 id="why-title" class="h2-compact">Why patients fly to us</h2>
 
-      <ul class="bullets-compact">
-        <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
-        <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
-        <li><strong>Bundled appointments</strong> to minimize days in town</li>
-        <li><strong>Transparent prices</strong> with live currency conversion</li>
-        <li>Visa letters, <strong>concierge support</strong>, and tele-follow-ups</li>
-      </ul>
-
-      <div class="flaglist-compact" aria-label="Supported currencies">
-        <span class="badge-compact mono">USD $</span>
-        <span class="badge-compact mono">EUR €</span>
-        <span class="badge-compact mono">GBP £</span>
-        <span class="badge-compact mono">CNY ¥</span>
-        <span class="badge-compact mono">AED د.إ</span>
-        <span class="badge-compact mono">AUD $</span>
-        <span class="badge-compact mono">INR ₹</span>
+  <main id="main" class="container">
+    <!-- WHY US -->
+    <section class="section grid-2 reveal">
+      <div class="glass-2 pad-m">
+        <h2 class="h2">Why patients fly to us</h2>
+        <ul class="bullets">
+          <li><strong>Predictable outcomes</strong> with digital planning & careful follow-ups</li>
+          <li><strong>Comfort-first care</strong> using conservative, evidence-based protocols</li>
+          <li><strong>Bundled appointments</strong> to minimize days in town</li>
+          <li><strong>Transparent prices</strong> with live currency conversion</li>
+          <li>Visa letters, <strong>concierge support</strong>, and tele-follow ups</li>
+        </ul>
+        <div class="flaglist" aria-label="Supported currencies">
+          <span class="badge mono">USD $</span><span class="badge mono">EUR €</span><span class="badge mono">GBP £</span>
+          <span class="badge mono">CNY ¥</span><span class="badge mono">AED د.إ</span><span class="badge mono">AUD $</span><span class="badge mono">INR ₹</span>
+        </div>
       </div>
-    </div>
-
-    <figure class="card-compact media-compact">
-      <img
-        src="/assets/illustrations/experience.jpg"
-        alt="Comfortable modern dental treatment experience"
-        loading="lazy" decoding="async"
-        width="800" height="533" />
-      <figcaption class="note-compact">Comfort-first clinical spaces, clear itineraries & time-boxed visits.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<style>
-/* ===== Compact, unobtrusive styling ===== */
-#why-us .why-grid{
-  display:grid;
-  grid-template-columns: 1fr 0.9fr;       /* slightly smaller image */
-  gap: 16px;                               /* tight gap */
-  align-items:start;
-}
-@media (max-width: 900px){
-  #why-us .why-grid{ grid-template-columns:1fr; }
-}
-
-#why-us .card-compact{
-  background:#fff;
-  border:1px solid #e9edf3;
-  border-radius:10px;
-  padding:14px;                            /* small padding */
-  box-shadow: 0 4px 12px rgba(0,0,0,.04);  /* very light */
-  color:#0f172a;
-}
-#why-us .media-compact{ padding:0; overflow:hidden; }
-#why-us .media-compact img{
-  display:block; width:100%; height:auto;
-  max-height:260px;                        /* prevents giant visuals */
-  object-fit:cover;
-  border-radius:10px 10px 0 0;
-}
-#why-us .media-compact .note-compact{
-  margin:6px 10px 10px; font-size:12px; color:#64748b;
-}
-
-/* Type scale kept modest */
-#why-us .h2-compact{
-  margin:0 0 8px;
-  font: 800 20px/1.25 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color:#0f172a;
-}
-
-/* Bullets: small, readable, minimal icon */
-#why-us .bullets-compact{
-  list-style:none; margin:8px 0 10px; padding:0; display:grid; gap:8px;
-  font-size:15px; line-height:1.45;
-}
-#why-us .bullets-compact li{
-  position:relative; padding-left:20px; color:#1f2937;
-}
-#why-us .bullets-compact li::before{
-  content:""; position:absolute; left:0; top:.5em;
-  width:10px; height:10px; border-radius:50%;
-  background:#1e3a8a;                      /* subtle indigo dot */
-}
-
-/* Badges small */
-#why-us .flaglist-compact{ display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
-#why-us .badge-compact{
-  font:700 11px/1 ui-sans-serif, system-ui;
-  letter-spacing:.05em; text-transform:uppercase;
-  color:#1e3a8a; background:#f3f6fb; border:1px solid #e6ecf5;
-  border-radius:999px; padding:4px 8px;
-}
-#why-us .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-
-/* Mobile: keep everything compact */
-@media (max-width: 600px){
-  #why-us .media-compact img{ max-height:200px; }
-  #why-us .h2-compact{ font-size:18px; }
-  #why-us .bullets-compact{ font-size:14.5px; }
-}
-</style>
-
+      <figure class="glass-2 pad-s">
+        <img src="/assets/illustrations/experience.webp" alt="Comfortable modern dental treatment experience" loading="lazy" decoding="async" style="border-radius:12px; width:100%; height:auto">
+        <figcaption class="small muted" style="padding:6px 8px">Comfort-first clinical spaces, clear itineraries & time-boxed visits.</figcaption>
+      </figure>
+    </section> 
  <!-- ===== PRICING (Ultra-pro layout) ===== -->
 <section id="pricing" class="section reveal">
   <div class="section-head section-head--pro">
