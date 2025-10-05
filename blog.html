@@ -194,13 +194,78 @@
 
       </div>
 
-      <!-- Pagination (disabled placeholder for now) -->
-      <nav class="pagination" aria-label="Pagination">
-        <a class="prev" href="#" aria-disabled="true">← Newer Posts</a>
-        <a class="next" href="#" aria-disabled="true">Older Posts →</a>
-      </nav>
-    </section>
-  </main>
+  <!-- Blog list container (your existing markup) -->
+<section id="blog-list">
+  <!-- … your existing <article class="teaser blog-card"> cards … -->
+</section>
+
+<!-- Pagination -->
+<nav class="pagination" id="pagination" aria-label="Pagination">
+  <!-- links injected by JS -->
+</nav>
+
+<script>
+(function () {
+  const PER_PAGE = 6;
+  const list = document.getElementById('blog-list');
+  const cards = Array.from(list.querySelectorAll('.teaser.blog-card'));
+  if (!cards.length) return;
+
+  // Sort cards by <time datetime="YYYY-MM-DD"> descending (newest first)
+  const withDates = cards.map(card => {
+    const t = card.querySelector('time[datetime]');
+    const dt = t ? new Date(t.getAttribute('datetime')) : new Date(0);
+    return { card, dt };
+  }).sort((a, b) => b.dt - a.dt).map(x => x.card);
+
+  // Re-append in sorted order (keeps your styles)
+  withDates.forEach(c => list.appendChild(c));
+
+  const totalPosts = withDates.length;
+  const totalPages = Math.max(1, Math.ceil(totalPosts / PER_PAGE));
+
+  // Current page from ?page=, default 1
+  const url = new URL(window.location.href);
+  let currentPage = parseInt(url.searchParams.get('page') || '1', 10);
+  if (isNaN(currentPage) || currentPage < 1) currentPage = 1;
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  // Show only the slice for this page
+  const start = (currentPage - 1) * PER_PAGE;
+  const end = start + PER_PAGE;
+  withDates.forEach((c, i) => { c.style.display = (i >= start && i < end) ? '' : 'none'; });
+
+  // Build pagination links
+  const nav = document.getElementById('pagination');
+  function pageHref(p) {
+    const u = new URL(window.location.href);
+    if (p <= 1) u.searchParams.delete('page'); else u.searchParams.set('page', String(p));
+    return u.pathname + u.search + u.hash;
+  }
+  function makeLink(text, cls, href, disabled, rel) {
+    const a = document.createElement('a');
+    a.className = cls;
+    a.textContent = text;
+    if (disabled) {
+      a.setAttribute('aria-disabled', 'true');
+      a.href = '';
+      a.tabIndex = -1;
+    } else {
+      a.href = href;
+      if (rel) a.setAttribute('rel', rel);
+    }
+    return a;
+  }
+
+  const prevDisabled = currentPage <= 1;
+  const nextDisabled = currentPage >= totalPages;
+
+  const prev = makeLink('← Newer Posts', 'prev', pageHref(currentPage - 1), prevDisabled, 'prev');
+  const next = makeLink('Older Posts →', 'next', pageHref(currentPage + 1), nextDisabled, 'next');
+
+  nav.replaceChildren(prev, next);
+})();
+</script>
 
   <!-- Footer -->
   <footer class="footer">
