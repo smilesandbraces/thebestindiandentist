@@ -15,7 +15,12 @@
   <meta property="og:description" content="Braces, aligners, hygiene and orthodontic tips from Dr. Vikram Jeet Singh (BDS, MDS)."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/blog.html"/>
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp"/>
+  <!-- JPEG fallback for scrapers that don't prefer WebP -->
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Dental Blog | Smiles & Braces Lucknow"/>
+  <meta name="twitter:description" content="Braces, aligners, hygiene and orthodontic tips from Dr. Vikram Jeet Singh (BDS, MDS)."/>
+  <meta name="twitter:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
 
   <!-- Favicons -->
   <link rel="icon" href="/assets/icons/favicon.ico"/>
@@ -79,11 +84,12 @@
       <p class="measure">Insights, tips &amp; the latest in orthodontic care.</p>
       <div class="blog-controls">
         <input id="blogSearch" class="search" type="search" placeholder="Search topics… (aligners, braces, hygiene)" aria-label="Search blog posts"/>
-        <div class="chips" role="tablist" aria-label="Filter by category">
-          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="Orthodontics" role="tab" aria-selected="false">Orthodontics</button>
-          <button class="chip" data-filter="Hygiene" role="tab" aria-selected="false">Hygiene</button>
-          <button class="chip" data-filter="Clinic News" role="tab" aria-selected="false">Clinic News</button>
+        <!-- Converted to a simple button group (removed ARIA tab roles for correctness) -->
+        <div class="chips" aria-label="Filter by category">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="Orthodontics">Orthodontics</button>
+          <button class="chip" data-filter="Hygiene">Hygiene</button>
+          <button class="chip" data-filter="Clinic News">Clinic News</button>
         </div>
       </div>
     </div>
@@ -146,140 +152,149 @@
           </a>
           <meta itemprop="author" content="Smiles & Braces Dental Clinic">
         </article>
-          <!-- Post 4 -->
+
+        <!-- Post 4 -->
         <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
                  data-category="Best Dentist" data-tags="BestLucknowDentist, BestIndianDentist, Best Dentist in Lucknow">
           <a class="card-link" href="/blog/why-dr-vikram-jeet-singh-best-dentist-in-lucknow.html" itemprop="url">
             <div class="card-header">
               <img src="/assets/images/blog/best-dentist-lucknow.webp" alt="Dr Vikram Jeet Singh at Smiles & Braces Dental Clinic, Lucknow" loading="lazy" decoding="async" itemprop="image">
-              <time class="date-badge" itemprop="datePublished" datetime="2025-08-01">Oct 4, 2025</time>
+              <!-- FIXED: datetime to match visible date for correct sorting -->
+              <time class="date-badge" itemprop="datePublished" datetime="2025-10-04">Oct 4, 2025</time>
             </div>
             <div class="card-body">
-            <h2 class="card-title" itemprop="headline">Best Dentist in Lucknow – Dr. Vikram Jeet Singh</h2>
-<p class="card-excerpt" itemprop="description">Looking for the best dental clinic in Lucknow? Dr. Vikram Jeet Singh offers advanced treatments including smile design, laser RCT, braces, and teeth whitening to keep your smile perfect.</p>
+              <h2 class="card-title" itemprop="headline">Best Dentist in Lucknow – Dr. Vikram Jeet Singh</h2>
+              <p class="card-excerpt" itemprop="description">Looking for the best dental clinic in Lucknow? Dr. Vikram Jeet Singh offers advanced treatments including smile design, laser RCT, braces, and teeth whitening to keep your smile perfect.</p>
             </div>
           </a>
           <meta itemprop="author" content="Smiles & Braces Dental Clinic">
         </article>
+
         <!-- Post 5 -->
         <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-         data-category="Clinic" data-tags="dentist, lucknow, orthodontics, braces, implants">
-  <a class="card-link" href="/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html" itemprop="url">
-    <div class="card-header">
-      <img src="/assets/images/blog/top10reasons.webp" alt="Top 10 reasons to choose Smiles & Braces Dental Clinic in Lucknow" loading="lazy" decoding="async" itemprop="image">
-      <time class="date-badge" itemprop="datePublished" datetime="2025-10-04">Oct 4, 2025</time>
-    </div>
-    <div class="card-body">
-      <h2 class="card-title" itemprop="headline">Top 10 Reasons to Choose Smiles & Braces Dental Clinic in Indira Nagar, Lucknow</h2>
-      <p class="card-excerpt" itemprop="description">Why patients call Dr Vikram Jeet Singh one of the best dentists in Lucknow — expert orthodontics, modern technology, ethical care, and a comfort-first approach.</p>  
-    </div>
-  </a>
-  <meta itemprop="author" content="Dr Vikram Jeet Singh, Smiles & Braces Dental Clinic">
-</article>
+                 data-category="Clinic" data-tags="dentist, lucknow, orthodontics, braces, implants">
+          <a class="card-link" href="/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html" itemprop="url">
+            <div class="card-header">
+              <img src="/assets/images/blog/top10reasons.webp" alt="Top 10 reasons to choose Smiles & Braces Dental Clinic in Lucknow" loading="lazy" decoding="async" itemprop="image">
+              <time class="date-badge" itemprop="datePublished" datetime="2025-10-04">Oct 4, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">Top 10 Reasons to Choose Smiles & Braces Dental Clinic in Indira Nagar, Lucknow</h2>
+              <p class="card-excerpt" itemprop="description">Why patients call Dr Vikram Jeet Singh one of the best dentists in Lucknow — expert orthodontics, modern technology, ethical care, and a comfort-first approach.</p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Dr Vikram Jeet Singh, Smiles & Braces Dental Clinic">
+        </article>
+
         <!-- Post 6 -->
-<article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-         data-category="Clinic" data-tags="dentist, orthodontist, smile design, lucknow">
-  <a class="card-link" href="/blog/smiles-and-braces-best-dentist-in-lucknow.html" itemprop="url">
-    <div class="card-header">
-      <img src="/assets/images/blog/best-dentist-2025.webp" alt="Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025" loading="lazy" decoding="async" itemprop="image">
-      <time class="date-badge" itemprop="datePublished" datetime="2025-10-04">Oct 4, 2025</time>
-    </div>
-    <div class="card-body">
-      <h2 class="card-title" itemprop="headline">Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025</h2>
-      <p class="card-excerpt" itemprop="description">Led by Dr Vikramjeet Singh, trusted orthodontist and smile design expert, Smiles & Braces is regarded as the best dental clinic in Lucknow for advanced, ethical, and aesthetic care.</p>
-    </div>
-  </a>
-  <meta itemprop="author" content="Dr Vikramjeet Singh, Smiles & Braces Dental Clinic">
-</article>
-    <!-- Post 7 -->
-<article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
-         data-category="Clinic" data-tags="dentist, munshi puliya, lucknow, orthodontist">
-  <a class="card-link" href="https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html" itemprop="url">
-    <div class="card-header">
-      <img src="/assets/images/blog/best-dentist-munshi-puliya.webp" alt="Best Dentist Near Munshi Puliya - Smiles & Braces Dental Clinic Lucknow" loading="lazy" decoding="async" itemprop="image">
-      <time class="date-badge" itemprop="datePublished" datetime="2025-10-05">Oct 5, 2025</time>
-    </div>
-    <div class="card-body">
-      <h2 class="card-title" itemprop="headline">Best Dentist Near Munshi Puliya</h2>
-      <p class="card-excerpt" itemprop="description">Looking for the best dentist near Munshi Puliya? Visit Smiles & Braces Dental Clinic — led by Dr. Vikramjeet Singh, Lucknow’s trusted orthodontist and smile design expert offering world-class dental care.</p>
-    </div>
-  </a>
-  <meta itemprop="author" content="Dr Vikramjeet Singh, Smiles & Braces Dental Clinic">
-</article>
+        <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
+                 data-category="Clinic" data-tags="dentist, orthodontist, smile design, lucknow">
+          <a class="card-link" href="/blog/smiles-and-braces-best-dentist-in-lucknow.html" itemprop="url">
+            <div class="card-header">
+              <img src="/assets/images/blog/best-dentist-2025.webp" alt="Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025" loading="lazy" decoding="async" itemprop="image">
+              <time class="date-badge" itemprop="datePublished" datetime="2025-10-04">Oct 4, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025</h2>
+              <p class="card-excerpt" itemprop="description">Led by Dr Vikramjeet Singh, trusted orthodontist and smile design expert, Smiles & Braces is regarded as the best dental clinic in Lucknow for advanced, ethical, and aesthetic care.</p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Dr Vikramjeet Singh, Smiles & Braces Dental Clinic">
+        </article>
+
+        <!-- Post 7 -->
+        <article class="teaser blog-card" itemscope itemtype="https://schema.org/BlogPosting"
+                 data-category="Clinic" data-tags="dentist, munshi puliya, lucknow, orthodontist">
+          <a class="card-link" href="https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html" itemprop="url">
+            <div class="card-header">
+              <img src="/assets/images/blog/best-dentist-munshi-puliya.webp" alt="Best Dentist Near Munshi Puliya - Smiles & Braces Dental Clinic Lucknow" loading="lazy" decoding="async" itemprop="image">
+              <time class="date-badge" itemprop="datePublished" datetime="2025-10-05">Oct 5, 2025</time>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">Best Dentist Near Munshi Puliya</h2>
+              <p class="card-excerpt" itemprop="description">Looking for the best dentist near Munshi Puliya? Visit Smiles & Braces Dental Clinic — led by Dr. Vikramjeet Singh, Lucknow’s trusted orthodontist and smile design expert offering world-class dental care.</p>
+            </div>
+          </a>
+          <meta itemprop="author" content="Dr Vikram Jeet Singh, Smiles & Braces Dental Clinic">
+        </article>
+
       </div>
 
-      <!-- Blog list container (your existing markup) -->
-<section id="blog-list">
-  <!-- … your existing <article class="teaser blog-card"> cards … -->
-</section>
+      <!-- Blog list container (kept for backward compatibility; script now targets #blogGrid) -->
+      <section id="blog-list">
+        <!-- Intentionally left empty; cards live in #blogGrid -->
+      </section>
 
-<!-- Pagination -->
-<nav class="pagination" id="pagination" aria-label="Pagination">
-  <!-- links injected by JS -->
-</nav>
+      <!-- Pagination -->
+      <nav class="pagination" id="pagination" aria-label="Pagination">
+        <!-- links injected by JS -->
+      </nav>
 
-<script>
-(function () {
-  const PER_PAGE = 6;
-  const list = document.getElementById('blog-list');
-  const cards = Array.from(list.querySelectorAll('.teaser.blog-card'));
-  if (!cards.length) return;
+      <script>
+      (function () {
+        const PER_PAGE = 6;
 
-  // Sort cards by <time datetime="YYYY-MM-DD"> descending (newest first)
-  const withDates = cards.map(card => {
-    const t = card.querySelector('time[datetime]');
-    const dt = t ? new Date(t.getAttribute('datetime')) : new Date(0);
-    return { card, dt };
-  }).sort((a, b) => b.dt - a.dt).map(x => x.card);
+        // FIXED: point to #blogGrid where the cards actually are
+        const list = document.getElementById('blogGrid');
+        const cards = Array.from(list.querySelectorAll('.teaser.blog-card'));
+        if (!cards.length) return;
 
-  // Re-append in sorted order (keeps your styles)
-  withDates.forEach(c => list.appendChild(c));
+        // Sort cards by <time datetime="YYYY-MM-DD"> descending (newest first)
+        const withDates = cards.map(card => {
+          const t = card.querySelector('time[datetime]');
+          const dt = t ? new Date(t.getAttribute('datetime')) : new Date(0);
+          return { card, dt };
+        }).sort((a, b) => b.dt - a.dt).map(x => x.card);
 
-  const totalPosts = withDates.length;
-  const totalPages = Math.max(1, Math.ceil(totalPosts / PER_PAGE));
+        // Re-append in sorted order (keeps your styles)
+        withDates.forEach(c => list.appendChild(c));
 
-  // Current page from ?page=, default 1
-  const url = new URL(window.location.href);
-  let currentPage = parseInt(url.searchParams.get('page') || '1', 10);
-  if (isNaN(currentPage) || currentPage < 1) currentPage = 1;
-  if (currentPage > totalPages) currentPage = totalPages;
+        const totalPosts = withDates.length;
+        const totalPages = Math.max(1, Math.ceil(totalPosts / PER_PAGE));
 
-  // Show only the slice for this page
-  const start = (currentPage - 1) * PER_PAGE;
-  const end = start + PER_PAGE;
-  withDates.forEach((c, i) => { c.style.display = (i >= start && i < end) ? '' : 'none'; });
+        // Current page from ?page=, default 1
+        const url = new URL(window.location.href);
+        let currentPage = parseInt(url.searchParams.get('page') || '1', 10);
+        if (isNaN(currentPage) || currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
 
-  // Build pagination links
-  const nav = document.getElementById('pagination');
-  function pageHref(p) {
-    const u = new URL(window.location.href);
-    if (p <= 1) u.searchParams.delete('page'); else u.searchParams.set('page', String(p));
-    return u.pathname + u.search + u.hash;
-  }
-  function makeLink(text, cls, href, disabled, rel) {
-    const a = document.createElement('a');
-    a.className = cls;
-    a.textContent = text;
-    if (disabled) {
-      a.setAttribute('aria-disabled', 'true');
-      a.href = '';
-      a.tabIndex = -1;
-    } else {
-      a.href = href;
-      if (rel) a.setAttribute('rel', rel);
-    }
-    return a;
-  }
+        // Show only the slice for this page
+        const start = (currentPage - 1) * PER_PAGE;
+        const end = start + PER_PAGE;
+        withDates.forEach((c, i) => { c.style.display = (i >= start && i < end) ? '' : 'none'; });
 
-  const prevDisabled = currentPage <= 1;
-  const nextDisabled = currentPage >= totalPages;
+        // Build pagination links
+        const nav = document.getElementById('pagination');
+        function pageHref(p) {
+          const u = new URL(window.location.href);
+          if (p <= 1) u.searchParams.delete('page'); else u.searchParams.set('page', String(p));
+          return u.pathname + u.search + u.hash;
+        }
+        function makeLink(text, cls, href, disabled, rel) {
+          const a = document.createElement('a');
+          a.className = cls;
+          a.textContent = text;
+          a.href = href;
+          if (rel) a.setAttribute('rel', rel);
+          if (disabled) {
+            a.setAttribute('aria-disabled', 'true');
+            a.addEventListener('click', e => e.preventDefault());
+          }
+          return a;
+        }
 
-  const prev = makeLink('← Newer Posts', 'prev', pageHref(currentPage - 1), prevDisabled, 'prev');
-  const next = makeLink('Older Posts →', 'next', pageHref(currentPage + 1), nextDisabled, 'next');
+        const prevDisabled = currentPage <= 1;
+        const nextDisabled = currentPage >= totalPages;
 
-  nav.replaceChildren(prev, next);
-})();
-</script>
+        const prev = makeLink('← Newer Posts', 'prev', pageHref(currentPage - 1), prevDisabled, 'prev');
+        const next = makeLink('Older Posts →', 'next', pageHref(currentPage + 1), nextDisabled, 'next');
+
+        nav.replaceChildren(prev, next);
+      })();
+      </script>
+
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -326,8 +341,8 @@
 
       chips.forEach(btn=>{
         btn.addEventListener('click', ()=>{
-          chips.forEach(c=>{ c.classList.remove('is-active'); c.setAttribute('aria-selected','false'); });
-          btn.classList.add('is-active'); btn.setAttribute('aria-selected','true');
+          chips.forEach(c=>{ c.classList.remove('is-active'); });
+          btn.classList.add('is-active');
           activeCat = btn.dataset.filter || 'all';
           applyFilter();
         });
@@ -353,7 +368,7 @@
     })();
   </script>
 
-  <!-- Structured Data -->
+  <!-- Structured Data: FIXED Blog with valid JSON and commas -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -363,16 +378,62 @@
     "publisher":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
     "inLanguage":"en",
     "blogPost":[
-      {"@type":"BlogPosting","headline":"5 Expert Tips for Maintaining Oral Hygiene","datePublished":"2025-08-01","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"},
-      {"@type":"BlogPosting","headline":"The Importance of Regular Dental Check-ups","datePublished":"2025-07-25","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"},
-      {"@type":"BlogPosting","headline":"How to Choose the Right Toothbrush & Toothpaste","datePublished":"2025-07-15","author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},"url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"}
-    {"@type": "BlogPosting","headline": "Why Dr. Vikram Jeet Singh is the Best Dentist in Lucknow","description": "Discover why Dr. Vikram Jeet Singh at Smiles & Braces Dental Clinic is regarded as the best dentist in Lucknow. Offering advanced treatments including laser root canal, smile design, braces, zirconia crowns, and teeth whitening, he ensures healthy, confident smiles for every patient.", "datePublished": "2025-07-15", "author": {  "@type": "Person","name": "Dr. Vikram Jeet Singh"}, "keywords": [ "Dr. Vikram Jeet Singh",   "Smiles & Braces Dental Clinic", "Laser Root Canal Lucknow", "Cosmetic Dentist Lucknow"  ],"url": "https://www.bestindiandentist.com/blog/best-dentist-in-lucknow-dr-vikram-jeet-singh.html"}
-    {"@type":"BlogPosting","headline":"Top 10 Reasons to Choose Smiles & Braces Dental Clinic in Indira Nagar, Lucknow","datePublished":"2025-10-04","author":{"@type":"Person","name":"Dr Vikram Jeet Singh"},"url":"https://www.bestindiandentist.com/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html"}
-   {"@type":"BlogPosting","headline":"Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025 | Trusted Orthodontist & Smile Design Expert Dr Vikramjeet Singh","datePublished":"2025-10-04","author":{"@type":"Person","name":"Dr Vikramjeet Singh"},"url":"https://www.bestindiandentist.com/blog/smiles-and-braces-best-dentist-in-lucknow.html"}
-   {"@type":"BlogPosting","headline":"Best Dentist Near Munshi Puliya | Smiles & Braces Dental Clinic Lucknow","datePublished":"2025-10-05","author":{"@type":"Person","name":"Dr Vikram Jeet Singh"},"url":"https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html"}
-]
+      {
+        "@type":"BlogPosting",
+        "headline":"5 Expert Tips for Maintaining Oral Hygiene",
+        "datePublished":"2025-08-01",
+        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
+        "url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"The Importance of Regular Dental Check-ups",
+        "datePublished":"2025-07-25",
+        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
+        "url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"How to Choose the Right Toothbrush & Toothpaste",
+        "datePublished":"2025-07-15",
+        "author":{"@type":"Organization","name":"Smiles & Braces Dental Clinic"},
+        "url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"Why Dr. Vikram Jeet Singh is the Best Dentist in Lucknow",
+        "description":"Discover why Dr. Vikram Jeet Singh at Smiles & Braces Dental Clinic is regarded as the best dentist in Lucknow. Offering advanced treatments including laser root canal, smile design, braces, zirconia crowns, and teeth whitening, he ensures healthy, confident smiles for every patient.",
+        "datePublished":"2025-07-15",
+        "author":{"@type":"Person","name":"Dr. Vikram Jeet Singh"},
+        "keywords":["Dr. Vikram Jeet Singh","Smiles & Braces Dental Clinic","Laser Root Canal Lucknow","Cosmetic Dentist Lucknow"],
+        "url":"https://www.bestindiandentist.com/blog/best-dentist-in-lucknow-dr-vikram-jeet-singh.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"Top 10 Reasons to Choose Smiles & Braces Dental Clinic in Indira Nagar, Lucknow",
+        "datePublished":"2025-10-04",
+        "author":{"@type":"Person","name":"Dr Vikram Jeet Singh"},
+        "url":"https://www.bestindiandentist.com/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025 | Trusted Orthodontist & Smile Design Expert Dr Vikramjeet Singh",
+        "datePublished":"2025-10-04",
+        "author":{"@type":"Person","name":"Dr Vikramjeet Singh"},
+        "url":"https://www.bestindiandentist.com/blog/smiles-and-braces-best-dentist-in-lucknow.html"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"Best Dentist Near Munshi Puliya | Smiles & Braces Dental Clinic Lucknow",
+        "datePublished":"2025-10-05",
+        "author":{"@type":"Person","name":"Dr Vikram Jeet Singh"},
+        "url":"https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html"
+      }
+    ]
   }
   </script>
+
+  <!-- Structured Data: Breadcrumbs (valid) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -383,18 +444,20 @@
     ]
   }
   </script>
+
+  <!-- Structured Data: ItemList with correct 'item' and commas -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"ItemList",
     "itemListElement":[
-      {"@type":"ListItem","position":1,"url":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"},
-      {"@type":"ListItem","position":2,"url":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"},
-      {"@type":"ListItem","position":3,"url":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"}
-      {"@type":"ListItem","position":4,"url":"https://www.bestindiandentist.com/blog/why-dr-vikram-jeet-singh-best-dentist-in-lucknow.html"}
-     {"@type":"ListItem","position":5,"url":"https://www.bestindiandentist.com/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html"}
-     {"@type":"ListItem","position":6,"url":"https://www.bestindiandentist.com/blog/smiles-and-braces-best-dentist-in-lucknow.html"}
-     {"@type":"ListItem","position":7,"url":"https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html"}
+      {"@type":"ListItem","position":1,"item":"https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html"},
+      {"@type":"ListItem","position":2,"item":"https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html"},
+      {"@type":"ListItem","position":3,"item":"https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html"},
+      {"@type":"ListItem","position":4,"item":"https://www.bestindiandentist.com/blog/why-dr-vikram-jeet-singh-best-dentist-in-lucknow.html"},
+      {"@type":"ListItem","position":5,"item":"https://www.bestindiandentist.com/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html"},
+      {"@type":"ListItem","position":6,"item":"https://www.bestindiandentist.com/blog/smiles-and-braces-best-dentist-in-lucknow.html"},
+      {"@type":"ListItem","position":7,"item":"https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html"}
     ]
   }
   </script>
