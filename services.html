@@ -14,7 +14,11 @@
   <meta property="og:title" content="Dental & Orthodontic Services | Smiles & Braces Lucknow"/>
   <meta property="og:description" content="Comfort-first orthodontics and comprehensive dentistry by Dr. Vikram Jeet Singh (BDS, MDS)."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/services.html"/>
+  <!-- Prefer JPEG as first og:image (fallback for scrapers), keep WebP as additional -->
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp"/>
+  <meta property="og:image:alt" content="Smiles & Braces Dental Clinic, Lucknow"/>
+  <meta property="og:site_name" content="Smiles & Braces Dental Clinic"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
   <!-- Favicons -->
@@ -37,7 +41,8 @@
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+      <!-- Added type, aria-controls, and aria-expanded -->
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="site-menu" aria-expanded="false"><span class="hamburger"></span></button>
       <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
@@ -50,7 +55,8 @@
   </header>
 
   <!-- Hero -->
-  <section class="home-hero service-hero" role="banner">
+  <!-- Removed role="banner" to avoid duplicate banner landmarks -->
+  <section class="home-hero service-hero">
     <div class="home-hero__inner">
       <h1>Our Dental & Orthodontic Services</h1>
       <p class="measure">Specialist orthodontics and complete dental care in Lucknow — precise, comfortable, and clearly explained.</p>
@@ -66,9 +72,13 @@
   </section>
 
   <!-- Breadcrumb -->
-  <aside class="container small" aria-label="Breadcrumb">
-    <span><a class="link-more" href="/">Home</a> / Services</span>
-  </aside>
+  <!-- Switched to proper breadcrumb nav + list -->
+  <nav class="container small" aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+      <li><a class="link-more" href="/">Home</a></li>
+      <li aria-current="page">Services</li>
+    </ol>
+  </nav>
 
   <main id="main" class="services-page container">
 
@@ -81,49 +91,49 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="traditional-braces">
-          <img src="/assets/images/services/traditionalbraces.webp" alt="Traditional metal and ceramic braces" loading="lazy" decoding="async">
+          <img src="/assets/images/services/traditionalbraces.webp" alt="Traditional metal and ceramic braces" loading="lazy" decoding="async" width="800" height="533">
           <h3>Traditional Braces</h3>
           <p>Reliable metal or ceramic brackets with precision archwires — effective for mild to complex cases.</p>
         </article>
 
         <article class="teaser" id="self-ligating-braces">
-          <img src="/assets/images/services/selfligatingbraces.webp" alt="Self-ligating braces close-up" loading="lazy" decoding="async">
+          <img src="/assets/images/services/selfligatingbraces.webp" alt="Self-ligating braces close-up" loading="lazy" decoding="async" width="800" height="533">
           <h3>Self-ligating Braces</h3>
           <p>Modern brackets designed to reduce chair time and improve comfort during tooth movement.</p>
         </article>
 
         <article class="teaser" id="clear-aligners">
-          <img src="/assets/images/services/clearaligners.webp" alt="Clear aligner trays on a case" loading="lazy" decoding="async">
+          <img src="/assets/images/services/clearaligners.webp" alt="Clear aligner trays on a case" loading="lazy" decoding="async" width="800" height="533">
           <h3>Clear Aligners</h3>
           <p>Nearly invisible, removable trays planned digitally for predictable, aesthetic smile correction.</p>
         </article>
 
         <article class="teaser" id="lingual-braces">
-          <img src="/assets/images/services/lingualbraces.webp" alt="Lingual braces placed behind teeth" loading="lazy" decoding="async">
+          <img src="/assets/images/services/lingualbraces.webp" alt="Lingual braces placed behind teeth" loading="lazy" decoding="async" width="800" height="533">
           <h3>Lingual Braces</h3>
           <p>Braces hidden on the tongue side — a great option for professionals seeking discreet treatment.</p>
         </article>
 
         <article class="teaser" id="retainers">
-          <img src="/assets/images/services/retainers.webp" alt="Clear retainers" loading="lazy" decoding="async">
+          <img src="/assets/images/services/retainers.webp" alt="Clear retainers" loading="lazy" decoding="async" width="800" height="533">
           <h3>Retainers</h3>
           <p>Custom retainers and long-term stability plans to keep your new smile aligned.</p>
         </article>
 
         <article class="teaser" id="habit-appliance">
-          <img src="/assets/images/services/habit-appliance.webp" alt="Habit breaking appliance" loading="lazy" decoding="async">
+          <img src="/assets/images/services/habit-appliance.webp" alt="Habit breaking appliance" loading="lazy" decoding="async" width="800" height="533">
           <h3>Habit Appliances</h3>
           <p>Gentle appliances that help stop thumb-sucking and guide proper oral development.</p>
         </article>
 
         <article class="teaser" id="space-maintainers">
-          <img src="/assets/images/services/space-maintainers.webp" alt="Child wearing a space maintainer" loading="lazy" decoding="async">
+          <img src="/assets/images/services/space-maintainers.webp" alt="Child wearing a space maintainer" loading="lazy" decoding="async" width="800" height="533">
           <h3>Space Maintainers</h3>
           <p>Protect room for erupting teeth after early tooth loss to prevent crowding.</p>
         </article>
 
         <article class="teaser" id="night-guard">
-          <img src="/assets/images/services/night-guard.webp" alt="Night guard for grinding" loading="lazy" decoding="async">
+          <img src="/assets/images/services/night-guard.webp" alt="Night guard for grinding" loading="lazy" decoding="async" width="800" height="533">
           <h3>Night Guards</h3>
           <p>Custom guards to protect teeth from grinding/clenching and reduce jaw discomfort.</p>
         </article>
@@ -139,19 +149,19 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="veneers">
-          <img src="/assets/images/services/veneers.webp" alt="Porcelain veneers before and after" loading="lazy" decoding="async">
+          <img src="/assets/images/services/veneers.webp" alt="Porcelain veneers before and after" loading="lazy" decoding="async" width="800" height="533">
           <h3>Veneers</h3>
           <p>Porcelain/ceramic shells that refine shape, color and alignment for a camera-ready smile.</p>
         </article>
 
         <article class="teaser" id="bonding">
-          <img src="/assets/images/services/bonding.webp" alt="Composite bonding on front teeth" loading="lazy" decoding="async">
+          <img src="/assets/images/services/bonding.webp" alt="Composite bonding on front teeth" loading="lazy" decoding="async" width="800" height="533">
           <h3>Dental Bonding</h3>
           <p>Minimally invasive repairs for chips, gaps and edges with shade-matched composite.</p>
         </article>
 
         <article class="teaser" id="whitening">
-          <img src="/assets/images/services/teethwhitening.webp" alt="Professional teeth whitening" loading="lazy" decoding="async">
+          <img src="/assets/images/services/teethwhitening.webp" alt="Professional teeth whitening" loading="lazy" decoding="async" width="800" height="533">
           <h3>Teeth Whitening</h3>
           <p>In-clinic or take-home options to safely brighten your teeth several shades.</p>
         </article>
@@ -167,25 +177,25 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="implants">
-          <img src="/assets/images/services/dental-implants.webp" alt="Dental implant with crown" loading="lazy" decoding="async">
+          <img src="/assets/images/services/dental-implants.webp" alt="Dental implant with crown" loading="lazy" decoding="async" width="800" height="533">
           <h3>Dental Implants</h3>
           <p>Permanent replacement for missing teeth to restore biting, speech and confidence.</p>
         </article>
 
         <article class="teaser" id="crowns-bridges">
-          <img src="/assets/images/services/crowns-bridges.webp" alt="Crowns and bridges on model" loading="lazy" decoding="async">
+          <img src="/assets/images/services/crowns-bridges.webp" alt="Crowns and bridges on model" loading="lazy" decoding="async" width="800" height="533">
           <h3>Crowns & Bridges</h3>
           <p>Strong, aesthetic restorations customized for long-term comfort and function.</p>
         </article>
 
         <article class="teaser" id="root-canal">
-          <img src="/assets/images/services/root-canal.webp" alt="Root canal therapy" loading="lazy" decoding="async">
+          <img src="/assets/images/services/root-canal.webp" alt="Root canal therapy" loading="lazy" decoding="async" width="800" height="533">
           <h3>Root Canal Treatment</h3>
           <p>Pain-relieving treatment that saves infected teeth and preserves your natural smile.</p>
         </article>
 
         <article class="teaser" id="dentures">
-          <img src="/assets/images/services/dentures.webp" alt="Modern dentures" loading="lazy" decoding="async">
+          <img src="/assets/images/services/dentures.webp" alt="Modern dentures" loading="lazy" decoding="async" width="800" height="533">
           <h3>Dentures</h3>
           <p>Comfortable partial and complete dentures, designed for fit, speech and chewing.</p>
         </article>
@@ -201,19 +211,19 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="cleaning">
-          <img src="/assets/images/services/cleaning.webp" alt="Scaling and polishing" loading="lazy" decoding="async">
+          <img src="/assets/images/services/cleaning.webp" alt="Scaling and polishing" loading="lazy" decoding="async" width="800" height="533">
           <h3>Cleaning & Polishing</h3>
           <p>Professional scaling and stain removal to keep gums healthy and breath fresh.</p>
         </article>
 
         <article class="teaser" id="sealants">
-          <img src="/assets/images/services/sealants.webp" alt="Sealants on molar grooves" loading="lazy" decoding="async">
+          <img src="/assets/images/services/sealants.webp" alt="Sealants on molar grooves" loading="lazy" decoding="async" width="800" height="533">
           <h3>Sealants</h3>
           <p>Protective coatings that help prevent cavities in children and cavity-prone adults.</p>
         </article>
 
         <article class="teaser" id="consultation">
-          <img src="/assets/images/services/consultation.webp" alt="Dental consultation at clinic" loading="lazy" decoding="async">
+          <img src="/assets/images/services/consultation.webp" alt="Dental consultation at clinic" loading="lazy" decoding="async" width="800" height="533">
           <h3>Consultation</h3>
           <p>Clear explanations with treatment options, timelines, and transparent costs.</p>
         </article>
@@ -229,13 +239,13 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="kids-braces">
-          <img src="/assets/images/services/kids-braces.webp" alt="Child with braces smiling" loading="lazy" decoding="async">
+          <img src="/assets/images/services/kids-braces.webp" alt="Child with braces smiling" loading="lazy" decoding="async" width="800" height="533">
           <h3>Kids’ Braces</h3>
           <p>Age-appropriate orthodontics to guide growth and create healthy alignment early.</p>
         </article>
 
         <article class="teaser" id="habit-appliance-pedo">
-          <img src="/assets/images/services/habit-appliance.webp" alt="Pediatric habit appliance" loading="lazy" decoding="async">
+          <img src="/assets/images/services/habit-appliance.webp" alt="Pediatric habit appliance" loading="lazy" decoding="async" width="800" height="533">
           <h3>Habit / Guidance Appliances</h3>
           <p>Gentle appliances to correct habits and support jaw development in growing kids.</p>
         </article>
@@ -251,13 +261,13 @@
 
       <div class="teaser-grid">
         <article class="teaser" id="emergency-care">
-          <img src="/assets/images/services/emergency-care.webp" alt="Emergency dental help" loading="lazy" decoding="async">
+          <img src="/assets/images/services/emergency-care.webp" alt="Emergency dental help" loading="lazy" decoding="async" width="800" height="533">
           <h3>Emergency Care</h3>
           <p>Quick relief for pain, fractures, swelling and lost fillings. WhatsApp for fastest support.</p>
         </article>
 
         <article class="teaser" id="wisdom-tooth">
-          <img src="/assets/images/services/wisdom-tooth.webp" alt="Wisdom tooth extraction" loading="lazy" decoding="async">
+          <img src="/assets/images/services/wisdom-tooth.webp" alt="Wisdom tooth extraction" loading="lazy" decoding="async" width="800" height="533">
           <h3>Wisdom Tooth Removal</h3>
           <p>Comfort-focused extraction and after-care instructions to speed healing.</p>
         </article>
@@ -272,7 +282,8 @@
     <!-- CTA -->
     <section class="section home-cta center">
       <h2>Ready for your best smile?</h2>
-      <p class="measure"> <center>Transparent plans • Digital diagnostics • Follow-ups you can rely on </center></p>
+      <!-- Removed deprecated <center>; use class instead -->
+      <p class="measure center">Transparent plans • Digital diagnostics • Follow-ups you can rely on</p>
       <div class="cta-buttons">
         <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp Us</a>
         <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
@@ -287,7 +298,11 @@
       <div>
         <h3>Smiles &amp; Braces Dental Clinic</h3>
         <p class="small">Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
-        <p class="small">Call/WhatsApp: <a href="tel:+919565321625">+91 95653 21625</a> • <a href="tel:+917570000801">+91 75700 00801</a></p>
+        <p class="small">Call/WhatsApp:
+          <a href="tel:+919565321625">+91 95653 21625</a> •
+          <a href="tel:+917570000801">+91 75700 00801</a> •
+          <a href="https://wa.me/919565321625">WhatsApp +91 95653 21625</a>
+        </p>
       </div>
       <div>
         <h3>Quick links</h3>
@@ -299,8 +314,11 @@
 
   <!-- JS -->
   <script>
-    document.querySelector('.nav-toggle').addEventListener('click', () => {
-      document.querySelector('.navlinks').classList.toggle('show');
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.navlinks');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
@@ -311,9 +329,16 @@
     "@context":"https://schema.org",
     "@type":"Dentist",
     "name":"Smiles & Braces Dental Clinic",
-    "url":"https://www.bestindiandentist.com/services.html",
-    "telephone":"+91-95653-21625",
-    "address":{"@type":"PostalAddress","streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar","addressLocality":"Lucknow","addressRegion":"UP","postalCode":"226016","addressCountry":"IN"},
+    "url":"https://www.bestindiandentist.com",
+    "telephone":"+919565321625",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+      "addressLocality":"Lucknow",
+      "addressRegion":"Uttar Pradesh",
+      "postalCode":"226016",
+      "addressCountry":"IN"
+    },
     "hasOfferCatalog":{
       "@type":"OfferCatalog",
       "name":"Dental & Orthodontic Services",
