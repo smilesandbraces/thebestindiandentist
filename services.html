@@ -14,8 +14,6 @@
   <meta property="og:title" content="Dental & Orthodontic Services | Smiles & Braces Lucknow"/>
   <meta property="og:description" content="Comfort-first orthodontics and comprehensive dentistry by Dr. Vikram Jeet Singh (BDS, MDS)."/>
   <meta property="og:url" content="https://www.bestindiandentist.com/services.html"/>
-  <!-- Prefer JPEG as first og:image (fallback for scrapers), keep WebP as additional -->
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.jpg"/>
   <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp"/>
   <meta property="og:image:alt" content="Smiles & Braces Dental Clinic, Lucknow"/>
   <meta property="og:site_name" content="Smiles & Braces Dental Clinic"/>
@@ -25,7 +23,7 @@
   <link rel="icon" href="/assets/icons/favicon.ico"/>
   <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- Fonts & CSS -->
+  <!-- Fonts & CSS (kept simple; no extra files needed) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -41,7 +39,6 @@
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS</span></span>
       </a>
-      <!-- Added type, aria-controls, and aria-expanded -->
       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="site-menu" aria-expanded="false"><span class="hamburger"></span></button>
       <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
@@ -54,8 +51,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <!-- Removed role="banner" to avoid duplicate banner landmarks -->
+  <!-- Hero (removed role="banner") -->
   <section class="home-hero service-hero">
     <div class="home-hero__inner">
       <h1>Our Dental & Orthodontic Services</h1>
@@ -71,8 +67,7 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <!-- Switched to proper breadcrumb nav + list -->
+  <!-- Breadcrumb (semantic) -->
   <nav class="container small" aria-label="Breadcrumb">
     <ol class="breadcrumb">
       <li><a class="link-more" href="/">Home</a></li>
@@ -282,7 +277,6 @@
     <!-- CTA -->
     <section class="section home-cta center">
       <h2>Ready for your best smile?</h2>
-      <!-- Removed deprecated <center>; use class instead -->
       <p class="measure center">Transparent plans • Digital diagnostics • Follow-ups you can rely on</p>
       <div class="cta-buttons">
         <a href="https://wa.me/919565321625" class="btn btn-whatsapp">WhatsApp Us</a>
@@ -331,14 +325,7 @@
     "name":"Smiles & Braces Dental Clinic",
     "url":"https://www.bestindiandentist.com",
     "telephone":"+919565321625",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
-      "addressLocality":"Lucknow",
-      "addressRegion":"Uttar Pradesh",
-      "postalCode":"226016",
-      "addressCountry":"IN"
-    },
+    "address":{"@type":"PostalAddress","streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","postalCode":"226016","addressCountry":"IN"},
     "hasOfferCatalog":{
       "@type":"OfferCatalog",
       "name":"Dental & Orthodontic Services",
