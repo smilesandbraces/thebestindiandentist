@@ -19,18 +19,14 @@
 
   <link rel="icon" href="/assets/icons/favicon.ico" />
   <meta name="theme-color" content="#0e7fa8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site.css" />
 
   <style>
-    .appt { margin-top: 2rem; padding: 1.25rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; }
-    .appt h2 { margin: 0 0 .5rem 0; }
-    .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
-    .btn-primary, .btn-ghost {
-      display: inline-block; padding: .7rem 1rem; border-radius: 10px; text-decoration: none; font-weight: 600;
-    }
-    .btn-primary { background: #0e7fa8; color: #fff; }
-    .btn-ghost { border: 1px solid #0e7fa8; color: #0e7fa8; }
-    .article-hero img { width: 100%; height: auto; border-radius: 12px; }
+    .author-box { margin-top: 2rem; padding: 1.2rem; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0; }
+    .author-box strong { color: #0e7fa8; }
   </style>
 </head>
 
@@ -44,12 +40,12 @@
         <span class="brand-line doctor">Dr. Vikram Jeet Singh <span class="cred">BDS, MDS (Orthodontist)</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
-      <nav class="navlinks" aria-label="Primary">
+      <nav class="navlinks" id="site-menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
-        <a class="active" href="/blog.html" aria-current="page">Blog</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/blog.html">Blog</a>
+        <a class="active" href="/contact.html" aria-current="page">Contact</a>
         <a href="/international.html">International Patients</a>
       </nav>
     </div>
