@@ -471,33 +471,56 @@
   </footer>
 
   <!-- ===== JSON-LD ===== -->
+  <<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "@id": "https://www.bestindiandentist.com/#dentist",
+  "name": "Smiles & Braces Dental Clinic",
+  "url": "https://www.bestindiandentist.com/",
+  "image": "https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
+  "logo": "https://www.bestindiandentist.com/assets/logo.png",
+  "description": "Orthodontics, aligners, implants, whitening and family dentistry in Indira Nagar, Lucknow.",
+  "telephone": "+91-9565321625",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226016",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "20:00"
+  }],
+  "sameAs": [
+    "https://www.instagram.com/drvikramjeetdental",
+    "https://www.facebook.com/SmilesAndBracesLucknow",
+    "https://www.justdial.com/Lucknow/Smiles-Braces-Dental-Clinic"
+  ]
+}
+</script>
+
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Dentist",
-    "name":"Smiles & Braces Dental Clinic",
-    "image":"https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
-    "telephone":"+919565321625",
-    "url":"https://www.bestindiandentist.com/",
-    "address":{"@type":"PostalAddress","streetAddress":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar","addressLocality":"Lucknow","addressRegion":"UP","postalCode":"226016","addressCountry":"IN"},
-    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"}],
-    "priceRange":"₹₹",
-    "sameAs":["https://www.drvikramjeet.com"]
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.bestindiandentist.com/#website",
+  "url": "https://www.bestindiandentist.com/",
+  "name": "Smiles & Braces Dental Clinic",
+  "alternateName": "Best Indian Dentist",
+  "publisher": { "@id": "https://www.bestindiandentist.com/#dentist" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.google.com/search?q=site:bestindiandentist.com+{search_term_string}",
+    "query-input": "required name=search_term_string"
   }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Smiles & Braces Dental Clinic",
-    "url": "https://www.bestindiandentist.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.bestindiandentist.com/blog.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+}
+</script>
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
