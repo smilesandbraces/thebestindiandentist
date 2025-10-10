@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.bestindiandentist.com/blog.html</loc>
-    <lastmod>2025-10-02</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -76,8 +76,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Newly added blog posts -->
   <url>
     <loc>https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html</loc>
     <lastmod>2025-10-05T00:00:00+00:00</lastmod>
@@ -87,6 +85,18 @@
   <url>
     <loc>https://www.bestindiandentist.com/blog/best-dentist-in-lucknow-trust-skill-compassion.html</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/blog/book-appointment-for-painless-laser-rct.html</loc>
+    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bestindiandentist.com/blog/top-orthodontist-near-munshi-puliya.html</loc>
+    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
