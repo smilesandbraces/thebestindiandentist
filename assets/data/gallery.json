@@ -1,0 +1,24 @@
+{
+  "beforeAfter": [
+    {
+      "title": "Clear Aligners – Case A",
+      "before": "/assets/gallery/before-after/case-a-before.webp",
+      "after": "/assets/gallery/before-after/case-a-after.webp",
+      "caption": "8 months of clear aligners",
+      "category": "aligners"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Clinic Tour",
+      "type": "mp4",
+      "src": "/assets/videos/clinic-tour.mp4",
+      "poster": "/assets/videos/clinic-tour-poster.webp"
+    },
+    {
+      "title": "Patient Testimonial – Braces",
+      "type": "youtube",
+      "youtubeId": "VIDEO_ID_HERE"
+    }
+  ]
+}
