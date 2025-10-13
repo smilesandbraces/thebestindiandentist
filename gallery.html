@@ -25,55 +25,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 
+ <!-- Page-scoped styles: tidy 2-col form on desktop, 1-col on mobile -->
   <style>
-    /* --- Page specific styles (kept minimal; works with your site.css) --- */
-    .tabs {display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 18px}
-    .tab-btn {border:1px solid rgba(0,0,0,.12); background:#fff; padding:10px 14px; border-radius:999px; font-weight:600; cursor:pointer}
-    .tab-btn.is-active {background:#0e7fa8; color:#fff; border-color:#0e7fa8}
-    .tabpanes {position:relative}
-    .tabpanel {display:none}
-    .tabpanel.is-active {display:block}
-
-    .grid {display:grid; gap:16px}
-    .grid.ba {grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-    .grid.vid {grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-
-    .card {background:#fff; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.08); overflow:hidden; border:1px solid rgba(0,0,0,.06)}
-    .card .pad {padding:12px 14px}
-    .badge {display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#eef7fb; color:#0e7fa8; font-weight:700}
-
-    /* Before/After slider */
-    .ba-wrap {position:relative; aspect-ratio: 4/3; background:#f6f6f6}
-    .ba-wrap img {position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
-    .ba-after {clip-path: inset(0 0 0 var(--split,50%))}
-    .ba-controls {position:absolute; inset:auto 0 8px 0; display:flex; justify-content:center}
-    .ba-range {width:92%; appearance:none; height:4px; background:linear-gradient(90deg,#0e7fa8 50%,#ddd 0); border-radius:999px}
-    .ba-range::-webkit-slider-thumb{appearance:none; width:22px; height:22px; border-radius:50%; background:#0e7fa8; border:2px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,.25)}
-    .ba-labels{position:absolute; inset:8px; display:flex; justify-content:space-between; pointer-events:none}
-    .ba-labels span{background:rgba(0,0,0,.52); color:#fff; font-weight:700; font-size:12px; padding:4px 8px; border-radius:8px}
-
-    /* Videos */
-    .video-wrap {position:relative; aspect-ratio:16/9; background:#000}
-    .video-wrap iframe, .video-wrap video {position:absolute; inset:0; width:100%; height:100%; display:block}
-    .video-wrap video {background:#000}
-
-    /* Helper */
-    .muted {color: #666}
-    .center {text-align:center}
+    .ui-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,16px);margin-top:8px}
+    .ui-form label{display:flex;flex-direction:column;gap:6px}
+    .ui-form label.full,.ui-form .full{grid-column:1/-1}
+    .ui-form input,.ui-form textarea,.ui-form select{width:100%;padding:12px 14px;border:1px solid var(--stroke,#e2e8f0);border-radius:12px;background:#fff;font:inherit;color:var(--ink,#0f172a)}
+    .ui-form input:focus,.ui-form textarea:focus,.ui-form select:focus{outline:2px solid var(--brand,#0e7fa8);outline-offset:2px;border-color:var(--brand,#0e7fa8)}
+    .form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px}
+    @media (max-width:800px){.ui-form{grid-template-columns:1fr}}
+    .map-wrap{aspect-ratio:16/9;border:1px solid var(--stroke,#e2e8f0);border-radius:16px;overflow:hidden}
+    .map-wrap iframe{width:100%;height:100%;border:0}
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"Patient Gallery – Before & After & Videos",
-    "url":"https://www.bestindiandentist.com/gallery.html",
-    "hasPart":[
-      {"@type":"ImageGallery","name":"Before & After Cases"},
-      {"@type":"VideoGallery","name":"Clinic & Patient Videos"}
-    ]
-  }
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
