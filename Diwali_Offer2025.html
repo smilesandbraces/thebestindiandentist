@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Diwali Dental Offer Poster | Smiles & Braces Dental Clinic</title>
+  <meta name="description" content="Diwali Offer: Flexible EMIs on Clear Aligners & Dental Implants at Smiles & Braces Dental Clinic, Lucknow. Book your appointment fast at www.bestindiandentist.com" />
+  <link rel="canonical" href="https://www.bestindiandentist.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Diwali Offer: Flexible EMIs on Aligners & Implants"/>
+  <meta property="og:description" content="Book fast! Limited-time festive offer at Smiles & Braces Dental Clinic, Lucknow."/>
+  <meta property="og:url" content="https://www.bestindiandentist.com/"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/diwali-offer.webp"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0c0a1e;         /* deep night */
+      --bg2:#2b135b;         /* royal violet */
+      --gold:#ffcf6f;
+      --amber:#ffb84d;
+      --rose:#ff4d7e;
+      --mint:#7ff7cc;
+      --white:#fff;
+      --glass: rgba(255,255,255,.08);
+      --glass-border: rgba(255,255,255,.18);
+      --ring: rgba(255, 207, 111, .35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--white);
+      background: radial-gradient(1200px 800px at 15% 10%, #3a1d71 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 85% 90%, #2a0d3a 0%, transparent 60%),
+                  linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* Scene background with gradients + particles */
+    .scene{
+      position:relative;
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      isolation:isolate;
+    }
+
+    /* Subtle vignette */
+    .scene:after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(1200px 800px at 50% 50%, transparent 60%, rgba(0,0,0,.5) 100%);
+      pointer-events:none; z-index:0;
+    }
+
+    /* Floating particles (sparks) */
+    .spark{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(2px 2px at 20% 30%, var(--gold) 0 40%, transparent 45%) repeat,
+        radial-gradient(2px 2px at 70% 60%, var(--amber) 0 40%, transparent 45%) repeat,
+        radial-gradient(1.5px 1.5px at 40% 80%, #ffd9a6 0 45%, transparent 50%) repeat,
+        radial-gradient(1.5px 1.5px at 85% 25%, #fff2c7 0 45%, transparent 50%) repeat;
+      animation: drift 18s linear infinite;
+      opacity:.55;
+      filter: drop-shadow(0 0 6px rgba(255,207,111,.55));
+      z-index:1;
+    }
+    @keyframes drift{
+      from{transform: translateY(0)}
+      to{transform: translateY(-120px)}
+    }
+
+    /* Firework arcs */
+    .arc{
+      position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:
+        conic-gradient(from 0deg at 50% 60%, transparent 0 85%, var(--rose) 87% 96%, transparent 100%),
+        conic-gradient(from 180deg at 50% 40%, transparent 0 85%, var(--mint) 87% 96%, transparent 100%);
+      mix-blend-mode:screen; opacity:.2; filter: blur(2px);
+      animation: pulse 6s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.05)}
+    }
+
+    /* Card (glassmorphism poster) */
+    .poster{
+      position:relative;
+      width:min(1100px,95vw);
+      border-radius:28px;
+      padding: clamp(20px, 4vw, 40px);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border:1px solid var(--glass-border);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        inset 0 0 0 1px rgba(255,255,255,.05);
+      backdrop-filter: blur(10px);
+      z-index:2;
+    }
+
+    .ribbon{
+      position:absolute;
+      top:18px; right:-14px;
+      rotate: 8deg;
+      background:linear-gradient(90deg, var(--rose), var(--amber));
+      color:#160b2a;
+      padding:8px 18px;
+      border-radius:12px;
+      font-weight:800;
+      letter-spacing:.3px;
+      box-shadow:0 6px 20px rgba(255,77,126,.35);
+    }
+
+    .header{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(18px, 3.2vw, 36px);
+      align-items:center;
+    }
+
+    @media (max-width: 860px){
+      .header{
+        grid-template-columns: 1fr;
+        text-align:center;
+      }
+      .ribbon{right: 12px; rotate: 0;}
+    }
+
+    .brand{
+      display:flex; gap:14px; align-items:center; margin-bottom:10px;
+      font-weight:600; letter-spacing:.2px;
+    }
+    .brand .dot{width:12px;height:12px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, var(--gold), var(--amber));
+      box-shadow: 0 0 16px var(--ring), 0 0 32px var(--ring);
+    }
+    .brand a{
+      color:var(--gold); text-decoration:none;
+    }
+    .brand a:hover{ text-decoration:underline wavy }
+
+    .fest{
+      font-family:"Great Vibes", cursive;
+      font-size: clamp(28px, 5.5vw, 56px);
+      color:var(--gold);
+      text-shadow: 0 2px 0 rgba(0,0,0,.25), 0 10px 26px rgba(255, 207, 111, .3);
+      line-height:1.05;
+      margin: 6px 0 2px;
+    }
+
+    h1{
+      font-size: clamp(28px, 4.2vw, 48px);
+      margin:.2em 0 .35em;
+      line-height:1.15;
+      letter-spacing:.2px;
+      background: linear-gradient(180deg, #fff, #ffe6b0 60%, #ffb84d);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-wrap:balance;
+    }
+
+    .sub{
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: #e8e2ff;
+      opacity:.9;
+      margin: 0 0 16px;
+    }
+
+    .highlights{
+      display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px; margin:18px 0 8px;
+    }
+    @media (max-width:640px){ .highlights{ grid-template-columns:1fr } }
+
+    .pill{
+      border:1px solid var(--glass-border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding:12px 14px; border-radius:999px; display:flex; align-items:center; gap:10px;
+      font-weight:600;
+    }
+    .pill .emoji{font-size:20px; filter: drop-shadow(0 4px 10px rgba(255,191,0,.25));}
+
+    /* Offer board */
+    .board{
+      background: radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,.12), rgba(255,255,255,.02));
+      border:1px dashed rgba(255,255,255,.25);
+      border-radius:24px; padding:18px;
+    }
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:800px){ .grid{ grid-template-columns:1fr } }
+
+    .tile{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      border:1px solid var(--glass-border);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+    .tile h3{
+      margin:0 0 8px; font-size: clamp(18px,2.1vw,22px);
+      color:var(--gold);
+    }
+    .price{
+      font-size: clamp(24px, 3.2vw, 34px);
+      font-weight:800; letter-spacing:.3px; margin:4px 0 6px;
+    }
+    .fine{
+      font-size:14px; opacity:.9
+    }
+
+    /* CTAs */
+    .cta-row{
+      display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;
+    }
+    .btn{
+      --btn-bg: linear-gradient(180deg, var(--gold), var(--amber));
+      --btn-fg: #1a0c2b;
+      background: var(--btn-bg); color: var(--btn-fg);
+      border:none; border-radius:14px; padding:12px 18px;
+      font-weight:800; letter-spacing:.3px; text-decoration:none;
+      box-shadow: 0 8px 24px rgba(255,191,0,.25), 0 0 0 0 var(--ring);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); box-shadow: 0 10px 28px rgba(255,191,0,.32), 0 0 0 6px var(--ring) }
+    .btn:active{ transform: translateY(0) scale(.98) }
+
+    .btn-ghost{
+      --btn-bg: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      --btn-fg: #fff;
+      border:1px solid var(--glass-border);
+      box-shadow:none;
+    }
+
+    /* Right side visual */
+    .visual{
+      position:relative;
+      aspect-ratio: 4/5;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--glass-border);
+      background:
+        radial-gradient(120% 100% at 70% 10%, rgba(255,255,255,.08), transparent 70%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23FFCF6F"/><stop offset="100%" stop-color="%23FF4D7E"/></linearGradient></defs><g fill="none" stroke="url(%23g)" stroke-width="2" opacity=".35"><path d="M0 120 Q 200 60 400 120 T 800 120" /><path d="M0 240 Q 200 180 400 240 T 800 240" /><path d="M0 360 Q 200 300 400 360 T 800 360" /><path d="M0 480 Q 200 420 400 480 T 800 480" /><path d="M0 600 Q 200 540 400 600 T 800 600" /></g></svg>') center/cover no-repeat;
+      box-shadow: inset 0 0 60px rgba(0,0,0,.25), 0 30px 60px rgba(0,0,0,.45);
+    }
+    .diya{
+      position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+      width:min(320px, 70%); aspect-ratio: 3/1.3; border-radius:999px 999px 60% 60%/ 100% 100% 70% 70%;
+      background: radial-gradient(120% 140% at 20% 10%, rgba(255,255,255,.2), rgba(255,255,255,.05)),
+                  linear-gradient(180deg, #ffcf6f, #ff9c47);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45), inset 0 0 40px rgba(255,255,255,.25);
+      border:1px solid rgba(255,255,255,.35);
+    }
+    .flame{
+      position:absolute; bottom: calc(22px + 60%); left:50%; transform:translateX(-50%);
+      width:22px; height:44px; border-radius:999px 999px 40% 40%;
+      background: radial-gradient(circle at 50% 30%, #fff 0 20%, #ffe5a8 21% 40%, #ffb84d 41% 100%);
+      box-shadow: 0 0 18px 6px rgba(255,191,0,.45), 0 0 64px 16px rgba(255,191,0,.3);
+      animation: flicker 1.2s ease-in-out infinite;
+    }
+    @keyframes flicker{
+      0%,100%{ transform: translateX(-50%) scale(1); filter: brightness(1) }
+      35%{ transform: translateX(-52%) scale(1.04); filter: brightness(1.12) }
+      70%{ transform: translateX(-48%) scale(.96); filter: brightness(.94) }
+    }
+
+    /* Footer strip */
+    .foot{
+      margin-top:18px;
+      display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap;
+      border-top:1px dashed rgba(255,255,255,.25);
+      padding-top:14px; font-size:14px; opacity:.95;
+    }
+    .foot a{ color:var(--gold); text-decoration:none }
+    .foot a:hover{ text-decoration:underline }
+
+    /* Print to A4 vertical */
+    @page { size: A4; margin: 12mm; }
+    @media print{
+      .scene{ padding:0; }
+      .poster{ box-shadow:none; background:#111; }
+      .spark, .arc, .ribbon{ display:none !important; }
+      .btn, .cta-row a{ display:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="spark"></div>
+    <div class="arc"></div>
+
+    <article class="poster" role="region" aria-label="Diwali Offer Poster">
+      <div class="ribbon">Limited Time • Diwali 🪔</div>
+
+      <header class="header">
+        <section>
+          <div class="brand">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Smiles &amp; Braces Dental Clinic — <a href="https://www.bestindiandentist.com" target="_blank" rel="noopener">www.bestindiandentist.com</a></span>
+          </div>
+
+          <div class="fest">Happy Diwali</div>
+          <h1>Flexible EMI Plans on <em>Clear Aligners</em> &amp; <em>Dental Implants</em></h1>
+          <p class="sub">Upgrade your smile this festive season — premium orthodontic care made easy with pocket-friendly EMIs. Book your appointment fast!</p>
+
+          <div class="highlights" aria-label="Offer Highlights">
+            <div class="pill"><span class="emoji">💳</span>Flexible EMIs — Zero Cost Processing*</div>
+            <div class="pill"><span class="emoji">🦷</span>Special Festive Pricing on Implants &amp; Aligners</div>
+          </div>
+
+          <div class="board" aria-label="Offer Details">
+            <div class="grid">
+              <div class="tile">
+                <h3>Clear Aligners</h3>
+                <div class="price">Easy Monthly EMIs</div>
+                <div class="fine">• Faster, nearly invisible treatment<br/>• Scan-based planning • No messy impressions</div>
+              </div>
+              <div class="tile">
+                <h3>Dental Implants</h3>
+                <div class="price">Budget-friendly EMIs</div>
+                <div class="fine">• Natural look & feel • Long-term solution<br/>• Advanced sterile protocol</div>
+              </div>
+            </div>
+
+            <div class="cta-row" role="group" aria-label="Call to actions">
+              <a class="btn" href="https://www.bestindiandentist.com/#book" target="_blank" rel="noopener" aria-label="Book your appointment on website">🚀 Book Now</a>
+              <a class="btn btn-ghost" href="https://wa.me/919565321625?text=Hi%20Doctor%2C%20I%20want%20to%20book%20a%20Diwali%20EMI%20offer%20appointment%20for%20Aligners%20or%20Implants." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">🟢 WhatsApp</a>
+              <a class="btn btn-ghost" href="tel:+919565321625" aria-label="Call the clinic">📞 Call Clinic</a>
+            </div>
+            <p class="fine" style="margin-top:10px;opacity:.8">*EMI availability subject to partner terms. Limited-time Diwali offer. T&amp;Cs apply.</p>
+          </div>
+        </section>
+
+        <section class="visual" aria-hidden="true">
+          <div class="flame"></div>
+          <div class="diya"></div>
+        </section>
+      </header>
+
+      <footer class="foot">
+        <span>© Smiles &amp; Braces Dental Clinic, Indira Nagar, Lucknow</span>
+        <span>Best Dentist &amp; Orthodontist | Braces • Aligners • Implants</span>
+      </footer>
+    </article>
+  </div>
+
+  <!-- Optional microdata for richer previews -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Offer",
+    "name":"Diwali Flexible EMIs on Aligners & Dental Implants",
+    "url":"https://www.bestindiandentist.com",
+    "priceSpecification":{
+      "@type":"PriceSpecification",
+      "priceCurrency":"INR"
+    },
+    "availability":"https://schema.org/InStock",
+    "seller":{
+      "@type":"MedicalBusiness",
+      "name":"Smiles & Braces Dental Clinic",
+      "url":"https://www.bestindiandentist.com"
+    }
+  }
+  </script>
+</body>
+</html>
