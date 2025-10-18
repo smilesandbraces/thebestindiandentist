@@ -120,5 +120,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- Offer-->
+  <url>
+    <loc>https://www.bestindiandentist.com/Diwali_Offer2025</loc>
+    <lastmod>2025-10-17T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
 
 </urlset>
