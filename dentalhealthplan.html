@@ -71,7 +71,7 @@
       </div>
       <div class="flex gap-3 flex-wrap">
         <a href="#book" class="btn-outline">Request a Callback</a>
-        <a href="#buy" class="btn-primary">Buy It Now</a>
+        <button type="button" onclick="payNow(750)" class="inline-flex items-center justify-center rounded-xl bg-orange-500 text-white px-5 py-3 font-extrabold hover:bg-orange-600">Buy It Now</button>
       </div>
       <div class="card border-2 border-dashed border-orange-300 p-6 bg-white">
         <h3 class="bg-orange-500 text-white inline-block px-4 py-1 rounded-md font-bold">Inclusions</h3>
@@ -98,7 +98,7 @@
         <textarea class="input md:col-span-2" name="concern" placeholder="Your Concern (check‑up, cleaning, braces, implants, pain, etc.)"></textarea>
         <div class="md:col-span-2 flex flex-wrap gap-3 justify-center mt-3">
           <button type="submit" class="btn-primary">Request a Callback</button>
-          <a href="#buy" class="btn-outline">Buy Plan Online</a>
+          <button type="button" onclick="payNow(750)" class="inline-flex items-center justify-center w-full md:w-auto rounded-xl border-2 border-orange-600 text-orange-700 bg-white px-6 py-3 font-extrabold hover:bg-orange-50">Buy Plan Online</button>
           <a href="https://wa.me/919565321625?text=Hi%20Doctor%2C%20I%20want%20to%20know%20more%20about%20the%20Dental%20Health%20Plan." target="_blank" class="btn-primary bg-green-500 hover:bg-green-600">Chat on WhatsApp</a>
         </div>
       </form>
@@ -109,6 +109,26 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // --- Google Pay / UPI deep-link (needs actual UPI ID) ---
+    const CLINIC_NAME = 'Dr Vikram Jeet Singh';
+    // TODO: Replace with the real UPI ID / VPA for Google Pay, e.g. '9565321625@okicici' or 'vikramjeetsingh@okaxis'
+    const UPI_ID = '';
+
+    function payNow(amount){
+      const note = `Dental Health Plan – Smiles & Braces (₹${amount})`;
+      if(!UPI_ID){
+        alert('Payment link not set yet. Please share your exact UPI ID (e.g., 9565321625@okicici) and I\'ll wire this button directly to Google Pay. Opening WhatsApp meanwhile.');
+        const msg = `Hi Doctor, I want to buy the Dental Health Plan for ₹${amount}. Please send a Google Pay/UPI request.`;
+        window.open(`https://wa.me/919565321625?text=${encodeURIComponent(msg)}`,'_blank');
+        return;
+      }
+      const upiUrl = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(CLINIC_NAME)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+      const gpayIntent = `intent://upi/pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(CLINIC_NAME)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end`;
+      const isAndroid = /Android/i.test(navigator.userAgent||'');
+      window.location.href = isAndroid ? gpayIntent : upiUrl;
+    }
   </script>
 </body>
 </html>
