@@ -1,147 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===== Core meta ===== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="theme-color" content="#0e7fa8" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="index,follow"/>
 
-  <!-- ===== Canonical & hreflang ===== -->
-  <link rel="canonical" href="https://www.bestindiandentist.com/" />
-  <link rel="alternate" href="https://www.bestindiandentist.com/" hreflang="en-in" />
-  <link rel="alternate" href="https://www.bestindiandentist.com/" hreflang="x-default" />
+  <!-- SEO: stronger brand + locality -->
+  <title>Best Dentist & Orthodontist in Lucknow (Indira Nagar) | Smiles & Braces – Dr. Vikram Jeet Singh</title>
+  <meta name="description" content="Smiles & Braces Dental Clinic, Indira Nagar, Lucknow. Braces & aligners, dental implants, whitening, root canal & family dentistry by Dr. Vikram Jeet Singh (BDS, MDS). Book an appointment online."/>
+  <link rel="canonical" href="https://www.bestindiandentist.com/"/>
 
-  <!-- ===== SEO title & description (CTR-optimized; ~58/155 chars) ===== -->
-  <title>Best Dentist in Lucknow | Braces, Aligners & Implants – Smiles & Braces</title>
-  <meta name="description" content="Top-rated dental clinic in Indira Nagar, Lucknow for braces, clear aligners, implants, root canal & whitening. Led by Dr. Vikram Jeet Singh (BDS, MDS). Book online." />
+  <!-- Social cards -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Smiles & Braces Dental Clinic"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta property="og:title" content="Smiles & Braces – Best Dentist & Orthodontist in Lucknow"/>
+  <meta property="og:description" content="Precision orthodontics, aligners, implants & cosmetic dentistry in Indira Nagar, Lucknow. Clear prices & quick appointment."/>
+  <meta property="og:url" content="https://www.bestindiandentist.com/"/>
+  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
-  <!-- ===== Social (Open Graph / Twitter) ===== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Smiles & Braces Dental Clinic" />
-  <meta property="og:locale" content="en_IN" />
-  <meta property="og:title" content="Smiles & Braces – Best Dentist & Orthodontist in Lucknow" />
-  <meta property="og:description" content="Orthodontics, aligners, implants & smile makeovers by Dr. Vikram Jeet Singh. Transparent pricing & fast booking in Indira Nagar." />
-  <meta property="og:url" content="https://www.bestindiandentist.com/" />
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Smiles & Braces – Best Dentist & Orthodontist in Lucknow" />
-  <meta name="twitter:description" content="Braces, aligners, implants & cosmetic dentistry by Dr. Vikram Jeet Singh. Book in seconds." />
-  <meta name="twitter:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp" />
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0e7fa8"/>
 
-  <!-- ===== Icons ===== -->
-  <link rel="icon" href="/assets/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+  <!-- Performance: fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- ===== Performance: preconnect & critical assets ===== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Carattere&family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/assets/illustrations/comfort.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="/css/site.css" />
-  <noscript><link rel="stylesheet" href="/css/site.css" /></noscript>
+  <!-- Preload critical CSS, then apply (improves FCP/LCP) -->
+  <link rel="stylesheet" href="/css/site.css">
+  <noscript><link rel="stylesheet" href="/css/site.css"></noscript>
 
-  <!-- ===== Single consolidated JSON-LD (validates in Rich Results Test) ===== -->
+  <!-- Preload hero image (convert to .webp and match CSS url) -->
+  <link rel="preload" as="image" href="/assets/illustrations/comfort.webp" imagesrcset="/assets/illustrations/comfort.webp 1x" fetchpriority="high">
+
+  <!-- Optional: hint DNS for any CDN you use -->
+  <!-- <link rel="dns-prefetch" href="https://cdn.example.com"> -->
+
+  <!-- LocalBusiness / Dentist structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Organization","LocalBusiness","Dentist"],
-        "@id": "https://www.bestindiandentist.com/#org",
-        "name": "Smiles & Braces Dental Clinic",
-        "url": "https://www.bestindiandentist.com/",
-        "logo": "https://www.bestindiandentist.com/assets/images/logo.webp",
-        "image": "https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
-        "description": "Orthodontics, aligners, implants, whitening and family dentistry in Indira Nagar, Lucknow.",
-        "telephone": "+91-9565321625",
-        "priceRange": "₹₹",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
-          "addressLocality": "Lucknow",
-          "addressRegion": "Uttar Pradesh",
-          "postalCode": "226016",
-          "addressCountry": "IN"
-        },
-        "geo": {"@type": "GeoCoordinates", "latitude": 26.879, "longitude": 80.996},
-        "sameAs": [
-          "https://www.instagram.com/drvikramjeetdental",
-          "https://www.facebook.com/SmilesAndBracesLucknow",
-          "https://www.justdial.com/Lucknow/Smiles-Braces-Dental-Clinic"
-        ],
-        "founder": {
-          "@type": "Person",
-          "name": "Dr. Vikram Jeet Singh",
-          "jobTitle": "Orthodontist (BDS, MDS)",
-          "url": "https://www.bestindiandentist.com/drvikramjeetsingh.html"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "500"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.bestindiandentist.com/#website",
-        "url": "https://www.bestindiandentist.com/",
-        "name": "Smiles & Braces Dental Clinic",
-        "publisher": {"@id": "https://www.bestindiandentist.com/#org"},
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.google.com/search?q=site%3Abestindiandentist.com+{search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.bestindiandentist.com/#breadcrumbs",
-        "itemListElement": [
-          {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.bestindiandentist.com/"}
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.bestindiandentist.com/#services",
-        "serviceType": "Orthodontics & Cosmetic Dentistry",
-        "provider": {"@id": "https://www.bestindiandentist.com/#org"},
-        "areaServed": {"@type": "City","name": "Lucknow"},
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Dental Treatments",
-          "itemListElement": [
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Braces & Clear Aligners"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dental Implants"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Root Canal Treatment"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Teeth Whitening"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Smile Makeover"}}
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.bestindiandentist.com/#faq",
-        "mainEntity": [
-          {"@type":"Question","name":"Which is the best dentist in Lucknow for braces?","acceptedAnswer":{"@type":"Answer","text":"Smiles & Braces Dental Clinic, led by Dr. Vikram Jeet Singh (BDS, MDS Orthodontist), provides advanced braces and clear aligners with digital planning and flexible EMIs."}},
-          {"@type":"Question","name":"Do you offer EMI for treatments?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide easy EMI and cashless options for aligners, implants and smile makeovers."}},
-          {"@type":"Question","name":"Where is the clinic located?","acceptedAnswer":{"@type":"Answer","text":"Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar, Lucknow 226016."}},
-          {"@type":"Question","name":"How can I book an appointment quickly?","acceptedAnswer":{"@type":"Answer","text":"Tap Book Appointment on the site, WhatsApp +91-9565321625, or call us for the earliest slot."}}
-        ]
-      }
+    "@type": "Dentist",
+    "name": "Smiles & Braces Dental Clinic - Dr. Vikram Jeet Singh",
+    "url": "https://www.bestindiandentist.com/",
+    "image": "https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
+    "logo": "https://www.bestindiandentist.com/assets/icons/apple-touch-icon.png",
+    "description": "Orthodontics, aligners, implants, whitening and family dentistry in Indira Nagar, Lucknow.",
+    "telephone": "+91-9565321625",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Indira Nagar",
+      "addressLocality": "Lucknow",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "226016",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/yourclinicpage",
+      "https://www.instagram.com/yourclinicpage",
+      "https://www.justdial.com/Lucknow/Smiles-Braces-Dental-Clinic"
     ]
   }
   </script>
-</head>
 
+  <!-- Your existing inline page-only styles can remain below if needed -->
+</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===== HEADER / NAVBAR ===== -->
-  <header class="header" role="banner">
+  <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
         <span class="brand-line clinic">Smiles & Braces Dental Clinic</span>
@@ -192,13 +132,331 @@
   </aside>
 
   <main id="main" class="home-main container">
-    <!-- (Your existing sections remain unchanged) -->
-    <!-- KPI strip, Services grid, About, Clocks, Testimonials, Blog preview, CTA, etc. -->
-    <!-- … -->
+    <!-- ===== KPI INFO STRIP ===== -->
+    <section class="section kpi-section" aria-labelledby="kpi-title">
+      <h2 id="kpi-title" class="visually-hidden">Clinic quick information</h2>
+
+      <div class="kpis" role="list">
+        <!-- Open/Close -->
+        <article class="kpi-card kpi-open" role="listitem" aria-live="polite" id="kpiOpenCard">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle><path d="M12 7v6l3 2"></path>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title" id="openStatus">Checking hours…</p>
+            <p class="kpi-sub">Mon–Sat • 10:00–20:00 IST</p>
+          </div>
+        </article>
+
+        <!-- Reply time -->
+        <article class="kpi-card kpi-reply" role="listitem">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title">~15 min</p>
+            <p class="kpi-sub">Typical WhatsApp response time</p>
+          </div>
+        </article>
+
+        <!-- Map / Address -->
+        <a class="kpi-card kpi-map" role="listitem"
+           href="https://www.google.com/maps?q=Smiles%20%26%20Braces%20Dental%20Clinic%20Lucknow"
+           target="_blank" rel="noopener">
+          <div class="kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 21s7-4.35 7-11a7 7 0 0 0-14 0c0 6.65 7 11 7 11z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="kpi-body">
+            <p class="kpi-title">Indira Nagar, Lucknow</p>
+            <p class="kpi-sub">Shop 6, Javed Market, near Aurobindo Park (226016)</p>
+          </div>
+          <span class="kpi-cta">Open map →</span>
+        </a>
+      </div>
+    </section>
+
+
+<!-- ===== SERVICES (no srcset; uses your existing files) ===== -->
+<section class="section glass">
+  <div class="section-head">
+    <h2>What we do best</h2>
+    <a href="/services.html" class="link-more">See all services →</a>
+  </div>
+
+  <div class="service-grid">
+    <article class="reveal">
+      <img src="/assets/images/services/clearaligners.webp"
+           alt="Clear aligners planned digitally"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Clear Aligners</h3><p>Discreet, removable trays with digital planning for precise movement.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/selfligatingbraces.webp"
+           alt="Self-ligating braces"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Self-ligating Braces</h3><p>Modern brackets that reduce chair time and enable efficient movement.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/lingualbraces.webp"
+           alt="Lingual braces behind teeth"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Lingual Braces</h3><p>Bonded behind the teeth — truly invisible orthodontics.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/traditionalbraces.webp"
+           alt="Traditional braces"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Traditional Braces</h3><p>Reliable alignment for simple to complex orthodontic cases.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/dental-implants.webp"
+           alt="Dental implants for tooth replacement"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Dental Implants</h3><p>Comfort-focused tooth replacement for long-term function.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/root-canal.webp"
+           alt="Root canal therapy"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Root Canal Therapy</h3><p>Pain-managed care with modern anesthesia and after-care.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/veneers.webp"
+           alt="Porcelain veneers for smile design"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Porcelain Veneers</h3><p>Minimal-prep smile makeovers for balance and shade harmony.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/teethwhitening.webp"
+           alt="Teeth whitening treatment"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Teeth Whitening</h3><p>Safe, predictable brightening with sensitivity control.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/kids-braces.webp"
+           alt="Kids braces and interceptive orthodontics"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Kids’ Braces</h3><p>Interceptive care for growing patients and balanced jaws.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/space-maintainers.webp"
+           alt="Space maintainers for kids"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Space Maintainers</h3><p>Prevents shifting when baby teeth are lost early.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/night-guard.webp"
+           alt="Night guard for teeth grinding"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Night Guards</h3><p>Protect teeth from grinding and reduce jaw strain.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/wisdom-tooth.webp"
+           alt="Wisdom tooth removal"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Wisdom Tooth</h3><p>Assessment and removal with comfort-first protocols.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/retainers.webp"
+           alt="Orthodontic retainers"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Retainers</h3><p>Retention plans to keep your smile beautifully stable.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/bonding.webp"
+           alt="Dental bonding repairs"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Bonding</h3><p>Shape and chip repairs for natural-looking results.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/cleaning.webp"
+           alt="Professional cleaning and polishing"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Cleaning & Polishing</h3><p>Professional hygiene and home-care guidance.</p></div>
+    </article>
+
+    <article class="reveal">
+      <img src="/assets/images/services/emergency-care.webp"
+           alt="Emergency dental care"
+           width="800" height="600" loading="lazy" decoding="async">
+      <div class="pad"><h3>Emergency Care</h3><p>Same-day guidance and slots whenever possible.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== ABOUT STRIP ===== -->
+<section class="section glass about-grid">
+  <div class="about-text">
+    <h2>Comfort-first dentistry in Lucknow</h2>
+    <p>At <strong>Smiles &amp; Braces Dental Clinic</strong>, we combine specialist orthodontics with comprehensive dentistry. From aligners and braces to implants, veneers and emergency care, every plan is explained simply with timelines and transparent costs so you can decide confidently.</p>
+    <ul class="bullets">
+      <li>Orthodontics by an <strong>MDS</strong> specialist</li>
+      <li>Digital planning &amp; photo documentation</li>
+      <li>Strict infection-control protocols</li>
+      <li>Written estimates &amp; follow-up schedules</li>
+    </ul>
+    <div class="about-buttons">
+      <a href="/about.html" class="btn btn-ghost">Meet the Doctor</a>
+      <a href="/contact.html" class="btn btn-call">Book Appointment</a>
+    </div>
+  </div>
+  <div class="about-photo">
+    <img src="/assets/illustrations/experience.webp"
+         alt="Modern clinical environment with comfort-first approach"
+         width="800" height="600" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<style>
+.service-grid img{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+}
+</style>
+
+
+<!-- CSS -->
+<style>
+.service-grid img {
+  width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+  transition:transform 0.3s ease;
+}
+.service-grid img:hover {
+  transform:scale(1.03);
+}
+</style>
+
+
+    <!-- ===== WORLD CLOCK ===== -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Live global time zones</h2>
+        <span class="section-tag">Plan calls and travel effortlessly</span>
+      </div>
+      <div class="clock-grid" id="worldClock"></div>
+      <p class="small muted" style="margin-top:8px">Times auto-update every second. Tap a card to copy the time.</p>
+    </section>
+
+ <!-- ===== TESTIMONIALS (Auto-loop) ===== -->
+<section class="section testimonials reveal">
+  <div class="section-head center">
+    <h2 class="h2">💬 What Our Patients Say</h2>
+    <span class="section-tag">Real stories • Genuine smiles</span>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="slides">
+      <div class="slide">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">“My aligner journey was smooth and on time. Clear instructions, kind team, and predictable results.”</p>
+          <p class="review-author">— Aman S.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">“Clean clinic and punctual appointments. The explanation was thorough and anxiety-free.”</p>
+          <p class="review-author">— Ritu K.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">“Flew in for implants and crown over two short trips. Transparent costs, excellent follow-up.”</p>
+          <p class="review-author">— Martin C.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dots" id="dots">
+    <span class="dot is-active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+    <!-- ===== BLOG PREVIEW ===== -->
+    <section class="section glass">
+      <div class="section-head">
+        <h2>From our blog</h2>
+        <a href="/blog.html" class="link-more">Read all posts →</a>
+      </div>
+      <div class="blog-preview">
+        <a class="preview-card reveal" href="/blog/tips-for-oral-hygiene.html">
+          <img src="/assets/images/blog/oral-hygiene.webp" alt="Oral hygiene tips"/>
+          <div><h3>5 Expert Tips for Maintaining Oral Hygiene</h3><div class="meta">Aug 1, 2025 · 3 min read</div></div>
+        </a>
+        <a class="preview-card reveal" href="/blog/importance-of-regular-checkups.html">
+          <img src="/assets/images/blog/regular-checkups.webp" alt="Regular check-ups"/>
+          <div><h3>The Importance of Regular Dental Check-ups</h3><div class="meta">Jul 25, 2025 · 3 min read</div></div>
+        </a>
+        <a class="preview-card reveal" href="/blog/choosing-the-right-toothbrush.html">
+          <img src="/assets/images/blog/toothbrushchoice.webp" alt="Choosing toothbrush and toothpaste"/>
+          <div><h3>How to Choose the Right Toothbrush &amp; Toothpaste</h3><div class="meta">Aug 4, 2025 · 2 min read</div></div>
+        </a>
+         <a class="preview-card reveal" href="/blog/why-dr-vikram-jeet-singh-best-dentist-in-lucknow.html">
+          <img src="/assets/images/blog/best-dentist-lucknow.webp" alt="Dr Vikram Jeet Singh at Smiles & Braces Dental Clinic, Lucknow"/>
+          <div><h3>Why Dr Vikram Jeet Singh is the Best Dentist in Lucknow</h3><div class="meta">Oct 4, 2025 · 2 min read</div></div>
+        </a>
+        <a class="preview-card reveal" href="/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html">
+  <img src="/assets/images/blog/top10reasons.webp" alt="Smiles & Braces Dental Clinic in Indira Nagar, Lucknow - Dr Vikram Jeet Singh"/>
+  <div><h3>Top 10 Reasons to Choose Smiles & Braces Dental Clinic in Indira Nagar, Lucknow</h3><div class="meta">Oct 4, 2025 · 4 min read</div></div>
+</a>
+        <a class="preview-card reveal" href="/blog/smiles-and-braces-best-dentist-in-lucknow.html">
+  <img src="/assets/images/blog/best-dentist-2025.webp" alt="Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025 | Dr Vikramjeet Singh"/>
+  <div><h3>Smiles & Braces Dental Clinic – #1 Dentist in Lucknow 2025</h3><div class="meta">Oct 4, 2025 · 4 min read</div></div>
+</a>
+
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section home-cta center">
+      <h2>Ready for a confident smile?</h2>
+      <p class="measure"><center>Quick replies 9:00–21:00 IST. Same-day emergency slots whenever possible.</center></p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/919565321625" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Now</a>
+        <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
+        <a href="/contact.html" class="btn btn-ghost">Contact Form</a>
+      </div>
+    </section>
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
         <h3>Smiles &amp; Braces Dental Clinic</h3>
@@ -213,14 +471,522 @@
     </div>
   </footer>
 
-  <!-- ===== Minimal JS (kept from your file; defer heavy logic) ===== -->
-  <script>
-    // Mobile menu & year
-    document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.navlinks')?.classList.toggle('show'));
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <!-- ===== JSON-LD ===== -->
+  <<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "@id": "https://www.bestindiandentist.com/#dentist",
+  "name": "Smiles & Braces Dental Clinic",
+  "url": "https://www.bestindiandentist.com/",
+  "image": "https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp",
+  "logo": "https://www.bestindiandentist.com/assets/logo.png",
+  "description": "Orthodontics, aligners, implants, whitening and family dentistry in Indira Nagar, Lucknow.",
+  "telephone": "+91-9565321625",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226016",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "20:00"
+  }],
+  "sameAs": [
+    "https://www.instagram.com/drvikramjeetdental",
+    "https://www.facebook.com/SmilesAndBracesLucknow",
+    "https://www.justdial.com/Lucknow/Smiles-Braces-Dental-Clinic"
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.bestindiandentist.com/#website",
+  "url": "https://www.bestindiandentist.com/",
+  "name": "Smiles & Braces Dental Clinic",
+  "alternateName": "Best Indian Dentist",
+  "publisher": { "@id": "https://www.bestindiandentist.com/#dentist" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.google.com/search?q=site:bestindiandentist.com+{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How long do braces or aligners take?","acceptedAnswer":{"@type":"Answer","text":"Timelines depend on complexity and cooperation. Simple alignment may finish in months; comprehensive cases take longer. You receive a personalized plan at consultation."}},
+      {"@type":"Question","name":"Are dental implants painful?","acceptedAnswer":{"@type":"Answer","text":"Placement is done under local anesthesia. Most patients report mild soreness for a few days with routine medication and after-care guidance."}},
+      {"@type":"Question","name":"Do you handle emergencies?","acceptedAnswer":{"@type":"Answer","text":"Yes. Message us on WhatsApp for the fastest response and we will guide you immediately."}}
+    ]
+  }
   </script>
 
-  <!-- (Keep your other scripts below as needed; SEO unaffected) -->
-  <!-- … your world clock, carousel, Diwali offer, etc. … -->
+  <!-- ===== JS: menu, year, parallax, reveal, time, open-hours, clocks, carousel, mini price ===== -->
+  <script>
+    // Mobile menu + year
+    document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Parallax hero
+    (function(){
+      const media=document.querySelector('.hero-media');
+      function onScroll(){ const y=Math.min(40, window.scrollY/12); media && media.style.setProperty('--parY', y+'px'); }
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+    })();
+
+    // Reveal on scroll
+    const io=new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} }),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Live IST time + date
+    (function(){
+      const istFmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+      const dateFmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+      const istEl=document.getElementById('istTime');
+      const dateEl=document.getElementById('todayDate');
+      function tick(){ const now=new Date(); istEl.textContent=istFmt.format(now); dateEl.textContent=dateFmt.format(now); }
+      tick(); setInterval(tick,1000);
+    })();
+
+    // Open/Closed status (Mon–Sat 10:00–20:00 IST) with next-open hint
+    (function(){
+      const el = document.getElementById('openStatus');
+      const card = document.getElementById('kpiOpenCard');
+      const nowIST = () => new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+      const fmt = (h,m=0)=>`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} IST`;
+
+      function update(){
+        const d = nowIST();
+        const day = d.getDay();            // 0 Sun .. 6 Sat
+        const h = d.getHours() + d.getMinutes()/60;
+        const openH = 10, closeH = 20;
+        const workday = (day>=1 && day<=6);
+
+        if(workday && h>=openH && h<closeH){
+          el.textContent = `Open now (till ${fmt(closeH)})`;
+          card.classList.remove('is-closed');
+        }else{
+          let next = nowIST();
+          if(!workday || h>=closeH){ // next workday
+            do { next.setDate(next.getDate()+1); } while(!(next.getDay()>=1 && next.getDay()<=6));
+          }
+          const label = (workday && h<openH) ? 'today' :
+                        next.toLocaleDateString('en-IN',{weekday:'short'});
+          el.textContent = `Closed now (opens ${label} ${fmt(openH)})`;
+          card.classList.add('is-closed');
+        }
+      }
+      update(); setInterval(update,60000);
+    })();
+
+    // World clock cards
+    (function(){
+      const zones=[{label:'Lucknow', tz:'Asia/Kolkata'},{label:'New York', tz:'America/New_York'},{label:'London', tz:'Europe/London'},{label:'Dubai', tz:'Asia/Dubai'},{label:'Singapore',tz:'Asia/Singapore'},{label:'Sydney',tz:'Australia/Sydney'},{label:'Beijing',tz:'Asia/Shanghai'},{label:'UTC',tz:'UTC'}];
+      const grid=document.getElementById('worldClock');
+      const cards=zones.map(z=>{const c=document.createElement('div');c.className='clock-card reveal';c.innerHTML=`<h4>${z.label}</h4><div class="time mono" data-tz="${z.tz}">—:—</div><div class="sub small muted"><span class="mono" data-date="${z.tz}">—</span><button class="copy" type="button" data-copy="${z.tz}">Copy</button></div>`;grid.appendChild(c);io.observe(c);return c;});
+      function update(){const now=new Date();cards.forEach(c=>{const tz=c.querySelector('.time').dataset.tz;const time=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(now);const date=new Intl.DateTimeFormat('en-GB',{timeZone:tz,weekday:'short',day:'2-digit',month:'short'}).format(now);c.querySelector('.time').textContent=time;c.querySelector('[data-date]').textContent=date;});}
+      update(); setInterval(update,1000);
+      grid.addEventListener('click',e=>{const btn=e.target.closest('[data-copy]'); if(!btn) return; const tz=btn.getAttribute('data-copy'); const now=new Date(); const t=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(now); navigator.clipboard?.writeText(`${t} (${tz})`); btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);});
+    })();
+
+    // Testimonials carousel
+    (function(){
+      const slides=document.querySelector('#carousel .slides');
+      const dots=[...document.querySelectorAll('#dots .dot')];
+      let idx=0; function go(i){ idx=(i+dots.length)%dots.length; slides.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,k)=>d.classList.toggle('is-active',k===idx)); }
+      setInterval(()=>go(idx+1),4500);
+    })();
+
+    // Mini price (multi-source live rates)
+    (function(){
+      const PRICES={CLEANING:2200, ALIGNERS:85000, BRACES:65000, IMPLANT:28000, RCT:5500, VENEER:12000, WHITEN:9500};
+      const SYMBOL={INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
+      const WANTED=Object.keys(SYMBOL).join(',');
+      const SOURCES=[
+        {name:'exchangerate.host', make:(base,syms)=>`https://api.exchangerate.host/latest?base=${base}&symbols=${syms}`, pick:d=>({date:d.date, rates:d.rates})},
+        {name:'frankfurter.app',   make:(base,syms)=>`https://api.frankfurter.app/latest?from=${base}&to=${syms}`,     pick:d=>({date:d.date, rates:d.rates})},
+        {name:'open.er-api.com',   make:(base)=>`https://open.er-api.com/v6/latest/${base}`,                           pick:d=>({date:d.time_last_update_utc, rates:d.rates})}
+      ];
+      let rates={base:'INR', date:'offline', source:'fallback', rates:{INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.088, AED:0.044, AUD:0.018}};
+      const tSel=document.getElementById('mpTreat'), cSel=document.getElementById('mpCurr'), out=document.getElementById('mpOut'), meta=document.getElementById('mpMeta');
+      async function fetchRates(){for(const s of SOURCES){try{const url=s.make('INR', WANTED);const res=await fetch(url,{mode:'cors'});const data=await res.json();const pick=s.pick(data);if(pick && pick.rates && Object.keys(pick.rates).length){rates={base:'INR', date: pick.date || new Date().toISOString().slice(0,10), source:s.name, rates:pick.rates};meta.textContent=`Source: ${s.name} • ${rates.date}`;return;}}catch(e){}} meta.textContent='Live feed unavailable, using fallback.';}
+      function fmt(cur,val){const sym=SYMBOL[cur]||'';const loc=(cur==='INR')?'en-IN':'en-US';return `${sym} ${val.toLocaleString(loc,{maximumFractionDigits:0})}`;}
+      function convINR(inr,to){return to==='INR'?inr:inr*(rates.rates[to]||0);}
+      function update(){const inr=PRICES[tSel.value]||0;const cur=cSel.value;const v=(cur==='INR')?inr:Math.round(convINR(inr,cur)); out.textContent=fmt(cur,v); localStorage.setItem('preferredCurrency',cur);}
+      cSel.value=localStorage.getItem('preferredCurrency')||'INR';
+      tSel.addEventListener('change',update); cSel.addEventListener('change',update);
+      (async()=>{await fetchRates(); update();})();
+    })();
+  </script>
+  <script>
+  // === MINI PRICE WIDGET SCRIPT ===
+  (function(){
+    const PRICES = {
+      CLEANING:2200,
+      ALIGNERS:85000,
+      BRACES:65000,
+      IMPLANT:28000,
+      RCT:5500,
+      VENEER:12000,
+      WHITEN:9500
+    };
+    const SYMBOL = {INR:'₹', USD:'$', EUR:'€', GBP:'£', CNY:'¥', AED:'د.إ', AUD:'$'};
+
+    const mpTreat = document.getElementById('mpTreat');
+    const mpCurr  = document.getElementById('mpCurr');
+    const mpOut   = document.getElementById('mpOut');
+    const mpMeta  = document.getElementById('mpMeta');
+
+    let FX = {base:'INR', rates:{INR:1}, source:'offline', date:'—'};
+
+    async function fetchRates(){
+      try {
+        const res = await fetch("https://api.frankfurter.app/latest?from=INR&to=USD,EUR,GBP,CNY,AED,AUD");
+        const data = await res.json();
+        FX = {base:'INR', rates:{...data.rates, INR:1}, source:'frankfurter.app', date:data.date};
+        mpMeta.textContent = `Source: ${FX.source} • ${FX.date}`;
+      } catch {
+        mpMeta.textContent = "Using offline fallback rates";
+        FX.rates = {INR:1, USD:0.012, EUR:0.011, GBP:0.0095, CNY:0.086, AED:0.044, AUD:0.018};
+      }
+      update();
+    }
+
+    function fmt(cur, amt){
+      const sym = SYMBOL[cur] || '';
+      const loc = (cur==='INR')?'en-IN':'en-US';
+      return `${sym} ${Math.round(amt).toLocaleString(loc)}`;
+    }
+
+    function convINR(inr, to){ return inr * (FX.rates[to] || 1); }
+
+    function update(){
+      const t = mpTreat.value;
+      const cur = mpCurr.value;
+      const inr = PRICES[t];
+      mpOut.textContent = fmt(cur, convINR(inr, cur));
+    }
+
+    mpTreat.addEventListener('change', update);
+    mpCurr.addEventListener('change', update);
+
+    fetchRates();
+  })();
+</script>
+<script>
+(function(){
+  // Where to render
+  const grid = document.getElementById('worldClock');
+  if(!grid) return;
+
+  // Pick the zones you want to display
+  const ZONES = [
+    {label:'Lucknow (IST)', tz:'Asia/Kolkata'},
+    {label:'London (UK)', tz:'Europe/London'},
+    {label:'New York (ET)', tz:'America/New_York'},
+    {label:'Dubai (GST)', tz:'Asia/Dubai'},
+    {label:'Berlin (CET/CEST)', tz:'Europe/Berlin'},
+    {label:'Singapore', tz:'Asia/Singapore'},
+    {label:'Sydney (AET)', tz:'Australia/Sydney'},
+    {label:'Toronto (ET)', tz:'America/Toronto'}
+  ];
+
+  // Create cards
+  const cards = ZONES.map(z => {
+    const el = document.createElement('div');
+    el.className = 'clock-card';
+    el.innerHTML = `
+      <div class="clock-city">${z.label}</div>
+      <div class="clock-time" data-time></div>
+      <div class="clock-date" data-date></div>
+      <div class="clock-copied">Copied ✓</div>
+    `;
+    // Click to copy current time text
+    el.addEventListener('click', () => {
+      try{
+        const t = el.querySelector('[data-time]').textContent;
+        const d = el.querySelector('[data-date]').textContent;
+        navigator.clipboard?.writeText(`${z.label}: ${t} — ${d}`);
+        el.classList.add('copied');
+        setTimeout(()=>el.classList.remove('copied'), 1200);
+      }catch(_){}
+    });
+    grid.appendChild(el);
+    return {el, tz:z.tz};
+  });
+
+  // Formatters (24-hour vs 12-hour: change hour12 to true if you prefer)
+  function fmtTime(zone){
+    try{
+      return new Intl.DateTimeFormat([], {
+        hour:'2-digit', minute:'2-digit', second:'2-digit',
+        hour12:false, timeZone:zone
+      }).format(new Date());
+    }catch{ return '—'; }
+  }
+  function fmtDate(zone){
+    try{
+      return new Intl.DateTimeFormat([], {
+        weekday:'short', year:'numeric', month:'short', day:'2-digit',
+        timeZone:zone
+      }).format(new Date());
+    }catch{ return ''; }
+  }
+
+  // Update all clocks every second
+  function tick(){
+    for(const c of cards){
+      c.el.querySelector('[data-time]').textContent = fmtTime(c.tz);
+      c.el.querySelector('[data-date]').textContent = fmtDate(c.tz);
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+<script>
+  (function(){
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('#dots .dot');
+    let idx = 0;
+    const total = dots.length;
+
+    function goToSlide(n) {
+      idx = (n + total) % total; // wrap around
+      slides.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((dot,i)=> dot.classList.toggle('is-active', i===idx));
+    }
+
+    // Auto slide every 4 seconds
+    setInterval(() => {
+      goToSlide(idx + 1);
+    }, 4000);
+
+    // Dot click navigation
+    dots.forEach((dot,i)=>{
+      dot.addEventListener('click',()=>goToSlide(i));
+    });
+  })();
+</script>
+
+<script>
+// ===================== DIWALI OFFER (Site-wide) =====================
+// Toggle behavior here:
+const DIWALI_CONFIG = {
+  endISO: "2025-11-15T23:59:59",      // Offer end in local time (Asia/Kolkata)
+  autoShowMode: "per_session",        // "every_load" | "per_session" | "per_day" | "disabled"
+  reopenFloater: true,                 // Show a small "🪔 Offer" button after close
+  contactHref: "/contact.html",
+  whatsappHref: "https://wa.me/919565321625"
+};
+// ===================================================================
+
+(function(){
+  const Z = 9999, SID = "diwali_popup_shown_session", DID = "diwali_popup_day";
+  const IST_OFFSET_MIN = 330; // Asia/Kolkata
+
+  // util: IST "day key" for per-day gating
+  function istDayKey(d=new Date()){
+    const t = d.getTime() + (IST_OFFSET_MIN - d.getTimezoneOffset())*60000;
+    return new Date(t).toDateString();
+  }
+
+  // gating
+  function shouldAutoShow(){
+    switch(DIWALI_CONFIG.autoShowMode){
+      case "every_load": return true;
+      case "per_session": return !sessionStorage.getItem(SID);
+      case "per_day": return localStorage.getItem(DID) !== istDayKey();
+      default: return false;
+    }
+  }
+  function markShown(){
+    switch(DIWALI_CONFIG.autoShowMode){
+      case "per_session": sessionStorage.setItem(SID,"1"); break;
+      case "per_day": localStorage.setItem(DID, istDayKey()); break;
+    }
+  }
+
+  // inject CSS once
+  function injectCSS(){
+    if (document.getElementById("diwali-offer-css")) return;
+    const css = `
+.modal{display:none;position:fixed;inset:0;z-index:${Z};
+  background:radial-gradient(1200px 600px at 50% 10%,rgba(255,215,0,.18),transparent 60%),
+             rgba(0,0,0,.65)}
+.modal-content{position:relative;margin:clamp(60px,12vh,120px) auto 0;width:min(560px,92%);
+  padding:26px 22px 28px;border-radius:18px;text-align:center;color:#1b1b1b;
+  background:linear-gradient(180deg,#fff 0%,#fff9e6 100%);box-shadow:0 22px 60px rgba(0,0,0,.35);
+  animation:popIn .35s ease;border:2px solid transparent;background-image:
+  linear-gradient(#ffffff,#fff9e6),
+  linear-gradient(45deg,#ffb703,#ff4d4d,#9b5de5,#00c2ff,#ffd166);
+  background-origin:border-box;background-clip:padding-box,border-box;will-change:transform,opacity}
+.modal-content::after{content:"";position:absolute;inset:-8px;z-index:-1;border-radius:22px;
+  filter:blur(14px);opacity:.75;background:conic-gradient(from 0deg,#ffb703,#ff4d4d,#9b5de5,#00c2ff,#ffd166,#ffb703);
+  animation:glow 4s linear infinite}
+@keyframes popIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes glow{to{transform:rotate(1turn)}}
+.festive-top{display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:6px}
+.badge{font:600 12px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;letter-spacing:.6px;text-transform:uppercase;color:#7a3e00;
+  background:linear-gradient(90deg,#ffd166,#ffb703);padding:6px 10px;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.spark{font-size:20px}
+.title{margin:6px 0 4px;font:800 clamp(20px,2.2vw + 8px,28px)/1.2 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#8b0000;
+  text-shadow:0 1px 0 #fff6,0 8px 20px rgba(255,77,77,.25)}
+.subtitle{color:#5b4a00;margin:0 0 14px;font-weight:600}
+.offers{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:8px}
+.offers li{background:#fff;border:1px dashed #ff7b00;color:#2d2d2d;padding:10px 12px;border-radius:10px;box-shadow:0 6px 16px rgba(255,125,0,.12)}
+.countdown-wrap{margin:12px 0 8px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;justify-items:center}
+.countdown div{background:#231942;color:#fff;padding:10px 8px;border-radius:10px;min-width:70px;box-shadow:0 8px 18px rgba(35,25,66,.35)}
+.countdown span{display:block;font:800 20px/1.1 ui-sans-serif,system-ui}
+.countdown label{display:block;font-size:11px;opacity:.85;letter-spacing:.6px;text-transform:uppercase}
+.ends-note{margin:8px 0 0;font-size:12px;color:#7a3e00}
+.cta-row{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.btn{text-decoration:none;cursor:pointer;user-select:none;padding:12px 16px;border-radius:10px;font-weight:700;letter-spacing:.3px;
+  transition:transform .12s ease,box-shadow .12s ease,background .2s ease}
+.btn.primary{background:linear-gradient(90deg,#ff4d4d,#ff9a3c);color:#fff;box-shadow:0 10px 18px rgba(255,77,77,.35)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(255,77,77,.45)}
+.btn.ghost{border:2px solid #231942;color:#231942;background:#fff}
+.btn.ghost:hover{background:#231942;color:#fff;transform:translateY(-2px)}
+.close-btn{position:absolute;top:8px;right:10px;width:34px;height:34px;border-radius:50%;border:0;background:#231942;color:#fff;
+  font:800 20px/1 "Inter",system-ui;cursor:pointer;box-shadow:0 8px 20px rgba(35,25,66,.35)}
+.close-btn:hover{transform:rotate(90deg);transition:transform .18s ease}
+#offerReopen{position:fixed;right:12px;bottom:12px;z-index:${Z-1};display:none;align-items:center;gap:8px;border:0;border-radius:999px;padding:10px 14px;
+  background:#231942;color:#fff;box-shadow:0 8px 18px rgba(35,25,66,.35);cursor:pointer}
+@media (max-width:480px){
+  .modal{backdrop-filter:none}
+  .modal-content{box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .countdown div{min-width:62px;padding:8px 6px}
+}
+@media (prefers-reduced-motion:reduce){
+  .modal-content::after{animation:none}
+  .btn.primary:hover,.btn.ghost:hover{transform:none}
+}
+`;
+    const style = document.createElement("style");
+    style.id = "diwali-offer-css";
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  // inject HTML once
+  function injectHTML(){
+    if (document.getElementById("announcementModal")) return;
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = `
+<div id="announcementModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="diwali-title" aria-describedby="diwali-desc">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close">×</button>
+    <div class="festive-top"><span class="spark">🎆</span><span class="badge">Diwali Mega Offer</span><span class="spark">🪔</span></div>
+    <h2 class="title" id="diwali-title">Light Up Your Smile This Diwali!</h2>
+    <p class="subtitle" id="diwali-desc">Limited-time festival deals for brighter, healthier teeth</p>
+    <ul class="offers">
+      <li><strong>Teeth Whitening</strong> — <u>31% OFF</u> (festival special)</li>
+      <li><strong>Free First Consultation</strong> — new patients only</li>
+      <li><strong>Braces/Aligners</strong> — ₹5,000/10000 OFF + easy EMIs</li>
+      <li><strong>Implant</strong> — 10–15% OFF + easy EMIs</li>
+    </ul>
+    <div class="countdown-wrap">
+      <div class="countdown" id="diwaliCountdown">
+        <div><span id="dDays">00</span><label>Days</label></div>
+        <div><span id="dHours">00</span><label>Hours</label></div>
+        <div><span id="dMins">00</span><label>Mins</label></div>
+        <div><span id="dSecs">00</span><label>Secs</label></div>
+      </div>
+      <p class="ends-note">Offer ends soon — book now!</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" id="diwaliContact" href="${DIWALI_CONFIG.contactHref}">Book Appointment</a>
+      <a class="btn ghost" id="diwaliWhatsApp" href="${DIWALI_CONFIG.whatsappHref}" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+<button id="offerReopen" aria-label="Reopen Diwali Offer">🪔 Offer</button>
+`;
+    document.body.appendChild(wrapper);
+  }
+
+  // logic
+  let timer = null;
+  function openModal(){
+    document.body.style.overflow = "hidden";
+    document.getElementById("announcementModal").style.display = "block";
+    const btn = document.getElementById("offerReopen"); if (btn) btn.style.display = "none";
+  }
+  function closeModal(){
+    document.getElementById("announcementModal").style.display = "none";
+    document.body.style.overflow = "";
+    if (DIWALI_CONFIG.reopenFloater){
+      const btn = document.getElementById("offerReopen"); if (btn) btn.style.display = "flex";
+    }
+  }
+  function startCountdown(endStr){
+    const end = new Date(endStr).getTime();
+    const d = id => document.getElementById(id);
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, end - now);
+      const days = Math.floor(diff/86400000); diff%=86400000;
+      const hrs  = Math.floor(diff/3600000);  diff%=3600000;
+      const mins = Math.floor(diff/60000);    diff%=60000;
+      const secs = Math.floor(diff/1000);
+      d("dDays").textContent  = String(days).padStart(2,"0");
+      d("dHours").textContent = String(hrs).padStart(2,"0");
+      d("dMins").textContent  = String(mins).padStart(2,"0");
+      d("dSecs").textContent  = String(secs).padStart(2,"0");
+      if (end - now <= 0) clearInterval(timer);
+    }
+    tick(); return setInterval(tick, 1000);
+  }
+
+  // event wiring once DOM is ready
+  document.addEventListener("DOMContentLoaded", ()=>{
+    injectCSS(); injectHTML();
+
+    // buttons
+    document.querySelector("#announcementModal .close-btn")?.addEventListener("click", closeModal);
+    document.getElementById("offerReopen")?.addEventListener("click", openModal);
+
+    // overlay click
+    document.addEventListener("click",(e)=>{
+      const modal = document.getElementById("announcementModal");
+      if (e.target === modal) closeModal();
+    });
+    // ESC key
+    document.addEventListener("keydown",(e)=>{ if (e.key === "Escape") closeModal(); });
+
+    // URL overrides: ?offer=show / ?offer=hide
+    const p = new URLSearchParams(location.search);
+    const override = p.get("offer");
+    timer = startCountdown(DIWALI_CONFIG.endISO);
+
+    if (override === "hide") return;
+    if (override === "show"){ openModal(); return; }
+
+    // auto show
+    if (shouldAutoShow()){
+      (window.requestIdleCallback || ((cb)=>setTimeout(cb, 100)))(()=>{
+        openModal(); markShown();
+      });
+    } else if (DIWALI_CONFIG.reopenFloater){
+      const btn = document.getElementById("offerReopen"); if (btn) btn.style.display = "flex";
+    }
+  });
+})();
+</script>
+
 </body>
-</html>
+</html>  I am giving code convert this into very high end elite level SEO so it will be visible much better in google search
