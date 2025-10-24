@@ -1,194 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tartar Removal Near Me | Smiles & Braces Dental Clinic</title>
-  <meta name="description" content="Professional tartar removal services at Smiles & Braces Dental Clinic in Lucknow. Our experienced dentists safely remove plaque and tartar to keep your teeth healthy and bright. Book an appointment today for a cleaner, healthier smile.">
+  <title>Tartar Removal Near Me | Best Indian Dentist in Lucknow</title>
+  <meta name="description" content="Professional tartar removal services by the Best Indian Dentist in Lucknow. Safely remove plaque and tartar for a healthier, brighter smile. Book your appointment today!">
+  <meta name="keywords" content="tartar removal Lucknow, dental cleaning, teeth scaling, plaque removal, dentist near me, best dentist in Lucknow, Best Indian Dentist">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Tartar Removal in Lucknow | Best Indian Dentist">
+  <meta property="og:description" content="Keep your teeth healthy and bright with safe, effective tartar removal from Best Indian Dentist in Lucknow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bestindiandentist.com/tartar-removal">
+  <meta property="og:image" content="https://www.bestindiandentist.com/images/tartar-removal-lucknow.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.bestindiandentist.com/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <style>
     :root {
-      --primary-color: #007BFF;
-      --secondary-color: #333;
-      --background-color: #f9f9f9;
-      --text-color: #444;
-      --max-width: 800px;
+      --primary-color: #007bff;
+      --secondary-color: #2c3e50;
+      --accent-color: #0056b3;
+      --bg-light: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+      --max-width: 1000px;
+      --radius: 10px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--background-color);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.7;
+      scroll-behavior: smooth;
     }
+
     header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1em 0;
+      background: var(--primary-color);
+      color: var(--text-light);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
     header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .logo {
-      font-size: 1.25em;
-      font-weight: bold;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav li {
-      margin-left: 1em;
-    }
-    nav li:first-child {
-      margin-left: 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      background-color: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 4em 1em;
-    }
-    .hero h1 {
-      margin: 0 0 0.5em;
-      font-size: 2em;
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin: 0 0 1em;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.75em 1.5em;
-      background-color: #0056b3;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .button:hover {
-      background-color: #004a99;
-    }
-    main {
-      padding: 2em 1em;
-    }
-    .container {
       max-width: var(--max-width);
       margin: 0 auto;
+      padding: 1em;
     }
-    section {
-      margin-bottom: 2em;
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
     }
-    h2 {
-      color: var(--primary-color);
-      margin-top: 0;
-    }
-    form {
+
+    nav ul {
+      list-style: none;
       display: flex;
-      flex-direction: column;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
     }
-    form label {
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 123, 255, 0.9), rgba(0, 86, 179, 0.9)),
+                  url('https://www.bestindiandentist.com/images/dental-cleaning-bg.jpg') center/cover no-repeat;
+      color: var(--text-light);
+      text-align: center;
+      padding: 6em 1em;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
       margin-bottom: 0.5em;
-      font-weight: bold;
     }
-    form input, form textarea {
-      margin-bottom: 1em;
-      padding: 0.5em;
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 1.5em;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.9em 2em;
+      background: var(--accent-color);
+      color: white;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #003e82;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3em 1em;
+    }
+
+    section {
+      margin-bottom: 3em;
+    }
+
+    h2 {
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+      margin-bottom: 0.75em;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 1.5em;
+    }
+
+    form {
+      display: grid;
+      gap: 1em;
+      background: white;
+      padding: 2em;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    input, textarea {
+      padding: 0.8em;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font: inherit;
+      border-radius: var(--radius);
+      font-family: inherit;
     }
-    form button {
-      width: fit-content;
-      padding: 0.75em 1.5em;
-      background-color: var(--primary-color);
+
+    button[type="submit"] {
+      background: var(--primary-color);
       border: none;
       color: white;
-      font-size: 1em;
-      border-radius: 4px;
+      padding: 0.9em 2em;
+      border-radius: var(--radius);
       cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
-    form button:hover {
-      background-color: #0056b3;
+
+    button[type="submit"]:hover {
+      background: var(--accent-color);
     }
+
     .testimonials {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      gap: 1.5em;
     }
+
     .testimonial {
       background: white;
-      padding: 1em;
-      border-left: 4px solid var(--primary-color);
-      margin-bottom: 1em;
+      padding: 1.5em;
+      border-left: 5px solid var(--primary-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
-    .testimonial p {
-      margin: 0 0 0.5em;
-    }
+
     .testimonial cite {
       display: block;
-      font-size: 0.9em;
-      color: #555;
+      margin-top: 0.75em;
+      color: #666;
+      font-style: normal;
     }
+
     .faq-item {
-      margin-bottom: 1.5em;
+      background: white;
+      padding: 1em 1.5em;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 1em;
     }
+
     .faq-item h3 {
       margin-bottom: 0.5em;
-      color: var(--secondary-color);
+      color: var(--primary-color);
     }
-    .faq-item p {
-      margin-top: 0;
-    }
-    .map-container {
-      width: 100%;
-      height: 300px;
-      margin: 1em 0;
-    }
+
     .map-container iframe {
       width: 100%;
-      height: 100%;
-      border: 1px solid #ccc;
+      height: 350px;
+      border: 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
+
     footer {
-      background-color: var(--secondary-color);
-      color: white;
+      background: var(--secondary-color);
+      color: var(--text-light);
       text-align: center;
-      padding: 1em 0;
-      font-size: 0.9em;
+      padding: 2em 1em;
+      font-size: 0.95rem;
     }
+
     footer a {
-      color: white;
+      color: var(--text-light);
       text-decoration: underline;
     }
-    @media (min-width: 600px) {
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
       .testimonials {
-        flex-direction: row;
-        gap: 1em;
-      }
-      .testimonial {
-        flex: 1;
-        margin-bottom: 0;
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
+
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
-    "name": "Smiles & Braces Dental Clinic",
-    "description": "Comprehensive dental care in Lucknow, specializing in tartar removal and routine cleanings to keep your smile healthy.",
+    "name": "Best Indian Dentist",
+    "url": "https://www.bestindiandentist.com",
+    "image": "https://www.bestindiandentist.com/images/clinic-front.jpg",
+    "description": "Best Indian Dentist offers professional tartar removal and complete dental care in Lucknow, India.",
     "telephone": "+919565321625",
-    "email": "info@smilesandbracesdental.com",
+    "email": "info@bestindiandentist.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Shop No.6, Javed Market, Indira Nagar",
@@ -198,52 +260,47 @@
       "addressCountry": "IN"
     },
     "priceRange": "₹₹",
-    "openingHours": [
-      "Mo-Sa 09:30-14:00",
-      "Mo-Th, Su 17:30-21:00"
-    ]
+    "openingHours": ["Mo-Sa 09:30-14:00", "Mo-Th, Su 17:30-21:00"]
   }
   </script>
 </head>
+
 <body>
   <header>
     <div class="container">
-      <span class="logo">Smiles & Braces Dental Clinic</span>
-      <nav aria-label="Main navigation">
+      <span class="logo">Best Indian Dentist</span>
+      <nav aria-label="Main Navigation">
         <ul>
           <li><a href="#why">Why Tartar Removal</a></li>
-          <li><a href="#book">Book Appointment</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#book">Book</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#location">Location</a></li>
+          <li><a href="#location">Find Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Professional Tartar Removal in Lucknow</h1>
-      <p>Keep your smile healthy and bright with expert tartar removal at Smiles & Braces Dental Clinic.</p>
-      <a href="#book" class="button">Book Appointment</a>
-    </section>
+  <section class="hero">
+    <h1>Professional Tartar Removal in Lucknow</h1>
+    <p>Get expert dental cleaning and tartar removal by the Best Indian Dentist — ensuring a brighter, healthier smile for every patient.</p>
+    <a href="#book" class="button">Book an Appointment</a>
+  </section>
 
-    <section id="why" class="container">
+  <main>
+    <section id="why">
       <h2>Why Tartar Removal Matters</h2>
-      <p>Tartar (dental calculus) is hardened plaque that sticks to your teeth and can only be removed by a dental professional. It harbors bacteria that irritate your gums and lead to inflammation and gum disease if left untreated.</p>
-      <p>By removing tartar regularly, you help prevent gum disease, cavities, and bad breath. Our skilled dentists use advanced tools to gently remove tartar, protecting your dental health and keeping your teeth clean and bright.</p>
-      <p>Regular tartar removal offers benefits:</p>
+      <p>Tartar (dental calculus) is hardened plaque that can only be removed by a dental professional. It harbors bacteria that lead to gum inflammation, cavities, and bad breath if left untreated.</p>
       <ul>
-        <li>Prevents gum disease by eliminating bacteria-harboring buildup.</li>
-        <li>Helps avoid cavities and tooth decay that tartar can contribute to.</li>
-        <li>Reduces staining and discoloration for a brighter smile.</li>
-        <li>Improves overall oral health and freshens breath.</li>
+        <li>Prevents gum disease and tooth decay</li>
+        <li>Reduces staining for a whiter smile</li>
+        <li>Improves oral health and breath freshness</li>
+        <li>Protects your gums and enamel</li>
       </ul>
     </section>
 
-    <section id="book" class="container">
-      <h2>Book Appointment</h2>
-      <p>Ready to schedule your cleaning? Fill out the form below to book an appointment with our dental team.</p>
+    <section id="book">
+      <h2>Book an Appointment</h2>
       <form action="https://formspree.io/f/xanpokbz" method="POST">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
@@ -258,72 +315,63 @@
         <input type="date" id="date" name="date">
 
         <label for="message">Additional Comments</label>
-        <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your dental needs..."></textarea>
 
         <button type="submit">Submit</button>
       </form>
     </section>
 
-    <section id="testimonials" class="container">
-      <h2>Testimonials</h2>
+    <section id="testimonials">
+      <h2>What Our Patients Say</h2>
       <div class="testimonials">
         <blockquote class="testimonial">
-          <p>"The team at Smiles & Braces Dental Clinic is amazing! My tartar removal was quick and pain-free."</p>
-          <cite>— Asha Kamboj </cite>
+          <p>"My tartar removal was painless and professional. The dentist made me feel very comfortable!"</p>
+          <cite>— Asha Kamboj</cite>
         </blockquote>
         <blockquote class="testimonial">
-          <p>"I always feel comfortable during my visits. The hygienists are gentle and thorough, and my teeth feel so clean afterward."</p>
+          <p>"Clean, friendly, and thorough service. My teeth feel brand new after every visit!"</p>
           <cite>— Rahul Sinha</cite>
         </blockquote>
         <blockquote class="testimonial">
-          <p>"Excellent service and friendly staff. My gums were healthy again after my cleaning, and my smile looks great!"</p>
-          <cite>— Priya Rajawat </cite>
+          <p>"Best dental experience ever! My gums feel healthier, and I can see a visible difference."</p>
+          <cite>— Priya Rajawat</cite>
         </blockquote>
       </div>
     </section>
 
-    <section id="faqs" class="container">
+    <section id="faqs">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
-        <h3>What is tartar and why remove it?</h3>
-        <p>Tartar is hardened plaque that builds up on teeth. It can only be removed professionally. Removing tartar prevents gum disease, tooth decay, and other oral health issues.</p>
+        <h3>What is tartar and why should I remove it?</h3>
+        <p>Tartar is hardened plaque that sticks to teeth. It can only be removed professionally and helps prevent gum disease and decay.</p>
       </div>
       <div class="faq-item">
-        <h3>How often should I get a tartar removal?</h3>
-        <p>We recommend a dental cleaning and tartar removal at least every 6 months during your regular checkups. Patients prone to buildup may benefit from more frequent cleanings.</p>
+        <h3>How often should I get a cleaning?</h3>
+        <p>We recommend tartar removal every 6 months. Some patients may need more frequent visits based on their oral condition.</p>
       </div>
       <div class="faq-item">
-        <h3>Is tartar removal painful?</h3>
-        <p>No, the procedure is generally not painful. Our trained hygienists use gentle tools to scrape away tartar, and most patients experience little to no discomfort.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Can I remove tartar at home?</h3>
-        <p>No. Attempting to remove tartar yourself can damage your teeth and gums. Professional cleaning is the safe way to remove tartar.</p>
+        <h3>Is it painful?</h3>
+        <p>No, it’s a comfortable procedure performed with modern ultrasonic and hand-scaling tools.</p>
       </div>
     </section>
 
-    <section id="location" class="container">
-      <h2>Location</h2>
-      <p><strong>Address:</strong> Shop No.6, Javed Market, Indira Nagar, Lucknow, Uttar Pradesh 226016, India</p>
-      <p><strong>Phone:</strong> +91 9565321625</p>
-      <p><strong>Email:</strong> smilesandbracesmunshipuliya@gmail.com</p>
-      <p><strong>Hours:</strong> Mon–Sat 9:30 AM–2:00 PM, Mon–Thu &amp; Sun 5:30 PM–9:00 PM</p>
-      <div class="map-container" aria-label="Map of Smiles & Braces Dental Clinic location">
-        <iframe 
-          src="https://www.openstreetmap.org/export/embed.html?bbox=80.973299,26.873301,80.993299,26.893301&amp;layer=mapnik" 
-          frameborder="0" 
-          aria-hidden="false" 
-          tabindex="0"
-          title="Map showing Smiles & Braces Dental Clinic location">
-        </iframe>
+    <section id="location">
+      <h2>Find Us</h2>
+      <p><strong>Address:</strong> Shop No.6, Javed Market, Indira Nagar, Lucknow, UP 226016</p>
+      <p><strong>Phone:</strong> +91 95653 21625</p>
+      <p><strong>Email:</strong> <a href="mailto:info@bestindiandentist.com">info@bestindiandentist.com</a></p>
+      <p><strong>Hours:</strong> Mon–Sat 9:30 AM–2:00 PM | Mon–Thu & Sun 5:30 PM–9:00 PM</p>
+
+      <div class="map-container">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=80.973299,26.873301,80.993299,26.893301&amp;layer=mapnik" title="Best Indian Dentist Location"></iframe>
       </div>
-      <p><small><a href="https://www.openstreetmap.org/?mlat=26.8833&amp;mlon=80.9833#map=16/26.8833/80.9833" target="_blank">View Larger Map</a></small></p>
+      <p><a href="https://www.openstreetmap.org/?mlat=26.8833&amp;mlon=80.9833#map=16/26.8833/80.9833" target="_blank">View Larger Map</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Smiles & Braces Dental Clinic. All rights reserved.</p>
-    <p>Contact us: +91 95653 21625 | <a href="mailto:smilesandbracesmunshipuliya@gmail.com">smilesandbracesmunshipuliya@gmail.com</a></p>
+    <p>&copy; 2025 Best Indian Dentist. All Rights Reserved.</p>
+    <p>Contact us: +91 9565321625 | <a href="mailto:info@bestindiandentist.com">info@bestindiandentist.com</a></p>
   </footer>
 </body>
 </html>
