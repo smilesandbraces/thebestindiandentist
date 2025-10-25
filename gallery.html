@@ -118,33 +118,241 @@
     <span><a class="link-more" href="/">Home</a> / Gallery</span>
   </nav>
 
-  <!-- ===== MAIN ===== -->
-  <main id="main" class="container">
-    <section class="section glass">
-      <div class="section-head">
+<!-- ===== Redesigned Patient Gallery (drop-in) ===== -->
+<section class="section glass gallery-pro">
+  <div class="section-head pro-head">
+    <div class="pro-head__title">
+      <!-- Tooth + sparkle icon -->
+      <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" class="tooth">
+        <path fill="currentColor" d="M12 2c2.9 0 6 1.6 6 5.2c0 2.2-.9 4.2-1.8 6.1c-.3.6-1 .9-1.6.6c-.7-.3-1-1.1-.7-1.8c.7-1.7 1.5-3.5 1.5-5c0-2-1.9-3-3.4-3C9.5 4.1 8 5.7 8 7.9c0 1.6.7 3.4 1.4 5.1c.3.7 0 1.5-.7 1.8c-.6.3-1.3 0-1.6-.6C6.1 12 5 9.9 5 7.2C5 3.6 9.1 2 12 2Z"/>
+        <path fill="currentColor" d="M9 20c0-1.7 1.3-3 3-3s3 1.3 3 3c0 1.4.7 2 1.5 2c.9 0 1.5-.9 1.5-2.7c0-2.4-1.3-4.3-2.7-4.3c-1 0-1.8.5-2.3 1.2c-.2.3-.7.3-.9 0C9.7 15.5 9 15 8 15c-1.7 0-3 1.9-3 4.3C5 21.1 5.6 22 6.5 22S8 21.4 8 20Z"/>
+      </svg>
+      <div>
         <h1>Patient Gallery</h1>
-        <span class="section-tag">Before &amp; After • Testimonial &amp; Treatment Videos</span>
+        <p class="pro-sub">Before &amp; After • Testimonial &amp; Treatment Videos</p>
       </div>
+    </div>
 
-      <!-- Tabs -->
-      <div class="tabs" role="tablist" aria-label="Gallery Tabs">
-        <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="pane-ba" id="tab-ba">Patients (Before &amp; After)</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pane-videos" id="tab-videos">Videos</button>
+    <div class="pro-stats" aria-label="Gallery counters">
+      <div class="stat">
+        <span class="stat__num" id="count-ba">0</span>
+        <span class="stat__label">Cases</span>
       </div>
-
-      <div class="tabpanes">
-        <!-- BEFORE & AFTER -->
-        <div class="tabpanel is-active" id="pane-ba" role="tabpanel" aria-labelledby="tab-ba">
-          <div class="grid ba" id="baGrid" aria-live="polite"></div>
-          <p class="small muted center" style="margin-top:10px">Tip: Drag the slider on each photo to compare before vs after.</p>
-        </div>
-
-        <!-- VIDEOS -->
-        <div class="tabpanel" id="pane-videos" role="tabpanel" aria-labelledby="tab-videos">
-          <div class="grid vid" id="videoGrid" aria-live="polite"></div>
-        </div>
+      <div class="stat">
+        <span class="stat__num" id="count-videos">0</span>
+        <span class="stat__label">Videos</span>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs pro-tabs" role="tablist" aria-label="Gallery Tabs">
+    <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="pane-ba" id="tab-ba">
+      <span class="tab-ico">🦷</span> Patients (Before &amp; After)
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pane-videos" id="tab-videos">
+      <span class="tab-ico">▶️</span> Videos
+    </button>
+  </div>
+
+  <!-- Toolbar for filters/search/view -->
+  <div class="pro-toolbar" role="group" aria-label="Gallery tools">
+    <div class="filters" aria-label="Filter cases">
+      <button class="chip is-active" data-filter="all">All</button>
+      <button class="chip" data-filter="braces">Braces</button>
+      <button class="chip" data-filter="aligners">Aligners</button>
+      <button class="chip" data-filter="implant">Implants</button>
+      <button class="chip" data-filter="bonding">Bonding</button>
+      <button class="chip" data-filter="smile makeover">Smile Makeover</button>
+    </div>
+    <div class="tools">
+      <label class="sr-only" for="gallery-search">Search gallery</label>
+      <input id="gallery-search" class="search" type="search" placeholder="Search cases & videos…" aria-label="Search gallery">
+      <div class="view-toggle" role="group" aria-label="Density">
+        <button class="view-btn is-active" data-view="comfortable" title="Comfortable view">⤢</button>
+        <button class="view-btn" data-view="compact" title="Compact view">⤡</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabpanes">
+    <!-- BEFORE & AFTER -->
+    <div class="tabpanel is-active" id="pane-ba" role="tabpanel" aria-labelledby="tab-ba">
+      <div class="grid ba" id="baGrid" aria-live="polite"></div>
+      <p class="small muted center tip">Tip: Drag the slider on each photo to compare before vs after.</p>
+    </div>
+
+    <!-- VIDEOS -->
+    <div class="tabpanel" id="pane-videos" role="tabpanel" aria-labelledby="tab-videos">
+      <div class="grid vid" id="videoGrid" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== Premium Gallery Polish (scoped to .gallery-pro) ===== */
+.gallery-pro { --ink:#0e7fa8; --muted:#666; --chip:#eef7fb; --ring: rgba(14,127,168,.25); }
+
+.gallery-pro .pro-head{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px;
+  padding:16px 18px; border-radius:16px;
+  background:linear-gradient(135deg,rgba(14,127,168,.08),rgba(14,127,168,.02));
+  border:1px solid rgba(14,127,168,.12);
+}
+.gallery-pro .pro-head__title{display:flex; align-items:center; gap:14px}
+.gallery-pro .tooth{color:var(--ink); filter:drop-shadow(0 6px 16px rgba(14,127,168,.25))}
+.gallery-pro h1{margin:0}
+.gallery-pro .pro-sub{margin:2px 0 0; color:var(--muted)}
+.gallery-pro .pro-stats{display:flex; gap:18px}
+.gallery-pro .stat{min-width:84px; text-align:right}
+.gallery-pro .stat__num{display:block; font-weight:800; font-size:1.35rem; color:var(--ink)}
+.gallery-pro .stat__label{font-size:.8rem; color:var(--muted)}
+
+.gallery-pro .pro-tabs{margin-top:14px}
+
+.gallery-pro .pro-toolbar{
+  margin:10px 0 18px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
+}
+.gallery-pro .filters{display:flex; flex-wrap:wrap; gap:8px}
+.gallery-pro .chip{
+  border:1px solid rgba(0,0,0,.12); background:#fff; padding:8px 12px; border-radius:999px; font-weight:600; cursor:pointer; transition:.2s;
+}
+.gallery-pro .chip:hover{transform:translateY(-1px)}
+.gallery-pro .chip.is-active{background:var(--ink); color:#fff; border-color:var(--ink)}
+
+.gallery-pro .tools{display:flex; align-items:center; gap:10px; margin-left:auto}
+.gallery-pro .search{
+  padding:10px 12px; border-radius:999px; border:1px solid rgba(0,0,0,.12); min-width:240px; outline:none;
+}
+.gallery-pro .search:focus{box-shadow:0 0 0 4px var(--ring); border-color:var(--ink)}
+.gallery-pro .view-toggle{display:flex; gap:6px}
+.gallery-pro .view-btn{
+  border:1px solid rgba(0,0,0,.12); background:#fff; padding:8px 10px; border-radius:10px; cursor:pointer; transition:.2s;
+}
+.gallery-pro .view-btn.is-active{background:var(--ink); color:#fff; border-color:var(--ink)}
+.gallery-pro .tip{margin-top:10px}
+
+.gallery-pro .grid.ba.compact .card,
+.gallery-pro .grid.vid.compact .card{border-radius:10px}
+.gallery-pro .grid.ba.compact,
+.gallery-pro .grid.vid.compact{gap:12px}
+.gallery-pro .grid.ba.compact .pad,
+.gallery-pro .grid.vid.compact .pad{padding:10px 12px}
+
+/* Small screens */
+@media (max-width:640px){
+  .gallery-pro .pro-head{flex-direction:column; align-items:flex-start}
+  .gallery-pro .stat{text-align:left}
+  .gallery-pro .tools{width:100%; margin-left:0}
+  .gallery-pro .search{flex:1; min-width:0; width:100%}
+}
+
+/* Visually hidden for accessibility */
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+</style>
+
+<script>
+/* ===== Smart layer that works WITH your existing renderer =====
+   - Counts cases & videos
+   - Adds filtering by category & text (uses badge text if no data attribute)
+   - View density toggle
+   - Re-runs automatically when your data renders
+*/
+(function galleryEnhance(){
+  const $baGrid = document.getElementById('baGrid');
+  const $videoGrid = document.getElementById('videoGrid');
+  const $countBA = document.getElementById('count-ba');
+  const $countV = document.getElementById('count-videos');
+  const chips = Array.from(document.querySelectorAll('.gallery-pro .chip'));
+  const search = document.getElementById('gallery-search');
+  const viewBtns = Array.from(document.querySelectorAll('.gallery-pro .view-btn'));
+
+  function annotateCategories(){
+    // Add data-category to BA cards based on their badge text
+    $baGrid.querySelectorAll('.card').forEach(card=>{
+      const badge = card.querySelector('.badge');
+      const cat = (badge?.textContent || '').trim().toLowerCase();
+      if (cat) card.dataset.category = cat;
+      // Also store searchable text
+      card.dataset.search = (card.textContent || '').toLowerCase();
+    });
+    // Videos searchable text
+    $videoGrid.querySelectorAll('.card').forEach(card=>{
+      card.dataset.search = (card.textContent || '').toLowerCase();
+    });
+  }
+
+  function refreshCounts(){
+    const visibleBA = [...$baGrid.children].filter(el=>el.matches('.card') && el.style.display !== 'none').length;
+    const visibleV  = [...$videoGrid.children].filter(el=>el.matches('.card') && el.style.display !== 'none').length;
+    $countBA.textContent = visibleBA;
+    $countV.textContent = visibleV;
+  }
+
+  let activeFilter = 'all';
+  let q = '';
+
+  function applyFilters(){
+    const ql = q.trim().toLowerCase();
+    // BA filter by category + search
+    $baGrid.querySelectorAll('.card').forEach(card=>{
+      const cat = (card.dataset.category || '').toLowerCase();
+      const hay = card.dataset.search || '';
+      const matchCat = (activeFilter === 'all') || cat.includes(activeFilter);
+      const matchQ = !ql || hay.includes(ql);
+      card.style.display = (matchCat && matchQ) ? '' : 'none';
+    });
+    // Videos only search
+    $videoGrid.querySelectorAll('.card').forEach(card=>{
+      const hay = card.dataset.search || '';
+      const matchQ = !ql || hay.includes(ql);
+      card.style.display = matchQ ? '' : 'none';
+    });
+    refreshCounts();
+  }
+
+  // Chip filters
+  chips.forEach(ch=>{
+    ch.addEventListener('click', ()=>{
+      chips.forEach(c=>c.classList.remove('is-active'));
+      ch.classList.add('is-active');
+      activeFilter = ch.dataset.filter || 'all';
+      applyFilters();
+    });
+  });
+
+  // Search
+  let t;
+  search?.addEventListener('input', ()=>{
+    clearTimeout(t);
+    t = setTimeout(()=>{ q = search.value || ''; applyFilters(); }, 120);
+  });
+
+  // Density toggle
+  viewBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      viewBtns.forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const mode = btn.dataset.view;
+      const method = (mode === 'compact') ? 'add' : 'remove';
+      $baGrid.classList[method]('compact');
+      $videoGrid.classList[method]('compact');
+    });
+  });
+
+  // Observe grid changes (after your async render completes)
+  const obs = new MutationObserver(()=>{
+    annotateCategories();
+    applyFilters();
+  });
+  obs.observe($baGrid, {childList:true, subtree:false});
+  obs.observe($videoGrid, {childList:true, subtree:false});
+
+  // Initial (in case content is already there)
+  annotateCategories();
+  applyFilters();
+})();
+</script>
 
     <!-- CTA -->
     <section class="section home-cta center">
