@@ -324,7 +324,223 @@
       category and interact with the slider to compare images. Data is
       loaded from an external JSON file for easy maintenance.
     -->
- 
+ <!-- ====== TRANSFORMATIONS / SHOWCASE ====== -->
+<section class="section showcase-section" aria-labelledby="tx-title">
+  <div class="section-head">
+    <h2 id="tx-title">Transformations</h2>
+    <p class="muted">Browse real patient cases across braces, aligners, implants and cosmetic procedures. Drag the slider to compare before vs after.</p>
+  </div>
+
+  <!-- Controls -->
+  <div class="tx-controls" role="group" aria-label="Showcase controls">
+    <!-- Filter chips are generated dynamically -->
+    <div id="showcaseFilters" class="tx-filters" hidden></div>
+
+    <div class="tx-tools">
+      <label class="tx-search">
+        <span class="sr-only">Search cases</span>
+        <input id="txSearch" type="search" placeholder="Search cases… (e.g., braces, gap, smile)" autocomplete="off" />
+      </label>
+
+      <label class="tx-sort">
+        <span class="sr-only">Sort</span>
+        <select id="txSort" aria-label="Sort cases">
+          <option value="default">Sort: Featured</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="new">Newest first</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <!-- Dynamic grid of patient cards -->
+  <div id="showcaseGrid" class="grid showcase" aria-live="polite"></div>
+  <p id="showcaseStats" class="small muted center" style="margin-top:1rem" aria-live="polite"></p>
+</section>
+
+<style>
+  /* ===== Scoped styles for the Showcase block only ===== */
+  :root {
+    --tx-accent:#0ea5e9;       /* matches your blue */
+    --tx-ring:rgba(14,165,233,.28);
+    --tx-ink:#0b2530;
+    --tx-muted:#5c707a;
+    --tx-card:#fff;
+    --tx-brd:#e7eff4;
+  }
+  .showcase-section .section-head h2{font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.2}
+  .showcase-section .muted{color:var(--tx-muted)}
+  .tx-controls{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start;justify-content:space-between;margin:.75rem 0 1rem}
+  .tx-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+  .tx-chip{padding:.42rem .75rem;border:1px solid var(--tx-brd);border-radius:999px;background:#fff;font-weight:600;font-size:.92rem;cursor:pointer}
+  .tx-chip.is-active{color:var(--tx-accent);border-color:var(--tx-accent);box-shadow:0 0 0 4px var(--tx-ring)}
+  .tx-tools{display:flex;gap:.5rem;align-items:center}
+  .tx-search input{height:38px;border:1px solid var(--tx-brd);border-radius:10px;padding:.45rem .7rem;min-width:220px}
+  .tx-search input:focus{outline:none;box-shadow:0 0 0 4px var(--tx-ring);border-color:var(--tx-accent)}
+  .tx-sort select{height:38px;border:1px solid var(--tx-brd);border-radius:10px;padding:.45rem .7rem;background:#fff}
+  .tx-sort select:focus{outline:none;box-shadow:0 0 0 4px var(--tx-ring);border-color:var(--tx-accent)}
+
+  /* Grid & Card */
+  .grid.showcase{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .tx-card{background:var(--tx-card);border:1px solid var(--tx-brd);border-radius:16px;overflow:hidden;box-shadow:0 8px 22px rgba(12,50,78,.06)}
+  .tx-pad{padding:14px 16px}
+  .tx-badge{display:inline-block;font-size:.75rem;text-transform:capitalize;color:var(--tx-accent);background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.22);padding:.2rem .55rem;border-radius:999px}
+  .tx-title{margin:8px 0 4px;font-weight:800;color:var(--tx-ink)}
+  .tx-caption{color:var(--tx-muted);font-size:.95rem}
+
+  /* Before/After slider */
+  .tx-ba{position:relative;aspect-ratio:4/3;background:#f2f7f9;--split:50%}
+  .tx-ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .tx-ba .after{clip-path:polygon(var(--split) 0,100% 0,100% 100%,var(--split) 100%)}
+  .tx-divider{position:absolute;inset:0;pointer-events:none}
+  .tx-divider::after{content:\"\";position:absolute;top:0;bottom:0;left:calc(var(--split));width:2px;background:#ffffffaa;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+  .tx-labels{position:absolute;inset:10px;display:flex;justify-content:space-between;pointer-events:none}
+  .tx-labels span{background:rgba(0,0,0,.55);color:#fff;font-size:.75rem;padding:.22rem .5rem;border-radius:6px}
+  .tx-range{position:absolute;left:12px;right:12px;bottom:12px;width:auto;-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--tx-accent) var(--split),#dfe9ef 0)}
+  .tx-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--tx-accent);box-shadow:0 2px 8px rgba(14,165,233,.35);cursor:grab}
+  .tx-range:focus-visible{outline:none;box-shadow:0 0 0 4px var(--tx-ring)}
+
+  /* Skeleton (optional, shown briefly while rendering) */
+  .tx-skel{background:linear-gradient(90deg,#eef4f8, #f6fbff 40%, #eef4f8 80%);background-size:200% 100%;animation:sk 1.2s infinite}
+  @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+  /* Reveal */
+  .tx-reveal{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+  .tx-reveal.is-in{opacity:1;transform:none}
+
+  @media (max-width:640px){
+    .tx-tools{width:100%;justify-content:space-between}
+    .tx-search input{min-width:0;width:100%}
+  }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+
+<script>
+  // ===== Showcase logic (drop-in, self-contained) =====
+  (function(){
+    // 1) Data source: use window.GALLERY_DATA.beforeAfter if present; else fallback samples.
+    const SAMPLE = [
+      { title: "Bonding – Case A", before: "/assets/gallery/before-after/rbi1.webp", after: "/assets/gallery/before-after/rbi.webp", caption: "Gap closure with composite bonding", category: "bonding", date: "2025-09-01" },
+      { title: "Self-Ligating Braces – Case B", before: "/assets/gallery/before-after/case-b-before.webp", after: "/assets/gallery/before-after/case-b-after.webp", caption: "Bite correction in ~12 months", category: "braces", date: "2025-07-15" }
+    ];
+    const DATA = (window.GALLERY_DATA && Array.isArray(window.GALLERY_DATA.beforeAfter) && window.GALLERY_DATA.beforeAfter.length)
+      ? window.GALLERY_DATA.beforeAfter
+      : SAMPLE;
+
+    // 2) Elements
+    const grid   = document.getElementById('showcaseGrid');
+    const chips  = document.getElementById('showcaseFilters');
+    const stats  = document.getElementById('showcaseStats');
+    const search = document.getElementById('txSearch');
+    const sort   = document.getElementById('txSort');
+
+    // 3) Build filters
+    function buildFilters(items){
+      const cats = Array.from(new Set(items.map(i => (i.category || 'case').toLowerCase()))).sort();
+      const all = ['all', ...cats];
+      chips.innerHTML = all.map((c,i) =>
+        `<button type="button" class="tx-chip ${i===0?'is-active':''}" data-k="${c}">${c[0].toUpperCase()+c.slice(1)}</button>`
+      ).join('');
+      chips.hidden = false;
+    }
+
+    // 4) Card + slider
+    function cardTemplate(it, idx){
+      const id = `tx-${idx}`;
+      return `
+        <article class="tx-card tx-reveal" data-cat="${(it.category||'case').toLowerCase()}" data-title="${(it.title||'').toLowerCase()}">
+          <div class="tx-ba" style="--split:50%" aria-labelledby="${id}" role="group">
+            <img src="${it.before}" alt="Before — ${it.title}" class="before" loading="lazy" decoding="async">
+            <img src="${it.after}"  alt="After — ${it.title}"  class="after"  loading="lazy" decoding="async">
+            <div class="tx-divider" aria-hidden="true"></div>
+            <div class="tx-labels"><span>Before</span><span>After</span></div>
+            <input class="tx-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after for ${it.title}">
+          </div>
+          <div class="tx-pad">
+            <span class="tx-badge">${it.category || 'case'}</span>
+            <h3 class="tx-title" id="${id}">${it.title}</h3>
+            ${it.caption ? `<p class="tx-caption">${it.caption}</p>` : ``}
+          </div>
+        </article>`;
+    }
+
+    function bindSliders(scope){
+      // input change color + set split
+      scope.addEventListener('input', (e) => {
+        const r = e.target.closest('.tx-range'); if(!r) return;
+        const wrap = r.closest('.tx-ba'), v = +r.value;
+        wrap.style.setProperty('--split', v + '%');
+        r.style.background = `linear-gradient(90deg,var(--tx-accent) ${v}%, #dfe9ef 0)`;
+      });
+      // keyboard fine control
+      scope.addEventListener('keydown', (e) => {
+        const r = e.target.closest('.tx-range'); if(!r) return;
+        const step = (e.key === 'ArrowRight') ? 2 : (e.key === 'ArrowLeft' ? -2 : 0);
+        if(step){ e.preventDefault(); r.value = Math.min(100, Math.max(0, +r.value + step)); r.dispatchEvent(new Event('input', { bubbles:true })); }
+      });
+      // drag anywhere on image
+      scope.addEventListener('pointerdown', (e) => {
+        const wrap = e.target.closest('.tx-ba'); if(!wrap) return;
+        const move = (ev) => {
+          const rect = wrap.getBoundingClientRect();
+          const v = Math.round(((ev.clientX - rect.left) / rect.width) * 100);
+          const clamped = Math.min(100, Math.max(0, v));
+          const r = wrap.querySelector('.tx-range');
+          wrap.style.setProperty('--split', clamped + '%');
+          r.value = clamped;
+          r.style.background = `linear-gradient(90deg,var(--tx-accent) ${clamped}%, #dfe9ef 0)`;
+        };
+        move(e);
+        const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+        window.addEventListener('pointermove', move);
+        window.addEventListener('pointerup', up);
+      });
+    }
+
+    // 5) Render
+    const io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target);} }); }, { threshold:.12 });
+
+    function render(list){
+      grid.innerHTML = list.map(cardTemplate).join('');
+      grid.querySelectorAll('.tx-reveal').forEach(el => io.observe(el));
+      bindSliders(grid);
+      stats.textContent = `${list.length} ${list.length===1?'case':'cases'} shown`;
+    }
+
+    // 6) Filters + search + sort
+    let active = 'all';
+    function apply(){
+      const q = (search.value||'').trim().toLowerCase();
+      let items = DATA.filter(d => active==='all' || (d.category||'case').toLowerCase()===active);
+      if(q) items = items.filter(d => (d.title||'').toLowerCase().includes(q) || (d.caption||'').toLowerCase().includes(q));
+      if(sort.value==='az')  items.sort((a,b)=> (a.title||'').localeCompare(b.title||''));
+      if(sort.value==='za')  items.sort((a,b)=> (b.title||'').localeCompare(a.title||''));
+      if(sort.value==='new') items.sort((a,b)=> new Date(b.date||0) - new Date(a.date||0));
+      render(items);
+    }
+
+    function wire(){
+      // skeleton while initial paint (optional)
+      grid.innerHTML = '<div class="tx-card tx-skel" style="aspect-ratio:4/3;border-radius:16px"></div>'.repeat(6);
+
+      buildFilters(DATA);
+      chips.addEventListener('click', (e) => {
+        const btn = e.target.closest('.tx-chip'); if(!btn) return;
+        [...chips.children].forEach(c=>c.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        active = btn.dataset.k;
+        apply();
+      });
+      search.addEventListener('input', apply);
+      sort.addEventListener('change', apply);
+      apply();
+    }
+
+    wire();
+  })();
+</script>
+
     <!--
       =========================
       Video Testimonials & Clinic Tour
