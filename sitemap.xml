@@ -164,4 +164,11 @@
     <priority>0.2</priority>
   </url>
 
+  <!--FAQs-->
+  <url>
+  <loc>https://www.bestindiandentist.com/faqs.html</loc>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
 </urlset>
