@@ -107,216 +107,339 @@
     <span><a class="link-more" href="/">Home</a> / Gallery</span>
   </nav>
   
-  <main id="main" class="container">
-    <section class="section glass">
-      <div class="section-head">
-        <h1>Patient Gallery</h1>
-        <span class="section-tag">Before & After • Testimonial & Treatment Videos</span>
+<main id="main" class="container">
+  <!-- ===== HERO ===== -->
+  <section class="section glass gallery-hero">
+    <div class="section-head">
+      <h1 class="title">Patient Gallery</h1>
+      <p class="section-tag">Before & After • Testimonial & Treatment Videos</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Gallery Tabs">
+      <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="pane-ba" id="tab-ba">
+        Before & After
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pane-videos" id="tab-videos">
+        Videos
+      </button>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar" aria-label="Gallery tools">
+      <div class="filters" id="filters" hidden>
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="braces">Braces</button>
+        <button class="chip" data-filter="aligners">Aligners</button>
+        <button class="chip" data-filter="implant">Implants</button>
+        <button class="chip" data-filter="bonding">Bonding</button>
+        <button class="chip" data-filter="cosmetic">Cosmetic</button>
+      </div>
+      <div class="stats" id="stats" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="tabpanes">
+      <!-- BEFORE & AFTER -->
+      <div class="tabpanel is-active" id="pane-ba" role="tabpanel" aria-labelledby="tab-ba">
+        <div class="grid ba" id="baGrid" aria-live="polite"></div>
+        <p class="small muted center mt-8">Tip: Drag the slider on each photo, or use ← / → keys when focused.</p>
       </div>
 
-      <!-- Tabs -->
-      <div class="tabs" role="tablist" aria-label="Gallery Tabs">
-        <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="pane-ba" id="tab-ba">Patients (Before & After)</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pane-videos" id="tab-videos">Videos</button>
-      </div>
-
-      <div class="tabpanes">
-        <!-- BEFORE & AFTER -->
-        <div class="tabpanel is-active" id="pane-ba" role="tabpanel" aria-labelledby="tab-ba">
-          <div class="grid ba" id="baGrid" aria-live="polite"></div>
-          <p class="small muted center" style="margin-top:10px">Tip: Drag the slider on each photo to compare before vs after.</p>
-        </div>
-
-        <!-- VIDEOS -->
-        <div class="tabpanel" id="pane-videos" role="tabpanel" aria-labelledby="tab-videos">
-          <div class="grid vid" id="videoGrid" aria-live="polite"></div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section home-cta center">
-      <h2>Want results like these?</h2>
-      <center><p class="measure">Message us for a quick opinion on braces, aligners, implants or cosmetic options.</p> </center>
-      <div class="cta-buttons">
-        <a href="https://wa.me/919565321625" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Now</a>
-        <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
-        <a href="/contact.html" class="btn btn-ghost">Contact Form</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Smiles &amp; Braces Dental Clinic</h3>
-        <p class="small">Shop No. 6, Javed Market, near Aurobindo Park, Munshi Pulia, Sector 12, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
-        <p class="small">Call/WhatsApp: <a href="tel:+919565321625">+91 95653 21625</a> • <a href="tel:+917570000801">+91 75700 00801</a></p>
-      </div>
-      <div>
-        <h3>Quick links</h3>
-        <p class="small"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/sitemap.xml">Sitemap</a></p>
-        <p class="small">© <span id="y"></span> Smiles &amp; Braces. All rights reserved.</p>
+      <!-- VIDEOS -->
+      <div class="tabpanel" id="pane-videos" role="tabpanel" aria-labelledby="tab-videos">
+        <div class="grid vid" id="videoGrid" aria-live="polite"></div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Year + menu toggle (reuse pattern from your site)
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
+  <!-- CTA -->
+  <section class="section home-cta center">
+    <h2>Want results like these?</h2>
+    <p class="measure">Message us for a quick opinion on braces, aligners, implants, or cosmetic options.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/919565321625" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Now</a>
+      <a href="tel:+919565321625" class="btn btn-call">Call +91&nbsp;95653&nbsp;21625</a>
+      <a href="/contact.html" class="btn btn-ghost">Contact Form</a>
+    </div>
+  </section>
+</main>
 
-    // Tabs
-    const tabs = [...document.querySelectorAll('.tab-btn')];
-    const panes = [...document.querySelectorAll('.tabpanel')];
-    tabs.forEach(btn=>btn.addEventListener('click',()=>{
-      tabs.forEach(b=>b.classList.remove('is-active')); btn.classList.add('is-active');
-      panes.forEach(p=>p.classList.remove('is-active')); document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-active');
-      tabs.forEach(b=>b.setAttribute('aria-selected', String(b===btn)));
-    }));
+<style>
+  /* ===== Scoped Gallery Styles (won’t disturb your header/footer) ===== */
+  :root { --accent:#0ea5e9; --ink:#0b2530; --muted:#58707a; --card:#ffffff; --glass:rgba(255,255,255,.6); --ring:rgba(14,165,233,.25); }
+  .gallery-hero .title { font-size: clamp(1.6rem, 2.5vw, 2.25rem); line-height: 1.2; }
+  .section-tag { color: var(--muted); display:block; margin-top:.25rem }
+  .tabs { margin-top:1rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+  .tab-btn { padding:.6rem .9rem; border-radius:999px; border:1px solid #e6eef2; background:#f8fbfd; color:#3b5561; font-weight:600; }
+  .tab-btn.is-active { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 0 0 3px var(--ring); }
+  .tabpanes { margin-top:1.25rem; }
+  .tabpanel { display:none; }
+  .tabpanel.is-active { display:block; animation: fade .25s ease-out; }
+  @keyframes fade { from {opacity:.5; transform: translateY(4px)} to {opacity:1; transform:none} }
 
-    // ---- DATA LOADING ----
-    const SAMPLE_DATA = {
-      beforeAfter:[
-        {"title":"Bonding – Case A","before":"/assets/gallery/before-after/rbi1.webp","after":"/assets/gallery/before-after/rbi.webp","caption":"successful bonding","category":"bonding"},
-        {"title":"Self-ligating Braces – Case B","before":"/assets/gallery/before-after/case-b-before.webp","after":"/assets/gallery/before-after/case-b-after.webp","caption":"12 months, bite correction","category":"braces"}
-      ],
-      videos:[
-        {"title":"Clinic Tour","type":"mp4","src":"/assets/videos/clinic-tour.mp4","poster":"/assets/videos/clinic-tour-poster.webp"},
-        {"title":"Patient – Extraction and RCT","type":"youtube","youtubeId":"5xB5ZuWO-ag"},
-         {"title":"Patient – From fear to relief","type":"youtube","youtubeId":"285SdOclAlg"},
-        {"title":"Patient – From fear to relief","type":"youtube","youtubeId":"nk7j1n6Km5Y"}
-      ]
-    };
+  .toolbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:1rem; }
+  .filters { display:flex; gap:.5rem; flex-wrap:wrap; }
+  .chip { font-size:.9rem; padding:.4rem .7rem; border:1px solid #dbe7ee; background:#fff; border-radius:999px; cursor:pointer; }
+  .chip.is-active { border-color:var(--accent); color:var(--accent); box-shadow:0 0 0 3px var(--ring); }
+  .stats { color:var(--muted); font-size:.95rem; }
 
-    async function loadData(){
-      try {
-        const res = await fetch('/assets/data/gallery.json', {cache:'no-store'});
-        if(!res.ok) throw new Error('No data file yet');
-        return await res.json();
-      } catch(e){
-        console.warn('[Gallery] Falling back to SAMPLE_DATA. Create /assets/data/gallery.json to override.');
-        return SAMPLE_DATA;
-      }
-    }
+  /* Grid */
+  .grid { display:grid; gap:16px; }
+  .grid.ba { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .grid.vid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 
-    function renderBA(items){
-      const grid = document.getElementById('baGrid');
-      grid.innerHTML = '';
-      items.forEach((it, idx)=>{
-        const card = document.createElement('article');
-        card.className = 'card reveal';
-        card.innerHTML = `
-          <div class="ba-wrap" data-idx="${idx}" style="--split:50%">
-            <img src="${it.before}" alt="Before – ${it.title}" loading="lazy" decoding="async" class="ba-before"/>
-            <img src="${it.after}" alt="After – ${it.title}" loading="lazy" decoding="async" class="ba-after"/>
-            <div class="ba-labels"><span>Before</span><span>After</span></div>
-            <div class="ba-controls"><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after for ${it.title}"></div>
-          </div>
-          <div class="pad">
-            <div class="badge">${it.category || 'case'}</div>
-            <h3 style="margin:8px 0 4px">${it.title}</h3>
-            ${it.caption ? `<p class="small muted">${it.caption}</p>` : ''}
-          </div>`;
-        grid.appendChild(card);
-      });
+  /* Card */
+  .card { background:var(--card); border:1px solid #e8eff3; border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(12,50,78,.06); }
+  .pad { padding:14px 16px; }
+  .badge { display:inline-block; font-size:.75rem; text-transform:capitalize; color:var(--accent); background:rgba(14,165,233,.08); border:1px solid rgba(14,165,233,.2); padding:.2rem .5rem; border-radius:999px; }
+  .small.muted { color:var(--muted); font-size:.9rem; }
+  .center { text-align:center; }
+  .mt-8 { margin-top: 2rem; }
 
-      // Wire sliders
-      grid.addEventListener('input', (e)=>{
-        const r = e.target.closest('.ba-range');
-        if(!r) return;
-        const wrap = r.closest('.ba-wrap');
-        const v = Number(r.value);
-        wrap.style.setProperty('--split', v + '%');
-        r.style.background = `linear-gradient(90deg,#0e7fa8 ${v}%,#ddd 0)`;
-      });
-    }
+  /* Before/After */
+  .ba-wrap { position:relative; aspect-ratio: 4/3; background:#f2f7f9; overflow:hidden; --split:50%; }
+  .ba-before, .ba-after { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+  .ba-after { clip-path: polygon(var(--split) 0, 100% 0, 100% 100%, var(--split) 100%); }
+  .ba-divider { position:absolute; inset:0; pointer-events:none; }
+  .ba-divider::after{
+    content:""; position:absolute; top:0; bottom:0;
+    left:calc(var(--split)); width:2px; background: #ffffffaa; backdrop-filter: blur(1px);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.06);
+  }
+  .ba-labels { position:absolute; inset:10px; display:flex; justify-content:space-between; pointer-events:none; }
+  .ba-labels span{ background:rgba(0,0,0,.55); color:#fff; font-size:.75rem; padding:.2rem .45rem; border-radius:6px; }
+  .ba-controls { position:absolute; left:12px; right:12px; bottom:12px; display:flex; align-items:center; gap:8px; }
+  .ba-range { width:100%; -webkit-appearance:none; appearance:none; height:6px; border-radius:999px; background:linear-gradient(90deg,var(--accent) var(--split), #dfe9ef 0); outline:none; }
+  .ba-range::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:22px; height:22px; border-radius:50%; background:#fff; border:2px solid var(--accent); box-shadow:0 2px 8px rgba(14,165,233,.35); cursor:grab; }
+  .ba-range:focus-visible { box-shadow:0 0 0 4px var(--ring); }
 
-    function ytIframe(id){
-      const url = `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&origin=${location.origin}`;
-      return `<iframe title="YouTube video" loading="lazy" src="${url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-    }
+  /* Video */
+  .video-wrap { position:relative; aspect-ratio: 16/9; background:#0b25300d; overflow:hidden; }
+  .video-wrap iframe, .video-wrap video { position:absolute; inset:0; width:100%; height:100%; }
+  .lite-youtube {
+    position:relative; display:block; width:100%; height:100%; background-size:cover; background-position:center; cursor:pointer;
+  }
+  .lite-youtube::after{
+    content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,.35));
+  }
+  .lite-youtube .play {
+    position:absolute; inset:auto 0 0 0; margin:auto; top:0; bottom:0; width:66px; height:46px; background:#000000bf;
+    border-radius:12px; display:grid; place-items:center;
+    box-shadow:0 12px 20px rgba(0,0,0,.22);
+  }
+  .lite-youtube .play svg { width:24px; height:24px; fill:#fff; }
+  .lite-youtube:focus-visible { outline:4px solid var(--ring); border-radius:12px; }
 
-    function renderVideos(items){
-      const grid = document.getElementById('videoGrid');
-      grid.innerHTML = '';
-      items.forEach(it=>{
-        const card = document.createElement('article');
-        card.className = 'card reveal';
-        const media = (it.type === 'youtube' && it.youtubeId)
-          ? `<div class="video-wrap">${ytIframe(it.youtubeId)}</div>`
-          : `<div class="video-wrap"><video controls preload="metadata" ${it.poster?`poster="${it.poster}"`:''}><source src="${it.src}" type="video/mp4">Your browser does not support HTML5 video.</video></div>`;
-        card.innerHTML = `${media}<div class="pad"><h3 style="margin:6px 0 4px">${it.title || 'Video'}</h3>${it.caption?`<p class='small muted'>${it.caption}</p>`:''}</div>`;
-        grid.appendChild(card);
-      });
-    }
+  /* Reveal on scroll */
+  .reveal { opacity:0; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; }
+  .reveal.is-in { opacity:1; transform:none; }
+</style>
 
-    (async()=>{
-      const data = await loadData();
-      renderBA(data.beforeAfter || []);
-      renderVideos(data.videos || []);
-    })();
-  </script>
+<script>
+  // Year + menu toggle (reuse pattern from your site)
+  document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
+  document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.navlinks').classList.toggle('show'));
 
-  <!--
-  ========================= HOW TO USE (Quick Admin Notes) =========================
-  1) Create this file as /gallery.html
-  2) Create folders and add your media:
-     - /assets/gallery/before-after/  (put case images here as .webp or .jpg)
-     - /assets/videos/                (put .mp4 files and posters here)
-  3) Create a data file at /assets/data/gallery.json with content like:
-
-  {
-    "beforeAfter": [
-      {
-        "title": "Bonding – Case A",
-        "before": "/assets/gallery/before-after/rbi1.webp",
-        "after": "/assets/gallery/before-after/rbi.webp",
-        "caption": "successful bonding",
-        "category": "bonding"
-      },
-      {
-        "title": "Implant – Case C",
-        "before": "/assets/gallery/before-after/case-c-before.webp",
-        "after": "/assets/gallery/before-after/case-c-after.webp",
-        "caption": "Single tooth replacement",
-        "category": "implant"
-      }
+  // ---- DATA LOADING ----
+  const SAMPLE_DATA = {
+    beforeAfter:[
+      {"title":"Bonding – Case A","before":"/assets/gallery/before-after/rbi1.webp","after":"/assets/gallery/before-after/rbi.webp","caption":"Successful bonding","category":"bonding"},
+      {"title":"Self-ligating Braces – Case B","before":"/assets/gallery/before-after/case-b-before.webp","after":"/assets/gallery/before-after/case-b-after.webp","caption":"12 months, bite correction","category":"braces"}
     ],
-    "videos": [
-      {
-        "title": "Clinic Tour",
-        "type": "mp4",
-        "src": "/assets/videos/clinic-tour.mp4",
-        "poster": "/assets/videos/clinic-tour-poster.webp",
-        "caption": "A quick walk-through of Smiles & Braces"
-      },
-      {
-        "title": "Patient – Extraction and RCT",
-        "type": "youtube",
-        "youtubeId": "5xB5ZuWO-ag",
-        "caption": "Real experience from our patient"
-      }
-   {
-        "title": "Patient – From fear to relief",
-        "type": "youtube",
-        "youtubeId": "285SdOclAlg",
-        "caption": "Real experience from our patient"
-      }
-  {
-        "title": "Patient – Lucknow Police Commissioner",
-        "type": "youtube",
-        "youtubeId": "nk7j1n6Km5Y",
-        "caption": "Real experience from our patient"
-      }
+    videos:[
+      {"title":"Clinic Tour","type":"mp4","src":"/assets/videos/clinic-tour.mp4","poster":"/assets/videos/clinic-tour-poster.webp"},
+      {"title":"Patient – Extraction and RCT","type":"youtube","youtubeId":"5xB5ZuWO-ag"},
+      {"title":"Patient – From fear to relief","type":"youtube","youtubeId":"285SdOclAlg"},
+      {"title":"Patient – From fear to relief","type":"youtube","youtubeId":"nk7j1n6Km5Y"}
     ]
+  };
+
+  async function loadData(){
+    try {
+      const res = await fetch('/assets/data/gallery.json', {cache:'no-store'});
+      if(!res.ok) throw new Error('No data file yet');
+      return await res.json();
+    } catch(e){
+      console.warn('[Gallery] Falling back to SAMPLE_DATA. Create /assets/data/gallery.json to override.');
+      return SAMPLE_DATA;
+    }
   }
 
-  4) Commit and push to GitHub Pages. The page will auto-read /assets/data/gallery.json.
-  5) If the data file is missing, the page shows SAMPLE_DATA. Replace with your own ASAP.
+  // ---- RENDERERS ----
+  function renderFilters(items){
+    const cats = new Set(items.map(i => (i.category||'case').toLowerCase()));
+    const filters = document.getElementById('filters');
+    if(!filters) return;
+    const base = ['all', ...[...cats].sort()];
+    filters.innerHTML = base.map((c,i)=>
+      `<button class="chip ${i===0?'is-active':''}" data-filter="${c}">${c[0].toUpperCase()+c.slice(1)}</button>`
+    ).join('');
+    filters.hidden = false;
+  }
 
+  function renderStats(count, total){
+    const el = document.getElementById('stats');
+    if(el) el.textContent = `${count} of ${total} cases`;
+  }
 
-  -->
+  function baCard(it, idx){
+    const id = `ba-${idx}`;
+    return `
+      <article class="card reveal" data-cat="${(it.category||'case').toLowerCase()}">
+        <div class="ba-wrap" data-idx="${idx}" style="--split:50%" aria-labelledby="${id}" role="group">
+          <img src="${it.before}" alt="Before — ${it.title}" loading="lazy" decoding="async" class="ba-before"/>
+          <img src="${it.after}" alt="After — ${it.title}" loading="lazy" decoding="async" class="ba-after"/>
+          <div class="ba-divider" aria-hidden="true"></div>
+          <div class="ba-labels"><span>Before</span><span>After</span></div>
+          <div class="ba-controls">
+            <input class="ba-range" type="range" min="0" max="100" value="50"
+              aria-label="Compare before and after for ${it.title}" />
+          </div>
+        </div>
+        <div class="pad">
+          <div class="badge">${it.category || 'case'}</div>
+          <h3 id="${id}" style="margin:8px 0 4px">${it.title}</h3>
+          ${it.caption ? `<p class="small muted">${it.caption}</p>` : ''}
+        </div>
+      </article>`;
+  }
+
+  function ytThumb(id){ return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`; }
+
+  function liteYouTube(id, title='Video'){
+    const bg = ytThumb(id);
+    return `
+      <button class="lite-youtube" style="background-image:url('${bg}')" data-youtube="${id}" aria-label="Play ${title}">
+        <span class="play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img"><path d="M8 5v14l11-7z"></path></svg>
+        </span>
+      </button>`;
+  }
+
+  function videoCard(it){
+    const media = (it.type === 'youtube' && it.youtubeId)
+      ? `<div class="video-wrap">${liteYouTube(it.youtubeId, it.title)}</div>`
+      : `<div class="video-wrap"><video controls preload="metadata" ${it.poster?`poster="${it.poster}"`:''}>
+           <source src="${it.src}" type="video/mp4">
+           Your browser does not support HTML5 video.
+         </video></div>`;
+    return `<article class="card reveal">${media}<div class="pad"><h3 style="margin:6px 0 4px">${it.title||'Video'}</h3>${it.caption?`<p class="small muted">${it.caption}</p>`:''}</div></article>`;
+  }
+
+  function bindBA(grid){
+    grid.addEventListener('input', (e)=>{
+      const r = e.target.closest('.ba-range'); if(!r) return;
+      const wrap = r.closest('.ba-wrap'), v = Number(r.value);
+      wrap.style.setProperty('--split', v + '%');
+      r.style.background = `linear-gradient(90deg,var(--accent) ${v}%, #dfe9ef 0)`;
+    });
+    // Keyboard fine control
+    grid.addEventListener('keydown', (e)=>{
+      const r = e.target.closest('.ba-range'); if(!r) return;
+      const step = (e.key === 'ArrowRight') ? 2 : (e.key === 'ArrowLeft' ? -2 : 0);
+      if(step){ e.preventDefault(); r.value = Math.min(100, Math.max(0, Number(r.value)+step)); r.dispatchEvent(new Event('input', {bubbles:true})); }
+    });
+    // Drag anywhere (optional)
+    grid.addEventListener('pointerdown', (e)=>{
+      const wrap = e.target.closest('.ba-wrap'); if(!wrap) return;
+      const move = (ev)=>{
+        const rect = wrap.getBoundingClientRect();
+        const v = Math.round(( (ev.clientX - rect.left) / rect.width )*100);
+        const r = wrap.querySelector('.ba-range');
+        const clamped = Math.min(100, Math.max(0, v));
+        wrap.style.setProperty('--split', clamped + '%');
+        r.value = clamped;
+        r.style.background = `linear-gradient(90deg,var(--accent) ${clamped}%, #dfe9ef 0)`;
+      };
+      move(e);
+      const up = ()=>{ window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+      window.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+    });
+  }
+
+  function bindLiteYouTube(scope){
+    scope.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.lite-youtube'); if(!btn) return;
+      const id = btn.getAttribute('data-youtube');
+      const url = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&origin=${location.origin}`;
+      const iframe = document.createElement('iframe');
+      iframe.title = 'YouTube video';
+      iframe.loading = 'lazy';
+      iframe.src = url;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      iframe.style.position = 'absolute';
+      iframe.style.inset = '0';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      btn.replaceWith(iframe);
+    });
+  }
+
+  function revealOnScroll(){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          ent.target.classList.add('is-in');
+          io.unobserve(ent.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+
+  // ---- TABS ----
+  const tabs = [...document.querySelectorAll('.tab-btn')];
+  const panes = [...document.querySelectorAll('.tabpanel')];
+  tabs.forEach(btn=>btn.addEventListener('click',()=>{
+    tabs.forEach(b=>b.classList.remove('is-active')); btn.classList.add('is-active');
+    panes.forEach(p=>p.classList.remove('is-active'));
+    document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-active');
+    tabs.forEach(b=>b.setAttribute('aria-selected', String(b===btn)));
+  }));
+
+  // ---- INIT ----
+  (async()=>{
+    const data = await loadData();
+
+    // BEFORE & AFTER
+    const baGrid = document.getElementById('baGrid');
+    baGrid.innerHTML = (data.beforeAfter||[]).map(baCard).join('');
+    bindBA(baGrid);
+    renderFilters(data.beforeAfter||[]);
+    renderStats((data.beforeAfter||[]).length, (data.beforeAfter||[]).length);
+
+    // FILTERS
+    const filterBox = document.getElementById('filters');
+    let active = 'all';
+    filterBox?.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.chip'); if(!btn) return;
+      filterBox.querySelectorAll('.chip').forEach(c=>c.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      active = btn.dataset.filter;
+      const cards = [...baGrid.querySelectorAll('.card')];
+      let shown = 0;
+      cards.forEach(c=>{
+        const ok = (active === 'all') || c.dataset.cat === active;
+        c.style.display = ok ? '' : 'none';
+        if(ok) shown++;
+      });
+      renderStats(shown, cards.length);
+    });
+
+    // VIDEOS
+    const videoGrid = document.getElementById('videoGrid');
+    videoGrid.innerHTML = (data.videos||[]).map(videoCard).join('');
+    bindLiteYouTube(videoGrid);
+
+    // Reveal animations
+    revealOnScroll();
+  })();
+</script>
+
 </body>
 </html>
