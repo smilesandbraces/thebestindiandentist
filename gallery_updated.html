@@ -6,258 +6,258 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
+* { box-sizing: border-box; }
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    background: #f8f9fa;
-    color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
 }
 .header {
-    text-align: center;
-    padding: 2rem 1rem;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 .header h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    margin: 0;
-    color: #5c5c8a;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin: 0;
+  color: #5c5c8a;
 }
 .header p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #666;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #666;
 }
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 .section {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 .section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
 }
+
 /* Before and after cards */
 .before-after-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 .before-after-card {
-    position: relative;
-    overflow: hidden;
-    height: 0;
-    padding-bottom: 66%;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    background: #fff;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 66%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  cursor: pointer;
 }
 .before-after-card img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
+/* IMPORTANT: let JS control the seam; keep width 100% and margin 0 */
 .after img {
-    width: 200%;
-    height: 100%;
-    object-fit: cover;
-    margin-left: -100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 0;
 }
 .before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .divider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
+
 /* Video testimonials */
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 .testimonial-item {
-    position: relative;
-    padding-top: 56.25%;
-    background: #000;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
+  position: relative;
+  padding-top: 56.25%;
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 .testimonial-item iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
 }
 .load-more-btn {
-    display: block;
-    margin: 2rem auto;
-    padding: 0.75rem 1.5rem;
-    background: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: 600;
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
 }
 .load-more-btn:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
+
 /* Appointment form */
 .form-section {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .form-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .form-section input, .form-section textarea {
-    padding: 0.75rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
 }
 .form-section button {
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    background: #007bff;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }
 .form-section button:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
+
 /* Overlay for full-screen view */
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 .overlay-content {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
+  position: relative;
+  width: 90%;
+  max-width: 900px;
 }
 .overlay-content .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 .overlay-slider {
-    width: 100%;
-    height: 0;
-    padding-bottom: 66%;
-    position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66%;
+  position: relative;
 }
+
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
-    }
-    .section h2 {
-        font-size: 1.5rem;
-    }
-    .before-after-grid, .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-    .form-section {
-        padding: 1rem;
-    }
+  .header h1 { font-size: 2rem; }
+  .section h2 { font-size: 1.5rem; }
+  .before-after-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .form-section { padding: 1rem; }
 }
 </style>
 </head>
 <body>
-<div class="header">
+  <div class="header">
     <h1>Smiles &amp; Braces Dental Clinic</h1>
     <p>Dr. Vikram Jeet Singh &bull; BDS, MDS</p>
-</div>
-<div class="container">
+  </div>
+
+  <div class="container">
     <section class="section" id="before-after">
-        <h2>Before &amp; After Cases</h2>
-        <div class="before-after-grid" id="beforeAfterGrid"></div>
+      <h2>Before &amp; After Cases</h2>
+      <div class="before-after-grid" id="beforeAfterGrid"></div>
     </section>
+
     <section class="section" id="testimonials">
-        <h2>Patient Video Testimonials</h2>
-        <div class="testimonials-grid" id="testimonialGrid"></div>
-        <div class="load-more-btn" id="loadMoreBtn">Load More Videos</div>
+      <h2>Patient Video Testimonials</h2>
+      <div class="testimonials-grid" id="testimonialGrid"></div>
+      <div class="load-more-btn" id="loadMoreBtn">Load More Videos</div>
     </section>
+
     <section class="section form-section" id="booking">
-        <h2>Book an Appointment</h2>
-        <form action="https://formspree.io/f/xanpokbz" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
-            <button type="submit">Book Appointment</button>
-        </form>
+      <h2>Book an Appointment</h2>
+      <form action="https://formspree.io/f/xanpokbz" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
+        <button type="submit">Book Appointment</button>
+      </form>
     </section>
-</div>
-<!-- Full-screen image overlay -->
-<div id="imageOverlay" class="overlay">
+  </div>
+
+  <!-- Full-screen image overlay -->
+  <div id="imageOverlay" class="overlay" aria-hidden="true">
     <div class="overlay-content">
-        <span class="close">&times;</span>
-        <div id="overlaySlider"></div>
+      <span class="close" aria-label="Close overlay">&times;</span>
+      <div id="overlaySlider"></div>
     </div>
-</div>
+  </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   /* ===============================
    * 1) BEFORE/AFTER CASES (EDIT ME)
    * =============================== */
-  // IMPORTANT:
-  // - GitHub is CASE-SENSITIVE. Make sure file names & paths match exactly.
-  // - Start with the images you actually have (rbi1.webp, rbi.webp) and add the rest later.
-  // - You can repeat pairs temporarily so all 20 slots are visible.
-
-  // Seed with the pairs that EXIST today in your repo:
+  // Start with the pairs you actually have in GitHub now.
   const seedCases = [
     { before: './assets/images/cases/rbi1.webp', after: './assets/images/cases/rbi.webp', altBefore: 'Case 01 — before', altAfter: 'Case 01 — after' },
-    // Add more real pairs here as you upload them, e.g.:
+    // Add more pairs here as you upload them:
     // { before: './assets/images/cases/case02-before.webp', after: './assets/images/cases/case02-after.webp', altBefore: 'Case 02 — before', altAfter: 'Case 02 — after' },
   ];
 
-  // Build a 20-length cases array by repeating available pairs so nothing is blank.
+  // Safety: if someone removes all seeds by mistake, bail gracefully.
+  if (!seedCases.length) {
+    console.error('No seed cases found. Please add at least one before/after pair to seedCases.');
+  }
+
+  // Build exactly 20 slots by repeating available pairs
   const CASES_EXPECTED = 20;
   const cases = [];
   for (let i = 0; i < CASES_EXPECTED; i++) {
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
     afterDiv.style.width  = '50%';  // default middle
     afterDiv.style.overflow = 'hidden';
 
-    // divider style (can be moved to CSS)
+    // divider style
     divider.style.position = 'absolute';
     divider.style.top = 0;
     divider.style.bottom = 0;
@@ -401,10 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.key === 'ArrowRight') { e.preventDefault(); setSplit(Math.min(100, current + step)); }
     });
 
-    return {
-      element: containerEl,
-      wasDragged: () => moved
-    };
+    return { element: containerEl, wasDragged: () => moved };
   }
 
   /* ==================================
@@ -424,12 +421,14 @@ document.addEventListener('DOMContentLoaded', function () {
     overlayContent.appendChild(container);
 
     overlay.style.display = 'flex';
+    overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // prevent bg scroll
   }
   function closeOverlay() {
     if (!overlay) return;
     overlay.style.display = 'none';
-    overlayContent && (overlayContent.innerHTML = '');
+    overlay.setAttribute('aria-hidden', 'true');
+    if (overlayContent) overlayContent.innerHTML = '';
     document.body.style.overflow = '';
   }
 
@@ -521,6 +520,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-
 </body>
 </html>
