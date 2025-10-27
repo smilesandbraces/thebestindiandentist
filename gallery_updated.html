@@ -41,6 +41,7 @@ body {
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
 }
+/* Before and after cards */
 .before-after-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -54,20 +55,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     background: #fff;
+    cursor: pointer;
 }
 .before-after-card img {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-}
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: ew-resize;
 }
 .after {
     position: absolute;
@@ -99,6 +93,7 @@ body {
     background: rgba(255,255,255,0.9);
     box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
+/* Video testimonials */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -132,6 +127,7 @@ body {
 .load-more-btn:hover {
     background: #0056b3;
 }
+/* Appointment form */
 .form-section {
     background: #fff;
     padding: 2rem;
@@ -162,6 +158,38 @@ body {
 }
 .form-section button:hover {
     background: #0056b3;
+}
+/* Overlay for full-screen view */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.overlay-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+}
+.overlay-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.overlay-slider {
+    width: 100%;
+    height: 0;
+    padding-bottom: 66%;
+    position: relative;
 }
 @media (max-width: 768px) {
     .header h1 {
@@ -205,9 +233,16 @@ body {
         </form>
     </section>
 </div>
+<!-- Full-screen image overlay -->
+<div id="imageOverlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close">&times;</span>
+        <div id="overlaySlider"></div>
+    </div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Array of before and after case images
+    // Array of before and after case images (replace with real images)
     const cases = [
         { before: 'https://via.placeholder.com/600x400?text=Before+1', after: 'https://via.placeholder.com/600x400?text=After+1' },
         { before: 'https://via.placeholder.com/600x400?text=Before+2', after: 'https://via.placeholder.com/600x400?text=After+2' },
@@ -232,52 +267,140 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const beforeAfterGrid = document.getElementById('beforeAfterGrid');
+    const overlay = document.getElementById('imageOverlay');
+    const overlayContent = document.getElementById('overlaySlider');
+    const closeBtn = overlay.querySelector('.close');
 
-    cases.forEach((caseItem) => {
+    // Function to create a slider element (for overlay)
+    function createOverlaySlider(caseItem) {
+        const container = document.createElement('div');
+        container.className = 'overlay-slider';
+
+        const beforeDiv = document.createElement('div');
+        beforeDiv.className = 'before';
+        const beforeImg = document.createElement('img');
+        beforeImg.src = caseItem.before;
+        beforeDiv.appendChild(beforeImg);
+
+        const afterDiv = document.createElement('div');
+        afterDiv.className = 'after';
+        const afterImg = document.createElement('img');
+        afterImg.src = caseItem.after;
+        afterDiv.appendChild(afterImg);
+
+        const dividerDiv = document.createElement('div');
+        dividerDiv.className = 'divider';
+
+        // Append children
+        container.appendChild(beforeDiv);
+        container.appendChild(afterDiv);
+        container.appendChild(dividerDiv);
+
+        // Interaction logic
+        let isDown = false;
+
+        function updateOverlaySlider(e) {
+            const rect = container.getBoundingClientRect();
+            let offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            if (offsetX < 0) offsetX = 0;
+            if (offsetX > rect.width) offsetX = rect.width;
+            const percentage = (offsetX / rect.width) * 100;
+            afterDiv.style.width = percentage + '%';
+            afterImg.style.marginLeft = '-' + percentage + '%';
+            dividerDiv.style.left = percentage + '%';
+        }
+
+        container.addEventListener('mousedown', function(e) {
+            isDown = true;
+            updateOverlaySlider(e);
+        });
+        window.addEventListener('mousemove', function(e) {
+            if (!isDown) return;
+            updateOverlaySlider(e);
+        });
+        window.addEventListener('mouseup', function() {
+            isDown = false;
+        });
+        // Touch events
+        container.addEventListener('touchstart', function(e) {
+            isDown = true;
+            updateOverlaySlider(e);
+        });
+        window.addEventListener('touchmove', function(e) {
+            if (!isDown) return;
+            updateOverlaySlider(e);
+        });
+        window.addEventListener('touchend', function() {
+            isDown = false;
+        });
+
+        return container;
+    }
+
+    // Function to show overlay with selected case
+    function showOverlay(index) {
+        overlayContent.innerHTML = '';
+        const slider = createOverlaySlider(cases[index]);
+        overlayContent.appendChild(slider);
+        overlay.style.display = 'flex';
+    }
+
+    // Hide overlay
+    function hideOverlay() {
+        overlay.style.display = 'none';
+        overlayContent.innerHTML = '';
+    }
+
+    closeBtn.addEventListener('click', hideOverlay);
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) hideOverlay();
+    });
+
+    // Render each case card with slider and click event
+    cases.forEach((caseItem, index) => {
         const card = document.createElement('div');
         card.className = 'before-after-card';
 
-        const before = document.createElement('div');
-        before.className = 'before';
+        const beforeDiv = document.createElement('div');
+        beforeDiv.className = 'before';
         const beforeImg = document.createElement('img');
         beforeImg.src = caseItem.before;
-        before.appendChild(beforeImg);
+        beforeDiv.appendChild(beforeImg);
 
-        const after = document.createElement('div');
-        after.className = 'after';
+        const afterDiv = document.createElement('div');
+        afterDiv.className = 'after';
         const afterImg = document.createElement('img');
         afterImg.src = caseItem.after;
-        after.appendChild(afterImg);
+        afterDiv.appendChild(afterImg);
 
-        const divider = document.createElement('div');
-        divider.className = 'divider';
+        const dividerDiv = document.createElement('div');
+        dividerDiv.className = 'divider';
 
-        // Append elements
-        card.appendChild(before);
-        card.appendChild(after);
-        card.appendChild(divider);
+        card.appendChild(beforeDiv);
+        card.appendChild(afterDiv);
+        card.appendChild(dividerDiv);
 
-        // Add interaction
+        // Interaction for card slider
         let isDown = false;
 
-        function updateSlider(e) {
+        function updateCardSlider(e) {
             const rect = card.getBoundingClientRect();
             let offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
             if (offsetX < 0) offsetX = 0;
             if (offsetX > rect.width) offsetX = rect.width;
             const percentage = (offsetX / rect.width) * 100;
-            after.style.width = percentage + '%';
+            afterDiv.style.width = percentage + '%';
             afterImg.style.marginLeft = '-' + percentage + '%';
-            divider.style.left = percentage + '%';
+            dividerDiv.style.left = percentage + '%';
         }
 
         card.addEventListener('mousedown', function(e) {
             isDown = true;
-            updateSlider(e);
+            updateCardSlider(e);
         });
         window.addEventListener('mousemove', function(e) {
             if (!isDown) return;
-            updateSlider(e);
+            updateCardSlider(e);
         });
         window.addEventListener('mouseup', function() {
             isDown = false;
@@ -285,20 +408,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Touch events
         card.addEventListener('touchstart', function(e) {
             isDown = true;
-            updateSlider(e);
+            updateCardSlider(e);
         });
         window.addEventListener('touchmove', function(e) {
             if (!isDown) return;
-            updateSlider(e);
+            updateCardSlider(e);
         });
         window.addEventListener('touchend', function() {
             isDown = false;
         });
 
+        // Click to open overlay on entire card (exclude if dragging?)
+        card.addEventListener('click', function() {
+            showOverlay(index);
+        });
+
         beforeAfterGrid.appendChild(card);
     });
 
-    // Array of video IDs (provide your own IDs)
+    // Array of video IDs (replace with real IDs)
     const videos = [
         'dQw4w9WgXcQ', 'M7FIvfx5J10', 'kJQP7kiw5Fk', '2Vv-BfVoq4g', 'L_jWHffIx5E',
         'hTWKbfoikeg', 'kXYiU_JCYtU', '3tmd-ClpJxA', 'CevxZvSJLk8', 'pRpeEdMmmQ0',
@@ -336,7 +464,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadMoreBtn.addEventListener('click', function() {
         renderVideos();
-        // Scroll to the newly loaded content on small screens
         loadMoreBtn.scrollIntoView({ behavior: 'smooth' });
     });
 });
