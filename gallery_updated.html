@@ -427,23 +427,41 @@ document.addEventListener('DOMContentLoaded', function () {
     if (overlay && overlay.style.display === 'flex' && e.key === 'Escape') closeOverlay();
   });
 
-  /* ==============================
-   * 5) RENDER 20 BEFORE/AFTER CARDS
-   * ============================== */
-  if (beforeAfterGrid) {
-    cases.forEach((c, idx) => {
-      const card = document.createElement('div');
-      // build slider into card
-      const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
+ /* ==============================
+ * 5) RENDER 20 BEFORE/AFTER CARDS
+ * ============================== */
+if (beforeAfterGrid) {
+  // Create a document fragment for smoother, faster DOM updates
+  const frag = document.createDocumentFragment();
 
-      // click-to-open (ignore if it was a drag)
-      card.addEventListener('click', () => {
-        if (!slider.wasDragged()) openOverlay(c);
-      });
+  // Loop through all before/after cases
+  cases.forEach((c) => {
+    // Create wrapper card
+    const card = document.createElement('div');
+    card.className = 'before-after-card';
 
-      beforeAfterGrid.appendChild(card);
+    // Build interactive slider inside the card
+    const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
+
+    // Add click-to-open fullscreen feature (ignore accidental drags)
+    card.addEventListener('click', () => {
+      if (!slider.wasDragged()) {
+        openOverlay(c);
+      }
     });
-  }
+
+    // Append this card to our fragment
+    frag.appendChild(card);
+  });
+
+  // Clear any old content before rendering
+  beforeAfterGrid.innerHTML = '';
+  // Add all new cards at once for better performance
+  beforeAfterGrid.appendChild(frag);
+} else {
+  console.warn('⚠️  Element with ID #beforeAfterGrid not found. Please ensure it exists in the HTML.');
+}
+
 
   /* ==========================================
    * 6) VIDEO TESTIMONIALS + LOAD MORE (20/step)
