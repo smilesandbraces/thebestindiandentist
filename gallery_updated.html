@@ -241,231 +241,268 @@ body {
     </div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Array of before and after case images (replace with real images)
-    const cases = [
-        { before: 'https://via.placeholder.com/600x400?text=Before+1', after: 'https://via.placeholder.com/600x400?text=After+1' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+2', after: 'https://via.placeholder.com/600x400?text=After+2' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+3', after: 'https://via.placeholder.com/600x400?text=After+3' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+4', after: 'https://via.placeholder.com/600x400?text=After+4' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+5', after: 'https://via.placeholder.com/600x400?text=After+5' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+6', after: 'https://via.placeholder.com/600x400?text=After+6' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+7', after: 'https://via.placeholder.com/600x400?text=After+7' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+8', after: 'https://via.placeholder.com/600x400?text=After+8' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+9', after: 'https://via.placeholder.com/600x400?text=After+9' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+10', after: 'https://via.placeholder.com/600x400?text=After+10' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+11', after: 'https://via.placeholder.com/600x400?text=After+11' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+12', after: 'https://via.placeholder.com/600x400?text=After+12' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+13', after: 'https://via.placeholder.com/600x400?text=After+13' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+14', after: 'https://via.placeholder.com/600x400?text=After+14' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+15', after: 'https://via.placeholder.com/600x400?text=After+15' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+16', after: 'https://via.placeholder.com/600x400?text=After+16' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+17', after: 'https://via.placeholder.com/600x400?text=After+17' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+18', after: 'https://via.placeholder.com/600x400?text=After+18' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+19', after: 'https://via.placeholder.com/600x400?text=After+19' },
-        { before: 'https://via.placeholder.com/600x400?text=Before+20', after: 'https://via.placeholder.com/600x400?text=After+20' }
-    ];
+document.addEventListener('DOMContentLoaded', function () {
+  /* ===============================
+   * 1) BEFORE/AFTER CASES (EDIT ME)
+   * =============================== */
+  // Replace the URLs + alts with your real images & captions.
+  // Keep exactly 20 objects (or more if you like).
+  const cases = [
+    { before: './assets/images/cases/case01-before.webp', after: './assets/images/cases/case01-after.webp', altBefore: 'Case 01 — before', altAfter: 'Case 01 — after' },
+    { before: './assets/images/cases/case02-before.webp', after: './assets/images/cases/case02-after.webp', altBefore: 'Case 02 — before', altAfter: 'Case 02 — after' },
+    { before: './assets/images/cases/case03-before.webp', after: './assets/images/cases/case03-after.webp', altBefore: 'Case 03 — before', altAfter: 'Case 03 — after' },
+    { before: './assets/images/cases/case04-before.webp', after: './assets/images/cases/case04-after.webp', altBefore: 'Case 04 — before', altAfter: 'Case 04 — after' },
+    { before: './assets/images/cases/case05-before.webp', after: './assets/images/cases/case05-after.webp', altBefore: 'Case 05 — before', altAfter: 'Case 05 — after' },
+    { before: './assets/images/cases/case06-before.webp', after: './assets/images/cases/case06-after.webp', altBefore: 'Case 06 — before', altAfter: 'Case 06 — after' },
+    { before: './assets/images/cases/case07-before.webp', after: './assets/images/cases/case07-after.webp', altBefore: 'Case 07 — before', altAfter: 'Case 07 — after' },
+    { before: './assets/images/cases/case08-before.webp', after: './assets/images/cases/case08-after.webp', altBefore: 'Case 08 — before', altAfter: 'Case 08 — after' },
+    { before: './assets/images/cases/case09-before.webp', after: './assets/images/cases/case09-after.webp', altBefore: 'Case 09 — before', altAfter: 'Case 09 — after' },
+    { before: './assets/images/cases/case10-before.webp', after: './assets/images/cases/case10-after.webp', altBefore: 'Case 10 — before', altAfter: 'Case 10 — after' },
+    { before: './assets/images/cases/case11-before.webp', after: './assets/images/cases/case11-after.webp', altBefore: 'Case 11 — before', altAfter: 'Case 11 — after' },
+    { before: './assets/images/cases/case12-before.webp', after: './assets/images/cases/case12-after.webp', altBefore: 'Case 12 — before', altAfter: 'Case 12 — after' },
+    { before: './assets/images/cases/case13-before.webp', after: './assets/images/cases/case13-after.webp', altBefore: 'Case 13 — before', altAfter: 'Case 13 — after' },
+    { before: './assets/images/cases/case14-before.webp', after: './assets/images/cases/case14-after.webp', altBefore: 'Case 14 — before', altAfter: 'Case 14 — after' },
+    { before: './assets/images/cases/case15-before.webp', after: './assets/images/cases/case15-after.webp', altBefore: 'Case 15 — before', altAfter: 'Case 15 — after' },
+    { before: './assets/images/cases/case16-before.webp', after: './assets/images/cases/case16-after.webp', altBefore: 'Case 16 — before', altAfter: 'Case 16 — after' },
+    { before: './assets/images/cases/case17-before.webp', after: './assets/images/cases/case17-after.webp', altBefore: 'Case 17 — before', altAfter: 'Case 17 — after' },
+    { before: './assets/images/cases/case18-before.webp', after: './assets/images/cases/case18-after.webp', altBefore: 'Case 18 — before', altAfter: 'Case 18 — after' },
+    { before: './assets/images/cases/case19-before.webp', after: './assets/images/cases/case19-after.webp', altBefore: 'Case 19 — before', altAfter: 'Case 19 — after' },
+    { before: './assets/images/cases/case20-before.webp', after: './assets/images/cases/case20-after.webp', altBefore: 'Case 20 — before', altAfter: 'Case 20 — after' },
+  ];
 
-    const beforeAfterGrid = document.getElementById('beforeAfterGrid');
-    const overlay = document.getElementById('imageOverlay');
-    const overlayContent = document.getElementById('overlaySlider');
-    const closeBtn = overlay.querySelector('.close');
+  /* ======================================
+   * 2) GRAB REQUIRED ELEMENTS FROM THE DOM
+   * ====================================== */
+  const beforeAfterGrid = document.getElementById('beforeAfterGrid');
+  const overlay = document.getElementById('imageOverlay');
+  const overlayContent = document.getElementById('overlaySlider');
+  const closeBtn = overlay ? overlay.querySelector('.close') : null;
 
-    // Function to create a slider element (for overlay)
-    function createOverlaySlider(caseItem) {
-        const container = document.createElement('div');
-        container.className = 'overlay-slider';
+  const testimonialGrid = document.getElementById('testimonialGrid');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-        const beforeDiv = document.createElement('div');
-        beforeDiv.className = 'before';
-        const beforeImg = document.createElement('img');
-        beforeImg.src = caseItem.before;
-        beforeDiv.appendChild(beforeImg);
+  /* ==========================
+   * 3) HELPER: MAKE A SLIDER UI
+   * ========================== */
+  function makeSlider(containerEl, beforeURL, afterURL, altBefore, altAfter) {
+    containerEl.classList.add('before-after-card');
+    containerEl.style.position = 'relative';
+    containerEl.style.userSelect = 'none';
 
-        const afterDiv = document.createElement('div');
-        afterDiv.className = 'after';
-        const afterImg = document.createElement('img');
-        afterImg.src = caseItem.after;
-        afterDiv.appendChild(afterImg);
+    const beforeDiv = document.createElement('div');
+    const afterDiv  = document.createElement('div');
+    const beforeImg = document.createElement('img');
+    const afterImg  = document.createElement('img');
+    const divider   = document.createElement('div');
 
-        const dividerDiv = document.createElement('div');
-        dividerDiv.className = 'divider';
+    beforeDiv.className = 'before';
+    afterDiv.className  = 'after';
+    divider.className   = 'divider';
 
-        // Append children
-        container.appendChild(beforeDiv);
-        container.appendChild(afterDiv);
-        container.appendChild(dividerDiv);
+    // images
+    beforeImg.src = beforeURL;
+    afterImg.src  = afterURL;
+    beforeImg.alt = altBefore || 'Before';
+    afterImg.alt  = altAfter  || 'After';
+    beforeImg.loading = 'lazy';
+    afterImg.loading  = 'lazy';
+    beforeImg.style.width = afterImg.style.width = '100%';
+    beforeImg.style.display = afterImg.style.display = 'block';
 
-        // Interaction logic
-        let isDown = false;
+    // layering
+    beforeDiv.style.position = afterDiv.style.position = 'absolute';
+    beforeDiv.style.top = afterDiv.style.top = 0;
+    beforeDiv.style.left = afterDiv.style.left = 0;
+    beforeDiv.style.height = afterDiv.style.height = '100%';
+    beforeDiv.style.width = '100%';
+    afterDiv.style.width  = '50%';  // default middle
+    afterDiv.style.overflow = 'hidden';
 
-        function updateOverlaySlider(e) {
-            const rect = container.getBoundingClientRect();
-            let offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-            if (offsetX < 0) offsetX = 0;
-            if (offsetX > rect.width) offsetX = rect.width;
-            const percentage = (offsetX / rect.width) * 100;
-            afterDiv.style.width = percentage + '%';
-            afterImg.style.marginLeft = '-' + percentage + '%';
-            dividerDiv.style.left = percentage + '%';
-        }
+    containerEl.style.aspectRatio = '16/10';
+    containerEl.style.overflow = 'hidden';
 
-        container.addEventListener('mousedown', function(e) {
-            isDown = true;
-            updateOverlaySlider(e);
-        });
-        window.addEventListener('mousemove', function(e) {
-            if (!isDown) return;
-            updateOverlaySlider(e);
-        });
-        window.addEventListener('mouseup', function() {
-            isDown = false;
-        });
-        // Touch events
-        container.addEventListener('touchstart', function(e) {
-            isDown = true;
-            updateOverlaySlider(e);
-        });
-        window.addEventListener('touchmove', function(e) {
-            if (!isDown) return;
-            updateOverlaySlider(e);
-        });
-        window.addEventListener('touchend', function() {
-            isDown = false;
-        });
+    // divider style (you can style via CSS too)
+    divider.style.position = 'absolute';
+    divider.style.top = 0;
+    divider.style.bottom = 0;
+    divider.style.left = '50%';
+    divider.style.width = '3px';
+    divider.style.background = '#1f2937';
+    divider.style.boxShadow = '0 0 0 1px rgba(0,0,0,.08)';
 
-        return container;
+    beforeDiv.appendChild(beforeImg);
+    afterDiv.appendChild(afterImg);
+    containerEl.appendChild(beforeDiv);
+    containerEl.appendChild(afterDiv);
+    containerEl.appendChild(divider);
+
+    // interactions
+    let dragging = false;
+    let startX = 0, startY = 0;
+    let moved = false;
+
+    function pctFromEvent(e) {
+      const rect = containerEl.getBoundingClientRect();
+      const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+      const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+      return (x / rect.width) * 100;
+    }
+    function setSplit(pct) {
+      afterDiv.style.width = pct + '%';
+      divider.style.left   = pct + '%';
+      // keep after image seam aligned
+      afterImg.style.marginLeft = '-' + pct + '%';
     }
 
-    // Function to show overlay with selected case
-    function showOverlay(index) {
-        overlayContent.innerHTML = '';
-        const slider = createOverlaySlider(cases[index]);
-        overlayContent.appendChild(slider);
-        overlay.style.display = 'flex';
-    }
+    containerEl.addEventListener('mousedown', (e) => {
+      dragging = true; moved = false;
+      startX = e.clientX; startY = e.clientY;
+      setSplit(pctFromEvent(e));
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) moved = true;
+      setSplit(pctFromEvent(e));
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
 
-    // Hide overlay
-    function hideOverlay() {
-        overlay.style.display = 'none';
-        overlayContent.innerHTML = '';
-    }
+    containerEl.addEventListener('touchstart', (e) => {
+      dragging = true; moved = false;
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+      setSplit(pctFromEvent(e));
+    }, { passive: true });
+    window.addEventListener('touchmove', (e) => {
+      if (!dragging) return;
+      if (Math.abs((e.touches[0].clientX) - startX) > 5 || Math.abs((e.touches[0].clientY) - startY) > 5) moved = true;
+      setSplit(pctFromEvent(e));
+    }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
 
-    closeBtn.addEventListener('click', hideOverlay);
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) hideOverlay();
+    // keyboard: left/right to nudge
+    containerEl.setAttribute('tabindex', '0');
+    containerEl.addEventListener('keydown', (e) => {
+      const step = e.shiftKey ? 10 : 2;
+      const current = parseFloat(afterDiv.style.width || '50');
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); setSplit(Math.max(0, current - step)); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); setSplit(Math.min(100, current + step)); }
     });
 
-    // Render each case card with slider and click event
-    cases.forEach((caseItem, index) => {
-        const card = document.createElement('div');
-        card.className = 'before-after-card';
+    return {
+      element: containerEl,
+      wasDragged: () => moved
+    };
+  }
 
-        const beforeDiv = document.createElement('div');
-        beforeDiv.className = 'before';
-        const beforeImg = document.createElement('img');
-        beforeImg.src = caseItem.before;
-        beforeDiv.appendChild(beforeImg);
+  /* ==================================
+   * 4) FULLSCREEN OVERLAY (CLICK OPEN)
+   * ================================== */
+  function openOverlay(caseItem) {
+    if (!overlay || !overlayContent) return;
+    overlayContent.innerHTML = '';
 
-        const afterDiv = document.createElement('div');
-        afterDiv.className = 'after';
-        const afterImg = document.createElement('img');
-        afterImg.src = caseItem.after;
-        afterDiv.appendChild(afterImg);
+    const container = document.createElement('div');
+    container.className = 'overlay-slider';
+    container.style.position = 'relative';
+    container.style.width = 'min(1100px, 92vw)';
+    container.style.margin = 'auto';
 
-        const dividerDiv = document.createElement('div');
-        dividerDiv.className = 'divider';
+    makeSlider(container, caseItem.before, caseItem.after, caseItem.altBefore, caseItem.altAfter);
+    overlayContent.appendChild(container);
 
-        card.appendChild(beforeDiv);
-        card.appendChild(afterDiv);
-        card.appendChild(dividerDiv);
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // prevent bg scroll
+  }
+  function closeOverlay() {
+    if (!overlay) return;
+    overlay.style.display = 'none';
+    overlayContent && (overlayContent.innerHTML = '');
+    document.body.style.overflow = '';
+  }
 
-        // Interaction for card slider
-        let isDown = false;
+  if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
+  if (overlay) overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (overlay && overlay.style.display === 'flex' && e.key === 'Escape') closeOverlay();
+  });
 
-        function updateCardSlider(e) {
-            const rect = card.getBoundingClientRect();
-            let offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-            if (offsetX < 0) offsetX = 0;
-            if (offsetX > rect.width) offsetX = rect.width;
-            const percentage = (offsetX / rect.width) * 100;
-            afterDiv.style.width = percentage + '%';
-            afterImg.style.marginLeft = '-' + percentage + '%';
-            dividerDiv.style.left = percentage + '%';
-        }
+  /* ==============================
+   * 5) RENDER 20 BEFORE/AFTER CARDS
+   * ============================== */
+  if (beforeAfterGrid) {
+    cases.forEach((c, idx) => {
+      const card = document.createElement('div');
+      // build slider into card
+      const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
 
-        card.addEventListener('mousedown', function(e) {
-            isDown = true;
-            updateCardSlider(e);
-        });
-        window.addEventListener('mousemove', function(e) {
-            if (!isDown) return;
-            updateCardSlider(e);
-        });
-        window.addEventListener('mouseup', function() {
-            isDown = false;
-        });
-        // Touch events
-        card.addEventListener('touchstart', function(e) {
-            isDown = true;
-            updateCardSlider(e);
-        });
-        window.addEventListener('touchmove', function(e) {
-            if (!isDown) return;
-            updateCardSlider(e);
-        });
-        window.addEventListener('touchend', function() {
-            isDown = false;
-        });
+      // click-to-open (ignore if it was a drag)
+      card.addEventListener('click', () => {
+        if (!slider.wasDragged()) openOverlay(c);
+      });
 
-        // Click to open overlay on entire card (exclude if dragging?)
-        card.addEventListener('click', function() {
-            showOverlay(index);
-        });
+      beforeAfterGrid.appendChild(card);
+    });
+  }
 
-        beforeAfterGrid.appendChild(card);
+  /* ==========================================
+   * 6) VIDEO TESTIMONIALS + LOAD MORE (20/step)
+   * ========================================== */
+  // Replace with your real YouTube IDs. You can put hundreds here.
+  const videos = [
+    'dQw4w9WgXcQ','M7FIvfx5J10','kJQP7kiw5Fk','2Vv-BfVoq4g','L_jWHffIx5E',
+    'hTWKbfoikeg','kXYiU_JCYtU','3tmd-ClpJxA','CevxZvSJLk8','pRpeEdMmmQ0',
+    'YbJOTdZBX1g','rYEDA3JcQqw','RgKAFK5djSk','JGwWNGJdvx8','PtXIhUQtzBQ',
+    '6Mgqbai3fKo','ScMzIvxBSi4','ysz5S6PUM-U','E7wJTI-1dvQ','aqz-KE-bpKQ',
+    'VYOjWnS4cMY','Zi_XLOBDo_Y','ktvTqknDobU','RubBzkZzpUA','QDYfEBY9NM4',
+    'CevxZvSJLk8','60ItHLz5WEA','2vjPBrBU-TM','fRh_vgS2dFE','tVj0ZTS4WF4'
+  ];
+
+  let videosDisplayed = 0;
+  const BATCH = 20;
+
+  function renderVideos() {
+    if (!testimonialGrid) return;
+    const next = videos.slice(videosDisplayed, videosDisplayed + BATCH);
+    next.forEach((id, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'testimonial-item';
+      wrap.style.position = 'relative';
+      wrap.style.overflow = 'hidden';
+      wrap.style.borderRadius = '12px';
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id;
+      iframe.title = 'Patient Testimonial ' + (videosDisplayed + i + 1);
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.aspectRatio = '16/9';
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+
+      wrap.appendChild(iframe);
+      testimonialGrid.appendChild(wrap);
     });
 
-    // Array of video IDs (replace with real IDs)
-    const videos = [
-        'dQw4w9WgXcQ', 'M7FIvfx5J10', 'kJQP7kiw5Fk', '2Vv-BfVoq4g', 'L_jWHffIx5E',
-        'hTWKbfoikeg', 'kXYiU_JCYtU', '3tmd-ClpJxA', 'CevxZvSJLk8', 'pRpeEdMmmQ0',
-        'YbJOTdZBX1g', 'rYEDA3JcQqw', 'RgKAFK5djSk', 'JGwWNGJdvx8', 'PtXIhUQtzBQ',
-        '6Mgqbai3fKo', 'dQw4w9WgXcQ', 'M7FIvfx5J10', 'kJQP7kiw5Fk', '2Vv-BfVoq4g',
-        'L_jWHffIx5E', 'hTWKbfoikeg', 'kXYiU_JCYtU', '3tmd-ClpJxA', 'CevxZvSJLk8',
-        'pRpeEdMmmQ0', 'YbJOTdZBX1g', 'rYEDA3JcQqw', 'RgKAFK5djSk', 'JGwWNGJdvx8',
-        'PtXIhUQtzBQ', '6Mgqbai3fKo'
-    ];
-
-    const testimonialGrid = document.getElementById('testimonialGrid');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    let videosDisplayed = 0;
-    const batchSize = 20;
-
-    function renderVideos() {
-        const nextVideos = videos.slice(videosDisplayed, videosDisplayed + batchSize);
-        nextVideos.forEach(videoId => {
-            const item = document.createElement('div');
-            item.className = 'testimonial-item';
-            const iframe = document.createElement('iframe');
-            iframe.src = 'https://www.youtube.com/embed/' + videoId;
-            iframe.allowFullscreen = true;
-            item.appendChild(iframe);
-            testimonialGrid.appendChild(item);
-        });
-        videosDisplayed += nextVideos.length;
-        if (videosDisplayed >= videos.length) {
-            loadMoreBtn.style.display = 'none';
-        }
+    videosDisplayed += next.length;
+    if (loadMoreBtn) {
+      if (videosDisplayed >= videos.length) {
+        loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.style.display = '';
+      }
     }
+  }
 
-    // Initial load
-    renderVideos();
-
-    loadMoreBtn.addEventListener('click', function() {
-        renderVideos();
-        loadMoreBtn.scrollIntoView({ behavior: 'smooth' });
+  renderVideos(); // first 20
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      renderVideos();
+      loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
+  }
 });
 </script>
 </body>
