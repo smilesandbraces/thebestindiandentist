@@ -245,30 +245,30 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ===============================
    * 1) BEFORE/AFTER CASES (EDIT ME)
    * =============================== */
-  // Replace the URLs + alts with your real images & captions.
-  // Keep exactly 20 objects (or more if you like).
-  const cases = [
+  // IMPORTANT:
+  // - GitHub is CASE-SENSITIVE. Make sure file names & paths match exactly.
+  // - Start with the images you actually have (rbi1.webp, rbi.webp) and add the rest later.
+  // - You can repeat pairs temporarily so all 20 slots are visible.
+
+  // Seed with the pairs that EXIST today in your repo:
+  const seedCases = [
     { before: './assets/images/cases/rbi1.webp', after: './assets/images/cases/rbi.webp', altBefore: 'Case 01 — before', altAfter: 'Case 01 — after' },
-    { before: './assets/images/cases/case02-before.webp', after: './assets/images/cases/case02-after.webp', altBefore: 'Case 02 — before', altAfter: 'Case 02 — after' },
-    { before: './assets/images/cases/case03-before.webp', after: './assets/images/cases/case03-after.webp', altBefore: 'Case 03 — before', altAfter: 'Case 03 — after' },
-    { before: './assets/images/cases/case04-before.webp', after: './assets/images/cases/case04-after.webp', altBefore: 'Case 04 — before', altAfter: 'Case 04 — after' },
-    { before: './assets/images/cases/case05-before.webp', after: './assets/images/cases/case05-after.webp', altBefore: 'Case 05 — before', altAfter: 'Case 05 — after' },
-    { before: './assets/images/cases/case06-before.webp', after: './assets/images/cases/case06-after.webp', altBefore: 'Case 06 — before', altAfter: 'Case 06 — after' },
-    { before: './assets/images/cases/case07-before.webp', after: './assets/images/cases/case07-after.webp', altBefore: 'Case 07 — before', altAfter: 'Case 07 — after' },
-    { before: './assets/images/cases/case08-before.webp', after: './assets/images/cases/case08-after.webp', altBefore: 'Case 08 — before', altAfter: 'Case 08 — after' },
-    { before: './assets/images/cases/case09-before.webp', after: './assets/images/cases/case09-after.webp', altBefore: 'Case 09 — before', altAfter: 'Case 09 — after' },
-    { before: './assets/images/cases/case10-before.webp', after: './assets/images/cases/case10-after.webp', altBefore: 'Case 10 — before', altAfter: 'Case 10 — after' },
-    { before: './assets/images/cases/case11-before.webp', after: './assets/images/cases/case11-after.webp', altBefore: 'Case 11 — before', altAfter: 'Case 11 — after' },
-    { before: './assets/images/cases/case12-before.webp', after: './assets/images/cases/case12-after.webp', altBefore: 'Case 12 — before', altAfter: 'Case 12 — after' },
-    { before: './assets/images/cases/case13-before.webp', after: './assets/images/cases/case13-after.webp', altBefore: 'Case 13 — before', altAfter: 'Case 13 — after' },
-    { before: './assets/images/cases/case14-before.webp', after: './assets/images/cases/case14-after.webp', altBefore: 'Case 14 — before', altAfter: 'Case 14 — after' },
-    { before: './assets/images/cases/case15-before.webp', after: './assets/images/cases/case15-after.webp', altBefore: 'Case 15 — before', altAfter: 'Case 15 — after' },
-    { before: './assets/images/cases/case16-before.webp', after: './assets/images/cases/case16-after.webp', altBefore: 'Case 16 — before', altAfter: 'Case 16 — after' },
-    { before: './assets/images/cases/case17-before.webp', after: './assets/images/cases/case17-after.webp', altBefore: 'Case 17 — before', altAfter: 'Case 17 — after' },
-    { before: './assets/images/cases/case18-before.webp', after: './assets/images/cases/case18-after.webp', altBefore: 'Case 18 — before', altAfter: 'Case 18 — after' },
-    { before: './assets/images/cases/case19-before.webp', after: './assets/images/cases/case19-after.webp', altBefore: 'Case 19 — before', altAfter: 'Case 19 — after' },
-    { before: './assets/images/cases/case20-before.webp', after: './assets/images/cases/case20-after.webp', altBefore: 'Case 20 — before', altAfter: 'Case 20 — after' },
+    // Add more real pairs here as you upload them, e.g.:
+    // { before: './assets/images/cases/case02-before.webp', after: './assets/images/cases/case02-after.webp', altBefore: 'Case 02 — before', altAfter: 'Case 02 — after' },
   ];
+
+  // Build a 20-length cases array by repeating available pairs so nothing is blank.
+  const CASES_EXPECTED = 20;
+  const cases = [];
+  for (let i = 0; i < CASES_EXPECTED; i++) {
+    const src = seedCases[i % seedCases.length];
+    cases.push({
+      before: src.before,
+      after:  src.after,
+      altBefore: src.altBefore || `Case ${String(i+1).padStart(2,'0')} — before`,
+      altAfter:  src.altAfter  || `Case ${String(i+1).padStart(2,'0')} — after`,
+    });
+  }
 
   /* ======================================
    * 2) GRAB REQUIRED ELEMENTS FROM THE DOM
@@ -282,12 +282,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const loadMoreBtn = document.getElementById('loadMoreBtn');
 
   /* ==========================
-   * 3) HELPER: MAKE A SLIDER UI
+   * 3) IMAGE HELPERS (ROBUST)
+   * ========================== */
+  const FALLBACK = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750">
+      <rect width="100%" height="100%" fill="#e5e7eb"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#6b7280" font-family="Arial" font-size="28">
+        Image not found
+      </text>
+    </svg>`
+  );
+  function wireImage(img, src, alt) {
+    img.src = src;
+    img.alt = alt || '';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.onerror = () => { img.src = FALLBACK; };
+  }
+
+  /* ==========================
+   * 4) HELPER: MAKE A SLIDER UI
    * ========================== */
   function makeSlider(containerEl, beforeURL, afterURL, altBefore, altAfter) {
     containerEl.classList.add('before-after-card');
     containerEl.style.position = 'relative';
     containerEl.style.userSelect = 'none';
+    containerEl.style.aspectRatio = '16/10';
+    containerEl.style.overflow = 'hidden';
 
     const beforeDiv = document.createElement('div');
     const afterDiv  = document.createElement('div');
@@ -299,13 +320,10 @@ document.addEventListener('DOMContentLoaded', function () {
     afterDiv.className  = 'after';
     divider.className   = 'divider';
 
-    // images
-    beforeImg.src = beforeURL;
-    afterImg.src  = afterURL;
-    beforeImg.alt = altBefore || 'Before';
-    afterImg.alt  = altAfter  || 'After';
-    beforeImg.loading = 'lazy';
-    afterImg.loading  = 'lazy';
+    // wire images safely
+    wireImage(beforeImg, beforeURL, altBefore || 'Before');
+    wireImage(afterImg,  afterURL,  altAfter  || 'After');
+
     beforeImg.style.width = afterImg.style.width = '100%';
     beforeImg.style.display = afterImg.style.display = 'block';
 
@@ -318,10 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
     afterDiv.style.width  = '50%';  // default middle
     afterDiv.style.overflow = 'hidden';
 
-    containerEl.style.aspectRatio = '16/10';
-    containerEl.style.overflow = 'hidden';
-
-    // divider style (you can style via CSS too)
+    // divider style (can be moved to CSS)
     divider.style.position = 'absolute';
     divider.style.top = 0;
     divider.style.bottom = 0;
@@ -350,8 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setSplit(pct) {
       afterDiv.style.width = pct + '%';
       divider.style.left   = pct + '%';
-      // keep after image seam aligned
-      afterImg.style.marginLeft = '-' + pct + '%';
+      afterImg.style.marginLeft = '-' + pct + '%'; // seam alignment
     }
 
     containerEl.addEventListener('mousedown', (e) => {
@@ -394,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ==================================
-   * 4) FULLSCREEN OVERLAY (CLICK OPEN)
+   * 5) FULLSCREEN OVERLAY (CLICK OPEN)
    * ================================== */
   function openOverlay(caseItem) {
     if (!overlay || !overlayContent) return;
@@ -427,46 +441,35 @@ document.addEventListener('DOMContentLoaded', function () {
     if (overlay && overlay.style.display === 'flex' && e.key === 'Escape') closeOverlay();
   });
 
- /* ==============================
- * 5) RENDER 20 BEFORE/AFTER CARDS
- * ============================== */
-if (beforeAfterGrid) {
-  // Create a document fragment for smoother, faster DOM updates
-  const frag = document.createDocumentFragment();
+  /* ==============================
+   * 6) RENDER 20 BEFORE/AFTER CARDS
+   * ============================== */
+  if (beforeAfterGrid) {
+    const frag = document.createDocumentFragment();
 
-  // Loop through all before/after cases
-  cases.forEach((c) => {
-    // Create wrapper card
-    const card = document.createElement('div');
-    card.className = 'before-after-card';
+    cases.forEach((c) => {
+      const card = document.createElement('div');
+      card.className = 'before-after-card';
 
-    // Build interactive slider inside the card
-    const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
+      const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
 
-    // Add click-to-open fullscreen feature (ignore accidental drags)
-    card.addEventListener('click', () => {
-      if (!slider.wasDragged()) {
-        openOverlay(c);
-      }
+      // Click-to-open fullscreen (ignore accidental drags)
+      card.addEventListener('click', () => {
+        if (!slider.wasDragged()) openOverlay(c);
+      });
+
+      frag.appendChild(card);
     });
 
-    // Append this card to our fragment
-    frag.appendChild(card);
-  });
-
-  // Clear any old content before rendering
-  beforeAfterGrid.innerHTML = '';
-  // Add all new cards at once for better performance
-  beforeAfterGrid.appendChild(frag);
-} else {
-  console.warn('⚠️  Element with ID #beforeAfterGrid not found. Please ensure it exists in the HTML.');
-}
-
+    beforeAfterGrid.innerHTML = '';
+    beforeAfterGrid.appendChild(frag);
+  } else {
+    console.warn('⚠️  #beforeAfterGrid not found in DOM');
+  }
 
   /* ==========================================
-   * 6) VIDEO TESTIMONIALS + LOAD MORE (20/step)
+   * 7) VIDEO TESTIMONIALS + LOAD MORE (20/step)
    * ========================================== */
-  // Replace with your real YouTube IDs. You can put hundreds here.
   const videos = [
     '285SdOclAlg','5xB5ZuWO-ag','Snex35Kc254','7p6mT9KzSwE','Kib0e15PcIc',
     'ubTXHzsRdgQ','AXBzHrEA0m8','IbHFxCezwOg','Xq1EN4OxdNg','YGUbxJx0EGE',
@@ -475,7 +478,6 @@ if (beforeAfterGrid) {
     'tg8CNCv9nZQ','Fc3UZR-2Knw','RQ7cg1NQrxQ','bHGe2oPbYZE','XKfPmPnvMtk',
     'Rtrb3RDZmuk','Ur9VSKARsqw','TaFdApxztw8','U6K0zK8oW5o','Hwyh4S5j6Tg'
   ];
-
   let videosDisplayed = 0;
   const BATCH = 20;
 
@@ -506,11 +508,7 @@ if (beforeAfterGrid) {
 
     videosDisplayed += next.length;
     if (loadMoreBtn) {
-      if (videosDisplayed >= videos.length) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.style.display = '';
-      }
+      loadMoreBtn.style.display = (videosDisplayed >= videos.length) ? 'none' : '';
     }
   }
 
@@ -523,5 +521,6 @@ if (beforeAfterGrid) {
   }
 });
 </script>
+
 </body>
 </html>
