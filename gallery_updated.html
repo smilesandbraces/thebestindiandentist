@@ -1,393 +1,345 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index,follow" />
-  <title>Patient Gallery – Before & After | Testimonials | Book Appointment</title>
-  <meta name="description" content="Explore real before & after smile transformations and patient testimonials from Smiles & Braces Dental Clinic, Lucknow. Book your appointment in minutes." />
-  <link rel="canonical" href="https://www.bestindiandentist.com/gallery.html"/>
-
-  <!-- Social/OpenGraph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Patient Gallery – Before & After + Testimonials" />
-  <meta property="og:description" content="See real smile transformations and hear from our patients. Book an appointment online." />
-  <meta property="og:image" content="https://www.bestindiandentist.com/assets/images/og/clinic-preview.webp" />
-  <meta property="og:url" content="https://www.bestindiandentist.com/gallery.html" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #f8fafc; /* light */
-      --surface: #ffffff;
-      --border: #e5e7eb;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #2563eb; /* blue-600 */
-      --accent-2: #0ea5e9; /* cyan-500 */
-      --ring: rgba(37,99,235,.15);
-      --radius: 16px;
-      --shadow: 0 10px 32px rgba(15,23,42,.08), 0 2px 8px rgba(15,23,42,.06);
+<meta charset="UTF-8">
+<title>Smiles & Braces Dental Clinic Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background: #f8f9fa;
+    color: #333;
+}
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #5c5c8a;
+}
+.header p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #666;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.section {
+    margin: 2rem 0;
+}
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+.before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.before-after-card {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 66%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+}
+.before-after-card img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: ew-resize;
+}
+.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.after img {
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: -100%;
+}
+.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.testimonial-item {
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.testimonial-item iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
+.load-more-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+.load-more-btn:hover {
+    background: #0056b3;
+}
+.form-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-section input, .form-section textarea {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.form-section button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.form-section button:hover {
+    background: #0056b3;
+}
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-      color: var(--text);
-      background:
-        radial-gradient(60rem 60rem at -10% -10%, rgba(14,165,233,.07) 0 30%, transparent 30%),
-        radial-gradient(50rem 50rem at 120% -20%, rgba(37,99,235,.06) 0 20%, transparent 20%),
-        var(--bg);
-      line-height: 1.6;
+    .section h2 {
+        font-size: 1.5rem;
     }
-    a{color:var(--accent);text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:24px 20px}
-
-    /* HEADER */
-    .header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
-    .brand{display:flex;flex-direction:column;align-items:center;padding:14px 0}
-    .clinic-title{font-family:'Great Vibes',cursive;font-size:2.2rem;line-height:1;margin:0;color:#0f172a}
-    .doctor-line{margin-top:6px;color:var(--muted);font-weight:600;font-size:.98rem}
-
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:22px}
-    .hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
-    .title{font-family: "Playfair Display", serif; font-weight:700; font-size:clamp(28px, 4vw, 44px); line-height:1.12; margin:0}
-    .subtitle{color:var(--muted);margin-top:8px}
-    .cta-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg, #ffffff, #f8fafc);box-shadow:0 6px 20px rgba(2,6,23,.06);color:var(--text);font-weight:700;letter-spacing:.2px}
-    .btn.secondary{background:#f8fafc}
-
-    .section{margin:60px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
-    .section-head h2{margin:0;font-size:clamp(22px,3.2vw,32px)}
-    .section-head p{margin:0;color:var(--muted)}
-
-    /* BEFORE-AFTER GRID */
-    .ba-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .card{grid-column: span 6; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
-    .card.small{grid-column: span 4}
-    .card.wide{grid-column: span 8}
-    .card-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border)}
-    .card-head .label{font-weight:700}
-    .card-body{position:relative}
-
-    /* BEFORE-AFTER SLIDER */
-    .ba{position:relative;isolation:isolate;aspect-ratio:16/10}
-    .ba img{display:block;width:100%;height:100%;object-fit:cover}
-    .ba .after{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
-    .ba .divider{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-    .ba input[type="range"]{position:absolute;inset:0;appearance:none;background:transparent;width:100%;height:100%;cursor:ew-resize}
-    .ba input[type="range"]::-webkit-slider-thumb{appearance:none;width:3px;height:100vh;background:linear-gradient(180deg, #1f2937, #60a5fa);box-shadow:0 0 0 2px #0001}
-    .ba input[type="range"]::-moz-range-thumb{border:none;width:3px;height:100vh;background:#1f2937}
-    .knob{position:absolute;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:radial-gradient(#ffffff, #e2e8f0);display:grid;place-items:center;border:1px solid #cbd5e1;box-shadow:0 6px 18px rgba(15,23,42,.12)}
-    .knob::before{content:"⇆";color:#0f172a;font-weight:900}
-
-    /* TESTIMONIALS GRID (infinite) */
-    .t-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .tcard{grid-column: span 6;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-    .tmedia{aspect-ratio:16/9;display:block}
-    .tmedia iframe{display:block;width:100%;height:100%;border:0}
-    .tcopy{padding:12px 14px;color:var(--muted)}
-    .loadmore{display:flex;justify-content:center;margin-top:14px}
-
-    /* BOOKING FORM */
-    .form-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    label{font-size:.9rem;color:#0f172a}
-    input, select, textarea{width:100%;margin-top:6px;padding:12px 14px;border-radius:12px;border:1px solid #cbd5e1;background:#ffffff;color:#0f172a;outline:none;box-shadow:inset 0 0 0 1px transparent;transition:border .2s, box-shadow .2s}
-    input:focus, select:focus, textarea:focus{border-color:#93c5fd;box-shadow:0 0 0 4px var(--ring)}
-    .agree{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--muted)}
-    .submit{margin-top:8px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn-primary{background:linear-gradient(90deg, var(--accent), var(--accent-2));color:#fff;border:none}
-
-    /* UTIL */
-    .muted{color:var(--muted)}
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;font-weight:600}
-    .kpi{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
-    .kpi .item{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
-
-    footer{border-top:1px solid var(--border);padding:20px 0;background:#fff;color:var(--muted)}
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px){
-      .hero{grid-template-columns:1fr}
-      .form-wrap{grid-template-columns:1fr}
+    .before-after-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
     }
-    @media (max-width: 820px){
-      .card, .card.small, .card.wide{grid-column:span 12}
-      .tcard{grid-column: span 12}
-      .frow{grid-template-columns:1fr}
+    .form-section {
+        padding: 1rem;
     }
-  </style>
+}
+</style>
 </head>
 <body>
-  <header class="header">
-    <div class="container brand">
-      <h1 class="clinic-title">Smiles & Braces Dental Clinic</h1>
-      <div class="doctor-line">Dr. Vikram Jeet Singh &nbsp;·&nbsp; BDS, MDS</div>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO / OVERVIEW -->
-    <section class="container hero" aria-label="Overview">
-      <div class="hero-card">
-        <h2 class="title">See Real Smile Transformations</h2>
-        <p class="subtitle">Drag the slider on each case to compare Before vs After. Watch genuine patient experiences. When you’re ready, book a no-obligation consultation.</p>
-        <div class="kpi" aria-hidden="true">
-          <span class="item">⭐ 4.9/5 Rated</span>
-          <span class="item">👩‍⚕️ MDS Orthodontist</span>
-          <span class="item">📍 Indira Nagar, Lucknow</span>
-        </div>
-        <div class="cta-row">
-          <a class="btn" href="#book">Book Appointment</a>
-          <a class="btn secondary" href="#testimonials">See Testimonials</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="pill" style="margin-bottom:10px">🔒 We take your privacy seriously</div>
-        <p class="muted" style="margin:0">Photos/videos are shared with patient consent. Results vary person to person.</p>
-        <p class="muted" style="margin:10px 0 0">Tip: On mobile, swipe the slider left/right.</p>
-      </div>
+<div class="header">
+    <h1>Smiles &amp; Braces Dental Clinic</h1>
+    <p>Dr. Vikram Jeet Singh &bull; BDS, MDS</p>
+</div>
+<div class="container">
+    <section class="section" id="before-after">
+        <h2>Before &amp; After Cases</h2>
+        <div class="before-after-grid" id="beforeAfterGrid"></div>
     </section>
-
-    <!-- BEFORE & AFTER SECTION -->
-    <section id="before-after" class="container section">
-      <div class="section-head">
-        <div>
-          <h2>Before & After</h2>
-          <p>20 real patient cases — orthodontics, aligners, implants, smile makeovers.</p>
-        </div>
-        <a class="btn" href="#book">Book a Consultation</a>
-      </div>
-
-      <div class="ba-grid" id="baGrid"></div>
-      <p class="muted" style="margin-top:10px">Replace demo images with your case photos (.webp recommended). Keep similar framing for best comparisons.</p>
+    <section class="section" id="testimonials">
+        <h2>Patient Video Testimonials</h2>
+        <div class="testimonials-grid" id="testimonialGrid"></div>
+        <div class="load-more-btn" id="loadMoreBtn">Load More Videos</div>
     </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" class="container section">
-      <div class="section-head">
-        <div>
-          <h2>Patient Testimonials</h2>
-          <p>Short YouTube reviews — loads more as you scroll.</p>
-        </div>
-        <div class="pill">🎥 Supports YouTube links (infinite)</div>
-      </div>
-
-      <div class="t-grid" id="tGrid" aria-live="polite"></div>
-      <div class="loadmore"><button id="loadMore" class="btn">Load more</button></div>
-    </section>
-
-    <!-- BOOKING SECTION -->
-    <section id="book" class="container section">
-      <div class="section-head">
-        <div>
-          <h2>Book Appointment</h2>
-          <p>It takes less than a minute. We’ll confirm over WhatsApp/Call.</p>
-        </div>
-        <a class="btn" href="https://wa.me/918192835546?text=Hi%20Smiles%20%26%20Braces%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
-
-      <div class="form-wrap">
-        <form id="qsForm" action="https://formspree.io/f/xanpokbz" method="POST" novalidate>
-          <div class="frow">
-            <div>
-              <label for="name">Full Name*</label>
-              <input required id="name" name="name" type="text" autocomplete="name" placeholder="Your name" />
-            </div>
-            <div>
-              <label for="phone">Phone / WhatsApp*</label>
-              <input required id="phone" name="phone" type="tel" inputmode="numeric" placeholder="10-digit number" pattern="[0-9]{10}" />
-            </div>
-          </div>
-          <div class="frow">
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
-            </div>
-            <div>
-              <label for="treatment">Treatment</label>
-              <select id="treatment" name="treatment">
-                <option value="General Checkup">General Checkup</option>
-                <option value="Braces/Aligners">Braces / Aligners</option>
-                <option value="Implants">Dental Implants</option>
-                <option value="Smile Makeover">Smile Makeover</option>
-                <option value="Root Canal">Root Canal</option>
-                <option value="Teeth Whitening">Teeth Whitening</option>
-              </select>
-            </div>
-          </div>
-          <div class="frow">
-            <div>
-              <label for="date">Preferred Date</label>
-              <input id="date" name="date" type="date" />
-            </div>
-            <div>
-              <label for="time">Preferred Time</label>
-              <select id="time" name="time">
-                <option value="Any">Any</option>
-                <option>10:00–12:00</option>
-                <option>12:00—02:00</option>
-                <option>02:00–04:00</option>
-                <option>04:00–06:00</option>
-                <option>06:00–08:00</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="message">Notes (optional)</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us briefly about your concern"></textarea>
-          </div>
-
-          <!-- hidden meta -->
-          <input type="hidden" name="page" value="/gallery.html" />
-          <input type="hidden" name="source" value="Gallery Page" />
-
-          <div class="agree" style="margin-top:10px">
-            <input id="consent" type="checkbox" required aria-required="true" style="margin-top:4px" />
-            <label for="consent">I agree to be contacted over call/WhatsApp. Privacy assured.</label>
-          </div>
-
-          <div class="submit">
-            <button class="btn btn-primary" type="submit">Submit Request</button>
-            <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
-          </div>
+    <section class="section form-section" id="booking">
+        <h2>Book an Appointment</h2>
+        <form action="https://formspree.io/f/xanpokbz" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
+            <button type="submit">Book Appointment</button>
         </form>
-
-        <aside class="hero-card">
-          <h3 style="margin-top:0">Why Patients Choose Us</h3>
-          <ul class="muted" style="margin-top:8px;line-height:1.9">
-            <li>Experienced MDS Orthodontist — Dr. Vikram Jeet Singh</li>
-            <li>Sterilization protocols & modern equipment</li>
-            <li>EMI options available for major treatments</li>
-            <li>Transparent pricing & treatment plans</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn" href="#before-after">View Results</a>
-            <a class="btn secondary" href="#testimonials">Watch Reviews</a>
-          </div>
-        </aside>
-      </div>
     </section>
-  </main>
-
-  <footer class="container" style="margin-bottom:40px">
-    <div class="muted">© <span id="yr"></span> Smiles & Braces Dental Clinic · All rights reserved.</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // ===== BEFORE-AFTER: generate 20 cases from data =====
-    const cases = Array.from({length:20}).map((_,i)=>({
-      id: i+1,
-      label: i%4===0? 'Smile Makeover' : i%4===1? 'Braces' : i%4===2? 'Implant' : 'Aligners',
-      before: [
-        'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1606813907291-76f1873c3b9a?q=80&w=1600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1516305753685-005dc06c4d87?q=80&w=1600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1600&auto=format&fit=crop'
-      ][i%4],
-      after: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop'
-    }));
-
-    const baGrid = document.getElementById('baGrid');
-    const makeCaseCard = (c)=>{
-      const el = document.createElement('article');
-      el.className = 'card' + (c.id%5===0? ' wide': c.id%3===0? ' small': '');
-      el.innerHTML = `
-        <div class="card-head"><span class="label">${c.label}</span><span class="muted">Case #${String(c.id).padStart(3,'0')}</span></div>
-        <div class="card-body">
-          <div class="ba" data-inited="false">
-            <img src="${c.before}" alt="Before – ${c.label}" loading="lazy"/>
-            <img class="after" src="${c.after}" alt="After – ${c.label}" loading="lazy"/>
-            <input type="range" min="0" max="100" value="50" aria-label="Compare before and after"/>
-            <div class="divider" aria-hidden="true"><span class="knob" style="left:50%"></span></div>
-          </div>
-        </div>`;
-      return el;
-    };
-    cases.forEach(c=>baGrid.appendChild(makeCaseCard(c)));
-
-    function initBA(root){
-      if(root.dataset.inited === 'true') return;
-      const range = root.querySelector('input[type="range"]');
-      const after = root.querySelector('.after');
-      const knob = root.querySelector('.knob');
-      const setClip = (val) => { const pct = Math.max(0, Math.min(100, val)); after.style.clipPath = `inset(0 ${100-pct}% 0 0)`; knob.style.left = pct + '%'; };
-      range.addEventListener('input', (e)=> setClip(e.target.value));
-      root.addEventListener('pointerdown', (e)=>{ const rect = root.getBoundingClientRect(); const pct = ((e.clientX - rect.left) / rect.width) * 100; setClip(pct); const move = (ev)=>{ const pct2 = ((ev.clientX - rect.left) / rect.width) * 100; setClip(pct2); }; const up = ()=>{ window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); }; window.addEventListener('pointermove', move); window.addEventListener('pointerup', up); });
-      range.addEventListener('keydown', (e)=>{ const step = (e.shiftKey? 10 : 2); if(['ArrowLeft','ArrowDown'].includes(e.key)) { e.preventDefault(); range.value = Math.max(0, range.value - step); range.dispatchEvent(new Event('input')); } if(['ArrowRight','ArrowUp'].includes(e.key)) { e.preventDefault(); range.value = Math.min(100, Number(range.value) + step); range.dispatchEvent(new Event('input')); } });
-      setClip(range.value);
-      root.dataset.inited = 'true';
-    }
-    const observer = new IntersectionObserver((entries)=>{ entries.forEach((entry)=>{ if(entry.isIntersecting){ initBA(entry.target); observer.unobserve(entry.target);} }); }, {rootMargin:'200px'});
-    document.querySelectorAll('.ba').forEach(el=>observer.observe(el));
-
-    // ===== TESTIMONIALS: infinite YouTube grid =====
-    const videoIDs = [
-      'ScMzIvxBSi4','dQw4w9WgXcQ','ysz5S6PUM-U','E7wJTI-1dvQ','aqz-KE-bpKQ','VYOjWnS4cMY','hTWKbfoikeg','Zi_XLOBDo_Y','ktvTqknDobU','RubBzkZzpUA',
-      'kXYiU_JCYtU','QDYfEBY9NM4','Zi_XLOBDo_Y','JGwWNGJdvx8','CevxZvSJLk8','L_jWHffIx5E','tVj0ZTS4WF4','2vjPBrBU-TM','60ItHLz5WEA','fRh_vgS2dFE'
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Array of before and after case images
+    const cases = [
+        { before: 'https://via.placeholder.com/600x400?text=Before+1', after: 'https://via.placeholder.com/600x400?text=After+1' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+2', after: 'https://via.placeholder.com/600x400?text=After+2' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+3', after: 'https://via.placeholder.com/600x400?text=After+3' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+4', after: 'https://via.placeholder.com/600x400?text=After+4' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+5', after: 'https://via.placeholder.com/600x400?text=After+5' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+6', after: 'https://via.placeholder.com/600x400?text=After+6' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+7', after: 'https://via.placeholder.com/600x400?text=After+7' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+8', after: 'https://via.placeholder.com/600x400?text=After+8' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+9', after: 'https://via.placeholder.com/600x400?text=After+9' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+10', after: 'https://via.placeholder.com/600x400?text=After+10' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+11', after: 'https://via.placeholder.com/600x400?text=After+11' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+12', after: 'https://via.placeholder.com/600x400?text=After+12' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+13', after: 'https://via.placeholder.com/600x400?text=After+13' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+14', after: 'https://via.placeholder.com/600x400?text=After+14' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+15', after: 'https://via.placeholder.com/600x400?text=After+15' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+16', after: 'https://via.placeholder.com/600x400?text=After+16' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+17', after: 'https://via.placeholder.com/600x400?text=After+17' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+18', after: 'https://via.placeholder.com/600x400?text=After+18' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+19', after: 'https://via.placeholder.com/600x400?text=After+19' },
+        { before: 'https://via.placeholder.com/600x400?text=Before+20', after: 'https://via.placeholder.com/600x400?text=After+20' }
     ];
-    // Simulate infinite by looping IDs (replace with your real list; can be thousands)
-    const infiniteIDs = new Proxy(videoIDs, { get(target, prop){ if(prop==='length') return Infinity; return target[prop%target.length]; }});
 
-    const tGrid = document.getElementById('tGrid');
-    let loaded = 0; const CHUNK = 6;
-    function addVideos(n=CHUNK){
-      for(let i=0;i<n;i++){
-        const id = infiniteIDs[loaded+i];
-        const card = document.createElement('article');
-        card.className = 'tcard';
-        card.innerHTML = `<div class="tmedia"><iframe loading="lazy" src="https://www.youtube.com/embed/${id}" title="Patient Testimonial ${loaded+i+1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="tcopy">Patient testimonial #${loaded+i+1}</div>`
-        tGrid.appendChild(card);
-      }
-      loaded += n;
-    }
-    addVideos();
+    const beforeAfterGrid = document.getElementById('beforeAfterGrid');
 
-    // Load more on button and on scroll near bottom
-    const loadBtn = document.getElementById('loadMore');
-    loadBtn.addEventListener('click', ()=> addVideos());
-    const sentry = document.createElement('div');
-    tGrid.after(sentry);
-    const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ addVideos(); } }); }, {rootMargin:'600px'});
-    io.observe(sentry);
+    cases.forEach((caseItem) => {
+        const card = document.createElement('div');
+        card.className = 'before-after-card';
 
-    // Form validation + UX
-    const form = document.getElementById('qsForm');
-    const statusEl = document.getElementById('formStatus');
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      statusEl.textContent = 'Submitting...';
+        const before = document.createElement('div');
+        before.className = 'before';
+        const beforeImg = document.createElement('img');
+        beforeImg.src = caseItem.before;
+        before.appendChild(beforeImg);
 
-      const phone = form.phone.value.trim();
-      if(!/^[0-9]{10}$/.test(phone)){
-        statusEl.textContent = 'Please enter a valid 10-digit phone number.';
-        form.phone.focus();
-        return;
-      }
+        const after = document.createElement('div');
+        after.className = 'after';
+        const afterImg = document.createElement('img');
+        afterImg.src = caseItem.after;
+        after.appendChild(afterImg);
 
-      const data = new FormData(form);
-      try{
-        const r = await fetch(form.action, { method:'POST', body:data, headers: { 'Accept': 'application/json' } });
-        if(r.ok){
-          form.reset();
-          statusEl.textContent = 'Thank you! We\'ll confirm shortly.';
-        }else{
-          statusEl.textContent = 'Something went wrong. Please try WhatsApp if urgent.';
+        const divider = document.createElement('div');
+        divider.className = 'divider';
+
+        // Append elements
+        card.appendChild(before);
+        card.appendChild(after);
+        card.appendChild(divider);
+
+        // Add interaction
+        let isDown = false;
+
+        function updateSlider(e) {
+            const rect = card.getBoundingClientRect();
+            let offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            if (offsetX < 0) offsetX = 0;
+            if (offsetX > rect.width) offsetX = rect.width;
+            const percentage = (offsetX / rect.width) * 100;
+            after.style.width = percentage + '%';
+            afterImg.style.marginLeft = '-' + percentage + '%';
+            divider.style.left = percentage + '%';
         }
-      }catch(err){
-        statusEl.textContent = 'Network error. Please try again.';
-      }
+
+        card.addEventListener('mousedown', function(e) {
+            isDown = true;
+            updateSlider(e);
+        });
+        window.addEventListener('mousemove', function(e) {
+            if (!isDown) return;
+            updateSlider(e);
+        });
+        window.addEventListener('mouseup', function() {
+            isDown = false;
+        });
+        // Touch events
+        card.addEventListener('touchstart', function(e) {
+            isDown = true;
+            updateSlider(e);
+        });
+        window.addEventListener('touchmove', function(e) {
+            if (!isDown) return;
+            updateSlider(e);
+        });
+        window.addEventListener('touchend', function() {
+            isDown = false;
+        });
+
+        beforeAfterGrid.appendChild(card);
     });
-  </script>
+
+    // Array of video IDs (provide your own IDs)
+    const videos = [
+        'dQw4w9WgXcQ', 'M7FIvfx5J10', 'kJQP7kiw5Fk', '2Vv-BfVoq4g', 'L_jWHffIx5E',
+        'hTWKbfoikeg', 'kXYiU_JCYtU', '3tmd-ClpJxA', 'CevxZvSJLk8', 'pRpeEdMmmQ0',
+        'YbJOTdZBX1g', 'rYEDA3JcQqw', 'RgKAFK5djSk', 'JGwWNGJdvx8', 'PtXIhUQtzBQ',
+        '6Mgqbai3fKo', 'dQw4w9WgXcQ', 'M7FIvfx5J10', 'kJQP7kiw5Fk', '2Vv-BfVoq4g',
+        'L_jWHffIx5E', 'hTWKbfoikeg', 'kXYiU_JCYtU', '3tmd-ClpJxA', 'CevxZvSJLk8',
+        'pRpeEdMmmQ0', 'YbJOTdZBX1g', 'rYEDA3JcQqw', 'RgKAFK5djSk', 'JGwWNGJdvx8',
+        'PtXIhUQtzBQ', '6Mgqbai3fKo'
+    ];
+
+    const testimonialGrid = document.getElementById('testimonialGrid');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    let videosDisplayed = 0;
+    const batchSize = 20;
+
+    function renderVideos() {
+        const nextVideos = videos.slice(videosDisplayed, videosDisplayed + batchSize);
+        nextVideos.forEach(videoId => {
+            const item = document.createElement('div');
+            item.className = 'testimonial-item';
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/' + videoId;
+            iframe.allowFullscreen = true;
+            item.appendChild(iframe);
+            testimonialGrid.appendChild(item);
+        });
+        videosDisplayed += nextVideos.length;
+        if (videosDisplayed >= videos.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    // Initial load
+    renderVideos();
+
+    loadMoreBtn.addEventListener('click', function() {
+        renderVideos();
+        // Scroll to the newly loaded content on small screens
+        loadMoreBtn.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>
