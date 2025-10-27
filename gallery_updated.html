@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--
+    Redesigned gallery page for Smiles & Braces Dental Clinic.
+    The navigation, breadcrumb and footer sections have been kept intact.
+    This page introduces a new patient showcase and video testimonial
+    layout that is fed by a JSON data file for easy future updates.
+  -->
   <title>Patient Gallery – Transformations & Testimonials</title>
-  <meta name="description" content="Explore real before-and-after cases and patient stories from Smiles & Braces Dental Clinic in Lucknow. Dynamic gallery makes it easy to add new cases and videos."/>
+  <meta name="description" content="Explore real before‑and‑after cases and patient stories from Smiles & Braces Dental Clinic in Lucknow. Dynamic gallery makes it easy to add new cases and videos."/>
   <link rel="canonical" href="https://www.bestindiandentist.com/gallery_updated.html"/>
 
   <!-- Social preview -->
@@ -25,6 +31,10 @@
   <link rel="stylesheet" href="/css/site.css">
 
   <style>
+    /* --------------------
+       Gallery specific styles
+       These styles are scoped to the patient showcase and video sections.
+    --------------------- */
     :root {
       --accent: #0ea5e9;
       --ink: #0b2530;
@@ -33,73 +43,242 @@
       --ring: rgba(14, 165, 233, 0.25);
     }
 
-    .section-head { text-align:center; margin-bottom:1.5rem; }
-    .section-head h2 { font-size:clamp(1.6rem,2.5vw,2.25rem); line-height:1.2; margin-bottom:0.5rem; }
-    .section-head p { color:var(--muted); max-width:600px; margin:0 auto; font-size:0.95rem; }
+    /* Section headings */
+    .section-head {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .section-head h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
 
-    .filter-container { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:1rem; }
+    /* Filters */
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
     .filter-btn {
-      padding:0.5rem 0.8rem; border:1px solid #dbe7ee; border-radius:999px;
-      background:#f8fbfd; font-size:0.9rem; cursor:pointer; transition:background .2s,color .2s,border-color .2s;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid #dbe7ee;
+      border-radius: 999px;
+      background: #f8fbfd;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-    .filter-btn.is-active { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 0 0 3px var(--ring); }
+    .filter-btn.is-active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--ring);
+    }
 
-    .grid { display:grid; gap:16px; }
-    .grid.showcase { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    /* Grid layouts */
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.showcase {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .grid.video {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
 
-    /* FORCE 3 videos per row on desktop, wrap further videos to next rows */
-    .grid.video { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    @media (max-width: 1024px) { .grid.video { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 640px)  { .grid.video { grid-template-columns: 1fr; } }
-
+    /* Card base */
     .card {
-      background:var(--card-bg); border:1px solid #e8eff3; border-radius:16px; overflow:hidden;
-      box-shadow:0 6px 20px rgba(12,50,78,.06); display:flex; flex-direction:column;
+      background: var(--card-bg);
+      border: 1px solid #e8eff3;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(12, 50, 78, 0.06);
+      display: flex;
+      flex-direction: column;
     }
-    .card .pad { padding:14px 16px; }
-    .card h3 { margin:0 0 4px; font-size:1.1rem; line-height:1.3; }
-    .card p.small { font-size:0.9rem; color:var(--muted); }
+    .card .pad {
+      padding: 14px 16px;
+    }
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+    .card p.small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
     .badge {
-      display:inline-block; font-size:0.75rem; text-transform:capitalize; color:var(--accent);
-      background:rgba(14,165,233,.08); border:1px solid rgba(14,165,233,.2); padding:.2rem .5rem; border-radius:999px;
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: capitalize;
+      color: var(--accent);
+      background: rgba(14, 165, 233, 0.08);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
     }
 
-    .ba-wrap { position:relative; aspect-ratio:4/3; background:#f2f7f9; overflow:hidden; --split:50%; }
-    .ba-before, .ba-after { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .ba-after { clip-path: polygon(var(--split) 0, 100% 0, 100% 100%, var(--split) 100%); }
-    .ba-divider::after { content:""; position:absolute; top:0; bottom:0; left:calc(var(--split)); width:2px; background:#ffffffaa; backdrop-filter:blur(1px); box-shadow:0 0 0 1px rgba(0,0,0,.06); }
-    .ba-labels { position:absolute; inset:10px; display:flex; justify-content:space-between; pointer-events:none; }
-    .ba-labels span { background:rgba(0,0,0,.55); color:#fff; font-size:.75rem; padding:.2rem .45rem; border-radius:6px; }
-    .ba-controls { position:absolute; left:12px; right:12px; bottom:12px; display:flex; align-items:center; }
+    /* Before/after slider */
+    .ba-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: #f2f7f9;
+      overflow: hidden;
+      --split: 50%;
+    }
+    .ba-before,
+    .ba-after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-after {
+      clip-path: polygon(var(--split) 0, 100% 0, 100% 100%, var(--split) 100%);
+    }
+    .ba-divider::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(var(--split));
+      width: 2px;
+      background: #ffffffaa;
+      backdrop-filter: blur(1px);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+    .ba-labels {
+      position: absolute;
+      inset: 10px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .ba-labels span {
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+    }
+    .ba-controls {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
     .ba-range {
-      width:100%; -webkit-appearance:none; appearance:none; height:6px; border-radius:999px;
-      background:linear-gradient(90deg, var(--accent) var(--split), #dfe9ef 0); outline:none;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent) var(--split), #dfe9ef 0);
+      outline: none;
     }
     .ba-range::-webkit-slider-thumb {
-      -webkit-appearance:none; appearance:none; width:22px; height:22px; border-radius:50%;
-      background:#fff; border:2px solid var(--accent); box-shadow:0 2px 8px rgba(14,165,233,.35); cursor:grab;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.35);
+      cursor: grab;
     }
-    .ba-range:focus-visible { box-shadow:0 0 0 4px var(--ring); }
+    .ba-range:focus-visible {
+      box-shadow: 0 0 0 4px var(--ring);
+    }
 
-    .video-wrap { position:relative; aspect-ratio:16/9; background:#0b25300d; overflow:hidden; }
-    .video-wrap iframe, .video-wrap video { position:absolute; inset:0; width:100%; height:100%; }
+    /* Video wrapper */
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #0b25300d;
+      overflow: hidden;
+    }
+    .video-wrap iframe,
+    .video-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-    .lite-youtube { position:relative; display:block; width:100%; height:100%; background-size:cover; background-position:center; cursor:pointer; }
-    .lite-youtube::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,.35)); }
+    /* Lightweight YouTube placeholder */
+    .lite-youtube {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+    .lite-youtube::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.35));
+    }
     .lite-youtube .play {
-      position:absolute; inset:0; margin:auto; width:66px; height:46px; background:#000000bf; border-radius:12px;
-      display:grid; place-items:center; box-shadow:0 12px 20px rgba(0,0,0,.22);
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 66px;
+      height: 46px;
+      background: #000000bf;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.22);
     }
-    .lite-youtube .play svg { width:24px; height:24px; fill:#fff; }
-    .lite-youtube:focus-visible { outline:4px solid var(--ring); border-radius:12px; }
+    .lite-youtube .play svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+    .lite-youtube:focus-visible {
+      outline: 4px solid var(--ring);
+      border-radius: 12px;
+    }
 
-    .reveal { opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease; }
-    .reveal.is-in { opacity:1; transform:none; }
+    /* Reveal animation on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!--
+    =========================
+    Header and navigation
+    (kept unchanged from original site)
+    =========================
+  -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Smiles & Braces Dental Clinic — Dr. Vikram Jeet Singh">
@@ -119,6 +298,7 @@
     </div>
   </header>
 
+  <!-- Hero section introducing the gallery -->
   <section class="home-hero gallery-hero" role="banner">
     <div class="home-hero__inner">
       <h1>Patient Gallery</h1>
@@ -130,33 +310,48 @@
     </div>
   </section>
 
+  <!-- Breadcrumb (unchanged) -->
   <nav class="container small" aria-label="Breadcrumb">
     <span><a class="link-more" href="/">Home</a> / Gallery</span>
   </nav>
 
   <main id="main" class="container">
+    <!-- ====== TRANSFORMATIONS / SHOWCASE ====== -->
     <section class="section showcase-section" aria-labelledby="tx-title">
       <div class="section-head">
         <h2 id="tx-title">Transformations</h2>
         <p class="muted">Browse real patient cases across braces, aligners, implants and cosmetic procedures. Drag the slider to compare before vs after.</p>
       </div>
 
+      <!-- Controls -->
       <div class="tx-controls" role="group" aria-label="Showcase controls">
+        <!-- Filter chips are generated dynamically -->
         <div id="showcaseFilters" class="filter-container" hidden></div>
       </div>
 
+      <!-- Dynamic grid of patient cards -->
       <div id="showcaseGrid" class="grid showcase" aria-live="polite"></div>
       <p id="showcaseStats" class="small muted center" style="margin-top:1rem" aria-live="polite"></p>
     </section>
 
+    <!--
+      =========================
+      Video Testimonials & Clinic Tour
+      =========================
+      This section lists patient testimonial videos and clinic tours. It
+      supports both YouTube embeds and self‑hosted MP4 files. Items are
+      loaded from the same JSON data file.
+    -->
     <section class="section">
       <div class="section-head">
         <h2>Videos & Testimonials</h2>
         <p>Hear from our patients and take a look around the clinic. Click a video to play.</p>
       </div>
+      <!-- Dynamic grid of video cards -->
       <div id="videoGrid" class="grid video" aria-live="polite"></div>
     </section>
 
+    <!-- Call to action at the end -->
     <section class="section home-cta center">
       <h2>Ready for your own smile transformation?</h2>
       <p class="measure">Message us for a quick opinion on braces, aligners, implants, or cosmetic options.</p>
@@ -168,12 +363,21 @@
     </section>
   </main>
 
+  <!-- Footer is not shown here but remains untouched in the actual site layout -->
+
   <script>
+    // Year update and nav toggle reused from the original site
     document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
     document.querySelector('.nav-toggle')?.addEventListener('click', () => {
       document.querySelector('.navlinks').classList.toggle('show');
     });
 
+    /**
+     * Load gallery data from a JSON file. The file should contain two arrays:
+     *   - beforeAfter: list of objects with properties {title, before, after, caption, category}
+     *   - videos: list of objects with properties {title, type, src, youtubeId, caption}
+     * If the file does not exist or fails to load, fallback to a small sample defined below.
+     */
     const SAMPLE_DATA = {
       beforeAfter: [
         {
@@ -212,6 +416,10 @@
       }
     }
 
+    /**
+     * Render filter buttons based on unique categories extracted from the list.
+     * The first button is always "All". When clicked, it filters the grid.
+     */
     function renderFilters(items) {
       const filtersEl = document.getElementById('showcaseFilters');
       if (!filtersEl) return;
@@ -223,11 +431,19 @@
       filtersEl.hidden = false;
     }
 
+    /**
+     * Render the count of visible cases vs total.
+     */
     function renderStats(visible, total) {
       const statsEl = document.getElementById('showcaseStats');
-      if (statsEl) { statsEl.textContent = `${visible} of ${total} cases`; }
+      if (statsEl) {
+        statsEl.textContent = `${visible} of ${total} cases`;
+      }
     }
 
+    /**
+     * Create the HTML markup for a single before/after card.
+     */
     function createShowcaseCard(item, idx) {
       const id = `case-${idx}`;
       return `
@@ -250,6 +466,9 @@
       `;
     }
 
+    /**
+     * Create the HTML markup for a video card. Supports YouTube and MP4.
+     */
     function createVideoCard(item) {
       const media = (item.type === 'youtube' && item.youtubeId)
         ? `<div class="video-wrap">${createLiteYouTube(item.youtubeId, item.title)}</div>`
@@ -268,6 +487,9 @@
       `;
     }
 
+    /**
+     * Return HTML for the lightweight YouTube embed placeholder.
+     */
     function createLiteYouTube(id, title = 'Video') {
       const bg = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
       return `
@@ -279,6 +501,9 @@
       `;
     }
 
+    /**
+     * Bind events to the before/after sliders: handle dragging and arrow key adjustments.
+     */
     function bindBeforeAfter(gridEl) {
       gridEl.addEventListener('input', e => {
         const r = e.target.closest('.ba-range');
@@ -288,6 +513,7 @@
         wrap.style.setProperty('--split', v + '%');
         r.style.background = `linear-gradient(90deg, var(--accent) ${v}%, #dfe9ef 0)`;
       });
+      // Keyboard left/right arrow control
       gridEl.addEventListener('keydown', e => {
         const r = e.target.closest('.ba-range');
         if (!r) return;
@@ -299,6 +525,7 @@
           r.dispatchEvent(new Event('input', { bubbles: true }));
         }
       });
+      // Click & drag anywhere on the image to adjust slider
       gridEl.addEventListener('pointerdown', e => {
         const wrap = e.target.closest('.ba-wrap');
         if (!wrap) return;
@@ -321,6 +548,10 @@
       });
     }
 
+    /**
+     * Bind click events to lightweight YouTube placeholders so that they
+     * replace themselves with an iframe when activated.
+     */
     function bindLiteYouTube(scope) {
       scope.addEventListener('click', e => {
         const btn = e.target.closest('.lite-youtube');
@@ -342,6 +573,9 @@
       });
     }
 
+    /**
+     * Reveal elements as they scroll into view using IntersectionObserver.
+     */
     function revealOnScroll() {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(ent => {
@@ -354,17 +588,22 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 
+    // Initialise the page once the DOM is ready
     (async () => {
       const data = await loadGalleryData();
       const showcaseGrid = document.getElementById('showcaseGrid');
       const videoGrid = document.getElementById('videoGrid');
       const filtersEl = document.getElementById('showcaseFilters');
 
+      // Render patient showcase
       const cases = (data.beforeAfter && Array.isArray(data.beforeAfter) && data.beforeAfter.length)
-        ? data.beforeAfter : SAMPLE_DATA.beforeAfter;
+        ? data.beforeAfter
+        : SAMPLE_DATA.beforeAfter;
+
       showcaseGrid.innerHTML = cases.map((item, idx) => createShowcaseCard(item, idx)).join('');
       bindBeforeAfter(showcaseGrid);
 
+      // Filters
       renderFilters(cases);
       renderStats(cases.length, cases.length);
       let activeFilter = 'all';
@@ -383,11 +622,15 @@
         renderStats(visibleCount, cases.length);
       });
 
+      // Render videos
       const vids = (data.videos && Array.isArray(data.videos) && data.videos.length)
-        ? data.videos : SAMPLE_DATA.videos;
+        ? data.videos
+        : SAMPLE_DATA.videos;
+
       videoGrid.innerHTML = vids.map(createVideoCard).join('');
       bindLiteYouTube(videoGrid);
 
+      // Kick off reveal animation
       revealOnScroll();
     })();
   </script>
