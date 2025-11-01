@@ -78,6 +78,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+   
+  <url>
+    <loc>https://www.bestindiandentist.com/book-implant.html</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
   <!-- Blog articles (/blog/) -->
   <url>
