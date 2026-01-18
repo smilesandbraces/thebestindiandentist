@@ -1,181 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Root (homepage) -->
+  <!-- Homepage -->
   <url>
-    <loc>https://www.bestindiandentist.com/</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Core pages -->
+  <!-- Core Pages -->
   <url>
     <loc>https://www.bestindiandentist.com/about.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.bestindiandentist.com/services.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.bestindiandentist.com/blog.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/gallery.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/gallery_updated.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://www.bestindiandentist.com/international.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://www.bestindiandentist.com/contact.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Appointment / landing pages -->
+  <!-- Doctor & Informational Pages -->
   <url>
-    <loc>https://www.bestindiandentist.com/Book-Appointment-for-Implants.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/drvikramjeetsingh.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/bookappointmentbraces.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/faqs.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/bookappointmentcrowns.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/dentalhealthplan.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/bookappointmentsmilemakeover.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/tartarremovalnearme.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+
+  <!-- Appointment Pages -->
   <url>
-    <loc>https://www.bestindiandentist.com/bookdentalcheckup.html</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://www.bestindiandentist.com/Book-Appointment-for-Implant.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
-   
+
   <url>
     <loc>https://www.bestindiandentist.com/book-implant.html</loc>
-    <lastmod>2025-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- Blog articles (/blog/) -->
   <url>
-    <loc>https://www.bestindiandentist.com/blog/best-dentist-in-lucknow-trust-skill-compassion.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/best-dentist-near-munshi-puliya.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/book-appointment-for-painless-laser-rct.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/choosing-the-right-toothbrush.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/dentist-in-indira-nagar-lucknow.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/importance-of-regular-checkups.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/smiles-and-braces-best-dentist-in-lucknow.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/tips-for-oral-hygiene.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/top-10-reasons-to-choose-smiles-and-braces-dental-clinic-lucknow.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/top-orthodontist-near-munshi-puliya.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bestindiandentist.com/blog/why-dr-vikram-jeet-singh-best-dentist-in-lucknow.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <priority>0.7</priority>
+    <loc>https://www.bestindiandentist.com/book-teeth-whitening.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
-  <!-- Policies & utilities -->
   <url>
-    <loc>https://www.bestindiandentist.com/privacy.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://www.bestindiandentist.com/bookappointmentbraces.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/terms.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://www.bestindiandentist.com/bookappointmentcrowns.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://www.bestindiandentist.com/thank-you.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://www.bestindiandentist.com/bookappointmentsmilemakeover.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bestindiandentist.com/bookdentalcheckup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Offers -->
   <url>
     <loc>https://www.bestindiandentist.com/Diwali_Offer2025.html</loc>
-    <lastmod>2025-10-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
-  <!--FAQs-->
+  <!-- Policies -->
   <url>
-  <loc>https://www.bestindiandentist.com/faqs.html</loc>
-  <priority>0.8</priority>
-  <changefreq>monthly</changefreq>
-</url>
+    <loc>https://www.bestindiandentist.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bestindiandentist.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bestindiandentist.com/thank-you.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>
