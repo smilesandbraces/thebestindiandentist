@@ -1,4 +1,33 @@
 User-agent: *
+
+# Allow all main website content
 Allow: /
 
+# Disallow sensitive or non-SEO pages
+Disallow: /thank-you.html
+Disallow: /privacy.html
+Disallow: /terms.html
+
+# Disallow duplicate booking pages (optional cleanup)
+Disallow: /book-implant.html
+Disallow: /book-teeth-whitening.html
+Disallow: /bookappointmentbraces.html
+Disallow: /bookappointmentcrowns.html
+Disallow: /bookappointmentsmilemakeover.html
+Disallow: /bookdentalcheckup.html
+
+# Allow important SEO pages explicitly
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /contact.html
+Allow: /blog.html
+Allow: /faqs.html
+Allow: /gallery_updated.html
+Allow: /international.html
+Allow: /drvikramjeetsingh.html
+Allow: /dentalhealthplan.html
+Allow: /tartarremovalnearme.html
+
+# Sitemap location
 Sitemap: https://www.bestindiandentist.com/sitemap.xml
