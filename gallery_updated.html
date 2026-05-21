@@ -1,479 +1,534 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Smiles & Braces Dental Clinic Gallery</title>
+<title>Smiles & Braces Dental Clinic | Patient Stories</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
-* { box-sizing: border-box; }
+:root {
+  --bg: #fbfdfd;
+  --surface: #ffffff;
+  --soft: #eef9f8;
+  --soft-2: #f6fbfb;
+  --primary: #3aa6a1;
+  --primary-dark: #237c78;
+  --text: #183033;
+  --muted: #6b7c80;
+  --line: #ddebea;
+  --shadow: 0 24px 70px rgba(24, 48, 51, 0.08);
+  --radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
-  background: #f8f9fa;
-  color: #333;
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at top left, #e8fbf8 0, transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  color: var(--text);
 }
-.header {
+
+a {
+  color: inherit;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 86px 20px 70px;
   text-align: center;
-  padding: 2rem 1rem;
 }
-.header h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  margin: 0;
-  color: #5c5c8a;
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border-radius: 42px;
+  background: linear-gradient(135deg, #f1fffd, #ffffff 55%, #eef8ff);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  z-index: -1;
 }
-.header p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #666;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.container {
-  max-width: 1200px;
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.7rem, 6vw, 5.6rem);
+  line-height: 1.03;
+  margin: 24px auto 18px;
+  max-width: 950px;
+  color: #10282b;
+}
+
+.hero p {
+  max-width: 760px;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-.section {
-  margin: 2rem 0;
-}
-.section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--muted);
 }
 
-/* Before and after cards */
-.before-after-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.before-after-card {
-  position: relative;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 66%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background: #fff;
-  cursor: pointer;
-}
-.before-after-card img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-/* IMPORTANT: let JS control the seam; keep width 100% and margin 0 */
-.after img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-left: 0;
-}
-.before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.divider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 3px;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-}
-
-/* Video testimonials */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-.testimonial-item {
-  position: relative;
-  padding-top: 56.25%;
-  background: #000;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-.testimonial-item iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: none;
-}
-.load-more-btn {
-  display: block;
-  margin: 2rem auto;
-  padding: 0.75rem 1.5rem;
-  background: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  font-weight: 600;
-}
-.load-more-btn:hover {
-  background: #0056b3;
-}
-
-/* Appointment form */
-.form-section {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.form-section form {
+.hero-actions {
+  margin-top: 34px;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.form-section input, .form-section textarea {
-  padding: 0.75rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  width: 100%;
-}
-.form-section button {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  background: #007bff;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.form-section button:hover {
-  background: #0056b3;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-/* Overlay for full-screen view */
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
+.btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-}
-.overlay-content {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-}
-.overlay-content .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-}
-.overlay-slider {
-  width: 100%;
-  height: 0;
-  padding-bottom: 66%;
-  position: relative;
+  min-height: 52px;
+  padding: 0 25px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.25s ease;
 }
 
-@media (max-width: 768px) {
-  .header h1 { font-size: 2rem; }
-  .section h2 { font-size: 1.5rem; }
-  .before-after-grid, .testimonials-grid { grid-template-columns: 1fr; }
-  .form-section { padding: 1rem; }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 18px 32px rgba(58, 166, 161, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-dark);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(24,48,51,0.08);
+}
+
+.container {
+  max-width: 1220px;
+  margin: auto;
+  padding: 38px 20px 70px;
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 72px;
+}
+
+.trust-card {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(24,48,51,0.05);
+}
+
+.trust-card strong {
+  display: block;
+  font-size: 1.45rem;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.trust-card span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.kicker {
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 1.08;
+  margin: 0;
+  color: #10282b;
+}
+
+.section-heading p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(24,48,51,0.06);
+  transition: 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 70px rgba(24,48,51,0.1);
+}
+
+.video-box {
+  position: relative;
+  padding-top: 56.25%;
+  background: #e8f4f3;
+}
+
+.video-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-content {
+  padding: 20px 22px 24px;
+}
+
+.video-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  background: var(--soft);
+  color: var(--primary-dark);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.video-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.06rem;
+  color: #10282b;
+}
+
+.video-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 42px auto 0;
+  border: 0;
+  background: #ffffff;
+  color: var(--primary-dark);
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 32px rgba(24,48,51,0.08);
+}
+
+.load-more-btn:hover {
+  background: var(--soft);
+}
+
+.appointment-section {
+  margin-top: 86px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  background: linear-gradient(135deg, #ffffff, #f3fbfa);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.appointment-info {
+  padding: 52px;
+  background:
+    radial-gradient(circle at top right, rgba(58,166,161,0.14), transparent 40%),
+    #ffffff;
+}
+
+.appointment-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.appointment-info p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0;
+}
+
+.clinic-details {
+  margin-top: 28px;
+  display: grid;
+  gap: 13px;
+}
+
+.detail {
+  background: var(--soft-2);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 15px 16px;
+  color: #315154;
+  font-weight: 700;
+}
+
+.form-box {
+  padding: 52px;
+}
+
+.form-box h3 {
+  margin: 0 0 22px;
+  font-size: 1.35rem;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 16px 17px;
+  border-radius: 17px;
+  border: 1px solid #d6e6e4;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3a8;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 5px rgba(58,166,161,0.12);
+}
+
+.submit-btn {
+  border: 0;
+  background: var(--primary);
+  color: white;
+  padding: 17px;
+  border-radius: 17px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 16px 30px rgba(58,166,161,0.22);
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+}
+
+.footer {
+  text-align: center;
+  padding: 34px 18px 44px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.footer a {
+  color: var(--primary-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 980px) {
+  .trust-strip,
+  .section-heading,
+  .appointment-section {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 54px 16px 46px;
+  }
+
+  .hero::before {
+    inset: 10px;
+    border-radius: 28px;
+  }
+
+  .container {
+    padding: 28px 16px 55px;
+  }
+
+  .trust-strip {
+    margin-bottom: 52px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-info,
+  .form-box {
+    padding: 28px;
+  }
 }
 </style>
 </head>
+
 <body>
-  <div class="header">
-    <h1>Smiles &amp; Braces Dental Clinic</h1>
-    <p>Dr. Vikram Jeet Singh &bull; BDS, MDS</p>
-<p style="font-size:16px; color:#34C759; margin-top:-5px;">
-  <a href="https://www.bestindiandentist.com" style="text-decoration:none; color:#34C759; font-weight:bold;">
-    Creating Confident Smiles Everyday
-  </a>
-</p>
+
+<header class="hero">
+  <div class="badge">Modern Dental Care • Lucknow</div>
+
+  <h1>Creating Calm, Confident & Beautiful Smiles</h1>
+
+  <p>
+    Welcome to Smiles &amp; Braces Dental Clinic, led by Dr. Vikram Jeet Singh.
+    Explore real patient stories and book your appointment with a trusted dental care team.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#booking" class="btn btn-primary">Book Appointment</a>
+    <a href="https://www.bestindiandentist.com" class="btn btn-secondary">Visit Website</a>
   </div>
+</header>
 
-  <div class="container">
-    <section class="section" id="before-after">
-      <h2>Before &amp; After Cases</h2>
-      <div class="before-after-grid" id="beforeAfterGrid"></div>
-    </section>
+<main class="container">
 
-    <section class="section" id="testimonials">
-      <h2>Patient Video Testimonials</h2>
-      <div class="testimonials-grid" id="testimonialGrid"></div>
-      <div class="load-more-btn" id="loadMoreBtn">Load More Videos</div>
-    </section>
-
-    <section class="section form-section" id="booking">
-      <h2>Book an Appointment</h2>
-      <form action="https://formspree.io/f/xanpokbz" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
-        <button type="submit">Book Appointment</button>
-      </form>
-    </section>
-  </div>
-
-  <!-- Full-screen image overlay -->
-  <div id="imageOverlay" class="overlay" aria-hidden="true">
-    <div class="overlay-content">
-      <span class="close" aria-label="Close overlay">&times;</span>
-      <div id="overlaySlider"></div>
+  <section class="trust-strip">
+    <div class="trust-card">
+      <strong>BDS, MDS</strong>
+      <span>Specialized orthodontic expertise</span>
     </div>
-  </div>
+
+    <div class="trust-card">
+      <strong>Modern Care</strong>
+      <span>Patient-focused dental treatment</span>
+    </div>
+
+    <div class="trust-card">
+      <strong>Real Stories</strong>
+      <span>Genuine patient video testimonials</span>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="section-heading">
+      <div>
+        <div class="kicker">Patient Testimonials</div>
+        <h2>Hear from our happy patients</h2>
+      </div>
+
+      <p>
+        Every smile has a story. These videos reflect real experiences of patients
+        who trusted Smiles &amp; Braces Dental Clinic for their dental care journey.
+      </p>
+    </div>
+
+    <div class="testimonials-grid" id="testimonialGrid"></div>
+
+    <button class="load-more-btn" id="loadMoreBtn">Load More Testimonials</button>
+  </section>
+
+  <section class="appointment-section" id="booking">
+    <div class="appointment-info">
+      <div class="kicker">Appointment</div>
+      <h2>Begin your smile journey with us</h2>
+
+      <p>
+        Share your details and our clinic team will get in touch with you for appointment confirmation.
+      </p>
+
+      <div class="clinic-details">
+        <div class="detail">Smiles &amp; Braces Dental Clinic</div>
+        <div class="detail">Dr. Vikram Jeet Singh • BDS, MDS</div>
+        <div class="detail">
+          <a href="https://www.bestindiandentist.com">www.bestindiandentist.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h3>Request an Appointment</h3>
+
+      <form action="https://formspree.io/f/xanpokbz" method="POST">
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="email" name="_replyto" placeholder="Email address" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <textarea name="message" placeholder="Tell us about your dental concern" rows="5"></textarea>
+        <button type="submit" class="submit-btn">Send Appointment Request</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  © Smiles &amp; Braces Dental Clinic ·
+  <a href="https://www.bestindiandentist.com">bestindiandentist.com</a>
+</footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  /* ===============================
-   * 1) BEFORE/AFTER CASES (EDIT ME)
-   * =============================== */
-  // Start with the pairs you actually have in GitHub now.
-  const seedCases = [
-    { before: './assets/images/cases/rbi1.webp', after: './assets/images/cases/rbi.webp', altBefore: 'Case 01 — before', altAfter: 'Case 01 — after' },
-    // Add more pairs here as you upload them:
-    // { before: './assets/images/cases/case02-before.webp', after: './assets/images/cases/case02-after.webp', altBefore: 'Case 02 — before', altAfter: 'Case 02 — after' },
-  ];
-
-  // Safety: if someone removes all seeds by mistake, bail gracefully.
-  if (!seedCases.length) {
-    console.error('No seed cases found. Please add at least one before/after pair to seedCases.');
-  }
-
-  // Build exactly 20 slots by repeating available pairs
-  const CASES_EXPECTED = 20;
-  const cases = [];
-  for (let i = 0; i < CASES_EXPECTED; i++) {
-    const src = seedCases[i % seedCases.length];
-    cases.push({
-      before: src.before,
-      after:  src.after,
-      altBefore: src.altBefore || `Case ${String(i+1).padStart(2,'0')} — before`,
-      altAfter:  src.altAfter  || `Case ${String(i+1).padStart(2,'0')} — after`,
-    });
-  }
-
-  /* ======================================
-   * 2) GRAB REQUIRED ELEMENTS FROM THE DOM
-   * ====================================== */
-  const beforeAfterGrid = document.getElementById('beforeAfterGrid');
-  const overlay = document.getElementById('imageOverlay');
-  const overlayContent = document.getElementById('overlaySlider');
-  const closeBtn = overlay ? overlay.querySelector('.close') : null;
-
-  const testimonialGrid = document.getElementById('testimonialGrid');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-
-  /* ==========================
-   * 3) IMAGE HELPERS (ROBUST)
-   * ========================== */
-  const FALLBACK = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750">
-      <rect width="100%" height="100%" fill="#e5e7eb"/>
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#6b7280" font-family="Arial" font-size="28">
-        Image not found
-      </text>
-    </svg>`
-  );
-  function wireImage(img, src, alt) {
-    img.src = src;
-    img.alt = alt || '';
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.onerror = () => { img.src = FALLBACK; };
-  }
-
-  /* ==========================
-   * 4) HELPER: MAKE A SLIDER UI
-   * ========================== */
-  function makeSlider(containerEl, beforeURL, afterURL, altBefore, altAfter) {
-    containerEl.classList.add('before-after-card');
-    containerEl.style.position = 'relative';
-    containerEl.style.userSelect = 'none';
-    containerEl.style.aspectRatio = '16/10';
-    containerEl.style.overflow = 'hidden';
-
-    const beforeDiv = document.createElement('div');
-    const afterDiv  = document.createElement('div');
-    const beforeImg = document.createElement('img');
-    const afterImg  = document.createElement('img');
-    const divider   = document.createElement('div');
-
-    beforeDiv.className = 'before';
-    afterDiv.className  = 'after';
-    divider.className   = 'divider';
-
-    // wire images safely
-    wireImage(beforeImg, beforeURL, altBefore || 'Before');
-    wireImage(afterImg,  afterURL,  altAfter  || 'After');
-
-    beforeImg.style.width = afterImg.style.width = '100%';
-    beforeImg.style.display = afterImg.style.display = 'block';
-
-    // layering
-    beforeDiv.style.position = afterDiv.style.position = 'absolute';
-    beforeDiv.style.top = afterDiv.style.top = 0;
-    beforeDiv.style.left = afterDiv.style.left = 0;
-    beforeDiv.style.height = afterDiv.style.height = '100%';
-    beforeDiv.style.width = '100%';
-    afterDiv.style.width  = '50%';  // default middle
-    afterDiv.style.overflow = 'hidden';
-
-    // divider style
-    divider.style.position = 'absolute';
-    divider.style.top = 0;
-    divider.style.bottom = 0;
-    divider.style.left = '50%';
-    divider.style.width = '3px';
-    divider.style.background = '#1f2937';
-    divider.style.boxShadow = '0 0 0 1px rgba(0,0,0,.08)';
-
-    beforeDiv.appendChild(beforeImg);
-    afterDiv.appendChild(afterImg);
-    containerEl.appendChild(beforeDiv);
-    containerEl.appendChild(afterDiv);
-    containerEl.appendChild(divider);
-
-    // interactions
-    let dragging = false;
-    let startX = 0, startY = 0;
-    let moved = false;
-
-    function pctFromEvent(e) {
-      const rect = containerEl.getBoundingClientRect();
-      const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
-      const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
-      return (x / rect.width) * 100;
-    }
-    function setSplit(pct) {
-      afterDiv.style.width = pct + '%';
-      divider.style.left   = pct + '%';
-      afterImg.style.marginLeft = '-' + pct + '%'; // seam alignment
-    }
-
-    containerEl.addEventListener('mousedown', (e) => {
-      dragging = true; moved = false;
-      startX = e.clientX; startY = e.clientY;
-      setSplit(pctFromEvent(e));
-    });
-    window.addEventListener('mousemove', (e) => {
-      if (!dragging) return;
-      if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) moved = true;
-      setSplit(pctFromEvent(e));
-    });
-    window.addEventListener('mouseup', () => { dragging = false; });
-
-    containerEl.addEventListener('touchstart', (e) => {
-      dragging = true; moved = false;
-      startX = e.touches[0].clientX; startY = e.touches[0].clientY;
-      setSplit(pctFromEvent(e));
-    }, { passive: true });
-    window.addEventListener('touchmove', (e) => {
-      if (!dragging) return;
-      if (Math.abs((e.touches[0].clientX) - startX) > 5 || Math.abs((e.touches[0].clientY) - startY) > 5) moved = true;
-      setSplit(pctFromEvent(e));
-    }, { passive: true });
-    window.addEventListener('touchend', () => { dragging = false; });
-
-    // keyboard: left/right to nudge
-    containerEl.setAttribute('tabindex', '0');
-    containerEl.addEventListener('keydown', (e) => {
-      const step = e.shiftKey ? 10 : 2;
-      const current = parseFloat(afterDiv.style.width || '50');
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); setSplit(Math.max(0, current - step)); }
-      if (e.key === 'ArrowRight') { e.preventDefault(); setSplit(Math.min(100, current + step)); }
-    });
-
-    return { element: containerEl, wasDragged: () => moved };
-  }
-
-  /* ==================================
-   * 5) FULLSCREEN OVERLAY (CLICK OPEN)
-   * ================================== */
-  function openOverlay(caseItem) {
-    if (!overlay || !overlayContent) return;
-    overlayContent.innerHTML = '';
-
-    const container = document.createElement('div');
-    container.className = 'overlay-slider';
-    container.style.position = 'relative';
-    container.style.width = 'min(1100px, 92vw)';
-    container.style.margin = 'auto';
-
-    makeSlider(container, caseItem.before, caseItem.after, caseItem.altBefore, caseItem.altAfter);
-    overlayContent.appendChild(container);
-
-    overlay.style.display = 'flex';
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // prevent bg scroll
-  }
-  function closeOverlay() {
-    if (!overlay) return;
-    overlay.style.display = 'none';
-    overlay.setAttribute('aria-hidden', 'true');
-    if (overlayContent) overlayContent.innerHTML = '';
-    document.body.style.overflow = '';
-  }
-
-  if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
-  if (overlay) overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeOverlay();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (overlay && overlay.style.display === 'flex' && e.key === 'Escape') closeOverlay();
-  });
-
-  /* ==============================
-   * 6) RENDER 20 BEFORE/AFTER CARDS
-   * ============================== */
-  if (beforeAfterGrid) {
-    const frag = document.createDocumentFragment();
-
-    cases.forEach((c) => {
-      const card = document.createElement('div');
-      card.className = 'before-after-card';
-
-      const slider = makeSlider(card, c.before, c.after, c.altBefore, c.altAfter);
-
-      // Click-to-open fullscreen (ignore accidental drags)
-      card.addEventListener('click', () => {
-        if (!slider.wasDragged()) openOverlay(c);
-      });
-
-      frag.appendChild(card);
-    });
-
-    beforeAfterGrid.innerHTML = '';
-    beforeAfterGrid.appendChild(frag);
-  } else {
-    console.warn('⚠️  #beforeAfterGrid not found in DOM');
-  }
-
-  /* ==========================================
-   * 7) VIDEO TESTIMONIALS + LOAD MORE (20/step)
-   * ========================================== */
   const videos = [
     '285SdOclAlg','5xB5ZuWO-ag','Snex35Kc254','7p6mT9KzSwE','Kib0e15PcIc',
     'ubTXHzsRdgQ','AXBzHrEA0m8','IbHFxCezwOg','Xq1EN4OxdNg','YGUbxJx0EGE',
@@ -482,48 +537,56 @@ document.addEventListener('DOMContentLoaded', function () {
     'tg8CNCv9nZQ','Fc3UZR-2Knw','RQ7cg1NQrxQ','bHGe2oPbYZE','XKfPmPnvMtk',
     'Rtrb3RDZmuk','Ur9VSKARsqw','TaFdApxztw8','U6K0zK8oW5o','Hwyh4S5j6Tg'
   ];
+
+  const testimonialGrid = document.getElementById('testimonialGrid');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+
   let videosDisplayed = 0;
-  const BATCH = 20;
+  const batchSize = 9;
 
   function renderVideos() {
-    if (!testimonialGrid) return;
-    const next = videos.slice(videosDisplayed, videosDisplayed + BATCH);
-    next.forEach((id, i) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'testimonial-item';
-      wrap.style.position = 'relative';
-      wrap.style.overflow = 'hidden';
-      wrap.style.borderRadius = '12px';
+    const nextVideos = videos.slice(videosDisplayed, videosDisplayed + batchSize);
 
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + id;
-      iframe.title = 'Patient Testimonial ' + (videosDisplayed + i + 1);
-      iframe.allowFullscreen = true;
-      iframe.loading = 'lazy';
-      iframe.style.width = '100%';
-      iframe.style.height = '100%';
-      iframe.style.aspectRatio = '16/9';
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    nextVideos.forEach((id, index) => {
+      const number = videosDisplayed + index + 1;
 
-      wrap.appendChild(iframe);
-      testimonialGrid.appendChild(wrap);
+      const card = document.createElement('article');
+      card.className = 'testimonial-card';
+
+      card.innerHTML = `
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/${id}"
+            title="Patient Testimonial ${number}"
+            loading="lazy"
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
+        </div>
+
+        <div class="video-content">
+          <span class="video-label">Patient Story ${number}</span>
+          <h3>Smiles &amp; Braces Experience</h3>
+          <p>A real patient testimonial from Smiles &amp; Braces Dental Clinic.</p>
+        </div>
+      `;
+
+      testimonialGrid.appendChild(card);
     });
 
-    videosDisplayed += next.length;
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display = (videosDisplayed >= videos.length) ? 'none' : '';
+    videosDisplayed += nextVideos.length;
+
+    if (videosDisplayed >= videos.length) {
+      loadMoreBtn.style.display = 'none';
     }
   }
 
-  renderVideos(); // first 20
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      renderVideos();
-      loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  }
+  renderVideos();
+
+  loadMoreBtn.addEventListener('click', renderVideos);
 });
 </script>
+
 </body>
 </html>
+```
